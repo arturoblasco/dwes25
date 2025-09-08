@@ -20,7 +20,7 @@
     
     
       
-        <title>1.2. Client/Servidor - Desarrollo Web en Entorno Servidor (DWES)</title>
+        <title>1.2. Arquitecturas web - Desarrollo Web en Entorno Servidor (DWES)</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#12-clientservidor" class="md-skip">
+        <a href="#12-arquitecturas-web" class="md-skip">
           Salta el contingut
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.2. Client/Servidor
+              1.2. Arquitecturas web
             
           </span>
         </div>
@@ -261,7 +261,7 @@
   
   
   <span class="md-ellipsis">
-    Inici
+    Inicio
     
   </span>
   
@@ -363,7 +363,7 @@
   
   
   <span class="md-ellipsis">
-    1.1. Introducció
+    1.1. Introducción
     
   </span>
   
@@ -395,7 +395,7 @@
   
   
   <span class="md-ellipsis">
-    1.2. Client/Servidor
+    1.2. Arquitecturas web
     
   </span>
   
@@ -408,7 +408,7 @@
   
   
   <span class="md-ellipsis">
-    1.2. Client/Servidor
+    1.2. Arquitecturas web
     
   </span>
   
@@ -431,18 +431,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#21-pagina-web-dinamica" class="md-nav__link">
+  <a href="#arquitectura-clienteservidor" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1. Página web dinámica
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#22-single-page-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2. Single Page Application
+      Arquitectura cliente‑servidor
     </span>
   </a>
   
@@ -469,7 +460,7 @@
   
   
   <span class="md-ellipsis">
-    1.3. Arquitectura de 3 capes
+    1.3. Generar páginas web
     
   </span>
   
@@ -492,7 +483,7 @@
   
   
   <span class="md-ellipsis">
-    1.4. MVC
+    1.4. Modelos de programación
     
   </span>
   
@@ -515,7 +506,7 @@
   
   
   <span class="md-ellipsis">
-    1.5. Decisions de disseny
+    1.5. Decisiones de diseño
     
   </span>
   
@@ -538,7 +529,7 @@
   
   
   <span class="md-ellipsis">
-    1.6. Ferramentes
+    1.6. Ejecución del código
     
   </span>
   
@@ -561,7 +552,7 @@
   
   
   <span class="md-ellipsis">
-    1.7. Posada en marxa
+    1.7. Herramientas
     
   </span>
   
@@ -653,7 +644,7 @@
   
   
   <span class="md-ellipsis">
-    Descàrregues
+    Descargas
     
   </span>
   
@@ -676,7 +667,7 @@
   
   
   <span class="md-ellipsis">
-    Exercicis
+    Ejercicios
     
   </span>
   
@@ -745,7 +736,7 @@
   
   
   <span class="md-ellipsis">
-    2.1. Introducció
+    UT 2. Lenguaje PHP
     
   </span>
   
@@ -798,18 +789,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#21-pagina-web-dinamica" class="md-nav__link">
+  <a href="#arquitectura-clienteservidor" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1. Página web dinámica
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#22-single-page-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2. Single Page Application
+      Arquitectura cliente‑servidor
     </span>
   </a>
   
@@ -831,47 +813,190 @@
 
 
 
-<h1 id="12-clientservidor">1.2. Client/Servidor<a class="headerlink" href="#12-clientservidor" title="Permanent link">&para;</a></h1>
-<p>Uno o varios clientes acceden a un servidor. </p>
-<p>Las nuevas arquitecturas sustituyen el servidor por un balanceador de carga de manera que N servidores dan respuesta a M clientes.</p>
-<div style="text-align: center;"><figure><img src="../../../img/ut01/clienteservidor.png" alt="clienteservidor" style="zoom:70%;" /><figcaption style="font-size: 13px; color: #bd8f04;">Modelo Cliente-Servidor</figcaption></figure></div>
+<h1 id="12-arquitecturas-web">1.2. Arquitecturas web<a class="headerlink" href="#12-arquitecturas-web" title="Permanent link">&para;</a></h1>
+<p>Las arquitecturas web describen la relación entre los distintos elementos que participan en el intercambio/procesamiento de información a través de Internet, así como sus funciones.</p>
+<p>La gran mayoría de las arquitecturas web en la actualidad son de tipo <strong>cliente-servidor:</strong> una comunicación asimétrica en la que uno de los extremos ofrece uno o más servicios y el otro hace uso de ellos. Ésta es la arquitectura sobre la que nos centraremos, aunque existen otras como la <a href="https://es.wikipedia.org/wiki/Peer-to-peer" rel="noopener noreferrer" target="_blank">Punto a Punto (P2P - Peer to Peer)</a>.</p>
+<h3 id="arquitectura-clienteservidor">Arquitectura cliente‑servidor<a class="headerlink" href="#arquitectura-clienteservidor" title="Permanent link">&para;</a></h3>
+<p>El modelo cliente-servidor es un modelo que reparte tareas entre los proveedores de un recurso o servicio, llamados <strong>servidores</strong>, y los solicitantes/consumidores del servicio, llamados <strong>clientes</strong> .</p>
+<p>Lo más frecuente es que los clientes y los servidores se comuniquen a través de una red de comunicaciones, pero ambos pueden residir en la misma máquina (normalmente en tareas de desarrollo).</p>
+<p>El esquema de funcionamiento más básico del modelo cliente-servidor para una arquitectura web está basado en uno o varios clientes que solicitan una página web a un servidor web:</p>
+<ol>
+<li>Desde el navegador web (o agente de usuario, que puede ser también una app nativa u otro servidor incluso) el usuario solicita un servicio web indicando su URL.</li>
+<li>El servidor recibe la <strong>petición</strong> mediante el protocolo de aplicación HTTP, y la procesa mediante su  <strong>lógica de negocio</strong> .</li>
+<li>Produce una <strong>respuesta</strong> HTTP a la petición, que envía al cliente. Esta respuesta puede contener <strong>ficheros</strong> de distinta naturaleza: HTML, CSS, XML, JSON, ficheros multimedia, código JavaScript, etc.</li>
+<li>El navegador web recibe la información enviada por el servidor y la interpreta. En función de la respuesta enviada, se respresenta en el navegador la respuesta al usuario (normalmente en forma de página web).</li>
+</ol>
+<div style="text-align: center;"><img src="../../img/ut01/cli_serv.png" alt="cliente servidor" style="zoom:100%; border: 2px solid #fff2c9;" /></div>
 
-<p>En las aplicaciones web, el cliente es el navegador web.</p>
-<p>El cliente hace la petición (<em>request</em> normalmente mediante el protocolo <em>GET</em> mediante el puerto <em>80</em>/<em>443</em>) y el servidor responde (<em>response</em>).</p>
-<h2 id="21-pagina-web-dinamica">2.1. Página web dinámica<a class="headerlink" href="#21-pagina-web-dinamica" title="Permanent link">&para;</a></h2>
-<p>Si la página web únicamente contiene HTML + CSS se considera una página estática. Para generar una página dinámica, donde el contenido cambia, a día de hoy tenemos dos alternativas:</p>
-<p>​   a) Utilizar un lenguaje de servidor que genere el contenido, ya sea mediante el acceso a una BD o servicios externos.</p>
-<p>​   b) Utilizar servicios <em>REST</em> de terceros invocados desde <em>JS</em>.</p>
-<div style="text-align: center;"><figure><img src="../../img/ut01/paginadinamica.png" alt="paginadinamica" style="zoom:50%;" /><figcaption style="font-size: 13px; color: #bd8f04;">Diferencia gráfica entre página estática y página dinámica</figcaption></figure></div>
-
-<p>Las tecnologías empleadas (y los perfiles de desarrollo asociados) para la generación de páginas dinámicas son:</p>
-<div class="center-table">
-<table>
-<tr>
-    <th>perfil</th>
-    <th>herramienta</th>
-    <th>tecnología</th>
-</tr>
-<tr>
-    <td><b>Front-end </b>/ cliente</td>
-    <td>Navegador Web</td>
-    <td>HTML + CSS + JavaScript /td>
-</tr>
-<tr>
-    <td><b>Back-end </b>/ servidor</b></td>
-    <td>Servidor Web + BBDD</td>
-    <td>PHP, Python, Ruby, Java / JSP, .Net / .asp</td>
-</tr>    
-</table>
+<p>A continuación se muestran las ventajas y desventajas al respecto:</p>
+<p>Ventajas:</p>
+<ul>
+<li><strong>Centralización</strong> del control: los accesos, recursos y la integridad de los datos son controlados por el servidor. Esta centralización también facilita la tarea de actualizar datos u otros recursos.</li>
+<li><strong>Escalabilidad</strong> : se puede aumentar la capacidad de clientes y servidores por separado. Cualquier elemento puede ser aumentado (o mejorado) en cualquier momento, o se pueden añadir nuevos nodos a la red (clientes y/o servidores), siempre que el sistema esté diseñado para ello.</li>
+<li><strong>Portabilidad</strong> : el hecho de que la aplicación web se ejecute en un navegador web, hace que se independice el software del sistema operativo sobre el que se ejecuta. De esta forma, se aprovecha el desarrollo para las diferentes plataformas.</li>
+<li>Fácil  <strong>mantenimiento</strong> : al estar distribuidas las funciones y responsabilidades entre varios ordenadores independientes, es posible reemplazar, reparar, actualizar, o incluso trasladar un servidor, mientras que sus clientes no se verán afectados por ese cambio (o se afectarán mínimamente). Esta independencia de los cambios también se conoce como <strong>encapsulación</strong> .</li>
+<li>Existen  <strong>tecnologías</strong> , suficientemente desarrolladas, diseñadas para el modelo de cliente-servidor que aseguran la seguridad en las transacciones, la <strong>usabilidad</strong> de la interfaz, y la facilidad de uso.</li>
+</ul>
+<p>Desventajas:</p>
+<ul>
+<li>La <strong>congestión</strong> del tráfico ha sido siempre un problema en esta arquitectura. Cuando una gran cantidad de clientes envían peticiones simultáneas al mismo servidor, se pueden producir situaciones de sobrecarga.</li>
+<li>Cuando un servidor está caído, las peticiones de los clientes  <strong>no pueden ser satisfechas</strong> , ya que los recursos no están distribuidos.</li>
+<li>El software y el hardware de un servidor son generalmente muy determinantes. Normalmente se necesita  <strong>software y hardware específico</strong> , dependiendo del tipo de servicio web, sobre todo en el lado del servidor. Esto aumentará el coste. Como alternativa, se dispone de servicios web en la nube, con diversos tipos de costes dependientes de la arquitectura web.</li>
+</ul>
+<blockquote>
+<p><em>NOTA</em> : estas desventajas se refieren al caso en que los recursos del servidor no están replicados y/o distribuidos. Actualmente existen técnicas de escalado horizontal y vertical que pueden subsanar estos problemas.</p>
+</blockquote>
+<div class="admonition example">
+<p class="admonition-title">Ejemplo con DevTools</p>
 </div>
-
-<div class="admonition info">
-<p class="admonition-title">Perfil full-stack</p>
-<p>En las ofertas de trabajo, cuando hacen referencia a un <em>Full-stack developer</em>, están buscando un perfil que domina tanto el <em>front-end</em> como el <em>back-end</em>.</p>
+<p><strong>Peticiones desde el navegador</strong></p>
+<p>En este apartado vamos a tratar de indagar un poco más en qué sucede detrás de las cortinas cuando consultamos una URL. Vamos a observar, a través de las herramientas de desarrollador del navegador web de Chrome (igual nos puede servir Firefox o cualquier otro), los 4 pasos que se detallaban en el apartado anterior.</p>
+<p>A continuación abrimos las herramientas de desarrollador y vamos a la pestaña Network (o Red):</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Paso 1</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
 </div>
-<h2 id="22-single-page-application">2.2. Single Page Application<a class="headerlink" href="#22-single-page-application" title="Permanent link">&para;</a></h2>
-<p>A día de hoy gran parte del desarrollo web está transitando de una arquitectura web cliente-servidor clásica, donde el cliente realiza una llamada al <em>backend</em>, por una <strong>arquitectura SPA</strong> (arquitectura de una sola página) donde el cliente gana mucho mayor peso y sigue una programación reactiva que accede a servicios remotos <em>REST</em> que realizan las operaciones (comunicándose mediante <em>JSON</em>).</p>
-<div style="text-align: center;"><figure><img src="../../img/ut01/01spa.png" alt="01spa" style="zoom:70%;" /><figcaption style="font-size: 13px; color: #bd8f04;">Diferencia entre ciclo de vida tradicional de una página y el ciclo de vida de la arquitectura SPA</figcaption></figure></div>
+</div>
+<p>Abrimos <strong>elche.es</strong> y <strong>DevTools</strong> → <strong>More tools</strong> → <strong>Developer tools</strong></p>
+<div style="text-align: center;"><img src="../../img/ut01/ejemplo01.png" alt="ejemplo" style="zoom:70%; border: 2px solid #fff2c9;" /></div>
+
+<p>Pestaña<strong>Network</strong> antes de refrescar</p>
+<div style="text-align: center;"><img src="../../img/ut01/ejemplo02.png" alt="ejemplo" style="zoom:70%; border: 2px solid #fff2c9;" /></div>
+
+<p>En estos momentos aún no hay datos, porque no hemos hecho una petición al servidor con la ventana de herramientas de desarrollador activa. Por tanto, refrescamos la página (equivalente a hacer una petición al servidor que gestiona www.elche.es) y pasamos al punto siguiente.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Paso 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p>El servidor recibe la petición mediante el protocolo de aplicación HTTP, y la procesa mediante su lógica de negocio.</p>
+<p>Realmente no podemos saber exactamente qué está sucediendo en el servidor durante este paso, a no ser que tuviésemos acceso al mismo, con los privilegios y herramientas correctas, pero sí podemos averiguar muchos datos mediante herramientas como:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>-[whois](https://who.is/dns/elche.es){target=_blank rel=&quot;noopener noreferrer&quot;}: nos indica, entre otros datos, que la IP del servidor es 217.13.88.8 (registro DNS de tipo A).
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>-[builtwith](https://builtwith.com/detailed/elche.es){target=_blank rel=&quot;noopener noreferrer&quot;}: nos indica, entre otras cosas, que la plataforma web dispone de dos servidores web (Apache y nginx).
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>**OJO**: Existe otro tipo de métodos para conocer más datos sobre el servidor podría implicar prácticas ilegales, en el ámbito de la ciberseguridad.
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>Este paso se llevaría a cabo en lo que se denomina**Back-end**.
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>Vamos a ver el resultado en el siguiente paso.
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>=== &quot;Paso 3&quot;
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>El servidor produce una respuesta a la petición del cliente, que la envía a través de internet y recupera nuestro navegador.
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>Ahora, si consultamos la pestaña Network después de refrescar la URL, podremos ver que han aparecido muchos registros, el primero de los cuales tiene como nombre*www.elche.es* :
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>`&lt;div style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../../img/ut01/ejemplo03.png&quot; alt=&quot;ejemplo&quot; style=&quot;zoom:70%; border: 2px solid #fff2c9;&quot; /&gt;``&lt;/div&gt;`
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>Este registro corresponde a la primera petición que hemos realizado al servidor de www.elche.es. Si pinchamos sobre él podremos ver tanto los datos de la petición realizada, como la respuesta enviada por el servidor a través de Internet, mediante HTTP. Se puede ver que el código devuelto por el servidor es 200 (en color verde, signo de que no ha habido error), y ha respondido un servidor web nginx:
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>Detalle de**headers**: código **200 OK**, servidor **nginx**
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>`&lt;div style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../../img/ut01/ejemplo04.png&quot; alt=&quot;ejemplo&quot; style=&quot;zoom:70%; border: 2px solid #fff2c9;&quot; /&gt;``&lt;/div&gt;`
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>&gt; *NOTA* : el servidor puede enviar también su versión software, pero esto podría conllevar ataques maliciosos, dependiendo de las vulnerabilidades de dicha &gt; versión. Es por ello que es una buena práctica configurar el servidor web para que no envíe dicha versión (entre otros aspectos).
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>Más abajo, en la misma respuesta, nos indica los parámetros con que se ha realizado la petición. Entre éstos, podemos ver el tipo de petición que hemos hecho (GET), la versión de nuestro navegador web, el lenguaje en que queremos recibir la información, entre otros detalles:
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>`&lt;div style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../../img/ut01/ejemplo05.png&quot; alt=&quot;ejemplo&quot; style=&quot;zoom:70%; border: 2px solid #fff2c9;&quot; /&gt;``&lt;/div&gt;`
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>La petición ha tardado (en la prueba actual) 6.31 segundos en resolverse, y ha desembocado en una transferencia por parte del servidor de un total de 136 respuestas y 57.9 kB transferidos (entre otras métricas):
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>`&lt;div style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../../img/ut01/ejemplo06.png&quot; alt=&quot;ejemplo&quot; style=&quot;zoom:90%; border: 2px solid #fff2c9;&quot; /&gt;``&lt;/div&gt;`
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>El resto de registros que están debajo del inicial, se corresponden con todos los recursos (ficheros HTML, JavaScript, archivos multimedia, etc.) necesarios para que el navegador represente la página web. Por ejemplo, si pinchamos sobre el segundo registro &quot;polyfiller.js&quot;, y pinchamos sobre la pestaña &quot;Preview&quot; del panel de la derecha, podremos ver el código JavaScript que contiene este fichero transferido:
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>`&lt;div style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../../img/ut01/ejemplo07.png&quot; alt=&quot;ejemplo&quot; style=&quot;zoom:90%; border: 2px solid #fff2c9;&quot; /&gt;``&lt;/div&gt;`
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>&quot;Logo-ayto-elche-nuevo.png&quot; podremos ver que es el logo del ayuntamiento, transferido desde el servidor:
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>`&lt;div style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../../img/ut01/ejemplo08.png&quot; alt=&quot;ejemplo&quot; style=&quot;zoom:90%; border: 2px solid #fff2c9;&quot; /&gt;``&lt;/div&gt;`
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>Todos estos ficheros tardan un tiempo en transferirse, lo que se representa en forma de waterfall (cascada):
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>`&lt;div style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../../img/ut01/ejemplo09.png&quot; alt=&quot;ejemplo&quot; style=&quot;zoom:70%; border: 2px solid #fff2c9;&quot; /&gt;``&lt;/div&gt;`
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>La petición que más tarda en resolverse es la primera, según este gráfico.
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>¿Te recuerda esto a algún tipo de programa de descargas tipo BitTorrent o similares? Pues sí, en este caso se podría pensar en el navegador web como si de un gestor de descargas se tratase (salvando las diferencias), que se encarga de recuperar todos los ficheros que necesita para representar la página web que se le ha solicitado.
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>=== &quot;Paso 4&quot;
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>El navegador web recibe la información enviada por el servidor y la interpreta. En función de la respuesta enviada, se respresenta en el navegador la respuesta al usuario (normalmente en forma de página web).
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>El navegador web es un software diseñado para interpretar todo el contenido enviado por un servidor web, y representarlo en la pantalla para que el usuario final pueda consultar la información recibida, interaccionar con la página web, o también gestionar las operaciones del usuario que requieran nuevas peticiones al servidor web (en caso de páginas web dinámicas, o aplicaciones web).
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>Por ello, el navegador web tomará todos los ficheros descargados y conformará la página de bienvenida de www.elche.es, lo que se denomina**Front-end** :
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>Interpretación en el**front‑end** (página renderizada por el navegador)
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>`&lt;div style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../../img/ut01/ejemplo10.png&quot; alt=&quot;ejemplo&quot; style=&quot;zoom:70%; border: 2px solid #fff2c9;&quot; /&gt;``&lt;/div&gt;`
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>¿Aún continúas pensando que es correcto decir &quot;navegar por Internet&quot;?
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>El cliente hace la petición (*request* normalmente mediante el protocolo *GET* mediante el puerto *80*/*443*) y el servidor responde (*response*).
+</code></pre></div></td></tr></table></div>
 
 
 
@@ -910,7 +1035,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Peu de pàgina" >
         
           
-          <a href="../ut0101/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 1.1. Introducció">
+          <a href="../ut0101/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 1.1. Introducción">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -920,20 +1045,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                1.1. Introducció
+                1.1. Introducción
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ut0103/" class="md-footer__link md-footer__link--next" aria-label="Següent: 1.3. Arquitectura de 3 capes">
+          <a href="../ut0103/" class="md-footer__link md-footer__link--next" aria-label="Següent: 1.3. Generar páginas web">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Següent
               </span>
               <div class="md-ellipsis">
-                1.3. Arquitectura de 3 capes
+                1.3. Generar páginas web
               </div>
             </div>
             <div class="md-footer__button md-icon">

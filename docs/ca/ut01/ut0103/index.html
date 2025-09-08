@@ -20,7 +20,7 @@
     
     
       
-        <title>1.3. Arquitectura de 3 capes - Desarrollo Web en Entorno Servidor (DWES)</title>
+        <title>1.3. Generar páginas web - Desarrollo Web en Entorno Servidor (DWES)</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#13-arquitectura-de-3-capes" class="md-skip">
+        <a href="#13-generar-paginas-web" class="md-skip">
           Salta el contingut
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.3. Arquitectura de 3 capes
+              1.3. Generar páginas web
             
           </span>
         </div>
@@ -261,7 +261,7 @@
   
   
   <span class="md-ellipsis">
-    Inici
+    Inicio
     
   </span>
   
@@ -363,7 +363,7 @@
   
   
   <span class="md-ellipsis">
-    1.1. Introducció
+    1.1. Introducción
     
   </span>
   
@@ -386,7 +386,7 @@
   
   
   <span class="md-ellipsis">
-    1.2. Client/Servidor
+    1.2. Arquitecturas web
     
   </span>
   
@@ -418,7 +418,7 @@
   
   
   <span class="md-ellipsis">
-    1.3. Arquitectura de 3 capes
+    1.3. Generar páginas web
     
   </span>
   
@@ -431,7 +431,7 @@
   
   
   <span class="md-ellipsis">
-    1.3. Arquitectura de 3 capes
+    1.3. Generar páginas web
     
   </span>
   
@@ -454,18 +454,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#31-tier" class="md-nav__link">
+  <a href="#paginas-estaticas" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1. Tier
+      Páginas estáticas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#32-layer" class="md-nav__link">
+  <a href="#paginas-dinamicas" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2. Layer
+      Páginas dinámicas
     </span>
   </a>
   
@@ -492,7 +492,7 @@
   
   
   <span class="md-ellipsis">
-    1.4. MVC
+    1.4. Modelos de programación
     
   </span>
   
@@ -515,7 +515,7 @@
   
   
   <span class="md-ellipsis">
-    1.5. Decisions de disseny
+    1.5. Decisiones de diseño
     
   </span>
   
@@ -538,7 +538,7 @@
   
   
   <span class="md-ellipsis">
-    1.6. Ferramentes
+    1.6. Ejecución del código
     
   </span>
   
@@ -561,7 +561,7 @@
   
   
   <span class="md-ellipsis">
-    1.7. Posada en marxa
+    1.7. Herramientas
     
   </span>
   
@@ -653,7 +653,7 @@
   
   
   <span class="md-ellipsis">
-    Descàrregues
+    Descargas
     
   </span>
   
@@ -676,7 +676,7 @@
   
   
   <span class="md-ellipsis">
-    Exercicis
+    Ejercicios
     
   </span>
   
@@ -745,7 +745,7 @@
   
   
   <span class="md-ellipsis">
-    2.1. Introducció
+    UT 2. Lenguaje PHP
     
   </span>
   
@@ -798,18 +798,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#31-tier" class="md-nav__link">
+  <a href="#paginas-estaticas" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1. Tier
+      Páginas estáticas
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#32-layer" class="md-nav__link">
+  <a href="#paginas-dinamicas" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2. Layer
+      Páginas dinámicas
     </span>
   </a>
   
@@ -831,31 +831,18 @@
 
 
 
-<h1 id="13-arquitectura-de-3-capes">1.3. Arquitectura de 3 capes<a class="headerlink" href="#13-arquitectura-de-3-capes" title="Permanent link">&para;</a></h1>
-<p>Hay que distinguir entre capas físicas (<em>tier</em>) y capas lógicas (<em>layer</em>).</p>
-<h2 id="31-tier">3.1. Tier<a class="headerlink" href="#31-tier" title="Permanent link">&para;</a></h2>
-<p>Capa física (<em>tiers</em>) de una arquitectura. Supone un nuevo elemento hardware separado físicamente. Las capas físicas más alejadas del cliente están más protegidas, tanto por <em>firewalls</em> como por <em>VPN</em>.</p>
-<p>Ejemplo de arquitectura en tres capas físicas (<em>3 tier</em>):</p>
-<ul>
-<li>Servidor Web</li>
-<li>Servidor de Aplicaciones</li>
-<li>Servidor de base de datos</li>
-</ul>
-<div style="text-align: center;"><figure><img src="../../img/ut01/tier3.png" alt="tier3" style="zoom:90%;" /><figcaption style="font-size: 13px; color: #bd8f04;">Capas físicas (tiers)</figcaption></figure></div>
-
-<div class="admonition note">
-<p class="admonition-title">Clúster en <em>tiers</em></p>
-<p>No confundir las capas con la cantidad de servidores. Actualmente se trabaja con arquitecturas con múltiples servidores en una misma capa física mediante un clúster, para ofrecer tolerancia a errores y escalabilidad horizontal.</p>
-</div>
-<h2 id="32-layer">3.2. Layer<a class="headerlink" href="#32-layer" title="Permanent link">&para;</a></h2>
-<p><img src="../../img/ut01/layer3.png" alt="layer3" style="zoom:70%;   float: right;" />En cambio, las capas lógicas (<em>layers</em>) organizan el código respecto a su funcionalidad:</p>
-<ul>
-<li>Presentación</li>
-<li>Negocio / Aplicación / Proceso</li>
-<li>Datos / Persistencia</li>
-</ul>
-<p>Como se observa, cada una de las capas se puede implementar con diferentes lenguajes de programación y/o herramientas.</p>
-<div style="text-align: center;"><figure><img src="../../img/ut01/tierlayer.png" alt="tierlayer" style="zoom:90%; border: 2px solid #fff2c9;" /><figcaption style="font-size: 13px; color: #bd8f04;">Capas lógicas (layers)</figcaption></figure></div>
+<h1 id="13-generar-paginas-web">1.3. Generar páginas web<a class="headerlink" href="#13-generar-paginas-web" title="Permanent link">&para;</a></h1>
+<h2 id="paginas-estaticas">Páginas estáticas<a class="headerlink" href="#paginas-estaticas" title="Permanent link">&para;</a></h2>
+<p>Una <strong>página web estática</strong> es un documento o conjunto de documentos (generalmente: HTML, CSS, contenido multimedia, código JavaScript) en el que no existe una <strong>actualización dinámica</strong> de su contenido al interactuar con el sistema (servidor, ya sea remoto o local) que provee el documento/s. Es decir, la misma petición a la misma URL (Uniform Resource Locator), aunque la repitamos en múltiples ocasiones a lo largo del tiempo, <strong>siempre</strong> va a devolver la misma información (a no ser que la modifique un desarrollador en el lado servidor, manualmente). Puede existir <strong>interacción</strong> con la página web estática (mediante código JavaScript), en forma de mensajes, eventos, actualizaciones de su apariencia...</p>
+<p>En este caso, un navegador web es capaz de representar la página web en una máquina local, sin necesidad de disponer de un servidor web adicional.</p>
+<h2 id="paginas-dinamicas">Páginas dinámicas<a class="headerlink" href="#paginas-dinamicas" title="Permanent link">&para;</a></h2>
+<p>Una página web dinámica puede contener una parte estática, y además el contenido que se muestre dependerá del momento en el cual se realice la petición. Esto es debido a que el servidor conformará dicho contenido dependiendo de los datos de que se disponga en ese momento en un sistema de bases de datos. La comunicación entre el navegador web y el servidor será más compleja, ya que, además de consultar contenidos, se podrán realizar potencialmente operaciones de creación, modificación, y eliminación de datos.</p>
+<p>Una aplicación Web es una herramienta software, formada por páginas web dinámicas (aunque también puede contener documentos web estáticos), basada en tecnologías web que la dotan de un carácter dinámico (interactúan con un sistema remoto) haciendo uso de servicios web (basados en la arquitectura TCP/IP), y que proporcionan al usuario un servicio o conjunto de servicios. Sería lo más parecido a una aplicación nativa o de escritorio, pero ejecutada en un navegador web. El hecho de ejecutarse en un navegador web las independiza del sistema operativo en el que se ejecutan, pero también presentan determinadas limitaciones debido a esta independencia.</p>
+<p>En este caso, un navegador web NO es capaz de representar la página web en una máquina local sin un servidor web adicional y el resto de componentes que acompañan a esta arquitectura, como sí era el caso de una página web estática.</p>
+<p>Para generar una página dinámica, donde el contenido cambia, a día de hoy tenemos dos alternativas:</p>
+<p>a) Utilizar un lenguaje de servidor que genere el contenido, ya sea mediante el acceso a una BD o servicios externos.</p>
+<p>b) Utilizar servicios <em>REST</em> de terceros invocados desde <em>JS</em>.</p>
+<div style="text-align: center;"><figure><img src="../../img/ut01/paginadinamica.png" alt="paginadinamica" style="zoom:50%;" /><figcaption style="font-size: 13px; color: #bd8f04;">Diferencia gráfica entre página estática y página dinámica</figcaption></figure></div>
 
 
 
@@ -894,7 +881,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Peu de pàgina" >
         
           
-          <a href="../ut0102/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 1.2. Client/Servidor">
+          <a href="../ut0102/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 1.2. Arquitecturas web">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -904,20 +891,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                1.2. Client/Servidor
+                1.2. Arquitecturas web
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ut0104/" class="md-footer__link md-footer__link--next" aria-label="Següent: 1.4. MVC">
+          <a href="../ut0104/" class="md-footer__link md-footer__link--next" aria-label="Següent: 1.4. Modelos de programación">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Següent
               </span>
               <div class="md-ellipsis">
-                1.4. MVC
+                1.4. Modelos de programación
               </div>
             </div>
             <div class="md-footer__button md-icon">
