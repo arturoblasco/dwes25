@@ -100,29 +100,29 @@ markdown_extensions:
 # Altres afegits
 plugins:
   - search      # plugin del quadre cerca
-  - i18n:
-      docs_structure: folder
-      reconfigure: true   # <<--- IMPRESCINDIBLE per canviar site_name per idioma
-      languages:
-        - locale: es
-          name: Castellano
-          default: true
-          build: true
-          config:
-            site_name: "Desarrollo Web en Entorno Servidor (DWES)"
-            theme:
-              language: es
-        - locale: ca
-          name: Valencià
-          build: true
-          config:
-            site_name: "Desenvolupament Web en Entorn Servidor (DWES)"
-            theme:
-              language: ca
-      nav_translations:          
-        ca:
-          "UT 1 Arquitectura Web": "UT 1 Arquitectura Web"
-          "UT 2 Lenguaje PHP": "UT 2 Llenguatge PHP"
+  # - i18n:
+  #     docs_structure: folder
+  #     reconfigure: true   # <<--- IMPRESCINDIBLE per canviar site_name per idioma
+  #     languages:
+  #       - locale: es
+  #         name: Castellano
+  #         default: true
+  #         build: true
+  #         config:
+  #           site_name: "Desarrollo Web en Entorno Servidor (DWES)"
+  #           theme:
+  #             language: es
+  #       - locale: ca
+  #         name: Valencià
+  #         build: true
+  #         config:
+  #           site_name: "Desenvolupament Web en Entorn Servidor (DWES)"
+  #           theme:
+  #             language: ca
+  #     nav_translations:          
+  #       ca:
+  #         "UT 1 Arquitectura Web": "UT 1 Arquitectura Web"
+  #         "UT 2 Lenguaje PHP": "UT 2 Llenguatge PHP"
           
 extra_css:
   - stylesheets/extra.css

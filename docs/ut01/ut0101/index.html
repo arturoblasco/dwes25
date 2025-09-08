@@ -146,32 +146,6 @@
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
-      <div class="md-header__option">
-  <div class="md-select">
-    
-    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
-    </button>
-    <div class="md-select__inner">
-      <ul class="md-select__list">
-        
-          <li class="md-select__item">
-            <a href="./" hreflang="es" class="md-select__link">
-              Castellano
-            </a>
-          </li>
-        
-          <li class="md-select__item">
-            <a href="../../ca/ut01/ut0101/" hreflang="ca" class="md-select__link">
-              Valencià
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</div>
-    
     
       
       
@@ -832,10 +806,10 @@
 
 
 <h1 id="11-introduccion">1.1. Introducción<a class="headerlink" href="#11-introduccion" title="Permanent link">&para;</a></h1>
-<div style="text-align: center;"><img src="../../img/ut01/frontend_backend.png" alt="front-end vs back-end" style="max-width: 50%;" /></div>
+<div style="text-align: center;"><img src="../../img/ut01/frontend_backend.png" alt="front-end vs back-end" style="max-width: 40%;" /></div>
 
 <h2 id="duracion-estimada-de-la-unidad">Duración estimada de la unidad<a class="headerlink" href="#duracion-estimada-de-la-unidad" title="Permanent link">&para;</a></h2>
-<p>4 sesiones.</p>
+<p>8 sesiones.</p>
 <h2 id="evaluacion">Evaluación<a class="headerlink" href="#evaluacion" title="Permanent link">&para;</a></h2>
 <div class="center-table">
 <table>
@@ -866,27 +840,22 @@
 
 <details class="question">
 <summary>cuestionario de arranque para repasar</summary>
-</details>
 <ul>
-<li>
-<p>[ ] ¿Qué es Internet?</p>
-</li>
-<li>
-<p>[ ] df</p>
-</li>
-<li>[ ] ¿Qué es la pila de protocolos TCP/IP?</li>
-<li>[ ] ¿Qué protocolo de nivel de aplicación se utiliza en Internet? ¿cuál es la versión segura de este protocolo?</li>
-<li>[ ] ¿Qué es una dirección IP? ¿qué es un puerto IP?</li>
-<li>[ ] ¿Cuántas versiones del protocolo IP conoces?</li>
-<li>[ ] ¿Qué es una URL? ¿mediante qué protocolo/servicio se relaciona un dominio con una dirección IP?</li>
-<li>[ ] ¿Qué es una página web? ¿qué es una aplicación web? ¿qué es un sitio web? ¿qué es una arquitectura web?</li>
-<li>[ ] ¿Cuál es la diferencia entre una página web estática y una dinámica? Las páginas web que has desarrollado durante el primer curso, ¿eran estáticas o dinámicas?</li>
-<li>[ ] ¿Cuál es la diferencia entre la web 1.0 y la web 2.0?</li>
-<li>[ ] Un navegador web, ¿qué es exactamente? ¿cuál es su función? ¿cuántos conoces? ¿existen diferencias entre ellos?</li>
-<li>[ ] ¿Cuál crees que es la principal diferencia entre una aplicación web y una aplicación nativa? ¿has escuchado hablar de las aplicaciones híbridas? ¿conoces ejemplos de aplicaciones que tengan una versión web y su correspondiente nativa (app móvil)?</li>
-<li>[ ] ¿Conoces los términos "back-end" y "front-end"? ¿cuál corresponde al desarrollo servidor y cuál al desarrollo en cliente? ¿qué ideas te inspira la imagen de la portada de este documento?</li>
-<li>[ ] ¿Conoces los términos "back-office" y "front-office"? ¿cuál es la diferencia?</li>
+<li>¿Qué es Internet?</li>
+<li>¿Qué es la pila de protocolos TCP/IP?</li>
+<li>¿Qué protocolo de nivel de aplicación se utiliza en Internet? ¿cuál es la versión segura de este protocolo?</li>
+<li>¿Qué es una dirección IP? ¿qué es un puerto IP?</li>
+<li>¿Cuántas versiones del protocolo IP conoces?</li>
+<li>¿Qué es una URL? ¿mediante qué protocolo/servicio se relaciona un dominio con una dirección IP?</li>
+<li>¿Qué es una página web? ¿qué es una aplicación web? ¿qué es un sitio web? ¿qué es una arquitectura web?</li>
+<li>¿Cuál es la diferencia entre una página web estática y una dinámica? Las páginas web que has desarrollado durante el primer curso, ¿eran estáticas o dinámicas?</li>
+<li>¿Cuál es la diferencia entre la web 1.0 y la web 2.0?</li>
+<li>Un navegador web, ¿qué es exactamente? ¿cuál es su función? ¿cuántos conoces? ¿existen diferencias entre ellos?</li>
+<li>¿Cuál crees que es la principal diferencia entre una aplicación web y una aplicación nativa? ¿has escuchado hablar de las aplicaciones híbridas? ¿conoces ejemplos de aplicaciones que tengan una versión web y su correspondiente nativa (app móvil)?</li>
+<li>¿Conoces los términos "<em>back-end</em>" y "<em>front-end</em>"? ¿cuál corresponde al desarrollo servidor y cuál al desarrollo en cliente? ¿qué ideas te inspira la imagen de la portada de este documento?</li>
+<li>¿Conoces los términos "<em>back-office</em>" y "<em>front-office</em>"? ¿cuál es la diferencia?</li>
 </ul>
+</details>
 
 
 
