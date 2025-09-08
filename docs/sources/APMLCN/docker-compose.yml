@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Contenedor para Laravel (Apache + PHP + Composer + Node.js)
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel_app
+    volumes:
+      - ./laravel:/var/www/html
+    ports:
+      - "8090:80"
+    depends_on:
+      - db
+
+  # Contenedor para MySQL
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: laradwes
+      MYSQL_DATABASE: laradwes
+      MYSQL_USER: laradwes
+      MYSQL_PASSWORD: laradwes
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3309:3306"
+
+  # Contenedor para phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: laradwes
+    ports:
+      - "8091:80"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
+    driver: local

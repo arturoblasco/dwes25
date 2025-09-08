@@ -1,0 +1,65 @@
+<?php
+class Cliente {
+    public $nombre;
+    private $numero;
+    private $soportesAlquilados = [];  // Array que contendrá los soportes alquilados
+    private $numSoportesAlquilados = 0; // Contador de alquileres
+    private $maxAlquilerConcurrente;
+
+    // Constructor que inicializa nombre, numero, y maxAlquilerConcurrente (con valor por defecto 3)
+    public function __construct($nombre, $numero, $maxAlquilerConcurrente = 3) {
+        $this->nombre = $nombre;
+        $this->numero = $numero;
+        $this->maxAlquilerConcurrente = $maxAlquilerConcurrente;
+    }
+
+    // Getter y Setter para numero
+    public function getNumero() {
+        return $this->numero;
+    }
+
+    public function setNumero($numero) {
+        $this->numero = $numero;
+    }
+
+    // Getter para numSoportesAlquilados (total de alquileres realizados)
+    public function getNumSoportesAlquilados() {
+        return $this->numSoportesAlquilados;
+    }
+
+    // Método para comprobar si el cliente tiene alquilado un soporte
+    public function tieneAlquilado(Soporte $s): bool {
+        foreach ($this->soportesAlquilados as $item) {
+            if ($item === $s) {
+                return true;  // El soporte ya está alquilado
+            }
+        }
+        return false;
+    }
+
+    // Método para alquilar un soporte, con verificación de cupo y estado de alquiler
+    public function alquilar(Soporte $s): bool {
+        if ($this->tieneAlquilado($s)) {
+            echo "El soporte '{$s->titulo}' ya está alquilado.<br>";
+            return false;
+        }
+
+        if ($this->numSoportesAlquilados == $this->maxAlquilerConcurrente) {
+            echo "No puedes alquilar más de {$this->maxAlquilerConcurrente} soportes a la vez.<br>";
+            return false;
+        }
+
+        // Alquilar el soporte
+        $this->soportesAlquilados[] = $s;
+        $this->numSoportesAlquilados++;
+        echo "Soporte '{$s->titulo}' alquilado con éxito.<br>";
+        return true;
+    }
+
+    // Método para mostrar un resumen del cliente
+    public function muestraResumen() {
+        return "Nombre: " . $this->nombre . "<br>" .
+               "Número de alquileres actuales: " . count($this->soportesAlquilados) . "<br>";
+    }
+}
+?>

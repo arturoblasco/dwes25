@@ -1,0 +1,36 @@
+# dwes'23 - abc
+
+version: '2'
+
+services:
+  mariadb:
+    image: docker.io/bitnami/mariadb:11.1
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD=dwes
+      - MARIADB_DATABASE=dwes
+      - MARIADB_USER=dwes
+      - MARIADB_PASSWORD=dwes
+  myapp:
+    image: docker.io/bitnami/laravel:10
+    restart: always
+    ports:
+      - '8000:8000'
+    environment:
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USERNAME=dwes
+      - DB_DATABASE=dwes
+    volumes:
+      - './projecte1:/app'
+    depends_on:
+      - mariadb
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    depends_on:
+      - mariadb
+    ports:
+      - 8001:80
+    environment:
+      - PMA_ARBITRARY=1

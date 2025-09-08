@@ -1,0 +1,22 @@
+/* Botón general */
+.boton {
+    padding: 10px 10px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Variación del botón para acciones principales */
+.boton-primario {
+    background-color: #007BFF; /* Azul */
+}
+
+/* Hover para mejorar la experiencia del usuario */
+.boton:hover {
+    opacity: 0.9;
+    background-color: #de3690; /* Azul */
+
+}

@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  apache:
+    image: php:8.2-apache   # Usamos la imagen oficial de PHP con Apache
+    container_name: apache
+    volumes:
+      - ./php/php.ini:/usr/local/etc/php/php.ini              # Montar configuración personalizada de PHP
+      - ./src:/var/www/html                                   # Montar el código fuente de la aplicación
+    ports:
+      - "8888:80"    # Mapear el puerto 80 del contenedor al 8080 de la máquina host
+    depends_on:
+      - mysql
+    networks:
+      - mynetwork
+
+  mysql:
+    image: mysql:8.0    # Usamos la imagen oficial de MySQL
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: dwes
+      MYSQL_DATABASE: dwes
+      MYSQL_USER: dwes
+      MYSQL_PASSWORD: dwes
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "8887:3306"
+    networks:
+      - mynetwork
+
+  phpmyadmin:
+    image: phpmyadmin:latest    # Usamos la imagen oficial de phpMyAdmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "8889:80"    # Mapear el puerto 80 del contenedor al 8081 de la máquina host
+    depends_on:
+      - mysql
+    networks:
+      - mynetwork
+
+volumes:
+  mysql-data:
+
+networks:
+  mynetwork:
