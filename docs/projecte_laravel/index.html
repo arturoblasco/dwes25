@@ -1,0 +1,2456 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Projecte laravel - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#proyecto-gestion-de-compras-y-productos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Projecte laravel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="es" class="md-select__link">
+              Castellano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../ca/projecte_laravel/" hreflang="ca" class="md-select__link">
+              Valencià
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PROVA1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            PROVA1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut00/portfolio1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    portfolio1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 1 Arquitectura Web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            UT 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut0101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut0102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. Arquitecturas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut0103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3. Generar páginas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut0104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4. Modelos de programación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut0105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5. Decisiones de diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut0106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6. Ejecución del código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut0107/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7. Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut0108/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8. Tecnologías
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut0109/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.9. Navegadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut0110/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.10. Puesta en marcha
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut01de/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descargas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ut01ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 2 Lenguaje PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            UT 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/ut0201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UT 2. Lenguaje PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/ut0202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ut0202
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#proyecto-gestion-de-compras-y-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proyecto Gestión de Compras y Productos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proyecto Gestión de Compras y Productos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrega
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aspectos-tecnicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aspectos Técnicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1o-crear-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      1º. Crear proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base de datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Base de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Modelo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entidades-y-atributos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entidades y Atributos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relaciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-entidad-relacion-descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama Entidad-Relación (Descripción)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2o-crear-modelos-completos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2º. Crear modelos completos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2º. Crear modelos completos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      modelo Role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      modelo User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      modelo Product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-shopping" class="md-nav__link">
+    <span class="md-ellipsis">
+      modelo Shopping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      modelo Detail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3o-migraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3º. Migraciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3º. Migraciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-migraciones-existentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminar migraciones existentes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-la-migracion-de-la-tabla-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificar la migración de la tabla users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migracion-tabla-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migración tabla roles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migracion-tabla-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migración tabla products
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migracion-tabla-shoppings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migración tabla shoppings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migracion-tabla-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migración tabla details
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4o-crear-factories" class="md-nav__link">
+    <span class="md-ellipsis">
+      4º. Crear factories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4º. Crear factories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurar-las-factories-con-faker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar las Factories con Faker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rolefactory" class="md-nav__link">
+    <span class="md-ellipsis">
+      RoleFactory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userfactory" class="md-nav__link">
+    <span class="md-ellipsis">
+      UserFactory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productfactory" class="md-nav__link">
+    <span class="md-ellipsis">
+      ProductFactory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoppingfactory" class="md-nav__link">
+    <span class="md-ellipsis">
+      ShoppingFactory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5o-crear-seeders" class="md-nav__link">
+    <span class="md-ellipsis">
+      5º. Crear seeders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5º. Crear seeders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roleseeder" class="md-nav__link">
+    <span class="md-ellipsis">
+      RoleSeeder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userseeder" class="md-nav__link">
+    <span class="md-ellipsis">
+      UserSeeder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productseeder" class="md-nav__link">
+    <span class="md-ellipsis">
+      ProductSeeder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailseeder" class="md-nav__link">
+    <span class="md-ellipsis">
+      DetailSeeder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6o-ejecutar-migraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      6º. Ejecutar migraciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7o-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      7º. Controladores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7º. Controladores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usercontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      UserController
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      ProductController
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      DetailController
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoppingcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      ShoppingController
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8o-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      8º. Rutas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Projecte laravel</h1>
+
+<h2 id="proyecto-gestion-de-compras-y-productos"><mark>Proyecto Gestión de Compras y Productos</mark><a class="headerlink" href="#proyecto-gestion-de-compras-y-productos" title="Permanent link">&para;</a></h2>
+<p>Este proyecto consiste en desarrollar una aplicación web con <em>Laravel</em> que permita gestionar <strong>roles</strong>, <strong>usuarios</strong>, <strong>productos</strong> y <strong>compras</strong>. La aplicación permitirá que los usuarios se registren, inicien sesión, visualicen productos disponibles, realicen compras y consulten su historial de pedidos. Se implementarán relaciones entre las entidades para gestionar la información de manera eficiente.</p>
+<h3 id="objetivos">Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Implementar un sistema de autenticación de usuarios con Laravel.</li>
+<li>Crear y administrar productos con información relevante como nombre, descripción, precio y stock.</li>
+<li>Permitir que los usuarios realicen compras, agregando productos al carrito y confirmando la compra.</li>
+<li>Implementar una relación muchos a muchos entre compras y productos mediante una tabla intermedia.</li>
+<li>Gestionar los datos de las compras realizadas por los usuarios.</li>
+</ol>
+<h3 id="entrega">Entrega<a class="headerlink" href="#entrega" title="Permanent link">&para;</a></h3>
+<p>El proyecto debe estar alojado en un repositorio de GitHub o GitLab, con instrucciones claras para su instalación y ejecución en un archivo <code>README.md</code>.</p>
+<h3 id="aspectos-tecnicos">Aspectos Técnicos<a class="headerlink" href="#aspectos-tecnicos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Framework:</strong> Laravel (versión 9 o superior).</li>
+<li><strong>Base de datos:</strong> MySQL o PostgreSQL.</li>
+<li><strong>Autenticación:</strong> Laravel Breeze o Laravel Jetstream.</li>
+<li><strong>Interfaz:</strong> Blade Templates o Vue.js para la parte frontend.</li>
+<li><strong>Control de versiones:</strong> GitHub/GitLab.</li>
+</ul>
+<p>Para el <em>framework</em>, tendremos instalado <em>Laravel</em> (cuando se crea esta actividad es la versión 11) a partir de <em>Composer</em>.</p>
+<p>Para la gestión de <em>base de datos</em>, tendremos instalado <em>XAMPP</em>, docker o (como será en el que se sigue toda la explicación de la actividad) <strong>Laragon</strong>.</p>
+<h3 id="1o-crear-proyecto">1º. Crear proyecto<a class="headerlink" href="#1o-crear-proyecto" title="Permanent link">&para;</a></h3>
+<p>Para la realización del proyecto seguiremos estos pasos:</p>
+<table>
+<thead>
+<tr>
+<th>paso</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1º</td>
+<td>Crear el proyecto laravel <strong><code>gestories</code></strong></td>
+</tr>
+<tr>
+<td>2º</td>
+<td>Crear modelos</td>
+</tr>
+<tr>
+<td>3º</td>
+<td>Crear migragaciones</td>
+</tr>
+<tr>
+<td>4º</td>
+<td>Crear factories</td>
+</tr>
+<tr>
+<td>5º</td>
+<td>Crear seeders</td>
+</tr>
+<tr>
+<td>6º</td>
+<td>Ejecutar <em>migrate</em> (<strong><code>php artisan migrate:fresh --seed</code></strong>)</td>
+</tr>
+<tr>
+<td>7º</td>
+<td>Crear controladores</td>
+</tr>
+<tr>
+<td>8º</td>
+<td>Crear rutas</td>
+</tr>
+</tbody>
+</table>
+<p>Lo primero será crear nuestro proyecto laravel de nombre <strong>gestories</strong>.</p>
+<details class="note">
+<summary>En clase se instalará desde Laragon</summary>
+<p>Desde de su Terminal</p>
+<p><img alt="Laragon menú" height="450" src="../img/projectelaravel/laragon01.png" width="450" /></p>
+<p><img alt="Laragon menú" height="450" src="../img/projectelaravel/laragon02.png" width="450" /></p>
+</details>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>laravel<span class="w"> </span>new<span class="w"> </span>gestories
+</code></pre></div></td></tr></table></div>
+<p>1º. Instalaremos <strong>Laravel Breeze</strong></p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/001.png" width="450" /></p>
+<p>2º. Instalación del paquete: <strong>Blade with Apline</strong></p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/002.png" width="450" /></p>
+<p>3º. Soporte a modo oscuro: <strong>No</strong></p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/003.png" width="450" /></p>
+<p>4º. Test unitario: <strong>PHPUnit</strong></p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/004.png" width="450" /></p>
+<p>5º. Inicializar un repositorio git en el proyecto: <strong>Sí</strong></p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/005.png" width="450" /></p>
+<p>Instalación ...</p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/006.png" width="450" /></p>
+<p>6º. Base de datos del proyecto: <strong>MySQL</strong></p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/007.png" width="450" /></p>
+<p>7º. Ejecutar las migraciones de la base de datos: <strong>Sí</strong></p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/008.png" width="450" /></p>
+<p>8º. Crear conexión mysql a la base de datos (<em>gestories</em>): <strong>Sí</strong></p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/009.png" width="450" /></p>
+<p>Instalación ...</p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/010.png" width="450" /></p>
+<p>9º. <strong>Instalación completada</strong>. Nos indica que, para lanzar el proyecto en desarrollo, debemos acceder a la carpeta del proyecto (cd gestories) y después lanzar <strong><code>php artisan serve</code></strong>. </p>
+<p><img alt="Laravel" height="450" src="../img/projectelaravel/011.png" width="450" /></p>
+<hr>
+<h3 id="base-de-datos">Base de datos<a class="headerlink" href="#base-de-datos" title="Permanent link">&para;</a></h3>
+<h4 id="explicacion-del-modelo">Explicación del Modelo<a class="headerlink" href="#explicacion-del-modelo" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Usuarios</strong>: Almacena la información de los usuarios que realizan compras.</li>
+<li><strong>Productos</strong>: Contiene los productos disponibles para la venta.</li>
+<li><strong>Compras</strong>: Registra las transacciones de compra realizadas por los usuarios.</li>
+<li><strong>Detalle_Compra</strong>: Permite registrar los productos específicos que se incluyen en cada compra, junto con la cantidad y el precio unitario.</li>
+</ul>
+<h4 id="entidades-y-atributos">Entidades y Atributos<a class="headerlink" href="#entidades-y-atributos" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Roles</strong> (<em>roles</em>)</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>id</code> (PK): Identificador único del rol.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>description</code>: Descripción del rol.</p>
+<ul>
+<li><strong>Usuarios</strong> (<em>users</em>)</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>id</code> (PK): Identificador único del usuario</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>name</code>: Nombre del usuario.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>email</code>: Correo electrónico del usuario.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>role_id</code> (FK): Identificador del rol del usuario.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>password</code>: Contraseña del usuario.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>address</code>: Dirección del usuario.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>telephone</code>: Número de teléfono del usuario.</p>
+<ul>
+<li><strong>Productos</strong> (<em>products</em>)</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>id</code> (PK): Identificador único del producto.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>name</code>: Nombre del producto.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>description</code>: Descripción del producto.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>price</code>: Precio del producto.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>stock</code>: Cantidad disponible en inventario.</p>
+<ul>
+<li><strong>Compras</strong> (<em>shoppings</em>)</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>id</code> (PK): Identificador único de la compra.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>user_id</code> (FK): Identificador del usuario que realiza la compra.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>date</code>: Fecha en que se realizó la compra.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>total</code>: Monto total de la compra.</p>
+<ul>
+<li><strong>Detalle_Compra</strong> (Tabla intermedia para la relación muchos a muchos entre Compras y Productos <em>details</em>)</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>id</code> (PK): Identificador único del detalle.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>shopping_id</code> (FK): Identificador de la compra.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>product_id</code> (FK): Identificador del producto comprado.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>amount</code>: Cantidad del producto comprado.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <code>unitprice</code>: Precio unitario del producto al momento de la compra.</p>
+<h3 id="relaciones">Relaciones<a class="headerlink" href="#relaciones" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>users → shoppings</strong></li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Un usuario puede realizar muchas compras.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Una compra pertenece a un único usuario.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Relación: <strong>1 a N</strong> (uno a muchos).</p>
+<ul>
+<li><strong>shoppings → products</strong></li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Una compra puede incluir muchos productos.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Un producto puede estar en muchas compras.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Relación: <strong>N a M</strong> (muchos a muchos), resuelta con la tabla intermedia <strong>Detalle_Compra</strong>.</p>
+<h4 id="diagrama-entidad-relacion-descripcion"><strong>Diagrama Entidad-Relación (Descripción)</strong><a class="headerlink" href="#diagrama-entidad-relacion-descripcion" title="Permanent link">&para;</a></h4>
+<p><img src="../img/projectelaravel/diagrama.png" alt="diagrama" style="zoom:70%;" /></p>
+<hr>
+
+<h2 id="2o-crear-modelos-completos">2º. Crear modelos completos<a class="headerlink" href="#2o-crear-modelos-completos" title="Permanent link">&para;</a></h2>
+<p>Crea los modelos de las tablas: <code>roles</code>, <code>products</code>,  <code>shoppings</code> y <code>details</code> con todos los parámetros (<code>--all</code>)</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:model<span class="w"> </span>Role<span class="w"> </span>--all
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:model<span class="w"> </span>Product<span class="w"> </span>--all
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:model<span class="w"> </span>Shopping<span class="w"> </span>--all
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:model<span class="w"> </span>Detail<span class="w"> </span>--all
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition note">
+<p class="admonition-title">Trabajar en carpeta <code>app/Models</code></p>
+<ul>
+<li>Trabajar en carpeta <code>app/Models</code></li>
+<li>Los modelos, recuerda, como las clases, en <em>upperCamelCase</em> y singular.</li>
+</ul>
+</div>
+<h3 id="modelo-role">modelo Role<a class="headerlink" href="#modelo-role" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="x">class Role extends Model</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="x">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="x">  use HasFactory;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="x">  protected $fillable = [&#39;description&#39;,];</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="modelo-user">modelo User<a class="headerlink" href="#modelo-user" title="Permanent link">&para;</a></h3>
+<p>Añadir en la variable <strong><code>$fillable</code></strong> los campos <code>address</code> y <code>telephone</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">//...</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="x">protected $fillable = [</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="x">    &#39;name&#39;,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="x">    &#39;email&#39;,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="x">    &#39;password&#39;,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="x">    &#39;address&#39;,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="x">    &#39;telephone&#39;,</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="x">];</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="x">public function shoppings()</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="x">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="x">    return $this-&gt;hasMany(Shopping::class);</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="modelo-product">modelo Product<a class="headerlink" href="#modelo-product" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="x">class Product extends Model</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="x">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="x">  use HasFactory;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="x">  protected $fillable = [&#39;name&#39;, &#39;price&#39;, &#39;description&#39;, &#39;stock&#39;,];</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="modelo-shopping">modelo Shopping<a class="headerlink" href="#modelo-shopping" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="x">class Shopping extends Model</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="x">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="x">  use HasFactory;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="x">  protected $fillable = [&#39;user_id&#39;, &#39;total&#39;, &#39;date&#39;,];</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="x">  public function user()</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="x">    {</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="x">        return $this-&gt;belongsTo(User::class);</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="x">    }</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="x">  public function details()</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="x">    {</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="x">        return $this-&gt;hasMany(Detail::class);</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="x">    }</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="modelo-detail">modelo Detail<a class="headerlink" href="#modelo-detail" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="x">class Detail extends Model</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="x">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="x">    use HasFactory;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="x">    protected $fillable = [&#39;shopping_id&#39;, &#39;product_id&#39;, &#39;amount&#39;, &#39;unitprice&#39;];</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="x">    public $timestamps = false; // Deshabilitar timestamps</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="x">    public function shopping()</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="x">    {</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="x">        return $this-&gt;belongsTo(Shopping::class);</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="x">    }</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="x">    public function product()</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="x">    {</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="x">        return $this-&gt;belongsTo(Product::class);</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="x">    }</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<hr>
+
+<h2 id="3o-migraciones">3º. Migraciones<a class="headerlink" href="#3o-migraciones" title="Permanent link">&para;</a></h2>
+<h3 id="eliminar-migraciones-existentes">Eliminar migraciones existentes<a class="headerlink" href="#eliminar-migraciones-existentes" title="Permanent link">&para;</a></h3>
+<p>Desde nuestro proyecto (en <em>Visual Studio Code</em>), acceder a <strong><code>database/migrations</code></strong> y eliminar estos dos ficheros de migraciones que no vamos a usar:</p>
+<ul>
+<li>
+<p><del><strong><code>0001_01_01_000002_create_jobs_table.php</code></strong></del></p>
+</li>
+<li>
+<p><del><strong><code>0001_01_01_000001_create_cache_table.php</code></strong></del></p>
+</li>
+</ul>
+<h3 id="modificar-la-migracion-de-la-tabla-users">Modificar la migración de la tabla <code>users</code><a class="headerlink" href="#modificar-la-migracion-de-la-tabla-users" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Renombrar el fichero de <del><code>0001_01_01_000000_create_users_table.php</code></del>   a  <strong><code>0001_01_01_000001_create_users_table.php</code></strong>.</p>
+</li>
+<li>
+<p>Modificar el esquema de creación de la tabla <code>users</code> para introducir nuevos campos:</p>
+</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span>
+<span class="normal"><a href="#__codelineno-10-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w">    </span>Schema::create<span class="o">(</span><span class="s1">&#39;users&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="o">(</span>Blueprint<span class="w"> </span><span class="nv">$table</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">        </span><span class="nv">$table</span>-&gt;id<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">        </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;name&#39;</span><span class="o">)</span><span class="p">;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">        </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;email&#39;</span><span class="o">)</span>-&gt;unique<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">        </span><span class="nv">$table</span>-&gt;timestamp<span class="o">(</span><span class="s1">&#39;email_verified_at&#39;</span><span class="o">)</span>-&gt;nullable<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">        </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;password&#39;</span><span class="o">)</span><span class="p">;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">        </span><span class="nv">$table</span>-&gt;rememberToken<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">        </span><span class="nv">$table</span>-&gt;timestamps<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="o">})</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>por</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="w">    </span>Schema::create<span class="o">(</span><span class="s1">&#39;users&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="o">(</span>Blueprint<span class="w"> </span><span class="nv">$table</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">        </span><span class="nv">$table</span>-&gt;id<span class="o">()</span><span class="p">;</span><span class="w"> </span>//<span class="w"> </span>PK
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">        </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;name&#39;</span><span class="o">)</span><span class="p">;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">        </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;email&#39;</span><span class="o">)</span>-&gt;unique<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">        </span><span class="nv">$table</span>-&gt;timestamp<span class="o">(</span><span class="s1">&#39;email_verified_at&#39;</span><span class="o">)</span>-&gt;nullable<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">        </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;password&#39;</span><span class="o">)</span><span class="p">;</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">        </span><span class="nv">$table</span>-&gt;foreignId<span class="o">(</span><span class="s1">&#39;role_id&#39;</span><span class="o">)</span>-&gt;nullable<span class="o">()</span>-&gt;constrained<span class="o">(</span><span class="s1">&#39;roles&#39;</span><span class="o">)</span>-&gt;onDelete<span class="o">(</span><span class="s1">&#39;set null&#39;</span><span class="o">)</span><span class="p">;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">        </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;address&#39;</span><span class="o">)</span>-&gt;nullable<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">        </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;telephone&#39;</span><span class="o">)</span>-&gt;nullable<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">        </span><span class="nv">$table</span>-&gt;rememberToken<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">        </span><span class="nv">$table</span>-&gt;timestamps<span class="o">()</span><span class="p">;</span><span class="w"> </span>//<span class="w"> </span>created_at<span class="w"> </span>y<span class="w"> </span>updated_at
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">    </span><span class="o">})</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="migracion-tabla-roles">Migración tabla <code>roles</code><a class="headerlink" href="#migracion-tabla-roles" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Renombrar el archivo generado <strong><code>xxxx_xx_xx_xxxxxx_create_roles_table.php</code></strong>  por <strong><code>0001_01_01_000000_create_roles_table.php</code></strong> (para así en el <code>fresh</code> de <code>migrate</code> se ejecute antes que el fichero de la tabla <code>users</code>).</p>
+</li>
+<li>
+<p>Definir la estructura de la tabla <code>roles</code> en dicho fichero <strong><code>0001_01_01_000000_create_roles_table.php</code></strong> :</p>
+</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span>
+<span class="normal"><a href="#__codelineno-12-18">18</a></span>
+<span class="normal"><a href="#__codelineno-12-19">19</a></span>
+<span class="normal"><a href="#__codelineno-12-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="x">use Illuminate\Database\Migrations\Migration;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="x">use Illuminate\Database\Schema\Blueprint;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="x">use Illuminate\Support\Facades\Schema;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="x">class CreateRolesTable extends Migration</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="x">{</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="x">    public function up()</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="x">    {</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="x">        Schema::create(&#39;roles&#39;, function (Blueprint $table) {</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="x">            $table-&gt;id(); // PK</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="x">            $table-&gt;enum(&#39;description&#39;,[&#39;administrador&#39;, &#39;cliente&#39;, &#39;invitado&#39;])-&gt;unique();</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="x">            $table-&gt;timestamps();</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="x">        });</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="x">    }</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="x">    public function down()</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="x">    {</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18"></a><span class="x">        Schema::dropIfExists(&#39;roles&#39;);</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19"></a><span class="x">    }</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="migracion-tabla-products">Migración tabla <code>products</code><a class="headerlink" href="#migracion-tabla-products" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Definir la estructura de la tabla <code>roles</code> en dicho fichero <strong><code>xxxx_xx_xx_xxxxxx_create_products_table.php</code></strong> :</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span>
+<span class="normal"><a href="#__codelineno-13-18">18</a></span>
+<span class="normal"><a href="#__codelineno-13-19">19</a></span>
+<span class="normal"><a href="#__codelineno-13-20">20</a></span>
+<span class="normal"><a href="#__codelineno-13-21">21</a></span>
+<span class="normal"><a href="#__codelineno-13-22">22</a></span>
+<span class="normal"><a href="#__codelineno-13-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="x">use Illuminate\Database\Migrations\Migration;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="x">use Illuminate\Database\Schema\Blueprint;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="x">use Illuminate\Support\Facades\Schema;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="x">class CreateProductsTable extends Migration</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="x">{</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="x">    public function up()</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="x">    {</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="x">        Schema::create(&#39;products&#39;, function (Blueprint $table) {</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="x">            $table-&gt;id(); // PK</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="x">            $table-&gt;string(&#39;name&#39;);</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="x">            $table-&gt;text(&#39;description&#39;)-&gt;nullable();</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="x">            $table-&gt;decimal(&#39;price&#39;, 8, 2); // Precio con 8 dígitos y 2 decimales</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="x">            $table-&gt;integer(&#39;stock&#39;)-&gt;default(0);</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="x">            $table-&gt;timestamps();</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="x">        });</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="x">    }</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18"></a>
+<a id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="x">    public function down()</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="x">    {</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21"></a><span class="x">        Schema::dropIfExists(&#39;products&#39;);</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22"></a><span class="x">    }</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="migracion-tabla-shoppings">Migración tabla <code>shoppings</code><a class="headerlink" href="#migracion-tabla-shoppings" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Definir la estructura de la tabla <code>roles</code> en dicho fichero <strong><code>xxxx_xx_xx_xxxxxx_create_compras_table.php</code></strong> :</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span>
+<span class="normal"><a href="#__codelineno-14-17">17</a></span>
+<span class="normal"><a href="#__codelineno-14-18">18</a></span>
+<span class="normal"><a href="#__codelineno-14-19">19</a></span>
+<span class="normal"><a href="#__codelineno-14-20">20</a></span>
+<span class="normal"><a href="#__codelineno-14-21">21</a></span>
+<span class="normal"><a href="#__codelineno-14-22">22</a></span>
+<span class="normal"><a href="#__codelineno-14-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="x">use Illuminate\Database\Migrations\Migration;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="x">use Illuminate\Database\Schema\Blueprint;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="x">use Illuminate\Support\Facades\Schema;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="x">class CreateComprasTable extends Migration</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="x">{</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="x">    public function up()</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="x">    {</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="x">        Schema::create(&#39;shoppings&#39;, function (Blueprint $table) {</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="x">            $table-&gt;id(); // PK</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="x">            $table-&gt;foreignId(&#39;user_id&#39;)-&gt;constrained(&#39;users&#39;); // FK a usuarios</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="x">            $table-&gt;dateTime(&#39;date&#39;);</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="x">            $table-&gt;decimal(&#39;total&#39;, 8, 2); // Total de la compra</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="x">            $table-&gt;timestamps();</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="x">        });</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="x">    }</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17"></a>
+<a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="x">    public function down()</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="x">    {</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="x">        Schema::dropIfExists(&#39;shoppings&#39;);</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="x">    }</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22"></a>
+<a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="migracion-tabla-details">Migración tabla details<a class="headerlink" href="#migracion-tabla-details" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Definir la estructura de la tabla <code>roles</code> en dicho fichero <strong><code>xxxx_xx_xx_xxxxxx_create_details_table.php</code></strong> :</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span>
+<span class="normal"><a href="#__codelineno-15-13">13</a></span>
+<span class="normal"><a href="#__codelineno-15-14">14</a></span>
+<span class="normal"><a href="#__codelineno-15-15">15</a></span>
+<span class="normal"><a href="#__codelineno-15-16">16</a></span>
+<span class="normal"><a href="#__codelineno-15-17">17</a></span>
+<span class="normal"><a href="#__codelineno-15-18">18</a></span>
+<span class="normal"><a href="#__codelineno-15-19">19</a></span>
+<span class="normal"><a href="#__codelineno-15-20">20</a></span>
+<span class="normal"><a href="#__codelineno-15-21">21</a></span>
+<span class="normal"><a href="#__codelineno-15-22">22</a></span>
+<span class="normal"><a href="#__codelineno-15-23">23</a></span>
+<span class="normal"><a href="#__codelineno-15-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="x">use Illuminate\Database\Migrations\Migration;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="x">use Illuminate\Database\Schema\Blueprint;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="x">use Illuminate\Support\Facades\Schema;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="x">class CreateDetalleCompraTable extends Migration</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="x">{</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="x">    public function up()</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="x">    {</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="x">        Schema::create(&#39;details&#39;, function (Blueprint $table) {</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="x">            $table-&gt;id(); // PK</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="x">            $table-&gt;foreignId(&#39;shopping_id&#39;)-&gt;constrained(&#39;shoppings&#39;); // FK a compras</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="x">            $table-&gt;foreignId(&#39;product_id&#39;)-&gt;constrained(&#39;products&#39;); // FK a productos</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="x">            $table-&gt;integer(&#39;amount&#39;);</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14"></a><span class="x">            $table-&gt;decimal(&#39;unitprice&#39;, 8, 2); // Precio unitario al momento de la compra</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="x">            $table-&gt;timestamps();</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="x">        });</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="x">    }</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19"></a><span class="x">    public function down()</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="x">    {</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="x">        Schema::dropIfExists(&#39;details&#39;);</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22"></a><span class="x">    }</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23"></a>
+<a id="__codelineno-15-24" name="__codelineno-15-24"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<hr>
+
+<h2 id="4o-crear-factories">4º. Crear factories<a class="headerlink" href="#4o-crear-factories" title="Permanent link">&para;</a></h2>
+<p>Para introducir <strong>seeders con factories y Faker</strong> en las tablas <code>users</code> , <code>products</code> y <code>shoppings</code>en el proyecto <em>gestories</em> sigue estos pasos:</p>
+<h3 id="configurar-las-factories-con-faker">Configurar las <strong>Factories</strong> con <code>Faker</code><a class="headerlink" href="#configurar-las-factories-con-faker" title="Permanent link">&para;</a></h3>
+<p>Abre los archivos generados en <strong><code>database/factories</code></strong> y configúralos con datos ficticios.</p>
+<h3 id="rolefactory">RoleFactory<a class="headerlink" href="#rolefactory" title="Permanent link">&para;</a></h3>
+<p>El <em>factory</em> del modelo <code>Role</code> no vamos a modificarlo; pues la información la introducimos directamente en  su <em>seeder</em><code>RoleSeeder</code>.</p>
+<h3 id="userfactory"><strong>UserFactory</strong><a class="headerlink" href="#userfactory" title="Permanent link">&para;</a></h3>
+<p>Abre <code>database/factories/UserFactory.php</code> y reemplázalo con lo siguiente:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span>
+<span class="normal"><a href="#__codelineno-16-12">12</a></span>
+<span class="normal"><a href="#__codelineno-16-13">13</a></span>
+<span class="normal"><a href="#__codelineno-16-14">14</a></span>
+<span class="normal"><a href="#__codelineno-16-15">15</a></span>
+<span class="normal"><a href="#__codelineno-16-16">16</a></span>
+<span class="normal"><a href="#__codelineno-16-17">17</a></span>
+<span class="normal"><a href="#__codelineno-16-18">18</a></span>
+<span class="normal"><a href="#__codelineno-16-19">19</a></span>
+<span class="normal"><a href="#__codelineno-16-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>use<span class="w"> </span>App<span class="se">\M</span>odels<span class="se">\U</span>ser<span class="p">;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a>use<span class="w"> </span>Illuminate<span class="se">\D</span>atabase<span class="se">\E</span>loquent<span class="se">\F</span>actories<span class="se">\F</span>actory<span class="p">;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a>use<span class="w"> </span>Illuminate<span class="se">\S</span>upport<span class="se">\S</span>tr<span class="p">;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a>class<span class="w"> </span>UserFactory<span class="w"> </span>extends<span class="w"> </span>Factory
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="o">{</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">    </span>public<span class="w"> </span><span class="k">function</span><span class="w"> </span>definition<span class="o">()</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">    </span><span class="o">{</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">[</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">            </span><span class="s1">&#39;name&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nv">$this</span>-&gt;faker-&gt;name<span class="o">()</span>,
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="w">            </span><span class="s1">&#39;email&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nv">$this</span>-&gt;faker-&gt;unique<span class="o">()</span>-&gt;safeEmail<span class="o">()</span>,
+<a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="w">            </span><span class="s1">&#39;email_verified_at&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>now<span class="o">()</span>,
+<a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="w">            </span><span class="s1">&#39;password&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>bcrypt<span class="o">(</span><span class="s1">&#39;password&#39;</span><span class="o">)</span>,<span class="w"> </span>//<span class="w"> </span>Contraseña<span class="w"> </span>genérica
+<a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="w">            </span><span class="s1">&#39;address&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nv">$this</span>-&gt;faker-&gt;address<span class="o">()</span>,
+<a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="w">            </span><span class="s1">&#39;telephone&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nv">$this</span>-&gt;faker-&gt;phoneNumber<span class="o">()</span>,
+<a id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="w">            </span><span class="s1">&#39;role_id&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>rand<span class="o">(</span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span><span class="o">)</span>,<span class="w"> </span>//<span class="w"> </span>Asignar<span class="w"> </span>rol<span class="w"> </span>aleatorio
+<a id="__codelineno-16-17" name="__codelineno-16-17"></a><span class="w">            </span><span class="s1">&#39;remember_token&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>Str::random<span class="o">(</span><span class="m">10</span><span class="o">)</span>,
+<a id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="w">        </span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="o">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="productfactory"><strong>ProductFactory</strong><a class="headerlink" href="#productfactory" title="Permanent link">&para;</a></h3>
+<p>Abre <strong><code>database/factories/ProductFactory.php</code></strong> y reemplázalo con lo siguiente:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-17-10">10</a></span>
+<span class="normal"><a href="#__codelineno-17-11">11</a></span>
+<span class="normal"><a href="#__codelineno-17-12">12</a></span>
+<span class="normal"><a href="#__codelineno-17-13">13</a></span>
+<span class="normal"><a href="#__codelineno-17-14">14</a></span>
+<span class="normal"><a href="#__codelineno-17-15">15</a></span>
+<span class="normal"><a href="#__codelineno-17-16">16</a></span>
+<span class="normal"><a href="#__codelineno-17-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="x">use App\Models\Product;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="x">use Illuminate\Database\Eloquent\Factories\Factory;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="x">class ProductFactory extends Factory</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="x">{</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="x">    protected $model = Product::class;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="x">    public function definition()</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="x">    {</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="x">        return [</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="x">            &#39;name&#39; =&gt; $this-&gt;faker-&gt;word(),</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="x">            &#39;description&#39; =&gt; $this-&gt;faker-&gt;sentence(),</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13"></a><span class="x">            &#39;price&#39; =&gt; $this-&gt;faker-&gt;randomFloat(2, 1, 100), // Precio entre 1 y 100</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14"></a><span class="x">            &#39;stock&#39; =&gt; $this-&gt;faker-&gt;numberBetween(1, 100), // Stock entre 1 y 100</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15"></a><span class="x">        ];</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16"></a><span class="x">    }</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="shoppingfactory">ShoppingFactory<a class="headerlink" href="#shoppingfactory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span>
+<span class="normal"><a href="#__codelineno-18-13">13</a></span>
+<span class="normal"><a href="#__codelineno-18-14">14</a></span>
+<span class="normal"><a href="#__codelineno-18-15">15</a></span>
+<span class="normal"><a href="#__codelineno-18-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="x">use App\Models\Shopping;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="x">use Illuminate\Database\Eloquent\Factories\Factory;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="x">class ShoppingFactory extends Factory</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="x">{</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="x">    protected $model = Shopping::class;</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="x">    public function definition()</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="x">    {</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="x">        return [</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="x">            &#39;user_id&#39; =&gt; \App\Models\User::all()-&gt;random()-&gt;id,</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="x">            &#39;date&#39; =&gt; $this-&gt;faker-&gt;dateTimeThisYear(),</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="x">            &#39;total&#39; =&gt; $this-&gt;faker-&gt;randomFloat(2, 10, 500),</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="x">        ];</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15"></a><span class="x">    }</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="5o-crear-seeders">5º. Crear seeders<a class="headerlink" href="#5o-crear-seeders" title="Permanent link">&para;</a></h2>
+<p>Abre los archivos en <code>database/seeders</code> y modifica cada uno.</p>
+<h3 id="roleseeder">RoleSeeder<a class="headerlink" href="#roleseeder" title="Permanent link">&para;</a></h3>
+<p>Abre <strong><code>database/seeders/RoleSeeder.php</code></strong> y añade dentro del método <code>run</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-19-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-19-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-19-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-19-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-19-10">10</a></span>
+<span class="normal"><a href="#__codelineno-19-11">11</a></span>
+<span class="normal"><a href="#__codelineno-19-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="x">    // ...</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="x">    use Illuminate\Support\Facades\DB;</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="x">    //...</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="x">    public function run(): void</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="x">    {</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="x">        DB::table(&#39;roles&#39;)-&gt;insert([</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="x">            [&#39;description&#39; =&gt; &#39;administrador&#39;, &#39;created_at&#39; =&gt; now(), &#39;updated_at&#39; =&gt; now()],</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="x">            [&#39;description&#39; =&gt; &#39;cliente&#39;, &#39;created_at&#39; =&gt; now(), &#39;updated_at&#39; =&gt; now()],</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="x">            [&#39;description&#39; =&gt; &#39;invitado&#39;, &#39;created_at&#39; =&gt; now(), &#39;updated_at&#39; =&gt; now()],</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="x">        ]);</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="x">    }</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="userseeder"><strong>UserSeeder</strong><a class="headerlink" href="#userseeder" title="Permanent link">&para;</a></h3>
+<p>Abre <strong><code>database/seeders/UserSeeder.php</code></strong>  (si no está creado:  <strong><code>php artisan make:seeder UserSeeder</code></strong>) y reemplázalo con:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-20-10">10</a></span>
+<span class="normal"><a href="#__codelineno-20-11">11</a></span>
+<span class="normal"><a href="#__codelineno-20-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="x">namespace Database\Seeders;</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="x">use Illuminate\Database\Seeder;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="x">use App\Models\User;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="x">class UserSeeder extends Seeder</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="x">{</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="x">    public function run()</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="x">    {</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="x">        User::factory(count: 20)-&gt;create(); // Crea 20 usuarios</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11"></a><span class="x">    }</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="productseeder"><strong>ProductSeeder</strong><a class="headerlink" href="#productseeder" title="Permanent link">&para;</a></h3>
+<p>Abre <strong><code>database/seeders/ProductSeeder.php</code></strong> y reemplázalo con:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-21-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-21-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-21-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-21-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-21-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-21-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-21-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="x">use Illuminate\Database\Seeder;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="x">use App\Models\Product;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="x">class ProductSeeder extends Seeder</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="x">{</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="x">    public function run()</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="x">    {</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="x">        Product::factory(35)-&gt;create(); // Crea 35 productos</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="x">    }</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="detailseeder">DetailSeeder<a class="headerlink" href="#detailseeder" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-22-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-22-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-22-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-22-10">10</a></span>
+<span class="normal"><a href="#__codelineno-22-11">11</a></span>
+<span class="normal"><a href="#__codelineno-22-12">12</a></span>
+<span class="normal"><a href="#__codelineno-22-13">13</a></span>
+<span class="normal"><a href="#__codelineno-22-14">14</a></span>
+<span class="normal"><a href="#__codelineno-22-15">15</a></span>
+<span class="normal"><a href="#__codelineno-22-16">16</a></span>
+<span class="normal"><a href="#__codelineno-22-17">17</a></span>
+<span class="normal"><a href="#__codelineno-22-18">18</a></span>
+<span class="normal"><a href="#__codelineno-22-19">19</a></span>
+<span class="normal"><a href="#__codelineno-22-20">20</a></span>
+<span class="normal"><a href="#__codelineno-22-21">21</a></span>
+<span class="normal"><a href="#__codelineno-22-22">22</a></span>
+<span class="normal"><a href="#__codelineno-22-23">23</a></span>
+<span class="normal"><a href="#__codelineno-22-24">24</a></span>
+<span class="normal"><a href="#__codelineno-22-25">25</a></span>
+<span class="normal"><a href="#__codelineno-22-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="x">use Illuminate\Database\Seeder;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="x">use App\Models\Detail;</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="x">use App\Models\Shopping;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="x">use App\Models\Product;</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="x">class DetailSeeder extends Seeder</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="x">{</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="x">    public function run()</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="x">    {</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="x">        $shoppings = Shopping::all();</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11"></a><span class="x">        $products = Product::all();</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13"></a><span class="x">        foreach ($shoppings as $shopping) {</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14"></a><span class="x">            $selectedProducts = $products-&gt;random(rand(1, 5)); // Seleccionar entre 1 y 5 productos</span>
+<a id="__codelineno-22-15" name="__codelineno-22-15"></a>
+<a id="__codelineno-22-16" name="__codelineno-22-16"></a><span class="x">            foreach ($selectedProducts as $product) {</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17"></a><span class="x">                Detail::create([</span>
+<a id="__codelineno-22-18" name="__codelineno-22-18"></a><span class="x">                    &#39;shopping_id&#39; =&gt; $shopping-&gt;id,</span>
+<a id="__codelineno-22-19" name="__codelineno-22-19"></a><span class="x">                    &#39;product_id&#39; =&gt; $product-&gt;id,</span>
+<a id="__codelineno-22-20" name="__codelineno-22-20"></a><span class="x">                    &#39;amount&#39; =&gt; rand(1, 3),</span>
+<a id="__codelineno-22-21" name="__codelineno-22-21"></a><span class="x">                    &#39;unitprice&#39; =&gt; $product-&gt;price,</span>
+<a id="__codelineno-22-22" name="__codelineno-22-22"></a><span class="x">                ]);</span>
+<a id="__codelineno-22-23" name="__codelineno-22-23"></a><span class="x">            }</span>
+<a id="__codelineno-22-24" name="__codelineno-22-24"></a><span class="x">        }</span>
+<a id="__codelineno-22-25" name="__codelineno-22-25"></a><span class="x">    }</span>
+<a id="__codelineno-22-26" name="__codelineno-22-26"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="6o-ejecutar-migraciones">6º. Ejecutar migraciones<a class="headerlink" href="#6o-ejecutar-migraciones" title="Permanent link">&para;</a></h2>
+<ol>
+<li>En el archivo <strong><code>DatabaseSeeder.php</code></strong>, dentro de <code>database/seeders</code>, asegúrate de llamar a los <em>seeders</em>:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span>
+<span class="normal"><a href="#__codelineno-23-13">13</a></span>
+<span class="normal"><a href="#__codelineno-23-14">14</a></span>
+<span class="normal"><a href="#__codelineno-23-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="x">use Illuminate\Database\Seeder;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="x">class DatabaseSeeder extends Seeder</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="x">{</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="x">    public function run()</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="x">    {</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="x">        $this-&gt;call([</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="x">         RoleSeeder::class,</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="x">            UserSeeder::class,</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="x">            ProductSeeder::class,</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="x">            ShoppingSeeder::class,</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="x">            DetailSeeder::class,</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13"></a><span class="x">        ]);</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14"></a><span class="x">    }</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Ahora, ejecuta los seeders con:</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">borrar tablas, vistas y datos de la bd</p>
+<p>Si queremos eliminar todos los datos de la bd antes de la migración:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>db:wipe
+</code></pre></div></td></tr></table></div></p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>migrate:fresh<span class="w"> </span>--seed
+</code></pre></div></td></tr></table></div>
+<hr>
+
+<h2 id="7o-controladores">7º. Controladores<a class="headerlink" href="#7o-controladores" title="Permanent link">&para;</a></h2>
+<h3 id="usercontroller">UserController<a class="headerlink" href="#usercontroller" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-26-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-26-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-26-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-26-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-26-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-26-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-26-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-26-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-26-10">10</a></span>
+<span class="normal"><a href="#__codelineno-26-11">11</a></span>
+<span class="normal"><a href="#__codelineno-26-12">12</a></span>
+<span class="normal"><a href="#__codelineno-26-13">13</a></span>
+<span class="normal"><a href="#__codelineno-26-14">14</a></span>
+<span class="normal"><a href="#__codelineno-26-15">15</a></span>
+<span class="normal"><a href="#__codelineno-26-16">16</a></span>
+<span class="normal"><a href="#__codelineno-26-17">17</a></span>
+<span class="normal"><a href="#__codelineno-26-18">18</a></span>
+<span class="normal"><a href="#__codelineno-26-19">19</a></span>
+<span class="normal"><a href="#__codelineno-26-20">20</a></span>
+<span class="normal"><a href="#__codelineno-26-21">21</a></span>
+<span class="normal"><a href="#__codelineno-26-22">22</a></span>
+<span class="normal"><a href="#__codelineno-26-23">23</a></span>
+<span class="normal"><a href="#__codelineno-26-24">24</a></span>
+<span class="normal"><a href="#__codelineno-26-25">25</a></span>
+<span class="normal"><a href="#__codelineno-26-26">26</a></span>
+<span class="normal"><a href="#__codelineno-26-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="x">// UserController.php</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="x">namespace App\Http\Controllers;</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="x">use App\Models\User;</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="x">use Illuminate\Http\Request;</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="x">class UserController extends Controller {</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="x">    public function index() { </span>
+<a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="x">        return response()-&gt;json(User::all()); </span>
+<a id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="x">    }</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10"></a>
+<a id="__codelineno-26-11" name="__codelineno-26-11"></a><span class="x">    public function show(User $user) { </span>
+<a id="__codelineno-26-12" name="__codelineno-26-12"></a><span class="x">        return response()-&gt;json($user); </span>
+<a id="__codelineno-26-13" name="__codelineno-26-13"></a><span class="x">    }</span>
+<a id="__codelineno-26-14" name="__codelineno-26-14"></a>
+<a id="__codelineno-26-15" name="__codelineno-26-15"></a><span class="x">    public function store(Request $request) { </span>
+<a id="__codelineno-26-16" name="__codelineno-26-16"></a><span class="x">        return response()-&gt;json(User::create($request-&gt;all())); </span>
+<a id="__codelineno-26-17" name="__codelineno-26-17"></a><span class="x">    }</span>
+<a id="__codelineno-26-18" name="__codelineno-26-18"></a>
+<a id="__codelineno-26-19" name="__codelineno-26-19"></a><span class="x">    public function update(Request $request, User $user) { </span>
+<a id="__codelineno-26-20" name="__codelineno-26-20"></a><span class="x">        $user-&gt;update($request-&gt;all()); return response()-&gt;json($user); </span>
+<a id="__codelineno-26-21" name="__codelineno-26-21"></a><span class="x">    }</span>
+<a id="__codelineno-26-22" name="__codelineno-26-22"></a>
+<a id="__codelineno-26-23" name="__codelineno-26-23"></a><span class="x">    public function destroy(User $user) {</span>
+<a id="__codelineno-26-24" name="__codelineno-26-24"></a><span class="x">        $user-&gt;delete(); </span>
+<a id="__codelineno-26-25" name="__codelineno-26-25"></a><span class="x">        return response()-&gt;json([&#39;message&#39; =&gt; &#39;Usuario eliminado&#39;]); </span>
+<a id="__codelineno-26-26" name="__codelineno-26-26"></a><span class="x">    }</span>
+<a id="__codelineno-26-27" name="__codelineno-26-27"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="productcontroller">ProductController<a class="headerlink" href="#productcontroller" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-27-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-27-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-27-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-27-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-27-10">10</a></span>
+<span class="normal"><a href="#__codelineno-27-11">11</a></span>
+<span class="normal"><a href="#__codelineno-27-12">12</a></span>
+<span class="normal"><a href="#__codelineno-27-13">13</a></span>
+<span class="normal"><a href="#__codelineno-27-14">14</a></span>
+<span class="normal"><a href="#__codelineno-27-15">15</a></span>
+<span class="normal"><a href="#__codelineno-27-16">16</a></span>
+<span class="normal"><a href="#__codelineno-27-17">17</a></span>
+<span class="normal"><a href="#__codelineno-27-18">18</a></span>
+<span class="normal"><a href="#__codelineno-27-19">19</a></span>
+<span class="normal"><a href="#__codelineno-27-20">20</a></span>
+<span class="normal"><a href="#__codelineno-27-21">21</a></span>
+<span class="normal"><a href="#__codelineno-27-22">22</a></span>
+<span class="normal"><a href="#__codelineno-27-23">23</a></span>
+<span class="normal"><a href="#__codelineno-27-24">24</a></span>
+<span class="normal"><a href="#__codelineno-27-25">25</a></span>
+<span class="normal"><a href="#__codelineno-27-26">26</a></span>
+<span class="normal"><a href="#__codelineno-27-27">27</a></span>
+<span class="normal"><a href="#__codelineno-27-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="x">// ProductController.php</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="x">namespace App\Http\Controllers;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="x">use App\Models\Product;</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="x">use Illuminate\Http\Request;</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a>
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="x">class ProductController extends Controller {</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="x">    public function index() { </span>
+<a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="x">        return response()-&gt;json(Product::all()); </span>
+<a id="__codelineno-27-9" name="__codelineno-27-9"></a><span class="x">    }</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10"></a>
+<a id="__codelineno-27-11" name="__codelineno-27-11"></a><span class="x">    public function show(Product $product) { </span>
+<a id="__codelineno-27-12" name="__codelineno-27-12"></a><span class="x">        return response()-&gt;json($product); </span>
+<a id="__codelineno-27-13" name="__codelineno-27-13"></a><span class="x">    }</span>
+<a id="__codelineno-27-14" name="__codelineno-27-14"></a>
+<a id="__codelineno-27-15" name="__codelineno-27-15"></a><span class="x">    public function store(Request $request) { </span>
+<a id="__codelineno-27-16" name="__codelineno-27-16"></a><span class="x">        return response()-&gt;json(Product::create($request-&gt;all())); </span>
+<a id="__codelineno-27-17" name="__codelineno-27-17"></a><span class="x">    }</span>
+<a id="__codelineno-27-18" name="__codelineno-27-18"></a>
+<a id="__codelineno-27-19" name="__codelineno-27-19"></a><span class="x">    public function update(Request $request, Product $product) { </span>
+<a id="__codelineno-27-20" name="__codelineno-27-20"></a><span class="x">        $product-&gt;update($request-&gt;all()); </span>
+<a id="__codelineno-27-21" name="__codelineno-27-21"></a><span class="x">        return response()-&gt;json($product); </span>
+<a id="__codelineno-27-22" name="__codelineno-27-22"></a><span class="x">    }</span>
+<a id="__codelineno-27-23" name="__codelineno-27-23"></a>
+<a id="__codelineno-27-24" name="__codelineno-27-24"></a><span class="x">    public function destroy(Product $product) { </span>
+<a id="__codelineno-27-25" name="__codelineno-27-25"></a><span class="x">        $product-&gt;delete(); </span>
+<a id="__codelineno-27-26" name="__codelineno-27-26"></a><span class="x">        return response()-&gt;json([&#39;message&#39; =&gt; &#39;Producto eliminado&#39;]); </span>
+<a id="__codelineno-27-27" name="__codelineno-27-27"></a><span class="x">    }</span>
+<a id="__codelineno-27-28" name="__codelineno-27-28"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="detailcontroller">DetailController<a class="headerlink" href="#detailcontroller" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-28-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-28-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-28-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-28-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-28-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-28-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-28-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-28-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-28-10">10</a></span>
+<span class="normal"><a href="#__codelineno-28-11">11</a></span>
+<span class="normal"><a href="#__codelineno-28-12">12</a></span>
+<span class="normal"><a href="#__codelineno-28-13">13</a></span>
+<span class="normal"><a href="#__codelineno-28-14">14</a></span>
+<span class="normal"><a href="#__codelineno-28-15">15</a></span>
+<span class="normal"><a href="#__codelineno-28-16">16</a></span>
+<span class="normal"><a href="#__codelineno-28-17">17</a></span>
+<span class="normal"><a href="#__codelineno-28-18">18</a></span>
+<span class="normal"><a href="#__codelineno-28-19">19</a></span>
+<span class="normal"><a href="#__codelineno-28-20">20</a></span>
+<span class="normal"><a href="#__codelineno-28-21">21</a></span>
+<span class="normal"><a href="#__codelineno-28-22">22</a></span>
+<span class="normal"><a href="#__codelineno-28-23">23</a></span>
+<span class="normal"><a href="#__codelineno-28-24">24</a></span>
+<span class="normal"><a href="#__codelineno-28-25">25</a></span>
+<span class="normal"><a href="#__codelineno-28-26">26</a></span>
+<span class="normal"><a href="#__codelineno-28-27">27</a></span>
+<span class="normal"><a href="#__codelineno-28-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="x">// DetailController.php</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="x">namespace App\Http\Controllers;</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="x">use App\Models\Detail;</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="x">use Illuminate\Http\Request;</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a>
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="x">class DetailController extends Controller {</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="x">    public function index() { </span>
+<a id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="x">        return response()-&gt;json(Detail::all()); </span>
+<a id="__codelineno-28-9" name="__codelineno-28-9"></a><span class="x">    }</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10"></a>
+<a id="__codelineno-28-11" name="__codelineno-28-11"></a><span class="x">    public function show(Detail $detail) { </span>
+<a id="__codelineno-28-12" name="__codelineno-28-12"></a><span class="x">        return response()-&gt;json($detail); </span>
+<a id="__codelineno-28-13" name="__codelineno-28-13"></a><span class="x">    }</span>
+<a id="__codelineno-28-14" name="__codelineno-28-14"></a>
+<a id="__codelineno-28-15" name="__codelineno-28-15"></a><span class="x">    public function store(Request $request) { </span>
+<a id="__codelineno-28-16" name="__codelineno-28-16"></a><span class="x">        return response()-&gt;json(Detail::create($request-&gt;all())); </span>
+<a id="__codelineno-28-17" name="__codelineno-28-17"></a><span class="x">    }</span>
+<a id="__codelineno-28-18" name="__codelineno-28-18"></a>
+<a id="__codelineno-28-19" name="__codelineno-28-19"></a><span class="x">    public function update(Request $request, Detail $detail) { </span>
+<a id="__codelineno-28-20" name="__codelineno-28-20"></a><span class="x">        $detail-&gt;update($request-&gt;all()); </span>
+<a id="__codelineno-28-21" name="__codelineno-28-21"></a><span class="x">        return response()-&gt;json($detail); </span>
+<a id="__codelineno-28-22" name="__codelineno-28-22"></a><span class="x">    }</span>
+<a id="__codelineno-28-23" name="__codelineno-28-23"></a>
+<a id="__codelineno-28-24" name="__codelineno-28-24"></a><span class="x">    public function destroy(Detail $detail) { </span>
+<a id="__codelineno-28-25" name="__codelineno-28-25"></a><span class="x">        $detail-&gt;delete(); </span>
+<a id="__codelineno-28-26" name="__codelineno-28-26"></a><span class="x">        return response()-&gt;json([&#39;message&#39; =&gt; &#39;Detalle eliminado&#39;]); </span>
+<a id="__codelineno-28-27" name="__codelineno-28-27"></a><span class="x">    }</span>
+<a id="__codelineno-28-28" name="__codelineno-28-28"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="shoppingcontroller">ShoppingController<a class="headerlink" href="#shoppingcontroller" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-29-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-29-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-29-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-29-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-29-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-29-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-29-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-29-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-29-10">10</a></span>
+<span class="normal"><a href="#__codelineno-29-11">11</a></span>
+<span class="normal"><a href="#__codelineno-29-12">12</a></span>
+<span class="normal"><a href="#__codelineno-29-13">13</a></span>
+<span class="normal"><a href="#__codelineno-29-14">14</a></span>
+<span class="normal"><a href="#__codelineno-29-15">15</a></span>
+<span class="normal"><a href="#__codelineno-29-16">16</a></span>
+<span class="normal"><a href="#__codelineno-29-17">17</a></span>
+<span class="normal"><a href="#__codelineno-29-18">18</a></span>
+<span class="normal"><a href="#__codelineno-29-19">19</a></span>
+<span class="normal"><a href="#__codelineno-29-20">20</a></span>
+<span class="normal"><a href="#__codelineno-29-21">21</a></span>
+<span class="normal"><a href="#__codelineno-29-22">22</a></span>
+<span class="normal"><a href="#__codelineno-29-23">23</a></span>
+<span class="normal"><a href="#__codelineno-29-24">24</a></span>
+<span class="normal"><a href="#__codelineno-29-25">25</a></span>
+<span class="normal"><a href="#__codelineno-29-26">26</a></span>
+<span class="normal"><a href="#__codelineno-29-27">27</a></span>
+<span class="normal"><a href="#__codelineno-29-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="x">// ShoppingController.php</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="x">namespace App\Http\Controllers;</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="x">use App\Models\Shopping;</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="x">use Illuminate\Http\Request;</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a>
+<a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="x">class ShoppingController extends Controller {</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="x">    public function index() { </span>
+<a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="x">        return response()-&gt;json(Shopping::all()); </span>
+<a id="__codelineno-29-9" name="__codelineno-29-9"></a><span class="x">    }</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10"></a>
+<a id="__codelineno-29-11" name="__codelineno-29-11"></a><span class="x">    public function show(Shopping $shopping) { </span>
+<a id="__codelineno-29-12" name="__codelineno-29-12"></a><span class="x">        return response()-&gt;json($shopping); </span>
+<a id="__codelineno-29-13" name="__codelineno-29-13"></a><span class="x">    }</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14"></a>
+<a id="__codelineno-29-15" name="__codelineno-29-15"></a><span class="x">    public function store(Request $request) { </span>
+<a id="__codelineno-29-16" name="__codelineno-29-16"></a><span class="x">        return response()-&gt;json(Shopping::create($request-&gt;all())); </span>
+<a id="__codelineno-29-17" name="__codelineno-29-17"></a><span class="x">    }</span>
+<a id="__codelineno-29-18" name="__codelineno-29-18"></a>
+<a id="__codelineno-29-19" name="__codelineno-29-19"></a><span class="x">    public function update(Request $request, Shopping $shopping) { </span>
+<a id="__codelineno-29-20" name="__codelineno-29-20"></a><span class="x">        $shopping-&gt;update($request-&gt;all()); </span>
+<a id="__codelineno-29-21" name="__codelineno-29-21"></a><span class="x">        return response()-&gt;json($shopping); </span>
+<a id="__codelineno-29-22" name="__codelineno-29-22"></a><span class="x">    }</span>
+<a id="__codelineno-29-23" name="__codelineno-29-23"></a>
+<a id="__codelineno-29-24" name="__codelineno-29-24"></a><span class="x">    public function destroy(Shopping $shopping) { </span>
+<a id="__codelineno-29-25" name="__codelineno-29-25"></a><span class="x">        $shopping-&gt;delete(); </span>
+<a id="__codelineno-29-26" name="__codelineno-29-26"></a><span class="x">        return response()-&gt;json([&#39;message&#39; =&gt; &#39;Compra eliminada&#39;]); </span>
+<a id="__codelineno-29-27" name="__codelineno-29-27"></a><span class="x">    }</span>
+<a id="__codelineno-29-28" name="__codelineno-29-28"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<hr>
+
+<h2 id="8o-rutas">8º. Rutas<a class="headerlink" href="#8o-rutas" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-30-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-30-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-30-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-30-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-30-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-30-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-30-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-30-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-30-10">10</a></span>
+<span class="normal"><a href="#__codelineno-30-11">11</a></span>
+<span class="normal"><a href="#__codelineno-30-12">12</a></span>
+<span class="normal"><a href="#__codelineno-30-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="c1">// web.php - Definir rutas para Users, Products, Details y Shoppings</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="k">use</span> <span class="nx">App\Http\Controllers\UserController</span><span class="p">;</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="k">use</span> <span class="nx">App\Http\Controllers\ProductController</span><span class="p">;</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="k">use</span> <span class="nx">App\Http\Controllers\DetailController</span><span class="p">;</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="k">use</span> <span class="nx">App\Http\Controllers\ShoppingController</span><span class="p">;</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9"></a>
+<a id="__codelineno-30-10" name="__codelineno-30-10"></a><span class="nx">Route</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">UserController</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11"></a><span class="nx">Route</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;products&#39;</span><span class="p">,</span> <span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12"></a><span class="nx">Route</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;details&#39;</span><span class="p">,</span> <span class="nx">DetailController</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<a id="__codelineno-30-13" name="__codelineno-30-13"></a><span class="nx">Route</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;shoppings&#39;</span><span class="p">,</span> <span class="nx">ShoppingController</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Arturo Blasco - Creative Commons CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/arturoblasco" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

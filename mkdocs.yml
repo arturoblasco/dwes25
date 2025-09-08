@@ -14,9 +14,6 @@ dev_addr: localhost:8025
 nav:
   - index.md
   - PHP:
-    - PROVA1:
-        - ut00/portfolio1.md
-
     - UT 1 Arquitectura Web:
         - ut01/ut0101.md
         - ut01/ut0102.md
@@ -31,8 +28,7 @@ nav:
         - ut01/ut01de.md   
         - ut01/ut01ac.md        
     - UT 2 Lenguaje PHP:
-        - ut02/ut0201.md
-        - ut02/ut0202.md
+
 
 theme:
   name: material      # selección del tema

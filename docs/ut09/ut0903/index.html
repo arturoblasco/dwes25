@@ -1,0 +1,1375 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Ut0903 - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#31-estructura-de-las-migraciones" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ut0903
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="es" class="md-select__link">
+              Castellano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../ca/ut09/ut0903/" hreflang="ca" class="md-select__link">
+              Valencià
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PROVA1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            PROVA1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut00/portfolio1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    portfolio1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 1 Arquitectura Web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            UT 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. Arquitecturas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3. Generar páginas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4. Modelos de programación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5. Decisiones de diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6. Ejecución del código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0107/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7. Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0108/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8. Tecnologías
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0109/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.9. Navegadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0110/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.10. Puesta en marcha
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut01de/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descargas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut01ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 2 Lenguaje PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            UT 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UT 2. Lenguaje PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ut0202
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-estructura-de-las-migraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Estructura de las migraciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-creacion-de-migraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Creación de migraciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Creación de migraciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-ejecucion-y-borrado-de-migraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1. Ejecución y borrado de migraciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-aparacion-de-la-tabla-personal_access_tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2. Aparación de la tabla personal_access_tokens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Ut0903</h1>
+
+<p>Las migraciones son un mecanismo de definición de datos ofrecido por <em>Laravel</em> para, a través de ciertas clases y opciones de configuración, generar la estructura completa de una base de datos. A su vez, suponen una especie de <em>control de versiones para una base de datos</em>, y permiten crear y modificar el esquema de la misma fácilmente.</p>
+<h2 id="31-estructura-de-las-migraciones">3.1. Estructura de las migraciones<a class="headerlink" href="#31-estructura-de-las-migraciones" title="Permanent link">&para;</a></h2>
+<p>Por defecto, <em>Laravel</em> trae unas migraciones predefinidas, que se hallan en la carpeta <strong><code>database/migrations</code></strong>. Cada una tiene un nombre de archivo que comienza por la fecha en que se hizo, seguida de una breve descripción de lo que contiene (creación de la tabla de usuarios, reseteo de contraseñas…). Puede que algunas de estas migraciones no nos vayan a ser necesarias, con lo que podemos borrarlas directamente, y puede que otras (en especial la creación de la tabla de usuarios) sí nos sirva, pero con otros campos, con lo que deberemos editarla, como veremos a continuación.</p>
+<p>Si examinamos el contenido de una migración, todas deben tener dos métodos:</p>
+<ul>
+<li><strong><code>up</code></strong>: permite agregar tablas, columnas o índices a la base de datos.</li>
+<li><strong><code>down</code></strong>: revierte lo hecho por el método anterior.</li>
+</ul>
+<p>Si observamos el contenido de un método <strong><code>up</code></strong> de los que vienen predefinidos para crear una tabla, vemos que se utilizan distintos métodos para definir los tipos de datos de cada campo de la tabla, como por ejemplo <strong><code>id()</code></strong> para campos que puedan contener enteros autoincrementales, o <strong><code>string()</code></strong> para campos de tipo texto. Además, existen otros métodos modificadores para agregar propiedades adicionales, como por ejemplo <strong><code>unique()</code></strong> para indicar valores únicos (claves alternativas), o <strong><code>nullable()</code></strong> para indicar que un campo admite nulos.</p>
+<details class="examplelaravel" open="open">
+<summary>Ejemplo de método <code>up</code></summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="x">public function up()</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="x">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="x">  Schema::create(&#39;usuarios&#39;, function(BluePrint $table) {</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="x">     $table-&gt;id();</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="x">     $table-&gt;string(&#39;nombre&#39;);</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="x">     $table-&gt;string(&#39;email&#39;)-&gt;unique();</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="x">     // ...</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="x">     $table-&gt;timestamps();</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="x">  });</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Por defecto, como vemos en los ejemplos que se proporcionan, los esquemas se crean con un <strong>id</strong> autonumérico, y unos <strong>timestamps</strong> para indicar la fecha de creación y de modificación de cada registro, y que <em>Laravel</em> gestiona de forma automática cuando insertamos o actualizamos contenidos, lo cual resulta muy útil.</p>
+</details>
+<p>Sobre esta base, podemos añadir o quitar los campos que queramos. Para ver los tipos disponibles para las columnas de la tabla, podemos visitar la <a href="https://laravel.com/docs/migrations" target="_blank">documentación de Laravel sobre migraciones</a>, en concreto buscaremos el subapartado <em>Available Column Types</em>. Conviene tener presente, por ejemplo, que el tipo <code>string</code> que hemos utilizado en el ejemplo anterior tiene una limitación de 255 caracteres. Para textos más grandes, se puede emplear el tipo <code>text</code> (20.000 caracteres aproximadamente) o <code>longText</code>.</p>
+<p>Podemos especificar una clave primaria con el método <code>primary</code>, al que le podemos pasar o bien el nombre del campo clave, o un array de campos clave, en el caso de que ésta sea compuesta. Por defecto, los campos de tipo <code>id</code> se auto-establecen como claves primarias.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nv">$table</span>-&gt;primary<span class="o">([</span><span class="s1">&#39;campo1&#39;</span>,<span class="w"> </span><span class="s1">&#39;campo2&#39;</span><span class="o">])</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="32-creacion-de-migraciones">3.2. Creación de migraciones<a class="headerlink" href="#32-creacion-de-migraciones" title="Permanent link">&para;</a></h2>
+<p><strong>a) Crear tablas</strong></p>
+<p>Creamos migraciones con el comando:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>nombre_migracion
+</code></pre></div></td></tr></table></div>
+<p>Por ejemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>create_pruebas_table
+</code></pre></div></td></tr></table></div>
+<p>Podemos observar que, en el nombre que se genera en la creación de la migración, <em>Laravel</em> ya asigna automáticamente la fecha de la migración, y "<em>solo</em>" debemos especificar el nombre descriptivo de la misma. Además, si <em>Laravel</em> detecta la palabra <strong><code>create</code></strong> en el nombre de la migración, finalizada en <strong><code>table</code></strong>, intuye que es para <mark>crear una tabla nueva</mark>. En cambio, si detecta la palabra <strong><code>to</code></strong> (<em>entre otras</em>), y al final la palabra <strong><code>table</code></strong>, intuye que se va a <mark>alterar o modificar una tabla existente</mark>. Esto es gracias a la clase <strong><code>TableGuesser</code></strong> incorporada en <em>Laravel</em>, que detecta ciertos patrones en los nombres de migraciones. La diferencia entre la creación y la modificación es que en el método <code>up</code> de la migración se utilizará <code>Schema::create</code> o <code>Schema::table</code> sobre la tabla en cuestión, respectivamente.</p>
+<div class="admonition note">
+<p class="admonition-title">nombre  de la migración para la creación de una tabla</p>
+<p>Además del prefijo <code>create</code> y del sufijo <code>table</code>, el nombre "<em>central</em>" que deberá tomar la migración será el nombre de la tabla en PLURAL y, a ser posible, en inglés.<br /><br />
+Ejemplo:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>create_products_table
+</code></pre></div></td></tr></table></div></p>
+</div>
+<p><strong>Tipos de columnas y opciones comunes</strong></p>
+<p>Para  definir los tipos de columnas y sus atributos <em>Laravel</em> proporciona un <strong>(Fluent) constructor de esquemas</strong>. Algunos más usados son:</p>
+<ul>
+<li><code>id()</code>: es un alias del método <code>bigIncrements</code>. Por defecto, el método creará una columna <code>id</code>; sin embargo, se puede pasar un nombre de columna si se desea asignar un nombre diferente a la columna (  <code>$table-&gt;id('campo')</code> ).</li>
+<li><code>string('titulo', 255)</code>: crea un <code>VARCHAR(255)</code>.</li>
+<li><code>text('descripcion')</code>: crea un <code>TEXT</code>.</li>
+<li><code>integer('stock')</code>: crea un <code>INT</code>.</li>
+<li><code>boolean('is_published')</code>: crea un <code>TINYINT(1)</code>.</li>
+<li><code>date('published_date')</code>: crea un <code>DATE</code>.</li>
+<li><code>foreignId('usuario_id')-&gt;constrained()</code>: crea una columna <code>usuario_id</code> como llave foránea apuntando a la tabla <code>usuarios</code>.</li>
+</ul>
+<p>Aquí podemos consultar el restos, <a href="https://laravel.com/docs/migrations#columns">documentación oficial</a> (debemos tener en cuenta que en Laravel 11 se mantienen estos métodos con las mismas convenciones).</p>
+<p>Además, se puede añadir atributos como:</p>
+<ul>
+<li><code>nullable()</code>: permite valores <code>NULL</code>.</li>
+<li><code>default('texto por defecto')</code>: asigna un valor por defecto.</li>
+<li><code>unique()</code>: crea un índice único.</li>
+<li><code>index()</code>: crea un índice básico.</li>
+<li><code>after('campo')</code>: crea un campo después del indicado.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="c1">// ...</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="nx">Schema</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;posts&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">();</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;titulo&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">unique</span><span class="p">();</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">nullable</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">();</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">text</span><span class="p">(</span><span class="s1">&#39;descripcion&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">nullable</span><span class="p">();</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">integer</span><span class="p">(</span><span class="s1">&#39;stock&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">default</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">timestamp</span><span class="p">(</span><span class="s1">&#39;published_at&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">nullable</span><span class="p">();</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">foreignId</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">constrained</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">onDelete</span><span class="p">(</span><span class="s1">&#39;cascade&#39;</span><span class="p">);</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">timestamps</span><span class="p">();</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>    <span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;isbn&#39;</span><span class="o">)</span>-&gt;unique<span class="o">()</span>-&gt;after<span class="o">(</span><span class="s1">&#39;id&#39;</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>b) Añadir columnas en una tabla</strong></p>
+<p>Para añadir una columna a una tabla existente en <em>Laravel</em> se debe hacer uso de migraciones. Para ello, primero se debe crear una nueva migración usando el comando <code>make:migration</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>add_estado_column_on_libros_table<span class="w"> </span>--table<span class="o">=</span>libros
+</code></pre></div></td></tr></table></div>
+<p>El comando anterior habrá creado un nuevo archivo de migración en el directorio <code>database/migrations</code>de nuestro proyecto:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span>
+<span class="normal"><a href="#__codelineno-8-21">21</a></span>
+<span class="normal"><a href="#__codelineno-8-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="k">use</span> <span class="nx">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>    <span class="k">use</span> <span class="nx">Illuminate\Database\Schema\Blueprint</span><span class="p">;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>    <span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Schema</span><span class="p">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>    <span class="k">return</span> <span class="k">new</span> <span class="k">class</span> <span class="k">extends</span> <span class="nx">Migration</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>    <span class="p">{</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a>        <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a>        <span class="p">{</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a>            <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;libros&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a>                <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;estado&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">after</span><span class="p">(</span><span class="s1">&#39;descripcion&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">default</span><span class="p">(</span><span class="s1">&#39;muy bueno&#39;</span><span class="p">);</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a>            <span class="p">});</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a>        <span class="p">}</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a>        <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a>        <span class="p">{</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a>            <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;libros&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a>                <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">dropColumn</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">);</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a>            <span class="p">});</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21"></a>        <span class="p">}</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22"></a>    <span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>El método <code>up</code>añadirá la columna <code>estado</code> de tipo <code>varchar</code>a la tabla <em>libros</em> después de la columna estado utilizando por defecto el valor <em>muy bueno</em>.</li>
+<li>El método <code>down</code>eliminará la columna cuando hagamos un <em>rollback</em>.</li>
+</ul>
+<p><strong>c) Modificar columna en una tabla</strong></p>
+<p>Para modificar una columna existente en una tabla en <em>Laravel</em> usando migraciones:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>modify_estado_column_on_libros_table<span class="w"> </span>--table<span class="o">=</span>users
+</code></pre></div></td></tr></table></div>
+<p>Una vez creada la migración, podemos modificar la columna <em>estdo</em> haciendo que su longitud sea de <em>15</em>, en lugar de <em>255</em> que es el valor por defecto en <em>MySQL</em> utilizando el método <code>change</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span>
+<span class="normal"><a href="#__codelineno-10-20">20</a></span>
+<span class="normal"><a href="#__codelineno-10-21">21</a></span>
+<span class="normal"><a href="#__codelineno-10-22">22</a></span>
+<span class="normal"><a href="#__codelineno-10-23">23</a></span>
+<span class="normal"><a href="#__codelineno-10-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="k">use</span> <span class="nx">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="k">use</span> <span class="nx">Illuminate\Database\Schema\Blueprint</span><span class="p">;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Schema</span><span class="p">;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="k">return</span> <span class="k">new</span> <span class="k">class</span> <span class="k">extends</span> <span class="nx">Migration</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p">{</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a>    <span class="p">{</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a>        <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;libros&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a>            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;estado&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">change</span><span class="p">();</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a>        <span class="p">});</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15"></a>    <span class="p">}</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17"></a>
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a>    <span class="p">{</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20"></a>        <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;libros&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21"></a>            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;estado&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">change</span><span class="p">();</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22"></a>        <span class="p">});</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23"></a>    <span class="p">}</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>El método <code>up</code> cambia la longitud a <em>15</em>.</li>
+<li>El método <code>down</code> volverá a dejar la longitud en <em>255</em>.</li>
+</ul>
+<p><strong>d) Eliminar columna en una tabla</strong></p>
+<p>El proceso para eliminar columnas utilizando migraciones en Laravel es el mismo, primero debemos crear una nueva migración usando el comando <code>make:migration</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>drop_status_column_on_users_table<span class="w"> </span>--table<span class="o">=</span>users
+</code></pre></div></td></tr></table></div>
+<p>Una vez tenemos nuestra migración, debemos definir los método up y down, veamos:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span>
+<span class="normal"><a href="#__codelineno-12-18">18</a></span>
+<span class="normal"><a href="#__codelineno-12-19">19</a></span>
+<span class="normal"><a href="#__codelineno-12-20">20</a></span>
+<span class="normal"><a href="#__codelineno-12-21">21</a></span>
+<span class="normal"><a href="#__codelineno-12-22">22</a></span>
+<span class="normal"><a href="#__codelineno-12-23">23</a></span>
+<span class="normal"><a href="#__codelineno-12-24">24</a></span>
+<span class="normal"><a href="#__codelineno-12-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="k">use</span> <span class="nx">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="k">use</span> <span class="nx">Illuminate\Database\Schema\Blueprint</span><span class="p">;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Schema</span><span class="p">;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="k">return</span> <span class="k">new</span> <span class="k">class</span> <span class="k">extends</span> <span class="nx">Migration</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="p">{</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a>    <span class="p">{</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a>        <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a>            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">dropColumn</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">);</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a>        <span class="p">});</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a>    <span class="p">}</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17"></a>
+<a id="__codelineno-12-18" name="__codelineno-12-18"></a>
+<a id="__codelineno-12-19" name="__codelineno-12-19"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20"></a>    <span class="p">{</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21"></a>        <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22"></a>            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">after</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">default</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23"></a>        <span class="p">});</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24"></a>    <span class="p">}</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>El método <code>up</code> elimina la columna status.</li>
+<li>El método <code>down</code> vuelve a crear la columna status, es súper importante que la columna quede en el último estado que tenía.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Crear la migración sin patrones</p>
+<p>En cualquier caso, también podemos especificar un parámetro adicional en el comando de migración para indicar si queremos <em>crear</em> o <em>modificar</em> una tabla, y de este modo podemos definir el nombre de la migración en el idioma que queramos, y sin restricciones de patrones. Estas dos migraciones crean una tabla (<em>pedidos</em>) y modifican otra (<em>usuarios</em>), respectivamente:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>crear_tabla_pedidos<span class="w"> </span>--create<span class="o">=</span>pedidos
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>nuevo_campo_usuario<span class="w"> </span>--table<span class="o">=</span>usuarios
+</code></pre></div></td></tr></table></div>
+</div>
+<h3 id="321-ejecucion-y-borrado-de-migraciones">3.2.1. Ejecución y borrado de migraciones<a class="headerlink" href="#321-ejecucion-y-borrado-de-migraciones" title="Permanent link">&para;</a></h3>
+<p>Para <strong>ejecutar las migraciones</strong> (el método <code>up</code> de cada una), lanzamos el siguiente comando desde la carpeta de nuestro proyecto (habiendo creado la base de datos ya previamente, y modificado las credenciales de acceso en el archivo <code>.env</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div></td></tr></table></div>
+<p>Adicionalmente a las tablas afectadas, se tendrá otra tabla <mark>migrations</mark> en la base de datos con un histórico de las migraciones realizadas. Para cada una, se almacena su <em>id</em> (autonumérico), el nombre de la migración, y el número de proceso por lotes en que se hizo (aquellas que compartan el mismo número se hicieron a la vez en el mismo lote). De este modo, aquellas que ya se hayan hecho no se volverán a realizar.</p>
+<p>Para <strong>deshacer las migraciones</strong> realizadas (ejecutar el método <code>down</code> de las mismas), ejecutamos:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>migrate:rollback
+</code></pre></div></td></tr></table></div>
+<p>Esto eliminará TODAS las migraciones <strong>del último lote</strong> existente en la tabla <code>migrations</code>. Si no queremos deshacerlo todo, sino retroceder un número determinado de migraciones dentro de ese lote, ejecutamos el comando anterior con un parámetro <code>--step</code>, indicando el número de pasos o migraciones a deshacer (en orden cronológico de más reciente a más antigua):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>migrate:rollback<span class="w"> </span>--step<span class="o">=</span><span class="m">2</span>
+</code></pre></div></td></tr></table></div>
+<p>Si volvemos a hacer la migración, se restablecerán las migraciones deshechas de ese lote.</p>
+<p>Otro comando también muy utilizado es <strong><code>migrate:fresh</code></strong>. Lo que hace es <strong>eliminar todas las migraciones realizadas y volverlas a lanzar</strong>. Es útil cuando, estando en desarrollo, añadimos campos nuevos a alguna tabla y queremos rehacer las tablas completamente.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>migrate:fresh
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Ejecutar comando <code>migrate:fresh</code></p>
+<p>El comando <code>migrate:fresh</code> es DESTRUCTIVO, elimina los contenidos de las tablas, y sólo debe utilizarse en entornos de desarrollo, no de producción.</p>
+</div>
+<details class="questionlaravel" open="open">
+<summary> Aplicando las migraciones a nuestro ejemplo biblioteca</summary>
+<p>Vamos a poner en práctica todo lo visto en este apartado sobre nuestro proyecto <code>biblioteca</code>:</p>
+<ol>
+<li>
+<p>Anteriormente ya hemos comentado cómo modificar el archivo <code>.env</code> del proyecto para darle los parámetros de conexión correctos a la base de datos, y </p>
+</li>
+<li>
+<p>cómo crear la base de datos “<em>biblioteca</em>” desde <em>phpMyAdmin</em>. Revisa ese apartado para hacer estos pasos, si no los has hecho ya.</p>
+</li>
+<li>
+<p>A continuación, vamos a eliminar las migraciones que no nos van a ser necesarias de la carpeta <code>database/migrations</code>. En concreto, borramos todas salvo la de creación de la tabla de usuarios <code>create_users_table</code>.</p>
+</li>
+<li>
+<p>Después, editamos la migración para la tabla de usuarios (<code>create_users_table</code>), ya que la utilizaremos en sesiones posteriores. Podemos renombrar el archivo a <code>crear_tabla_usuarios</code>. La clase interna en versiones recientes de Laravel no tiene nombre, se crea simplemente un subtipo de la clase <em>Migration</em>:</p>
+</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span>
+<span class="normal"><a href="#__codelineno-18-5">5</a></span>
+<span class="normal"><a href="#__codelineno-18-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>//<span class="w"> </span>...
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="k">return</span><span class="w"> </span>new<span class="w"> </span>class<span class="w"> </span>extends<span class="w"> </span>Migration
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="o">{</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">  </span>//<span class="w"> </span>...
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="o">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title"> </p>
+<p>En versiones anteriores donde sí tenga nombre, podemos reemplazar el nombre viejo (<em>CreateUsersTable</em>) por <em>CrearTablaUsuarios</em>, por ejemplo.</p>
+</div>
+<p>La tabla a la que se alude en los métodos <code>up</code> y <code>down</code> también la renombramos a <code>usuarios</code>, para dejarlo en nuestro idioma (respetando la fecha de creación en el nombre del archivo), y después editamos el método <code>up</code> para dejarlo así:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span>
+<span class="normal"><a href="#__codelineno-19-5">5</a></span>
+<span class="normal"><a href="#__codelineno-19-6">6</a></span>
+<span class="normal"><a href="#__codelineno-19-7">7</a></span>
+<span class="normal"><a href="#__codelineno-19-8">8</a></span>
+<span class="normal"><a href="#__codelineno-19-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>public<span class="w"> </span><span class="k">function</span><span class="w"> </span>up<span class="o">()</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="o">{</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">  </span>Schema::create<span class="o">(</span><span class="s1">&#39;usuarios&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">(</span>Blueprint<span class="w"> </span><span class="nv">$table</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">     </span><span class="nv">$table</span>-&gt;id<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">     </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;login&#39;</span><span class="o">)</span>-&gt;unique<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="w">     </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;password&#39;</span><span class="o">)</span><span class="p">;</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="w">     </span><span class="nv">$table</span>-&gt;timestamps<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="w">  </span><span class="o">})</span><span class="p">;</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="o">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Ahora vamos a crear una nueva migración para definir la estructura de los libros:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>crear_tabla_libros<span class="w"> </span>--create<span class="o">=</span>libros
+</code></pre></div></td></tr></table></div>
+<p>Editamos después el contenido de esta migración, en concreto el método <code>up</code> para definir estos campos en los libros:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-21-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-21-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-21-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-21-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-21-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-21-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-21-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a>bpublic<span class="w"> </span><span class="k">function</span><span class="w"> </span>up<span class="o">()</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="o">{</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">  </span>Schema::create<span class="o">(</span><span class="s1">&#39;libros&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">(</span>Blueprint<span class="w"> </span><span class="nv">$table</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">     </span><span class="nv">$table</span>-&gt;id<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="w">     </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;titulo&#39;</span><span class="o">)</span><span class="p">;</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="w">     </span><span class="nv">$table</span>-&gt;string<span class="o">(</span><span class="s1">&#39;editorial&#39;</span><span class="o">)</span>-&gt;nullable<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="w">     </span><span class="nv">$table</span>-&gt;float<span class="o">(</span><span class="s1">&#39;precio&#39;</span><span class="o">)</span><span class="p">;</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="w">     </span><span class="nv">$table</span>-&gt;timestamps<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="w">  </span><span class="o">})</span><span class="p">;</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="o">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Cargamos las migraciones con el comando:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div></td></tr></table></div>
+<p>Tras esto, ya deberíamos ver en nuestra base de datos “<em>biblioteca</em>” las dos tablas creadas (<em>usuarios</em> y <em>libros</em>), junto con la tabla <em>migrations</em> que crea Laravel para gestionar las migraciones realizadas.</p>
+</details>
+<h3 id="322-aparacion-de-la-tabla-personal_access_tokens">3.2.2. Aparación de la tabla personal_access_tokens<a class="headerlink" href="#322-aparacion-de-la-tabla-personal_access_tokens" title="Permanent link">&para;</a></h3>
+<p>Si, además de las tablas anteriores, aparece una tabla de <strong>personal_access_tokens</strong> (ésta la crea automáticamente el paquete <em>Sanctum</em>) incorporada por defecto en <em>Laravel</em>.<br/>Esta tabla no molesta para lo que vamos a hacer durante estas unidades, pero si se quiere quitar, hay que editar el archivo <code>app\Providers\AppServiceProvider.php</code> y añadir esta línea en el método <code>register</code> (junto con el correspondiente <code>use</code> para la clase <code>Sanctum</code>):</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>//<span class="w"> </span>...
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a>use<span class="w"> </span>Laravel<span class="se">\S</span>anctum<span class="se">\S</span>anctum<span class="p">;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a>class<span class="w"> </span>AppServiceProvider<span class="w"> </span>...
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="o">{</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="w">  </span>//<span class="w"> </span>...
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="w">  </span>public<span class="w"> </span><span class="k">function</span><span class="w"> </span>register<span class="o">()</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="w">  </span><span class="o">{</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="w">      </span>Sanctum::ignoreMigrations<span class="o">()</span><span class="p">;</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="w">  </span><span class="o">}</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="w">  </span>//<span class="w"> </span>...
+<a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="o">}</span>
+</code></pre></div></td></tr></table></div>
+Después, lanzamos <code>php artisan migrate:fresh</code> para ejecutar desde cero las migraciones, y esa tabla habrá desaparecido.</p>
+<details class="questionlaravel">
+<summary>Ejercicios a realizar</summary>
+<ul>
+<li><code>Ejercicio 1</code>.<br /></li>
+<li><code>Ejercicio 2</code>.</li>
+</ul>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Arturo Blasco - Creative Commons CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/arturoblasco" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
