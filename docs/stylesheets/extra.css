@@ -242,3 +242,20 @@ font-size: 16px
 /* .md-typeset table tr:hover td {
   background-color: #f7b6ad;
 } */
+
+
+/* ABC - Estilos personalizados para citas (blockquote) */
+/* Cambiar color de texto */
+.md-typeset blockquote {
+  color: #333333;   /* Cambia este color al que quieras */
+  font-size: 0.85m; /* Ajusta tamaño */
+  border-inline-start: 7px solid #cba123 !important; /* Color y grosor del borde */
+  /*background: #8f6363; /* Opcional: fondo más claro */
+  padding: 0.2em 0.2em;
+  /*border-radius: 4px; /* Si quieres esquinas redondeadas */
+}
+
+/* Si quieres resaltar palabras como "IMPORTANTE:" */
+.md-typeset blockquote strong {
+  color: #bd8f04; /* Rojo para destacar */
+}
