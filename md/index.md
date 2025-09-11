@@ -68,7 +68,7 @@ title: Inicio
 </div>
 
 !!!cc "Licencia"
-![Llicència Creative Commons](./img/cc.png){ align=left width=150 height=150}Uso de estos materiales sujeto a una licencia Creative Commons CC [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es){:target="blank"}.<br />Derivado a partir de materiales:<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- [Curso Desarrollo Web en Entorno Servido, de Aitor Medrano y Luis Alemañ](https://aitor-medrano.github.io/dwes2122/index.html){:target="blank"}.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;- [Curso de Laravel, de Nacho Iborra](https://nachoiborraies.github.io/laravel){:target="blank"}.
+	![Llicència Creative Commons](./img/cc.png){ align=left width=150 height=150}Uso de estos materiales sujeto a una licencia Creative Commons CC [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es){:target="blank"}.<br />Derivado a partir de materiales:<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;- [Curso Desarrollo Web en Entorno Servido, de Aitor Medrano y Luis Alemañ](https://aitor-medrano.github.io/dwes2122/index.html){:target="blank"}.<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;- [Curso de Laravel, de Nacho Iborra](https://nachoiborraies.github.io/laravel){:target="blank"}.
 

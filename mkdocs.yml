@@ -29,7 +29,13 @@ nav:
         - ut01/ut01ac.md        
     - UT 2 Lenguaje PHP:
         - ut02/ut0201.md
-
+        - ut02/ut0202.md
+        - ut02/ut0204.md
+        - ut02/ut0204.md
+        - ut02/ut0205.md
+        - ut02/ut0206.md
+        - ut02/ut0207.md
+        - ut02/ut02ac.md    
 theme:
   name: material      # selección del tema
   language: es        # idioma del tema per defecte (ABC)
