@@ -8,7 +8,7 @@ docs_dir: 'md'
 site_dir: 'docs'
 
 # Adreça on s'executa el server local (mkdocs serve)
-dev_addr: localhost:8025
+dev_addr: localhost:9025
 
 # Navegació dels lloc DWES25
 nav:
@@ -30,7 +30,7 @@ nav:
     - UT 2 Lenguaje PHP:
         - ut02/ut0201.md
         - ut02/ut0202.md
-        - ut02/ut0204.md
+        - ut02/ut0203.md
         - ut02/ut0204.md
         - ut02/ut0205.md
         - ut02/ut0206.md
