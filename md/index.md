@@ -2,9 +2,9 @@
 title: Inicio
 ---
 
-# Inicio
+# Desarrollo Web en Entorno Servidor
 
-<div style="margin: 0 auto; max-width: 70%;"><img src="img/dwes_wallpaper.png" alt="DWES/></div>
+<div style="margin: 0 auto; max-width: 70%;"><img src="img/dwes1.png" alt="DWES/></div>
 <div class="center-table">
 <table>
 <tr>

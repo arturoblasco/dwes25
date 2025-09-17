@@ -234,7 +234,8 @@ font-size: 16px
 
 /* ABC. Cambiar el color de fondo de la tabla */
 .md-typeset table th {
-  background-color: #ffd453; /* Cambia este color */
+  /*background-color: #ffd453; /* Cambia este color */
+  background-color: #f0d583;
   color: #383119; /* Cambia el color del texto si es necesario */
   font-size: 1.15em;
 }
