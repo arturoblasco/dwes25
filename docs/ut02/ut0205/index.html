@@ -820,6 +820,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. Parámetros variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variadics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variadics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1044,6 +1059,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. Parámetros variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variadics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variadics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1191,7 +1221,7 @@
 </div>
 </div>
 <h2 id="1-parametros-por-referencia">1. Parámetros por referencia<a class="headerlink" href="#1-parametros-por-referencia" title="Permanent link">&para;</a></h2>
-<p>Si queremos pasar un parámetro por referencia, en la declaración de la función, indicaremos los parámetros mediante el operador <code>&amp;</code> para indicar la dirección de memoria de la variable.</p>
+<p>Si queremos pasar un parámetro por referencia, en la declaración de la función, indicaremos los parámetros mediante el operador <strong><code>&amp;</code></strong> para indicar la dirección de memoria de la variable.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ejemplo argumentos por referencia</label><label for="__tabbed_2_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1319,9 +1349,9 @@
 <h2 id="3-parametros-variables">3. Parámetros variables<a class="headerlink" href="#3-parametros-variables" title="Permanent link">&para;</a></h2>
 <p>Podemos tener funciones donde en la declaración no indiquemos la cantidad de datos de entrada.</p>
 <ul>
-<li><code>$arrayArgs = func_get_args();</code> → Obtiene un array con los parámetros.</li>
-<li><code>$cantidad = func_num_args();</code> → Obtiene la cantidad de parámetros recibidos.</li>
-<li><code>$valor = func_get_arg(numArgumento);</code> → Obtiene el parámetro que ocupa la posición <code>numArgumento</code>.</li>
+<li><code>$cantidad</code> = <strong><code>func_num_args();</code></strong> → Obtiene la cantidad de parámetros recibidos.</li>
+<li><code>$arrayArgs</code> = <strong><code>func_get_args();</code></strong> → Obtiene un array con los parámetros.</li>
+<li><code>$valor</code> = <strong><code>func_get_arg(numArgumento);</code></strong> → Obtiene el parámetro que ocupa la posición <code>numArgumento</code>.</li>
 </ul>
 <p>Estas funciones no se pueden pasar como parámetro a otra función (como funciones variable, que veremos más adelante). Para ello, debemos guardar previamente la función en una variable.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Ejemplo argumentos variables</label><label for="__tabbed_5_2">Resultado</label></div>
@@ -1367,8 +1397,8 @@
 </div>
 </div>
 </div>
-<p><strong>Variadics</strong><br />
-Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (<strong>variadics</strong>) el cual "<em>disfraza</em>" los parámetros como un array. Este operador se coloca delante de un parámetro en la definición de la función, y dicho parámetro se convertirá en un <strong>array</strong> que contendrá todos los argumentos adicionales pasados a la función:</p>
+<h3 id="variadics">Variadics<a class="headerlink" href="#variadics" title="Permanent link">&para;</a></h3>
+<p>Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (<strong>variadics</strong>) el cual "<em>disfraza</em>" los parámetros como un array. Este operador se coloca delante de un parámetro en la definición de la función, y dicho parámetro se convertirá en un <strong>array</strong> que contendrá todos los argumentos adicionales pasados a la función:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Ejemplo <em>variadics</em></label><label for="__tabbed_6_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1445,11 +1475,13 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 </div>
 <details class="question">
 <summary>Ejercicio de función de parámetros variables y variadics</summary>
-<p>Realiza un ejercicio en el que:<br />
-- Se genere un array de 31 elementos (de nombre <em>lluvias</em>) en el que se recoja la cantidad de agua de cada día del mes.<br />
-- Cada valor de cantidad se deberá crear, de forma aleatoria, a partir de un número comprendido entre <code>0</code> y <code>100</code>.<br />
-- Se deberá crear una función (de nombre <em>suma de precipitaciones</em>) para sumar todas las cantidades del array lluvias (que se le pasará como parámetro).<br />
-- El resultado mostrará la precipitación total y la precipitación media.</p>
+<p>Realiza un ejercicio en el que:</p>
+<ul>
+<li>Se genere un array de 31 elementos (de nombre <em>lluvias</em>) en el que se recoja la cantidad de agua de cada día del mes.<br /></li>
+<li>Cada valor de cantidad se deberá crear, de forma aleatoria, a partir de un número comprendido entre <code>0</code> y <code>100</code>.<br /></li>
+<li>Se deberá crear una función (de nombre <em>suma de precipitaciones</em>) para sumar todas las cantidades del array lluvias (que se le pasará como parámetro).<br /></li>
+<li>El resultado mostrará la precipitación total y la precipitación media.</li>
+</ul>
 </details>
 <h2 id="4-argumentos-con-nombre">4. Argumentos con nombre<a class="headerlink" href="#4-argumentos-con-nombre" title="Permanent link">&para;</a></h2>
 <p>Desde PHP 8.0 podemos pasar los argumentos con el nombre (además de por posición, como hemos hecho hasta ahora). Los argumentos con nombre se pasan poniendo el nombre como prefijo del parámetro separado por dos puntos: <code>$resultado = funcion( arg1 : valor1, arg2 : valor2 );</code></p>
@@ -1461,11 +1493,13 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
 <span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="k">function</span> <span class="nf">funcionArgumentosNombre</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">$c</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3"></a>        <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$a</span><span class="s2"> </span><span class="si">$b</span><span class="s2"> </span><span class="si">$c</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4"></a>    <span class="p">}</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a>    <span class="nx">funcionArgumentosNombre</span><span class="p">(</span><span class="nx">c</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">a</span><span class="o">:</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// &quot;1 2 3&quot;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>    <span class="nx">funcionArgumentosNombre</span><span class="p">(</span><span class="nx">c</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">a</span><span class="o">:</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// &quot;1 2 3&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1528,13 +1562,9 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 </div>
 </div>
 </div>
-<h2 id="6-alcance">6. Alcance<a class="headerlink" href="#6-alcance" title="Permanent link">&para;</a></h2>
-<p>Las variables definidas fuera de las funciones tienen alcance <strong>global</strong>: accesibles desde cualquier función.</p>
-<p>Los parámetros de una función y las variables declaradas dentro de una función (se conocen como variables <strong>locales</strong>) sólo son accesibles desde dentro de la misma función → alcance de <strong>función</strong>.</p>
-<p>En caso de conflicto, tienen prioridad las variables locales. Para evitar el conflicto, dentro de la función, podemos declarar la variable como <code>global</code>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Ejemplo alcance local</label><label for="__tabbed_11_2">Resultado</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<details class="question">
+<summary>Ejemplo 1</summary>
+<p>¿Qué ocurre si enviamos un número y una cadena sin utilizar <code>strict</code>:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
@@ -1545,17 +1575,75 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 <span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-12-10">10</a></span>
-<span class="normal"><a href="#__codelineno-12-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a>    <span class="k">function</span> <span class="nf">miCiudad</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>        <span class="nv">$ciudad</span> <span class="o">=</span> <span class="s2">&quot;Elche&quot;</span><span class="p">;</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a>        <span class="k">echo</span> <span class="s2">&quot;Dentro de la función: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a>    <span class="p">}</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a>
-<a id="__codelineno-12-7" name="__codelineno-12-7"></a>    <span class="nv">$ciudad</span> <span class="o">=</span> <span class="s2">&quot;Alicante&quot;</span><span class="p">;</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8"></a>    <span class="k">echo</span> <span class="s2">&quot;Antes de la función: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9"></a>    <span class="nx">miCiudad</span><span class="p">();</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10"></a>    <span class="k">echo</span> <span class="s2">&quot;Después de la función: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="cp">?&gt;</span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="k">function</span> <span class="nf">sumaNumeros</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>    <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="p">}</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="c1">// como `strict` no está habilitado la cadena &quot;2 tablas&quot; se convierte en int(2)</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="c1">// y el resultado devolverá 5</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="k">echo</span> <span class="nx">sumaNumeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;2 tablas&quot;</span><span class="p">);</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div></p>
+</details>
+<details class="question">
+<summary>Ejemplo 2</summary>
+<p>Si queremos retornar un valor de un tipo diferente al de los argumentos, deberemos asegurarnos que retorna el tipo correcto (en este ejemplo haciendo un <em>cast</em>):
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="k">function</span> <span class="nf">sumaNumeros</span><span class="p">(</span><span class="nx">float</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">float</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a>    <span class="k">return</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">);</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="p">}</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="c1">// el resultado devolverá 5</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="k">echo</span> <span class="nx">sumaNumeros</span><span class="p">(</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">);</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div></p>
+</details>
+<h2 id="6-alcance">6. Alcance<a class="headerlink" href="#6-alcance" title="Permanent link">&para;</a></h2>
+<p>Las variables definidas fuera de las funciones tienen alcance <strong>global</strong>: accesibles desde cualquier función.</p>
+<p>Los parámetros de una función y las variables declaradas dentro de una función (se conocen como variables <strong>locales</strong>) sólo son accesibles desde dentro de la misma función → alcance de <strong>función</strong>.</p>
+<p>En caso de conflicto, tienen prioridad las variables locales. Para evitar el conflicto, dentro de la función, podemos declarar la variable como <code>global</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Ejemplo alcance local</label><label for="__tabbed_11_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>    <span class="k">function</span> <span class="nf">miCiudad</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a>        <span class="nv">$ciudad</span> <span class="o">=</span> <span class="s2">&quot;Elche&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>        <span class="k">echo</span> <span class="s2">&quot;Dentro de la función: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a>    <span class="p">}</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a>    <span class="nv">$ciudad</span> <span class="o">=</span> <span class="s2">&quot;Alicante&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a>    <span class="k">echo</span> <span class="s2">&quot;Antes de la función: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a>    <span class="nx">miCiudad</span><span class="p">();</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a>    <span class="k">echo</span> <span class="s2">&quot;Después de la función: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1567,29 +1655,29 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 <div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Ejemplo alcance global</label><label for="__tabbed_12_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-13-10">10</a></span>
-<span class="normal"><a href="#__codelineno-13-11">11</a></span>
-<span class="normal"><a href="#__codelineno-13-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a>    <span class="k">function</span> <span class="nf">miCiudad</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a>        <span class="k">global</span> <span class="nv">$ciudad</span><span class="p">;</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4"></a>        <span class="nv">$ciudad</span> <span class="o">=</span> <span class="s2">&quot;Elche&quot;</span><span class="p">;</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5"></a>        <span class="k">echo</span> <span class="s2">&quot;Dentro de la función: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6"></a>    <span class="p">}</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7"></a>
-<a id="__codelineno-13-8" name="__codelineno-13-8"></a>    <span class="nv">$ciudad</span> <span class="o">=</span> <span class="s2">&quot;Alicante&quot;</span><span class="p">;</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9"></a>    <span class="k">echo</span> <span class="s2">&quot;Antes de llamar: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10"></a>    <span class="nx">miCiudad</span><span class="p">();</span>
-<a id="__codelineno-13-11" name="__codelineno-13-11"></a>    <span class="k">echo</span> <span class="s2">&quot;Después de llamar: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span>
-<a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="cp">?&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>    <span class="k">function</span> <span class="nf">miCiudad</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>        <span class="k">global</span> <span class="nv">$ciudad</span><span class="p">;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>        <span class="nv">$ciudad</span> <span class="o">=</span> <span class="s2">&quot;Elche&quot;</span><span class="p">;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a>        <span class="k">echo</span> <span class="s2">&quot;Dentro de la función: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a>    <span class="p">}</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a>    <span class="nv">$ciudad</span> <span class="o">=</span> <span class="s2">&quot;Alicante&quot;</span><span class="p">;</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a>    <span class="k">echo</span> <span class="s2">&quot;Antes de llamar: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a>    <span class="nx">miCiudad</span><span class="p">();</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a>    <span class="k">echo</span> <span class="s2">&quot;Después de llamar: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1606,19 +1694,19 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 <div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Ejemplo tipos <em>nullables</em></label><label for="__tabbed_13_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span>
-<span class="normal"><a href="#__codelineno-14-3">3</a></span>
-<span class="normal"><a href="#__codelineno-14-4">4</a></span>
-<span class="normal"><a href="#__codelineno-14-5">5</a></span>
-<span class="normal"><a href="#__codelineno-14-6">6</a></span>
-<span class="normal"><a href="#__codelineno-14-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="k">function</span> <span class="nf">obtenerNombre</span><span class="p">(</span><span class="o">?</span><span class="nx">string</span> <span class="nv">$nombre</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a>    <span class="k">return</span> <span class="nv">$nombre</span> <span class="o">?</span> <span class="nv">$nombre</span> <span class="o">:</span> <span class="s2">&quot;Invitado&quot;</span><span class="p">;</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="p">}</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a>
-<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="k">echo</span> <span class="nx">obtenerNombre</span><span class="p">(</span><span class="k">null</span><span class="p">);</span> <span class="c1">// Imprime &quot;Invitado&quot;</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="k">echo</span> <span class="nx">obtenerNombre</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">);</span> <span class="c1">// Imprime &quot;Juan&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span>
+<span class="normal"><a href="#__codelineno-16-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="k">function</span> <span class="nf">obtenerNombre</span><span class="p">(</span><span class="o">?</span><span class="nx">string</span> <span class="nv">$nombre</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a>    <span class="k">return</span> <span class="nv">$nombre</span> <span class="o">?</span> <span class="nv">$nombre</span> <span class="o">:</span> <span class="s2">&quot;Invitado&quot;</span><span class="p">;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="p">}</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="k">echo</span> <span class="nx">obtenerNombre</span><span class="p">(</span><span class="k">null</span><span class="p">);</span> <span class="c1">// Imprime &quot;Invitado&quot;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="k">echo</span> <span class="nx">obtenerNombre</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">);</span> <span class="c1">// Imprime &quot;Juan&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1631,19 +1719,19 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 <div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Ejemplos unión de tipos</label><label for="__tabbed_14_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
-<span class="normal"><a href="#__codelineno-15-2">2</a></span>
-<span class="normal"><a href="#__codelineno-15-3">3</a></span>
-<span class="normal"><a href="#__codelineno-15-4">4</a></span>
-<span class="normal"><a href="#__codelineno-15-5">5</a></span>
-<span class="normal"><a href="#__codelineno-15-6">6</a></span>
-<span class="normal"><a href="#__codelineno-15-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a>    <span class="k">function</span> <span class="nf">obtenerValor</span><span class="p">(</span><span class="nx">int</span><span class="o">|</span><span class="nx">string</span> <span class="nv">$valor</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a>        <span class="k">return</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$valor</span><span class="p">;</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a>    <span class="p">}</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5"></a>
-<a id="__codelineno-15-6" name="__codelineno-15-6"></a>    <span class="k">echo</span> <span class="nx">obtenerValor</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>     <span class="c1">// Imprime &quot;10&quot;</span>
-<a id="__codelineno-15-7" name="__codelineno-15-7"></a>    <span class="k">echo</span> <span class="nx">obtenerValor</span><span class="p">(</span><span class="s2">&quot;diez&quot;</span><span class="p">);</span> <span class="c1">// Imprime &quot;diez&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span>
+<span class="normal"><a href="#__codelineno-17-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a>    <span class="k">function</span> <span class="nf">obtenerValor</span><span class="p">(</span><span class="nx">int</span><span class="o">|</span><span class="nx">string</span> <span class="nv">$valor</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a>        <span class="k">return</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$valor</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a>    <span class="p">}</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a>    <span class="k">echo</span> <span class="nx">obtenerValor</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>     <span class="c1">// Imprime &quot;10&quot;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a>    <span class="k">echo</span> <span class="nx">obtenerValor</span><span class="p">(</span><span class="s2">&quot;diez&quot;</span><span class="p">);</span> <span class="c1">// Imprime &quot;diez&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1660,27 +1748,27 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 <div class="tabbed-set tabbed-alternate" data-tabs="15:3"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Sintaxis</label><label for="__tabbed_15_2">Ejemplo</label><label for="__tabbed_15_3">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
-<span class="normal"><a href="#__codelineno-16-2">2</a></span>
-<span class="normal"><a href="#__codelineno-16-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2"></a>    <span class="nv">$nombreFuncion</span> <span class="o">=</span> <span class="s1">&#39;nombreDeLaFuncion&#39;</span><span class="p">;</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a>    <span class="nv">$nombreFuncion</span><span class="p">();</span> <span class="c1">// Llama a nombreDeLaFuncion()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a>    <span class="nv">$nombreFuncion</span> <span class="o">=</span> <span class="s1">&#39;nombreDeLaFuncion&#39;</span><span class="p">;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a>    <span class="nv">$nombreFuncion</span><span class="p">();</span> <span class="c1">// Llama a nombreDeLaFuncion()</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
-<span class="normal"><a href="#__codelineno-17-2">2</a></span>
-<span class="normal"><a href="#__codelineno-17-3">3</a></span>
-<span class="normal"><a href="#__codelineno-17-4">4</a></span>
-<span class="normal"><a href="#__codelineno-17-5">5</a></span>
-<span class="normal"><a href="#__codelineno-17-6">6</a></span>
-<span class="normal"><a href="#__codelineno-17-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2"></a>    <span class="k">function</span> <span class="nf">sumar</span> <span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">){</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4"></a>    <span class="p">}</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5"></a>    <span class="nv">$funcion</span> <span class="o">=</span> <span class="s2">&quot;sumar&quot;</span><span class="p">;</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6"></a>    <span class="k">echo</span> <span class="nv">$funcion</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span> <span class="c1">// invoca a la función suma</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="cp">?&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span>
+<span class="normal"><a href="#__codelineno-19-5">5</a></span>
+<span class="normal"><a href="#__codelineno-19-6">6</a></span>
+<span class="normal"><a href="#__codelineno-19-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a>    <span class="k">function</span> <span class="nf">sumar</span> <span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">){</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a>    <span class="p">}</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a>    <span class="nv">$funcion</span> <span class="o">=</span> <span class="s2">&quot;sumar&quot;</span><span class="p">;</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a>    <span class="k">echo</span> <span class="nv">$funcion</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span> <span class="c1">// invoca a la función suma</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1694,53 +1782,53 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 <div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Ejemplo función anónima</label><label for="__tabbed_16_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-18-10">10</a></span>
-<span class="normal"><a href="#__codelineno-18-11">11</a></span>
-<span class="normal"><a href="#__codelineno-18-12">12</a></span>
-<span class="normal"><a href="#__codelineno-18-13">13</a></span>
-<span class="normal"><a href="#__codelineno-18-14">14</a></span>
-<span class="normal"><a href="#__codelineno-18-15">15</a></span>
-<span class="normal"><a href="#__codelineno-18-16">16</a></span>
-<span class="normal"><a href="#__codelineno-18-17">17</a></span>
-<span class="normal"><a href="#__codelineno-18-18">18</a></span>
-<span class="normal"><a href="#__codelineno-18-19">19</a></span>
-<span class="normal"><a href="#__codelineno-18-20">20</a></span>
-<span class="normal"><a href="#__codelineno-18-21">21</a></span>
-<span class="normal"><a href="#__codelineno-18-22">22</a></span>
-<span class="normal"><a href="#__codelineno-18-23">23</a></span>
-<span class="normal"><a href="#__codelineno-18-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2"></a>    <span class="nv">$anonima</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3"></a>        <span class="k">echo</span> <span class="s2">&quot;Hola&quot;</span><span class="o">.</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4"></a>    <span class="p">};</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5"></a>    <span class="nv">$anonima</span><span class="p">();</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6"></a>
-<a id="__codelineno-18-7" name="__codelineno-18-7"></a>    <span class="nv">$anonimaConParametro</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="nv">$nombre</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-18-8" name="__codelineno-18-8"></a>        <span class="k">echo</span> <span class="s2">&quot;Hola &quot;</span><span class="o">.</span><span class="nv">$nombre</span><span class="o">.</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-18-9" name="__codelineno-18-9"></a>    <span class="p">};</span>
-<a id="__codelineno-18-10" name="__codelineno-18-10"></a>    <span class="nv">$anonimaConParametro</span><span class="p">(</span><span class="s2">&quot;Aitor&quot;</span><span class="p">);</span>
-<a id="__codelineno-18-11" name="__codelineno-18-11"></a>
-<a id="__codelineno-18-12" name="__codelineno-18-12"></a>    <span class="c1">// Uso de variables externas a la función anónima --&gt; `use`</span>
-<a id="__codelineno-18-13" name="__codelineno-18-13"></a>    <span class="nv">$mensaje</span> <span class="o">=</span> <span class="s2">&quot;Hola&quot;</span><span class="p">;</span>
-<a id="__codelineno-18-14" name="__codelineno-18-14"></a>    <span class="nv">$miClosure</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$mensaje</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-18-15" name="__codelineno-18-15"></a>        <span class="k">echo</span> <span class="nv">$mensaje</span><span class="o">.</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;;</span>
-<a id="__codelineno-18-16" name="__codelineno-18-16"></a>    <span class="p">};</span>
-<a id="__codelineno-18-17" name="__codelineno-18-17"></a>    <span class="nv">$miClosure</span><span class="p">();</span>
-<a id="__codelineno-18-18" name="__codelineno-18-18"></a>
-<a id="__codelineno-18-19" name="__codelineno-18-19"></a>    <span class="c1">// Uso de parámetros</span>
-<a id="__codelineno-18-20" name="__codelineno-18-20"></a>    <span class="nv">$holaPHP</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="nv">$arg</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$mensaje</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-18-21" name="__codelineno-18-21"></a>        <span class="k">echo</span> <span class="nv">$mensaje</span><span class="o">.</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="nv">$arg</span><span class="p">;</span>
-<a id="__codelineno-18-22" name="__codelineno-18-22"></a>    <span class="p">};</span>
-<a id="__codelineno-18-23" name="__codelineno-18-23"></a>    <span class="nv">$holaPHP</span><span class="p">(</span><span class="s2">&quot;PHP&quot;</span><span class="p">);</span>
-<a id="__codelineno-18-24" name="__codelineno-18-24"></a><span class="cp">?&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-20-10">10</a></span>
+<span class="normal"><a href="#__codelineno-20-11">11</a></span>
+<span class="normal"><a href="#__codelineno-20-12">12</a></span>
+<span class="normal"><a href="#__codelineno-20-13">13</a></span>
+<span class="normal"><a href="#__codelineno-20-14">14</a></span>
+<span class="normal"><a href="#__codelineno-20-15">15</a></span>
+<span class="normal"><a href="#__codelineno-20-16">16</a></span>
+<span class="normal"><a href="#__codelineno-20-17">17</a></span>
+<span class="normal"><a href="#__codelineno-20-18">18</a></span>
+<span class="normal"><a href="#__codelineno-20-19">19</a></span>
+<span class="normal"><a href="#__codelineno-20-20">20</a></span>
+<span class="normal"><a href="#__codelineno-20-21">21</a></span>
+<span class="normal"><a href="#__codelineno-20-22">22</a></span>
+<span class="normal"><a href="#__codelineno-20-23">23</a></span>
+<span class="normal"><a href="#__codelineno-20-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a>    <span class="nv">$anonima</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a>        <span class="k">echo</span> <span class="s2">&quot;Hola&quot;</span><span class="o">.</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a>    <span class="p">};</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a>    <span class="nv">$anonima</span><span class="p">();</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a>    <span class="nv">$anonimaConParametro</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="nv">$nombre</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a>        <span class="k">echo</span> <span class="s2">&quot;Hola &quot;</span><span class="o">.</span><span class="nv">$nombre</span><span class="o">.</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a>    <span class="p">};</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10"></a>    <span class="nv">$anonimaConParametro</span><span class="p">(</span><span class="s2">&quot;Aitor&quot;</span><span class="p">);</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11"></a>
+<a id="__codelineno-20-12" name="__codelineno-20-12"></a>    <span class="c1">// Uso de variables externas a la función anónima --&gt; `use`</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13"></a>    <span class="nv">$mensaje</span> <span class="o">=</span> <span class="s2">&quot;Hola&quot;</span><span class="p">;</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14"></a>    <span class="nv">$miClosure</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$mensaje</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15"></a>        <span class="k">echo</span> <span class="nv">$mensaje</span><span class="o">.</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;;</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16"></a>    <span class="p">};</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17"></a>    <span class="nv">$miClosure</span><span class="p">();</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18"></a>
+<a id="__codelineno-20-19" name="__codelineno-20-19"></a>    <span class="c1">// Uso de parámetros</span>
+<a id="__codelineno-20-20" name="__codelineno-20-20"></a>    <span class="nv">$holaPHP</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="nv">$arg</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$mensaje</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-20-21" name="__codelineno-20-21"></a>        <span class="k">echo</span> <span class="nv">$mensaje</span><span class="o">.</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="nv">$arg</span><span class="p">;</span>
+<a id="__codelineno-20-22" name="__codelineno-20-22"></a>    <span class="p">};</span>
+<a id="__codelineno-20-23" name="__codelineno-20-23"></a>    <span class="nv">$holaPHP</span><span class="p">(</span><span class="s2">&quot;PHP&quot;</span><span class="p">);</span>
+<a id="__codelineno-20-24" name="__codelineno-20-24"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1754,43 +1842,44 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 <h2 id="8-biblioteca-de-funciones">8. Biblioteca de funciones<a class="headerlink" href="#8-biblioteca-de-funciones" title="Permanent link">&para;</a></h2>
 <p>Podemos agrupar un conjunto de funciones en un archivo, para permitir su reutilización. Posteriormente, se incluye con:</p>
 <ul>
-<li><code>include(archivo);</code> / <code>include_once(archivo);</code></li>
-<li><code>require(archivo);</code> / <code>require_once(archivo);</code></li>
+<li><strong><code>include(archivo);</code></strong>   |   <strong><code>include_once(archivo);</code></strong></li>
+<li><strong><code>require(archivo);</code></strong>   |   <strong><code>require_once(archivo);</code></strong></li>
 </ul>
-<p>Si no encuentra el archivo, <code>require</code> lanza un error fatal, <code>include</code> lo ignora. Las funciones <code>_once</code> sólo se cargan una vez, si ya ha sido incluida previamente, no lo vuelve a hacer, evitando bucles.</p>
+<p>Si no encuentra el archivo, <code>require</code> lanza un error fatal, <code>include</code> lo ignora. </p>
+<p>Las funciones <code>_once</code> sólo se cargan una vez, si ya ha sido incluida previamente, no lo vuelve a hacer, evitando bucles.</p>
 <p>Por ejemplo, colocamos las funciones en el archivo <code>biblioteca.php</code> y posteriormente en otro archivo se referencian:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="17:3"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><input id="__tabbed_17_3" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1"><code>biblioteca.php</code></label><label for="__tabbed_17_2">Php</label><label for="__tabbed_17_3">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
-<span class="normal"><a href="#__codelineno-19-2">2</a></span>
-<span class="normal"><a href="#__codelineno-19-3">3</a></span>
-<span class="normal"><a href="#__codelineno-19-4">4</a></span>
-<span class="normal"><a href="#__codelineno-19-5">5</a></span>
-<span class="normal"><a href="#__codelineno-19-6">6</a></span>
-<span class="normal"><a href="#__codelineno-19-7">7</a></span>
-<span class="normal"><a href="#__codelineno-19-8">8</a></span>
-<span class="normal"><a href="#__codelineno-19-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2"></a>    <span class="k">function</span> <span class="nf">suma</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4"></a>    <span class="p">}</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5"></a>
-<a id="__codelineno-19-6" name="__codelineno-19-6"></a>    <span class="k">function</span> <span class="nf">resta</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">-</span> <span class="nv">$b</span><span class="p">;</span>
-<a id="__codelineno-19-8" name="__codelineno-19-8"></a>    <span class="p">}</span>
-<a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="cp">?&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span>
+<span class="normal"><a href="#__codelineno-21-6">6</a></span>
+<span class="normal"><a href="#__codelineno-21-7">7</a></span>
+<span class="normal"><a href="#__codelineno-21-8">8</a></span>
+<span class="normal"><a href="#__codelineno-21-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a>    <span class="k">function</span> <span class="nf">suma</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a>    <span class="p">}</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a>    <span class="k">function</span> <span class="nf">resta</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">-</span> <span class="nv">$b</span><span class="p">;</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8"></a>    <span class="p">}</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
-<span class="normal"><a href="#__codelineno-20-2">2</a></span>
-<span class="normal"><a href="#__codelineno-20-3">3</a></span>
-<span class="normal"><a href="#__codelineno-20-4">4</a></span>
-<span class="normal"><a href="#__codelineno-20-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2"></a>    <span class="k">include_once</span><span class="p">(</span><span class="s2">&quot;biblioteca.php&quot;</span><span class="p">);</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3"></a>    <span class="k">echo</span> <span class="nx">suma</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4"></a>    <span class="k">echo</span> <span class="nx">resta</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="cp">?&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>    <span class="k">include_once</span><span class="p">(</span><span class="s2">&quot;biblioteca.php&quot;</span><span class="p">);</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a>    <span class="k">echo</span> <span class="nx">suma</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a>    <span class="k">echo</span> <span class="nx">resta</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1799,53 +1888,57 @@ Desde PHP 5.6, se puede utilizar el operador <strong><code>...</code></strong> (
 </div>
 </div>
 <h2 id="9-plantillas-mediante-include">9. Plantillas mediante include<a class="headerlink" href="#9-plantillas-mediante-include" title="Permanent link">&para;</a></h2>
-<p>Mediante el uso de la instrucción <code>include</code> también podemos separar fragmentos de código PHP/HTML que queramos reutilizar en nuestros sitios web y crear un sistema muy sencillo de plantillas. Por ejemplo, vamos a separar una página en tres partes, primero la parte superior en <code>encabezado.php</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
-<span class="normal"><a href="#__codelineno-21-2">2</a></span>
-<span class="normal"><a href="#__codelineno-21-3">3</a></span>
-<span class="normal"><a href="#__codelineno-21-4">4</a></span>
-<span class="normal"><a href="#__codelineno-21-5">5</a></span>
-<span class="normal"><a href="#__codelineno-21-6">6</a></span>
-<span class="normal"><a href="#__codelineno-21-7">7</a></span>
-<span class="normal"><a href="#__codelineno-21-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="x">&lt;!DOCTYPE html&gt;</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="x">&lt;html lang=&quot;es&quot;&gt;</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="x">&lt;head&gt;</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="x">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="x">    &lt;title&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$titulo</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="x">&lt;/head&gt;</span>
-<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="x">&lt;body&gt;</span>
-</code></pre></div></td></tr></table></div>
-<p>La parte de abajo, por ejemplo, solo va a contener HTML y la colocamos en <code>pie.html</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
-<span class="normal"><a href="#__codelineno-22-2">2</a></span>
-<span class="normal"><a href="#__codelineno-22-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>Profesor/a X<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
-<p>Y luego nos centramos únicamente en el contenido que cambia en <code>pagina.php</code>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Ejemplo de plantillas con <em>include</em></label><label for="__tabbed_18_2">Resultado</label></div>
+<p>Mediante el uso de la instrucción <code>include</code> también podemos separar fragmentos de código PHP/HTML que queramos reutilizar en nuestros sitios web y crear un sistema muy sencillo de plantillas. </p>
+<p>Por ejemplo, vamos a separar una página en tres partes:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:4"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><input id="__tabbed_18_3" name="__tabbed_18" type="radio" /><input id="__tabbed_18_4" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Parte superior en <code>header.php</code></label><label for="__tabbed_18_2">Parte inferior en <code>footer.html</code></label><label for="__tabbed_18_3">Página utilizando <em>include</em></label><label for="__tabbed_18_4">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-23-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2"></a>    <span class="nv">$titulo</span> <span class="o">=</span> <span class="s2">&quot;Página con includes&quot;</span><span class="p">;</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3"></a>    <span class="k">include</span><span class="p">(</span><span class="s2">&quot;encabezado.php&quot;</span><span class="p">);</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="cp">?&gt;</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5"></a>
-<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="x">&lt;h1&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$titulo</span> <span class="cp">?&gt;</span><span class="x">&lt;/h1&gt;</span>
-<a id="__codelineno-23-7" name="__codelineno-23-7"></a>
-<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-23-9" name="__codelineno-23-9"></a>    <span class="k">include</span><span class="p">(</span><span class="s2">&quot;pie.html&quot;</span><span class="p">);</span>
-<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="cp">?&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span>
+<span class="normal"><a href="#__codelineno-23-5">5</a></span>
+<span class="normal"><a href="#__codelineno-23-6">6</a></span>
+<span class="normal"><a href="#__codelineno-23-7">7</a></span>
+<span class="normal"><a href="#__codelineno-23-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="x">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="x">&lt;html lang=&quot;es&quot;&gt;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="x">&lt;head&gt;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="x">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="x">    &lt;title&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$titulo</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="x">&lt;/head&gt;</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="x">&lt;body&gt;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>Profesor/a X<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<p>Y luego nos centramos únicamente en el contenido que cambia en <code>pagina.php</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-25-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-25-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-25-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-25-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-25-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a>    <span class="nv">$titulo</span> <span class="o">=</span> <span class="s2">&quot;Página con includes&quot;</span><span class="p">;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a>    <span class="k">include</span><span class="p">(</span><span class="s2">&quot;header.php&quot;</span><span class="p">);</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="cp">?&gt;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a>
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="x">&lt;h1&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$titulo</span> <span class="cp">?&gt;</span><span class="x">&lt;/h1&gt;</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a>
+<a id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9"></a>    <span class="k">include</span><span class="p">(</span><span class="s2">&quot;footer.html&quot;</span><span class="p">);</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">

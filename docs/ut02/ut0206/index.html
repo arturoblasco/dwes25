@@ -1051,9 +1051,17 @@
 
 
 <h1 id="26-funciones-predefinidas">2.6. Funciones predefinidas<a class="headerlink" href="#26-funciones-predefinidas" title="Permanent link">&para;</a></h1>
-<p>El lenguaje ofrece un abanico de funciones ya definidas, agrupadas por su funcionalidad: <a href="https://www.php.net/manual/es/funcref.php" target="_blank">https://www.php.net/manual/es/funcref.php</a>.</p>
+<p>El lenguaje ofrece un abanico de funciones ya definidas, agrupadas por su funcionalidad: </p>
+<ul>
+<li>Página oficial: <a href="https://www.php.net/manual/es/funcref.php" target="_blank">https://www.php.net/manual/es/funcref.php</a>.</li>
+<li><a href="https://www.w3schools.com/php/php_ref_overview.asp" target="blank">w3schools.com</a> </li>
+</ul>
 <h2 id="1-cadenas">1. Cadenas<a class="headerlink" href="#1-cadenas" title="Permanent link">&para;</a></h2>
-<p>Ya hemos visto que se pueden crear con comillas simples (<code>''</code>, sin interpretación) o comillas dobles (<code>""</code>, interpretan el contenido y las secuencias de escape <code>\n</code>, <code>\t</code>, <code>\$</code>, <code>{</code>, … - <em>magic quotes</em>):</p>
+<p>Ya hemos visto que se pueden crear con:</p>
+<ul>
+<li>comillas simples (<strong><code>''</code></strong>, sin interpretación) o </li>
+<li>comillas dobles (<strong><code>""</code></strong>, interpretan el contenido y las secuencias de escape <code>\n</code>, <code>\t</code>, <code>\$</code>, <code>{</code>, … - <em>magic quotes</em>):</li>
+</ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ejemplo cadenas</label><label for="__tabbed_1_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1067,14 +1075,14 @@
 <span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;Alba&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="nv">$moneda</span> <span class="o">=</span> <span class="s2">&quot;€&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;Alba&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nv">$moneda</span> <span class="o">=</span> <span class="s2">&quot;€&quot;</span><span class="p">;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="k">echo</span> <span class="s1">&#39;Me llamo $nombre&#39;</span><span class="p">;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="k">echo</span> <span class="s2">&quot;Me llamo </span><span class="si">$nombre</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">echo</span> <span class="s1">&#39;Me llamo $nombre&#39;</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">echo</span> <span class="s2">&quot;Me llamo </span><span class="si">$nombre</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="k">echo</span> <span class="s2">&quot;Son 30 </span><span class="si">{</span><span class="nv">$moneda</span><span class="si">}</span><span class="s2">s&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">echo</span> <span class="s2">&quot;Son 30 </span><span class="si">{</span><span class="nv">$moneda</span><span class="si">}</span><span class="s2">s&quot;</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1093,10 +1101,10 @@
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
 <span class="normal"><a href="#__codelineno-1-5">5</a></span>
 <span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="nv">$cadena</span> <span class="o">=</span> <span class="s2">&quot;Yo soy Batman&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="nv">$ygriega</span> <span class="o">=</span> <span class="nv">$cadena</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nv">$cadena</span> <span class="o">=</span> <span class="s2">&quot;Yo soy Batman&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nv">$ygriega</span> <span class="o">=</span> <span class="nv">$cadena</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="k">echo</span> <span class="nv">$ygriega</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">echo</span> <span class="nv">$ygriega</span><span class="p">;</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1109,21 +1117,37 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Ejemplo formatos</label><label for="__tabbed_3_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span>
-<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="nv">$num</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;Larry Bird&quot;</span><span class="p">;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nv">$num</span> <span class="o">=</span> <span class="mf">23.2</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;M. Jordan&quot;</span><span class="p">;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="nb">printf</span><span class="p">(</span><span class="s2">&quot;%s llevaba el número %d &lt;br/&gt;&quot;</span><span class="p">,</span> <span class="nv">$nombre</span><span class="p">,</span> <span class="nv">$num</span><span class="p">);</span> <span class="c1">// %d -&gt; número decimal, %s -&gt; string</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="nv">$frase</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%s llevaba el número %d&quot;</span><span class="p">,</span> <span class="nv">$nombre</span><span class="p">,</span> <span class="nv">$num</span><span class="p">);</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="k">echo</span> <span class="nv">$frase</span><span class="p">;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="cp">?&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1">// %d -&gt; número entero (convierte el float a int), %s -&gt; string</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1">// ¿asigna 25 caracteres a la cadena? No</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="nb">printf</span><span class="p">(</span><span class="s2">&quot;%25s llevaba el número %d&lt;br/&gt;&quot;</span><span class="p">,</span> <span class="nv">$nombre</span><span class="p">,</span> <span class="nv">$num</span><span class="p">);</span> 
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1">// %f -&gt; con &#39;- rellenamos hasta los 25 caracteres a la izquierda</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nb">printf</span><span class="p">(</span><span class="s2">&quot;%&#39;-25s llevaba el número %5.2f&lt;br/&gt;&quot;</span><span class="p">,</span> <span class="nv">$nombre</span><span class="p">,</span> <span class="nv">$num</span><span class="p">);</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">// %s -&gt; con &#39;- rellenamos hasta los 25 caracteres a la derecha</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1">// %5.2f -&gt; dos dígitos para parte entera + . + dos dígitos para parte decimal</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="nv">$frase</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%&#39;--25s llevaba el número %5.2f&lt;br/&gt;&quot;</span><span class="p">,</span> <span class="nv">$nombre</span><span class="p">,</span> <span class="nv">$num</span><span class="p">);</span> 
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="k">echo</span> <span class="nv">$frase</span><span class="p">;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1158,18 +1182,18 @@
 <span class="normal"><a href="#__codelineno-3-12">12</a></span>
 <span class="normal"><a href="#__codelineno-3-13">13</a></span>
 <span class="normal"><a href="#__codelineno-3-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="nv">$cadena</span> <span class="o">=</span> <span class="s2">&quot;El caballero oscuro&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nv">$cadena</span> <span class="o">=</span> <span class="s2">&quot;El caballero oscuro&quot;</span><span class="p">;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="nv">$tam</span> <span class="o">=</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">);</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="k">echo</span> <span class="s2">&quot;La longitud de &#39;</span><span class="si">$cadena</span><span class="s2">&#39; es: </span><span class="si">$tam</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nv">$tam</span> <span class="o">=</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">echo</span> <span class="s2">&quot;La longitud de &#39;</span><span class="si">$cadena</span><span class="s2">&#39; es: </span><span class="si">$tam</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    <span class="nv">$oscuro</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span> <span class="c1">// desde 13 al final</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="nv">$caba</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// desde 3, 4 letras</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nv">$oscuro</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span> <span class="c1">// desde 13 al final</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="nv">$caba</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// desde 3, 4 letras</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="nv">$katman</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="nv">$cadena</span><span class="p">);</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>    <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$oscuro</span><span class="s2"> </span><span class="si">$caba</span><span class="s2"> ahora es </span><span class="si">$katman</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="nv">$katman</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="nv">$cadena</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$oscuro</span><span class="s2"> </span><span class="si">$caba</span><span class="s2"> ahora es </span><span class="si">$katman</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-3-12" name="__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="k">echo</span> <span class="s2">&quot;Grande &quot;</span><span class="o">.</span><span class="nb">strtoupper</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">);</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="k">echo</span> <span class="s2">&quot;Grande &quot;</span><span class="o">.</span><span class="nb">strtoupper</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">);</span>
 <a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1194,12 +1218,12 @@
 <span class="normal"><a href="#__codelineno-4-6">6</a></span>
 <span class="normal"><a href="#__codelineno-4-7">7</a></span>
 <span class="normal"><a href="#__codelineno-4-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">function</span> <span class="nf">despues</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$letra</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="nv">$asciiLetra</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$letra</span><span class="p">);</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="nv">$asciiLetra</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="p">}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">function</span> <span class="nf">despues</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$letra</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="nv">$asciiLetra</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$letra</span><span class="p">);</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="nv">$asciiLetra</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">}</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="k">echo</span> <span class="nx">despues</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">echo</span> <span class="nx">despues</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">);</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1225,12 +1249,12 @@
 <span class="normal"><a href="#__codelineno-5-6">6</a></span>
 <span class="normal"><a href="#__codelineno-5-7">7</a></span>
 <span class="normal"><a href="#__codelineno-5-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="nv">$cadena</span> <span class="o">=</span> <span class="s2">&quot; Programando en PHP &quot;</span><span class="p">;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="nv">$limpia</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">);</span> <span class="c1">// &quot;Programando en PHP&quot;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nv">$cadena</span> <span class="o">=</span> <span class="s2">&quot; Programando en PHP &quot;</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="nv">$limpia</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$cadena</span><span class="p">);</span> <span class="c1">// &quot;Programando en PHP&quot;</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>    <span class="nv">$sucia</span> <span class="o">=</span> <span class="nb">str_pad</span><span class="p">(</span><span class="nv">$limpia</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">);</span> <span class="c1">// &quot;Programando en PHP.....&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="nv">$sucia</span> <span class="o">=</span> <span class="nb">str_pad</span><span class="p">(</span><span class="nv">$limpia</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">);</span> <span class="c1">// &quot;Programando en PHP.....&quot;</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>    <span class="k">echo</span> <span class="nv">$sucia</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="k">echo</span> <span class="nv">$sucia</span><span class="p">;</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1275,28 +1299,28 @@
 <span class="normal"><a href="#__codelineno-6-22">22</a></span>
 <span class="normal"><a href="#__codelineno-6-23">23</a></span>
 <span class="normal"><a href="#__codelineno-6-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="nv">$frase1</span> <span class="o">=</span> <span class="s2">&quot;Alfa&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>    <span class="nv">$frase2</span> <span class="o">=</span> <span class="s2">&quot;Alfa&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="nv">$frase3</span> <span class="o">=</span> <span class="s2">&quot;Beta&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>    <span class="nv">$frase4</span> <span class="o">=</span> <span class="s2">&quot;Alfa5&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="nv">$frase5</span> <span class="o">=</span> <span class="s2">&quot;Alfa10&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nv">$frase1</span> <span class="o">=</span> <span class="s2">&quot;Alfa&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nv">$frase2</span> <span class="o">=</span> <span class="s2">&quot;Alfa&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="nv">$frase3</span> <span class="o">=</span> <span class="s2">&quot;Beta&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="nv">$frase4</span> <span class="o">=</span> <span class="s2">&quot;Alfa5&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="nv">$frase5</span> <span class="o">=</span> <span class="s2">&quot;Alfa10&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-7" name="__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase1</span> <span class="o">==</span> <span class="nv">$frase2</span> <span class="p">);</span> <span class="c1">// true</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase1</span> <span class="o">===</span> <span class="nv">$frase2</span> <span class="p">);</span> <span class="c1">// true</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase1</span> <span class="o">==</span> <span class="nv">$frase2</span> <span class="p">);</span> <span class="c1">// true</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase1</span> <span class="o">===</span> <span class="nv">$frase2</span> <span class="p">);</span> <span class="c1">// true</span>
 <a id="__codelineno-6-10" name="__codelineno-6-10"></a>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strcmp</span><span class="p">(</span><span class="nv">$frase1</span><span class="p">,</span> <span class="nv">$frase2</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// 0</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strcmp</span><span class="p">(</span><span class="nv">$frase1</span><span class="p">,</span> <span class="nv">$frase2</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// 0</span>
 <a id="__codelineno-6-12" name="__codelineno-6-12"></a>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strncmp</span><span class="p">(</span><span class="nv">$frase1</span><span class="p">,</span> <span class="nv">$frase5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// 0</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strncmp</span><span class="p">(</span><span class="nv">$frase1</span><span class="p">,</span> <span class="nv">$frase5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// 0</span>
 <a id="__codelineno-6-14" name="__codelineno-6-14"></a>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase2</span> <span class="o">&lt;</span> <span class="nv">$frase3</span> <span class="p">);</span> <span class="c1">// true</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase2</span> <span class="o">&lt;</span> <span class="nv">$frase3</span> <span class="p">);</span> <span class="c1">// true</span>
 <a id="__codelineno-6-16" name="__codelineno-6-16"></a>
-<a id="__codelineno-6-17" name="__codelineno-6-17"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strcmp</span><span class="p">(</span><span class="nv">$frase2</span><span class="p">,</span> <span class="nv">$frase3</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// -1</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strcmp</span><span class="p">(</span><span class="nv">$frase2</span><span class="p">,</span> <span class="nv">$frase3</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// -1</span>
 <a id="__codelineno-6-18" name="__codelineno-6-18"></a>
-<a id="__codelineno-6-19" name="__codelineno-6-19"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase4</span> <span class="o">&lt;</span> <span class="nv">$frase5</span> <span class="p">);</span> <span class="c1">// false</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$frase4</span> <span class="o">&lt;</span> <span class="nv">$frase5</span> <span class="p">);</span> <span class="c1">// false</span>
 <a id="__codelineno-6-20" name="__codelineno-6-20"></a>
-<a id="__codelineno-6-21" name="__codelineno-6-21"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strcmp</span><span class="p">(</span><span class="nv">$frase4</span><span class="p">,</span> <span class="nv">$frase5</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// 4 → f4 &gt; f5</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strcmp</span><span class="p">(</span><span class="nv">$frase4</span><span class="p">,</span> <span class="nv">$frase5</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// 4 → f4 &gt; f5</span>
 <a id="__codelineno-6-22" name="__codelineno-6-22"></a>
-<a id="__codelineno-6-23" name="__codelineno-6-23"></a>    <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strnatcmp</span><span class="p">(</span><span class="nv">$frase4</span><span class="p">,</span> <span class="nv">$frase5</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// -1 → f4 &lt; f5</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="nb">var_dump</span><span class="p">(</span> <span class="nb">strnatcmp</span><span class="p">(</span><span class="nv">$frase4</span><span class="p">,</span> <span class="nv">$frase5</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// -1 → f4 &lt; f5</span>
 <a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1324,14 +1348,14 @@
 <span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-7-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="nv">$frase</span> <span class="o">=</span> <span class="s2">&quot;Quien busca encuentra, eso dicen, a veces&quot;</span><span class="p">;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="nv">$pos1</span> <span class="o">=</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">// encuentra la primera coma</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>    <span class="nv">$pos2</span> <span class="o">=</span> <span class="nb">strrpos</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">// encuentra la última coma</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>    <span class="nv">$trasComa</span> <span class="o">=</span> <span class="nb">strstr</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">// &quot;, eso dicen, a veces&quot;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="nv">$frase</span> <span class="o">=</span> <span class="s2">&quot;Quien busca encuentra, eso dicen, a veces&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="nv">$pos1</span> <span class="o">=</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">// encuentra la primera coma</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="nv">$pos2</span> <span class="o">=</span> <span class="nb">strrpos</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">// encuentra la última coma</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="nv">$trasComa</span> <span class="o">=</span> <span class="nb">strstr</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">// &quot;, eso dicen, a veces&quot;</span>
 <a id="__codelineno-7-6" name="__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a>    <span class="k">echo</span> <span class="nv">$pos1</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a>    <span class="k">echo</span> <span class="nv">$pos2</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a>    <span class="k">echo</span> <span class="nv">$trasComa</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="k">echo</span> <span class="nv">$pos1</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="k">echo</span> <span class="nv">$pos2</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="k">echo</span> <span class="nv">$trasComa</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
 <a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1365,18 +1389,18 @@
 <span class="normal"><a href="#__codelineno-8-12">12</a></span>
 <span class="normal"><a href="#__codelineno-8-13">13</a></span>
 <span class="normal"><a href="#__codelineno-8-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="nv">$prueba1</span> <span class="o">=</span> <span class="s2">&quot;hola&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="nv">$prueba2</span> <span class="o">=</span> <span class="s2">&quot;hola33&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a>    <span class="nv">$prueba3</span> <span class="o">=</span> <span class="s2">&quot;33&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a>    <span class="nv">$prueba4</span> <span class="o">=</span> <span class="s2">&quot;,.()[]&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a>    <span class="nv">$prueba5</span> <span class="o">=</span> <span class="s2">&quot; ,.()[]&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="nv">$prueba1</span> <span class="o">=</span> <span class="s2">&quot;hola&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="nv">$prueba2</span> <span class="o">=</span> <span class="s2">&quot;hola33&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="nv">$prueba3</span> <span class="o">=</span> <span class="s2">&quot;33&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="nv">$prueba4</span> <span class="o">=</span> <span class="s2">&quot;,.()[]&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="nv">$prueba5</span> <span class="o">=</span> <span class="s2">&quot; ,.()[]&quot;</span><span class="p">;</span>
 <a id="__codelineno-8-7" name="__codelineno-8-7"></a>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a>    <span class="k">echo</span> <span class="nb">ctype_alpha</span><span class="p">(</span><span class="nv">$prueba1</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a>    <span class="k">echo</span> <span class="nb">ctype_alnum</span><span class="p">(</span><span class="nv">$prueba2</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a>    <span class="k">echo</span> <span class="nb">ctype_digit</span><span class="p">(</span><span class="nv">$prueba3</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a>    <span class="k">echo</span> <span class="nb">ctype_punct</span><span class="p">(</span><span class="nv">$prueba4</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a>    <span class="k">echo</span> <span class="nb">ctype_space</span><span class="p">(</span><span class="nv">$prueba5</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// false</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="k">echo</span> <span class="nb">ctype_space</span><span class="p">(</span><span class="nv">$prueba5</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="k">echo</span> <span class="nb">ctype_alpha</span><span class="p">(</span><span class="nv">$prueba1</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="k">echo</span> <span class="nb">ctype_alnum</span><span class="p">(</span><span class="nv">$prueba2</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="k">echo</span> <span class="nb">ctype_digit</span><span class="p">(</span><span class="nv">$prueba3</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="k">echo</span> <span class="nb">ctype_punct</span><span class="p">(</span><span class="nv">$prueba4</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="k">echo</span> <span class="nb">ctype_space</span><span class="p">(</span><span class="nv">$prueba5</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// false</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="k">echo</span> <span class="nb">ctype_space</span><span class="p">(</span><span class="nv">$prueba5</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// true</span>
 <a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1385,7 +1409,7 @@
 </div>
 </div>
 </div>
-<h3 id="13-trabajando-con-subcadenas">1.3. <strong>Trabajando con subcadenas</strong><a class="headerlink" href="#13-trabajando-con-subcadenas" title="Permanent link">&para;</a></h3>
+<h3 id="13-trabajando-con-subcadenas">1.3. Trabajando con subcadenas<a class="headerlink" href="#13-trabajando-con-subcadenas" title="Permanent link">&para;</a></h3>
 <p>Si queremos romper las cadenas en trozos, tenemos:</p>
 <ul>
 <li><strong><code>explode</code></strong>: convierte en array la cadena mediante un separador.</li>
@@ -1423,32 +1447,32 @@
 <span class="normal"><a href="#__codelineno-9-26">26</a></span>
 <span class="normal"><a href="#__codelineno-9-27">27</a></span>
 <span class="normal"><a href="#__codelineno-9-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>    <span class="nv">$frase</span> <span class="o">=</span> <span class="s2">&quot;Quien busca encuentra, eso dicen, a veces&quot;</span><span class="p">;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nv">$frase</span> <span class="o">=</span> <span class="s2">&quot;Quien busca encuentra, eso dicen, a veces&quot;</span><span class="p">;</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    <span class="nv">$partes</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="nv">$frase</span><span class="p">);</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="nv">$partes</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="nv">$frase</span><span class="p">);</span>
 <a id="__codelineno-9-5" name="__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a>    <span class="c1">// Salida con bucle for</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a>    <span class="c1">// SALIDA: [&quot;Quien busca encuentra&quot;,&quot;eso dicen&quot;,&quot;a veces&quot;]</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a>    <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$partes</span><span class="p">);</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9"></a>        <span class="k">echo</span> <span class="nv">$partes</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10"></a>    <span class="p">}</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="c1">// Salida con bucle for</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="c1">// SALIDA: [&quot;Quien busca encuentra&quot;,&quot;eso dicen&quot;,&quot;a veces&quot;]</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$partes</span><span class="p">);</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="k">echo</span> <span class="nv">$partes</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="p">}</span>
 <a id="__codelineno-9-11" name="__codelineno-9-11"></a>
 <a id="__codelineno-9-12" name="__codelineno-9-12"></a>
-<a id="__codelineno-9-13" name="__codelineno-9-13"></a>    <span class="nv">$ciudades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Elche&quot;</span><span class="p">,</span> <span class="s2">&quot;Aspe&quot;</span><span class="p">,</span> <span class="s2">&quot;Alicante&quot;</span><span class="p">];</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14"></a>    <span class="nv">$cadenaCiudades</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="nv">$ciudades</span><span class="p">);</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15"></a>    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$cadenaCiudades</span><span class="o">.</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">);</span>  <span class="c1">// salida con print_r</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16"></a>    <span class="c1">// SALIDA: &quot;Elche&gt;Aspe&gt;Alicante&quot;;</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="nv">$ciudades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Elche&quot;</span><span class="p">,</span> <span class="s2">&quot;Aspe&quot;</span><span class="p">,</span> <span class="s2">&quot;Alicante&quot;</span><span class="p">];</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="nv">$cadenaCiudades</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="nv">$ciudades</span><span class="p">);</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="nb">print_r</span><span class="p">(</span><span class="nv">$cadenaCiudades</span><span class="o">.</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">);</span>  <span class="c1">// salida con print_r</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="c1">// SALIDA: &quot;Elche&gt;Aspe&gt;Alicante&quot;;</span>
 <a id="__codelineno-9-17" name="__codelineno-9-17"></a>
-<a id="__codelineno-9-18" name="__codelineno-9-18"></a>    <span class="nv">$partes3cadena</span> <span class="o">=</span> <span class="nb">chunk_split</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-<a id="__codelineno-9-19" name="__codelineno-9-19"></a>    <span class="c1">// SALIDA: un string</span>
-<a id="__codelineno-9-20" name="__codelineno-9-20"></a>    <span class="c1">// &quot;Qui en bus ca enc uen tra , e so dic en, a vec es &quot;</span>
-<a id="__codelineno-9-21" name="__codelineno-9-21"></a>    <span class="nv">$partes3array</span> <span class="o">=</span> <span class="nb">str_split</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-<a id="__codelineno-9-22" name="__codelineno-9-22"></a>    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$partes3array</span><span class="p">);</span>  <span class="c1">// salida con print_</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="nv">$partes3cadena</span> <span class="o">=</span> <span class="nb">chunk_split</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="c1">// SALIDA: un string</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="c1">// &quot;Qui en bus ca enc uen tra , e so dic en, a vec es &quot;</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="nv">$partes3array</span> <span class="o">=</span> <span class="nb">str_split</span><span class="p">(</span><span class="nv">$frase</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="nb">print_r</span><span class="p">(</span><span class="nv">$partes3array</span><span class="p">);</span>  <span class="c1">// salida con print_</span>
 <a id="__codelineno-9-23" name="__codelineno-9-23"></a>
-<a id="__codelineno-9-24" name="__codelineno-9-24"></a>    <span class="c1">// salida con funcion json_encode</span>
-<a id="__codelineno-9-25" name="__codelineno-9-25"></a>    <span class="c1">// SALIDA: un array</span>
-<a id="__codelineno-9-26" name="__codelineno-9-26"></a>    <span class="c1">// [&quot;Qui&quot;, &quot;en &quot;, &quot;bus&quot;, &quot;ca &quot;, &quot;enc&quot;, …]</span>
-<a id="__codelineno-9-27" name="__codelineno-9-27"></a>    <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$partes3array</span><span class="p">);</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="c1">// salida con funcion json_encode</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="c1">// SALIDA: un array</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="c1">// [&quot;Qui&quot;, &quot;en &quot;, &quot;bus&quot;, &quot;ca &quot;, &quot;enc&quot;, …]</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$partes3array</span><span class="p">);</span>
 <a id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1519,14 +1543,16 @@
 <li><strong><code>rawurlencode</code></strong> / <strong><code>rawurldecode</code></strong>: codifica/decodifica una URL (espacios, ...).</li>
 </ul>
 <div class="admonition ies">
-<p class="admonition-title"> </p>
-<p>Estas funciones las utilizaremos en la <em>unidad temática 4. Programación Web</em>.</p>
+<p class="admonition-title">&nbsp;</p>
+<p>Estas funciones las utilizaremos más adelante en la <em>unidad temática 4. Programación Web</em>.</p>
 </div>
 <h2 id="2-matematicas">2. Matemáticas<a class="headerlink" href="#2-matematicas" title="Permanent link">&para;</a></h2>
 <p>Disponemos tanto de constantes como funciones ya definidas para trabajar con operaciones matemáticas: <a href="https://www.php.net/manual/es/ref.math.php" target="_blank">https://www.php.net/manual/es/ref.math.php</a>.</p>
-<p>Constantes ya definidas:
-  - <strong><code>M_PI</code></strong>, <strong><code>M_E</code></strong>, <strong><code>M_EULER</code></strong>, <strong><code>M_LN2</code></strong>, <strong><code>M_LOG2E</code></strong> <br/>
-  - <strong><code>PHP_INT_MAX</code></strong>, <strong><code>PHP_FLOAT_MAX</code></strong></p>
+<p>Constantes ya definidas:</p>
+<ul>
+<li><strong><code>M_PI</code></strong>, <strong><code>M_E</code></strong>, <strong><code>M_EULER</code></strong>, <strong><code>M_LN2</code></strong>, <strong><code>M_LOG2E</code></strong> <br/></li>
+<li><strong><code>PHP_INT_MAX</code></strong>, <strong><code>PHP_FLOAT_MAX</code></strong></li>
+</ul>
 <p>Funciones de cálculo:</p>
 <ul>
 <li><strong><code>pow</code></strong>, <strong><code>sqrt</code></strong>, <strong><code>log</code></strong>, <strong><code>decbin</code></strong>, <strong><code>bindec</code></strong>, <strong><code>decoct</code></strong>, <strong><code>dechex</code></strong>, <strong><code>base_convert</code></strong>, <strong><code>max</code></strong>, <strong><code>min</code></strong></li>
@@ -1549,9 +1575,9 @@
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
 <span class="normal"><a href="#__codelineno-11-4">4</a></span>
 <span class="normal"><a href="#__codelineno-11-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a>    <span class="nv">$nf</span> <span class="o">=</span> <span class="mf">1234.5678</span><span class="p">;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a>    <span class="k">echo</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$nf</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 1,234.57</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a>    <span class="k">echo</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$nf</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;#&quot;</span><span class="p">);</span> <span class="c1">// 1#234M57</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="nv">$nf</span> <span class="o">=</span> <span class="mf">1234.5678</span><span class="p">;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="k">echo</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$nf</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 1,234.57</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="k">echo</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$nf</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;#&quot;</span><span class="p">);</span> <span class="c1">// 1#234M57</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1579,19 +1605,19 @@
 <span class="normal"><a href="#__codelineno-12-13">13</a></span>
 <span class="normal"><a href="#__codelineno-12-14">14</a></span>
 <span class="normal"><a href="#__codelineno-12-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a>    <span class="nv">$siete</span> <span class="o">=</span> <span class="nb">floor</span><span class="p">(</span><span class="nv">$num</span><span class="p">);</span>   <span class="c1">// SALIDA: 7</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>    <span class="k">echo</span> <span class="nv">$siete</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="nv">$siete</span> <span class="o">=</span> <span class="nb">floor</span><span class="p">(</span><span class="nv">$num</span><span class="p">);</span>   <span class="c1">// SALIDA: 7</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="k">echo</span> <span class="nv">$siete</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a>    <span class="nv">$ocho</span> <span class="o">=</span> <span class="nb">ceil</span><span class="p">(</span><span class="nv">$num</span><span class="p">);</span>   <span class="c1">// SALIDA: 8</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a>    <span class="k">echo</span> <span class="nv">$ocho</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="nv">$ocho</span> <span class="o">=</span> <span class="nb">ceil</span><span class="p">(</span><span class="nv">$num</span><span class="p">);</span>   <span class="c1">// SALIDA: 8</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="k">echo</span> <span class="nv">$ocho</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
 <a id="__codelineno-12-7" name="__codelineno-12-7"></a>
-<a id="__codelineno-12-8" name="__codelineno-12-8"></a>    <span class="nv">$otro</span> <span class="o">=</span> <span class="mf">4.49</span><span class="p">;</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9"></a>    <span class="nv">$cuatro</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$otro</span><span class="p">);</span>   <span class="c1">// SALIDA: 4</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10"></a>    <span class="k">echo</span> <span class="nv">$cuatro</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11"></a>    <span class="nv">$cuatrocinco</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$otro</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>   <span class="c1">// SALIDA: 4.5</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12"></a>    <span class="k">echo</span> <span class="nv">$cuatrocinco</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13"></a>    <span class="nv">$cinco</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$cuatrocinco</span><span class="p">);</span>   <span class="c1">// SALIDA: 5</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14"></a>    <span class="k">echo</span> <span class="nv">$cinco</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="nv">$otro</span> <span class="o">=</span> <span class="mf">4.49</span><span class="p">;</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="nv">$cuatro</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$otro</span><span class="p">);</span>   <span class="c1">// SALIDA: 4</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="k">echo</span> <span class="nv">$cuatro</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="nv">$cuatrocinco</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$otro</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>   <span class="c1">// SALIDA: 4.5</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="k">echo</span> <span class="nv">$cuatrocinco</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="nv">$cinco</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$cuatrocinco</span><span class="p">);</span>   <span class="c1">// SALIDA: 5</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="k">echo</span> <span class="nv">$cinco</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
 <a id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1631,24 +1657,24 @@
 <span class="normal"><a href="#__codelineno-13-18">18</a></span>
 <span class="normal"><a href="#__codelineno-13-19">19</a></span>
 <span class="normal"><a href="#__codelineno-13-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a>    <span class="nv">$uno</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="nv">$uno</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5"></a>    <span class="nv">$unofloat</span> <span class="o">=</span> <span class="nb">floatval</span><span class="p">(</span><span class="nv">$uno</span><span class="p">);</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="nv">$unofloat</span> <span class="o">=</span> <span class="nb">floatval</span><span class="p">(</span><span class="nv">$uno</span><span class="p">);</span>
 <a id="__codelineno-13-6" name="__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7"></a>    <span class="nb">settype</span><span class="p">(</span><span class="nv">$uno</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="nb">settype</span><span class="p">(</span><span class="nv">$uno</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">);</span>
 <a id="__codelineno-13-8" name="__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// false</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// false</span>
 <a id="__codelineno-13-10" name="__codelineno-13-10"></a>
-<a id="__codelineno-13-11" name="__codelineno-13-11"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_string</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_string</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
 <a id="__codelineno-13-12" name="__codelineno-13-12"></a>
-<a id="__codelineno-13-13" name="__codelineno-13-13"></a>    <span class="nb">settype</span><span class="p">(</span><span class="nv">$uno</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="nb">settype</span><span class="p">(</span><span class="nv">$uno</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">);</span>
 <a id="__codelineno-13-14" name="__codelineno-13-14"></a>
-<a id="__codelineno-13-15" name="__codelineno-13-15"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// false</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// false</span>
 <a id="__codelineno-13-16" name="__codelineno-13-16"></a>
-<a id="__codelineno-13-17" name="__codelineno-13-17"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_float</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_float</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
 <a id="__codelineno-13-18" name="__codelineno-13-18"></a>
-<a id="__codelineno-13-19" name="__codelineno-13-19"></a>    <span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nb">intval</span><span class="p">(</span><span class="nv">$uno</span><span class="p">)));</span> <span class="c1">// true</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nb">intval</span><span class="p">(</span><span class="nv">$uno</span><span class="p">)));</span> <span class="c1">// true</span>
 <a id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="cp">?&gt;</span><span class="x">  </span>
 </code></pre></div></td></tr></table></div>
 </div>

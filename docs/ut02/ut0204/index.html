@@ -732,19 +732,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    2.4. Arrays
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -756,43 +743,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-arrays-asociativos" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Arrays asociativos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-arrays-bidimensionales" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Arrays bidimensionales
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -926,32 +876,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-arrays-asociativos" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Arrays asociativos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-arrays-bidimensionales" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Arrays bidimensionales
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -967,12 +891,9 @@
 
 
 <h1 id="24-arrays">2.4. Arrays<a class="headerlink" href="#24-arrays" title="Permanent link">&para;</a></h1>
+<h1 id="1-arrays-indexadas">1. Arrays indexadas<a class="headerlink" href="#1-arrays-indexadas" title="Permanent link">&para;</a></h1>
 <p>Para almacenar datos compuestos, podemos utilizar tanto arrays sencillos como arrays asociativos (similares a un <strong>mapa</strong>). En realidad todos los arrays son mapas ordenados compuestos de pares <em>clave-valor</em>.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>Cuidado con mezclar tipos</strong></p>
-<p>Como el tipado es dinámico, nuestros arrays pueden contener datos de diferentes tipos. No se recomienda mezclar los tipos.</p>
-</div>
-<p>Del mismo modo que Java, se definen mediante corchetes, son <em>0-index</em>, y se puede asignar un valor a un posición determinada:</p>
+<p>Del mismo modo que <em>Java</em>, se definen mediante corchetes, son <em>0-index</em>, y se puede asignar un valor a un posición determinada:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -984,34 +905,59 @@
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="c1">// opción 1</span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="c1">// crear array: opción 1</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="nv">$frutas</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;naranja&quot;</span><span class="p">,</span> <span class="s2">&quot;pera&quot;</span><span class="p">,</span> <span class="s2">&quot;manzana&quot;</span><span class="p">);</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="c1">// opción 2</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="c1">// crear array: opción 2</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="nv">$frutas2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;naranja&quot;</span><span class="p">,</span> <span class="s2">&quot;pera&quot;</span><span class="p">,</span> <span class="s2">&quot;manzana&quot;</span><span class="p">];</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="c1">// opción 3</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="c1">// crear array vacía: opción 3</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="nv">$frutas3</span> <span class="o">=</span> <span class="p">[];</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="nv">$frutas3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;naranja&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="nv">$frutas3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pera&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    <span class="nv">$frutas3</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;manzana&quot;</span><span class="p">;</span> <span class="c1">// lo añade al final</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="c1">// asignar valores</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="nv">$frutas3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;naranja&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    <span class="nv">$frutas3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pera&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>    <span class="nv">$frutas3</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;manzana&quot;</span><span class="p">;</span> <span class="c1">// lo añade al final</span>
 </code></pre></div></td></tr></table></div>
-<p>Podemos obtener el tamaño del array mediante la función <code>count(array)</code>. Para recorrer el array haremos uso de un bucle <code>for</code>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ejemplo recorrido <em>array</em></label><label for="__tabbed_1_2">Resultado</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<div class="admonition warning">
+<p class="admonition-title"><strong>Cuidado con mezclar tipos</strong></p>
+<p>Como el tipado es dinámico, nuestros arrays pueden contener datos de diferentes tipos. </p>
+<p>No se recomienda mezclar los tipos.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
 <span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="nv">$tam</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span> <span class="c1">// tamaño del array</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span><span class="o">&lt;</span><span class="nb">count</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>        <span class="k">echo</span> <span class="s2">&quot;Elemento </span><span class="si">$i</span><span class="s2">: </span><span class="si">$frutas[$i]</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="p">}</span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">function</span> <span class="nf">miFuncion</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="k">echo</span> <span class="s2">&quot;Vamos al cole.&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="nv">$miArray</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Alba&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;manzanas&quot;</span><span class="p">,</span> <span class="s2">&quot;bananas&quot;</span><span class="p">],</span> <span class="nx">miFuncion</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nv">$miArray</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="cp">?&gt;</span>
+</code></pre></div></td></tr></table></div></p>
+</div>
+<p>Podemos obtener el tamaño del array mediante la función <code>count(array)</code>. Para recorrer el array haremos uso de un bucle <code>for</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ejemplo recorrido <em>array</em></label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="nv">$tam</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span> <span class="c1">// tamaño del array</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span><span class="o">&lt;</span><span class="nb">count</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>        <span class="k">echo</span> <span class="s2">&quot;Elemento </span><span class="si">$i</span><span class="s2">: </span><span class="si">$frutas[$i]</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1023,15 +969,15 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ejemplo recorrido <em>array</em> con <em>foreach</em></label><label for="__tabbed_2_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="c1">// mediante foreach no necesitamos saber el tamaño del array</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$frutas</span> <span class="k">as</span> <span class="nv">$elemento</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>        <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$elemento</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="c1">// mediante foreach no necesitamos saber el tamaño del array</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$frutas</span> <span class="k">as</span> <span class="nv">$elemento</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>        <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$elemento</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1039,54 +985,54 @@
 </div>
 </div>
 </div>
-<h2 id="1-arrays-asociativos">1. Arrays asociativos<a class="headerlink" href="#1-arrays-asociativos" title="Permanent link">&para;</a></h2>
+<h1 id="2-arrays-asociativos">2. Arrays asociativos<a class="headerlink" href="#2-arrays-asociativos" title="Permanent link">&para;</a></h1>
 <p>Cada elemento es un par <em>clave-valor</em>. En vez de acceder por la posición, lo hacemos mediante una clave. Así pues, para cada clave se almacena un valor.</p>
 <p>Se asigna de la siguiente forma dentro de los corchetes: <code>clave =&gt; valor</code>.</p>
 <p>A la hora de recorrer este tipo de arrays, mediante <code>foreach</code> separamos cada elemento en una pareja clave =&gt; valor:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Ejemplo <em>array asociativo</em></label><label for="__tabbed_3_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span>
-<span class="normal"><a href="#__codelineno-3-18">18</a></span>
-<span class="normal"><a href="#__codelineno-3-19">19</a></span>
-<span class="normal"><a href="#__codelineno-3-20">20</a></span>
-<span class="normal"><a href="#__codelineno-3-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="nv">$capitales</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Italia&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Roma&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>                <span class="s2">&quot;Francia&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>                <span class="s2">&quot;Portugal&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Lisboa&quot;</span><span class="p">];</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="nv">$capitalFrancia</span> <span class="o">=</span> <span class="nv">$capitales</span><span class="p">[</span><span class="s2">&quot;Francia&quot;</span><span class="p">];</span> <span class="c1">// se accede al elemento por la clave, no la posición</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="nv">$capitales</span><span class="p">[</span><span class="s2">&quot;Alemania&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Berlín&quot;</span><span class="p">;</span> <span class="c1">// añadimos un elemento</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="k">echo</span> <span class="s2">&quot;La capital de Francia es </span><span class="si">$capitalFrancia</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>    <span class="k">echo</span> <span class="s2">&quot;La capital de Francia es </span><span class="si">{</span><span class="nv">$capitales</span><span class="p">[</span><span class="s2">&quot;Francia&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="nv">$capitales</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;Madrid&quot;</span><span class="p">;</span> <span class="c1">// se añade con la clave 0 !!! ¡¡¡NO ASIGNAR VALORES SIN CLAVE!!!</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$capitales</span> <span class="k">as</span> <span class="nv">$valor</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// si recorremos un array asociativo, mostraremos los valores</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a>        <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$valor</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a>    <span class="p">}</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$capitales</span> <span class="k">as</span> <span class="nv">$pais</span> <span class="o">=&gt;</span> <span class="nv">$ciudad</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// separamos cada elemento en clave =&gt; valor</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a>        <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$pais</span><span class="s2"> : </span><span class="si">$ciudad</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a>    <span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="nv">$capitales</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Italia&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Roma&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>                <span class="s2">&quot;Francia&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>                <span class="s2">&quot;Portugal&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Lisboa&quot;</span><span class="p">];</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="nv">$capitalFrancia</span> <span class="o">=</span> <span class="nv">$capitales</span><span class="p">[</span><span class="s2">&quot;Francia&quot;</span><span class="p">];</span> <span class="c1">// se accede al elemento por la clave, no la posición</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>    <span class="nv">$capitales</span><span class="p">[</span><span class="s2">&quot;Alemania&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Berlín&quot;</span><span class="p">;</span> <span class="c1">// añadimos un elemento</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>    <span class="k">echo</span> <span class="s2">&quot;La capital de Francia es </span><span class="si">$capitalFrancia</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>    <span class="k">echo</span> <span class="s2">&quot;La capital de Francia es </span><span class="si">{</span><span class="nv">$capitales</span><span class="p">[</span><span class="s2">&quot;Francia&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>    <span class="nv">$capitales</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;Madrid&quot;</span><span class="p">;</span> <span class="c1">// se añade con la clave 0 !!! ¡¡¡NO ASIGNAR VALORES SIN CLAVE!!!</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$capitales</span> <span class="k">as</span> <span class="nv">$valor</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// si recorremos un array asociativo, mostraremos los valores</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>        <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$valor</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>    <span class="p">}</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$capitales</span> <span class="k">as</span> <span class="nv">$pais</span> <span class="o">=&gt;</span> <span class="nv">$ciudad</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// separamos cada elemento en clave =&gt; valor</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>        <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$pais</span><span class="s2"> : </span><span class="si">$ciudad</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a>    <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1094,22 +1040,22 @@
 </div>
 </div>
 </div>
-<h2 id="2-arrays-bidimensionales">2. Arrays bidimensionales<a class="headerlink" href="#2-arrays-bidimensionales" title="Permanent link">&para;</a></h2>
+<h2 id="3-arrays-bidimensionales">3. Arrays bidimensionales<a class="headerlink" href="#3-arrays-bidimensionales" title="Permanent link">&para;</a></h2>
 <p>Consiste en un array de arrays, ya sean arrays secuenciales o asociativos. Puede haber <em>N</em> dimensiones.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Ejemplo <em>array bidimensional</em></label><label for="__tabbed_4_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="nv">$persona</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Bruce Wayne&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="nv">$persona</span><span class="p">[</span><span class="s2">&quot;telefonos&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;966 123 456&quot;</span><span class="p">,</span> <span class="s2">&quot;636 636 636&quot;</span><span class="p">];</span> <span class="c1">// array de arrays ordinarios</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="nv">$persona</span><span class="p">[</span><span class="s2">&quot;profesion&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;dia&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;filántropo&quot;</span><span class="p">,</span> <span class="s2">&quot;noche&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;caballero oscuro&quot;</span><span class="p">];</span> <span class="c1">// array de arrays asociativos</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="k">echo</span> <span class="nv">$persona</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot; por la noche trabaja de &quot;</span><span class="o">.</span><span class="nv">$persona</span><span class="p">[</span><span class="s1">&#39;profesion&#39;</span><span class="p">][</span><span class="s1">&#39;noche&#39;</span><span class="p">];</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="nv">$persona</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Bruce Wayne&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="nv">$persona</span><span class="p">[</span><span class="s2">&quot;telefonos&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;966 123 456&quot;</span><span class="p">,</span> <span class="s2">&quot;636 636 636&quot;</span><span class="p">];</span> <span class="c1">// array de arrays ordinarios</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="nv">$persona</span><span class="p">[</span><span class="s2">&quot;profesion&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;dia&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;filántropo&quot;</span><span class="p">,</span> <span class="s2">&quot;noche&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;caballero oscuro&quot;</span><span class="p">];</span> <span class="c1">// array de arrays asociativos</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>    <span class="k">echo</span> <span class="nv">$persona</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot; por la noche trabaja de &quot;</span><span class="o">.</span><span class="nv">$persona</span><span class="p">[</span><span class="s1">&#39;profesion&#39;</span><span class="p">][</span><span class="s1">&#39;noche&#39;</span><span class="p">];</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1121,51 +1067,51 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Ejemplo <em>array bidimensional</em> análogo a una tabla</label><label for="__tabbed_5_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span>
-<span class="normal"><a href="#__codelineno-5-19">19</a></span>
-<span class="normal"><a href="#__codelineno-5-20">20</a></span>
-<span class="normal"><a href="#__codelineno-5-21">21</a></span>
-<span class="normal"><a href="#__codelineno-5-22">22</a></span>
-<span class="normal"><a href="#__codelineno-5-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="nv">$menu1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plato1&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Macarrones con queso&quot;</span><span class="p">,</span> 
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>                        <span class="s2">&quot;Plato2&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Pescado asado&quot;</span><span class="p">,</span> 
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>                        <span class="s2">&quot;Bebida&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Coca-Cola&quot;</span><span class="p">,</span> 
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>                        <span class="s2">&quot;Postre&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Helado de vainilla&quot;</span><span class="p">];</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>    <span class="nv">$menu2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plato1&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Sopa&quot;</span><span class="p">,</span> 
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>                        <span class="s2">&quot;Plato2&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Lomo con patatas&quot;</span><span class="p">,</span> 
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>                        <span class="s2">&quot;Bebida&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Agua&quot;</span><span class="p">,</span> 
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>                        <span class="s2">&quot;Postre&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Arroz con leche&quot;</span><span class="p">];</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>    <span class="nv">$menus</span> <span class="o">=</span> <span class="p">[</span><span class="nv">$menu1</span><span class="p">,</span> <span class="nv">$menu2</span><span class="p">];</span> <span class="c1">// creamos un array a partir de arrays asociativos</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>    <span class="k">echo</span> <span class="s2">&quot;Menú del día&lt;br/&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>    <span class="nv">$cont</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$menus</span> <span class="k">as</span> <span class="nv">$menudeldia</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a>        <span class="k">echo</span> <span class="s2">&quot;&lt;br /&gt;Menú &quot;</span><span class="o">.++</span><span class="nv">$cont</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$menudeldia</span> <span class="k">as</span> <span class="nv">$platos</span> <span class="o">=&gt;</span> <span class="nv">$comida</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$platos</span><span class="s2">: </span><span class="si">$comida</span><span class="s2"> &lt;br/&gt;&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a>        <span class="p">}</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a>    <span class="p">}</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a>    <span class="c1">// Para acceder a un elemento concreto se anidan los corchetes</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a>    <span class="nv">$postre0</span> <span class="o">=</span> <span class="nv">$menus</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;Postre&quot;</span><span class="p">];</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="nv">$menu1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plato1&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Macarrones con queso&quot;</span><span class="p">,</span> 
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>                        <span class="s2">&quot;Plato2&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Pescado asado&quot;</span><span class="p">,</span> 
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>                        <span class="s2">&quot;Bebida&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Coca-Cola&quot;</span><span class="p">,</span> 
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>                        <span class="s2">&quot;Postre&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Helado de vainilla&quot;</span><span class="p">];</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="nv">$menu2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plato1&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Sopa&quot;</span><span class="p">,</span> 
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>                        <span class="s2">&quot;Plato2&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Lomo con patatas&quot;</span><span class="p">,</span> 
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>                        <span class="s2">&quot;Bebida&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Agua&quot;</span><span class="p">,</span> 
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>                        <span class="s2">&quot;Postre&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Arroz con leche&quot;</span><span class="p">];</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>    <span class="nv">$menus</span> <span class="o">=</span> <span class="p">[</span><span class="nv">$menu1</span><span class="p">,</span> <span class="nv">$menu2</span><span class="p">];</span> <span class="c1">// creamos un array a partir de arrays asociativos</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>    <span class="k">echo</span> <span class="s2">&quot;Menú del día&lt;br/&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>    <span class="nv">$cont</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$menus</span> <span class="k">as</span> <span class="nv">$menudeldia</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a>        <span class="k">echo</span> <span class="s2">&quot;&lt;br /&gt;Menú &quot;</span><span class="o">.++</span><span class="nv">$cont</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$menudeldia</span> <span class="k">as</span> <span class="nv">$platos</span> <span class="o">=&gt;</span> <span class="nv">$comida</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$platos</span><span class="s2">: </span><span class="si">$comida</span><span class="s2"> &lt;br/&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a>        <span class="p">}</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a>    <span class="p">}</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a>    <span class="c1">// Para acceder a un elemento concreto se anidan los corchetes</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a>    <span class="nv">$postre0</span> <span class="o">=</span> <span class="nv">$menus</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;Postre&quot;</span><span class="p">];</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1174,7 +1120,7 @@
 </div>
 </div>
 <p>Aunque pueda parecer una buena idea crear este tipo de estructuras, es <strong>mejor utilizar objetos</strong> conjuntamente con arrays (posiblemente arrays de otros objetos) para crear estructuras complejas que permitan modelar mejor los problemas.</p>
-<details class="questionphp">
+<details class="ies">
 <summary>Ejercicios a realizar</summary>
 <ul>
 <li><code>Ejercicio 231</code><br /></li>
