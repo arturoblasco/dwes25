@@ -22,7 +22,7 @@ A continuación, muestra por pantalla el valor de cada variable, la suma, la res
 
 ### Ejercicio 204
 
-`204datosPersonales.php`: Escribe un programa que almacene en variables *tu nombre*, *primer apellido*, *segundo apellido*, email, *año de nacimiento* y *teléfono*. Luego muéstralos por pantalla dentro de una tabla.
+`204datosPersonales.php`: Escribe un programa que almacene en variables *tu nombre*, *primer apellido*, *segundo apellido*, *email*, *año de nacimiento* y *teléfono*. Luego muéstralos por pantalla dentro de una tabla.
 
 <div style="text-align: center;"><figure><img src="../../img/ut02/img00.png" alt="img00" style="zoom:60%; border: 2px solid #fff2c9;" /><figcaption style="font-size: 13px; color: #bd8f04;">tabla resultante del ejercicio 204</figcaption></figure></div>
 
