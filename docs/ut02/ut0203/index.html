@@ -1770,29 +1770,23 @@
 <span class="normal"><a href="#__codelineno-4-14">14</a></span>
 <span class="normal"><a href="#__codelineno-4-15">15</a></span>
 <span class="normal"><a href="#__codelineno-4-16">16</a></span>
-<span class="normal"><a href="#__codelineno-4-17">17</a></span>
-<span class="normal"><a href="#__codelineno-4-18">18</a></span>
-<span class="normal"><a href="#__codelineno-4-19">19</a></span>
-<span class="normal"><a href="#__codelineno-4-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="x">/*</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="x"> * Ejemplo saluda en un único archivo</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="x"> */</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="x">&lt;form action=&quot;&quot; method=&quot;get&quot;&gt;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="x">      &lt;p&gt;&lt;label for=&quot;nombre&quot;&gt;Nombre: &lt;/label&gt;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="x">      &lt;input type=&quot;text&quot; name=&quot;nombre&quot; id=&quot;nombre&quot;&gt;&lt;/p&gt;</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="x">      &lt;p&gt;&lt;label for=&quot;apellido1&quot;&gt;Primer apellido:&lt;/label&gt;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="x">      &lt;input type=&quot;text&quot; name=&quot;apellido1&quot; id=&quot;apellido1&quot;&gt;&lt;/p&gt;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="x">      &lt;input type=&quot;submit&quot; value=&quot;enviar&quot;&gt;</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="x">&lt;/form&gt;</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="x">&lt;p&gt;</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="x">      </span><span class="cp">&lt;?php</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a>            <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]))</span> <span class="p">{</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a>                  <span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">];</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a>                  <span class="nv">$apellido1</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;apellido1&quot;</span><span class="p">];</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a>                  <span class="k">echo</span> <span class="s2">&quot;Hola </span><span class="si">$nombre</span><span class="s2"> </span><span class="si">$apellido1</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a>            <span class="p">}</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a>      <span class="cp">?&gt;</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="x">&lt;/p&gt;</span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="x">&lt;form action=&quot;&quot; method=&quot;get&quot;&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="x">      &lt;p&gt;&lt;label for=&quot;nombre&quot;&gt;Nombre: &lt;/label&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="x">      &lt;input type=&quot;text&quot; name=&quot;nombre&quot; id=&quot;nombre&quot;&gt;&lt;/p&gt;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="x">      &lt;p&gt;&lt;label for=&quot;apellido1&quot;&gt;Primer apellido:&lt;/label&gt;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="x">      &lt;input type=&quot;text&quot; name=&quot;apellido1&quot; id=&quot;apellido1&quot;&gt;&lt;/p&gt;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="x">      &lt;input type=&quot;submit&quot; value=&quot;enviar&quot;&gt;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="x">&lt;/form&gt;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="x">&lt;p&gt;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="x">      </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>                  <span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">];</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>                  <span class="nv">$apellido1</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;apellido1&quot;</span><span class="p">];</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>                  <span class="k">echo</span> <span class="s2">&quot;Hola </span><span class="si">$nombre</span><span class="s2"> </span><span class="si">$apellido1</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>            <span class="p">}</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>      <span class="cp">?&gt;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="x">&lt;/p&gt;</span>
 </code></pre></div></td></tr></table></div>
 <p>El trabajo con formularios se estudiará en profundidad en la unidad 4, y se verá que además de <code>GET</code>, se puede enviar los datos con <code>POST</code>.</p>
 <h2 id="3-condiciones">3. Condiciones<a class="headerlink" href="#3-condiciones" title="Permanent link">&para;</a></h2>
