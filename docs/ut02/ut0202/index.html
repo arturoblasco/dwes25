@@ -1112,7 +1112,9 @@
 <h2 id="1-codigo-embebido">1. Código embebido<a class="headerlink" href="#1-codigo-embebido" title="Permanent link">&para;</a></h2>
 <p>Los bloques de código se escriben entre <strong><code>&lt;?php</code></strong> y <strong><code>?&gt;</code></strong>.</p>
 <p>Las sentencias se separan mediante <strong><code>;</code></strong>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ejemplo en php</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="admonition examplephp">
+<p class="admonition-title">Ejemplo en php</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -1147,6 +1149,7 @@
 </div>
 </div>
 </div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Sólo etiquetas de apertura</p>
 <p>Si nuestro código <strong>sólo va a contener código PHP</strong> y nada de html, como por ejemplo, cuando codifiquemos <strong>clases o interfaces</strong>, sólo pondremos la etiqueta de apertura, para así indicar que es una archivo de php puro.</p>
@@ -1163,7 +1166,9 @@
 <li><code>echo</code> cuando lo hagamos dentro de un bloque de instrucciones y </li>
 <li><code>&lt;?=</code> cuando sólo vayamos a mostrar el valor de una variable dentro de un fragmento HTML.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ejemplo php</label><label for="__tabbed_2_2">Resultado</label></div>
+<div class="admonition examplephp">
+<p class="admonition-title">Ejemplo en php</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código</label><label for="__tabbed_2_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
@@ -1198,9 +1203,12 @@
 </div>
 </div>
 </div>
+</div>
 <h2 id="3-comentarios">3. Comentarios<a class="headerlink" href="#3-comentarios" title="Permanent link">&para;</a></h2>
 <p>Podemos utilizar comentarios de una línea o de bloque:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Ejemplo comentarios</label><label for="__tabbed_3_2">Resultado</label></div>
+<div class="admonition examplephp">
+<p class="admonition-title">Ejemplo comentarios</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código</label><label for="__tabbed_3_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
@@ -1214,22 +1222,23 @@
 <span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-3-10">10</a></span>
 <span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1">// Este es un comentario de una sola línea</span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="x">  </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>  <span class="c1">// Este es un comentario de una sola línea</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># Este es otro comentario de una sola línea</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>  <span class="c1"># Este es otro comentario de una sola línea</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="cm">/*</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>  <span class="cm">/*</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="cm">  Este es</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="cm">  un comentario</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="cm">  que ocupa</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="cm">  varias líneas</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="cm">*/</span> 
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="cp">?&gt;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="cm">  */</span> 
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>  <span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <p><div style="text-align: center;"><img src="../../img/ut02/ut02_prova3_com.png" alt="prova 01" style="zoom:100%; border: 2px solid #fff2c9;" /></figure></div></p>
+</div>
 </div>
 </div>
 </div>
@@ -1252,12 +1261,14 @@
 <h2 id="5-variables">5. Variables<a class="headerlink" href="#5-variables" title="Permanent link">&para;</a></h2>
 <ul>
 <li>No es necesario declararlas previamente.</li>
-<li>Comienzan por <strong><code>$</code></strong>, por ejemplo <code>$nombre</code>, seguido de un caracter en letra minúscula (<strong>recomendación</strong>) o guión bajo <strong>_</strong>. Luego ya se pueden poner números.</li>
+<li>Comienzan por <strong><code>$</code></strong>, por ejemplo <code>$nombre</code>, seguido de un caracter en letra minúscula (<strong>recomendación</strong>) o guión bajo <strong><code>_</code></strong>. Luego ya se pueden poner números.</li>
 <li>Son <em>case sensitive</em>: <code>$var != $vAR</code>.</li>
 <li>No se declara su tipo, el tipado es dinámico. Se asigna en tiempo de ejecución dependiendo del valor asignado.</li>
 <li>Conveniente: hay que inicializarlas, sino dan error.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Ejemplo variables</label><label for="__tabbed_4_2">Resultado</label></div>
+<div class="admonition examplephp">
+<p class="admonition-title">Ejemplo variables</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código</label><label for="__tabbed_4_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
@@ -1272,21 +1283,22 @@
 <span class="normal"><a href="#__codelineno-4-10">10</a></span>
 <span class="normal"><a href="#__codelineno-4-11">11</a></span>
 <span class="normal"><a href="#__codelineno-4-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>     <span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;Marta&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>     <span class="nv">$nombreCompleto</span> <span class="o">=</span> <span class="s2">&quot;Marta López&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>     <span class="nv">$numero</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>     <span class="nv">$numero2</span> <span class="o">=</span> <span class="mi">456</span><span class="p">;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>     <span class="nv">$pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>     <span class="nv">$suerte</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>     <span class="nv">$sinValor</span><span class="p">;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a>     <span class="nv">$_1</span> <span class="o">=</span> <span class="s2">&quot;el primero&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;Marta&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="nv">$nombreCompleto</span> <span class="o">=</span> <span class="s2">&quot;Marta López&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="nv">$numero</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="nv">$numero2</span> <span class="o">=</span> <span class="mi">456</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="nv">$pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="nv">$suerte</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>    <span class="nv">$sinValor</span><span class="p">;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="nv">$_1</span> <span class="o">=</span> <span class="s2">&quot;el primero&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10"></a>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a>     <span class="k">echo</span> <span class="nv">$sinValor</span><span class="p">;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>    <span class="k">echo</span> <span class="nv">$sinValor</span><span class="p">;</span>
 <a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <p><div style="text-align: center;"><img src="../../img/ut02/ut02_prova4.png" alt="prova 01" style="zoom:100%; border: 2px solid #fff2c9;" /></figure></div></p>
+</div>
 </div>
 </div>
 </div>
@@ -1331,7 +1343,10 @@
 <li>local</li>
 <li>global</li>
 <li>estático</li>
+<li></li>
 </ul>
+<div class="admonition examplephp">
+<p class="admonition-title">Ejemplo de alcances</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Alcance global</label><label for="__tabbed_5_2">Alcance local</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1384,6 +1399,7 @@
 </div>
 </div>
 </div>
+</div>
 <h2 id="6-constantes">6. Constantes<a class="headerlink" href="#6-constantes" title="Permanent link">&para;</a></h2>
 <p>Son variables cuyo valor no varían.</p>
 <p>Existen dos posibilidades:</p>
@@ -1391,7 +1407,9 @@
 <li><code>define(NOMBRE, valor);</code></li>
 <li><code>const NOMBRE;      // a partir de PHP 5.3</code></li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Ejemplo constantes</label><label for="__tabbed_6_2">Resultado</label></div>
+<div class="admonition examplephp">
+<p class="admonition-title">Ejemplo constantes</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Código</label><label for="__tabbed_6_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
@@ -1409,6 +1427,7 @@
 </div>
 <div class="tabbed-block">
 <p><div style="text-align: center;"><img src="../../img/ut02/ut02_prova5.png" alt="prova 01" style="zoom:100%; border: 2px solid #fff2c9;" /></figure></div></p>
+</div>
 </div>
 </div>
 </div>

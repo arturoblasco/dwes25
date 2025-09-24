@@ -1662,7 +1662,9 @@
 </tr>
 </tbody>
 </table>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ejemplo op. ternario</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="admonition examplephp">
+<p class="admonition-title">Ejemplo operador ternario</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -1670,14 +1672,15 @@
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>      <span class="nv">$hora</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>      <span class="nv">$formato</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$hora</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span> <span class="o">?</span> <span class="mi">24</span> <span class="o">:</span> <span class="mi">12</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>      <span class="k">echo</span> <span class="s2">&quot;El formato es de </span><span class="si">$formato</span><span class="s2"> horas&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="nv">$hora</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="nv">$formato</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$hora</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span> <span class="o">?</span> <span class="mi">24</span> <span class="o">:</span> <span class="mi">12</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="k">echo</span> <span class="s2">&quot;El formato es de </span><span class="si">$formato</span><span class="s2"> horas&quot;</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <p><div style="text-align: center;"><img src="../../img/ut02/ut02_prova235.png" alt="prova 235" style="zoom:100%; border: 2px solid #fff2c9;" /></figure></div></p>
+</div>
 </div>
 </div>
 </div>
@@ -1719,6 +1722,8 @@
 <li>En el archivo <code>.php</code> leer los datos con <code>$_GET['nombreVar']</code></li>
 </ol>
 <p>Vamos a separar siempre que podamos el código HTML del código PHP. Por ejemplo, el formulario se coloca en <code>saluda.html</code> y se recogen los datos en <code>saluda.php</code>:</p>
+<div class="admonition examplephp">
+<p class="admonition-title">Ejemplo formulario y paso de variables</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">saluda.html</label><label for="__tabbed_3_2">saluda.php</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1729,11 +1734,11 @@
 <span class="normal"><a href="#__codelineno-2-5">5</a></span>
 <span class="normal"><a href="#__codelineno-2-6">6</a></span>
 <span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;saluda.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;</span>Nombre: <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;apellido1&quot;</span><span class="p">&gt;</span>Primer apellido:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;apellido1&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;apellido1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;enviar&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;</span>Nombre: <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;apellido1&quot;</span><span class="p">&gt;</span>Primer apellido:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;apellido1&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;apellido1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;enviar&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1744,12 +1749,13 @@
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
 <span class="normal"><a href="#__codelineno-3-5">5</a></span>
 <span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>      <span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">];</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>      <span class="nv">$apellido1</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;apellido1&quot;</span><span class="p">];</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">];</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="nv">$apellido1</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;apellido1&quot;</span><span class="p">];</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>      <span class="k">echo</span> <span class="s2">&quot;Hola </span><span class="si">$nombre</span><span class="s2"> </span><span class="si">$apellido1</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="k">echo</span> <span class="s2">&quot;Hola </span><span class="si">$nombre</span><span class="s2"> </span><span class="si">$apellido1</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
+</div>
 </div>
 </div>
 </div>
