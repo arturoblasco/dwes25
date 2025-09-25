@@ -36,6 +36,25 @@ nav:
         - ut02/ut0206.md
         - ut02/ut0207.md
         - ut02/ut02ac.md    
+    - UT 3 PHP OO:
+        - ut03/ut0301.md
+        - ut03/ut0302.md
+        - ut03/ut0303.md
+        - ut03/ut0304.md
+        - ut03/ut0305.md
+        - ut03/ut0306.md
+        - ut03/ut0307.md
+        - ut03/ut0308.md
+        - ut03/ut0309.md
+        - ut03/ut0310.md
+        - ut03/ut0311.md
+        - ut03/ut0312.md
+        - ut03/ut0313.md
+        - ut03/ut0314.md
+        - ut03/ut0315.md
+        - ut03/ut0316.md
+        - ut03/ut03ac.md
+
 
 theme:
   name: material      # selección del tema

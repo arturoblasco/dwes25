@@ -1,3 +1,9 @@
+---
+title: Ejercicios
+---
+# Ejercicios
+
+
 ### Ejercicio 301 Investigación
 Investiga la diferencia entre un paradigma orientado a objetos basado en clases (*PHP*) respecto a uno basado en prototipos (*JavaScript*).<br /><br />
 
