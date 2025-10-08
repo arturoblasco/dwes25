@@ -13,6 +13,7 @@ dev_addr: localhost:9025
 # Navegació dels lloc DWES25
 nav:
   - index.md
+  - contents.md
   - PHP:
     - UT 1 Arquitectura Web:
         - ut01/ut0101.md
@@ -54,7 +55,17 @@ nav:
         - ut03/ut0315.md
         - ut03/ut0316.md
         - ut03/ut03ac.md
-
+  - Laravel:
+    - UT 7 Framework:
+        - ut07/ut0701.md
+        - ut07/ut0702.md
+        - ut07/ut0703.md
+        - ut07/ut0704.md
+        - ut07/ut0705.md
+        - ut07/ut0706.md
+        - ut07/ut0707.md
+        - ut07/ut07ac.md
+        - ut07/ut07_p01.md
 
 theme:
   name: material      # selección del tema
@@ -101,27 +112,29 @@ extra:
 # Extensions
 markdown_extensions:
   - admonition
-  - codehilite
   - toc:
       permalink: true
   - attr_list         # permet afegir atributs a les etiquetes html
-  # pymdownx és una col·leccio per escritura tècnica. S'instal·la per defecte
-  - pymdownx.details
+  # Bloques de código modernos con colores y nombre de lenguaje
+  - pymdownx.highlight:
+      linenums: false
+      anchor_linenums: false
+      auto_title: false      # ❌ evita título arriba del bloque
+      use_pygments: true     # ✅ activa resaltado de sintaxis
+      pygments_style: default
   - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+  # Extensiones útiles adicionales
+  - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.highlight:
-      linenums: true
-      anchor_linenums: true
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-  - pymdownx.snippets
-  - pymdownx.tabbed:
-      alternate_style: true
-
 
 # Altres afegits
 plugins:

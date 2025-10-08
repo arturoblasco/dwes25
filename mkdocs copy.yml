@@ -1,0 +1,172 @@
+# Nom del lloc
+site_name: Desarrollo Web en Entorno Servidor (DWES)
+
+# Carpeta amb el documents font
+docs_dir: 'md'
+
+# Carpeta on es generarà el lloc web (mkdocs build)
+site_dir: 'docs'
+
+# Adreça on s'executa el server local (mkdocs serve)
+dev_addr: localhost:9025
+
+# Navegació dels lloc DWES25
+nav:
+  - index.md
+  - contents.md
+  - PHP:
+    - UT 1 Arquitectura Web:
+        - ut01/ut0101.md
+        - ut01/ut0102.md
+        - ut01/ut0103.md
+        - ut01/ut0104.md
+        - ut01/ut0105.md
+        - ut01/ut0106.md
+        - ut01/ut0107.md
+        - ut01/ut0108.md
+        - ut01/ut0109.md
+        - ut01/ut0110.md
+        - ut01/ut01de.md   
+        - ut01/ut01ac.md        
+    - UT 2 Lenguaje PHP:
+        - ut02/ut0201.md
+        - ut02/ut0202.md
+        - ut02/ut0203.md
+        - ut02/ut0204.md
+        - ut02/ut0205.md
+        - ut02/ut0206.md
+        - ut02/ut0207.md
+        - ut02/ut02ac.md    
+    - UT 3 PHP OO:
+        - ut03/ut0301.md
+        - ut03/ut0302.md
+        - ut03/ut0303.md
+        - ut03/ut0304.md
+        - ut03/ut0305.md
+        - ut03/ut0306.md
+        - ut03/ut0307.md
+        - ut03/ut0308.md
+        - ut03/ut0309.md
+        - ut03/ut0310.md
+        - ut03/ut0311.md
+        - ut03/ut0312.md
+        - ut03/ut0313.md
+        - ut03/ut0314.md
+        - ut03/ut0315.md
+        - ut03/ut0316.md
+        - ut03/ut03ac.md
+  - Laravel:
+    - UT 7 Framework:
+        - ut07/ut0701.md
+        - ut07/ut0702.md
+        - ut07/ut0703.md
+        - ut07/ut0704.md
+        - ut07/ut0705.md
+        - ut07/ut0706.md
+        - ut07/ut0707.md
+        - ut07/ut07ac.md
+        - ut07/ut07_p01.md
+
+theme:
+  name: material      # selección del tema
+  language: es        # idioma del tema per defecte (ABC)
+  logo: img/logo.png
+  favicon: img/favicon.png
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    alternate: fontawesome/solid/flag-usa
+    language: material/translate   # cambia el icono de idioma
+    alternate: material/translate  # o material/translate, material/web, etc.
+
+  palette:
+   # Boto que canvia a mode oscur
+    - scheme: default
+      primary: 'amber'      # colores: amber, orange, lime. Otros: teal, red, pink, purple, deep purple, cyan, green, light green, blue grey
+      accent: 'amber'
+      toggle:
+        icon: material/weather-night
+        name: Cambia a modo oscuro
+    # Botó que canvia a mode clar
+    - scheme: slate
+      primary: 'amber'
+      accent: 'amber'
+      toggle:
+        icon: material/white-balance-sunny
+        name: Cambia a modo normal
+  features:
+    # utilitats de copia de codi
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - navigation.footer       # footer de la pagina, amb navegació
+    - navigation.top          # boto flotant de tornar a dalt
+
+# Traduccions dels titols del menu per a la UI (ABC)
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/arturoblasco
+      text: "Github de Arturo BC"
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - attr_list         # permet afegir atributs a les etiquetes html
+  # pymdownx és una col·leccio per escritura tècnica. S'instal·la per defecte
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      linenums: true
+      anchor_linenums: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  # Bloques de código con sintaxis y títulos
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+      linenums_style: table
+  - pymdownx.inlinehilite
+
+# Altres afegits
+plugins:
+  - search      # plugin del quadre cerca
+  # - i18n:
+  #     docs_structure: folder
+  #     reconfigure: true   # <<--- IMPRESCINDIBLE per canviar site_name per idioma
+  #     languages:
+  #       - locale: es
+  #         name: Castellano
+  #         default: true
+  #         build: true
+  #         config:
+  #           site_name: "Desarrollo Web en Entorno Servidor (DWES)"
+  #           theme:
+  #             language: es
+  #       - locale: ca
+  #         name: Valencià
+  #         build: true
+  #         config:
+  #           site_name: "Desenvolupament Web en Entorn Servidor (DWES)"
+  #           theme:
+  #             language: ca
+  #     nav_translations:          
+  #       ca:
+  #         "UT 1 Arquitectura Web": "UT 1 Arquitectura Web"
+  #         "UT 2 Lenguaje PHP": "UT 2 Llenguatge PHP"
+          
+extra_css:
+  - stylesheets/extra.css
+
+copyright: Arturo Blasco - Creative Commons CC BY-NC-SA

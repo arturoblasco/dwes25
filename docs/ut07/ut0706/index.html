@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../ut0705/">
+      
+      
+        <link rel="next" href="../ut0707/">
       
       
       <link rel="icon" href="../../img/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Ut0706 - Desarrollo Web en Entorno Servidor (DWES)</title>
+        <title>7.6. Vistas con Blade - Desarrollo Web en Entorno Servidor (DWES)</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-pasar-valores-a-las-vistas" class="md-skip">
+        <a href="#75-vistas-con-blade" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -105,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ut0706
+              7.6. Vistas con Blade
             
           </span>
         </div>
@@ -247,6 +251,28 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../contents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -256,10 +282,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -272,8 +298,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             PHP
           </label>
@@ -294,10 +320,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   
@@ -310,8 +336,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             UT 1 Arquitectura Web
           </label>
@@ -616,10 +642,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   
@@ -632,8 +658,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             UT 2 Lenguaje PHP
           </label>
@@ -846,10 +872,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   
@@ -862,8 +888,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             UT 3 PHP OO
           </label>
@@ -1275,6 +1301,428 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Laravel
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Laravel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 7 Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            UT 7 Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut0701/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut0702/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.2. Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut0703/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.3. Software necesario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut0704/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.4. Primeros pasos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut0705/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.5. Rutas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    7.6. Vistas con Blade
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.6. Vistas con Blade
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-pasar-valores-a-las-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Pasar valores a las vistas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-primeros-pasos-con-el-motor-de-plantillas-blade" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Primeros pasos con el motor de plantillas Blade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Primeros pasos con el motor de plantillas Blade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-estructuras-de-control-de-flujo-en-blade" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Estructuras de control de flujo en Blade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-sobre-los-enlaces-a-otras-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Sobre los enlaces a otras rutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-definir-plantillas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Definir plantillas comunes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-incluir-vistas-dentro-de-otras" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Incluir vistas dentro de otras
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-estructurar-vistas-en-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5. Estructurar vistas en carpetas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-vistas-para-paginas-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6. Vistas para páginas de error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut0707/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.7. Estilos y Javascript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios propuestos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07_p01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD.1 Práctica Guiada: Configuración de un Entorno de Desarrollo Moderno con Docker y Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1291,6 +1739,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1393,17 +1843,16 @@
 
 
 
+<h1 id="75-vistas-con-blade">7.5. Vistas con Blade<a class="headerlink" href="#75-vistas-con-blade" title="Permanent link">&para;</a></h1>
 <div style="text-align: center;"><img src="../../img/ut07/ut07_cover.png" alt="vistas" style="max-width: 80%;" /></div>
 
 <p>Hasta ahora las rutas que hemos definido devuelven un texto simple, salvo la que ya estaba creada por defecto en el proyecto, que apuntaba a la página de inicio. Si quisiéramos devolver contenido <em>HTML</em>, una opción (costosa) sería devolver dicho contenido generado desde el propio método de la ruta, a través de la instrucción <code>return</code>, pero en lugar de hacer esto desde dentro de la propia función de respuesta, lo más habitual (y recomendable) es generar una <strong>vista</strong> con el contenido HTML que se quiere enviar al cliente.</p>
 <p>La forma general de mostrar vistas en <em>Laravel</em> es hacer que las rutas devuelvan (<code>return</code>) una determinada vista. Para ello, se puede emplear la función <code>view</code> de <em>Laravel</em>, indicando el nombre de la vista a generar o mostrar.</p>
 <p>Por defecto, en la carpeta <strong><code>resources/views</code></strong> tenemos disponible una vista de ejemplo llamada <code>welcome.blade.php</code>. Es la que se utiliza como página de inicio en la ruta raíz en <strong><code>routes/web.php</code></strong>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Route::get<span class="o">(</span><span class="s1">&#39;/&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;welcome&#39;</span><span class="o">)</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="o">})</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>Route::get<span class="o">(</span><span class="s1">&#39;/&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;welcome&#39;</span><span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+</code></pre></div>
 <p>A través de las plantillas de <em>Laravel</em> vamos a escribir <strong>menos código</strong> PHP y vamos a tener nuestros archivos <strong>mejor organizados</strong>.</p>
 <p><strong>Blade</strong> es el sistema de plantillas que trae <em>Laravel</em>, por eso los archivos de plantillas que guardamos en el directorio de <code>views</code> llevan la extensión <code>blade.php</code>.</p>
 <p>De esta manera sabemos inmediatamente que se trata de una plantilla de <em>Laravel</em> y que forma parte de una vista que se mostrará en el navegador.</p>
@@ -1414,90 +1863,69 @@
 <details class="examplelaravel" open="open">
 <summary>Ejemplo</summary>
 <p>Podemos, por ejemplo, crear una vista sencilla dentro de esta carpeta de vistas (llamémosla <code>inicio.blade.php</code>), con un contenido <em>HTML</em> básico:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">7</a></span>
-<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Inicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Página de inicio<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Inicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Página de inicio<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Y podemos utilizar esta vista como página de inicio:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>Route::get<span class="o">(</span><span class="s1">&#39;/&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;inicio&#39;</span><span class="o">)</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="o">})</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>Route::get<span class="o">(</span><span class="s1">&#39;/&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;inicio&#39;</span><span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+</code></pre></div>
 </details>
 <h2 id="1-pasar-valores-a-las-vistas">1. Pasar valores a las vistas<a class="headerlink" href="#1-pasar-valores-a-las-vistas" title="Permanent link">&para;</a></h2>
 <p>Es muy habitual pasar cierta información a ciertas vistas, como por ejemplo, listados de datos a mostrar, o datos de un elemento en concreto. Por ejemplo, si queremos dar un mensaje de bienvenida a un nombre (supuestamente variable), debemos almacenar el nombre en una variable en la ruta, y pasárselo a la vista al cargarla. Esto puede hacerse, por ejemplo, con el método <code>with</code> tras generar la vista, indicando el nombre con que lo vamos a asociar a la vista, y el valor (variable) asociado a dicho nombre. </p>
 <details class="examplelaravel" open="open">
 <summary>Ejemplo</summary>
 <p>En nuestro caso quedaría así:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Route::get<span class="o">(</span><span class="s1">&#39;/&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alba&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;inicio&#39;</span><span class="o">)</span>-&gt;with<span class="o">(</span><span class="s1">&#39;nombre&#39;</span>,<span class="w"> </span><span class="nv">$nombre</span><span class="o">)</span><span class="p">;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="o">})</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>Route::get<span class="o">(</span><span class="s1">&#39;/&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alba&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;inicio&#39;</span><span class="o">)</span>-&gt;with<span class="o">(</span><span class="s1">&#39;nombre&#39;</span>,<span class="w"> </span><span class="nv">$nombre</span><span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+</code></pre></div>
 </details>
 <p>Posteriormente, en la vista, deberemos mostrar el valor de esta variable en algún lugar del código <em>HTML</em>. Podemos emplear <em>PHP</em> tradicional para recoger esta variable:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Inicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Página de inicio<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Bienvenido/a <span class="cp">&lt;?php echo $nombre; ?&gt;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Inicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Página de inicio<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Bienvenido/a <span class="cp">&lt;?php echo $nombre; ?&gt;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Pero es más habitual y limpio emplear una sintaxis específica de <em>Blade</em>, como veremos a continuación.</p>
 <p>Como alternativas al uso de <code>with</code> comentado antes, también podemos utilizar un array asociativo (asignando así varios nombres a varios valores):</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;inicio&#39;</span><span class="o">)</span>-&gt;with<span class="o">([</span><span class="s1">&#39;nombre&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nv">$nombre</span>,<span class="w"> </span>...<span class="o">])</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;inicio&#39;</span><span class="o">)</span>-&gt;with<span class="o">([</span><span class="s1">&#39;nombre&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nv">$nombre</span>,<span class="w"> </span>...<span class="o">])</span><span class="p">;</span>
+</code></pre></div>
 <p>Asimismo, podemos utilizar este mismo array como segundo parámetro de la función <code>view</code>, y prescindir así de <code>with</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;inicio&#39;</span>,<span class="w"> </span><span class="o">[</span><span class="s1">&#39;nombre&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nv">$nombre</span>,<span class="w"> </span>...<span class="o">])</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;inicio&#39;</span>,<span class="w"> </span><span class="o">[</span><span class="s1">&#39;nombre&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nv">$nombre</span>,<span class="w"> </span>...<span class="o">])</span><span class="p">;</span>
+</code></pre></div>
 <p>Y también podemos utilizar una función llamada <mark>compact</mark> como segundo parámetro de <code>view</code>. A esta función le pasamos únicamente el nombre de la variable que usaremos en la vista y, siempre que la variable asociada se llame igual, establece la asociación por nosotros:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;inicio&#39;</span>,<span class="w"> </span>compact<span class="o">(</span><span class="s1">&#39;nombre&#39;</span><span class="o">))</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;inicio&#39;</span>,<span class="w"> </span>compact<span class="o">(</span><span class="s1">&#39;nombre&#39;</span><span class="o">))</span><span class="p">;</span>
+</code></pre></div>
 <p>La función <code>compact</code> admite tantos parámetros como datos queramos enviar a la vista por separado, cada uno con su nombre asociado.</p>
 <p>Si simplemente vamos a devolver una vista con poca información asociada, o poca lógica interna, también podemos abreviar el código anterior llamando directamente a <code>view</code>, en lugar de a <code>get</code> primero, en el archivo <code>routes/web.php</code>, y le pasamos así la información asociada a la vista:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>Route::view<span class="o">(</span><span class="s1">&#39;/&#39;</span>,<span class="w"> </span><span class="s1">&#39;inicio&#39;</span>,<span class="w"> </span><span class="o">[</span><span class="s1">&#39;nombre&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s1">&#39;Alba&#39;</span><span class="o">])</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>Route::view<span class="o">(</span><span class="s1">&#39;/&#39;</span>,<span class="w"> </span><span class="s1">&#39;inicio&#39;</span>,<span class="w"> </span><span class="o">[</span><span class="s1">&#39;nombre&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s1">&#39;Alba&#39;</span><span class="o">])</span><span class="p">;</span>
+</code></pre></div>
 <h2 id="2-primeros-pasos-con-el-motor-de-plantillas-blade">2. Primeros pasos con el motor de plantillas <em>Blade</em><a class="headerlink" href="#2-primeros-pasos-con-el-motor-de-plantillas-blade" title="Permanent link">&para;</a></h2>
 <p>Hemos comentado en el apartado anterior que el uso de <em>Blade</em> permite simplificar la sintaxis y la forma de procesar algunas cosas en nuestras vistas. Siempre que creemos el archivo de la vista con la extensión <code>.blade.php</code>, nos permitirá automáticamente aprovechar la sintaxis y funcionalidades de <em>Blade</em> en nuestras vistas.</p>
 <details class="examplelaravel" open="open">
 <summary>Ejemplo</summary>
 <p>Por ejemplo, si queremos mostrar el contenido de la variable <code>nombre</code> que hemos pasado antes a la página de inicio, en lugar de hacer un rudimentario <code>echo</code> en <em>PHP</em>, podemos emplear una sintaxis de dobles llaves, facilitada por <em>Blade</em>, para mostrar el contenido de esa variable. <br /><br />
 Con esto la línea que mostraba el nombre pasa de ser así…</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>Bienvenido/a<span class="w"> </span>&lt;?php<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span>?&gt;
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>Bienvenido/a<span class="w"> </span>&lt;?php<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span>?&gt;
+</code></pre></div>
 <p>… a ser así:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>Bienvenido/a<span class="w"> </span><span class="o">{{</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">}}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>Bienvenido/a<span class="w"> </span><span class="o">{{</span><span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span><span class="o">}}</span>
+</code></pre></div>
 </details>
 <div class="admonition note">
 <p class="admonition-title"> </p>
@@ -1507,82 +1935,56 @@ Cada vez que se renderiza una vista en <em>Laravel</em>, se almacena el contenid
 Si echamos un vistazo a la vista generada con <em>PHP</em> plano y con <em>Blade</em>, veremos que hay una sutil diferencia entre ambas, y es que con <em>Blade</em>, en lugar de hacer un simple <code>echo</code> para mostrar el valor de la variable, se utiliza una función intermedia llamada <code>e</code>, que evita ataques <em>XSS</em> (<em>Cross Site Scripting</em>), es decir, que se inyecten <em>scripts</em> de <em>JavaScript</em> con la variable a mostrar. En otras palabras, el código no se interpreta, y se muestra tal cual. </p>
 <p><strong>Desactivación de la sanitización</strong><br />
 En algunos casos (especialmente cuando generamos contenido <em>HTML</em> desde dentro de la expresión <em>Blade</em>) nos puede interesar que no proteja contra estas inyecciones de código. En ese caso, se sustituye la segunda llave por una doble exclamación:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>Bienvenido/a<span class="w"> </span><span class="o">{</span>!!<span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span>!!<span class="o">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>Bienvenido/a<span class="w"> </span><span class="o">{</span>!!<span class="w"> </span><span class="nv">$nombre</span><span class="w"> </span>!!<span class="o">}</span>
+</code></pre></div>
 </div>
 <p>Además de esta sintaxis básica para mostrar datos de variables en un lugar determinado de la vista, existen ciertas directivas en Blade que nos permiten realizar comprobaciones o repeticiones.</p>
 <h3 id="21-estructuras-de-control-de-flujo-en-blade">2.1. Estructuras de control de flujo en <em>Blade</em><a class="headerlink" href="#21-estructuras-de-control-de-flujo-en-blade" title="Permanent link">&para;</a></h3>
 <p>Para iterar sobre un conjunto de datos (array), podemos emplear la directiva <mark>@foreach</mark>, con una sintaxis similar al <em>foreach</em> de <em>PHP</em>, pero sin necesidad de llaves. Basta con finalizar el bucle con la directiva <code>@endforeach</code>, de este modo:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span>
-<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a>    @foreach($elementos as $elemento)
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a>    @endforeach
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    @foreach($elementos as $elemento)
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    @endforeach
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>En el caso de querer realizar alguna comprobación (por ejemplo, si el array anterior está vacío, para mostrar un mensaje pertinente), usamos la directiva <mark>@if</mark>, cerrada por su correspondiente pareja <code>@endif</code>. Opcionalmente, se puede intercalar una directiva <mark>@else</mark> para el camino alternativo, o también <mark>@elseif</mark> para indicar otra condición. </p>
 <details class="examplelaravel" open="open">
 <summary>Ejemplo</summary>
 <p>El ejemplo anterior podría quedar así:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
-<span class="normal"><a href="#__codelineno-13-2">2</a></span>
-<span class="normal"><a href="#__codelineno-13-3">3</a></span>
-<span class="normal"><a href="#__codelineno-13-4">4</a></span>
-<span class="normal"><a href="#__codelineno-13-5">5</a></span>
-<span class="normal"><a href="#__codelineno-13-6">6</a></span>
-<span class="normal"><a href="#__codelineno-13-7">7</a></span>
-<span class="normal"><a href="#__codelineno-13-8">8</a></span>
-<span class="normal"><a href="#__codelineno-13-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a>    @if($elementos)
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a>        @foreach($elementos as $elemento)
-<a id="__codelineno-13-4" name="__codelineno-13-4"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5"></a>        @endforeach
-<a id="__codelineno-13-6" name="__codelineno-13-6"></a>    @else
-<a id="__codelineno-13-7" name="__codelineno-13-7"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8"></a>    @endif
-<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    @if($elementos)
+        @foreach($elementos as $elemento)
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        @endforeach
+    @else
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    @endif
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div></p>
 </details>
 <p>También podemos comprobar si una variable está definida. En este caso, reemplazamos la directiva <code>@if</code> por <mark>@isset</mark>, con su correspondiente cierre <code>@endisset</code>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span>
-<span class="normal"><a href="#__codelineno-14-3">3</a></span>
-<span class="normal"><a href="#__codelineno-14-4">4</a></span>
-<span class="normal"><a href="#__codelineno-14-5">5</a></span>
-<span class="normal"><a href="#__codelineno-14-6">6</a></span>
-<span class="normal"><a href="#__codelineno-14-7">7</a></span>
-<span class="normal"><a href="#__codelineno-14-8">8</a></span>
-<span class="normal"><a href="#__codelineno-14-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a>    @isset($elementos)
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a>        @foreach($elementos as $elemento)
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a>        @endforeach
-<a id="__codelineno-14-6" name="__codelineno-14-6"></a>    @else
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8"></a>    @endisset
-<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    @isset($elementos)
+        @foreach($elementos as $elemento)
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        @endforeach
+    @else
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    @endisset
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Sin embargo, con cualquiera de estas opciones tenemos un problema: en el primer caso, si la variable <code>$elementos</code> no está definida, mostrará un error de <em>PHP</em>. En el segundo caso, si la variable sí está definida pero no contiene elementos, no se mostrará nada por pantalla. Una tercera estructura alternativa que agrupa estos dos casos (controlar a la vez que la variable esté definida y tenga elementos) es emplear la directiva <mark>@forelse</mark> en lugar de <code>@foreach</code>. Esta directiva permite una cláusula adicional <mark>@empty</mark> para indicar qué hacer si la colección no tiene elementos o está sin definir. </p>
 <details class="examplelaravel" open="open">
 <summary>Ejemplo</summary>
 <p>El ejemplo anterior quedaría ahora así de abreviado:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
-<span class="normal"><a href="#__codelineno-15-2">2</a></span>
-<span class="normal"><a href="#__codelineno-15-3">3</a></span>
-<span class="normal"><a href="#__codelineno-15-4">4</a></span>
-<span class="normal"><a href="#__codelineno-15-5">5</a></span>
-<span class="normal"><a href="#__codelineno-15-6">6</a></span>
-<span class="normal"><a href="#__codelineno-15-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a>    @forelse($elementos as $elemento)
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a>    @empty
-<a id="__codelineno-15-5" name="__codelineno-15-5"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6"></a>    @endforelse
-<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    @forelse($elementos as $elemento)
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    @empty
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    @endforelse
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 </details>
 <p>En este tipo de iteradores (<code>@foreach</code> o <code>@forelse</code>), tenemos disponible un objeto llamado <mark>$loop</mark>, con una serie de propiedades sobre el bucle que estamos iterando, como por ejemplo:</p>
 <ul>
@@ -1592,76 +1994,47 @@ En algunos casos (especialmente cuando generamos contenido <em>HTML</em> desde d
 <li><em>otras</em></li>
 </ul>
 <p>Podemos ver todas las propiedades disponibles en este objeto llamando a <code>var_dump</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
-<span class="normal"><a href="#__codelineno-16-2">2</a></span>
-<span class="normal"><a href="#__codelineno-16-3">3</a></span>
-<span class="normal"><a href="#__codelineno-16-4">4</a></span>
-<span class="normal"><a href="#__codelineno-16-5">5</a></span>
-<span class="normal"><a href="#__codelineno-16-6">6</a></span>
-<span class="normal"><a href="#__codelineno-16-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2"></a>    @forelse($elementos as $elemento)
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }} {{ var_dump($loop) }} <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4"></a>    @empty
-<a id="__codelineno-16-5" name="__codelineno-16-5"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6"></a>    @endforelse
-<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    @forelse($elementos as $elemento)
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }} {{ var_dump($loop) }} <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    @empty
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    @endforelse
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Si, por ejemplo, queremos determinar si es el último elemento de la lista, y mostrar un mensaje o estilo especial, podemos hacer algo como esto:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
-<span class="normal"><a href="#__codelineno-17-2">2</a></span>
-<span class="normal"><a href="#__codelineno-17-3">3</a></span>
-<span class="normal"><a href="#__codelineno-17-4">4</a></span>
-<span class="normal"><a href="#__codelineno-17-5">5</a></span>
-<span class="normal"><a href="#__codelineno-17-6">6</a></span>
-<span class="normal"><a href="#__codelineno-17-7">7</a></span>
-<span class="normal"><a href="#__codelineno-17-8">8</a></span>
-<span class="normal"><a href="#__codelineno-17-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2"></a>    @forelse($elementos as $elemento)
-<a id="__codelineno-17-3" name="__codelineno-17-3"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }} 
-<a id="__codelineno-17-4" name="__codelineno-17-4"></a>            {{ $loop-&gt;last ? &quot;Ultimo elemento&quot; : &quot;&quot; }} 
-<a id="__codelineno-17-5" name="__codelineno-17-5"></a>        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6"></a>    @empty
-<a id="__codelineno-17-7" name="__codelineno-17-7"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8"></a>    @endforelse
-<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    @forelse($elementos as $elemento)
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }} 
+            {{ $loop-&gt;last ? &quot;Ultimo elemento&quot; : &quot;&quot; }} 
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    @empty
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    @endforelse
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Existen otros tipos de estructuras iterativas y selectivas en <em>Blade</em>, como <mark>@while</mark>, <mark>@for</mark> o <mark>@switch</mark>, entre otras. Podéis consultar sobre su uso en la <a href="https://laravel.com/docs/blade#control-structures" target="_blank">documentación oficial de Blade</a>.</p>
 <details class="questionlaravel" open="open">
 <summary>Proyecto biblioteca (6):</summary>
 <p>Vamos a aplicar esto en nuestro ejemplo del proyecto <em>biblioteca</em>. Definiremos una ruta para sacar un listado de libros y, de momento, vamos a crear a mano dicho listado en el propio método de enrutamiento, y se lo pasaremos a una vista llamada <code>listado.blade.php</code>. Por un lado, la nueva ruta para el listado puede quedar así:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-18-10">10</a></span>
-<span class="normal"><a href="#__codelineno-18-11">11</a></span>
-<span class="normal"><a href="#__codelineno-18-12">12</a></span>
-<span class="normal"><a href="#__codelineno-18-13">13</a></span>
-<span class="normal"><a href="#__codelineno-18-14">14</a></span>
-<span class="normal"><a href="#__codelineno-18-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>Route::get<span class="o">(</span><span class="s1">&#39;/listado&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">    </span><span class="nv">$libros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">        </span><span class="o">[</span><span class="w">   </span><span class="s2">&quot;titulo&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;El juego de Ender&quot;</span>,
-<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">            </span><span class="s2">&quot;autor&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;Orson Scott Card&quot;</span><span class="w">  </span>
-<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">        </span><span class="o">]</span>,
-<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">        </span><span class="o">[</span><span class="w">   </span><span class="s2">&quot;titulo&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;La tabla de Flandes&quot;</span>,
-<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">            </span><span class="s2">&quot;autor&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;Arturo Pérez Reverte&quot;</span><span class="w">  </span>
-<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">        </span><span class="o">]</span>,
-<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">        </span><span class="o">[</span><span class="w">   </span><span class="s2">&quot;titulo&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;La historia interminable&quot;</span>,
-<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="w">            </span><span class="s2">&quot;autor&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;Michael Ende&quot;</span><span class="w">  </span>
-<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="w">        </span><span class="o">]</span>,
-<a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="w">        </span><span class="o">[</span><span class="w">   </span><span class="s2">&quot;titulo&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;El Señor de los Anillos&quot;</span>,
-<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="w">            </span><span class="s2">&quot;autor&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;J.R.R. Tolkien&quot;</span><span class="w">  </span>
-<a id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="w">        </span><span class="o">]</span>
-<a id="__codelineno-18-15" name="__codelineno-18-15"></a><span class="w">    </span><span class="o">]</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div></p>
-<div class="codehilite"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nv">view</span><span class="ss">(</span><span class="s1">&#39;listado&#39;</span>,<span class="w"> </span><span class="nv">compact</span><span class="ss">(</span><span class="s1">&#39;libros&#39;</span><span class="ss">))</span><span class="c1">;</span>
+<div class="highlight"><pre><span></span><code>Route::get<span class="o">(</span><span class="s1">&#39;/listado&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">$libros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="w">        </span><span class="o">[</span><span class="w">   </span><span class="s2">&quot;titulo&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;El juego de Ender&quot;</span>,
+<span class="w">            </span><span class="s2">&quot;autor&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;Orson Scott Card&quot;</span><span class="w">  </span>
+<span class="w">        </span><span class="o">]</span>,
+<span class="w">        </span><span class="o">[</span><span class="w">   </span><span class="s2">&quot;titulo&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;La tabla de Flandes&quot;</span>,
+<span class="w">            </span><span class="s2">&quot;autor&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;Arturo Pérez Reverte&quot;</span><span class="w">  </span>
+<span class="w">        </span><span class="o">]</span>,
+<span class="w">        </span><span class="o">[</span><span class="w">   </span><span class="s2">&quot;titulo&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;La historia interminable&quot;</span>,
+<span class="w">            </span><span class="s2">&quot;autor&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;Michael Ende&quot;</span><span class="w">  </span>
+<span class="w">        </span><span class="o">]</span>,
+<span class="w">        </span><span class="o">[</span><span class="w">   </span><span class="s2">&quot;titulo&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;El Señor de los Anillos&quot;</span>,
+<span class="w">            </span><span class="s2">&quot;autor&quot;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;J.R.R. Tolkien&quot;</span><span class="w">  </span>
+<span class="w">        </span><span class="o">]</span>
+<span class="w">    </span><span class="o">]</span><span class="p">;</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>return view(&#39;listado&#39;, compact(&#39;libros&#39;));
 </code></pre></div>
-
 <p>})-&gt;name('listado_libros');
 <code>Por su parte, la vista `listado.blade.php` puede quedar así:</code>html
 <html>
@@ -1684,151 +2057,99 @@ En algunos casos (especialmente cuando generamos contenido <em>HTML</em> desde d
 </details>
 <h3 id="22-sobre-los-enlaces-a-otras-rutas">2.2. Sobre los enlaces a otras rutas<a class="headerlink" href="#22-sobre-los-enlaces-a-otras-rutas" title="Permanent link">&para;</a></h3>
 <p>Hemos comentado brevemente en puntos anteriores que, gracias a <em>Blade</em> y a los nombres en las rutas, podemos enlazar una vista con otra de dos formas: de forma tradicional…</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a>echo &#39;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/contacto&quot;</span><span class="p">&gt;</span>Contacto<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>&#39;;
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>echo &#39;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/contacto&quot;</span><span class="p">&gt;</span>Contacto<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>&#39;;
+</code></pre></div>
 <p>… o bien empleando la función <mark>route</mark> seguida del nombre que le hemos dado a la ruta:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;ruta_contacto&#39;) }}&quot;</span><span class="p">&gt;</span>Contacto<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;ruta_contacto&#39;) }}&quot;</span><span class="p">&gt;</span>Contacto<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Por ejemplo, podemos poner un enlace a la vista del listado de libros que hemos creado antes (y que hemos nombrado como <code>listado_libros</code> de este modo en nuestra vista de <code>inicio.blade.php</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
-<span class="normal"><a href="#__codelineno-22-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Bienvenido/a {{ $nombre }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;listado_libros&#39;) }}&quot;</span><span class="p">&gt;</span>Listado de libros<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Bienvenido/a {{ $nombre }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;listado_libros&#39;) }}&quot;</span><span class="p">&gt;</span>Listado de libros<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="23-definir-plantillas-comunes">2.3. Definir plantillas comunes<a class="headerlink" href="#23-definir-plantillas-comunes" title="Permanent link">&para;</a></h3>
 <p>A la hora de dar homogeneidad a una web, es habitual que la cabecera, el menú de navegación o el pie de página formen parte de una plantilla que se repite en todas las páginas del sitio, de modo que evitamos tener que actualizar todas las páginas ante cualquier posible cambio en estos elementos.</p>
 <p>Para crear una plantilla en <em>Blade</em>, creamos un archivo normal y corriente (por ejemplo, <code>plantilla.blade.php</code>), en la carpeta de vistas, con el contenido general de la plantilla. En aquellas zonas del documento donde vamos a permitir contenido variable dependiendo de la vista en sí, añadimos una sección llamada <mark>@yield</mark>, con un nombre asociado. Nuestra plantilla podría ser esta (notar que se permiten varios <code>@yield</code> con diferentes nombres):</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-23-10">10</a></span>
-<span class="normal"><a href="#__codelineno-23-11">11</a></span>
-<span class="normal"><a href="#__codelineno-23-12">12</a></span>
-<span class="normal"><a href="#__codelineno-23-13">13</a></span>
-<span class="normal"><a href="#__codelineno-23-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4"></a>      @yield(&#39;titulo&#39;)
-<a id="__codelineno-23-5" name="__codelineno-23-5"></a>    <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-23-6" name="__codelineno-23-6"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-23-7" name="__codelineno-23-7"></a>
-<a id="__codelineno-23-8" name="__codelineno-23-8"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-23-9" name="__codelineno-23-9"></a>    <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
-<a id="__codelineno-23-10" name="__codelineno-23-10"></a>      <span class="cm">&lt;!-- ... Menú de navegación --&gt;</span>
-<a id="__codelineno-23-11" name="__codelineno-23-11"></a>    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
-<a id="__codelineno-23-12" name="__codelineno-23-12"></a>    @yield(&#39;contenido&#39;)
-<a id="__codelineno-23-13" name="__codelineno-23-13"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-23-14" name="__codelineno-23-14"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
+      @yield(&#39;titulo&#39;)
+    <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+      <span class="cm">&lt;!-- ... Menú de navegación --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+    @yield(&#39;contenido&#39;)
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Después, en cada vista en que queramos utilizar esta plantilla, añadimos la directiva <mark>@extends</mark> de <em>Blade</em>, indicando el nombre de plantilla que vamos a utilizar. </p>
 <p>Con la directiva <mark>@section</mark>, seguida del nombre de la sección, definimos el contenido para cada uno de los <code>@yield</code> que se hayan indicado en la plantilla. Finalizaremos cada sección con la directiva <code>@endsection</code>. Así, para nuestra página inicial (<code>inicio.blade.php</code>), el contenido puede ser ahora éste:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
-<span class="normal"><a href="#__codelineno-24-2">2</a></span>
-<span class="normal"><a href="#__codelineno-24-3">3</a></span>
-<span class="normal"><a href="#__codelineno-24-4">4</a></span>
-<span class="normal"><a href="#__codelineno-24-5">5</a></span>
-<span class="normal"><a href="#__codelineno-24-6">6</a></span>
-<span class="normal"><a href="#__codelineno-24-7">7</a></span>
-<span class="normal"><a href="#__codelineno-24-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>@extends(&#39;plantilla&#39;)
-<a id="__codelineno-24-2" name="__codelineno-24-2"></a>
-<a id="__codelineno-24-3" name="__codelineno-24-3"></a>@section(&#39;titulo&#39;, &#39;Inicio&#39;)
-<a id="__codelineno-24-4" name="__codelineno-24-4"></a>
-<a id="__codelineno-24-5" name="__codelineno-24-5"></a>@section(&#39;contenido&#39;)
-<a id="__codelineno-24-6" name="__codelineno-24-6"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Página de inicio<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-24-7" name="__codelineno-24-7"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Bienvenido/a {{ $nombre }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-24-8" name="__codelineno-24-8"></a>@endsection
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>@extends(&#39;plantilla&#39;)
+
+@section(&#39;titulo&#39;, &#39;Inicio&#39;)
+
+@section(&#39;contenido&#39;)
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Página de inicio<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Bienvenido/a {{ $nombre }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+@endsection
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title"> </p>
 <p>A la directiva <code>@section</code> se le puede pasar un segundo parámetro con el contenido de esa sección, y en este caso no es necesario cerrarla con <code>@endsection</code>. Esta opción es útil para contenidos donde no interesen caracteres en blanco o saltos de línea innecesarios al principio o al final, como ocurre en el ejemplo anterior con el título (<em>title</em>) de la página.<br /><br />
 Del mismo modo, nuestra vista para el listado de libros quedaría de esta forma:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-25-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-25-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-25-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-25-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-25-10">10</a></span>
-<span class="normal"><a href="#__codelineno-25-11">11</a></span>
-<span class="normal"><a href="#__codelineno-25-12">12</a></span>
-<span class="normal"><a href="#__codelineno-25-13">13</a></span>
-<span class="normal"><a href="#__codelineno-25-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>@extends(&#39;plantilla&#39;)
-<a id="__codelineno-25-2" name="__codelineno-25-2"></a>
-<a id="__codelineno-25-3" name="__codelineno-25-3"></a>@section(&#39;titulo&#39;, &#39;Listado de libros&#39;)
-<a id="__codelineno-25-4" name="__codelineno-25-4"></a>
-<a id="__codelineno-25-5" name="__codelineno-25-5"></a>@section(&#39;contenido&#39;)
-<a id="__codelineno-25-6" name="__codelineno-25-6"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Listado de libros<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-25-7" name="__codelineno-25-7"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8"></a>        @forelse ($libros as $libro)
-<a id="__codelineno-25-9" name="__codelineno-25-9"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $libro[&quot;titulo&quot;] }} ({{ $libro[&quot;autor&quot;] }})<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-25-10" name="__codelineno-25-10"></a>            @empty
-<a id="__codelineno-25-11" name="__codelineno-25-11"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No se encontraron libros<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-25-12" name="__codelineno-25-12"></a>        @endforelse
-<a id="__codelineno-25-13" name="__codelineno-25-13"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-25-14" name="__codelineno-25-14"></a>@endsection
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight"><pre><span></span><code>@extends(&#39;plantilla&#39;)
+
+@section(&#39;titulo&#39;, &#39;Listado de libros&#39;)
+
+@section(&#39;contenido&#39;)
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Listado de libros<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        @forelse ($libros as $libro)
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $libro[&quot;titulo&quot;] }} ({{ $libro[&quot;autor&quot;] }})<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            @empty
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No se encontraron libros<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        @endforelse
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+@endsection
+</code></pre></div></p>
 </div>
 <h3 id="24-incluir-vistas-dentro-de-otras">2.4. Incluir vistas dentro de otras<a class="headerlink" href="#24-incluir-vistas-dentro-de-otras" title="Permanent link">&para;</a></h3>
 <p>También suele ser habitual definir contenidos parciales (se suelen definir en una subcarpeta <strong><code>partials</code></strong> dentro de <strong><code>resources/views</code></strong>), e incluirlos en las vistas. Para esto, utilizaremos la directiva <mark>@include</mark> de <em>Blade</em>.</p>
 <p>Por ejemplo, vamos a definir un menú de navegación. Supongamos que dicho menú está en el archivo <strong><code>resources/views/partials/nav.blade.php</code></strong>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
-<span class="normal"><a href="#__codelineno-26-2">2</a></span>
-<span class="normal"><a href="#__codelineno-26-3">3</a></span>
-<span class="normal"><a href="#__codelineno-26-4">4</a></span>
-<span class="normal"><a href="#__codelineno-26-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;inicio&#39;) }}&quot;</span><span class="p">&gt;</span>Inicio<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<a id="__codelineno-26-3" name="__codelineno-26-3"></a>    <span class="ni">&amp;nbsp;</span>|<span class="ni">&amp;nbsp;</span>
-<a id="__codelineno-26-4" name="__codelineno-26-4"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;listado_libros&#39;) }}&quot;</span><span class="p">&gt;</span>Listado de libros<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;inicio&#39;) }}&quot;</span><span class="p">&gt;</span>Inicio<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="ni">&amp;nbsp;</span>|<span class="ni">&amp;nbsp;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;listado_libros&#39;) }}&quot;</span><span class="p">&gt;</span>Listado de libros<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Notar que, en este ejemplo, se supone que a cada una de las dos rutas implicadas les hemos asignado los nombres “inicio” y “libros_listado”, respectivamente, empleando el método <code>name</code> al definir la ruta. De lo contrario, las propiedades <code>href</code> de los dos enlaces deberían apuntar a <code>/</code> y <code>/listado</code>, respectivamente.</p>
 <p>Para incluir el menú en la plantilla anterior, podemos hacer esto (y eliminaríamos el elemento <code>&lt;nav&gt;</code> de la plantilla):</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-27-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-27-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-27-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-27-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-27-10">10</a></span>
-<span class="normal"><a href="#__codelineno-27-11">11</a></span>
-<span class="normal"><a href="#__codelineno-27-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-27-3" name="__codelineno-27-3"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-27-4" name="__codelineno-27-4"></a>        @yield(&#39;titulo&#39;)
-<a id="__codelineno-27-5" name="__codelineno-27-5"></a>        <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-27-6" name="__codelineno-27-6"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-27-7" name="__codelineno-27-7"></a>
-<a id="__codelineno-27-8" name="__codelineno-27-8"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-27-9" name="__codelineno-27-9"></a>        @include(&#39;partials.nav&#39;)
-<a id="__codelineno-27-10" name="__codelineno-27-10"></a>        @yield(&#39;contenido&#39;)
-<a id="__codelineno-27-11" name="__codelineno-27-11"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-27-12" name="__codelineno-27-12"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
+        @yield(&#39;titulo&#39;)
+        <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        @include(&#39;partials.nav&#39;)
+        @yield(&#39;contenido&#39;)
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Como puede verse, podemos utilizar tanto el punto como la barra para indicar el separador de carpeta en la vista.</p>
 <h3 id="25-estructurar-vistas-en-carpetas">2.5. Estructurar vistas en carpetas<a class="headerlink" href="#25-estructurar-vistas-en-carpetas" title="Permanent link">&para;</a></h3>
 <p>Cuando la aplicación es algo compleja, pueden ser necesarias varias vistas, y tenerlas todas en una misma carpeta puede ser algo difícil de gestionar. Es habitual, como iremos viendo en sesiones posteriores, estructurar las vistas de la carpeta <code>resources/views</code> en subcarpetas, de modo que, por ejemplo, cada carpeta se refiera a las vistas de una entidad o modelo de la aplicación, o a un controlador específico. </p>
 <details class="questionlaravel" open="open">
 <summary>Proyecto biblioteca (7):</summary>
 <p>De momento, en nuestro ejemplo de la biblioteca, vamos a ubicar la vista <code>listado.blade.php</code> en una subcarpeta <code>libros</code>, de modo que en la ruta que renderiza esta vista, ahora deberemos indicar también el nombre de la subcarpeta:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
-<span class="normal"><a href="#__codelineno-28-2">2</a></span>
-<span class="normal"><a href="#__codelineno-28-3">3</a></span>
-<span class="normal"><a href="#__codelineno-28-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>Route::get<span class="o">(</span><span class="s1">&#39;listado&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w">    </span>//<span class="w"> </span>...
-<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;libros.listado&#39;</span>,<span class="w"> </span>compact<span class="o">(</span><span class="s1">&#39;libros&#39;</span><span class="o">))</span><span class="p">;</span>
-<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="o">})</span>-&gt;name<span class="o">(</span><span class="s1">&#39;listado_libros&#39;</span><span class="o">)</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight"><pre><span></span><code>Route::get<span class="o">(</span><span class="s1">&#39;listado&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>//<span class="w"> </span>...
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>view<span class="o">(</span><span class="s1">&#39;libros.listado&#39;</span>,<span class="w"> </span>compact<span class="o">(</span><span class="s1">&#39;libros&#39;</span><span class="o">))</span><span class="p">;</span>
+<span class="o">})</span>-&gt;name<span class="o">(</span><span class="s1">&#39;listado_libros&#39;</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div></p>
 </details>
 <div class="admonition note">
 <p class="admonition-title">Observa</p>
@@ -1838,29 +2159,20 @@ Del mismo modo, nuestra vista para el listado de libros quedaría de esta forma:
 <h3 id="26-vistas-para-paginas-de-error">2.6. Vistas para páginas de error<a class="headerlink" href="#26-vistas-para-paginas-de-error" title="Permanent link">&para;</a></h3>
 <p>A lo largo de estas sesiones, algunas acciones que hagamos provocarán páginas de error con determinados códigos, como por ejemplo <em>404</em> para páginas no encontradas. </p>
 <p>Si queremos definir el aspecto y estructura de estas páginas, basta con crear la vista correspondiente en la carpeta <code>resources/views/errors</code>, por ejemplo, <code>resources/views/errors/404.blade.php</code> para el error <em>404</em> (anteponemos el código de error al sufijo de la vista).</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
-<span class="normal"><a href="#__codelineno-29-2">2</a></span>
-<span class="normal"><a href="#__codelineno-29-3">3</a></span>
-<span class="normal"><a href="#__codelineno-29-4">4</a></span>
-<span class="normal"><a href="#__codelineno-29-5">5</a></span>
-<span class="normal"><a href="#__codelineno-29-6">6</a></span>
-<span class="normal"><a href="#__codelineno-29-7">7</a></span>
-<span class="normal"><a href="#__codelineno-29-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a>@extends(&#39;plantilla&#39;)
-<a id="__codelineno-29-2" name="__codelineno-29-2"></a>
-<a id="__codelineno-29-3" name="__codelineno-29-3"></a>@section(&#39;titulo&#39;, &#39;Error 404&#39;)
-<a id="__codelineno-29-4" name="__codelineno-29-4"></a>
-<a id="__codelineno-29-5" name="__codelineno-29-5"></a>@section(&#39;contenido&#39;)
-<a id="__codelineno-29-6" name="__codelineno-29-6"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Error<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-29-7" name="__codelineno-29-7"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Documento no encontrado<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-29-8" name="__codelineno-29-8"></a>@endsection
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>@extends(&#39;plantilla&#39;)
+
+@section(&#39;titulo&#39;, &#39;Error 404&#39;)
+
+@section(&#39;contenido&#39;)
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Error<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Documento no encontrado<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+@endsection
+</code></pre></div>
 <p>Podemos simular con la herramienta <mark>abort(numero)</mark> el error anterior:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
-<span class="normal"><a href="#__codelineno-30-2">2</a></span>
-<span class="normal"><a href="#__codelineno-30-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a>Route::get<span class="o">(</span><span class="s1">&#39;/test404&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="w">    </span>abort<span class="o">(</span><span class="m">404</span><span class="o">)</span><span class="p">;</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="o">})</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>Route::get<span class="o">(</span><span class="s1">&#39;/test404&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>abort<span class="o">(</span><span class="m">404</span><span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+</code></pre></div>
 o también insertar una URL que no exista: <mark>/pagina_inexistente</mark>.</p>
 <details class="questionlaravel" open="open">
 <summary>Ejercicios</summary>
@@ -1874,6 +2186,9 @@ o también insertar una URL que no exista: <mark>/pagina_inexistente</mark>.</p>
 
 
 
+
+  
+  
 
 
 
@@ -1898,6 +2213,44 @@ o también insertar una URL que no exista: <mark>/pagina_inexistente</mark>.</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../ut0705/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 7.5. Rutas">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                7.5. Rutas
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ut0707/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 7.7. Estilos y Javascript">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                7.7. Estilos y Javascript
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

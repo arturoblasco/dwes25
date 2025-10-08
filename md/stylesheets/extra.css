@@ -249,14 +249,54 @@ font-size: 16px
 /* Cambiar color de texto */
 .md-typeset blockquote {
   color: #333333;   /* Cambia este color al que quieras */
-  font-size: 0.85m; /* Ajusta tamaño */
+  background-color: #fff8e1;          /* ✅ color de fons (pots canviar-lo) */
+  font-size: 0.80m; /* Ajusta tamaño */
   border-inline-start: 7px solid #cba123 !important; /* Color y grosor del borde */
   /*background: #8f6363; /* Opcional: fondo más claro */
-  padding: 0.2em 0.2em;
-  /*border-radius: 4px; /* Si quieres esquinas redondeadas */
+  padding: 0.1em 0.1em;
+  border-radius: 4px;
 }
 
 /* Si quieres resaltar palabras como "IMPORTANTE:" */
 .md-typeset blockquote strong {
   color: #bd8f04; /* Rojo para destacar */
 }
+
+
+
+/* Cambiar color de fondo de los code inline (no de bloques grandes) */
+.md-typeset code {
+  background-color: #f6f1e1;  /* color de fondo personalizado */
+  color: #2b2b2b;             /* color del texto */
+  border-radius: 4px;         /* esquinas redondeadas */
+  padding: 0.15em 0.4em;      /* espacio interno */
+  font-size: 0.9em;
+}
+
+
+
+
+/* ABC - color fons de la zona pestanyes*/
+.md-typeset .tabbed-content {
+  background-color: #fafaf3;
+  /* background-color: #fcf7e5;
+  border: 1px solid #ffecae; */
+  padding: 1em;
+}
+
+
+
+/* Subrayado en secciones principales */
+.md-typeset h2 {
+  color: #daa70d;         /* texto del color primario */
+  border-bottom: 2px solid #e6b213;   /* línea del mismo color */
+  padding-bottom: 0.25em;
+  margin-bottom: 0.75em;
+  font-weight: 500;                         /* opcional: más peso */
+}
+
+.md-typeset h3 {
+  color: #daa70d;         /* texto del color primario */
+
+}
+
