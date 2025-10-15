@@ -81,8 +81,9 @@ Añade nuevos métodos que hagan una representación de todas las propiedades de
 
 - `function public __toString(): string`
 
-!!! note "Magic method"
-    El método `__toString()` es un método mágico que se invoca automáticamente cuando queremos obtener la representación en cadena de un objeto.
+> **Magic method**
+> 
+> El método `__toString()` es un método mágico que se invoca automáticamente cuando queremos obtener la representación en cadena de un objeto.
     
 
 ### Ejercicio 312
@@ -145,19 +146,22 @@ Transforma `Persona` a una clase abstracta donde su método estático `toHtml(Pe
 <hr>
 
 ## Proyecto Videoclub
+
+> **Proyecto no real**
+> 
+> El siguiente proyecto está pensado desde un punto de vista formativo. Algunas de las decisiones que se toman no se deben usar (como hacer `echo` dentro de las clases) o probar el código comparando el resultado en el navegador.
+
 En los siguientes ejercicios vamos a simular un pequeño proyecto de un Videoclub (basado en la propuesta que hace el tutorial de desarrolloweb.com), el cual vamos a realizar mediante un desarrollo incremental y siguiendo la práctica de programación en parejas (*pair programming*).
 
-!!! note "Proyecto no real"
-    El siguiente proyecto está pensado desde un punto de vista formativo. Algunas de las decisiones que se toman no se deben usar (como hacer `echo` dentro de las clases) o probar el código comparando el resultado en el navegador.
-
-
-
-!!!note "Git del proyecto"
-	Antes de nada, crea un repositorio privado en GitHub y sube el proyecto actual de `Videoclub`. Una vez creado, invita a tu compañero al repositorio como colaborador.<br />
-	1. Inicializa en local tu repositorio de *g*it, mediante `git init`.<br />
-	2. Añade y sube los cambios a tu repositorio, mediante `git add .` y luego `git commit -m 'Inicializando proyecto'`.<br />
-	3.Conecta tu repositorio con GitHub y sube los cambios (mira la instrucciones de GitHub: comandos `git remote` y `git push`).<br /><br/>
-	Tu compañero deberá descargar el proyecto con sus credenciales.
+> **Git del proyecto**
+> 
+> Antes de nada, crea un repositorio privado en GitHub y sube el proyecto actual de `Videoclub`. Una vez creado, invita a tu compañero al repositorio como colaborador.
+> 
+> 1. Inicializa en local tu repositorio de *g*it, mediante `git init`.
+> 2. Añade y sube los cambios a tu repositorio, mediante `git add .` y luego `git commit -m 'Inicializando proyecto'`.
+> 3.Conecta tu repositorio con GitHub y sube los cambios (mira la instrucciones de GitHub: comandos `git remote` y `git push`).
+> 
+> Tu compañero deberá descargar el proyecto con sus credenciales.
 
 
 
@@ -172,8 +176,8 @@ Crea una clase para almacenar soportes (`Soporte.php`). Esta clase será la clas
 - Definir una constante mediante un propiedad privada y estática denominada `IVA` con un valor del *21%*.
 - Crear un archivo (`inicio.php`) para usar las clases y copia el siguiente fragmento:
 
-???+example " "
-	=== "Ejemplo inicio.php"
+???examplephp "Ejemplo"
+	=== "inicio.php"
         ```php
         <?php
             include_once ("Soporte.php");
@@ -194,8 +198,8 @@ Crea una clase para almacenar soportes (`Soporte.php`). Esta clase será la clas
 Crea la clase `CintaVideo` la cual hereda de `Soporte`. Añade el atributo `duracion` y sobreescribe tanto el constructor como el método `muestraResumen` (desde `CintaVideo` deberás llamar al método `muestraResumen` del padre).
 
 Añade a `inicio.php` el código para probar la clase:
-???+example " "
-	=== "Ejemplo inicio.php"
+???examplephp "Ejemplo"
+	=== "inicio.php"
         ```php
         <?php
             include_once "CintaVideo.php";
@@ -219,8 +223,8 @@ Añade a `inicio.php` el código para probar la clase:
 Crea la clase `Dvd` la cual hereda de `Soporte`. Añade los atributos `idiomas` (que se un array como "es", "en", ...) y `formatoPantalla`. A continuación sobreescribe tanto el constructor como el método `muestraResumen`.
 
 Añade a `inicio.php` el código para probar la clase:
-???+example " "
-	=== "Ejemplo inicio.php"
+???examplephp "Ejemplo"
+	=== "inicio.php"
         ```php
         <?php
             include_once "Dvd.php";
@@ -246,8 +250,8 @@ A continuación añade el método `muestraJugadoresPosibles`, el cual debe mostr
 Finalmente, sobreescribe tanto el constructor como el método `muestraResumen`.
 
 Añade a `inicio.php` el código para probar la clase:
-???+example " "
-	=== "Ejemplo inicio.php"
+???examplephp "Ejemplo"
+	=== "inicio.php"
         ```php
         <?php
             include_once "Juego.php";
@@ -291,8 +295,8 @@ Seguimos con `Cliente` para añadir las operaciones:
 - `listarAlquileres(): void` : informa de cuantos alquileres tiene el cliente y los muestra.
 
 Crea el archivo `inicio2.php` con el siguiente código fuente para probar la clase:
-???+example " "
-	=== "Ejemplo inicio2.php"
+???examplephp "Ejemplo"
+	=== "inicio2.php"
         ```php
         <?php
             include_once "CintaVideo.php";
@@ -351,8 +355,8 @@ El modelo completo quedará de la siguiente manera:
 <div style="text-align: center;"><figure><img src="../../img/ut03/pro07.png" alt="pro07" style="zoom:70%;" /><figcaption style="font-size: 13px; color: #bd8f04;">Estructura de herencia de las clases implicadas (ejercicio328).</figcaption></figure></div>
 
 Y para probar el proyecto, dentro inicio3.php colocaremos:
-???+example " "
-	=== "Ejemplo inicio3.php"
+???examplephp "Ejemplo"
+	=== "inicio3.php"
         ```php
         <?php
            include_once "Videoclub.php"; // No incluimos nada más
@@ -399,12 +403,13 @@ Crea un interfaz `Resumible` de manera que las clases que lo implementen deben o
 
 Modifica la clase `Soporte` y haz que implemente el interfaz. ¿Hace falta que también lo implementen los hijos?
 
-
 <hr>
 
 ## Proyecto Videoclub 2.0
-!!!note "Git del proyecto"
-	Antes de comenzar con la segunda parte del videoclub, crea una etiqueta mediante `git tag` con el nombre `v0.330` y sube los cambios a GitHub.
+
+> **Git del proyecto**
+> 
+> Antes de comenzar con la segunda parte del videoclub, crea una etiqueta mediante `git tag` con el nombre `v0.330` y sube los cambios a GitHub.
 
 ### Ejercicio 331
 Modifica las operaciones de alquilar, tanto en `Cliente` (métodos `alquilar`, `devolver`) como en `Videoclub`  (métodos `incluirProducto`, `incluirCintaVideo`, `incluirDvd`, `incluirJuego`, `incluirSocio`, `listarProductos`, `listarSocios`, `alquilarSocioProducto`) , para dar soporte al encadenamiento de métodos. 
@@ -473,8 +478,9 @@ $vc->incluirJuego("God of War", 19.99, "PS4", 1, 1)
 
 
 
-!!!note "Git del proyecto" 
-	Etiqueta los cambios como `v0.331`.
+> **Git del proyecto**
+> 
+> Etiqueta los cambios como `v0.331`.
 
 ### Ejercicio 333
 Reorganiza las carpeta tal como hemos visto en los apuntes: `app`, `test` y`vendor`.
@@ -517,5 +523,6 @@ Deben soportar el encadenamiento de métodos. Recuerda actualizar la propiedad `
 
 
 
-!!!note "Git del proyecto"
-	Cuando hayas realizado todos los ejercicios, crea una etiqueta mediante `git tag` con el nombre `v0.338` y sube los cambios a GitHub.
+> **Git del proyecto**
+> 
+> Cuando hayas realizado todos los ejercicios, crea una etiqueta mediante `git tag` con el nombre `v0.338` y sube los cambios a GitHub.

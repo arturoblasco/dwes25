@@ -1,4 +1,7 @@
-## Inicio
+---
+title: 4. Ejercicios
+---
+# Ejercicios
 
 ### Ejercicio 401
 

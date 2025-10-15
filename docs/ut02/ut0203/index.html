@@ -1547,6 +1547,213 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 4 Programación web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            UT 4 Programación web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2. Variable de servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3. Formularios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0404/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4.Cabeceras de respuesta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0405/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5. Gestión de estado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0406/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6. Autenticación de usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut04ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2437,19 +2644,19 @@
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Operador Elvis</p>
+<blockquote>
+<p><strong>Operador Elvis</strong></p>
 <p>Si queremos comprobar si una variable tiene valor y si no darle un valor determinado, usaremos el operador <strong><code>?:</code></strong> (se conoce como el <strong>operador Elvis</strong> - <a href="https://en.wikipedia.org/wiki/Elvis_operator" target="_blank">https://en.wikipedia.org/wiki/Elvis_operator</a>) con la sintáxis <strong><code>expresión ?: valorSiVacio</code>.</strong></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ejemplo op. elvis</label><label for="__tabbed_2_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-    <span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="s2">&quot;Nombre: &quot;</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$nombre</span> <span class="o">?:</span> <span class="s2">&quot;desconocido&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">&quot;Nombre: &quot;</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$nombre</span> <span class="o">?:</span> <span class="s2">&quot;desconocido&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
 
-    <span class="c1">// se envía a través de un formulario:</span>
-    <span class="c1">// $nombre = &quot;&quot;;</span>
-    <span class="c1">// $nombre = $_GET[&#39;nombre&#39;] ?: &quot;desconocido&quot;;</span>
+<span class="c1">// se envía a través de un formulario:</span>
+<span class="c1">// $nombre = &quot;&quot;;</span>
+<span class="c1">// $nombre = $_GET[&#39;nombre&#39;] ?: &quot;desconocido&quot;;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div>
 </div>
@@ -2458,7 +2665,7 @@
 </div>
 </div>
 </div>
-</div>
+</blockquote>
 <h2 id="2-trabajando-con-formularios">2. Trabajando con formularios<a class="headerlink" href="#2-trabajando-con-formularios" title="Permanent link">&para;</a></h2>
 <p>Los datos se envían vía URL con el formato <code>var1=valor1&amp;var2=valor2…</code>.</p>
 <p>Por ejemplo: <code>ejemplo.php?nombre=Homer&amp;apellido1=Simpson</code></p>
@@ -2517,10 +2724,10 @@
 <h2 id="3-condiciones">3. Condiciones<a class="headerlink" href="#3-condiciones" title="Permanent link">&para;</a></h2>
 <h3 id="31-if">3.1. if<a class="headerlink" href="#31-if" title="Permanent link">&para;</a></h3>
 <p>La condición simple se realiza mediante la instrucción <strong><code>if</code></strong>. Entre paréntesis se pone la condición que se evalua a <em>true</em> o <em>false</em>. Si no se ponen llaves, en vez de abrir un bloque, se ejecutará sólo la siguiente instrucción.</p>
-<div class="admonition note">
-<p class="admonition-title">Siempre llaves</p>
+<blockquote>
+<p><strong>Siempre llaves</strong></p>
 <p>Es recomendable poner llaves siempre aunque en el momento de codificar sólo haya una única instrucción. De este modo, se queda preparado para añadir más contenido en el futuro sin provocar <em>bugs</em>.</p>
-</div>
+</blockquote>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Ejemplo if</label><label for="__tabbed_4_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2610,10 +2817,10 @@
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">No olvides el <code>break</code></p>
+<blockquote>
+<p><strong>No olvides el <code>break</code></strong></p>
 <p>Un error muy común es olvidar la instrucción <code>break</code> tras cada caso. Si no lo ponemos, ejecutará el siguiente caso automáticamente.</p>
-</div>
+</blockquote>
 <h3 id="33-match">3.3. match<a class="headerlink" href="#33-match" title="Permanent link">&para;</a></h3>
 <p>La sentencia <strong><code>match</code></strong> fue introducida en la versión 8.0 y es muy similar a la estructura de <code>switch</code>, pero tiene algunas diferencias importantes:</p>
 <ul>
@@ -2659,20 +2866,20 @@
 <details class="ies">
 <summary>Ejercicios a realizar</summary>
 <ul>
-<li><code>Ejercicio 203</code><br /></li>
-<li><code>Ejercicio 204</code><br /></li>
-<li><code>Ejercicio 205</code><br /></li>
-<li><code>Ejercicio 206</code><br /></li>
-<li><code>Ejercicio 207</code><br /></li>
-<li><code>Ejercicio 208</code><br /></li>
-<li><code>Ejercicio 209</code><br /></li>
-<li><code>Ejercicio 210</code><br /></li>
-<li><code>Ejercicio 211</code><br /></li>
-<li><code>Ejercicio 212</code><br /></li>
-<li><code>Ejercicio 213</code><br /></li>
-<li><code>Ejercicio 214</code><br /> </li>
-<li><code>Ejercicio 215</code><br /></li>
-<li><code>Ejercicio 216</code><br /> </li>
+<li>Ejercicio 203</li>
+<li>Ejercicio 204</li>
+<li>Ejercicio 205</li>
+<li>Ejercicio 206</li>
+<li>Ejercicio 207</li>
+<li>Ejercicio 208</li>
+<li>Ejercicio 209</li>
+<li>Ejercicio 210</li>
+<li>Ejercicio 211</li>
+<li>Ejercicio 212</li>
+<li>Ejercicio 213</li>
+<li>Ejercicio 214 </li>
+<li>Ejercicio 215</li>
+<li>Ejercicio 216 </li>
 </ul>
 </details>
 <h2 id="4-bucles">4. Bucles<a class="headerlink" href="#4-bucles" title="Permanent link">&para;</a></h2>
@@ -2698,7 +2905,7 @@
 </div>
 </div>
 <blockquote>
-<p>Nota: recuerda incrementar <code>$i</code>, de lo contrario el bucle continuará para siempre.</p>
+<p>Recuerda <strong>incrementar <code>$i</code></strong>, de lo contrario el bucle continuará para siempre.</p>
 </blockquote>
 <h3 id="42-do-while">4.2. do-while<a class="headerlink" href="#42-do-while" title="Permanent link">&para;</a></h3>
 <p>El bucle <strong><code>do-while</code></strong> siempre ejecutará el bloque de código al menos una vez, luego verificará la condición y repetirá el bucle mientras la condición especificada sea <em>verdadera</em>.</p>
@@ -2768,14 +2975,14 @@
 </div>
 </div>
 <blockquote>
-<p>Como veremos en el siguiente punto <strong>Arrays</strong> el bucle <strong><code>foreach</code></strong> se utilizará también para recorrer un tipo de arrays denominados <strong>arrays asociativos</strong>.</p>
+<p>Como veremos en el siguiente punto <strong>Arrays</strong> el bucle <strong><code>foreach</code></strong> se utilizará también para recorrer un tipo de arrays denominados <strong>arrays asociativos</strong>.
+</p>
 </blockquote>
 <h3 id="45-break-y-continue">4.5. break y continue<a class="headerlink" href="#45-break-y-continue" title="Permanent link">&para;</a></h3>
 <p><em>PHP</em>, del mismo modo que <em>Java</em> y <em>C</em>, permite romper los bucles mediante la instrucción <code>break</code>. A su vez, <code>continue</code> permite saltar a la siguiente iteración.</p>
-<div class="admonition note">
-<p class="admonition-title">Si puedes, evita <code>break</code> y <code>continue</code></p>
+<blockquote>
+<p><strong>Si puedes, evita <code>break</code> y <code>continue</code></strong></p>
 <p>No es desable su uso. Es más preferible el uso de variables <em>flag</em> para controlar la salida de los bucles. </p>
-<p>Por ejemplo:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Ejemplo de variable <em>flag</em></label><label for="__tabbed_13_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2795,19 +3002,19 @@
 </div>
 </div>
 </div>
-</div>
+</blockquote>
 <details class="ies">
 <summary>Ejercicios a realizar</summary>
 <ul>
-<li><code>Ejercicio 221</code><br /></li>
-<li><code>Ejercicio 222</code><br /></li>
-<li><code>Ejercicio 223</code><br /></li>
-<li><code>Ejercicio 224</code><br /></li>
-<li><code>Ejercicio 225</code><br /></li>
-<li><code>Ejercicio 226</code><br /></li>
-<li><code>Ejercicio 227</code><br /></li>
-<li><code>Ejercicio 228</code><br /></li>
-<li><code>Ejercicio 229</code><br /></li>
+<li>Ejercicio 221</li>
+<li>Ejercicio 222</li>
+<li>Ejercicio 223</li>
+<li>Ejercicio 224</li>
+<li>Ejercicio 225</li>
+<li>Ejercicio 226</li>
+<li>Ejercicio 227</li>
+<li>Ejercicio 228</li>
+<li>Ejercicio 229</li>
 </ul>
 </details>
 

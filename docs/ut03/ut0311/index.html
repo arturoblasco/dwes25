@@ -1308,6 +1308,213 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 4 Programación web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            UT 4 Programación web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2. Variable de servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3. Formularios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0404/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4.Cabeceras de respuesta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0405/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5. Gestión de estado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0406/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6. Autenticación de usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut04ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1648,7 +1855,9 @@
 
 
 <h1 id="311-metodos-encadenados">3.11. Métodos encadenados<a class="headerlink" href="#311-metodos-encadenados" title="Permanent link">&para;</a></h1>
-<p>Sigue el planteamiento de la programación funcional, y también se conoce como <strong>method chaining</strong>. Plantea que sobre un objeto se realizan varias llamadas; o sea, consiste en llamar varios métodos de un objeto en una misma línea, basta con añadir al final de cada método: <code>return $this;</code> Con el siguiente ejemplo se entiende fácilmente.</p>
+<p>Sigue el planteamiento de la programación funcional, y también se conoce como <strong>method chaining</strong>. Plantea que sobre un objeto se realizan varias llamadas; o sea, consiste en llamar varios métodos de un objeto en una misma línea, basta con añadir al final de cada método: <strong><code>return $this;</code></strong>.</p>
+<details class="examplephp">
+<summary>Ejemplo métodos encadenados</summary>
 <p>Para facilitarlo, vamos a modificar todos sus métodos mutadores (que <em>modifican datos</em>, <em>setters</em>, ...) para que devuelvan una referencia a <code>$this</code>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Php</label><label for="__tabbed_1_2">Resultado</label></div>
 <div class="tabbed-content">
@@ -1657,12 +1866,12 @@
 <span class="k">class</span> <span class="nc">Coche</span> <span class="p">{</span>
         <span class="k">public</span> <span class="k">function</span> <span class="nf">lavar</span><span class="p">(){</span>
             <span class="k">echo</span> <span class="s2">&quot;Coche lavado.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-                <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">encerar</span><span class="p">(){</span>
-                <span class="k">echo</span> <span class="s2">&quot;Coche encerado.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-                <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+            <span class="k">echo</span> <span class="s2">&quot;Coche encerado.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
         <span class="p">}</span>
 <span class="p">}</span>
 
@@ -1679,9 +1888,11 @@ Coche<span class="w"> </span>encerado.
 </div>
 </div>
 </div>
-<p>Otro ejemplo:</p>
+</details>
+<details class="examplephp">
+<summary>Otro ejemplo</summary>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-  <span class="k">class</span> <span class="nc">Libro</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">Libro</span> <span class="p">{</span>
     <span class="k">private</span> <span class="nx">string</span> <span class="nv">$nombre</span><span class="p">;</span>
     <span class="k">private</span> <span class="nx">string</span> <span class="nv">$autor</span><span class="p">;</span>
 
@@ -1704,8 +1915,25 @@ Coche<span class="w"> </span>encerado.
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__toString</span><span class="p">()</span> <span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nombre</span><span class="o">.</span><span class="s2">&quot; de &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">autor</span><span class="p">;</span>
     <span class="p">}</span>
-  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="s2">&quot;USO TRADICIONAL:&lt;br/&gt;&quot;</span>
+<span class="nv">$libro</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Libro</span><span class="p">();</span>
+<span class="nv">$libro</span><span class="o">-&gt;</span><span class="na">setNombre</span><span class="p">(</span><span class="s2">&quot;Cien años de soledad&quot;</span><span class="p">);</span>
+<span class="nv">$libro</span><span class="o">-&gt;</span><span class="na">setAutor</span><span class="p">(</span><span class="s2">&quot;Gabriel García Márquez&quot;</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$libro</span><span class="p">;</span> <span class="c1">// Cien años de soledad de Gabriel García Márquez</span>
+
+<span class="k">echo</span> <span class="s2">&quot;&lt;br/&gt;################&lt;br/&gt;&quot;</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="s2">&quot;USO DE MÉTODOS ENCADENADOS:&lt;br/&gt;&quot;</span>
+<span class="nv">$libro</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">Libro</span><span class="p">())</span>
+        <span class="o">-&gt;</span><span class="na">setNombre</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">setAutor</span><span class="p">(</span><span class="s2">&quot;George Orwell&quot;</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$libro</span><span class="p">;</span> <span class="c1">// 1984 de George Orwell</span>
 </code></pre></div>
+</details>
 
 
 
