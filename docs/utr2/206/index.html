@@ -1,0 +1,3068 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../205/">
+      
+      
+        <link rel="next" href="../20p/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>2.6. Datos Mock: El Simulador de Base de Datos para Desarrollo Ágil - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#26-datos-mock-el-simulador-de-base-de-datos-para-desarrollo-agil" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.6. Datos Mock: El Simulador de Base de Datos para Desarrollo Ágil
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 1 Arquitectura Web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            UT 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. Arquitecturas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3. Generar páginas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4. Modelos de programación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5. Decisiones de diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6. Ejecución del código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0107/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7. Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0108/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8. Tecnologías
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0109/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.9. Navegadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0110/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.10. Puesta en marcha
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut01de/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descargas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut01ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 2 Lenguaje PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            UT 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3. Operadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4. Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5. Funciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.6. Funciones predefinidas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0207/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.7. Expresiones regulares
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut02ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 3 PHP OO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            UT 3 PHP OO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2. Clases y objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0303/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3. Encapsulación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4. Constructor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5. Clases estáticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.6. Introspección
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.7. Herencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0308/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.8. Clases abstractas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0309/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.9. Clases final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0310/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.10. Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0311/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.11. Métodos encadenados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.12. Métodos mágicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.13. Espacio de nombres
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0314/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.14. Gestión de errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0315/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.15. Excepciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0316/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.16. SPL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut03ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 4 Programación web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            UT 4 Programación web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2. Variable de servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3. Formularios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0404/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4.Cabeceras de respuesta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0405/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5. Gestión de estado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0406/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6. Autenticación de usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut04ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Laravel
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Laravel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 7 Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            UT 7 Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0701/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0702/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.2. Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0703/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.3. Software necesario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0704/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.4. Primeros pasos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0705/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.5. Rutas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0706/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.6. Vistas con Blade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0707/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.7. Estilos y Javascript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut07ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios propuestos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UTR 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            UTR 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    100
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    101
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    102
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    103
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    104
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    105
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    106
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/10p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD.1 Práctica Guiada: Configuración de un Entorno de Desarrollo Moderno con Docker y Laravel | Introducción a Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UTR 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            UTR 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.0 Fundamentos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 Viaje Interno de una Petición
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. Mapa de la Aplicación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3. El Lenguaje Elegante para Crear Vistas Dinámicas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4. Arquitectura de Vistas: Layouts y Herencia en Blade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5. Del Controlador a la Vista: Integrando Datos Dinámicos en Blade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2.6. Datos Mock: El Simulador de Base de Datos para Desarrollo Ágil
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.6. Datos Mock: El Simulador de Base de Datos para Desarrollo Ágil
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-estructura-de-datos-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Estructura de Datos Mock
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-traits-reutilizando-codigo-entre-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. Traits: Reutilizando Código entre Controladores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2. Traits: Reutilizando Código entre Controladores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-que-es-un-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.1. ¿Qué es un Trait?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622-crear-el-trait-para-datos-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.2. Crear el Trait para Datos Mock
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623-uso-de-traits" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.3. Uso de Traits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-funciones-avanzadas-con-datos-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. Funciones Avanzadas con Datos Mock
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3. Funciones Avanzadas con Datos Mock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631-filtrado-de-datos-con-array_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.1. Filtrado de Datos con array_filter()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632-transformacion-de-datos-con-array_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.2 Transformación de Datos con array_map()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#633-busqueda-por-id-con-operador" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.3. Búsqueda por ID con Operador ??
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD.2 Práctica Guiada: Rutas, Controladores y Vistas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UTR 3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            UTR 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/300/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    300
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    301
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    302
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/303/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    303
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    304
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    305
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/30p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    30p
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-estructura-de-datos-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Estructura de Datos Mock
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-traits-reutilizando-codigo-entre-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. Traits: Reutilizando Código entre Controladores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2. Traits: Reutilizando Código entre Controladores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-que-es-un-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.1. ¿Qué es un Trait?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622-crear-el-trait-para-datos-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.2. Crear el Trait para Datos Mock
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623-uso-de-traits" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.3. Uso de Traits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-funciones-avanzadas-con-datos-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. Funciones Avanzadas con Datos Mock
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3. Funciones Avanzadas con Datos Mock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631-filtrado-de-datos-con-array_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.1. Filtrado de Datos con array_filter()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632-transformacion-de-datos-con-array_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.2 Transformación de Datos con array_map()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#633-busqueda-por-id-con-operador" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.3. Búsqueda por ID con Operador ??
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="26-datos-mock-el-simulador-de-base-de-datos-para-desarrollo-agil">2.6. Datos Mock: El Simulador de Base de Datos para Desarrollo Ágil<a class="headerlink" href="#26-datos-mock-el-simulador-de-base-de-datos-para-desarrollo-agil" title="Permanent link">&para;</a></h1>
+<p>En el desarrollo de aplicaciones web, especialmente durante las fases iniciales de un proyecto, es una práctica profesional trabajar con <strong>datos mock</strong> (datos de prueba simulados) en lugar de depender inmediatamente de una base de datos real. Los datos mock permiten desarrollar y probar funcionalidades de forma ágil, sin la complejidad inicial de configurar y mantener una base de datos completa.</p>
+<details class="examplelaravel" open="open">
+<summary>Analogía: Simulador de Vuelo para Entrenar Pilotos</summary>
+<p><strong>¡Imagina que estás entrenando pilotos para una aerolínea!</strong></p>
+<ul>
+<li>✈️ <strong>Sin simulador (el camino peligroso y caro)</strong> Usas un avión real Boeing 737 valorado en 100 millones de euros, quemas combustible real (miles de euros/hora), y arriesgas vidas si el piloto en entrenamiento comete errores.</li>
+<li>🎮 <strong>Con simulador de vuelo (el camino profesional)</strong> Usas datos mock: clima simulado, aeropuertos virtuales, emergencias artificiales, pasajeros ficticios. ¡Son falsos, pero el piloto aprende TODAS las maniobras sin riesgo ni coste!</li>
+<li>✅ <strong>Lo real funciona con lo simulado</strong> La cabina es real, los controles son reales, los procedimientos son reales, el sistema de navegación es real. Solo los "datos del vuelo" son simulados. ¡Pero todo funciona exactamente igual!</li>
+<li>🎉 <strong>El primer vuelo real</strong> El piloto entrenado sube al avión verdadero. ¡Sabe hacer TODO porque lo practicó mil veces! Solo los datos son ahora reales.</li>
+<li>💡 <strong>La gran ventaja</strong> Has entrenado cientos de pilotos, probado miles de escenarios (tormentas, fallos de motor, aterrizajes de emergencia) sin gastar millones ni arriesgar vidas.</li>
+</ul>
+<p><strong>¡Así funcionan los datos mock en Laravel! Te permiten construir y probar TODO sin depender de una base de datos real.</strong></p>
+</details>
+<p>Los datos mock ofrecen múltiples beneficios durante el desarrollo:</p>
+<ol>
+<li><strong>Desarrollo rápido</strong>: No requiere configuración de base de datos</li>
+<li><strong>Datos consistentes</strong>: Mismos datos para todos los desarrolladores del equipo</li>
+<li><strong>Fácil testing</strong>: Datos predecibles para pruebas</li>
+<li><strong>Simplicidad</strong>: Estructura simple y fácil de entender</li>
+<li><strong>Versionado</strong>: Los datos mock se pueden versionar con Git</li>
+<li><strong>Centralización</strong>: Un solo lugar para modificar los datos de toda la aplicación</li>
+<li><strong>Sin duplicación</strong>: Evita repetir datos en cada controlador</li>
+</ol>
+<p>Trabajo en Equipo</p>
+<p>👥 <strong>Cuando varios desarrolladores trabajan en el mismo proyecto:</strong></p>
+<ul>
+<li><strong>Sin datos mock centralizados</strong>: Cada desarrollador crea sus propios datos de prueba. Ana tiene 5 productos, Carlos tiene 8, y María tiene 3. Caos total cuando intentan integrar su código.</li>
+<li><strong>Con datos mock centralizados</strong>: Todos comparten <code>mock-products.php</code> con los mismos 10 productos. El código de Ana funciona en el ordenador de Carlos sin cambios.</li>
+<li><strong>Cambios coordinados</strong>: Si Ana actualiza el precio de un producto en el mock, automáticamente Carlos y María ven ese cambio en su próximo <code>git pull</code>.</li>
+<li><strong>Testing consistente</strong>: Las pruebas funcionan igual para todos porque usan los mismos datos base.</li>
+</ul>
+<p>¡Los datos mock centralizados son como tener un "idioma común" para todo el equipo!</p>
+<h2 id="61-estructura-de-datos-mock">6.1. Estructura de Datos Mock<a class="headerlink" href="#61-estructura-de-datos-mock" title="Permanent link">&para;</a></h2>
+<p>En Laravel, los datos mock se organizan típicamente en el directorio <code>database/data/</code>. Aquí es donde se almacenan los archivos PHP que devuelven arrays con los datos simulados.</p>
+<p>Cada archivo mock devuelve un array PHP con la estructura de datos correspondiente. A veces puede ser útil tener un array asociativo con IDs como claves para facilitar búsquedas rápidas.</p>
+<ul>
+<li>Array de elementos simples</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">return</span> <span class="p">[</span>
+    <span class="p">[</span>
+        <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Categoría 1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;description&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Descripción de la categoría 1&#39;</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+        <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Categoría 2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;description&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Descripción de la categoría 2&#39;</span>
+    <span class="p">],</span>
+<span class="p">];</span>
+</code></pre></div>
+* Array asociativo con IDs como claves</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">return</span> <span class="p">[</span>
+    <span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Producto 1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;description&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Descripción del producto 1&#39;</span>
+        <span class="s1">&#39;category_id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+    <span class="p">],</span>
+    <span class="mi">2</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Producto 2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;description&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Descripción del producto 2&#39;</span>
+        <span class="s1">&#39;category_id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+    <span class="p">],</span>
+<span class="p">];</span>
+</code></pre></div>
+<p>Dependiendo de las necesidades, puedes elegir el formato que mejor se adapte a tu caso.</p>
+<p>Helper database_path()</p>
+<p>Laravel proporciona el helper <code>database_path()</code> que devuelve la ruta completa al directorio <code>database/</code> de la aplicación. Esto permite cargar archivos de forma segura independientemente del sistema operativo.</p>
+<h2 id="62-traits-reutilizando-codigo-entre-controladores">6.2. Traits: Reutilizando Código entre Controladores<a class="headerlink" href="#62-traits-reutilizando-codigo-entre-controladores" title="Permanent link">&para;</a></h2>
+<h3 id="621-que-es-un-trait">6.2.1. ¿Qué es un Trait?<a class="headerlink" href="#621-que-es-un-trait" title="Permanent link">&para;</a></h3>
+<p>Un <strong>trait</strong> es un mecanismo de reutilización de código en PHP que permite compartir métodos entre múltiples clases. Es especialmente útil cuando varias clases necesitan la misma funcionalidad pero no pueden heredar de una clase común.</p>
+<details class="examplelaravel" open="open">
+<summary>Analogía: Trait como Sistema Centralizado de Equipamiento del Aeropuerto</summary>
+<p>✈️ <strong>Imagina un aeropuerto internacional con múltiples aerolíneas operando:</strong></p>
+<ul>
+<li><strong>Múltiples aerolíneas</strong> operan vuelos diferentes desde el mismo aeropuerto</li>
+<li><strong>Todas necesitan</strong> los mismos servicios básicos: sistema de check-in, escáneres de seguridad, equipos de comunicación, tractores de equipaje</li>
+<li><strong>Sin trait</strong>: Cada aerolínea instala su propio check-in, sus propios escáneres, sus propios tractores. Si el escáner falla, hay que reparar 5 escáneres diferentes.</li>
+<li><strong>Con trait</strong>: El aeropuerto proporciona infraestructura centralizada compartida. Un escáner para todas las aerolíneas. Una avería = una reparación.</li>
+<li><strong>Añades un nuevo sistema de embarque automatizado</strong>: Automáticamente todas las aerolíneas pueden usarlo sin que tengas que instalarlo puerta por puerta.</li>
+<li><strong>Cada aerolínea</strong> sigue gestionando sus propios vuelos, rutas y pasajeros (su lógica específica), pero comparte la infraestructura básica del aeropuerto.</li>
+</ul>
+<p>¡Así funcionan los traits! Son la "infraestructura compartida del aeropuerto" que todos los controladores usan sin duplicar código.</p>
+</details>
+<p>Los traits ofrecen múltiples ventajas cuando se trabaja con datos mock:</p>
+<ol>
+<li><strong>DRY (Don't Repeat Yourself)</strong>: Elimina la duplicación de código</li>
+<li><strong>Mantenimiento centralizado</strong>: Un solo lugar para modificar la lógica de carga</li>
+<li><strong>Consistencia</strong>: Todos los controladores usan los mismos métodos</li>
+<li><strong>Escalabilidad</strong>: Fácil añadir nuevos métodos al trait</li>
+<li><strong>Legibilidad</strong>: Los controladores se enfocan en su lógica específica</li>
+<li><strong>Testing</strong>: Más fácil probar la lógica de carga de datos</li>
+</ol>
+<h3 id="622-crear-el-trait-para-datos-mock">6.2.2. Crear el Trait para Datos Mock<a class="headerlink" href="#622-crear-el-trait-para-datos-mock" title="Permanent link">&para;</a></h3>
+<p>Los traits son ideales para centralizar los métodos de carga de datos mock que varios controladores necesitan.</p>
+<p>Si varios controladores necesitan cargar datos desde archivos mock, en lugar de repetir los mismos métodos en cada controlador, se puede crear un trait <code>LoadsMockData</code> que contenga todos estos métodos.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Fichero: app/Traits/LoadsMockData.php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Traits</span><span class="p">;</span>
+
+<span class="k">trait</span> <span class="nx">LoadsMockData</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Load categories from mock file</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getCategories</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">require</span> <span class="nx">database_path</span><span class="p">(</span><span class="s1">&#39;data/mock-categories.php&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+
+    <span class="sd">/**</span>
+<span class="sd">     * Load products from mock file</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getProducts</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">require</span> <span class="nx">database_path</span><span class="p">(</span><span class="s1">&#39;data/mock-products.php&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Load all mock data at once</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getAllMockData</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s1">&#39;categories&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCategories</span><span class="p">(),</span>
+            <span class="s1">&#39;offers&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getOffers</span><span class="p">(),</span>
+            <span class="s1">&#39;cart&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCart</span><span class="p">(),</span>
+            <span class="s1">&#39;products&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getProducts</span><span class="p">(),</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="623-uso-de-traits">6.2.3. Uso de Traits<a class="headerlink" href="#623-uso-de-traits" title="Permanent link">&para;</a></h3>
+<p>Los traits se incluyen en una clase usando la palabra clave <code>use</code>. Esto hace que todos los métodos del trait estén disponibles en la clase.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">App\Traits\LoadsMockData</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\View\View</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">ProductController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">LoadsMockData</span><span class="p">;</span> <span class="c1">// ¡Una línea da acceso a todos los métodos!</span>
+
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span><span class="o">:</span> <span class="nx">View</span>
+    <span class="p">{</span>
+       <span class="c1">// Implementación para listar productos</span>
+       <span class="nv">$products</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getProducts</span><span class="p">();</span> <span class="c1">// Método del trait</span>
+       <span class="c1">// ... lógica adicional ...</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Otros métodos del controlador...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="63-funciones-avanzadas-con-datos-mock">6.3. Funciones Avanzadas con Datos Mock<a class="headerlink" href="#63-funciones-avanzadas-con-datos-mock" title="Permanent link">&para;</a></h2>
+<h3 id="631-filtrado-de-datos-con-array_filter">6.3.1. Filtrado de Datos con array_filter()<a class="headerlink" href="#631-filtrado-de-datos-con-array_filter" title="Permanent link">&para;</a></h3>
+<p>La función <code>array_filter()</code> de PHP permite filtrar elementos de un array según una condición.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$products = $this-&gt;getProducts();</span>
+<span class="x">$filtered = array_filter($products, function($product) {</span>
+<span class="x">    return $product[&#39;price&#39;] &gt; 50;  // Filtra productos con precio mayor a 50</span>
+<span class="x">});</span>
+</code></pre></div>
+<h3 id="632-transformacion-de-datos-con-array_map">6.3.2 Transformación de Datos con array_map()<a class="headerlink" href="#632-transformacion-de-datos-con-array_map" title="Permanent link">&para;</a></h3>
+<p>La función <code>array_map()</code> de PHP permite transformar cada elemento de un array aplicando una función a cada uno.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$products = $this-&gt;getProducts();</span>
+<span class="x">$categories = $this-&gt;getCategories();</span>
+<span class="x">$enrichedProducts = array_map(function($product) use ($categories) {</span>
+<span class="x">    $product[&#39;category&#39;] = $categories[$product[&#39;category_id&#39;]] ?? null;    </span>
+<span class="x">    return $product;</span>
+<span class="x">}, $products);</span>
+
+
+<span class="x">// Retorna productos enriquecidos con datos de categoría</span>
+
+<span class="x">[</span>
+<span class="x">    1 =&gt; [</span>
+<span class="x">        &#39;name&#39; =&gt; &#39;Producto 1&#39;,</span>
+<span class="x">        &#39;description&#39; =&gt; &#39;Descripción del producto 1&#39;</span>
+<span class="x">        &#39;category_id&#39; =&gt; 1,</span>
+<span class="x">        &#39;category&#39; =&gt; [</span>
+<span class="x">            &#39;name&#39; =&gt; &#39;Categoría 1&#39;,</span>
+<span class="x">            &#39;description&#39; =&gt; &#39;Descripción de la categoría 1&#39;</span>
+<span class="x">        ]</span>
+<span class="x">    ],</span>
+<span class="x">    2 =&gt; [</span>
+<span class="x">        &#39;name&#39; =&gt; &#39;Producto 2&#39;,</span>
+<span class="x">        &#39;description&#39; =&gt; &#39;Descripción del producto 2&#39;,</span>
+<span class="x">        &#39;category_id&#39; =&gt; 1,</span>
+<span class="x">        &#39;category&#39; =&gt; [</span>
+<span class="x">            &#39;name&#39; =&gt; &#39;Categoría 1&#39;,</span>
+<span class="x">            &#39;description&#39; =&gt; &#39;Descripción de la categoría 1&#39;</span>
+<span class="x">        ]</span>
+<span class="x">    ],</span>
+<span class="x">]</span>
+</code></pre></div>
+<h3 id="633-busqueda-por-id-con-operador">6.3.3. Búsqueda por ID con Operador ??<a class="headerlink" href="#633-busqueda-por-id-con-operador" title="Permanent link">&para;</a></h3>
+<p>El operador <code>??</code> (null coalescing) es perfecto para buscar elementos por ID:</p>
+<div class="highlight"><pre><span></span><code><span class="x">// Buscar producto con ID 5</span>
+<span class="x">$product = $products[3] ?? null;</span>
+
+<span class="x">// Si existe: $product tiene los datos</span>
+<span class="x">// Si no existe: $product es null</span>
+
+<span class="x">// Luego validar</span>
+<span class="x">if (!$product) {</span>
+<span class="x">    abort(404, &#39;Producto no encontrado&#39;);</span>
+<span class="x">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../205/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 2.5. Del Controlador a la Vista: Integrando Datos Dinámicos en Blade">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                2.5. Del Controlador a la Vista: Integrando Datos Dinámicos en Blade
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../20p/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: UD.2 Práctica Guiada: Rutas, Controladores y Vistas">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                UD.2 Práctica Guiada: Rutas, Controladores y Vistas
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Arturo Blasco - Creative Commons CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/arturoblasco" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

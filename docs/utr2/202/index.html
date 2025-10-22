@@ -1,0 +1,3790 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../201/">
+      
+      
+        <link rel="next" href="../203/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>2.2. Mapa de la Aplicación - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#22-mapa-de-la-aplicacion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.2. Mapa de la Aplicación
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 1 Arquitectura Web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            UT 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. Arquitecturas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3. Generar páginas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4. Modelos de programación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5. Decisiones de diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6. Ejecución del código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0107/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7. Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0108/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8. Tecnologías
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0109/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.9. Navegadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0110/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.10. Puesta en marcha
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut01de/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descargas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut01ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 2 Lenguaje PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            UT 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3. Operadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4. Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5. Funciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.6. Funciones predefinidas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0207/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.7. Expresiones regulares
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut02ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 3 PHP OO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            UT 3 PHP OO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2. Clases y objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0303/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3. Encapsulación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4. Constructor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5. Clases estáticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.6. Introspección
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.7. Herencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0308/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.8. Clases abstractas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0309/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.9. Clases final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0310/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.10. Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0311/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.11. Métodos encadenados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.12. Métodos mágicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.13. Espacio de nombres
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0314/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.14. Gestión de errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0315/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.15. Excepciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0316/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.16. SPL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut03ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 4 Programación web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            UT 4 Programación web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2. Variable de servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3. Formularios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0404/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4.Cabeceras de respuesta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0405/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5. Gestión de estado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0406/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6. Autenticación de usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut04ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Laravel
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Laravel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 7 Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            UT 7 Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0701/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0702/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.2. Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0703/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.3. Software necesario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0704/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.4. Primeros pasos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0705/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.5. Rutas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0706/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.6. Vistas con Blade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut0707/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.7. Estilos y Javascript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut07/ut07ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios propuestos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UTR 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            UTR 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    100
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    101
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    102
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    103
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    104
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    105
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    106
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr1/10p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD.1 Práctica Guiada: Configuración de un Entorno de Desarrollo Moderno con Docker y Laravel | Introducción a Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UTR 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            UTR 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.0 Fundamentos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 Viaje Interno de una Petición
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2.2. Mapa de la Aplicación
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. Mapa de la Aplicación
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-convencion-fundamental-programa-en-ingles" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Convención Fundamental: Programa en Inglés
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-el-sistema-de-enrutamiento-de-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. El Sistema de Enrutamiento de Laravel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2. El Sistema de Enrutamiento de Laravel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-archivos-de-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1. Archivos de Rutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-tipos-de-rutas-segun-el-verbo-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2. Tipos de Rutas según el Verbo HTTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-rutas-con-multiples-verbos-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.3. Rutas con Múltiples Verbos HTTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-rutas-que-solo-muestran-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.4. Rutas que Solo Muestran Vistas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#225-rutas-con-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.5. Rutas con Parámetros
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.5. Rutas con Parámetros">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros-obligatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros Obligatorios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-opcionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros Opcionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricciones-con-expresiones-regulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restricciones con Expresiones Regulares
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-con-model-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros con Model Binding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#225-rutas-con-nombre" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.5. Rutas con Nombre
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#226-agrupacion-de-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.6. Agrupación de Rutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#227-funcionalidades-en-las-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.7. Funcionalidades en las Rutas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.7. Funcionalidades en las Rutas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemas-de-este-enfoque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas de este enfoque:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-solucion-profesional-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      La solución profesional: Controladores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-controladores-profesionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Controladores Profesionales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Controladores Profesionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-tipos-de-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1. Tipos de Controladores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.1. Tipos de Controladores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controladores-de-accion-unica-invokable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controladores de Acción Única (Invokable)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controladores-de-recursos-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controladores de Recursos (Resource)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-rutas-adicionales-en-controladores-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2. Rutas Adicionales en Controladores Resource
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.2. Rutas Adicionales en Controladores Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-el-orden-es-importante" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por qué el orden es importante?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-creando-nuestra-primera-conexion-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Creando Nuestra Primera Conexión (Paso a Paso)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. Creando Nuestra Primera Conexión (Paso a Paso)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-el-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear el Controlador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-anadir-un-metodo-al-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Añadir un Método al Controlador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-conectar-la-ruta-con-el-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Conectar la Ruta con el Controlador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-helpers-comunes-de-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5. Helpers Comunes de Laravel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. Helpers Comunes de Laravel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abort-manejo-de-errores-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      abort(): Manejo de Errores HTTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dd-depuracion-y-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      dd(): Depuración y Desarrollo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helpers-de-rutas-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helpers de Rutas de Archivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helpers de Rutas de Archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      database_path()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      base_path()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3. El Lenguaje Elegante para Crear Vistas Dinámicas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4. Arquitectura de Vistas: Layouts y Herencia en Blade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5. Del Controlador a la Vista: Integrando Datos Dinámicos en Blade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.6. Datos Mock: El Simulador de Base de Datos para Desarrollo Ágil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD.2 Práctica Guiada: Rutas, Controladores y Vistas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UTR 3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            UTR 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/300/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    300
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    301
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    302
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/303/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    303
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    304
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    305
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utr3/30p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    30p
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-convencion-fundamental-programa-en-ingles" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Convención Fundamental: Programa en Inglés
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-el-sistema-de-enrutamiento-de-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. El Sistema de Enrutamiento de Laravel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2. El Sistema de Enrutamiento de Laravel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-archivos-de-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1. Archivos de Rutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-tipos-de-rutas-segun-el-verbo-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2. Tipos de Rutas según el Verbo HTTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-rutas-con-multiples-verbos-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.3. Rutas con Múltiples Verbos HTTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-rutas-que-solo-muestran-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.4. Rutas que Solo Muestran Vistas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#225-rutas-con-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.5. Rutas con Parámetros
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.5. Rutas con Parámetros">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros-obligatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros Obligatorios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-opcionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros Opcionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricciones-con-expresiones-regulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restricciones con Expresiones Regulares
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-con-model-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros con Model Binding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#225-rutas-con-nombre" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.5. Rutas con Nombre
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#226-agrupacion-de-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.6. Agrupación de Rutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#227-funcionalidades-en-las-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.7. Funcionalidades en las Rutas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.7. Funcionalidades en las Rutas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemas-de-este-enfoque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas de este enfoque:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-solucion-profesional-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      La solución profesional: Controladores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-controladores-profesionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Controladores Profesionales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Controladores Profesionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-tipos-de-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1. Tipos de Controladores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.1. Tipos de Controladores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controladores-de-accion-unica-invokable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controladores de Acción Única (Invokable)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controladores-de-recursos-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controladores de Recursos (Resource)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-rutas-adicionales-en-controladores-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2. Rutas Adicionales en Controladores Resource
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.2. Rutas Adicionales en Controladores Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-el-orden-es-importante" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por qué el orden es importante?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-creando-nuestra-primera-conexion-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Creando Nuestra Primera Conexión (Paso a Paso)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. Creando Nuestra Primera Conexión (Paso a Paso)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-el-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear el Controlador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-anadir-un-metodo-al-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Añadir un Método al Controlador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-conectar-la-ruta-con-el-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Conectar la Ruta con el Controlador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-helpers-comunes-de-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5. Helpers Comunes de Laravel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. Helpers Comunes de Laravel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abort-manejo-de-errores-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      abort(): Manejo de Errores HTTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dd-depuracion-y-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      dd(): Depuración y Desarrollo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helpers-de-rutas-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helpers de Rutas de Archivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helpers de Rutas de Archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      database_path()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      base_path()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="22-mapa-de-la-aplicacion">2.2. Mapa de la Aplicación<a class="headerlink" href="#22-mapa-de-la-aplicacion" title="Permanent link">&para;</a></h1>
+<p>Cuando un usuario accede a una URL en una aplicación Laravel, el framework necesita saber exactamente qué hacer con esa solicitud. Esta responsabilidad recae en dos pilares fundamentales: el <strong>Sistema de Rutas</strong> y los <strong>Controladores</strong>.</p>
+<p>En esta sección se explorará el sistema de enrutamiento de Laravel, aprendiendo a definir rutas, manejar parámetros dinámicos y crear controladores profesionales siguiendo el patrón MVC. Se comprenderá cómo separar claramente la lógica de negocio de la presentación, siguiendo las mejores prácticas del framework.</p>
+<details class="examplelaravel" open="open">
+<summary>Analogía: Sistema de Puertas y Personal del Aeropuerto</summary>
+<p><strong>Imagina Laravel como el sistema de gestión de puertas de un aeropuerto internacional.</strong></p>
+<ul>
+<li>🗺️ <strong>Panel de Información (Rutas)</strong> Las pantallas por todo el aeropuerto muestran: "Vuelo LV742 → Puerta A12", "Vuelo IB531 → Puerta B7" Esto es tu archivo <code>routes/web.php</code>: cada ruta dice "si buscas /products/42, ve al ProductController"</li>
+<li>
+<p>�‍✈️ <strong>Personal de Puerta (Controladores)</strong> En cada puerta hay personal especializado de la aerolínea:</p>
+<ul>
+<li><code>index()</code>: Muestra la lista de todos los vuelos disponibles.</li>
+<li><code>show(42)</code>: Busca información del vuelo específico #42 </li>
+<li><code>create()</code>: Registra un nuevo vuelo en el sistema.</li>
+</ul>
+</li>
+<li>
+<p>🎫 <strong>El Viaje del Pasajero</strong> Pasajero: "Necesito información del Vuelo 42" → Mira el panel (ruta): "Vuelo 42 → Puerta A12" → Va a la puerta A12 → El personal ejecuta <code>show(42)</code>: busca el vuelo y te da toda la información.</p>
+</li>
+</ul>
+<p><strong>¡Sin el panel de información, estarías perdido en el aeropuerto! Sin el personal especializado, nadie te ayudaría!</strong></p>
+</details>
+<h2 id="21-convencion-fundamental-programa-en-ingles">2.1. Convención Fundamental: Programa en Inglés<a class="headerlink" href="#21-convencion-fundamental-programa-en-ingles" title="Permanent link">&para;</a></h2>
+<p><strong>Laravel está diseñado para funcionar en inglés.</strong> Todos los nombres de archivos, clases, métodos, variables y rutas deben estar en <strong>inglés</strong>, siguiendo las convenciones del idioma.</p>
+<p>Laravel deduce automáticamente nombres usando reglas del inglés.</p>
+<ul>
+<li><code>ProductController</code> → busca en <code>resources/views/products/</code>. </li>
+<li>Modelo <code>Product</code> → busca tabla <code>products</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Controladores (singular, PascalCase)</span>
+<span class="nx">ProductController</span><span class="p">,</span> <span class="nx">CategoryController</span><span class="p">,</span> <span class="nx">UserController</span><span class="p">,</span> <span class="nx">OfferController</span>
+
+<span class="c1">// Rutas (plural, kebab-case)</span>
+<span class="o">/</span><span class="nx">products</span><span class="p">,</span> <span class="o">/</span><span class="nx">categories</span><span class="p">,</span> <span class="o">/</span><span class="nx">users</span><span class="p">,</span> <span class="o">/</span><span class="nx">offers</span>
+
+<span class="c1">// Métodos (verbos en inglés, camelCase)</span>
+<span class="nx">index</span><span class="p">(),</span> <span class="nx">show</span><span class="p">(),</span> <span class="nx">create</span><span class="p">(),</span> <span class="nx">store</span><span class="p">(),</span> <span class="nx">edit</span><span class="p">(),</span> <span class="nx">update</span><span class="p">(),</span> <span class="nx">destroy</span><span class="p">()</span>
+
+<span class="c1">// Variables (descriptivas en inglés, camelCase)</span>
+<span class="nv">$product</span><span class="p">,</span> <span class="nv">$category</span><span class="p">,</span> <span class="nv">$totalPrice</span><span class="p">,</span> <span class="nv">$isActive</span>
+</code></pre></div>
+<ul>
+<li><strong>Controladores</strong>: Singular + "Controller" → <code>ProductController</code>, <code>CategoryController</code></li>
+<li><strong>Rutas</strong>: Plural en kebab-case → <code>/products</code>, <code>/categories</code>, <code>/user-profiles</code></li>
+<li><strong>Vistas</strong>: Plural como carpeta → <code>resources/views/products/index.blade.php</code></li>
+<li><strong>Métodos</strong>: Verbos en inglés → <code>index()</code>, <code>show()</code>, <code>create()</code>, <code>store()</code></li>
+<li><strong>Variables</strong>: camelCase descriptivo → <code>$product</code>, <code>$totalPrice</code>, <code>$isActive</code></li>
+</ul>
+<p><strong>🎯 A partir de ahora, todo el código de este curso seguirá estas convenciones.</strong></p>
+<h2 id="22-el-sistema-de-enrutamiento-de-laravel">2.2. El Sistema de Enrutamiento de Laravel<a class="headerlink" href="#22-el-sistema-de-enrutamiento-de-laravel" title="Permanent link">&para;</a></h2>
+<p>Las rutas son las encargadas de dirigir cada solicitud HTTP a la parte correspondiente de la aplicación. Laravel utiliza un sistema de enrutamiento que permite definir rutas de manera clara y mantenible.</p>
+<h3 id="221-archivos-de-rutas">2.2.1. Archivos de Rutas<a class="headerlink" href="#221-archivos-de-rutas" title="Permanent link">&para;</a></h3>
+<p>Las rutas que responden a peticiones del navegador se definen principalmente en estos archivos:</p>
+<ul>
+<li><strong><code>routes/web.php</code></strong>: Es el archivo de rutas de la aplicación web. Estas rutas gestionan sesiones, cookies y protección CSRF, lo que las hace ideales para cualquier interfaz con la que un usuario interactúe.</li>
+<li><strong><code>routes/api.php</code></strong>: Se utiliza para definir las rutas de las API RESTful de la aplicación. Estas rutas no incluyen middleware de sesión ni CSRF por defecto.</li>
+<li><strong><code>routes/console.php</code></strong>: Para definir comandos de Artisan personalizados.</li>
+</ul>
+<blockquote>
+<p><strong>Nota</strong></p>
+<p>Este curso se enfocará en <code>routes/web.php</code>, que es donde se definirán la mayoría de las rutas para la interfaz web.</p>
+</blockquote>
+<h3 id="222-tipos-de-rutas-segun-el-verbo-http">2.2.2. Tipos de Rutas según el Verbo HTTP<a class="headerlink" href="#222-tipos-de-rutas-segun-el-verbo-http" title="Permanent link">&para;</a></h3>
+<p>Como se vio en la unidad 1, la web funciona con diferentes métodos o "verbos" HTTP para distintas acciones. Laravel permite registrar rutas para cada uno de ellos de forma muy sencilla. Los más comunes son:</p>
+<ul>
+<li><strong><code>Route::get($uri, $callback)</code></strong> - Para solicitar y mostrar datos (ej. ver productos, categorías).</li>
+<li><strong><code>Route::post($uri, $callback)</code></strong> - Para enviar y crear datos nuevos (ej. crear un producto).</li>
+<li><strong><code>Route::put($uri, $callback)</code></strong> - Para actualizar un recurso completo (ej. actualizar un producto).</li>
+<li><strong><code>Route::patch($uri, $callback)</code></strong> - Para actualizar parcialmente un recurso (ej. cambiar solo el precio).</li>
+<li><strong><code>Route::delete($uri, $callback)</code></strong> - Para eliminar un recurso (ej. eliminar un producto).</li>
+</ul>
+<p>Las rutas definen las páginas que los usuarios pueden visitar relacionadas con productos. Aquí hay un ejemplo de cómo se podrían definir estas rutas en <code>routes/web.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Fichero: routes/web.php</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Http\Controllers\ProductController</span><span class="p">;</span>
+
+<span class="c1">// Página de lista de productos - muestra todos los productos</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">);</span>
+
+<span class="c1">// Página de detalle de un producto</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/{id}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;products.show&#39;</span><span class="p">);</span>
+
+<span class="c1">// Página de creación de un nuevo producto</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/create&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;create&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;products.create&#39;</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;/products&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;products.store&#39;</span><span class="p">);</span>
+
+<span class="c1">// Página de edición de un producto existente</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/{id}/edit&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;edit&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;products.edit&#39;</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">put</span><span class="p">(</span><span class="s1">&#39;/products/{id}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;update&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;products.update&#39;</span><span class="p">);</span>
+
+<span class="c1">// Eliminar un producto</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;/products/{id}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;destroy&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;products.destroy&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="223-rutas-con-multiples-verbos-http">2.2.3. Rutas con Múltiples Verbos HTTP<a class="headerlink" href="#223-rutas-con-multiples-verbos-http" title="Permanent link">&para;</a></h3>
+<p>Laravel también permite definir rutas que respondan a múltiples verbos HTTP:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Responde a GET, POST y ambos se dirigen al mismo método</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">match</span><span class="p">([</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;post&#39;</span><span class="p">],</span> <span class="s1">&#39;/products/search&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;search&#39;</span><span class="p">]);</span>
+
+<span class="c1">// Responde a cualquier verbo HTTP y todas las rutas se dirigen al mismo método</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">any</span><span class="p">(</span><span class="s1">&#39;/tags&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;handle&#39;</span><span class="p">]);</span>
+</code></pre></div>
+<h3 id="224-rutas-que-solo-muestran-vistas">2.2.4. Rutas que Solo Muestran Vistas<a class="headerlink" href="#224-rutas-que-solo-muestran-vistas" title="Permanent link">&para;</a></h3>
+<p>Para casos muy simples donde una ruta solo debe mostrar una vista sin ninguna lógica adicional, se puede usar un atajo. Las permiten definir una función anónima (o closure) que devuelve una vista directamente:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Fichero: routes/web.php</span>
+
+<span class="c1">// En lugar de esto:</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/about&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;about&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/contact&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;contact&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Puedes usar esto:</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;/about&#39;</span><span class="p">,</span> <span class="s1">&#39;about&#39;</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;/contact&#39;</span><span class="p">,</span> <span class="s1">&#39;contact&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="225-rutas-con-parametros">2.2.5. Rutas con Parámetros<a class="headerlink" href="#225-rutas-con-parametros" title="Permanent link">&para;</a></h3>
+<p>A menudo, se necesitará enviar y capturar parámetros por la URL. Por ejemplo, para mostrar un producto específico se puede enviar el identificador del producto: <code>/products/123</code> donde <code>123</code> es el ID del producto. Laravel facilita la definición y captura de estos parámetros.</p>
+<h4 id="parametros-obligatorios">Parámetros Obligatorios<a class="headerlink" href="#parametros-obligatorios" title="Permanent link">&para;</a></h4>
+<p>Se definen encerrando el nombre del parámetro entre llaves <code>{}</code>. Este valor se pasará automáticamente como argumento a la función del controlador.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// En routes/web.php</span>
+<span class="k">use</span> <span class="nx">App\Http\Controllers\ProductController</span><span class="p">;</span>
+
+<span class="c1">// Definir una ruta con un parámetro obligatorio {id}</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/{id}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">]);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// En app/Http/Controllers/ProductController.php</span>
+
+<span class="c1">// El método show recibe el ID del producto como argumento</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">show</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="nx">View</span>
+<span class="p">{</span>
+    <span class="c1">// Implementación del método</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="parametros-opcionales">Parámetros Opcionales<a class="headerlink" href="#parametros-opcionales" title="Permanent link">&para;</a></h4>
+<p>Para que un parámetro sea opcional, se añade un signo de interrogación <code>?</code> después de su nombre y se proporciona un valor por defecto en el método del controlador.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// En routes/web.php</span>
+
+<span class="c1">// Definir una ruta con un parámetro opcional {category?}</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/{category?}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">]);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// En app/Http/Controllers/ProductController.php</span>
+
+<span class="c1">// El parámetro $category es opcional y puede ser null</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$category</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span><span class="o">:</span> <span class="nx">View</span>
+<span class="p">{</span>
+    <span class="c1">// Si no se especifica categoría, mostrar todos los productos</span>
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;products.index&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;category&#39;</span> <span class="o">=&gt;</span> <span class="nv">$category</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Según si llega o no la categoría:</p>
+<ul>
+<li><code>/products/electronics</code> mostrará productos de electrónica</li>
+<li><code>/products</code> mostrará todos los productos</li>
+</ul>
+<h4 id="restricciones-con-expresiones-regulares">Restricciones con Expresiones Regulares<a class="headerlink" href="#restricciones-con-expresiones-regulares" title="Permanent link">&para;</a></h4>
+<p>Se puede asegurar que un parámetro de ruta tenga un formato específico usando el método <code>where()</code>. Esto es especialmente útil para validar que los parámetros cumplan con el formato esperado.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Solo acepta IDs numéricos para los productos</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/{id}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;[0-9]+&#39;</span><span class="p">);</span>
+
+<span class="c1">// Solo aceptará categorías con letras y guiones</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/category/{slug}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">CategoryController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;[A-Za-z-]+&#39;</span><span class="p">);</span>
+
+<span class="c1">// Múltiples restricciones</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/{id}/offer/{offerId}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;showOffer&#39;</span><span class="p">])</span>
+    <span class="o">-&gt;</span><span class="na">where</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;[0-9]+&#39;</span><span class="p">,</span> <span class="s1">&#39;offerId&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;[0-9]+&#39;</span><span class="p">]);</span>
+</code></pre></div>
+<h4 id="parametros-con-model-binding">Parámetros con Model Binding<a class="headerlink" href="#parametros-con-model-binding" title="Permanent link">&para;</a></h4>
+<p>Laravel también permite el <strong>model binding</strong>, donde automáticamente resuelve un modelo Eloquent basado en el parámetro de la ruta:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Laravel automáticamente busca el modelo Product con el ID proporcionado</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/{product}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">]);</span>
+
+<span class="c1">// En el controlador, recibirás directamente el modelo</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">show</span><span class="p">(</span><span class="nx">Product</span> <span class="nv">$product</span><span class="p">)</span><span class="o">:</span> <span class="nx">View</span>
+<span class="p">{</span>
+    <span class="c1">// $product ya está resuelto automáticamente</span>
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;products.show&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;product&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Avance: Modelos</p>
+<p>Para entender completamente el model binding, es necesario conocer los <strong>modelos Eloquent</strong>, que se verán en detalle más adelante en el curso.</p>
+<h3 id="225-rutas-con-nombre">2.2.5. Rutas con Nombre<a class="headerlink" href="#225-rutas-con-nombre" title="Permanent link">&para;</a></h3>
+<p>Asignar un nombre a una ruta es una de las mejores prácticas en Laravel. En lugar de "<code>hardcodear</code>" (escribir directamente) las URLs en las vistas y redirecciones, se llama a las rutas por un nombre. Si en el futuro se cambia la URL, no se tendrá que modificar nada más en el código.</p>
+<p>Se definen encadenando el método <code>name()</code> y es habitual poner un prefijo que indique el recurso (como <code>products</code>) y la acción (como <code>index</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// En routes/web.php</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;products.index&#39;</span><span class="p">);</span>
+
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/{id}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;products.show&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>Luego, en las vistas de Blade, se puede generar la URL fácilmente con añadiendo la función <code>route()</code> en la referencia de los enlaces y en lugar de escribir la URL directamente se usa el nombre de la ruta:</p>
+<div class="highlight"><pre><span></span><code>{<del class="critic"> Enlace a todos los productos </del>}
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;products.index&#39;) }}&quot;</span><span class="p">&gt;</span>Todos los productos<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+{<del class="critic"> Enlace a un producto específico </del>}
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;products.show&#39;, [&#39;id&#39; =&gt; $product-&gt;id]) }}&quot;</span><span class="p">&gt;</span>Ver detalles<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="226-agrupacion-de-rutas">2.2.6. Agrupación de Rutas<a class="headerlink" href="#226-agrupacion-de-rutas" title="Permanent link">&para;</a></h3>
+<p>Cuando varias rutas comparten características comunes, se pueden agrupar para mantener el archivo de rutas limpio y organizado:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Agrupar rutas con un prefijo común</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">prefix</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">AdminController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;dashboard&#39;</span><span class="p">]);</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/users&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">AdminController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">]);</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/settings&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">AdminController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;settings&#39;</span><span class="p">]);</span>
+<span class="p">});</span>
+
+<span class="c1">// Agrupar rutas con middleware común</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">middleware</span><span class="p">([</span><span class="s1">&#39;auth&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/profile&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">UserController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;profile&#39;</span><span class="p">]);</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/settings&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">UserController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;settings&#39;</span><span class="p">]);</span>
+<span class="p">});</span>
+
+<span class="c1">// Agrupar rutas con un namespace común</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">namespace</span><span class="p">(</span><span class="s1">&#39;Admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/admin/users&#39;</span><span class="p">,</span> <span class="s1">&#39;UserController@index&#39;</span><span class="p">);</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/admin/posts&#39;</span><span class="p">,</span> <span class="s1">&#39;PostController@index&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="227-funcionalidades-en-las-rutas">2.2.7. Funcionalidades en las Rutas<a class="headerlink" href="#227-funcionalidades-en-las-rutas" title="Permanent link">&para;</a></h3>
+<p>Hasta ahora se ha visto cómo definir rutas en Laravel y en estas añadir lógica directamente en el archivo de rutas usando funciones anónimas (closures), pero esto se convierte rápidamente en un problema:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/{id}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">string</span> <span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Implementación de la lógica aquí</span>
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;products.show&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;product&#39;</span> <span class="o">=&gt;</span> <span class="nv">$products</span><span class="p">[</span><span class="nv">$id</span><span class="p">]]);</span>
+<span class="p">});</span>
+
+<span class="c1">// ... y así con cada ruta</span>
+</code></pre></div>
+<h4 id="problemas-de-este-enfoque"><strong>Problemas de este enfoque:</strong><a class="headerlink" href="#problemas-de-este-enfoque" title="Permanent link">&para;</a></h4>
+<ul>
+<li>📁 <strong>Archivo enorme</strong>: <code>routes/web.php</code> se vuelve inmanejable con cientos de líneas</li>
+<li>🔄 <strong>Código duplicado</strong>: Se repite la carga de datos en cada ruta</li>
+<li>🐛 <strong>Difícil de testear</strong>: No se puede probar la lógica de forma aislada</li>
+<li>📚 <strong>Mezcla de responsabilidades</strong>: Las rutas definen URLs Y contienen lógica de negocio</li>
+<li>🔍 <strong>Difícil de mantener</strong>: Encontrar y modificar funcionalidad específica es un caos</li>
+</ul>
+<h4 id="la-solucion-profesional-controladores"><strong>La solución profesional: Controladores</strong><a class="headerlink" href="#la-solucion-profesional-controladores" title="Permanent link">&para;</a></h4>
+<p>Los <strong>controladores</strong> resuelven todos estos problemas organizando la lógica en clases especializadas, separando claramente las responsabilidades y facilitando el mantenimiento del código.</p>
+<h2 id="23-controladores-profesionales">2.3. Controladores Profesionales<a class="headerlink" href="#23-controladores-profesionales" title="Permanent link">&para;</a></h2>
+<p>Un <strong>controlador</strong> es una clase de PHP cuya responsabilidad es agrupar la lógica relacionada con las peticiones HTTP. Actúa como un intermediario que recibe la petición desde la ruta, interactúa con otras partes de la aplicación (como los modelos, que se verán más adelante) y finalmente prepara y devuelve una respuesta, que normalmente es una vista.</p>
+<p>Los controladores permiten separar la lógica de negocio de la presentación, siguiendo el patrón <strong>MVC (Modelo-Vista-Controlador)</strong> que vimos en la primera sesión.</p>
+<details class="examplelaravel" open="open">
+<summary>Analogía del Controlador como Torre de Control Aéreo</summary>
+<p>Imagina el controlador como un controlador aéreo en la torre de control del aeropuerto:</p>
+<ul>
+<li><strong>Recibe la solicitud de aterrizaje/despegue</strong> (petición HTTP) del piloto</li>
+<li><strong>Coordina con diferentes departamentos</strong> (modelos, servicios): meteorología, servicios en tierra, tráfico aéreo</li>
+<li><strong>Verifica permisos y disponibilidad</strong> (lógica de negocio): pista libre, condiciones meteorológicas, slot horario</li>
+<li><strong>Autoriza y dirige la operación</strong> (procesa datos): "Vuelo 742, autorizado aterrizaje pista 12L"</li>
+<li><strong>Comunica el resultado al piloto</strong> (respuesta): instrucciones claras de qué hacer y dónde ir</li>
+</ul>
+<p>¡El controlador aéreo no pilota el avión ni carga equipaje, solo coordina y autoriza operaciones!</p>
+</details>
+<h3 id="231-tipos-de-controladores">2.3.1. Tipos de Controladores<a class="headerlink" href="#231-tipos-de-controladores" title="Permanent link">&para;</a></h3>
+<p>Existen varios tipos de controladores en Laravel, cada uno con su propósito específico.</p>
+<h4 id="controladores-de-accion-unica-invokable">Controladores de Acción Única (Invokable)<a class="headerlink" href="#controladores-de-accion-unica-invokable" title="Permanent link">&para;</a></h4>
+<p>Son controladores diseñados para hacer una sola cosa. Son muy útiles para tareas simples y específicas. Se crean con el flag <code>--invokable</code>.</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>HomeController<span class="w"> </span>--invokable
+</code></pre></div>
+<p>Este controlador solo tendrá un método: <code>__invoke()</code>. Para registrarlo en las rutas, no se necesita especificar el método.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// En routes/web.php</span>
+<span class="k">use</span> <span class="nx">App\Http\Controllers\HomeController</span><span class="p">;</span>
+
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">HomeController</span><span class="o">::</span><span class="na">class</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="controladores-de-recursos-resource">Controladores de Recursos (Resource)<a class="headerlink" href="#controladores-de-recursos-resource" title="Permanent link">&para;</a></h4>
+<p>Este es el tipo de controlador más potente y común para gestionar entidades de la aplicación (como usuarios, productos, posts, etc.). Un controlador de recursos agrupa toda la lógica <strong>CRUD</strong> (Crear, Leer, Actualizar, Borrar) para un modelo.</p>
+<p>Se crean con el flag <strong><code>--resource</code></strong>:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>ProductController<span class="w"> </span>--resource
+</code></pre></div>
+<p>Este comando genera un controlador con 7 métodos predefinidos, cada uno mapeado a una acción CRUD específica:</p>
+<ul>
+<li><code>index()</code>: Mostrar una lista de todos los recursos (ej. todos los productos).</li>
+<li><code>create()</code>: Mostrar el formulario para crear un nuevo recurso.</li>
+<li><code>store(Request $request)</code>: Guardar el nuevo recurso en la base de datos.</li>
+<li><code>show($id)</code>: Mostrar un recurso específico.</li>
+<li><code>edit($id)</code>: Mostrar el formulario para editar un recurso existente.</li>
+<li><code>update(Request $request, $id)</code>: Actualizar el recurso en la base de datos.</li>
+<li><code>destroy($id)</code>: Eliminar el recurso de la base de datos.</li>
+</ul>
+<p>Lo mejor es que no se tiene que registrar una ruta para cada uno de estos métodos. Laravel da un atajo mágico:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// En routes/web.php</span>
+<span class="k">use</span> <span class="nx">App\Http\Controllers\ProductController</span><span class="p">;</span>
+
+<span class="nx">Route</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;products&#39;</span><span class="p">,</span> <span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+</code></pre></div>
+<p>Esa sola línea de código crea automáticamente las 7 rutas necesarias para todo el flujo CRUD, con sus verbos HTTP y nombres de ruta correctos:</p>
+<ul>
+<li><strong><code>GET /products</code></strong> → <code>ProductController@index</code> (listar productos)</li>
+<li><strong><code>GET /products/create</code></strong> → <code>ProductController@create</code> (formulario crear producto)</li>
+<li><strong><code>POST /products</code></strong> → <code>ProductController@store</code> (guardar nuevo producto)</li>
+<li><strong><code>GET /products/{id}</code></strong> → <code>ProductController@show</code> (mostrar producto)</li>
+<li><strong><code>GET /products/{id}/edit</code></strong> → <code>ProductController@edit</code> (formulario editar)</li>
+<li><strong><code>PUT /products/{id}</code></strong> → <code>ProductController@update</code> (actualizar producto)</li>
+<li><strong><code>DELETE /products/{id}</code></strong> → <code>ProductController@destroy</code> (eliminar producto)</li>
+</ul>
+<h3 id="232-rutas-adicionales-en-controladores-resource">2.3.2. Rutas Adicionales en Controladores Resource<a class="headerlink" href="#232-rutas-adicionales-en-controladores-resource" title="Permanent link">&para;</a></h3>
+<p>Aunque las rutas resource son muy convenientes, a veces se necesitan rutas adicionales específicas para funcionalidades que no encajan en el patrón CRUD estándar. Cuando se combina <code>Route::resource()</code> con rutas personalizadas adicionales, el orden de declaración se vuelve crucial.</p>
+<p>El Orden Importa</p>
+<p>Las rutas custom <strong>DEBEN definirse ANTES</strong> de la ruta resource. Laravel procesa las rutas en el orden en que aparecen en el archivo, y la primera que coincida con la URL será la que se ejecute.</p>
+<h4 id="por-que-el-orden-es-importante">¿Por qué el orden es importante?<a class="headerlink" href="#por-que-el-orden-es-importante" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// ❌ INCORRECTO - La ruta resource captura &quot;on-sale&quot; como un {id} de la ruta show</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;products&#39;</span><span class="p">,</span> <span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/on-sale&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;onSale&#39;</span><span class="p">]);</span> <span class="c1">// ¡Nunca se ejecuta!</span>
+</code></pre></div>
+<ol>
+<li>Usuario visita <code>/products/on-sale</code></li>
+<li>Laravel comprueba las primeras rutas creadas con resource: <code>Route::resource('products', ...)</code></li>
+<li>Las rutas resource tienen <code>GET /products/{id}</code>, donde <code>{id}</code> puede ser cualquier cosa</li>
+<li>Laravel interpreta "on-sale" como un ID y ejecuta <code>show('on-sale')</code></li>
+<li>El controlador busca un producto con ID "on-sale" y falla</li>
+<li>La ruta custom nunca se alcanza</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// ✅ CORRECTO - La ruta custom se define primero</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/on-sale&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;onSale&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;products.on-sale&#39;</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;products&#39;</span><span class="p">,</span> <span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="24-creando-nuestra-primera-conexion-paso-a-paso">2.4. Creando Nuestra Primera Conexión (Paso a Paso)<a class="headerlink" href="#24-creando-nuestra-primera-conexion-paso-a-paso" title="Permanent link">&para;</a></h2>
+<p>Se va a definir la primera ruta y asociarla a un método en un controlador. Se reemplazará la ruta de bienvenida por defecto para que sea gestionada por el propio controlador.</p>
+<h3 id="paso-1-crear-el-controlador">Paso 1: Crear el Controlador<a class="headerlink" href="#paso-1-crear-el-controlador" title="Permanent link">&para;</a></h3>
+<p>Se usará <strong>Artisan</strong>, la herramienta de línea de comandos de Laravel, para crear el controlador. Se abre el terminal en la raíz del proyecto y se ejecuta:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>HomeController
+</code></pre></div>
+<p>Este comando creará un nuevo archivo en <code>app/Http/Controllers/HomeController.php</code>.</p>
+<h3 id="paso-2-anadir-un-metodo-al-controlador">Paso 2: Añadir un Método al Controlador<a class="headerlink" href="#paso-2-anadir-un-metodo-al-controlador" title="Permanent link">&para;</a></h3>
+<p>Ahora, se abre el archivo <code>app/Http/Controllers/HomeController.php</code> y se añade un método público. Se llamará <code>index</code>. Este método se encargará de la lógica para la página de inicio. Por ahora, simplemente devolverá la vista de bienvenida.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\View\View</span><span class="p">;</span> <span class="c1">// Es buena práctica importar la clase View</span>
+
+<span class="k">class</span> <span class="nc">HomeController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Muestra la página de inicio del blog.</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span><span class="o">:</span> <span class="nx">View</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;welcome&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Nota de PHP 8.4:</strong> Observa que hemos añadido <code>: View</code> al método. Esto se llama <strong>tipado de retorno</strong> y le indica a PHP que esta función siempre debe devolver un objeto de tipo <code>View</code>. Es una práctica moderna que hace el código más robusto y fácil de entender.</p>
+</blockquote>
+<h3 id="paso-3-conectar-la-ruta-con-el-controlador">Paso 3: Conectar la Ruta con el Controlador<a class="headerlink" href="#paso-3-conectar-la-ruta-con-el-controlador" title="Permanent link">&para;</a></h3>
+<p>Finalmente, se vuelve al archivo <code>routes/web.php</code> y se modifica la ruta raíz para que, en lugar de usar una función, "llame" al método <code>index</code> del nuevo <code>HomeController</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Fichero: routes/web.php</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Http\Controllers\HomeController</span><span class="p">;</span> <span class="c1">// ¡No olvides importar el controlador!</span>
+
+<span class="cm">/*</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">| Web Routes</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">*/</span>
+
+<span class="c1">// La sintaxis es: Route::verbo(&#39;url&#39;, [Controlador::class, &#39;metodo&#39;]);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">HomeController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="25-helpers-comunes-de-laravel">2.5. Helpers Comunes de Laravel<a class="headerlink" href="#25-helpers-comunes-de-laravel" title="Permanent link">&para;</a></h2>
+<p>Laravel incluye una gran cantidad de funciones auxiliares (helpers) que hacen el desarrollo más eficiente y seguro. Estas funciones están disponibles globalmente en toda la aplicación y son especialmente útiles en controladores y vistas.</p>
+<h3 id="abort-manejo-de-errores-http"><code>abort()</code>: Manejo de Errores HTTP<a class="headerlink" href="#abort-manejo-de-errores-http" title="Permanent link">&para;</a></h3>
+<p>La función <code>abort()</code> permite detener la ejecución de la aplicación y devolver una respuesta HTTP de error de forma inmediata. Es muy útil para validaciones de seguridad y manejo de casos edge.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// En un controlador</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">show</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="nx">View</span>
+<span class="p">{</span>
+    <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+
+    <span class="c1">// Si el producto no existe, devolver error 404</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$product</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">&#39;Producto no encontrado&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Si el usuario no tiene permisos, devolver error 403</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">userCanView</span><span class="p">(</span><span class="nv">$product</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">abort</span><span class="p">(</span><span class="mi">403</span><span class="p">,</span> <span class="s1">&#39;No tienes permisos para ver este producto&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;products.show&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;product&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>¿Por qué usar <code>abort()</code>?</strong> En aplicaciones reales, se necesita manejar situaciones donde algo sale mal: un usuario intenta acceder a un producto que no existe, o alguien sin permisos intenta ver contenido privado. <code>abort()</code> permite manejar estos casos de forma elegante y consistente.</p>
+<h3 id="dd-depuracion-y-desarrollo"><code>dd()</code>: Depuración y Desarrollo<a class="headerlink" href="#dd-depuracion-y-desarrollo" title="Permanent link">&para;</a></h3>
+<p>La función <code>dd()</code> (dump and die) es una herramienta de depuración que imprime información sobre variables y detiene la ejecución del script. Es extremadamente útil durante el desarrollo para inspeccionar datos.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span><span class="o">:</span> <span class="nx">View</span>
+<span class="p">{</span>
+    <span class="nv">$products</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">();</span>
+
+    <span class="c1">// Durante el desarrollo, puedes inspeccionar los datos</span>
+    <span class="nx">dd</span><span class="p">(</span><span class="nv">$products</span><span class="p">);</span> <span class="c1">// Esto mostrará el contenido y detendrá la ejecución</span>
+
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;products.index&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;products&#39;</span> <span class="o">=&gt;</span> <span class="nv">$products</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>¿Por qué es importante <code>dd()</code>?</strong> Durante el desarrollo, se necesita verificar que los datos tienen la estructura correcta antes de pasarlos a las vistas. <code>dd()</code> permite inspeccionar arrays, objetos, y cualquier variable de forma clara y estructurada, evitando errores en tiempo de ejecución.</p>
+<h3 id="helpers-de-rutas-de-archivos">Helpers de Rutas de Archivos<a class="headerlink" href="#helpers-de-rutas-de-archivos" title="Permanent link">&para;</a></h3>
+<p>Laravel proporciona funciones helper para construir rutas de archivos de forma segura y consistente, independientemente del sistema operativo.</p>
+<h4 id="database_path"><code>database_path()</code><a class="headerlink" href="#database_path" title="Permanent link">&para;</a></h4>
+<p>Esta función devuelve la ruta completa al directorio <code>database</code> de la aplicación Laravel.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Cargar datos mock desde la carpeta database</span>
+<span class="nv">$products</span> <span class="o">=</span> <span class="k">require</span> <span class="nx">database_path</span><span class="p">(</span><span class="s1">&#39;data/mock-products.php&#39;</span><span class="p">);</span>
+
+<span class="c1">// Acceder a un archivo de migración</span>
+<span class="nv">$migrationFile</span> <span class="o">=</span> <span class="nx">database_path</span><span class="p">(</span><span class="s1">&#39;migrations/2025_01_15_create_products_table.php&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="base_path"><code>base_path()</code><a class="headerlink" href="#base_path" title="Permanent link">&para;</a></h4>
+<p>Esta función devuelve la ruta completa al directorio raíz de la aplicación Laravel.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Acceder a archivos en la raíz del proyecto</span>
+<span class="nv">$configFile</span> <span class="o">=</span> <span class="nx">base_path</span><span class="p">(</span><span class="s1">&#39;config/app.php&#39;</span><span class="p">);</span>
+
+<span class="c1">// Acceder a archivos en subdirectorios</span>
+<span class="nv">$envFile</span> <span class="o">=</span> <span class="nx">base_path</span><span class="p">(</span><span class="s1">&#39;.env&#39;</span><span class="p">);</span>
+<span class="nv">$composerFile</span> <span class="o">=</span> <span class="nx">base_path</span><span class="p">(</span><span class="s1">&#39;composer.json&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>¿Por qué usar estos helpers?</strong> En lugar de escribir rutas como <code>'../database/data/mock-products.php'</code> o <code>__DIR__ . '/../../database/data/mock-products.php'</code>, estos helpers dan rutas absolutas y seguras. Esto es especialmente importante cuando la aplicación se despliega en diferentes entornos (desarrollo, producción) donde las rutas relativas pueden fallar.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../201/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 2.1 Viaje Interno de una Petición">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                2.1 Viaje Interno de una Petición
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../203/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 2.3. El Lenguaje Elegante para Crear Vistas Dinámicas">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                2.3. El Lenguaje Elegante para Crear Vistas Dinámicas
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Arturo Blasco - Creative Commons CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/arturoblasco" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

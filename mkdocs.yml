@@ -73,7 +73,33 @@ nav:
         - ut07/ut0706.md
         - ut07/ut0707.md
         - ut07/ut07ac.md
-        - ut07/ut07_p01.md
+
+    - UTR 1:
+        - utr1/100.md
+        - utr1/101.md
+        - utr1/102.md
+        - utr1/103.md
+        - utr1/104.md
+        - utr1/105.md
+        - utr1/106.md
+        - utr1/10p.md
+    - UTR 2:
+        - utr2/200.md
+        - utr2/201.md
+        - utr2/202.md
+        - utr2/203.md
+        - utr2/204.md
+        - utr2/205.md
+        - utr2/206.md
+        - utr2/20p.md
+    - UTR 3:
+        - utr3/300.md
+        - utr3/301.md
+        - utr3/302.md
+        - utr3/303.md
+        - utr3/304.md
+        - utr3/305.md
+        - utr3/30p.md
 
 theme:
   name: material      # selección del tema
@@ -130,7 +156,11 @@ markdown_extensions:
       auto_title: false      # ❌ evita título arriba del bloque
       use_pygments: true     # ✅ activa resaltado de sintaxis
       pygments_style: default
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
   - pymdownx.inlinehilite
   - pymdownx.snippets
 
@@ -174,4 +204,8 @@ plugins:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
+
+  
 copyright: Arturo Blasco - Creative Commons CC BY-NC-SA
