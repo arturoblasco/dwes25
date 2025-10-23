@@ -20,7 +20,7 @@
     
     
       
-        <title>2.4. Arquitectura de Vistas: Layouts y Herencia en Blade - Desarrollo Web en Entorno Servidor (DWES)</title>
+        <title>2.4. Layouts y herencia en Blade - Desarrollo Web en Entorno Servidor (DWES)</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#24-arquitectura-de-vistas-layouts-y-herencia-en-blade" class="md-skip">
+        <a href="#24-layouts-y-herencia-en-blade" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.4. Arquitectura de Vistas: Layouts y Herencia en Blade
+              2.4. Layouts y herencia en Blade
             
           </span>
         </div>
@@ -2106,7 +2106,7 @@
   
   
   <span class="md-ellipsis">
-    2.2. Mapa de la Aplicación
+    2.2. Mapa de la aplicación
     
   </span>
   
@@ -2129,7 +2129,7 @@
   
   
   <span class="md-ellipsis">
-    2.3. El Lenguaje Elegante para Crear Vistas Dinámicas
+    2.3. Vistas dinámicas
     
   </span>
   
@@ -2161,7 +2161,7 @@
   
   
   <span class="md-ellipsis">
-    2.4. Arquitectura de Vistas: Layouts y Herencia en Blade
+    2.4. Layouts y herencia en Blade
     
   </span>
   
@@ -2174,7 +2174,7 @@
   
   
   <span class="md-ellipsis">
-    2.4. Arquitectura de Vistas: Layouts y Herencia en Blade
+    2.4. Layouts y herencia en Blade
     
   </span>
   
@@ -2197,52 +2197,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#41-herencia-de-plantillas-con-blade" class="md-nav__link">
+  <a href="#1-directivas-de-herencia" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1. Herencia de Plantillas con Blade
+      1. Directivas de herencia
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#42-directivas-de-herencia" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2. Directivas de Herencia
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2. Directivas de Herencia">
+    <nav class="md-nav" aria-label="1. Directivas de herencia">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#421-directivas-extends-y-section" class="md-nav__link">
+  <a href="#11-directiva-yield" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2.1. Directivas @extends y @section
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2.1. Directivas @extends y @section">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sintaxis-corta-para-secciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sintaxis Corta para Secciones
+      1.1. Directiva @yield
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#422-directiva-yield" class="md-nav__link">
+  <a href="#12-directivas-extends-y-section" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2.2. Directiva @yield
+      1.2. Directivas @extends y @section
     </span>
   </a>
   
@@ -2254,19 +2230,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#43-directivas-avanzadas" class="md-nav__link">
+  <a href="#2-directivas-avanzadas" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3. Directivas Avanzadas
+      2. Directivas avanzadas
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.3. Directivas Avanzadas">
+    <nav class="md-nav" aria-label="2. Directivas avanzadas">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#431-directiva-parent" class="md-nav__link">
+  <a href="#21-directiva-parent" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3.1. Directiva @parent
+      2.1. Directiva @parent
     </span>
   </a>
   
@@ -2278,32 +2254,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#44-stacks-de-blade" class="md-nav__link">
+  <a href="#3-stacks-de-blade" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4. Stacks de Blade
+      3. Stacks de Blade
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.4. Stacks de Blade">
+    <nav class="md-nav" aria-label="3. Stacks de Blade">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#441-directiva-push-y-stack" class="md-nav__link">
+  <a href="#31-directiva-push-y-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4.1. Directiva @push y @stack
+      3.1. Directiva @push y @stack
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#442-ejemplo-progresivo-vista-de-producto" class="md-nav__link">
+  <a href="#32-ejemplo-progresivo-vista-de-producto" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4.2. Ejemplo Progresivo: Vista de Producto
+      3.2. Ejemplo progresivo: vista de Producto
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.4.2. Ejemplo Progresivo: Vista de Producto">
+    <nav class="md-nav" aria-label="3.2. Ejemplo progresivo: vista de Producto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2344,46 +2320,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#45-directivas-de-inclusion" class="md-nav__link">
+  <a href="#4-directivas-de-inclusion" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5. Directivas de Inclusión
+      4. Directivas de inclusión
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.5. Directivas de Inclusión">
+    <nav class="md-nav" aria-label="4. Directivas de inclusión">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#451-directiva-include" class="md-nav__link">
+  <a href="#41-directiva-include" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.1. Directiva @include
+      4.1. Directiva @include
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#452-pasar-variables-a-includes" class="md-nav__link">
+  <a href="#42-pasar-variables-a-includes" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.2. Pasar Variables a Includes
+      4.2. Pasar variables a includes
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#453-directiva-includeif" class="md-nav__link">
+  <a href="#43-directiva-includeif" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.3. Directiva @includeIf
+      4.3. Directiva @includeIf
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#454-directiva-includewhen" class="md-nav__link">
+  <a href="#44-directiva-includewhen" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.4. Directiva @includeWhen
+      4.4. Directiva @includeWhen
     </span>
   </a>
   
@@ -2415,7 +2391,7 @@
   
   
   <span class="md-ellipsis">
-    2.5. Del Controlador a la Vista: Integrando Datos Dinámicos en Blade
+    2.5. Del controlador a la vista
     
   </span>
   
@@ -2438,7 +2414,7 @@
   
   
   <span class="md-ellipsis">
-    2.6. Datos Mock: El Simulador de Base de Datos para Desarrollo Ágil
+    2.6. Datos mock
     
   </span>
   
@@ -2461,7 +2437,7 @@
   
   
   <span class="md-ellipsis">
-    UD.2 Práctica Guiada: Rutas, Controladores y Vistas
+    Práctica guiada
     
   </span>
   
@@ -2576,7 +2552,7 @@
   
   
   <span class="md-ellipsis">
-    302
+    2. Eloquent ORM: Hablando con la Base de Datos en tu Idioma
     
   </span>
   
@@ -2599,7 +2575,7 @@
   
   
   <span class="md-ellipsis">
-    303
+    3. CRUD con Eloquent: Las Cuatro Operaciones Maestras de los Datos
     
   </span>
   
@@ -2622,7 +2598,7 @@
   
   
   <span class="md-ellipsis">
-    304
+    4. Relaciones Eloquent: Conectando el Universo de tus Datos** 🌐
     
   </span>
   
@@ -2645,7 +2621,7 @@
   
   
   <span class="md-ellipsis">
-    305
+    5. Seeders y Factories: Poblando tu Base de Datos con Datos Realistas** 🌱
     
   </span>
   
@@ -2668,7 +2644,7 @@
   
   
   <span class="md-ellipsis">
-    30p
+    UD.3 Práctica Guiada: Persistencia de Datos con Laravel
     
   </span>
   
@@ -2721,52 +2697,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#41-herencia-de-plantillas-con-blade" class="md-nav__link">
+  <a href="#1-directivas-de-herencia" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1. Herencia de Plantillas con Blade
+      1. Directivas de herencia
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#42-directivas-de-herencia" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2. Directivas de Herencia
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2. Directivas de Herencia">
+    <nav class="md-nav" aria-label="1. Directivas de herencia">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#421-directivas-extends-y-section" class="md-nav__link">
+  <a href="#11-directiva-yield" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2.1. Directivas @extends y @section
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2.1. Directivas @extends y @section">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sintaxis-corta-para-secciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sintaxis Corta para Secciones
+      1.1. Directiva @yield
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#422-directiva-yield" class="md-nav__link">
+  <a href="#12-directivas-extends-y-section" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2.2. Directiva @yield
+      1.2. Directivas @extends y @section
     </span>
   </a>
   
@@ -2778,19 +2730,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#43-directivas-avanzadas" class="md-nav__link">
+  <a href="#2-directivas-avanzadas" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3. Directivas Avanzadas
+      2. Directivas avanzadas
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.3. Directivas Avanzadas">
+    <nav class="md-nav" aria-label="2. Directivas avanzadas">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#431-directiva-parent" class="md-nav__link">
+  <a href="#21-directiva-parent" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3.1. Directiva @parent
+      2.1. Directiva @parent
     </span>
   </a>
   
@@ -2802,32 +2754,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#44-stacks-de-blade" class="md-nav__link">
+  <a href="#3-stacks-de-blade" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4. Stacks de Blade
+      3. Stacks de Blade
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.4. Stacks de Blade">
+    <nav class="md-nav" aria-label="3. Stacks de Blade">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#441-directiva-push-y-stack" class="md-nav__link">
+  <a href="#31-directiva-push-y-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4.1. Directiva @push y @stack
+      3.1. Directiva @push y @stack
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#442-ejemplo-progresivo-vista-de-producto" class="md-nav__link">
+  <a href="#32-ejemplo-progresivo-vista-de-producto" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4.2. Ejemplo Progresivo: Vista de Producto
+      3.2. Ejemplo progresivo: vista de Producto
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.4.2. Ejemplo Progresivo: Vista de Producto">
+    <nav class="md-nav" aria-label="3.2. Ejemplo progresivo: vista de Producto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2868,46 +2820,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#45-directivas-de-inclusion" class="md-nav__link">
+  <a href="#4-directivas-de-inclusion" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5. Directivas de Inclusión
+      4. Directivas de inclusión
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.5. Directivas de Inclusión">
+    <nav class="md-nav" aria-label="4. Directivas de inclusión">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#451-directiva-include" class="md-nav__link">
+  <a href="#41-directiva-include" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.1. Directiva @include
+      4.1. Directiva @include
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#452-pasar-variables-a-includes" class="md-nav__link">
+  <a href="#42-pasar-variables-a-includes" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.2. Pasar Variables a Includes
+      4.2. Pasar variables a includes
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#453-directiva-includeif" class="md-nav__link">
+  <a href="#43-directiva-includeif" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.3. Directiva @includeIf
+      4.3. Directiva @includeIf
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#454-directiva-includewhen" class="md-nav__link">
+  <a href="#44-directiva-includewhen" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.4. Directiva @includeWhen
+      4.4. Directiva @includeWhen
     </span>
   </a>
   
@@ -2934,11 +2886,11 @@
 
 
 
-<h1 id="24-arquitectura-de-vistas-layouts-y-herencia-en-blade">2.4. Arquitectura de Vistas: Layouts y Herencia en Blade<a class="headerlink" href="#24-arquitectura-de-vistas-layouts-y-herencia-en-blade" title="Permanent link">&para;</a></h1>
+<h1 id="24-layouts-y-herencia-en-blade">2.4. Layouts y herencia en Blade<a class="headerlink" href="#24-layouts-y-herencia-en-blade" title="Permanent link">&para;</a></h1>
 <p>Los layouts son la columna vertebral de cualquier aplicación web profesional, permitiendo mantener una estructura visual consistente y realizar cambios globales desde un único punto de control.</p>
 <p><strong>¿Por qué son esenciales los layouts?</strong> En aplicaciones reales, todas las páginas comparten elementos estructurales comunes: la barra de navegación, el footer, los enlaces a hojas de estilo CSS y scripts JavaScript, los meta tags de SEO. Sin un sistema de layouts, cambiar algo tan simple como el logo de la empresa requeriría editar manualmente cientos de archivos individuales.</p>
 <p>Los layouts eliminan esta pesadilla, centralizando la estructura común y permitiendo que cada página se enfoque únicamente en su contenido específico.</p>
-<details class="examplelaravel" open="open">
+<details class="examplelaravel">
 <summary>Analogía: Fábrica de Aviones con 100 Unidades del Mismo Modelo</summary>
 <p><strong>Imagina que Boeing fabrica 100 aviones del modelo 737.</strong></p>
 <ul>
@@ -2955,59 +2907,11 @@
 </ul>
 <p><strong>¡El Layout es el diseño base del avión, las secciones son las partes configurables según el cliente!</strong></p>
 </details>
-<hr />
-<h2 id="41-herencia-de-plantillas-con-blade">4.1. Herencia de Plantillas con Blade<a class="headerlink" href="#41-herencia-de-plantillas-con-blade" title="Permanent link">&para;</a></h2>
 <p>La herencia de plantillas es una de las características más potentes de Blade. Permite crear un layout base que define la estructura común de todas las páginas, y luego extender ese layout en páginas específicas.</p>
-<p>Herencia de Plantillas en Blade</p>
-<div class="mermaid">graph TB
-   subgraph Layout["🏗️ LAYOUT BASE: app.blade.php"]
-       direction LR
-       H((Header)) --- N((Nav)) --- Y((Main (Cambioa))) --- F((Footer))
-   end
-
-   Layout --&gt; V1[📄 PÁGINA LISTADO PRODUCTOS&lt;br/&gt;products/index.blade.php&lt;br/&gt;━━━━━━━━━━━&lt;br/&gt;Header heredado&lt;br/&gt;Nav heredado&lt;br/&gt;&lt;b&gt;➕ Tabla de productos&lt;/b&gt;&lt;br/&gt;Footer heredado]
-
-   Layout --&gt; V2[📄 PÁGINA CATEGORÍAS&lt;br/&gt;categories/index.blade.php&lt;br/&gt;━━━━━━━━━━━&lt;br/&gt;Header heredado&lt;br/&gt;Nav heredado&lt;br/&gt;&lt;b&gt;➕ Lista categorías&lt;/b&gt;&lt;br/&gt;Footer heredado]
-
-   V1 -.reutiliza tabla.-&gt; V3[📄 PÁGINA INVENTARIO&lt;br/&gt;products/inventory.blade.php&lt;br/&gt;━━━━━━━━━━━&lt;br/&gt;Header heredado&lt;br/&gt;Nav heredado&lt;br/&gt;&lt;b&gt;➕ Tabla productos&lt;/b&gt;&lt;br/&gt;&lt;b&gt;➕ Columna Stock/Cantidad&lt;/b&gt;&lt;br/&gt;Footer heredado]
-
-   style Layout fill:#fff9c4,stroke:#f57f17,stroke-width:3px
-   style V1 fill:#bbdefb,stroke:#1976d2,stroke-width:2px
-   style V2 fill:#bbdefb,stroke:#1976d2,stroke-width:2px
-   style V3 fill:#c8e6c9,stroke:#388e3c,stroke-width:2px
-   style H fill:#ffeb3b
-   style N fill:#ffeb3b
-   style Y fill:#ffeb3b
-   style F fill:#ffeb3b</div>
-<h2 id="42-directivas-de-herencia">4.2. Directivas de Herencia<a class="headerlink" href="#42-directivas-de-herencia" title="Permanent link">&para;</a></h2>
-<h3 id="421-directivas-extends-y-section">4.2.1. Directivas <code>@extends</code> y <code>@section</code><a class="headerlink" href="#421-directivas-extends-y-section" title="Permanent link">&para;</a></h3>
-<p>La directiva <code>@extends</code> especifica qué layout debe usar una vista. Debe ser la primera línea del archivo.</p>
-<p>La directiva <code>@section</code> define bloques de contenido que se insertan en el layout. Cada sección tiene un nombre único.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- resources/views/products/show.blade.php --&gt;</span>
-@extends(&#39;layouts.app&#39;)
-
-@section(&#39;title&#39;) <span class="cm">&lt;!-- Título dinámico --&gt;</span>
-    Mi Título
-@endsection
-
-@section(&#39;content&#39;)                      <span class="cm">&lt;!-- Contenido dinámico --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ $product-&gt;name }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ $product-&gt;description }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Precio: {{ $product-&gt;price }}€<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-@endsection
-</code></pre></div>
-<h4 id="sintaxis-corta-para-secciones">Sintaxis Corta para Secciones<a class="headerlink" href="#sintaxis-corta-para-secciones" title="Permanent link">&para;</a></h4>
-<p>Para secciones de una sola línea, se puede usar la sintaxis corta:</p>
-<div class="highlight"><pre><span></span><code>@section(&#39;title&#39;)
-    Mi Título
-@endsection
-
-<span class="cm">&lt;!-- Equivale a: --&gt;</span>
-
-@section(&#39;title&#39;, &#39;Mi Título&#39;)
-</code></pre></div>
-<h3 id="422-directiva-yield">4.2.2. Directiva <code>@yield</code><a class="headerlink" href="#422-directiva-yield" title="Permanent link">&para;</a></h3>
-<p>En el layout, definimos secciones con <code>@yield</code> que se rellenaran con las secciones definidas en las vistas hijas usando <code>@section</code>:</p>
+<hr />
+<h2 id="1-directivas-de-herencia">1. Directivas de herencia<a class="headerlink" href="#1-directivas-de-herencia" title="Permanent link">&para;</a></h2>
+<h3 id="11-directiva-yield">1.1. Directiva <code>@yield</code><a class="headerlink" href="#11-directiva-yield" title="Permanent link">&para;</a></h3>
+<p>En el layout, definimos secciones con <strong><code>@yield</code></strong> que se rellenaran con las secciones definidas en las vistas hijas usando <strong><code>@section</code></strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- resources/views/layouts/app.blade.php --&gt;</span>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
@@ -3032,9 +2936,23 @@
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<h2 id="43-directivas-avanzadas">4.3. Directivas Avanzadas<a class="headerlink" href="#43-directivas-avanzadas" title="Permanent link">&para;</a></h2>
-<h3 id="431-directiva-parent">4.3.1. Directiva <code>@parent</code><a class="headerlink" href="#431-directiva-parent" title="Permanent link">&para;</a></h3>
-<p>La directiva <code>@parent</code> permite incluir el contenido de la sección padre en una sección que la está sobrescribiendo:</p>
+<h3 id="12-directivas-extends-y-section">1.2. Directivas <code>@extends</code> y <code>@section</code><a class="headerlink" href="#12-directivas-extends-y-section" title="Permanent link">&para;</a></h3>
+<p>La directiva <strong><code>@extends</code></strong> especifica qué layout debe usar una vista. Debe ser la primera línea del archivo.</p>
+<p>La directiva <strong><code>@section</code></strong> define bloques de contenido que se insertan en el layout. Cada sección tiene un nombre único.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- resources/views/products/show.blade.php --&gt;</span>
+@extends(&#39;layouts.app&#39;)
+
+@section(&#39;title&#39;, &#39;Mi Título&#39;) <span class="cm">&lt;!-- Título dinámico --&gt;</span>
+
+@section(&#39;content&#39;)            <span class="cm">&lt;!-- Contenido dinámico --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ $product-&gt;name }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ $product-&gt;description }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Precio: {{ $product-&gt;price }}€<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+@endsection
+</code></pre></div>
+<h2 id="2-directivas-avanzadas">2. Directivas avanzadas<a class="headerlink" href="#2-directivas-avanzadas" title="Permanent link">&para;</a></h2>
+<h3 id="21-directiva-parent">2.1. Directiva <code>@parent</code><a class="headerlink" href="#21-directiva-parent" title="Permanent link">&para;</a></h3>
+<p>La directiva <strong><code>@parent</code></strong> permite incluir el contenido de la sección padre en una sección que la está sobrescribiendo:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- resources/views/products/show.blade.php --&gt;</span>
 @extends(&#39;products.show&#39;)
 
@@ -3047,10 +2965,10 @@
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Cantidad: {{ $product-&gt;quantity }}€<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 @endsection
 </code></pre></div>
-<h2 id="44-stacks-de-blade">4.4. Stacks de Blade<a class="headerlink" href="#44-stacks-de-blade" title="Permanent link">&para;</a></h2>
-<h3 id="441-directiva-push-y-stack">4.4.1. Directiva <code>@push</code> y <code>@stack</code><a class="headerlink" href="#441-directiva-push-y-stack" title="Permanent link">&para;</a></h3>
+<h2 id="3-stacks-de-blade">3. Stacks de Blade<a class="headerlink" href="#3-stacks-de-blade" title="Permanent link">&para;</a></h2>
+<h3 id="31-directiva-push-y-stack">3.1. Directiva <code>@push</code> y <code>@stack</code><a class="headerlink" href="#31-directiva-push-y-stack" title="Permanent link">&para;</a></h3>
 <p>Los <strong>stacks</strong> (pilas) son contenedores donde múltiples vistas pueden <strong>acumular</strong> contenido que luego se renderiza en un punto específico del layout.</p>
-<details class="examplelaravel" open="open">
+<details class="examplelaravel">
 <summary>Analogía: Oficina de Objetos Perdidos del Aeropuerto</summary>
 <p><strong>Imagina la oficina de objetos perdidos de un aeropuerto internacional:</strong></p>
 <ul>
@@ -3063,7 +2981,7 @@
 </ul>
 <p><strong>¡Con <code>@section</code> solo queda el último objeto (sobrescritura). Con <code>@stack</code> se acumulan TODOS los objetos de TODOS los vuelos!</strong></p>
 </details>
-<h3 id="442-ejemplo-progresivo-vista-de-producto">4.4.2. Ejemplo Progresivo: Vista de Producto<a class="headerlink" href="#442-ejemplo-progresivo-vista-de-producto" title="Permanent link">&para;</a></h3>
+<h3 id="32-ejemplo-progresivo-vista-de-producto">3.2. Ejemplo progresivo: vista de Producto<a class="headerlink" href="#32-ejemplo-progresivo-vista-de-producto" title="Permanent link">&para;</a></h3>
 <h4 id="paso-1-layout-base-con-stacks-definidos">Paso 1: Layout base con stacks definidos<a class="headerlink" href="#paso-1-layout-base-con-stacks-definidos" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- resources/views/layouts/app.blade.php --&gt;</span>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -3160,28 +3078,28 @@
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Ventajas de los Stacks</p>
-<p><strong>1. Carga selectiva de recursos:</strong></p>
+<p><strong>Ventajas de los Stacks</strong></p>
+<p><strong>💡1. Carga selectiva de recursos:</strong></p>
 <ul>
-<li>La página de productos carga <code>products.css</code> y la librería de galería</li>
-<li>La página de categorías NO carga esos recursos (solo los suyos)</li>
-<li>¡Mejor rendimiento! No cargas código innecesario</li>
+<li>La página de productos carga <code>products.css</code> y la librería de galería.</li>
+<li>La página de categorías NO carga esos recursos (solo los suyos).</li>
+<li>¡Mejor rendimiento! No cargas código innecesario.</li>
 </ul>
-<p><strong>2. Múltiples push al mismo stack:</strong></p>
+<p><strong>💡2. Múltiples push al mismo stack:</strong></p>
 <ul>
-<li>Puedes hacer <code>@push('scripts')</code> varias veces en la misma vista</li>
-<li>Todos los push se acumulan en orden</li>
-<li>Útil cuando tienes código HTML mezclado con código Blade</li>
+<li>Puedes hacer <code>@push('scripts')</code> varias veces en la misma vista.</li>
+<li>Todos los push se acumulan en orden.</li>
+<li>Útil cuando tienes código HTML mezclado con código Blade.</li>
 </ul>
-<p><strong>3. Sin acoplamiento:</strong></p>
+<p><strong>💡3. Sin acoplamiento:</strong></p>
 <ul>
-<li>El layout NO sabe qué recursos necesita cada página</li>
-<li>Cada vista declara sus propias dependencias</li>
-<li>Fácil añadir/quitar funcionalidades sin tocar el layout</li>
+<li>El layout NO sabe qué recursos necesita cada página.</li>
+<li>Cada vista declara sus propias dependencias.</li>
+<li>Fácil añadir/quitar funcionalidades sin tocar el layout.</li>
 </ul>
-<h2 id="45-directivas-de-inclusion">4.5. Directivas de Inclusión<a class="headerlink" href="#45-directivas-de-inclusion" title="Permanent link">&para;</a></h2>
-<h3 id="451-directiva-include">4.5.1. Directiva <code>@include</code><a class="headerlink" href="#451-directiva-include" title="Permanent link">&para;</a></h3>
-<p>La directiva <code>@include</code> permite incluir una vista dentro de otra. Es útil para componentes reutilizables que suelen ser fijos en todas las páginas, como barras laterales, footers, menús, etc.</p>
+<h2 id="4-directivas-de-inclusion">4. Directivas de inclusión<a class="headerlink" href="#4-directivas-de-inclusion" title="Permanent link">&para;</a></h2>
+<h3 id="41-directiva-include">4.1. Directiva <code>@include</code><a class="headerlink" href="#41-directiva-include" title="Permanent link">&para;</a></h3>
+<p>La directiva <strong><code>@include</code></strong> permite incluir una vista dentro de otra. Es útil para componentes reutilizables que suelen ser fijos en todas las páginas, como barras laterales, footers, menús, etc.</p>
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- resources/views/layouts/app.blade.php --&gt;</span>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
@@ -3214,14 +3132,14 @@
     <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
 </code></pre></div>
-<h3 id="452-pasar-variables-a-includes">4.5.2. Pasar Variables a Includes<a class="headerlink" href="#452-pasar-variables-a-includes" title="Permanent link">&para;</a></h3>
+<h3 id="42-pasar-variables-a-includes">4.2. Pasar variables a includes<a class="headerlink" href="#42-pasar-variables-a-includes" title="Permanent link">&para;</a></h3>
 <p>Se pueden pasar variables a las vistas incluidas:</p>
 <div class="highlight"><pre><span></span><code>@include(&#39;partials.header&#39;, [&#39;links&#39; =&gt; $links])
 
 <span class="cm">&lt;!-- O usando la sintaxis de array --&gt;</span>
 @include(&#39;partials.header&#39;, $links)
 </code></pre></div>
-<h3 id="453-directiva-includeif">4.5.3. Directiva <code>@includeIf</code><a class="headerlink" href="#453-directiva-includeif" title="Permanent link">&para;</a></h3>
+<h3 id="43-directiva-includeif">4.3. Directiva <code>@includeIf</code><a class="headerlink" href="#43-directiva-includeif" title="Permanent link">&para;</a></h3>
 <p>Incluye una vista solo si existe:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Mi Tienda<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
@@ -3229,7 +3147,7 @@
     <span class="cm">&lt;!-- Si &#39;partials.nav&#39; no existe, no hace nada --&gt;</span>
 <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
 </code></pre></div>
-<h3 id="454-directiva-includewhen">4.5.4. Directiva <code>@includeWhen</code><a class="headerlink" href="#454-directiva-includewhen" title="Permanent link">&para;</a></h3>
+<h3 id="44-directiva-includewhen">4.4. Directiva <code>@includeWhen</code><a class="headerlink" href="#44-directiva-includewhen" title="Permanent link">&para;</a></h3>
 <p>Incluye una vista condicionalmente:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Mi Tienda<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
@@ -3271,7 +3189,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../203/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 2.3. El Lenguaje Elegante para Crear Vistas Dinámicas">
+          <a href="../203/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 2.3. Vistas dinámicas">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -3281,20 +3199,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                2.3. El Lenguaje Elegante para Crear Vistas Dinámicas
+                2.3. Vistas dinámicas
               </div>
             </div>
           </a>
         
         
           
-          <a href="../205/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 2.5. Del Controlador a la Vista: Integrando Datos Dinámicos en Blade">
+          <a href="../205/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 2.5. Del controlador a la vista">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                2.5. Del Controlador a la Vista: Integrando Datos Dinámicos en Blade
+                2.5. Del controlador a la vista
               </div>
             </div>
             <div class="md-footer__button md-icon">

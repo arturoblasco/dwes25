@@ -202,7 +202,7 @@ font-size: 16px
 
 .center-table th, .center-table td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 2px;
   text-align: center;
 }
 
@@ -239,7 +239,7 @@ font-size: 16px
   /*background-color: #ffd453; /* Cambia este color */
   background-color: #f0d583;
   color: #383119; /* Cambia el color del texto si es necesario */
-  font-size: 1.15em;
+  font-size: 1em;
 }
 
 /* .md-typeset table tr:hover td {
@@ -251,9 +251,9 @@ font-size: 16px
 /* Cambiar color de texto */
 .md-typeset blockquote {
   color: #333333;   /* Cambia este color al que quieras */
-  background-color: #fff8e1;          /* ✅ color de fons (pots canviar-lo) */
+  background-color: #f8f5eb;          /* ✅ color de fons (pots canviar-lo) */
   font-size: 0.80m; /* Ajusta tamaño */
-  border-inline-start: 7px solid #cba123 !important; /* Color y grosor del borde */
+  border-inline-start: 7px solid #e6af0a !important; /* Color y grosor del borde */
   /*background: #8f6363; /* Opcional: fondo más claro */
   padding: 0.1em 0.1em;
   border-radius: 4px;
@@ -261,7 +261,7 @@ font-size: 16px
 
 /* Si quieres resaltar palabras como "IMPORTANTE:" */
 .md-typeset blockquote strong {
-  color: #bd8f04; /* Rojo para destacar */
+  color: #c89808; /* Rojo para destacar */
 }
 
 
@@ -290,15 +290,16 @@ font-size: 16px
 
 /* Subrayado en secciones principales */
 .md-typeset h2 {
-  color: #daa70d;         /* texto del color primario */
-  border-bottom: 2px solid #e6b213;   /* línea del mismo color */
-  padding-bottom: 0.25em;
+  color: #e6af0a;         /* texto del color primario */
+/*   border-bottom: 2px solid #e6b213;   /* línea del mismo color */
+  border-bottom: 2px solid #e6af0a; 
+ */  padding-bottom: 0.1em;
   margin-bottom: 0.75em;
   font-weight: 500;                         /* opcional: más peso */
 }
 
 .md-typeset h3 {
-  color: #daa70d;         /* texto del color primario */
+  color: #b49435;         /* texto del color primario */
 
 }
 
