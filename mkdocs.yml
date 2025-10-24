@@ -74,32 +74,32 @@ nav:
         - ut07/ut0707.md
         - ut07/ut07ac.md
 
-    - UTR 1:
-        - utr1/100.md
-        - utr1/101.md
-        - utr1/102.md
-        - utr1/103.md
-        - utr1/104.md
-        - utr1/105.md
-        - utr1/106.md
-        - utr1/10p.md
-    - UTR 2:
-        - utr2/200.md
-        - utr2/201.md
-        - utr2/202.md
-        - utr2/203.md
-        - utr2/204.md
-        - utr2/205.md
-        - utr2/206.md
-        - utr2/20p.md
-    - UTR 3:
-        - utr3/300.md
-        - utr3/301.md
-        - utr3/302.md
-        - utr3/303.md
-        - utr3/304.md
-        - utr3/305.md
-        - utr3/30p.md
+    - UPL 1 ED profesional:
+        - upl1/100.md
+        - upl1/101.md
+        - upl1/102.md
+        - upl1/103.md
+        - upl1/104.md
+        - upl1/105.md
+        - upl1/106.md
+        - upl1/10p.md
+    - UPL 2 Fundamentos:
+        - upl2/200.md
+        - upl2/201.md
+        - upl2/202.md
+        - upl2/203.md
+        - upl2/204.md
+        - upl2/205.md
+        - upl2/206.md
+        - upl2/20p.md
+    - UPL 3 Gestión de datos:
+        - upl3/300.md
+        - upl3/301.md
+        - upl3/302.md
+        - upl3/303.md
+        - upl3/304.md
+        - upl3/305.md
+        - upl3/30p.md
 
 theme:
   name: material      # selección del tema
