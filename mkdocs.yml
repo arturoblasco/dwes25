@@ -64,16 +64,6 @@ nav:
         - ut04/ut0406.md
         - ut04/ut04ac.md
   - Laravel:
-    - UT 7 Framework:
-        - ut07/ut0701.md
-        - ut07/ut0702.md
-        - ut07/ut0703.md
-        - ut07/ut0704.md
-        - ut07/ut0705.md
-        - ut07/ut0706.md
-        - ut07/ut0707.md
-        - ut07/ut07ac.md
-
     - UPL 1 ED profesional:
         - upl1/100.md
         - upl1/101.md
@@ -108,7 +98,7 @@ nav:
         - upl4/404.md
         - upl4/405.md
         - upl4/406.md
-        - upl4/407.md        
+        - upl4/407.md
         - upl4/40p.md
 
 theme:
