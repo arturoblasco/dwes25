@@ -2867,7 +2867,7 @@
 <p>¡Los seeders son como el plan de adquisición inicial que asegura que tu biblioteca tenga todo lo esencial desde el día uno!</p>
 <h2 id="52-creando-seeders">5.2. Creando Seeders<a class="headerlink" href="#52-creando-seeders" title="Permanent link">&para;</a></h2>
 <h3 id="521-comando-para-crear-seeders">5.2.1. Comando para crear Seeders<a class="headerlink" href="#521-comando-para-crear-seeders" title="Permanent link">&para;</a></h3>
-<p>Para crear un seeder, se utiliza el comando Artisan <code>make:seeder</code> seguido del nombre del seeder.</p>
+<p>Para crear un seeder, se utiliza el comando Artisan <strong><code>make:seeder</code></strong> seguido del nombre del seeder.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Crear un seeder básico</span>
 sail<span class="w"> </span>artisan<span class="w"> </span>make:seeder<span class="w"> </span>CategorySeeder
 </code></pre></div>
@@ -2982,11 +2982,11 @@ sail<span class="w"> </span>artisan<span class="w"> </span>make:seeder<span clas
 </code></pre></div>
 <blockquote>
 <p><strong>Atención</strong></p>
-<p>Este seeder crea multiples entidades en un mismo seeder. En aplicaciones reales, es recomendable separar cada entidad en su propio seeder para mantener el código limpio y modular.</p>
+<p>Este seeder crea multiples entidades en un mismo seeder. En aplicaciones reales, <strong>es recomendable separar cada entidad en su propio seeder</strong> para mantener el código limpio y modular.</p>
 </blockquote>
 <h2 id="53-que-son-las-factories">5.3. ¿Qué son las Factories?<a class="headerlink" href="#53-que-son-las-factories" title="Permanent link">&para;</a></h2>
 <p>Cuando los seeders necesitan crear grandes cantidades de datos que no son fijos, las factories son la herramienta ideal para generar estos datos ya que permiten definir patrones y variaciones en los datos generados.</p>
-<p>Las <strong>factories</strong> son clases que generan datos de prueba realistas de forma automatizada. Utilizan la librería Faker para crear datos variados y creíbles para desarrollo y testing.</p>
+<p>Las <strong>factories</strong> son clases que generan datos de prueba realistas de forma automatizada. Utilizan la librería <code>Faker</code> para crear datos variados y creíbles para desarrollo y testing.</p>
 <details class="examplelaravel">
 <summary>Analogía: El Generador Automático de Manuscritos</summary>
 <p><strong>¡Imagina que necesitas llenar la biblioteca con miles de libros para hacer pruebas del sistema de catalogación!</strong></p>
@@ -3004,7 +3004,7 @@ sail<span class="w"> </span>artisan<span class="w"> </span>make:seeder<span clas
 <p>¡Las factories son tu imprenta automática que llena la biblioteca con contenido realista para probar todo el sistema!</p>
 <h2 id="54-creando-factories">5.4. Creando Factories<a class="headerlink" href="#54-creando-factories" title="Permanent link">&para;</a></h2>
 <h3 id="541-comando-para-crear-factories">5.4.1. Comando para crear Factories<a class="headerlink" href="#541-comando-para-crear-factories" title="Permanent link">&para;</a></h3>
-<p>Para crear una factory, se utiliza el comando Artisan <code>make:factory</code> seguido del nombre de la factory y opcionalmente el modelo asociado.</p>
+<p>Para crear una factory, se utiliza el comando Artisan <strong><code>make:factory</code></strong> seguido del nombre de la factory y opcionalmente el modelo asociado.</p>
 <p>Si se especifica el modelo, la factory se vincula automáticamente a ese modelo, facilitando la creación de instancias del mismo.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Crear un factory básico</span>
 sail<span class="w"> </span>artisan<span class="w"> </span>make:factory<span class="w"> </span>ProductFactory

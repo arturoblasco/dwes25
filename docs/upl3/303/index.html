@@ -3438,25 +3438,29 @@
 <p>En este se están recogiendo todos los productos y luego, para cada producto, se hace una consulta adicional para obtener su categoría. Esto puede generar muchas consultas innecesarias.</p>
 <p>La solución es usar <strong>Eager Loading</strong> con el método <code>with()</code> para cargar las relaciones de manera anticipada en una sola consulta. En este caso, se carga la categoría de todos los productos en una sola consulta adicional.</p>
 <p>Ademas se puede optimizar aún más seleccionando solo los campos necesarios en lugar de cargar todos los datos ya que esto reduce la cantidad de datos transferidos, mejora el rendimiento y asegura la privacidad de los datos.</p>
+<p>❌  Malo: Problema N+1
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
-<span class="c1">// ❌ Malo: Problema N+1</span>
 <span class="nv">$products</span> <span class="o">=</span> <span class="nx">Product</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$products</span> <span class="k">as</span> <span class="nv">$product</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">category</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span> <span class="c1">// Consulta adicional por cada producto</span>
 <span class="p">}</span>
+</code></pre></div></p>
+<p>✅ Bueno: Eager Loading
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
-<span class="c1">// ✅ Bueno: Eager Loading</span>
 <span class="nv">$products</span> <span class="o">=</span> <span class="nx">Product</span><span class="o">::</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$products</span> <span class="k">as</span> <span class="nv">$product</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">category</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span> <span class="c1">// Sin consultas adicionales</span>
 <span class="p">}</span>
+</code></pre></div>
+🔝 Mejor: Seleccionar solo campos necesarios
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
-<span class="c1">// ✅ Mejor: Seleccionar solo campos necesarios</span>
 <span class="nv">$products</span> <span class="o">=</span> <span class="nx">Product</span><span class="o">::</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;category:id,name&#39;</span><span class="p">)</span>
                    <span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category_id&#39;</span><span class="p">)</span>
                    <span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
-</code></pre></div>
+</code></pre></div></p>
 <h2 id="37-trabajando-con-collections">3.7. Trabajando con Collections<a class="headerlink" href="#37-trabajando-con-collections" title="Permanent link">&para;</a></h2>
 <p>Cuando se realizan consultas con Eloquent, el resultado no es un array simple, sino una <strong>Collection</strong> (colección). Las Collections son objetos potentes que ofrecen métodos útiles para manipular y verificar datos.</p>
 <details class="examplelaravel">
@@ -3468,12 +3472,12 @@
 <p>✨ <strong>Collection = La Bandeja Inteligente de la Biblioteca</strong></p>
 </li>
 <li>
-<p>Le preguntas: <em>"¿Estás vacía?"</em> → <code>isEmpty()</code> → La bandeja responde al instante</p>
+<p>Le preguntas: <em>"¿Estás vacía?"</em> → <code>isEmpty()</code> → La bandeja responde al instante.</p>
 </li>
-<li>Le dices: <em>"¿Tienes libros?"</em> → <code>isNotEmpty()</code> → Verifica automáticamente</li>
-<li>Le pides: <em>"¿Cuántos libros hay?"</em> → <code>count()</code> → Cuenta por ti al momento</li>
-<li>Le ordenas: <em>"Dame el primer libro"</em> → <code>first()</code> → Te lo entrega sin buscar</li>
-<li>Le indicas: <em>"Filtra solo los de 2020"</em> → <code>filter()</code> → Selecciona automáticamente</li>
+<li>Le dices: <em>"¿Tienes libros?"</em> → <code>isNotEmpty()</code> → Verifica automáticamente.</li>
+<li>Le pides: <em>"¿Cuántos libros hay?"</em> → <code>count()</code> → Cuenta por ti al momento.</li>
+<li>Le ordenas: <em>"Dame el primer libro"</em> → <code>first()</code> → Te lo entrega sin buscar.</li>
+<li>Le indicas: <em>"Filtra solo los de 2020"</em> → <code>filter()</code> → Selecciona automáticamente.</li>
 <li>Le solicitas: <em>"Organízalos por título"</em> → <code>sortBy('title')</code> → Los ordena al instante.</li>
 </ul>
 <p><strong>¡Las Collections son como bandejas mágicas que conocen todo sobre los libros que contienen!</strong></p>
@@ -3536,7 +3540,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p><strong>En las vistas Blade:</strong></p>
-<div class="highlight"><pre><span></span><code>{<del class="critic"> Verificar si hay productos usando Collection </del>}
+<div class="highlight"><pre><span></span><code>{{ -- Verificar si hay productos usando Collection -- }}
 @if($products-&gt;isNotEmpty())
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid&quot;</span><span class="p">&gt;</span>
         @foreach($products as $product)
@@ -3547,10 +3551,10 @@
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>No hay productos disponibles<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 @endif
 
-{<del class="critic"> Mostrar contador </del>}
+{{ -- Mostrar contador -- }}
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Total de productos: {{ $products-&gt;count() }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
-{<del class="critic"> Verificar si está vacío </del>}
+{{ -- Verificar si está vacío -- }}
 @if($products-&gt;isEmpty())
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert&quot;</span><span class="p">&gt;</span>
         No se encontraron productos
