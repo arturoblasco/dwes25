@@ -1,3 +1,8 @@
+---
+title: Ejercicios
+---
+# Ejercicios
+
 ### Ejercicio 501
 
 Crea una nueva base de datos con el nombre **`lol`** y cotejamiento de datos `utf8mb4_unicode_ci`.
