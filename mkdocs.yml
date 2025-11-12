@@ -8,7 +8,7 @@ docs_dir: 'md'
 site_dir: 'docs'
 
 # Adreça on s'executa el server local (mkdocs serve)
-dev_addr: localhost:9025
+dev_addr: localhost:8025
 
 # Navegació dels lloc DWES25
 nav:

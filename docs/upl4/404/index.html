@@ -2544,7 +2544,7 @@
   
   
   <span class="md-ellipsis">
-    4.1. Formularios Seguros
+    4.1. Formularios seguros
     
   </span>
   
@@ -2567,7 +2567,7 @@
   
   
   <span class="md-ellipsis">
-    4.2. Sistema de Validación
+    4.2. Sistema de validación
     
   </span>
   
@@ -2590,7 +2590,7 @@
   
   
   <span class="md-ellipsis">
-    4.3. Manejo de Sesiones y Estado
+    4.3. Manejo de sesiones y estado
     
   </span>
   
@@ -3559,40 +3559,6 @@
 <h2 id="1-fundamentos-de-la-autenticacion">1. Fundamentos de la Autenticación<a class="headerlink" href="#1-fundamentos-de-la-autenticacion" title="Permanent link">&para;</a></h2>
 <h3 id="11-que-es-la-autenticacion">1.1. ¿Qué es la Autenticación?<a class="headerlink" href="#11-que-es-la-autenticacion" title="Permanent link">&para;</a></h3>
 <p>La autenticación es el proceso de verificar la identidad de un usuario mediante credenciales como nombre de usuario y contraseña. Es diferente de la <strong>autorización</strong>, que determina qué acciones puede realizar un usuario autenticado.</p>
-<details class="examplelaravel">
-<summary>Analogía: La Verificación de Identidad en la Entrada del Festival</summary>
-<p><strong>¡Imagina que la autenticación es como el proceso de entrada a un festival de música con control de acceso!</strong></p>
-<p>🎫 <strong>Paso 1 - Identificación (Credenciales):</strong></p>
-<ul>
-<li>Llegas a la entrada del festival</li>
-<li>Muestras tu <strong>ticket con código QR</strong> y tu <strong>DNI</strong> → credenciales (email + password)</li>
-<li>El guardia te pide que te identifiques</li>
-</ul>
-<p>🔍 <strong>Paso 2 - Verificación (Proceso de Login):</strong></p>
-<ul>
-<li>El guardia <strong>escanea tu código QR</strong> → Laravel verifica el email</li>
-<li>El sistema <strong>compara tu foto del DNI con tu cara</strong> → Laravel verifica el password hash</li>
-<li>El sistema <strong>consulta la base de datos</strong>: ¿Este ticket es válido? ¿No está caducado?</li>
-</ul>
-<p>✅ <strong>Paso 3 - Acceso Concedido (Sesión Activa):</strong></p>
-<ul>
-<li>Si todo coincide, te dan una <strong>pulsera identificativa</strong> → Laravel crea sesión autenticada</li>
-<li>La pulsera dice "Juan Pérez - General" → <code>Auth::user()</code> devuelve tus datos</li>
-<li>Ahora puedes moverte libremente por el festival → acceso a rutas protegidas</li>
-</ul>
-<p>🚪 <strong>Paso 4 - Mantener el Acceso (Sesión Persistente):</strong></p>
-<ul>
-<li>Mientras tengas la pulsera, no necesitas volver a mostrar el ticket</li>
-<li>En cada zona escanean tu pulsera → Middleware <code>auth</code> verifica la sesión</li>
-<li>Si tu pulsera es válida, te dejan pasar → continúas navegando</li>
-</ul>
-<p>🔓 <strong>Paso 5 - Salir (Logout):</strong></p>
-<ul>
-<li>Al salir, cortan tu pulsera y la desactivan → <code>Auth::logout()</code> destruye la sesión</li>
-<li>Si intentas volver a entrar, necesitas pasar por el control de nuevo</li>
-</ul>
-<p><strong>¡La autenticación es demostrar quién eres para recibir tu "pulsera de acceso"!</strong></p>
-</details>
 <h3 id="12-autenticacion-vs-autorizacion">1.2. Autenticación vs Autorización<a class="headerlink" href="#12-autenticacion-vs-autorizacion" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3618,24 +3584,6 @@
 <p>Diferencia Crucial: Autenticación vs Autorización</p>
 <p><strong>Autenticación</strong> = ¿Quién eres?</p>
 <p><strong>Autorización</strong> = ¿Qué puedes hacer?</p>
-<details class="examplelaravel">
-<summary>Analogía: del Festival:</summary>
-<p>🎫 <strong>Autenticación (Verificar Identidad):</strong></p>
-<ul>
-<li><strong>Acción</strong>: Mostrar tu ticket y DNI en la entrada</li>
-<li><strong>Sistema verifica</strong>: ¿Este ticket es legítimo? ¿El DNI coincide con el titular?</li>
-<li><strong>Resultado</strong>: Te dan tu pulsera identificativa</li>
-<li><strong>En Laravel</strong>: <code>Auth::attempt(['email' =&gt; ..., 'password' =&gt; ...])</code></li>
-</ul>
-<p>🌟 <strong>Autorización (Verificar Permisos):</strong></p>
-<ul>
-<li><strong>Acción</strong>: Intentas entrar a la zona VIP o backstage</li>
-<li><strong>Sistema verifica</strong>: ¿Tu pulsera tiene acceso a esta zona específica?</li>
-<li><strong>Resultado</strong>:</li>
-<li>✅ Pulsera VIP → entras a VIP</li>
-<li>❌ Pulsera General → rechazado</li>
-<li><strong>En Laravel</strong>: <code>@can('update', $product)</code> o <code>Gate::allows('admin-panel')</code></li>
-</ul>
 <p><strong>Ejemplo práctico:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Autenticación: ¿Quién eres?</span>
@@ -3653,7 +3601,6 @@
 <li>Primero te <strong>autentican</strong> (demuestras quién eres)</li>
 <li>Después te <strong>autorizan</strong> (verifican qué puedes hacer)</li>
 </ul>
-</details>
 <h3 id="13-flujo-de-autenticacion">1.3. Flujo de Autenticación<a class="headerlink" href="#13-flujo-de-autenticacion" title="Permanent link">&para;</a></h3>
 <div class="mermaid">sequenceDiagram
     participant U as Usuario
@@ -4245,7 +4192,7 @@ resources/views/auth/
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../403/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 4.3. Manejo de Sesiones y Estado">
+          <a href="../403/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 4.3. Manejo de sesiones y estado">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -4255,7 +4202,7 @@ resources/views/auth/
                 Anterior
               </span>
               <div class="md-ellipsis">
-                4.3. Manejo de Sesiones y Estado
+                4.3. Manejo de sesiones y estado
               </div>
             </div>
           </a>

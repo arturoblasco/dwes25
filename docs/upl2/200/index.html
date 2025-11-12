@@ -2664,7 +2664,7 @@
   
   
   <span class="md-ellipsis">
-    4.1. Formularios Seguros
+    4.1. Formularios seguros
     
   </span>
   
@@ -2687,7 +2687,7 @@
   
   
   <span class="md-ellipsis">
-    4.2. Sistema de Validación
+    4.2. Sistema de validación
     
   </span>
   
@@ -2710,7 +2710,7 @@
   
   
   <span class="md-ellipsis">
-    4.3. Manejo de Sesiones y Estado
+    4.3. Manejo de sesiones y estado
     
   </span>
   
@@ -2977,15 +2977,14 @@
 <p>Se construyen <strong>interfaces dinámicas con Blade</strong>: el motor de plantillas de Laravel, layouts maestros reutilizables, herencia de plantillas con directivas avanzadas (<code>@parent</code>, <code>@show</code>, <code>@append</code>), y stacks para acumulación de contenido. Se aprende a <strong>integrar datos en vistas</strong> usando múltiples métodos (<code>compact()</code>, <code>with()</code>, View Composers), manejar datos flash, y aplicar operadores null-safe para vistas robustas.</p>
 <p>Finalmente, se trabaja con <strong>datos mock organizados</strong> usando traits reutilizables (<code>LoadsMockData</code>), transformando datos con <code>array_map()</code> y <code>array_filter()</code>, y preparando la transición a base de datos real (Sesión 3). El objetivo es comprender el flujo completo request-response, crear aplicaciones MVC profesionales y dominar el patrón de ejemplos progresivos (Layout → Vista → HTML final).</p>
 <h2 id="contenidos-de-la-sesion-2">Contenidos de la Sesión 2<a class="headerlink" href="#contenidos-de-la-sesion-2" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>1. Ciclo de Vida de las Peticiones HTTP</strong>: Se estudia el viaje completo de una petición HTTP en Laravel: desde <code>index.php</code> hasta la respuesta final. Se explora el rol del middleware, el Service Container, y cómo cada componente procesa la petición en el framework.</li>
-<li><strong>2. Sistema de Rutas y Controladores</strong>: Se domina el enrutamiento de Laravel para gestionar las peticiones web. Se aprende a definir rutas (<code>web.php</code>, <code>api.php</code>), manejar parámetros dinámicos, crear controladores resource, aplicar middleware y organizar código profesionalmente.</li>
-<li><strong>3. Introducción a Blade</strong>: Se descubre el motor de plantillas Blade de Laravel para generar HTML dinámico. Se aprende sintaxis de escapado ( vs <code>{!! !!}</code>), directivas de control de flujo (<code>@if</code>, <code>@foreach</code>, <code>@empty</code>), la variable <code>$loop</code>, directivas de autenticación y formularios para crear vistas dinámicas seguras.</li>
-<li><strong>4. Layouts y Herencia en Blade</strong>: Se construyen layouts maestros reutilizables para estructurar las aplicaciones. Se domina la herencia con <code>@extends</code>, <code>@section</code>, <code>@yield</code>, directivas avanzadas (<code>@parent</code>, <code>@show</code>, <code>@append</code>), stacks para acumulación de contenido (<code>@push</code>/<code>@stack</code>), y layouts anidados para arquitecturas complejas.</li>
-<li><strong>5. Integración de Datos con Vistas</strong>: Se conectan controladores con vistas para crear interfaces dinámicas. Se aprenden métodos de paso de datos (<code>view([])</code>, <code>with()</code>, <code>compact()</code>), redirección con datos flash, ejemplos completos controlador→vista→HTML, View Composers para datos compartidos, y buenas prácticas de separación de responsabilidades.</li>
-<li><strong>6. Datos Mock para Desarrollo</strong>: Se aprende a trabajar con datos mock para desarrollo sin base de datos real. Se organizan datos en <code>database/data/</code>, se crean traits reutilizables (<code>LoadsMockData</code>), se transforman datos con <code>array_map()</code> y <code>array_filter()</code>, y se prepara la transición a base de datos real en Sesión 3.</li>
-<li><strong>Diapositivas</strong>: Presentación visual completa con diagramas de flujo Mermaid, ejemplos de código progresivos y conceptos clave de la arquitectura de Laravel.</li>
-</ul>
+<ol>
+<li><strong>Ciclo de Vida de las Peticiones HTTP</strong>: Se estudia el viaje completo de una petición HTTP en Laravel: desde <code>index.php</code> hasta la respuesta final. Se explora el rol del middleware, el Service Container, y cómo cada componente procesa la petición en el framework.</li>
+<li><strong>Sistema de Rutas y Controladores</strong>: Se domina el enrutamiento de Laravel para gestionar las peticiones web. Se aprende a definir rutas (<code>web.php</code>, <code>api.php</code>), manejar parámetros dinámicos, crear controladores resource, aplicar middleware y organizar código profesionalmente.</li>
+<li><strong>Introducción a Blade</strong>: Se descubre el motor de plantillas Blade de Laravel para generar HTML dinámico. Se aprende sintaxis de escapado ( vs <code>{!! !!}</code>), directivas de control de flujo (<code>@if</code>, <code>@foreach</code>, <code>@empty</code>), la variable <code>$loop</code>, directivas de autenticación y formularios para crear vistas dinámicas seguras.</li>
+<li><strong>Layouts y Herencia en Blade</strong>: Se construyen layouts maestros reutilizables para estructurar las aplicaciones. Se domina la herencia con <code>@extends</code>, <code>@section</code>, <code>@yield</code>, directivas avanzadas (<code>@parent</code>, <code>@show</code>, <code>@append</code>), stacks para acumulación de contenido (<code>@push</code>/<code>@stack</code>), y layouts anidados para arquitecturas complejas.</li>
+<li><strong>Integración de Datos con Vistas</strong>: Se conectan controladores con vistas para crear interfaces dinámicas. Se aprenden métodos de paso de datos (<code>view([])</code>, <code>with()</code>, <code>compact()</code>), redirección con datos flash, ejemplos completos controlador→vista→HTML, View Composers para datos compartidos, y buenas prácticas de separación de responsabilidades.</li>
+<li><strong>Datos Mock para Desarrollo</strong>: Se aprende a trabajar con datos mock para desarrollo sin base de datos real. Se organizan datos en <code>database/data/</code>, se crean traits reutilizables (<code>LoadsMockData</code>), se transforman datos con <code>array_map()</code> y <code>array_filter()</code>, y se prepara la transición a base de datos real en Sesión 3.</li>
+</ol>
 <h2 id="objetivos-de-la-sesion-2">Objetivos de la Sesión 2<a class="headerlink" href="#objetivos-de-la-sesion-2" title="Permanent link">&para;</a></h2>
 <p>Acceso Rápido a los Objetivos</p>
 <ul>
@@ -3060,7 +3059,7 @@
 <li><a href="https://laravel-news.com" target="_blank">Laravel News</a> - Noticias y artículos sobre Laravel</li>
 <li><a href="https://laraveldaily.com" target="_blank">Laravel Daily</a> - Tips y tutoriales diarios de Laravel</li>
 </ul>
-<details class="examplelaravel">
+<details class="teolaravel">
 <summary>Glosario Técnico</summary>
 <table>
 <thead>
@@ -3149,10 +3148,10 @@
 </tbody>
 </table>
 </details>
-<details class="examplelaravel">
+<details class="teolaravel">
 <summary>FAQ (Preguntas Frecuentes sobre la Práctica)</summary>
 <ul>
-<li><strong>P: Error "Target class [NombreController] does not exist" al acceder a una ruta</strong><ul>
+<li><mark><strong>P: Error "Target class [NombreController] does not exist" al acceder a una ruta</strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>El controlador existe en <code>app/Http/Controllers/</code></li>
 <li>El nombre del archivo y la clase coinciden exactamente (sensible a mayúsculas)</li>
@@ -3163,7 +3162,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: Error "View [nombre-vista] not found" al cargar una página</strong><ul>
+<li><mark><strong>P: Error "View [nombre-vista] not found" al cargar una página</strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>El archivo existe en <code>resources/views/</code> con extensión <code>.blade.php</code></li>
 <li>La ruta es correcta (Laravel usa punto para subdirectorios: <code>categories.show</code> = <code>resources/views/categories/show.blade.php</code>)</li>
@@ -3173,7 +3172,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: Los datos mock devuelven "Undefined array key" o valores nulos</strong><ul>
+<li><mark><strong>P: Los datos mock devuelven "Undefined array key" o valores nulos</strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>Los archivos mock existen en <code>database/data/</code> y devuelven un array con <code>return [...]</code></li>
 <li>Las claves del array coinciden con los IDs que buscas</li>
@@ -3183,7 +3182,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: El método <code>enrichProductsWithOffers()</code> no funciona o muestra datos incorrectos</strong><ul>
+<li><mark><strong>P: El método <code>enrichProductsWithOffers()</code> no funciona o muestra datos incorrectos</strong></mark><ul>
 <li><strong>R:</strong> Este método debe cumplir los siguientes pasos:<ol>
 <li>Cargar ofertas primero con <code>$this-&gt;loadOffers()</code></li>
 <li>Usar <code>array_map()</code> para transformar cada producto</li>
@@ -3194,7 +3193,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: Error "Call to undefined method" al usar el Trait LoadsMockData</strong><ul>
+<li><mark><strong>P: Error "Call to undefined method" al usar el Trait LoadsMockData</strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>El Trait está declarado en el controlador con <code>use LoadsMockData;</code> (dentro de la clase)</li>
 <li>El namespace del Trait es correcto (<code>namespace App\Traits;</code>)</li>
@@ -3204,7 +3203,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: Los componentes Blade (<code>ProductCard</code>, <code>CategoryCard</code>) no se muestran o dan error</strong><ul>
+<li><mark><strong>P: Los componentes Blade (<code>ProductCard</code>, <code>CategoryCard</code>) no se muestran o dan error</strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>Creaste ambos archivos: clase en <code>app/View/Components/</code> y vista en <code>resources/views/components/</code></li>
 <li>Los nombres coinciden (PascalCase en clase, kebab-case en vista: <code>ProductCard.php</code> → <code>product-card.blade.php</code>)</li>
@@ -3215,7 +3214,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: El layout <code>app.blade.php</code> no carga los partials (header, footer, navigation)</strong><ul>
+<li><mark><strong>P: El layout <code>app.blade.php</code> no carga los partials (header, footer, navigation)</strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>Los partials existen en <code>resources/views/partials/</code> con extensión <code>.blade.php</code></li>
 <li>La sintaxis de inclusión es correcta: <code>@include('partials.header')</code> (punto, no barra)</li>
@@ -3225,7 +3224,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: Error 404 "Page not found" al acceder a rutas que definí en <code>web.php</code></strong><ul>
+<li><mark><strong>P: Error 404 "Page not found" al acceder a rutas que definí en <code>web.php</code></strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>La ruta está correctamente definida en <code>routes/web.php</code></li>
 <li>La URL coincide exactamente (revisa parámetros: <code>/products/{id}</code> requiere un ID numérico)</li>
@@ -3236,7 +3235,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: Los estilos de Tailwind no se aplican en las nuevas vistas</strong><ul>
+<li><mark><strong>P: Los estilos de Tailwind no se aplican en las nuevas vistas</strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>El layout <code>app.blade.php</code> incluye <code>@vite(['resources/css/app.css'])</code></li>
 <li>Las vistas hijas extienden el layout con <code>@extends('layouts.app')</code></li>
@@ -3246,7 +3245,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: Error "Trying to access array offset on value of type null" en las vistas</strong><ul>
+<li><mark><strong>P: Error "Trying to access array offset on value of type null" en las vistas</strong></mark><ul>
 <li><strong>R:</strong> Usa operadores null-safe siguiendo estos pasos:<ol>
 <li>Para arrays: <code>$product['offer'] ?? null</code></li>
 <li>Para objetos: <code>$user?-&gt;name</code></li>
@@ -3256,7 +3255,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: La navegación no resalta el enlace activo correctamente</strong><ul>
+<li><mark><strong>P: La navegación no resalta el enlace activo correctamente</strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>Las rutas tienen nombres asignados con <code>-&gt;name('nombre.ruta')</code></li>
 <li>En <code>navigation.blade.php</code> usas <code>Route::is('nombre.ruta')</code> o <code>request()-&gt;routeIs('nombre.ruta')</code></li>
@@ -3266,7 +3265,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: Error "Route [nombre.ruta] not defined" al usar <code>route()</code> en vistas</strong><ul>
+<li><mark><strong>P: Error "Route [nombre.ruta] not defined" al usar <code>route()</code> en vistas</strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>La ruta tiene nombre asignado en <code>web.php</code> con <code>-&gt;name('nombre.ruta')</code></li>
 <li>El nombre no tiene errores tipográficos</li>
@@ -3276,7 +3275,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: Los productos no muestran el precio con descuento aplicado</strong><ul>
+<li><mark><strong>P: Los productos no muestran el precio con descuento aplicado</strong></mark><ul>
 <li><strong>R:</strong> Verifica los siguientes pasos:<ol>
 <li>Estás llamando <code>enrichProductsWithOffers()</code> en el controlador ANTES de pasar datos a la vista</li>
 <li>El producto tiene un <code>offer_id</code> válido en <code>mock-products.php</code></li>
@@ -3287,7 +3286,7 @@
 </li>
 </ul>
 </li>
-<li><strong>P: ¿Cómo depuro qué datos está recibiendo mi vista?</strong><ul>
+<li><mark><strong>P: ¿Cómo depuro qué datos está recibiendo mi vista?</strong></mark><ul>
 <li><strong>R:</strong> Usa estas técnicas de depuración:<ol>
 <li>En el controlador: <code>dd($productos)</code> antes de <code>return view()</code> para ver datos</li>
 <li>En la vista: <code>{{ dd($productos) }}</code> o <code>@dump($productos)</code> para inspeccionar</li>

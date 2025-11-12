@@ -2544,7 +2544,7 @@
   
   
   <span class="md-ellipsis">
-    4.1. Formularios Seguros
+    4.1. Formularios seguros
     
   </span>
   
@@ -2567,7 +2567,7 @@
   
   
   <span class="md-ellipsis">
-    4.2. Sistema de Validación
+    4.2. Sistema de validación
     
   </span>
   
@@ -2590,7 +2590,7 @@
   
   
   <span class="md-ellipsis">
-    4.3. Manejo de Sesiones y Estado
+    4.3. Manejo de sesiones y estado
     
   </span>
   
@@ -3486,49 +3486,6 @@
 <li><strong>Gestionarse</strong> (crear, leer, actualizar, eliminar)</li>
 <li><strong>Organizarse</strong> en directorios lógicos</li>
 </ol>
-<details class="examplelaravel">
-<summary>Analogía: Sistema de Almacenamiento como Archivo del Festival</summary>
-<p><strong>¡Imagina el sistema de almacenamiento como las diferentes áreas de archivo y gestión de contenido de un festival de música!</strong></p>
-<ul>
-<li>
-<p>📸 <strong>Zona Pública de Fotos (public disk)</strong>: Galería pública del festival</p>
-</li>
-<li>
-<p>Fotos del escenario, cartel del festival, logos de patrocinadores</p>
-</li>
-<li>Acceso: Cualquier asistente puede ver estas fotos en pantallas y redes sociales</li>
-<li><strong>Equivalente web</strong>: Imágenes de productos, logos, fotos de perfiles públicos</li>
-<li><strong>Ubicación física</strong>: <code>storage/app/public/</code> → enlazado a <code>public/storage/</code></li>
-<li>
-<p>🔒 <strong>Oficina de Backstage (local disk)</strong>: Archivos privados del festival</p>
-</li>
-<li>
-<p>Contratos de artistas, facturas, documentos legales</p>
-</li>
-<li>Acceso: Solo el staff autorizado con credenciales</li>
-<li><strong>Equivalente web</strong>: Facturas de usuarios, documentos privados, backups</li>
-<li><strong>Ubicación física</strong>: <code>storage/app/</code> (NO accesible vía web directamente)</li>
-<li>
-<p>☁️ <strong>Almacén Externo en la Nube (s3 disk)</strong>: Servidor externo de contenido</p>
-</li>
-<li>
-<p>Videos completos de conciertos almacenados en Amazon S3 o Google Cloud</p>
-</li>
-<li>Acceso: Mediante conexión API segura con el proveedor cloud</li>
-<li><strong>Equivalente web</strong>: Archivos pesados, imágenes escalables, CDN</li>
-<li><strong>Ubicación física</strong>: Servidores de Amazon, Google, etc.</li>
-<li>
-<p>📋 <strong>Sistema de Gestión (Storage facade)</strong>: El manager del festival</p>
-</li>
-<li>
-<p>Registra dónde está cada archivo (galería, backstage, nube)</p>
-</li>
-<li>Controla quién puede acceder a qué archivo</li>
-<li>Facilita subir, buscar, mover, copiar y eliminar archivos</li>
-<li><strong>Equivalente web</strong>: La API de Laravel <code>Storage::</code></li>
-</ul>
-<p><strong>¡El Storage de Laravel es tu sistema de gestión de archivos con diferentes "zonas" de almacenamiento!</strong></p>
-</details>
 <h2 id="72-discos-de-almacenamiento-en-laravel">7.2. Discos de Almacenamiento en Laravel<a class="headerlink" href="#72-discos-de-almacenamiento-en-laravel" title="Permanent link">&para;</a></h2>
 <p>Laravel organiza el almacenamiento en "discos" (disks), que son ubicaciones configuradas donde se guardan archivos.</p>
 <h3 id="721-discos-predefinidos">7.2.1. Discos Predefinidos<a class="headerlink" href="#721-discos-predefinidos" title="Permanent link">&para;</a></h3>

@@ -2730,7 +2730,7 @@
   
   
   <span class="md-ellipsis">
-    4.1. Formularios Seguros
+    4.1. Formularios seguros
     
   </span>
   
@@ -2753,7 +2753,7 @@
   
   
   <span class="md-ellipsis">
-    4.2. Sistema de Validación
+    4.2. Sistema de validación
     
   </span>
   
@@ -2776,7 +2776,7 @@
   
   
   <span class="md-ellipsis">
-    4.3. Manejo de Sesiones y Estado
+    4.3. Manejo de sesiones y estado
     
   </span>
   
@@ -3320,7 +3320,511 @@ sail<span class="w"> </span>artisan<span class="w"> </span>make:factory<span cla
 </code></pre></div>
 <p><strong>Faker</strong></p>
 <p>Faker es una librería que genera datos falsos pero realistas, como nombres, direcciones, textos, números, fechas, etc. Laravel la integra para facilitar la creación de datos de prueba.</p>
-<p>Más info: <a href="https://fakerphp.github.io/">Faker PHP</a></p>
+<p>Más info: <a href="https://fakerphp.github.io/" target="blank">Faker PHP</a>.</p>
+<details class="teolaravel">
+<summary>Tabla de Faker más comunes</summary>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Método Faker</th>
+<th>Tipo de dato</th>
+<th>Ejemplo generado</th>
+<th>Uso habitual / Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Texto básico</strong></td>
+<td><code>$this-&gt;faker-&gt;word()</code></td>
+<td>string</td>
+<td><code>"mesa"</code></td>
+<td>Palabra suelta, útil para nombres cortos de productos o categorías.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;sentence()</code></td>
+<td>string</td>
+<td><code>"El producto es de gran calidad."</code></td>
+<td>Una frase aleatoria; ideal para descripciones.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;paragraph()</code></td>
+<td>string</td>
+<td><code>"Lorem ipsum dolor sit amet..."</code></td>
+<td>Texto más largo, para campos tipo “detalle” o “biografía”.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;text(100)</code></td>
+<td>string</td>
+<td><code>"Innovador sistema de ahorro de energía..."</code></td>
+<td>Texto de longitud controlada.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Método Faker</th>
+<th>Tipo de dato</th>
+<th>Ejemplo generado</th>
+<th>Uso habitual / Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Personas y usuarios</strong></td>
+<td><code>$this-&gt;faker-&gt;name()</code></td>
+<td>string</td>
+<td><code>"Raúl García"</code></td>
+<td>Nombre completo.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;firstName()</code></td>
+<td>string</td>
+<td><code>"Laura"</code></td>
+<td>Nombre de pila.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;lastName()</code></td>
+<td>string</td>
+<td><code>"Martínez"</code></td>
+<td>Apellido.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;firstNameMale()</code></td>
+<td>string</td>
+<td><code>"Arturo"</code></td>
+<td>Nombre masculino.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;firstNameFemale()</code></td>
+<td>string</td>
+<td><code>"Alba"</code></td>
+<td>Nombre femenino.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;title()</code></td>
+<td>string</td>
+<td><code>"Sr"</code> / "Sra."`</td>
+<td>Título aleatorio.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;titleMale()</code></td>
+<td>string</td>
+<td><code>"Sr"</code></td>
+<td>Título masculino.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;titleFemale()</code></td>
+<td>string</td>
+<td><code>"Sra."</code></td>
+<td>Título femenino.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;userName()</code></td>
+<td>string</td>
+<td><code>"lmartinez87"</code></td>
+<td>Nombre de usuario.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;email()</code></td>
+<td>string</td>
+<td><code>"raul@example.com"</code></td>
+<td>Correo electrónico.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;safeEmail()</code></td>
+<td>string</td>
+<td><code>"maria@test.com"</code></td>
+<td>Correo seguro (no real).</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;unique()-&gt;email()</code></td>
+<td>string</td>
+<td><code>"cliente1@example.com"</code></td>
+<td>Asegura que no se repitan correos.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;phoneNumber()</code></td>
+<td>string</td>
+<td><code>"+34 687 234 556"</code></td>
+<td>Teléfono realista, formato variable.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Método Faker</th>
+<th>Tipo de dato</th>
+<th>Ejemplo generado</th>
+<th>Uso habitual / Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Direcciones y lugares</strong></td>
+<td><code>$this-&gt;faker-&gt;address()</code></td>
+<td>string</td>
+<td><code>"Calle Mayor, 12, Valencia"</code></td>
+<td>Dirección completa.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;city()</code></td>
+<td>string</td>
+<td><code>"Alginet"</code></td>
+<td>Ciudad.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;country()</code></td>
+<td>string</td>
+<td><code>"España"</code></td>
+<td>País.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;postcode()</code></td>
+<td>string</td>
+<td><code>"46230"</code></td>
+<td>Código postal.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Método Faker</th>
+<th>Tipo de dato</th>
+<th>Ejemplo generado</th>
+<th>Uso habitual / Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Internet y tecnología</strong></td>
+<td><code>$this-&gt;faker-&gt;url()</code></td>
+<td>string</td>
+<td><code>"https://example.com"</code></td>
+<td>Dirección web.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;ipv4()</code></td>
+<td>string</td>
+<td><code>"192.168.0.15"</code></td>
+<td>IP local o pública.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;password()</code></td>
+<td>string</td>
+<td><code>"A8s!x0qZ"</code></td>
+<td>Contraseña aleatoria.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;uuid()</code></td>
+<td>string</td>
+<td><code>"d3f4a6e8-9c2a-11ec-b909-0242ac120002"</code></td>
+<td>Identificador único global.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Método Faker</th>
+<th>Tipo de dato</th>
+<th>Ejemplo generado</th>
+<th>Uso habitual / Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fechas y tiempos</strong></td>
+<td><code>$this-&gt;faker-&gt;date()</code></td>
+<td>date</td>
+<td><code>"2025-11-06"</code></td>
+<td>Fecha aleatoria.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;time()</code></td>
+<td>time</td>
+<td><code>"15:34:21"</code></td>
+<td>Hora.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;dateTimeBetween('-1 year', 'now')</code></td>
+<td>datetime</td>
+<td><code>"2024-09-12 08:23:11"</code></td>
+<td>Muy útil para “fecha de alta” o “fecha pedido”.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;dateTimeThisMonth()</code></td>
+<td>datetime</td>
+<td><code>"2025-11-03 19:45:00"</code></td>
+<td>Fechas recientes.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Método Faker</th>
+<th>Tipo de dato</th>
+<th>Ejemplo generado</th>
+<th>Uso habitual / Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Números y cantidades</strong></td>
+<td><code>$this-&gt;faker-&gt;randomDigit()</code></td>
+<td>int</td>
+<td><code>7</code></td>
+<td>Dígito (0–9).</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;randomNumber(3)</code></td>
+<td>int</td>
+<td><code>382</code></td>
+<td>Número con longitud definida.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;numberBetween(10, 100)</code></td>
+<td>int</td>
+<td><code>64</code></td>
+<td>Número en un rango concreto.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;randomFloat(2, 1, 500)</code></td>
+<td>float</td>
+<td><code>87.35</code></td>
+<td>Números con decimales, ideal para precios.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;boolean()</code></td>
+<td>bool</td>
+<td><code>true</code></td>
+<td>Verdadero o falso (50%).</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;boolean(20)</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Probabilidad personalizada (20% de true).</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Método Faker</th>
+<th>Tipo de dato</th>
+<th>Ejemplo generado</th>
+<th>Uso habitual / Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Comercio y empresa</strong></td>
+<td><code>$this-&gt;faker-&gt;company()</code></td>
+<td>string</td>
+<td><code>"TechNova S.L."</code></td>
+<td>Nombre de empresa.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;catchPhrase()</code></td>
+<td>string</td>
+<td><code>"Soluciones inteligentes para el hogar"</code></td>
+<td>Eslogan corporativo.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;jobTitle()</code></td>
+<td>string</td>
+<td><code>"Desarrollador Web"</code></td>
+<td>Cargo o puesto de trabajo.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;bs()</code></td>
+<td>string</td>
+<td><code>"orchestrate vertical markets"</code></td>
+<td>Frase estilo “jerga de negocios”.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Método Faker</th>
+<th>Tipo de dato</th>
+<th>Ejemplo generado</th>
+<th>Uso habitual / Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Geografía y coordenadas</strong></td>
+<td><code>$this-&gt;faker-&gt;latitude()</code></td>
+<td>float</td>
+<td><code>39.20012</code></td>
+<td>Coordenada de latitud.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;longitude()</code></td>
+<td>float</td>
+<td><code>-0.42917</code></td>
+<td>Coordenada de longitud.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Método Faker</th>
+<th>Tipo de dato</th>
+<th>Ejemplo generado</th>
+<th>Uso habitual / Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Miscelánea</strong></td>
+<td><code>$this-&gt;faker-&gt;colorName()</code></td>
+<td>string</td>
+<td><code>"azul marino"</code></td>
+<td>Nombre de color.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;fileExtension()</code></td>
+<td>string</td>
+<td><code>"pdf"</code></td>
+<td>Extensión de archivo.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;mimeType()</code></td>
+<td>string</td>
+<td><code>"image/png"</code></td>
+<td>Tipo MIME.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;creditCardNumber()</code></td>
+<td>string</td>
+<td><code>"4532 7896 1234 5678"</code></td>
+<td>Tarjeta simulada.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;iban()</code></td>
+<td>string</td>
+<td><code>"ES91 2100 0418 4502 0005 1332"</code></td>
+<td>IBAN válido.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;currencyCode()</code></td>
+<td>string</td>
+<td><code>"EUR"</code></td>
+<td>Código ISO de moneda.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$this-&gt;faker-&gt;imageUrl(640, 480, 'products')</code></td>
+<td>string (URL)</td>
+<td><code>"https://loremflickr.com/640/480/products"</code></td>
+<td>Imagen simulada por categoría.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Método Faker</th>
+<th>Tipo de dato</th>
+<th>Ejemplo generado</th>
+<th>Uso habitual / Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Localización</strong></td>
+<td><code>$this-&gt;faker-&gt;locale()</code></td>
+<td>string</td>
+<td><code>"es_ES"</code></td>
+<td>Idioma y región.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="teolaravel">
+<summary>Posibilidad de cambiar a idioma los faker</summary>
+<p>Si queremos camibiar el idioma de inglés a español en la creación de factories, debemos hacer los siguientes cambios:</p>
+<ul>
+<li>En el fichero <code>config/app.php</code>:
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;locale&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>env<span class="o">(</span><span class="s1">&#39;APP_LOCALE&#39;</span>,<span class="w"> </span><span class="s1">&#39;es&#39;</span><span class="o">)</span>,
+
+<span class="s1">&#39;fallback_locale&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>env<span class="o">(</span><span class="s1">&#39;APP_FALLBACK_LOCALE&#39;</span>,<span class="w"> </span><span class="s1">&#39;es&#39;</span><span class="o">)</span>,
+
+<span class="s1">&#39;faker_locale&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>env<span class="o">(</span><span class="s1">&#39;APP_FAKER_LOCALE&#39;</span>,<span class="w"> </span><span class="s1">&#39;es_ES&#39;</span><span class="o">)</span>,
+</code></pre></div></li>
+<li>En el fichero <code>.env</code>:
+<div class="highlight"><pre><span></span><code><span class="nv">APP_LOCALE</span><span class="o">=</span>es
+<span class="nv">APP_FALLBACK_LOCALE</span><span class="o">=</span>es
+<span class="nv">APP_FAKER_LOCALE</span><span class="o">=</span>es_ES
+</code></pre></div></li>
+<li>Limpiar la caché de configuración para que Laravel lo vuelva a leer: 
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>config:clear
+php<span class="w"> </span>artisan<span class="w"> </span>cache:clear
+php<span class="w"> </span>artisan<span class="w"> </span>optimize:clear
+</code></pre></div></li>
+<li>Luego puedes comprobar qué idioma está activo:
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>tinker
+&gt;&gt;&gt;<span class="w"> </span>config<span class="o">(</span><span class="s1">&#39;app.faker_locale&#39;</span><span class="o">)</span><span class="p">;</span>
+<span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;es_ES&quot;</span>
+</code></pre></div></li>
+</ul>
+</details>
 <h2 id="55-usando-factories">5.5. Usando Factories<a class="headerlink" href="#55-usando-factories" title="Permanent link">&para;</a></h2>
 <p>Se pueden crear registros individuales o múltiples utilizando las factories. A continuación se muestran ejemplos de cómo utilizar las factories.</p>
 <div class="highlight"><pre><span></span><code><span class="x">// Crear un producto</span>

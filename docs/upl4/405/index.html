@@ -2544,7 +2544,7 @@
   
   
   <span class="md-ellipsis">
-    4.1. Formularios Seguros
+    4.1. Formularios seguros
     
   </span>
   
@@ -2567,7 +2567,7 @@
   
   
   <span class="md-ellipsis">
-    4.2. Sistema de Validación
+    4.2. Sistema de validación
     
   </span>
   
@@ -2590,7 +2590,7 @@
   
   
   <span class="md-ellipsis">
-    4.3. Manejo de Sesiones y Estado
+    4.3. Manejo de sesiones y estado
     
   </span>
   
@@ -3373,48 +3373,6 @@
 <h2 id="1-fundamentos-del-middleware">1. Fundamentos del Middleware<a class="headerlink" href="#1-fundamentos-del-middleware" title="Permanent link">&para;</a></h2>
 <h3 id="11-que-es-el-middleware">1.1. ¿Qué es el Middleware?<a class="headerlink" href="#11-que-es-el-middleware" title="Permanent link">&para;</a></h3>
 <p>El middleware es una capa de software que procesa las peticiones HTTP <strong>antes</strong> de que lleguen a los controladores y <strong>después</strong> de que se genere la respuesta. Actúa como un filtro que puede modificar, validar o interceptar las peticiones y respuestas.</p>
-<details class="examplelaravel">
-<summary>Analogía: Controles de Seguridad en Cascada del Festival</summary>
-<p><strong>¡Imagina que el middleware son los múltiples controles de seguridad que atraviesas en un festival de música!</strong></p>
-<p>🎫 <strong>Control 1 - Entrada Principal (Middleware Global):</strong></p>
-<ul>
-<li><strong>TODOS</strong> los asistentes deben pasar por aquí</li>
-<li>Escanean tu ticket y verifican que sea válido</li>
-<li>Dan una pulsera básica de identificación</li>
-<li><strong>En Laravel</strong>: <code>StartSession</code>, <code>CSRF Token Verification</code></li>
-</ul>
-<p>🔍 <strong>Control 2 - Detector de Metales (Middleware de Grupo):</strong></p>
-<ul>
-<li>Solo para ciertos grupos (ej: los que van a zona de escenario)</li>
-<li>Revisan equipaje y pasan detector de metales</li>
-<li>Verifican que no lleves objetos prohibidos</li>
-<li><strong>En Laravel</strong>: Middleware del grupo <code>web</code> o <code>api</code></li>
-</ul>
-<p>🌟 <strong>Control 3 - Acceso VIP (Middleware de Ruta):</strong></p>
-<ul>
-<li>Solo para acceder a zonas específicas (VIP, backstage)</li>
-<li>Verifican tu pulsera especial y acreditación</li>
-<li>Si no tienes acceso VIP → rechazado</li>
-<li><strong>En Laravel</strong>: <code>auth</code>, <code>can:admin</code>, middleware personalizado</li>
-</ul>
-<p>📊 <strong>Control 4 - Registro de Actividad (Middleware After):</strong></p>
-<ul>
-<li><strong>Después</strong> de salir de cada zona, registran tu actividad</li>
-<li>Cuentan cuántos asistentes pasaron</li>
-<li>Guardan logs de seguridad</li>
-<li><strong>En Laravel</strong>: Middleware que procesa la respuesta antes de enviarla</li>
-</ul>
-<p><strong>Flujo completo:</strong></p>
-<ol>
-<li>Llegas → Control 1 (ticket)</li>
-<li>Pasas → Control 2 (detector)</li>
-<li>Entras a zona VIP → Control 3 (acreditación)</li>
-<li>Disfrutas del concierto → <strong>Controlador</strong> (tu destino final)</li>
-<li>Sales → Control 4 (registro de salida)</li>
-<li>Vuelves a Control 2 y 1 → <strong>Respuesta HTTP</strong></li>
-</ol>
-<p><strong>¡Cada middleware es un checkpoint que debe aprobar tu petición antes de continuar!</strong></p>
-</details>
 <h3 id="12-flujo-del-middleware">1.2. Flujo del Middleware<a class="headerlink" href="#12-flujo-del-middleware" title="Permanent link">&para;</a></h3>
 <p>El middleware opera en capas: la petición atraviesa cada middleware hasta llegar al controlador, y luego la respuesta atraviesa los mismos middleware en orden inverso. Este flujo bidireccional permite procesar tanto las peticiones entrantes como las respuestas salientes.</p>
 <div class="mermaid">graph TD
