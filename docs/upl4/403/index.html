@@ -2780,9 +2780,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-preferencias-del-uuario" class="md-nav__link">
+  <a href="#42-preferencias-del-usuario" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2. Preferencias del uuario
+      4.2. Preferencias del usuario
     </span>
   </a>
   
@@ -3281,9 +3281,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-preferencias-del-uuario" class="md-nav__link">
+  <a href="#42-preferencias-del-usuario" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2. Preferencias del uuario
+      4.2. Preferencias del usuario
     </span>
   </a>
   
@@ -3757,7 +3757,7 @@ php<span class="w"> </span>artisan<span class="w"> </span>migrate
     <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">back</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;Producto eliminado del carrito&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="42-preferencias-del-uuario">4.2. Preferencias del uuario<a class="headerlink" href="#42-preferencias-del-uuario" title="Permanent link">&para;</a></h3>
+<h3 id="42-preferencias-del-usuario">4.2. Preferencias del usuario<a class="headerlink" href="#42-preferencias-del-usuario" title="Permanent link">&para;</a></h3>
 <p>Las sesiones son ideales para almacenar preferencias temporales del usuario como el idioma seleccionado, tema visual (modo oscuro/claro), o configuraciones de visualización. Estas preferencias persisten durante la navegación sin necesidad de consultarlas constantemente en la base de datos.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Guardar preferencias</span>
@@ -3820,7 +3820,7 @@ php<span class="w"> </span>artisan<span class="w"> </span>migrate
 </code></pre></div>
 <h2 id="5-notificaciones-y-mensajes-flash">5. Notificaciones y mensajes flash<a class="headerlink" href="#5-notificaciones-y-mensajes-flash" title="Permanent link">&para;</a></h2>
 <h3 id="51-mensajes-flash">5.1. Mensajes flash<a class="headerlink" href="#51-mensajes-flash" title="Permanent link">&para;</a></h3>
-<p>Los flash messages son datos de sesión que solo persisten para la siguiente petición HTTP. Son perfectos para mostrar mensajes de confirmación después de acciones como "Producto creado exitosamente" o "Usuario eliminado", que deben aparecer una sola vez y luego desaparecer.</p>
+<p>Los <em>flash messages</em> son datos de sesión que solo persisten para la siguiente petición HTTP. Son perfectos para mostrar mensajes de confirmación después de acciones como "Producto creado exitosamente" o "Usuario eliminado", que deben aparecer una sola vez y luego desaparecer.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// En el controlador</span>
 <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">route</span><span class="p">(</span><span class="s1">&#39;products.index&#39;</span><span class="p">)</span>
@@ -3880,7 +3880,8 @@ php<span class="w"> </span>artisan<span class="w"> </span>migrate
         <span class="s1">&#39;timestamp&#39;</span> <span class="o">=&gt;</span> <span class="nx">now</span><span class="p">(),</span>
     <span class="p">]);</span>
 <span class="p">}</span>
-
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// En la vista</span>
 <span class="o">@</span><span class="k">if</span><span class="p">(</span><span class="nx">session</span><span class="p">(</span><span class="s1">&#39;notification&#39;</span><span class="p">))</span>
     <span class="o">@</span><span class="nx">php</span> <span class="nv">$notification</span> <span class="o">=</span> <span class="nx">session</span><span class="p">(</span><span class="s1">&#39;notification&#39;</span><span class="p">);</span> <span class="o">@</span><span class="nx">endphp</span>

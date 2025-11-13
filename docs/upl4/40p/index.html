@@ -3492,13 +3492,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fase-12-middleware-prsonalizado" class="md-nav__link">
+  <a href="#fase-12-middleware-personalizado" class="md-nav__link">
     <span class="md-ellipsis">
-      FASE 12: Middleware prsonalizado
+      FASE 12: Middleware personalizado
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="FASE 12: Middleware prsonalizado">
+    <nav class="md-nav" aria-label="FASE 12: Middleware personalizado">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4517,13 +4517,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fase-12-middleware-prsonalizado" class="md-nav__link">
+  <a href="#fase-12-middleware-personalizado" class="md-nav__link">
     <span class="md-ellipsis">
-      FASE 12: Middleware prsonalizado
+      FASE 12: Middleware personalizado
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="FASE 12: Middleware prsonalizado">
+    <nav class="md-nav" aria-label="FASE 12: Middleware personalizado">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4844,6 +4844,7 @@ GET<span class="p">|</span>HEAD<span class="w">        </span>storage/<span clas
 <p><strong>Estado actual de las rutas CRUD</strong></p>
 <p>Actualmente, <strong>todas las rutas son públicas</strong>. Además, en el listado aparecen rutas como <code>products.create</code>, <code>products.store</code>, <code>products.edit</code>, <code>products.update</code> y <code>products.destroy</code>.</p>
 <p>Estas rutas fueron definidas en la Práctica 3, pero <strong>sus métodos en el controlador aún NO están completamente implementados</strong> (solo redirigen con mensajes simulados). En esta práctica completaremos su implementación para que sean completamente funcionales.</p>
+<hr />
 <h2 id="fase-2-preparar-layouts-para-separacion-publicaprivada">FASE 2: Preparar layouts para separación pública/privada<a class="headerlink" href="#fase-2-preparar-layouts-para-separacion-publicaprivada" title="Permanent link">&para;</a></h2>
 <p>En esta sesión vamos a implementar un sistema de login y registro utilizando <strong>Laravel Breeze</strong>. Antes de instalar esta librería, es fundamental reorganizar nuestros layouts existentes para evitar conflictos.</p>
 <h3 id="1-por-que-separar-los-layouts">1. ¿Por qué separar los layouts?<a class="headerlink" href="#1-por-que-separar-los-layouts" title="Permanent link">&para;</a></h3>
@@ -4967,6 +4968,7 @@ resources/views/products/show.blade.php:@extends<span class="o">(</span><span cl
 <li>Tu terminal con el comando <code>ls -l resources/views/layouts/</code> visible, mostrando que existe <code>public.blade.php</code></li>
 </ol>
 </details>
+<hr />
 <h2 id="fase-3-instalar-y-configurar-laravel-breeze">FASE 3: Instalar y configurar Laravel Breeze<a class="headerlink" href="#fase-3-instalar-y-configurar-laravel-breeze" title="Permanent link">&para;</a></h2>
 <h3 id="1-que-es-laravel-breeze">1. ¿Qué es Laravel Breeze?<a class="headerlink" href="#1-que-es-laravel-breeze" title="Permanent link">&para;</a></h3>
 <p>Laravel Breeze es un kit de inicio de autenticación minimalista que proporciona una implementación completa de:</p>
@@ -5146,6 +5148,7 @@ POST<span class="w">      </span>register<span class="w"> </span>...............
 <p>Realiza una captura de pantalla de las páginas de <strong>registro</strong> y <strong>login</strong> funcionando correctamente. </p>
 <p>Incluye tu terminal con el prompt <code>usuario@equipo:~/ruta/proyecto$</code> visible mostrando el comando <code>sail artisan route:list</code> con las rutas de autenticación.</p>
 </details>
+<hr />
 <h2 id="fase-4-crear-un-usuario-de-prueba">FASE 4: Crear un usuario de prueba<a class="headerlink" href="#fase-4-crear-un-usuario-de-prueba" title="Permanent link">&para;</a></h2>
 <h3 id="1-registrar-un-usuario-manualmente">1. Registrar un usuario manualmente<a class="headerlink" href="#1-registrar-un-usuario-manualmente" title="Permanent link">&para;</a></h3>
 <p>La forma más sencilla de crear un usuario es usar el formulario de registro que acabamos de instalar.</p>
@@ -5239,6 +5242,7 @@ Bye
 </code></pre></div>
 </details>
 </details>
+<hr />
 <h2 id="fase-5-proteger-rutas-y-definir-la-arquitectura-admin">FASE 5: Proteger rutas y definir la arquitectura Admin<a class="headerlink" href="#fase-5-proteger-rutas-y-definir-la-arquitectura-admin" title="Permanent link">&para;</a></h2>
 <h3 id="1-que-es-el-middleware-de-autenticacion">1. ¿Qué es el Middleware de Autenticación?<a class="headerlink" href="#1-que-es-el-middleware-de-autenticacion" title="Permanent link">&para;</a></h3>
 <p>El middleware <strong><code>auth</code></strong> es un "filtro" que Laravel aplica a las rutas para verificar si el usuario está autenticado. Si no lo está, lo redirige automáticamente a la página de login. En esta fase, protegeremos las rutas de administración (crear, editar, eliminar productos) para que solo los usuarios autenticados puedan acceder a ellas.</p>
@@ -5386,6 +5390,7 @@ Bye
 <p><strong>Directiva <code>@auth</code> y <code>@guest</code></strong></p>
 <p>La directiva <strong><code>@auth</code></strong> de Blade es un condicional que solo renderiza el bloque de código si el usuario actual está autenticado. </p>
 <p>La directiva <strong><code>@guest</code></strong> es un condicional que solo renderiza el bloque de código si el usuario actual no está autenticado.</p>
+<hr />
 <h2 id="fase-6-configurar-el-sistema-de-almacenamiento-de-archivos">FASE 6: Configurar el sistema de almacenamiento de archivos<a class="headerlink" href="#fase-6-configurar-el-sistema-de-almacenamiento-de-archivos" title="Permanent link">&para;</a></h2>
 <p>Antes de crear el formulario de productos, necesitamos preparar Laravel para manejar la carga de archivos de forma segura.</p>
 <h3 id="1-crear-el-enlace-simbolico">1. Crear el enlace simbólico<a class="headerlink" href="#1-crear-el-enlace-simbolico" title="Permanent link">&para;</a></h3>
@@ -5665,6 +5670,7 @@ dl
 </code></pre></div></p>
 </details>
 <p>Hemos implementado el sistema de notificaciones flash que permite mostrar mensajes temporales después de operaciones CRUD. Los mensajes se envían desde controladores con <code>-&gt;with('success', 'mensaje')</code> y se muestran automáticamente en ambos layouts.</p>
+<hr />
 <h2 id="fase-7-implementar-creacion-de-productos-create">FASE 7: Implementar Creación de Productos (CREATE)<a class="headerlink" href="#fase-7-implementar-creacion-de-productos-create" title="Permanent link">&para;</a></h2>
 <p>Ahora que tenemos el sistema de almacenamiento y notificaciones configurado, vamos a implementar la funcionalidad completa para crear productos, incluyendo formularios con Blade Components, validación de datos y gestión de imágenes.</p>
 <h3 id="1-los-metodos-create-en-los-controladores">1. Los Métodos <code>create()</code> en los Controladores<a class="headerlink" href="#1-los-metodos-create-en-los-controladores" title="Permanent link">&para;</a></h3>
@@ -5986,6 +5992,7 @@ dl
 </ul>
 <p>Si no se proporcionan estos slots, el componente muestra su comportamiento por defecto (solo botón "Ver Detalles").</p>
 <p>Ahora, el componente de tarjeta de producto muestra la imagen si está disponible. De lo contrario, muestra un icono genérico.</p>
+<hr />
 <h2 id="fase-8-crear-el-panel-de-administracion">FASE 8: Crear el Panel de administración<a class="headerlink" href="#fase-8-crear-el-panel-de-administracion" title="Permanent link">&para;</a></h2>
 <p>Ahora que ya podemos crear productos (y verlos en la tienda pública), vamos a crear el panel de administración donde los gestionaremos de forma centralizada. Esta vista mostrará tablas con todos los productos junto con botones para editarlos y eliminarlos.</p>
 <h3 id="1-crear-metodos-adminindex-en-los-controladores">1. Crear métodos <code>adminIndex</code> en los controladores<a class="headerlink" href="#1-crear-metodos-adminindex-en-los-controladores" title="Permanent link">&para;</a></h3>
@@ -6233,6 +6240,7 @@ dl
 <li>El nombre del usuario autenticado visible en la esquina superior derecha</li>
 </ol>
 </details>
+<hr />
 <h2 id="fase-9-implementar-actualizacion-y-eliminacion-de-productos">FASE 9: Implementar actualización y eliminación de productos<a class="headerlink" href="#fase-9-implementar-actualizacion-y-eliminacion-de-productos" title="Permanent link">&para;</a></h2>
 <p>En esta fase, completaremos el ciclo CRUD implementando la funcionalidad para editar y actualizar productos. Esto implica crear los formularios de edición, implementar la lógica en los métodos <code>edit()</code> y <code>update()</code> del controlador, y manejar correctamente la actualización de imágenes.</p>
 <h3 id="1-implementar-el-metodo-edit">1. Implementar el método <code>edit()</code><a class="headerlink" href="#1-implementar-el-metodo-edit" title="Permanent link">&para;</a></h3>
@@ -6473,6 +6481,7 @@ El facade <code>Storage</code> es necesario para eliminar archivos del disco cua
 <li>La tabla de administración sin el producto eliminado y con la <strong>notificación de éxito</strong> visible.</li>
 </ol>
 </details>
+<hr />
 <h2 id="fase-10-implementar-el-carrito-de-compras-con-sesiones">FASE 10: Implementar el carrito de compras con Sesiones<a class="headerlink" href="#fase-10-implementar-el-carrito-de-compras-con-sesiones" title="Permanent link">&para;</a></h2>
 <p>Tu <code>CartController</code> actual está simulando la funcionalidad y depende de un usuario fijo en la base de datos (<code>User::find(1)</code>) y de la tabla pivote <code>product_user</code>. Para que la tienda sea funcional para cualquier visitante, vamos a refactorizarlo completamente para que utilice el <strong>sistema de sesiones de Laravel</strong>. Esto permitirá que tanto usuarios invitados como autenticados puedan gestionar su propio carrito.</p>
 <h3 id="1-como-funcionara">1. ¿Cómo funcionará?<a class="headerlink" href="#1-como-funcionara" title="Permanent link">&para;</a></h3>
@@ -6807,6 +6816,7 @@ El contador usa <code>array_sum(array_column($cart, 'quantity'))</code> para con
 <li><strong>Contador del carrito en el header</strong> mostrando el número correcto de productos (ej: "Carrito (6)").</li>
 </ol>
 </details>
+<hr />
 <h2 id="fase-11-anadir-lista-de-deseos">FASE 11: Añadir lista de deseos<a class="headerlink" href="#fase-11-anadir-lista-de-deseos" title="Permanent link">&para;</a></h2>
 <p>Ahora que nuestro carrito usa sesiones en lugar de la tabla pivot <code>product_user</code>, vamos a reaprovechar esta tabla para implementar una <strong>lista de deseos (wishlist)</strong> exclusiva para usuarios autenticados.</p>
 <h3 id="1-como-funciona-la-lista-de-deseos">1. ¿Cómo funciona la lista de Deseos?<a class="headerlink" href="#1-como-funciona-la-lista-de-deseos" title="Permanent link">&para;</a></h3>
@@ -7176,7 +7186,8 @@ INFO<span class="w">  </span>Controller<span class="w"> </span><span class="o">[
 <li>URL <code>/admin/wishlist</code> visible en el navegador.</li>
 </ol>
 </details>
-<h2 id="fase-12-middleware-prsonalizado">FASE 12: Middleware prsonalizado<a class="headerlink" href="#fase-12-middleware-prsonalizado" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="fase-12-middleware-personalizado">FASE 12: Middleware personalizado<a class="headerlink" href="#fase-12-middleware-personalizado" title="Permanent link">&para;</a></h2>
 <p>Los middleware personalizados permiten añadir lógica adicional que se ejecuta en cada petición. Son útiles para registrar actividad, verificar permisos complejos, etc. Vamos a crear un middleware que registre la actividad de los administradores.</p>
 <h3 id="1-crear-el-middleware">1. Crear el middleware<a class="headerlink" href="#1-crear-el-middleware" title="Permanent link">&para;</a></h3>
 <details class="questionlaravel" open="open">
@@ -7311,6 +7322,7 @@ INFO<span class="w">  </span>Middleware<span class="w"> </span><span class="o">[
 <li>La entrada debe haberse generado después de navegar a una página de administración como usuario autenticado.</li>
 </ol>
 </details>
+<hr />
 <h2 id="fase-13-probar-la-aplicacion-completa">FASE 13: Probar la aplicación completa<a class="headerlink" href="#fase-13-probar-la-aplicacion-completa" title="Permanent link">&para;</a></h2>
 <p>Realiza una verificación final de todas las funcionalidades para asegurar que la aplicación es robusta y funciona como se espera.</p>
 <h3 id="1-lista-de-verificacion">1. Lista de verificación<a class="headerlink" href="#1-lista-de-verificacion" title="Permanent link">&para;</a></h3>
