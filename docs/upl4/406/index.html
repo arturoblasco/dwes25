@@ -2494,7 +2494,7 @@
   
   
   <span class="md-ellipsis">
-    UPL 4 Gestión de datos
+    UPL 4 Interacción con el usuario
     
   </span>
   
@@ -2505,7 +2505,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            UPL 4 Gestión de datos
+            UPL 4 Interacción con el usuario
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2921,9 +2921,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#671-usa-sintaxis-tradicional-extends-cuando" class="md-nav__link">
+  <a href="#671-usa-sintaxis-tradicional-extends" class="md-nav__link">
     <span class="md-ellipsis">
-      6.7.1. Usa sintaxis tradicional (@extends) Cuándo
+      6.7.1. Usa sintaxis tradicional (@extends)
     </span>
   </a>
   
@@ -3257,9 +3257,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#671-usa-sintaxis-tradicional-extends-cuando" class="md-nav__link">
+  <a href="#671-usa-sintaxis-tradicional-extends" class="md-nav__link">
     <span class="md-ellipsis">
-      6.7.1. Usa sintaxis tradicional (@extends) Cuándo
+      6.7.1. Usa sintaxis tradicional (@extends)
     </span>
   </a>
   
@@ -3341,7 +3341,7 @@
 <h2 id="62-sintaxis-tradicional-vs-sintaxis-de-componentes">6.2. Sintaxis tradicional vs Sintaxis de componentes<a class="headerlink" href="#62-sintaxis-tradicional-vs-sintaxis-de-componentes" title="Permanent link">&para;</a></h2>
 <p>Laravel ofrece dos formas de crear layouts: </p>
 <ul>
-<li>la sintaxis tradicional con <code>@extends</code> y <code>@yield</code>, y </li>
+<li>la sintaxis tradicional con <code>@extends</code> y <code>@yield</code> y </li>
 <li>la sintaxis moderna con componentes. Ambas son válidas y pueden coexistir en el mismo proyecto.</li>
 </ul>
 <h3 id="621-sintaxis-tradicional-ya-conocida">6.2.1. Sintaxis tradicional (ya conocida)<a class="headerlink" href="#621-sintaxis-tradicional-ya-conocida" title="Permanent link">&para;</a></h3>
@@ -3590,19 +3590,21 @@
 <h3 id="653-es-esto-un-problema">6.5.3. ¿Es esto un problema?<a class="headerlink" href="#653-es-esto-un-problema" title="Permanent link">&para;</a></h3>
 <p>¿<em>Tener ambas sintaxis en el mismo proyecto puede parecer inconsistente al principio, pero en realidad es una situación muy común en aplicaciones reales</em>? <strong>No.</strong> Es completamente normal y refleja un escenario real:</p>
 <ul>
-<li>✅ <strong>Proyectos en evolución</strong>: Empiezas con sintaxis tradicional, luego añades Breeze</li>
-<li>✅ <strong>Equipos de desarrollo</strong>: Diferentes desarrolladores prefieren diferentes estilos</li>
-<li>✅ <strong>Contexto diferente</strong>: Público (tradicional) vs Admin (componentes)</li>
-<li>✅ <strong>Laravel lo permite</strong>: Ambas sintaxis conviven sin conflictos</li>
+<li>✅ <strong>Proyectos en evolución</strong>: Empiezas con sintaxis tradicional, luego añades Breeze.</li>
+<li>✅ <strong>Equipos de desarrollo</strong>: Diferentes desarrolladores prefieren diferentes estilos.</li>
+<li>✅ <strong>Contexto diferente</strong>: Público (tradicional) vs Admin (componentes).</li>
+<li>✅ <strong>Laravel lo permite</strong>: Ambas sintaxis conviven sin conflictos.</li>
 </ul>
+<blockquote>
 <p>Buena Práctica</p>
 <p>En proyectos nuevos, se recomienda elegir una sintaxis y usarla consistentemente. Pero en proyectos existentes o al integrar paquetes como Breeze, es normal tener ambas.</p>
+</blockquote>
 <h2 id="66-componentes-de-layout-de-laravel-breeze">6.6. Componentes de Layout de Laravel Breeze<a class="headerlink" href="#66-componentes-de-layout-de-laravel-breeze" title="Permanent link">&para;</a></h2>
 <p>Cuando instalas Laravel Breeze, se crean automáticamente dos componentes de layout principales:</p>
 <h3 id="661-app-layoutbladephp">6.6.1. app-layout.blade.php<a class="headerlink" href="#661-app-layoutbladephp" title="Permanent link">&para;</a></h3>
-<p>Este es el layout principal que Laravel Breeze genera para todas las páginas que requieren autenticación. Incluye navegación, header opcional, y contenido principal.</p>
-<p><strong>Ubicación:</strong> <code>resources/views/components/app-layout.blade.php</code></p>
-<p><strong>Propósito:</strong> Layout para usuarios autenticados (dashboard, perfil, admin)</p>
+<p>Este es el layout principal que Laravel Breeze genera para todas las páginas que requieren autenticación. Incluye navegación, header opcional y contenido principal.</p>
+<p><strong>Ubicación:</strong> <strong><code>resources/views/components/app-layout.blade.php</code></strong></p>
+<p><strong>Propósito:</strong> Layout para usuarios autenticados (dashboard, perfil, admin).</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="o">=</span><span class="s2">&quot;{{ str_replace(&#39;_&#39;, &#39;-&#39;, app()-&gt;getLocale()) }}&quot;</span><span class="o">&gt;</span>
@@ -3643,8 +3645,8 @@
 </code></pre></div>
 <h3 id="662-guest-layoutbladephp">6.6.2. guest-layout.blade.php<a class="headerlink" href="#662-guest-layoutbladephp" title="Permanent link">&para;</a></h3>
 <p>Este layout está diseñado para páginas públicas donde los usuarios no autenticados pueden registrarse o iniciar sesión. Tiene un diseño más simple y centrado.</p>
-<p><strong>Ubicación:</strong> <code>resources/views/components/guest-layout.blade.php</code></p>
-<p><strong>Propósito:</strong> Layout para usuarios no autenticados (login, registro)</p>
+<p><strong>Ubicación:</strong> <strong><code>resources/views/components/guest-layout.blade.php</code></strong></p>
+<p><strong>Propósito:</strong> Layout para usuarios no autenticados (login, registro).</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="o">=</span><span class="s2">&quot;{{ str_replace(&#39;_&#39;, &#39;-&#39;, app()-&gt;getLocale()) }}&quot;</span><span class="o">&gt;</span>
@@ -3678,16 +3680,18 @@
 <span class="o">&lt;/</span><span class="nx">html</span><span class="o">&gt;</span>
 </code></pre></div>
 <h2 id="67-cuando-usar-cada-sintaxis">6.7. Cuándo usar cada sintaxis<a class="headerlink" href="#67-cuando-usar-cada-sintaxis" title="Permanent link">&para;</a></h2>
-<p>Elegir entre sintaxis tradicional y componentes depende del contexto de tu proyecto, tus necesidades, y tu familiaridad con cada enfoque. Aquí te ayudamos a decidir.</p>
-<h3 id="671-usa-sintaxis-tradicional-extends-cuando">6.7.1. Usa sintaxis tradicional (@extends) Cuándo<a class="headerlink" href="#671-usa-sintaxis-tradicional-extends-cuando" title="Permanent link">&para;</a></h3>
+<p>Elegir entre sintaxis tradicional y componentes depende del contexto de tu proyecto, tus necesidades y tu familiaridad con cada enfoque. Aquí te ayudamos a decidir.</p>
+<h3 id="671-usa-sintaxis-tradicional-extends">6.7.1. Usa sintaxis tradicional (@extends)<a class="headerlink" href="#671-usa-sintaxis-tradicional-extends" title="Permanent link">&para;</a></h3>
 <p>La sintaxis tradicional es ideal para proyectos simples, equipos que ya la conocen, o cuando trabajas con código existente que usa este estilo.</p>
+<p><strong>Cuándo:</strong></p>
 <ul>
-<li>✅ Creas layouts personalizados desde cero</li>
-<li>✅ Trabajas en proyectos legacy/existentes</li>
-<li>✅ Prefieres la sintaxis clásica de Blade</li>
-<li>✅ No necesitas la complejidad de componentes</li>
+<li>✅ Creas layouts personalizados desde cero.</li>
+<li>✅ Trabajas en proyectos legacy/existentes.</li>
+<li>✅ Prefieres la sintaxis clásica de Blade.</li>
+<li>✅ No necesitas la complejidad de componentes.</li>
 </ul>
-<p><strong>Ejemplo de caso de uso:</strong></p>
+<details class="examplelaravel">
+<summary>Ejemplo de caso de uso:</summary>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="p">{{</span> <span class="o">--</span> <span class="nx">Layout</span> <span class="nx">simple</span> <span class="nx">para</span> <span class="nx">landing</span> <span class="nx">page</span> <span class="o">--</span> <span class="p">}}</span>
 <span class="o">@</span><span class="k">extends</span><span class="p">(</span><span class="s1">&#39;layouts.landing&#39;</span><span class="p">)</span>
@@ -3700,16 +3704,18 @@
     <span class="o">&lt;!--</span> <span class="nx">Contenido</span> <span class="nx">de</span> <span class="nx">la</span> <span class="nx">landing</span> <span class="o">--&gt;</span>
 <span class="o">@</span><span class="nx">endsection</span>
 </code></pre></div>
+</details>
 <h3 id="672-usa-sintaxis-de-componentes-x-app-layout">6.7.2. Usa sintaxis de componentes (<code>&lt;x-app-layout&gt;</code>)<a class="headerlink" href="#672-usa-sintaxis-de-componentes-x-app-layout" title="Permanent link">&para;</a></h3>
 <p>La sintaxis de componentes es más potente y flexible, especialmente cuando necesitas pasar datos y lógica compleja a tus layouts, o cuando trabajas con paquetes modernos.</p>
 <p><strong>Cuándo:</strong></p>
 <ul>
-<li>✅ Usas Laravel Breeze o Jetstream</li>
-<li>✅ Necesitas layouts con lógica PHP compleja</li>
-<li>✅ Quieres aprovechar props y slots</li>
-<li>✅ Trabajas en proyectos modernos de Laravel</li>
+<li>✅ Usas Laravel Breeze o Jetstream.</li>
+<li>✅ Necesitas layouts con lógica PHP compleja.</li>
+<li>✅ Quieres aprovechar props y slots.</li>
+<li>✅ Trabajas en proyectos modernos de Laravel.</li>
 </ul>
-<p><strong>Ejemplo de caso de uso:</strong></p>
+<details class="examplelaravel">
+<summary>Ejemplo de caso de uso:</summary>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="p">{{</span> <span class="o">--</span> <span class="nx">Layout</span> <span class="nx">con</span> <span class="nx">lógica</span> <span class="nx">compleja</span> <span class="o">--</span> <span class="p">}}</span>
 <span class="o">&lt;</span><span class="nx">x</span><span class="o">-</span><span class="nx">app</span><span class="o">-</span><span class="nx">layout</span> <span class="o">:</span><span class="nx">show</span><span class="o">-</span><span class="nx">sidebar</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="o">:</span><span class="nx">theme</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">$userTheme</span><span class="s2">&quot;</span><span class="o">&gt;</span>
@@ -3724,6 +3730,7 @@
     <span class="o">&lt;/</span><span class="nx">x</span><span class="o">-</span><span class="nx">slot</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="nx">x</span><span class="o">-</span><span class="nx">app</span><span class="o">-</span><span class="nx">layout</span><span class="o">&gt;</span>
 </code></pre></div>
+</details>
 
 
 
