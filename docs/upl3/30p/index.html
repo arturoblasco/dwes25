@@ -1852,7 +1852,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    1.0. Introducción
     
   </span>
   
@@ -1875,7 +1875,7 @@
   
   
   <span class="md-ellipsis">
-    1.1. Introducción a Laravel 12
+    1.1. Introducción a Laravel12
     
   </span>
   
@@ -2082,7 +2082,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    2.0. Introducción
     
   </span>
   
@@ -2314,7 +2314,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    3.0. Introducción
     
   </span>
   
@@ -3346,7 +3346,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    4.0. Introducción
     
   </span>
   
@@ -3531,6 +3531,144 @@
   
   <span class="md-ellipsis">
     Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 5 Servicios REST
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 5 Servicios REST
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl5/50p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pruebas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Pruebas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../doc/examen2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examen 2 Laravel
     
   </span>
   
@@ -4451,8 +4589,8 @@
 <p>Antes de empezar a trabajar con la base de datos, es fundamental asegurarse de que Laravel Sail esté configurado correctamente para trabajar con MySQL.</p>
 <p>Como ya se vio en la prácica 1, Laravel utiliza el archivo <strong><code>.env</code></strong> para almacenar la configuración de la aplicación, incluyendo los datos de conexión a la base de datos.</p>
 <p>Abre el archivo <code>.env</code> y verifica que contenga la siguiente configuración:</p>
-<details class="questionlaravel" open="open">
-<summary>Configuración de la base de datos</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Configuración de la base de datos</p>
 <div class="highlight"><pre><span></span><code>DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
@@ -4460,7 +4598,7 @@ DB_DATABASE=laravel
 DB_USERNAME=sail
 DB_PASSWORD=password
 </code></pre></div>
-</details>
+</div>
 <p>¿Qué significa cada parámetro?</p>
 <ul>
 <li><strong>DB_CONNECTION</strong>: El tipo de base de datos que usaremos (MySQL en este caso).</li>
@@ -4472,8 +4610,8 @@ DB_PASSWORD=password
 </ul>
 <h3 id="2-iniciar-laravel-sail">2. Iniciar Laravel Sail<a class="headerlink" href="#2-iniciar-laravel-sail" title="Permanent link">&para;</a></h3>
 <p>Laravel Sail utiliza Docker para crear contenedores que incluyen todos los servicios necesarios (PHP, MySQL, Redis, etc.). Antes de trabajar con la base de datos, necesitamos asegurarnos de que estos servicios estén en funcionamiento.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para iniciar los contenedores</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para iniciar los contenedores</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
 <details class="examplelaravel">
@@ -4489,11 +4627,11 @@ DB_PASSWORD=password
 ✔<span class="w"> </span>Container<span class="w"> </span>myshop-laravel.test-1<span class="w">  </span>Started<span class="w">                        </span><span class="m">1</span>.0s
 </code></pre></div>
 </details>
-</details>
+</div>
 <h3 id="3-verificar-la-conexion-a-la-base-de-datos">3. Verificar la conexión a la base de datos<a class="headerlink" href="#3-verificar-la-conexion-a-la-base-de-datos" title="Permanent link">&para;</a></h3>
 <p>Una vez que los contenedores están en funcionamiento, podemos verificar que Laravel puede conectarse correctamente a la base de datos MySQL.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>migrate:status
 </code></pre></div>
 <details class="examplelaravel">
@@ -4507,7 +4645,7 @@ Migration<span class="w"> </span>name<span class="w"> </span>...................
 2025_09_30_140225_create_telescope_entries_table<span class="w"> </span>..................<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span>Ran
 </code></pre></div>
 </details>
-</details>
+</div>
 <h2 id="fase-2-crear-las-migraciones">FASE 2: Crear las migraciones<a class="headerlink" href="#fase-2-crear-las-migraciones" title="Permanent link">&para;</a></h2>
 <h3 id="1-que-son-las-migraciones">1. ¿Qué son las migraciones?<a class="headerlink" href="#1-que-son-las-migraciones" title="Permanent link">&para;</a></h3>
 <p>Las migraciones son como un "control de versiones" para la base de datos; permiten definir y modificar la estructura de las tablas de forma programática, manteniendo un historial de cambios.</p>
@@ -4544,8 +4682,8 @@ Migration<span class="w"> </span>name<span class="w"> </span>...................
 <li><strong>description</strong>: Descripción breve de la categoría (puede ser null).</li>
 <li><strong>timestamps</strong>: Laravel añade automáticamente <code>created_at</code> y <code>updated_at</code>.</li>
 </ul>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear la migración</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear la migración</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>create_categories_table
 </code></pre></div>
 <details class="examplelaravel">
@@ -4555,9 +4693,9 @@ Migration<span class="w"> </span>name<span class="w"> </span>...................
 INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[</span>database/migrations/2025_01_15_103045_create_categories_table.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Reemplazar contenido del fichero de "<code>database/migrations/</code></summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Reemplazar contenido del fichero de "<code>database/migrations/</code></p>
 <p>Abre el archivo generado en <code>database/migrations/</code> (el nombre incluirá la fecha y hora) y reemplaza su contenido:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
@@ -4590,7 +4728,7 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-</details>
+</div>
 <h4 id="metodos-up-y-down">Métodos up() y down()<a class="headerlink" href="#metodos-up-y-down" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>up()</strong>: define qué hacer cuando se ejecuta la migración (crear la tabla).</li>
@@ -4607,8 +4745,8 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
 <li><strong>discount_percentage</strong>: Porcentaje de descuento (por ejemplo, 20 para un 20%).</li>
 <li><strong>description</strong>: Descripción breve de la oferta.</li>
 </ul>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear la migración</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear la migración</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>create_offers_table
 </code></pre></div>
 <details class="examplelaravel">
@@ -4618,9 +4756,9 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
 INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[</span>database/migrations/2025_01_15_103112_create_offers_table.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo generado y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo generado y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
@@ -4653,7 +4791,7 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-</details>
+</div>
 <p>Tipos de datos en migraciones:</p>
 <ul>
 <li><code>id()</code>: Crea un campo auto-incremental (equivalente a BIGINT UNSIGNED).</li>
@@ -4681,8 +4819,8 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
 <li><strong>Un producto</strong> solo puede tener <strong>una oferta activa</strong> a la vez (o ninguna).</li>
 <li>No todos los productos tienen ofertas (en ese caso <code>offer_id</code> es <code>null</code>).</li>
 </ul>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear la migració</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear la migració</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>create_products_table
 </code></pre></div>
 <details class="examplelaravel">
@@ -4692,9 +4830,9 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
 INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[</span>database/migrations/2025_01_15_103145_create_products_table.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo generado y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo generado y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
@@ -4728,7 +4866,7 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-</details>
+</div>
 <p>Claves foráneas y restricciones:</p>
 <ul>
 <li><code>foreignId('category_id')</code>: crea un campo BIGINT UNSIGNED para la relación.</li>
@@ -4765,8 +4903,8 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
 <p><strong>Tabla pívot enriquecida</strong></p>
 <p><strong><em>¿Por qué no es una tabla pivot simple?</em></strong> Una tabla pivot básica solo tendría <code>product_id</code> y <code>user_id</code>. Pero necesitamos el campo adicional <code>quantity</code>, por eso <code>product_user</code> es una tabla pivot <strong>enriquecida</strong>.</p>
 </blockquote>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear la migración</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear la migración</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>create_product_user_table
 </code></pre></div>
 <details class="examplelaravel">
@@ -4776,9 +4914,9 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
 INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[</span>database/migrations/2025_01_15_103212_create_product_user_table.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo generado y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo generado y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
@@ -4810,7 +4948,7 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-</details>
+</div>
 <p>Valores por Defecto y Tabla Pivot Enriquecida:</p>
 <ul>
 <li><code>default(1)</code>: si no se especifica cantidad, se asigna 1.</li>
@@ -4822,8 +4960,8 @@ INFO<span class="w">  </span>Migration<span class="w"> </span><span class="o">[<
 <h3 id="6-ejecutar-las-migraciones">6. Ejecutar las migraciones<a class="headerlink" href="#6-ejecutar-las-migraciones" title="Permanent link">&para;</a></h3>
 <p>Ahora que hemos creado todas las migraciones, es el momento de aplicarlas a la base de datos para crear las tablas reales.</p>
 <p>Las migraciones se ejecutan en el orden en que fueron creadas (según la fecha en el nombre del archivo). Laravel se encarga de mantener un registro de qué migraciones ya se han ejecutado.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para aplicar todas las migraciones</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para aplicar todas las migraciones</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>migrate
 </code></pre></div>
 <details class="examplelaravel">
@@ -4838,9 +4976,9 @@ INFO<span class="w"> </span>Running<span class="w"> </span>migrations.
 2025_10_01_081337_create_product_user_table<span class="w"> </span>............................<span class="w"> </span><span class="m">307</span>.25ms<span class="w"> </span>DONE
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Verifica que las tablas se hayan creado correctamente</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Verifica que las tablas se hayan creado correctamente</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>migrate:status
 </code></pre></div>
 <details class="examplelaravel">
@@ -4858,7 +4996,7 @@ Migration<span class="w"> </span>name<span class="w"> </span>...................
 2025_10_01_081337_create_product_user_table<span class="w"> </span>....................<span class="w"> </span><span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span>Ran
 </code></pre></div>
 </details>
-</details>
+</div>
 <h2 id="fase-3-crear-los-modelos-eloquent">FASE 3: Crear los modelos Eloquent<a class="headerlink" href="#fase-3-crear-los-modelos-eloquent" title="Permanent link">&para;</a></h2>
 <h3 id="1-que-son-los-modelos-eloquent">1. ¿Qué son los modelos Eloquent?<a class="headerlink" href="#1-que-son-los-modelos-eloquent" title="Permanent link">&para;</a></h3>
 <p>Los modelos Eloquent son la capa de abstracción que Laravel proporciona para interactuar con la base de datos. Cada modelo representa una tabla y permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) de forma sencilla.</p>
@@ -4878,8 +5016,8 @@ Migration<span class="w"> </span>name<span class="w"> </span>...................
 </code></pre></div>
 <h3 id="2-crear-el-modelo-user">2. Crear el modelo User<a class="headerlink" href="#2-crear-el-modelo-user" title="Permanent link">&para;</a></h3>
 <p>El modelo <code>User</code> ya existe en Laravel por defecto, pero necesitamos actualizarlo para incluir la relación con el carrito. Este modelo representa a los usuarios de la tienda.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Models/User.php</code> y añade la relación con el carrito</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Models/User.php</code> y añade la relación con el carrito</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
@@ -4923,7 +5061,7 @@ Migration<span class="w"> </span>name<span class="w"> </span>...................
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>Relaciones del modelo <code>User</code>:</p>
 <ul>
 <li><strong><code>products()</code></strong>: relación N:M con productos a través de la tabla pivot <code>product_user</code>.</li>
@@ -4933,8 +5071,8 @@ Migration<span class="w"> </span>name<span class="w"> </span>...................
 <p><strong>Acceso al carrito</strong>: <code>$user-&gt;products</code> devuelve los productos en el carrito del usuario.</p>
 <h3 id="3-crear-el-modelo-category">3. Crear el modelo Category<a class="headerlink" href="#3-crear-el-modelo-category" title="Permanent link">&para;</a></h3>
 <p>El modelo <code>Category</code> representa la tabla <code>categories</code> y define la relación con los productos. Este modelo reemplazará el uso del array mock <code>mock-categories.php</code> de la Práctica 2.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear el modelo</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear el modelo</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:model<span class="w"> </span>Category
 </code></pre></div>
 <details class="examplelaravel">
@@ -4944,9 +5082,9 @@ Migration<span class="w"> </span>name<span class="w"> </span>...................
 INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</span>app/Models/Category.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Models/Category.php</code> y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Models/Category.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
@@ -4974,7 +5112,7 @@ INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</spa
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>Propiedades del modelo:</p>
 <ul>
 <li><strong><code>$fillable</code></strong>: define qué campos pueden ser asignados masivamente (importante para seguridad).</li>
@@ -4984,8 +5122,8 @@ INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</spa
 <p><strong>Relación HasMany</strong>: Una categoría puede tener múltiples productos, pero cada producto pertenece a una sola categoría.</p>
 <h3 id="4-crear-el-modelo-offer">4. Crear el modelo Offer<a class="headerlink" href="#4-crear-el-modelo-offer" title="Permanent link">&para;</a></h3>
 <p>El modelo <code>Offer</code> representa la tabla <code>offers</code> y define la relación con los productos. Este modelo reemplazará el uso del array mock <code>mock-offers.php</code> de la Práctica 2.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear el modelo</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear el modelo</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:model<span class="w"> </span>Offer
 </code></pre></div>
 <details class="examplelaravel">
@@ -4995,9 +5133,9 @@ INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</spa
 INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</span>app/Models/Offer.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Models/Offer.php</code> y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Models/Offer.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
@@ -5026,7 +5164,7 @@ INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</spa
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>Relación con Productos (<em>según las reglas de negocio de la Práctica 2</em>):</p>
 <ul>
 <li><strong>Una oferta</strong> puede aplicarse a <strong>múltiples productos</strong> (relación 1:N).</li>
@@ -5035,8 +5173,8 @@ INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</spa
 </ul>
 <h3 id="5-crear-el-modelo-product">5. Crear el modelo Product<a class="headerlink" href="#5-crear-el-modelo-product" title="Permanent link">&para;</a></h3>
 <p>El modelo <code>Product</code> es el más importante de nuestra tienda. Representa la tabla <code>products</code> y define todas las relaciones con categorías, ofertas y usuarios. Este modelo reemplazará el uso del array mock <code>mock-products.php</code> de la Práctica 2.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear el modelo</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear el modelo</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:model<span class="w"> </span>Product
 </code></pre></div>
 <details class="examplelaravel">
@@ -5046,9 +5184,9 @@ INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</spa
 INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</span>app/Models/Product.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Models/Product.php</code> y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Models/Product.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
@@ -5124,7 +5262,7 @@ INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</spa
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p><strong>Accessor finalPrice()</strong></p>
 <p>Hemos añadido un <strong>accessor</strong> <code>finalPrice()</code> que calcula automáticamente el precio final del producto aplicando el descuento de la oferta si existe. Esto simplifica enormemente el código en las vistas, eliminando la necesidad de bloques <code>@php</code> para calcular precios.</p>
 <p>Relaciones del modelo <code>Product</code>:</p>
@@ -5150,8 +5288,8 @@ INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</spa
 </ul>
 <h3 id="2-crear-el-seeder-de-usuarios">2. Crear el Seeder de Usuarios<a class="headerlink" href="#2-crear-el-seeder-de-usuarios" title="Permanent link">&para;</a></h3>
 <p>Como no tenemos datos mock de usuarios en la Práctica 2, crearemos algunos usuarios de prueba para la funcionalidad del carrito usando el sistema de Factories de Laravel.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear el seeder</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear el seeder</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:seeder<span class="w"> </span>UserSeeder
 </code></pre></div>
 <details class="examplelaravel">
@@ -5161,9 +5299,9 @@ INFO<span class="w">  </span>Model<span class="w"> </span><span class="o">[</spa
 INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</span>database/seeders/UserSeeder.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>database/seeders/UserSeeder.php</code> y reemplaza su contenidor</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>database/seeders/UserSeeder.php</code> y reemplaza su contenidor</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Database\Seeders</span><span class="p">;</span>
@@ -5189,7 +5327,7 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>¿Cómo funciona?</p>
 <ol>
 <li><strong><code>User::factory()</code></strong>: usa la factory predefinida de Laravel para generar usuarios.</li>
@@ -5244,8 +5382,8 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
 </details>
 <h3 id="3-crear-el-seeder-de-categorias">3. Crear el Seeder de Categorías<a class="headerlink" href="#3-crear-el-seeder-de-categorias" title="Permanent link">&para;</a></h3>
 <p>El <code>CategorySeeder</code> poblará la tabla <code>categories</code> con datos iniciales reutilizando los datos del archivo <code>database/data/mock-categories.php</code> de la Práctica 2.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear el seeder</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear el seeder</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:seeder<span class="w"> </span>CategorySeeder
 </code></pre></div>
 <details class="examplelaravel">
@@ -5255,9 +5393,9 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
 INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</span>database/seeders/CategorySeeder.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>database/seeders/CategorySeeder.php</code> y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>database/seeders/CategorySeeder.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Database\Seeders</span><span class="p">;</span>
@@ -5283,7 +5421,7 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>¿Cómo funciona?</p>
 <ol>
 <li><strong><code>use LoadsMockData</code></strong>: reutiliza el trait de la Práctica 2.</li>
@@ -5293,8 +5431,8 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
 <p><strong>Resultado</strong>: Las categorías de tu archivo mock se insertan automáticamente en la tabla <code>categories</code>.</p>
 <h3 id="4-crear-el-seeder-de-ofertas">4. Crear el Seeder de Ofertas<a class="headerlink" href="#4-crear-el-seeder-de-ofertas" title="Permanent link">&para;</a></h3>
 <p>El <code>OfferSeeder</code> poblará la tabla <code>offers</code> con datos iniciales reutilizando los datos del archivo <code>database/data/mock-offers.php</code> de la Práctica 2.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear el seeder</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear el seeder</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:seeder<span class="w"> </span>OfferSeeder
 </code></pre></div>
 <details class="examplelaravel">
@@ -5304,9 +5442,9 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
 INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</span>database/seeders/OfferSeeder.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>database/seeders/OfferSeeder.php</code> y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>database/seeders/OfferSeeder.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Database\Seeders</span><span class="p">;</span>
@@ -5332,7 +5470,7 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>¿Cómo funciona?</p>
 <ol>
 <li><strong><code>use LoadsMockData</code></strong>: reutiliza el trait de la Práctica 2.</li>
@@ -5343,8 +5481,8 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
 <h3 id="5-crear-el-seeder-de-productos">5. Crear el Seeder de Productos<a class="headerlink" href="#5-crear-el-seeder-de-productos" title="Permanent link">&para;</a></h3>
 <p>El <code>ProductSeeder</code> poblará la tabla <code>products</code> con datos iniciales reutilizando los datos del archivo <code>database/data/mock-products.php</code> de la Práctica 2.</p>
 <p><strong>Importante</strong>: Los productos deben crearse <strong>después</strong> de las categorías y ofertas, ya que tienen claves foráneas que referencian esas tablas.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear el seeder</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear el seeder</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:seeder<span class="w"> </span>ProductSeeder
 </code></pre></div>
 <details class="examplelaravel">
@@ -5354,9 +5492,9 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
 INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</span>database/seeders/ProductSeeder.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>database/seeders/ProductSeeder.php</code> y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>database/seeders/ProductSeeder.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Database\Seeders</span><span class="p">;</span>
@@ -5382,7 +5520,7 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>¿Cómo funciona?</p>
 <ol>
 <li><strong><code>use LoadsMockData</code></strong>: reutiliza el trait de la Práctica 2.</li>
@@ -5398,8 +5536,8 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
 <blockquote>
 <p><strong>Importante</strong>: Los items del carrito deben crearse <strong>después</strong> de los usuarios y productos, ya que la tabla pivot referencia ambas tablas.</p>
 </blockquote>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para crear el seeder</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para crear el seeder</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:seeder<span class="w"> </span>ProductUserSeeder
 </code></pre></div>
 <details class="examplelaravel">
@@ -5409,9 +5547,9 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
 INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</span>database/seeders/ProductUserSeeder.php<span class="o">]</span><span class="w"> </span>created<span class="w"> </span>successfully.
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>database/seeders/ProductUserSeeder.php</code> y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>database/seeders/ProductUserSeeder.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Database\Seeders</span><span class="p">;</span>
@@ -5443,7 +5581,7 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>¿Cómo funciona?</p>
 <ol>
 <li><strong><code>use LoadsMockData</code></strong>: reutiliza el trait de la Práctica 2.</li>
@@ -5455,8 +5593,8 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
 <p><strong>Resultado</strong>: Los items del carrito de tu archivo mock se insertan automáticamente en la tabla <code>product_user</code> usando la relación N:M.</p>
 <h3 id="7-actualiza-el-seeder-principal">7. Actualiza el Seeder principal<a class="headerlink" href="#7-actualiza-el-seeder-principal" title="Permanent link">&para;</a></h3>
 <p><strong><code>DatabaseSeeder</code></strong> es el seeder principal que ejecuta todos los demás seeders en el orden correcto. Es importante ejecutarlos en el orden adecuado para respetar las claves foráneas.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>database/seeders/DatabaseSeeder.php</code> y reemplaza su contenido</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>database/seeders/DatabaseSeeder.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Database\Seeders</span><span class="p">;</span>
@@ -5480,7 +5618,7 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p><strong>Orden de ejecución</strong></p>
 <p>Los seeders se ejecutan en este orden para respetar las claves foráneas:</p>
 <ol>
@@ -5492,8 +5630,8 @@ INFO<span class="w">  </span>Seeder<span class="w"> </span><span class="o">[</sp
 </ol>
 <h3 id="8-ejecutar-los-seeders">8. Ejecutar los Seeders<a class="headerlink" href="#8-ejecutar-los-seeders" title="Permanent link">&para;</a></h3>
 <p>Ahora que tenemos todos los seeders configurados, es el momento de poblar la base de datos con datos iniciales reutilizando los datos mock de la Práctica 2.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para ejecutar todos los seeders</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para ejecutar todos los seeders</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>migrate:refresh<span class="w"> </span>--seed
 </code></pre></div>
 <details class="examplelaravel">
@@ -5536,7 +5674,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeeder<span class="w"> </span>..........................<span class="w"> </span><span class="m">50</span><span class="w"> </span>ms<span class="w"> </span>DONE
 </code></pre></div>
 </details>
-</details>
+</div>
 <h2 id="fase-5-actualizar-los-controladores">FASE 5: Actualizar los controladores<a class="headerlink" href="#fase-5-actualizar-los-controladores" title="Permanent link">&para;</a></h2>
 <h3 id="1-por-que-actualizar-los-controladores">1. ¿Por qué Actualizar los controladores?<a class="headerlink" href="#1-por-que-actualizar-los-controladores" title="Permanent link">&para;</a></h3>
 <p>En la Práctica 2, los controladores usaban el trait <code>LoadsMockData</code> para cargar datos desde archivos PHP. Ahora que tenemos una base de datos real con modelos Eloquent, necesitamos <strong>eliminar completamente</strong> el uso del trait <code>LoadsMockData</code> en los controladores y usar consultas a la base de datos.</p>
@@ -5544,8 +5682,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <p>El trait <code>LoadsMockData</code> <strong>SOLO</strong> debe usarse en los seeders para reutilizar los datos mock. Los controladores deben usar <strong>exclusivamente</strong> modelos Eloquent. Elimina <code>use App\Traits\LoadsMockData;</code> y <code>use LoadsMockData;</code> de los controladores.</p>
 <h3 id="2-actualizar-productcontroller">2. Actualizar ProductController<a class="headerlink" href="#2-actualizar-productcontroller" title="Permanent link">&para;</a></h3>
 <p>El <code>ProductController</code> es el controlador más importante de nuestra tienda. Necesitamos reemplazar el uso del trait <code>LoadsMockData</code> por consultas Eloquent directas.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Http/Controllers/ProductController.php</code> y reemplaza su contenido</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Http/Controllers/ProductController.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
@@ -5658,7 +5796,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>Cambios Principales:</p>
 <ul>
 <li><strong>Eliminado</strong>: <code>use App\Traits\LoadsMockData;</code> y <code>use LoadsMockData;</code> (trait completamente removido).</li>
@@ -5670,8 +5808,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <p><strong><code>with(['category', 'offer'])</code></strong>: carga las relaciones de forma eficiente (Eager Loading) para evitar el problema N+1.</p>
 <h3 id="3-actualizar-categorycontroller">3. Actualizar CategoryController<a class="headerlink" href="#3-actualizar-categorycontroller" title="Permanent link">&para;</a></h3>
 <p>El <code>CategoryController</code> gestiona las categorías de productos. Necesitamos actualizarlo para usar consultas Eloquent en lugar del trait <code>LoadsMockData</code>.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Http/Controllers/CategoryController.php</code> y reemplaza su contenido</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Http/Controllers/CategoryController.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
@@ -5715,7 +5853,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>Cambios Principales:</p>
 <ul>
 <li><strong>Eliminado</strong>: <code>use App\Traits\LoadsMockData;</code> y <code>use LoadsMockData;</code> (trait completamente removido).</li>
@@ -5727,8 +5865,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <p><strong><code>$category-&gt;products()</code></strong>: Utiliza la relación definida en el modelo <code>Category</code> para obtener los productos de esa categoría.</p>
 <h3 id="4-actualizar-offercontroller"><strong>4. Actualizar OfferController</strong><a class="headerlink" href="#4-actualizar-offercontroller" title="Permanent link">&para;</a></h3>
 <p>El <code>OfferController</code> gestiona las ofertas especiales. Necesitamos actualizarlo para usar consultas Eloquent en lugar del trait <code>LoadsMockData</code>.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Http/Controllers/OfferController.php</code> y reemplaza su contenido</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Http/Controllers/OfferController.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
@@ -5772,7 +5910,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>Cambios principales</p>
 <ul>
 <li><strong>Eliminado</strong>: <code>use App\Traits\LoadsMockData;</code> y <code>use LoadsMockData;</code> (trait completamente removido).</li>
@@ -5784,8 +5922,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <p><strong><code>$offer-&gt;products()</code></strong>: Utiliza la relación definida en el modelo <code>Offer</code> para obtener los productos con esa oferta.</p>
 <h3 id="5-actualizar-welcomecontroller"><strong>5. Actualizar WelcomeController</strong><a class="headerlink" href="#5-actualizar-welcomecontroller" title="Permanent link">&para;</a></h3>
 <p>El <code>WelcomeController</code> gestiona la página de inicio. Necesitamos actualizarlo para usar consultas Eloquent en lugar del trait <code>LoadsMockData</code>.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Http/Controllers/WelcomeController.php</code> y reemplaza su contenido</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Http/Controllers/WelcomeController.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
@@ -5815,7 +5953,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>Cambios Principales:</p>
 <ul>
 <li><strong>Eliminado</strong>: <code>use App\Traits\LoadsMockData;</code> y <code>use LoadsMockData;</code> (trait completamente removido).</li>
@@ -5826,8 +5964,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 </ul>
 <h3 id="6-actualizar-cartcontroller"><strong>6. Actualizar CartController</strong><a class="headerlink" href="#6-actualizar-cartcontroller" title="Permanent link">&para;</a></h3>
 <p>El <code>CartController</code> gestiona el carrito de compras. Necesitamos actualizarlo para usar consultas Eloquent en lugar del trait <code>LoadsMockData</code>.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Http/Controllers/CartController.php</code> y reemplaza su contenido</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Http/Controllers/CartController.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
@@ -5878,7 +6016,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>Cambios Principales:</p>
 <ul>
 <li><strong>Eliminado</strong>: <code>use App\Traits\LoadsMockData;</code> y <code>use LoadsMockData;</code> (trait completamente removido).</li>
@@ -5890,13 +6028,13 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <p><strong><code>$user-&gt;products</code></strong>: Obtiene los productos del carrito del usuario usando la relación N:M. Los datos pivot (<code>quantity</code>) están disponibles en <code>$product-&gt;pivot</code>.</p>
 <h3 id="7-actualizar-la-ruta-de-contacto">7. Actualizar la ruta de Contacto<a class="headerlink" href="#7-actualizar-la-ruta-de-contacto" title="Permanent link">&para;</a></h3>
 <p>En la Práctica 2, la ruta de contacto se definió como una función anónima. Para mantener la consistencia, vamos a crear un controlador para la página de contacto.</p>
-<details class="questionlaravel" open="open">
-<summary>Crea el controlador de contacto</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Crea el controlador de contacto</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>ContactController
 </code></pre></div>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Http/Controllers/ContactController.php</code> y reemplaza su contenido</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Http/Controllers/ContactController.php</code> y reemplaza su contenido</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
@@ -5915,19 +6053,17 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Ahora actualiza <code>routes/web.php</code></summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ahora actualiza <code>routes/web.php</code></p>
 <p>Ahora actualiza (borra la ruta a <code>/contact</code> y añade el siguiente código) la ruta en <code>routes/web.php</code>:
 <div class="highlight"><pre><span></span><code><span class="x">// use para CartController</span>
 <span class="x">use App\Http\Controllers\ContactController;</span>
 
-
-
 <span class="x">// Contact page</span>
 <span class="x">Route::get(&#39;/contact&#39;, [ContactController::class, &#39;index&#39;])-&gt;name(&#39;contact&#39;);</span>
 </code></pre></div></p>
-</details>
+</div>
 <p>Cambios en la Ruta de Contacto</p>
 <ul>
 <li><strong>Antes</strong>: función anónima <code>function () { return view('contact'); }</code></li>
@@ -5936,8 +6072,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 </ul>
 <h3 id="8-limpiar-el-trait-loadsmockdata">8. Limpiar el Trait LoadsMockData<a class="headerlink" href="#8-limpiar-el-trait-loadsmockdata" title="Permanent link">&para;</a></h3>
 <p>Ahora que los controladores ya no usan el trait <code>LoadsMockData</code>, debemos limpiarlo para que solo contenga los métodos necesarios para los seeders.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/Traits/LoadsMockData.php</code> y elimina los métodos innecesarios</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/Traits/LoadsMockData.php</code> y elimina los métodos innecesarios</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Traits</span><span class="p">;</span>
@@ -5977,7 +6113,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <h4 id="metodos-eliminados">Métodos eliminados<a class="headerlink" href="#metodos-eliminados" title="Permanent link">&para;</a></h4>
 <p>Se han eliminado los siguientes métodos que ya no son necesarios:</p>
 <ul>
@@ -6017,9 +6153,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 </code></pre></div>
 <h3 id="2-actualizar-la-vista-del-carrito">2. Actualizar la vista del carrito<a class="headerlink" href="#2-actualizar-la-vista-del-carrito" title="Permanent link">&para;</a></h3>
 <p>La vista del carrito necesita actualizarse para trabajar con la relación N:M. Ahora <code>$cartProducts</code> contiene productos con datos pivot en lugar de un array de items.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>resources/views/cart/index.blade.php</code> y actualiza el contenido</summary>
-<p>Código HTML actualizado</p>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>resources/views/cart/index.blade.php</code> y actualiza el contenido</p>
 <div class="highlight"><pre><span></span><code>@extends(&#39;layouts.app&#39;)
 
 @section(&#39;content&#39;)
@@ -6116,7 +6251,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 @endsection
 </code></pre></div>
-</details>
+</div>
 <p>Cambios en la vista del carrito:</p>
 <ul>
 <li><strong><code>$cartProducts</code></strong>: Ahora es una Collection de productos con datos pivot.</li>
@@ -6129,8 +6264,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <h3 id="3-actualizar-las-clases-php-de-los-componentes">3. Actualizar las clases PHP de los componentes<a class="headerlink" href="#3-actualizar-las-clases-php-de-los-componentes" title="Permanent link">&para;</a></h3>
 <p>Antes de actualizar las vistas de los componentes, necesitamos actualizar sus <strong>clases PHP</strong> para que acepten objetos Eloquent en lugar de arrays.</p>
 <h4 id="31-actualizar-la-clase-productcard">3.1. Actualizar la clase ProductCard<a class="headerlink" href="#31-actualizar-la-clase-productcard" title="Permanent link">&para;</a></h4>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/View/Components/ProductCard.php</code> y actualiza el tipo de dato</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/View/Components/ProductCard.php</code> y actualiza el tipo de dato</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\View\Components</span><span class="p">;</span>
@@ -6159,7 +6294,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>Cambio importante</p>
 <ul>
 <li><strong>Antes</strong>: <code>public array $product</code></li>
@@ -6167,8 +6302,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <li>Se importa el modelo: <code>use App\Models\Product;</code></li>
 </ul>
 <h4 id="32-actualizar-la-clase-categorycard">3.2. Actualizar la clase CategoryCard<a class="headerlink" href="#32-actualizar-la-clase-categorycard" title="Permanent link">&para;</a></h4>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>app/View/Components/CategoryCard.php</code> y actualiza el tipo de dato</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>app/View/Components/CategoryCard.php</code> y actualiza el tipo de dato</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">App\View\Components</span><span class="p">;</span>
@@ -6197,7 +6332,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-</details>
+</div>
 <p>Cambio Importante</p>
 <ul>
 <li><strong>Antes</strong>: <code>public array $category</code></li>
@@ -6208,9 +6343,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <p>Ahora que las clases PHP están actualizadas, podemos actualizar las vistas Blade.</p>
 <h4 id="41-actualizar-la-vista-del-componente-categorycard">4.1. Actualizar la vista del componente CategoryCard<a class="headerlink" href="#41-actualizar-la-vista-del-componente-categorycard" title="Permanent link">&para;</a></h4>
 <p>El componente <code>CategoryCard</code> necesita actualizarse para trabajar con objetos Eloquent en lugar de arrays.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>resources/views/components/category-card.blade.php</code> y actualiza el contenido</summary>
-<p>Código HTML actualizado</p>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>resources/views/components/category-card.blade.php</code> y actualiza el contenido</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-white rounded-lg shadow-lg p-6 product-card cursor-pointer {{ $class }}&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-4xl text-primary-500 mb-4&quot;</span><span class="p">&gt;</span>📦<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h4</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-xl font-bold mb-2 text-gray-900&quot;</span><span class="p">&gt;</span>{{ $category-&gt;name }}<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
@@ -6221,7 +6355,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</details>
+</div>
 <p>Cambios en CategoryCard</p>
 <ul>
 <li><strong><code>$category['name']</code></strong> → <strong><code>$category-&gt;name</code></strong>: Acceso a propiedades del objeto</li>
@@ -6230,9 +6364,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 </ul>
 <h4 id="42-actualizar-la-vista-del-componente-productcard">4.2. Actualizar la vista del componente ProductCard<a class="headerlink" href="#42-actualizar-la-vista-del-componente-productcard" title="Permanent link">&para;</a></h4>
 <p>El componente <code>ProductCard</code> es el más importante ya que se usa en múltiples vistas. Necesitamos actualizarlo para trabajar con objetos Eloquent.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>resources/views/components/product-card.blade.php</code> y actualiza las secciones que usan datos</summary>
-<p>Código HTML actualizado</p>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>resources/views/components/product-card.blade.php</code> y actualiza las secciones que usan datos</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-white rounded-lg shadow-lg overflow-hidden product-card {{ $class }} relative {{ $product-&gt;offer ? &#39;ring-2 ring-orange-400&#39; : &#39;&#39; }}&quot;</span><span class="p">&gt;</span>
     <span class="cm">&lt;!-- Badge de oferta destacado (esquina superior derecha) --&gt;</span>
     @if($product-&gt;offer)
@@ -6276,7 +6409,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</details>
+</div>
 <p>Cambios principales:</p>
 <ul>
 <li><strong><code>$product['name']</code></strong> → <strong><code>$product-&gt;name</code></strong>: Acceso a propiedades de objeto.</li>
@@ -6288,9 +6421,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 </ul>
 <h3 id="5-actualizar-la-vista-de-detalle-de-producto">5. Actualizar la vista de detalle de Producto<a class="headerlink" href="#5-actualizar-la-vista-de-detalle-de-producto" title="Permanent link">&para;</a></h3>
 <p>Esta vista muestra la información completa de un producto y necesita usar objetos Eloquent para acceder a las relaciones.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>resources/views/products/show.blade.php</code> y actualiza las secciones que usan datos</summary>
-<p>Código HTML actualizado</p>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>resources/views/products/show.blade.php</code> y actualiza las secciones que usan datos</p>
 <div class="highlight"><pre><span></span><code>@extends(&#39;layouts.app&#39;)
 
 @section(&#39;title&#39;, $product-&gt;name . &#39; - Mi Tienda&#39;)
@@ -6364,7 +6496,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 @endsection
 </code></pre></div>
-</details>
+</div>
 <p>Cambios en la vista de detalle de Producto:</p>
 <ul>
 <li><strong><code>$product-&gt;name</code></strong>: Acceso directo a las propiedades del modelo.</li>
@@ -6375,9 +6507,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 </ul>
 <h3 id="6-actualizar-la-vista-de-productos-por-categoria">6. Actualizar la vista de Productos por Categoría<a class="headerlink" href="#6-actualizar-la-vista-de-productos-por-categoria" title="Permanent link">&para;</a></h3>
 <p>Esta vista muestra todos los productos de una categoría específica.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>resources/views/categories/show.blade.php</code> y actualiza el contenido</summary>
-<p>Código HTML actualizado</p>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>resources/views/categories/show.blade.php</code> y actualiza el contenido</p>
 <div class="highlight"><pre><span></span><code>@extends(&#39;layouts.app&#39;)
 
 @section(&#39;title&#39;, $category-&gt;name . &#39; - Mi Tienda&#39;)
@@ -6407,7 +6538,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 @endsection
 </code></pre></div>
-</details>
+</div>
 <p>Cambios en la vista de Categoría:</p>
 <ul>
 <li><strong><code>$category-&gt;name</code></strong>: Propiedad del modelo Eloquent.</li>
@@ -6417,8 +6548,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 </ul>
 <h3 id="7-actualizar-la-vista-de-lista-de-ofertas">7. Actualizar la vista de lista de Ofertas<a class="headerlink" href="#7-actualizar-la-vista-de-lista-de-ofertas" title="Permanent link">&para;</a></h3>
 <p>Esta vista muestra todas las ofertas disponibles en la tienda.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>resources/views/offers/index.blade.php</code> y actualiza el contenido</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>resources/views/offers/index.blade.php</code> y actualiza el contenido</p>
 <div class="highlight"><pre><span></span><code>@extends(&#39;layouts.app&#39;)
 
 @section(&#39;title&#39;, &#39;Ofertas - Mi Tienda&#39;)
@@ -6452,7 +6583,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 @endsection
 </code></pre></div>
-</details>
+</div>
 <p>Cambios en la vista de Ofertas:</p>
 <ul>
 <li><strong><code>$offer-&gt;name</code></strong>: Propiedad del modelo Offer.</li>
@@ -6462,8 +6593,8 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 </ul>
 <h3 id="8-actualizar-la-vista-de-detalle-de-oferta">8. Actualizar la vista de detalle de Oferta<a class="headerlink" href="#8-actualizar-la-vista-de-detalle-de-oferta" title="Permanent link">&para;</a></h3>
 <p>Esta vista muestra los detalles de una oferta específica y todos los productos que tienen aplicada esa oferta.</p>
-<details class="questionlaravel" open="open">
-<summary>Abre el archivo <code>resources/views/offers/show.blade.php</code> y actualiza el contenido</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre el archivo <code>resources/views/offers/show.blade.php</code> y actualiza el contenido</p>
 <div class="highlight"><pre><span></span><code>@extends(&#39;layouts.app&#39;)
 
 @section(&#39;title&#39;, $offer-&gt;name . &#39; - Mi Tienda&#39;)
@@ -6513,7 +6644,7 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 @endsection
 </code></pre></div>
-</details>
+</div>
 <p>Cambios en la vista de detalle de Oferta:</p>
 <ul>
 <li><strong><code>$offer-&gt;name</code></strong>: Nombre de la oferta desde el modelo.</li>
@@ -6526,14 +6657,14 @@ Database<span class="se">\S</span>eeders<span class="se">\P</span>roductUserSeed
 <h3 id="1-verificar-que-la-base-de-datos-este-poblada">1. Verificar que la base de datos esté poblada<a class="headerlink" href="#1-verificar-que-la-base-de-datos-este-poblada" title="Permanent link">&para;</a></h3>
 <p>Antes de probar la aplicación en el navegador, es importante verificar que los seeders se ejecutaron correctamente y que la base de datos contiene los datos esperados.</p>
 <p>Laravel Tinker es una herramienta interactiva que permite ejecutar código PHP directamente en el contexto de la aplicación, ideal para probar consultas y verificar datos.</p>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el siguiente comando para abrir Tinker</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el siguiente comando para abrir Tinker</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>tinker
 </code></pre></div>
-</details>
+</div>
 <p>En Tinker, ejecuta los siguientes comandos para verificar que los datos se insertaron correctamente:</p>
-<details class="questionlaravel" open="open">
-<summary>1. Verificar cantidad de registros en cada tabla</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">1. Verificar cantidad de registros en cada tabla</p>
 <div class="highlight"><pre><span></span><code>App<span class="se">\M</span>odels<span class="se">\U</span>ser::count<span class="o">()</span>
 
 App<span class="se">\M</span>odels<span class="se">\C</span>ategory::count<span class="o">()</span>
@@ -6557,9 +6688,9 @@ App<span class="se">\M</span>odels<span class="se">\P</span>roduct::count<span c
 <span class="x">= 6</span>
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>2. Verificar que las relaciones funcionan</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">2. Verificar que las relaciones funcionan</p>
 <p><strong>Producto con categoria y oferta:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nv">$product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>App<span class="se">\M</span>odels<span class="se">\P</span>roduct::with<span class="o">([</span><span class="s1">&#39;category&#39;</span>,<span class="w"> </span><span class="s1">&#39;offer&#39;</span><span class="o">])</span>-&gt;first<span class="o">()</span><span class="p">;</span>
 </code></pre></div>
@@ -6595,9 +6726,9 @@ App<span class="se">\M</span>odels<span class="se">\P</span>roduct::count<span c
 <span class="x">}</span>
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Usuario con producto:</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Usuario con producto:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>App<span class="se">\M</span>odels<span class="se">\U</span>ser::with<span class="o">(</span><span class="s1">&#39;products&#39;</span><span class="o">)</span>-&gt;first<span class="o">()</span><span class="p">;</span>
 </code></pre></div>
 <details class="examplelaravel">
@@ -6692,14 +6823,14 @@ App<span class="se">\M</span>odels<span class="se">\P</span>roduct::count<span c
 <span class="x">(END)</span>
 </code></pre></div>
 </details>
-</details>
+</div>
 <blockquote>
 <p><strong>Nota</strong></p>
 <p>Cuando ejecutas comandos o consultas largas en la consola de Tinker, a veces no se muestra todo el contenido de inmediato. Si ves el símbolo <code>:</code>, significa que hay más contenido por mostrar. Pulsa <code>Enter</code> para seguir viendo el resto hasta llegar a la etiqueta <code>(END)</code>, que indica que ya se mostró todo.</p>
 <p>Para salir de la visualización y volver a la línea de comandos de Tinker, simplemente pulsa la tecla <strong><code>q</code></strong>.</p>
 </blockquote>
-<details class="questionlaravel" open="open">
-<summary>3. Verificar los datos de un producto y carrito del usuario</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">3. Verificar los datos de un producto y carrito del usuario</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$product</span>-&gt;name
 <span class="nv">$product</span>-&gt;category-&gt;name
 <span class="nv">$product</span>-&gt;offer<span class="w"> </span>?<span class="w"> </span><span class="nv">$product</span>-&gt;offer-&gt;name<span class="w"> </span>:<span class="w"> </span><span class="s1">&#39;Sin oferta&#39;</span>
@@ -6728,9 +6859,9 @@ App<span class="se">\M</span>odels<span class="se">\P</span>roduct::count<span c
 <span class="x">= 2</span>
 </code></pre></div>
 </details>
-</details>
-<details class="questionlaravel" open="open">
-<summary>4. Verificar la relación N:M completa</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">4. Verificar la relación N:M completa</p>
 <div class="highlight"><pre><span></span><code>foreach<span class="w"> </span><span class="o">(</span><span class="nv">$user</span>-&gt;products<span class="w"> </span>as<span class="w"> </span><span class="nv">$product</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$product</span>-&gt;name<span class="w"> </span>.<span class="w"> </span><span class="s2">&quot; - Cantidad: &quot;</span><span class="w"> </span>.<span class="w"> </span><span class="nv">$product</span>-&gt;pivot-&gt;quantity<span class="w"> </span>.<span class="w"> </span><span class="s2">&quot;\n&quot;</span><span class="p">;</span>
 <span class="o">}</span>
@@ -6742,7 +6873,7 @@ App<span class="se">\M</span>odels<span class="se">\P</span>roduct::count<span c
 <span class="x">Producto 3 - Cantidad: 3</span>
 </code></pre></div>
 </details>
-</details>
+</div>
 <h3 id="2-probar-las-rutas-en-el-navegador">2. Probar las rutas en el navegador<a class="headerlink" href="#2-probar-las-rutas-en-el-navegador" title="Permanent link">&para;</a></h3>
 <p>Ahora que hemos verificado que la base de datos está poblada correctamente, es el momento de probar la aplicación en el navegador para asegurarnos de que todo funciona como se espera.</p>
 <p>Visita las siguientes URLs y verifica que cada página carga correctamente:</p>
@@ -6842,11 +6973,11 @@ Después de cada operación, puedes verificar los cambios en la base de datos:</
 <p>Para completar esta práctica, debes entregar un <strong>PDF</strong> que incluya las siguientes <strong>13 capturas de pantalla numeradas</strong>:</p>
 <hr />
 <h4 id="captura-1-migraciones-y-seeders-ejecutados">Captura 1: Migraciones y Seeders ejecutados<a class="headerlink" href="#captura-1-migraciones-y-seeders-ejecutados" title="Permanent link">&para;</a></h4>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta el comando para refrescar la base de datos y poblarla</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta el comando para refrescar la base de datos y poblarla</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>migrate:refresh<span class="w"> </span>--seed
 </code></pre></div>
-</details>
+</div>
 <p><strong>Requisitos</strong>:</p>
 <ul>
 <li>Terminal mostrando la ejecución completa del comando.</li>
@@ -6856,19 +6987,19 @@ Después de cada operación, puedes verificar los cambios en la base de datos:</
 </ul>
 <hr />
 <h4 id="captura-2-verificacion-de-datos-en-tinker">Captura 2: Verificación de datos en Tinker<a class="headerlink" href="#captura-2-verificacion-de-datos-en-tinker" title="Permanent link">&para;</a></h4>
-<details class="questionlaravel" open="open">
-<summary>Abre Tinker y verifica los datos</summary>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Abre Tinker y verifica los datos</p>
 <div class="highlight"><pre><span></span><code>sail<span class="w"> </span>artisan<span class="w"> </span>tinker
 </code></pre></div>
-</details>
-<details class="questionlaravel" open="open">
-<summary>Ejecuta los siguientes comandos</summary>
+</div>
+<div class="admonition questionlaravel">
+<p class="admonition-title">Ejecuta los siguientes comandos</p>
 <div class="highlight"><pre><span></span><code><span class="x">App\Models\User::count()</span>
 <span class="x">App\Models\Category::count()</span>
 <span class="x">App\Models\Offer::count()</span>
 <span class="x">App\Models\Product::count()</span>
 </code></pre></div>
-</details>
+</div>
 <p><strong>Requisitos</strong>:</p>
 <ul>
 <li>Terminal mostrando Tinker abierto</li>
@@ -7075,13 +7206,13 @@ Después de cada operación, puedes verificar los cambios en la base de datos:</
         
         
           
-          <a href="../../upl4/400/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Introducción">
+          <a href="../../upl4/400/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 4.0. Introducción">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Introducción
+                4.0. Introducción
               </div>
             </div>
             <div class="md-footer__button md-icon">

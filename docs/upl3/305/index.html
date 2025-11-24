@@ -1852,7 +1852,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    1.0. Introducción
     
   </span>
   
@@ -1875,7 +1875,7 @@
   
   
   <span class="md-ellipsis">
-    1.1. Introducción a Laravel 12
+    1.1. Introducción a Laravel12
     
   </span>
   
@@ -2082,7 +2082,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    2.0. Introducción
     
   </span>
   
@@ -2314,7 +2314,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    3.0. Introducción
     
   </span>
   
@@ -2707,7 +2707,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    4.0. Introducción
     
   </span>
   
@@ -2892,6 +2892,144 @@
   
   <span class="md-ellipsis">
     Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 5 Servicios REST
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 5 Servicios REST
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl5/50p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pruebas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Pruebas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../doc/examen2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examen 2 Laravel
     
   </span>
   
@@ -3107,17 +3245,6 @@
 <p>Una vez que se ha aprendido a gestionar la estructura de la base de datos con migraciones y a interactuar con los datos mediante Eloquent ORM, el siguiente paso es poblar la base de datos con datos iniciales y de prueba. Esto se logra utilizando <strong>seeders</strong> y <strong>factories</strong>, herramientas que permiten automatizar la creación de grandes cantidades de datos realistas para facilitar el desarrollo y las pruebas.</p>
 <h2 id="51-que-son-los-seeders">5.1. ¿Qué son los Seeders?<a class="headerlink" href="#51-que-son-los-seeders" title="Permanent link">&para;</a></h2>
 <p>Los <strong>seeders</strong> son clases que definen datos iniciales para poblar la base de datos con información fija o de prueba. Permiten establecer un estado inicial consistente de la base de datos para desarrollo y testing.</p>
-<details class="examplelaravel">
-<summary>Analogía: La Colección Inicial de la Biblioteca</summary>
-<p><strong>¡Imagina que acabas de inaugurar una nueva biblioteca y necesitas llenarla con libros esenciales!</strong></p>
-<ul>
-<li>📚 <strong>Biblioteca vacía</strong> = Estanterías vacías esperando ser llenadas</li>
-<li>📖 <strong>Seeders = La colección fundamental</strong> Los libros esenciales que toda biblioteca debe tener desde el primer día: Enciclopedias, diccionarios, clásicos universales (Quijote, Shakespeare...)</li>
-<li>🎯 <strong>Datos iniciales bien definidos</strong> No son libros aleatorios, son los pilares fundamentales perfectamente seleccionados</li>
-<li>⚡ <strong>Un comando para inicializar</strong><code>sail artisan db:seed</code> → ¡La biblioteca se llena con su colección base al instante!</li>
-</ul>
-<p><strong>Sin seeders</strong> 😓: Catalogarías manualmente cada libro esencial uno por uno, cada vez que reinicies la biblioteca <strong>Con seeders</strong> 🚀: Un comando y tu biblioteca tiene toda su colección fundamental lista para funcionar</p>
-</details>
 <p>¡Los seeders son como el plan de adquisición inicial que asegura que tu biblioteca tenga todo lo esencial desde el día uno!</p>
 <h2 id="52-creando-seeders">5.2. Creando Seeders<a class="headerlink" href="#52-creando-seeders" title="Permanent link">&para;</a></h2>
 <h3 id="521-comando-para-crear-seeders">5.2.1. Comando para crear Seeders<a class="headerlink" href="#521-comando-para-crear-seeders" title="Permanent link">&para;</a></h3>
@@ -3241,20 +3368,6 @@ sail<span class="w"> </span>artisan<span class="w"> </span>make:seeder<span clas
 <h2 id="53-que-son-las-factories">5.3. ¿Qué son las Factories?<a class="headerlink" href="#53-que-son-las-factories" title="Permanent link">&para;</a></h2>
 <p>Cuando los seeders necesitan crear grandes cantidades de datos que no son fijos, las factories son la herramienta ideal para generar estos datos ya que permiten definir patrones y variaciones en los datos generados.</p>
 <p>Las <strong>factories</strong> son clases que generan datos de prueba realistas de forma automatizada. Utilizan la librería <code>Faker</code> para crear datos variados y creíbles para desarrollo y testing.</p>
-<details class="examplelaravel">
-<summary>Analogía: El Generador Automático de Manuscritos</summary>
-<p><strong>¡Imagina que necesitas llenar la biblioteca con miles de libros para hacer pruebas del sistema de catalogación!</strong></p>
-<ul>
-<li>🖨️ <strong>Factory = La máquina generadora de manuscritos realistas</strong> Le das una plantilla base de "Libro de Ficción" y ella crea 1000 libros DIFERENTES y creíbles automáticamente</li>
-<li>🎨 <strong>Faker = El generador de contenido variado</strong> Cada libro tiene título único, autor diferente, año aleatorio, sinopsis distinta ¡Nunca genera dos libros exactamente iguales!</li>
-<li>� <strong>Libros generados = datos de prueba realistas</strong> "El Jardín Secreto de las Estrellas", "Crónicas del Tiempo Perdido", "El Último Guardián"... Todos parecen libros reales y creíbles</li>
-<li>⚡ <strong>Línea de producción literaria automática</strong><code>Book::factory(50)-&gt;create()</code> → ¡50 libros únicos catalogados al instante!</li>
-</ul>
-<p><strong>Sin factories</strong> 😓: Escribirías manualmente "Libro 1", "Libro 2", "Libro 3"... (¡aburrido, repetitivo y poco realista!) <strong>Con factories</strong> 🚀: La máquina genera títulos realistas, autores variados, argumentos únicos... (¡creíble y profesional!)</p>
-<ul>
-<li>📖 <strong>Perfectos para pruebas del sistema</strong> Necesitas probar el buscador, los filtros, la paginación... Las factories te dan datos realistas sin esfuerzo</li>
-</ul>
-</details>
 <p>¡Las factories son tu imprenta automática que llena la biblioteca con contenido realista para probar todo el sistema!</p>
 <h2 id="54-creando-factories">5.4. Creando Factories<a class="headerlink" href="#54-creando-factories" title="Permanent link">&para;</a></h2>
 <h3 id="541-comando-para-crear-factories">5.4.1. Comando para crear Factories<a class="headerlink" href="#541-comando-para-crear-factories" title="Permanent link">&para;</a></h3>
@@ -3893,16 +4006,6 @@ php<span class="w"> </span>artisan<span class="w"> </span>optimize:clear
 <p>Por otro lado, <code>pluck()</code> extrae un array con los valores de una columna específica de la colección, útil para obtener IDs u otros atributos.</p>
 <h2 id="56-seeder-principal">5.6. Seeder principal<a class="headerlink" href="#56-seeder-principal" title="Permanent link">&para;</a></h2>
 <p>Cuando se trabaja con bases de datos relacionales con claves foráneas, <strong>el orden de ejecución de los seeders es crucial</strong>. Se deben crear primero las entidades "padre" antes que las entidades "hijo" que dependen de ellas.</p>
-<details class="examplelaravel">
-<summary>Analogía: Protocolo de Montaje Oficial de BiblioTech S.A.</summary>
-<p><strong>¡Imagina que estás montando una biblioteca entera desde cero con los kits de BiblioTech S.A.! No puedes añadir un libro si la estantería no está montada.</strong></p>
-<ul>
-<li><strong>Paso 1: Estanterías (Tablas sin dependencias)</strong> Primero, elegimos las <code>Categorías</code> ("Ciencia Ficción", "Drama") y montamos las estanterías. También podemos empezar a dar de alta <code>Usuarios</code>. Son independientes.</li>
-<li><strong>Paso 2: Libros (Tablas con dependencias)</strong> Una vez tienes las categorías y autores, puedes empezar a catalogar los <code>Libros</code>. Cada libro necesita una categoría (<code>category_id</code>). No se podría catalogar en ninguna estantería si no están ya montadas.</li>
-<li><strong>Paso 3: Conexiones y Detalles (Tablas pivote)</strong> Con los libros y los usuarios ya en el sistema, puedes gestionar los <code>Préstamos</code> (tabla <code>book_user</code>). Esta tabla conecta un <code>user_id</code> con un <code>book_id</code>, y no tendría sentido sin que ambos existan previamente.</li>
-</ul>
-<p><strong>El orden es crucial: no puedes hacer un préstamo de un libro que aún no has catalogado, ni asignar un libro a un usuario que no has registrado. El <code>DatabaseSeeder</code> es tu plan de montaje que garantiza que todo se construya en la secuencia correcta.</strong></p>
-</details>
 <p>Para ello hay que asegurarse de que las tablas que no tengan claves foráneas deben ejecutarse primero, y las tablas que dependan de otras (por ejemplo, productos que dependen de categorías) deben ejecutarse después.</p>
 <p>Para ejecutar los seeders y poblar la base de datos, se utiliza el seeder principal <code>DatabaseSeeder</code>, que a su vez llama a los demás seeders en el orden definido.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>

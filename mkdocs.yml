@@ -110,7 +110,10 @@ nav:
         - upl4/406.md
         - upl4/407.md
         - upl4/40p.md
-
+    - UPL 5 Servicios REST:
+        - upl5/50p.md
+    - Pruebas:
+        - doc/examen2.md
 theme:
   name: material      # selección del tema
   language: es        # idioma del tema per defecte (ABC)

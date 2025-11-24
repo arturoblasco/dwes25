@@ -1852,7 +1852,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    1.0. Introducción
     
   </span>
   
@@ -1875,7 +1875,7 @@
   
   
   <span class="md-ellipsis">
-    1.1. Introducción a Laravel 12
+    1.1. Introducción a Laravel12
     
   </span>
   
@@ -2082,7 +2082,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    2.0. Introducción
     
   </span>
   
@@ -2314,7 +2314,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    3.0. Introducción
     
   </span>
   
@@ -2797,7 +2797,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    4.0. Introducción
     
   </span>
   
@@ -2982,6 +2982,144 @@
   
   <span class="md-ellipsis">
     Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 5 Servicios REST
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 5 Servicios REST
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl5/50p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pruebas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Pruebas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../doc/examen2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examen 2 Laravel
     
   </span>
   
@@ -3717,25 +3855,6 @@
 </code></pre></div></p>
 <h2 id="37-trabajando-con-collections">3.7. Trabajando con Collections<a class="headerlink" href="#37-trabajando-con-collections" title="Permanent link">&para;</a></h2>
 <p>Cuando se realizan consultas con Eloquent, el resultado no es un array simple, sino una <strong>Collection</strong> (colección). Las Collections son objetos potentes que ofrecen métodos útiles para manipular y verificar datos.</p>
-<details class="examplelaravel">
-<summary>Analogía: La Bandeja de Préstamo Inteligente</summary>
-<p><strong>¡Imagina que el bibliotecario te entrega los libros en dos tipos de bandejas diferentes!</strong></p>
-<ul>
-<li>� <strong>Array normal = Una pila de libros sin más</strong> Solo puedes ver cuántos hay contándolos uno por uno Para saber si hay alguno, tienes que mirar la pila manualmente Para encontrar un libro específico, debes revisarlos todos</li>
-<li>
-<p>✨ <strong>Collection = La Bandeja Inteligente de la Biblioteca</strong></p>
-</li>
-<li>
-<p>Le preguntas: <em>"¿Estás vacía?"</em> → <code>isEmpty()</code> → La bandeja responde al instante.</p>
-</li>
-<li>Le dices: <em>"¿Tienes libros?"</em> → <code>isNotEmpty()</code> → Verifica automáticamente.</li>
-<li>Le pides: <em>"¿Cuántos libros hay?"</em> → <code>count()</code> → Cuenta por ti al momento.</li>
-<li>Le ordenas: <em>"Dame el primer libro"</em> → <code>first()</code> → Te lo entrega sin buscar.</li>
-<li>Le indicas: <em>"Filtra solo los de 2020"</em> → <code>filter()</code> → Selecciona automáticamente.</li>
-<li>Le solicitas: <em>"Organízalos por título"</em> → <code>sortBy('title')</code> → Los ordena al instante.</li>
-</ul>
-<p><strong>¡Las Collections son como bandejas mágicas que conocen todo sobre los libros que contienen!</strong></p>
-</details>
 <h3 id="372-metodos-esenciales-de-collection">3.7.2. Métodos esenciales de Collection<a class="headerlink" href="#372-metodos-esenciales-de-collection" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 

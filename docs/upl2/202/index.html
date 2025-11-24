@@ -1852,7 +1852,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    1.0. Introducción
     
   </span>
   
@@ -1875,7 +1875,7 @@
   
   
   <span class="md-ellipsis">
-    1.1. Introducción a Laravel 12
+    1.1. Introducción a Laravel12
     
   </span>
   
@@ -2084,7 +2084,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    2.0. Introducción
     
   </span>
   
@@ -2683,7 +2683,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    3.0. Introducción
     
   </span>
   
@@ -2890,7 +2890,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    4.0. Introducción
     
   </span>
   
@@ -3075,6 +3075,144 @@
   
   <span class="md-ellipsis">
     Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 5 Servicios REST
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 5 Servicios REST
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl5/50p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pruebas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Pruebas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../doc/examen2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examen 2 Laravel
     
   </span>
   
@@ -3472,25 +3610,6 @@
 <h1 id="22-mapa-de-la-aplicacion">2.2. Mapa de la aplicación<a class="headerlink" href="#22-mapa-de-la-aplicacion" title="Permanent link">&para;</a></h1>
 <p>Cuando un usuario accede a una URL en una aplicación Laravel, el framework necesita saber exactamente qué hacer con esa solicitud. Esta responsabilidad recae en dos pilares fundamentales: el <strong>Sistema de Rutas</strong> y los <strong>Controladores</strong>.</p>
 <p>En esta sección se explorará el sistema de enrutamiento de Laravel, aprendiendo a definir rutas, manejar parámetros dinámicos y crear controladores profesionales siguiendo el patrón MVC. Se comprenderá cómo separar claramente la lógica de negocio de la presentación, siguiendo las mejores prácticas del framework.</p>
-<details class="examplelaravel">
-<summary>Analogía: Sistema de Puertas y Personal del Aeropuerto</summary>
-<p>Imagina Laravel como el sistema de gestión de puertas de un aeropuerto internacional.</p>
-<ul>
-<li><strong>Panel de Información (Rutas)</strong>: Las pantallas por todo el aeropuerto muestran: "Vuelo LV742 → Puerta A12", "Vuelo IB531 → Puerta B7" Esto es tu archivo <code>routes/web.php</code>: cada ruta dice "si buscas /products/42, ve al ProductController"</li>
-<li>
-<p><strong>Personal de Puerta (Controladores)</strong>: En cada puerta hay personal especializado de la aerolínea:</p>
-<ul>
-<li><code>index()</code>: Muestra la lista de todos los vuelos disponibles.</li>
-<li><code>show(42)</code>: Busca información del vuelo específico #42 </li>
-<li><code>create()</code>: Registra un nuevo vuelo en el sistema.</li>
-</ul>
-</li>
-<li>
-<p><strong>El Viaje del Pasajero</strong>: Pasajero → "Necesito información del Vuelo 42" → Mira el panel (ruta): "Vuelo 42 → Puerta A12" → Va a la puerta A12 → El personal ejecuta <code>show(42)</code>: busca el vuelo y te da toda la información.</p>
-</li>
-</ul>
-<p><strong>¡Sin el panel de información, estarías perdido en el aeropuerto! Sin el personal especializado, nadie te ayudaría!</strong></p>
-</details>
 <h2 id="21-convencion-fundamental-programa-en-ingles">2.1. Convención fundamental: programa en inglés<a class="headerlink" href="#21-convencion-fundamental-programa-en-ingles" title="Permanent link">&para;</a></h2>
 <p><strong>Laravel está diseñado para funcionar en inglés.</strong> Todos los nombres de archivos, clases, métodos, variables y rutas deben estar en <strong>inglés</strong>, siguiendo las convenciones del idioma.</p>
 <p>Laravel deduce automáticamente nombres usando reglas del inglés.</p>
@@ -3744,18 +3863,6 @@
 <h2 id="3-controladores-profesionales">3. Controladores profesionales<a class="headerlink" href="#3-controladores-profesionales" title="Permanent link">&para;</a></h2>
 <p>Un <strong>controlador</strong> es una clase de PHP cuya responsabilidad es agrupar la lógica relacionada con las peticiones HTTP. Actúa como un intermediario que recibe la petición desde la ruta, interactúa con otras partes de la aplicación (como los modelos, que se verán más adelante) y finalmente prepara y devuelve una respuesta, que normalmente es una vista.</p>
 <p>Los controladores permiten separar la lógica de negocio de la presentación, siguiendo el patrón <strong>MVC (Modelo-Vista-Controlador)</strong>.</p>
-<details class="examplelaravel">
-<summary>Analogía del Controlador como Torre de Control Aéreo</summary>
-<p>Imagina el controlador como un controlador aéreo en la torre de control del aeropuerto:</p>
-<ul>
-<li><strong>Recibe la solicitud de aterrizaje/despegue</strong> (petición HTTP) del piloto</li>
-<li><strong>Coordina con diferentes departamentos</strong> (modelos, servicios): meteorología, servicios en tierra, tráfico aéreo</li>
-<li><strong>Verifica permisos y disponibilidad</strong> (lógica de negocio): pista libre, condiciones meteorológicas, slot horario</li>
-<li><strong>Autoriza y dirige la operación</strong> (procesa datos): "Vuelo 742, autorizado aterrizaje pista 12L"</li>
-<li><strong>Comunica el resultado al piloto</strong> (respuesta): instrucciones claras de qué hacer y dónde ir</li>
-</ul>
-<p>¡El controlador aéreo no pilota el avión ni carga equipaje, solo coordina y autoriza operaciones!</p>
-</details>
 <h3 id="31-tipos-de-controladores">3.1. Tipos de controladores<a class="headerlink" href="#31-tipos-de-controladores" title="Permanent link">&para;</a></h3>
 <p>Existen varios tipos de controladores en Laravel, cada uno con su propósito específico.</p>
 <h4 id="controladores-de-accion-unica-invokable">Controladores de acción única (invokable)<a class="headerlink" href="#controladores-de-accion-unica-invokable" title="Permanent link">&para;</a></h4>

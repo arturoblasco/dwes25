@@ -1852,7 +1852,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    1.0. Introducción
     
   </span>
   
@@ -1875,7 +1875,7 @@
   
   
   <span class="md-ellipsis">
-    1.1. Introducción a Laravel 12
+    1.1. Introducción a Laravel12
     
   </span>
   
@@ -2084,7 +2084,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    2.0. Introducción
     
   </span>
   
@@ -2446,7 +2446,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    3.0. Introducción
     
   </span>
   
@@ -2653,7 +2653,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    4.0. Introducción
     
   </span>
   
@@ -2856,6 +2856,144 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 5 Servicios REST
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 5 Servicios REST
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl5/50p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pruebas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Pruebas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../doc/examen2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examen 2 Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3002,20 +3140,6 @@
 <p>Ahora es momento de profundizar en el <strong>ciclo de vida de las peticiones</strong>. Se explorará en detalle cómo Laravel procesa cada petición HTTP desde que llega al servidor hasta que devuelve la respuesta al cliente, comprendiendo el <strong>middleware</strong>, profundizando en el <strong>Service Container</strong> y la <strong>inyección de dependencias</strong>, y analizando el flujo completo interno que transforma una simple URL en una página web dinámica.</p>
 <h2 id="1-el-flujo-de-una-peticion-http-en-laravel">1. El Flujo de una Petición HTTP en Laravel<a class="headerlink" href="#1-el-flujo-de-una-peticion-http-en-laravel" title="Permanent link">&para;</a></h2>
 <p>Cuando un usuario accede a una URL en una aplicación Laravel, se inicia un proceso que transforma una simple petición HTTP en una respuesta HTML completa. Este proceso se conoce como el <strong>ciclo de vida de una petición</strong>.</p>
-<details class="examplelaravel" open="open">
-<summary>Analogía del Aeropuerto Internacional</summary>
-<p>✈️ <strong>Imagina Laravel como un aeropuerto internacional ultra-eficiente:</strong></p>
-<ul>
-<li><strong>Pasajero (Usuario)</strong>: Llegas al aeropuerto con tu billete (petición HTTP) y destino específico.</li>
-<li><strong>Puerta Principal (index.php)</strong>: TODOS los pasajeros entran por aquí, sin excepción.</li>
-<li><strong>Terminal Central (Bootstrap)</strong>: Sistema que inicializa todos los servicios del aeropuerto.</li>
-<li><strong>Escáneres de Seguridad (Middleware)</strong>: Verifican tu identidad, equipaje y permisos antes de pasar.</li>
-<li><strong>Sistema de Puertas (Rutas)</strong>: Cada puerta numerada lleva a un destino: <em>Puerta A1 → Madrid</em>, <em>Puerta B5 → París</em>.</li>
-<li><strong>Personal de Aerolínea (Controladores)</strong>: En cada puerta, el personal gestiona el embarque y resuelve problemas.</li>
-<li><strong>Avión (Vista)</strong>: El vehículo final que te lleva a tu destino con la respuesta que esperabas.</li>
-</ul>
-<p>Todo sincronizado, todo eficiente, todo sin que veas el caos interno. ¡Así funciona Laravel!</p>
-</details>
 <h3 id="11-llegada-de-la-peticion">1.1. Llegada de la petición<a class="headerlink" href="#11-llegada-de-la-peticion" title="Permanent link">&para;</a></h3>
 <p>El proceso comienza cuando el navegador del usuario envía una petición HTTP al servidor web (Apache, Nginx, etc.). Esta petición contiene información crucial:</p>
 <ul>
@@ -3059,17 +3183,6 @@
 <li><strong>Resolver sus dependencias</strong> automáticamente.</li>
 <li><strong>Gestionar el ciclo de vida</strong> del objeto.</li>
 </ol>
-<details class="examplelaravel" open="open">
-<summary>Analogía del Servicio VIP del Aeropuerto</summary>
-<p>💎 <strong>Imagina el Service Container como el servicio de un multimillonario que llega al aeropuerto:</strong></p>
-<ul>
-<li><strong>El multimillonario</strong> dice simplemente: "<em>Quiero volar a Marbella</em>".</li>
-<li><strong>El sistema automáticamente coordina</strong> TODO sin que él lo pida: jet privado, piloto certificado, tripulación, plan de vuelo aprobado, combustible, catering de lujo, hangar VIP.</li>
-<li><strong>No tiene que buscar</strong> cada cosa manualmente ni preocuparse de las dependencias.</li>
-<li><strong>El sistema resuelve dependencias</strong>: si necesita piloto → el piloto necesita licencia → la licencia necesita certificado médico, todo se coordina solo.</li>
-</ul>
-<p>¡El multimillonario solo dijo su destino y TODO se organizó automáticamente! Eso es el Service Container: lujo puro y automatización total.</p>
-</details>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Ejemplo: Laravel resuelve automáticamente las dependencias</span>
 <span class="k">class</span> <span class="nc">ProductController</span> <span class="k">extends</span> <span class="nx">Controller</span>
@@ -3103,18 +3216,6 @@
 <p>Una vez que la petición llega a <code>index.php</code>, Laravel carga la aplicación desde <code>bootstrap/app.php</code>, que se encarga de configurar y procesar la petición. En este proceso, Laravel determina a qué ruta debe dirigirse la petición, si debe pasar por algún middleware y cómo manejar las excepciones.</p>
 <h2 id="3-middleware-la-capa-de-procesamiento">3. Middleware: la capa de procesamiento<a class="headerlink" href="#3-middleware-la-capa-de-procesamiento" title="Permanent link">&para;</a></h2>
 <p>El <strong>middleware</strong> es una capa de software que procesa las peticiones HTTP antes de que lleguen a los controladores. Es como una serie de "filtros" que cada petición debe atravesar.</p>
-<details class="examplelaravel" open="open">
-<summary>Analogía del Control de Seguridad del Aeropuerto</summary>
-<p>Imagina el middleware como el control de seguridad de un aeropuerto:</p>
-<ul>
-<li><strong>Cada pasajero</strong> (petición) debe pasar por varios controles.</li>
-<li><strong>Control de identidad</strong> (autenticación): ¿Es realmente quien dice ser?</li>
-<li><strong>Control de equipaje</strong> (validación): ¿Lleva algo prohibido?</li>
-<li><strong>Control de documentos</strong> (autorización): ¿Tiene permiso para viajar?</li>
-<li><strong>Registro de pasajeros</strong> (logging): Se anota quién pasó y cuándo.</li>
-<li><strong>Solo los pasajeros autorizados</strong> llegan al avión (controlador).</li>
-</ul>
-</details>
 <p>El middleware permite ejecutar código antes y después de que una petición sea procesada por la aplicación. Algunos ejemplos comunes incluyen:</p>
 <p>Tipos de Middleware:</p>
 <table>
@@ -3206,7 +3307,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../200/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Introducción">
+          <a href="../200/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 2.0. Introducción">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -3216,7 +3317,7 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Introducción
+                2.0. Introducción
               </div>
             </div>
           </a>
