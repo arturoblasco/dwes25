@@ -11,7 +11,7 @@ title: Examen 2 Laravel
 > Proyecto: Gestor de incidencias en un centro educativo
 
 > *Realizar esta prueba después de haber montado las tres primeras unidades prácticas de laravel*.
----
+
 
 ## Parte A. Cuestionario – Preguntas cortas
 
@@ -24,7 +24,7 @@ a. Enumera al menos **4 componentes de software** necesarios para desarrollar y 
     - Servidor web **Apache** o **Nginx**.
     - **SGBD**: MySQL / MariaDB.
     - **Composer** (gestor de dependencias de PHP).  
-    *(Opcionalmente: Node.js + npm para compilar assets frontend.)*
+    - *(Opcionalmente: Node.js + npm para compilar assets frontend.)*
 
 b. Explica brevemente qué papel tiene **PHP** dentro de ese conjunto.
 ???questionlaravel "Respuesta 1.b"
