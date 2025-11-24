@@ -6,8 +6,8 @@ title: Examen 2 Laravel
 > **Laravel (backend, MVC, configuración y acceso a datos)**
 
 > Desarrollo Web en Entorno Servidor (DWES)
-
 > Nivel: 2º de Ciclo Formativo de Grado Superior (DAW)  
+
 > Proyecto: Gestor de incidencias en un centro educativo
 
 > *Realizar esta prueba después de haber montado las tres primeras unidades prácticas de laravel*.
