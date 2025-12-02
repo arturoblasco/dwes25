@@ -113,6 +113,7 @@ nav:
     - UPL 5 Servicios REST:
         - upl5/50p.md
     - Pruebas:
+        - doc/controladores.md
         - doc/examen2.md
 theme:
   name: material      # selección del tema
