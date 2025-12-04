@@ -1,0 +1,16 @@
+INSERT INTO products (name, description, price, stock, created_at, updated_at) VALUES
+('Teclado mecánico RGB', 'Teclado mecánico con retroiluminación RGB, switches rojos y reposamuñecas desmontable.', 79.90, 25, '2025-01-10 10:00:00', '2025-01-10 10:00:00'),
+('Ratón inalámbrico ergonómico', 'Ratón inalámbrico con 6 botones programables y sensor óptico de alta precisión.', 29.95, 40, '2025-01-10 10:05:00', '2025-01-10 10:05:00'),
+('Monitor 24" Full HD', 'Monitor LED de 24 pulgadas, resolución 1920x1080, conectores HDMI y DisplayPort.', 149.00, 15, '2025-01-10 10:10:00', '2025-01-10 10:10:00'),
+('Auriculares gaming con micrófono', 'Auriculares cerrados con sonido envolvente 7.1 y micrófono con cancelación de ruido.', 59.90, 30, '2025-01-10 10:15:00', '2025-01-10 10:15:00'),
+('Disco SSD 1TB NVMe', 'Unidad de estado sólido NVMe de 1 TB, lectura hasta 3400 MB/s, escritura hasta 3000 MB/s.', 114.50, 20, '2025-01-10 10:20:00', '2025-01-10 10:20:00'),
+('Memoria RAM 16GB (2x8GB) DDR4', 'Kit de memoria RAM DDR4 3200 MHz, latencia CL16, compatible con la mayoría de placas base.', 72.90, 35, '2025-01-10 10:25:00', '2025-01-10 10:25:00'),
+('Fuente de alimentación 650W 80+ Bronze', 'Fuente de alimentación de 650W con certificación 80+ Bronze y cableado semimodular.', 69.00, 18, '2025-01-10 10:30:00', '2025-01-10 10:30:00'),
+('Caja ATX con ventana lateral', 'Caja para PC formato ATX con panel lateral de cristal templado y 3 ventiladores ARGB incluidos.', 89.90, 12, '2025-01-10 10:35:00', '2025-01-10 10:35:00'),
+('Alfombrilla XXL para ratón', 'Alfombrilla de gran tamaño (900x400mm) con base de goma antideslizante y bordes cosidos.', 19.95, 50, '2025-01-10 10:40:00', '2025-01-10 10:40:00'),
+('Webcam Full HD 1080p', 'Cámara web con resolución 1080p, enfoque automático y micrófono estéreo integrado.', 39.99, 28, '2025-01-10 10:45:00', '2025-01-10 10:45:00'),
+('Disco duro externo 2TB USB 3.0', 'Disco duro externo portátil de 2 TB con conexión USB 3.0 y carcasa resistente.', 84.90, 22, '2025-01-10 10:50:00', '2025-01-10 10:50:00'),
+('Hub USB-C 7 en 1', 'Hub USB-C con HDMI, lector de tarjetas, 3 puertos USB 3.0 y carga PD hasta 100W.', 44.50, 27, '2025-01-10 10:55:00', '2025-01-10 10:55:00'),
+('Silla gaming reclinable', 'Silla ergonómica con soporte lumbar, reposacabezas ajustable y reclinación hasta 150º.', 199.00, 8, '2025-01-10 11:00:00', '2025-01-10 11:00:00'),
+('Micrófono USB para streaming', 'Micrófono de condensador con conexión USB, patrón cardioide y soporte de escritorio.', 89.00, 16, '2025-01-10 11:05:00', '2025-01-10 11:05:00'),
+('Kit de limpieza para portátil', 'Kit con spray limpiador, paño de microfibra y pincel para mantener la pantalla y el teclado limpios.', 12.90, 60, '2025-01-10 11:10:00', '2025-01-10 11:10:00');

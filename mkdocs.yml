@@ -113,8 +113,9 @@ nav:
     - UPL 5 Servicios REST:
         - upl5/50p.md
     - Pruebas:
-        - doc/controladores.md
-        - doc/examen2.md
+        - pru/02.md
+        - pru/03.md
+        - pru/examen2.md
 theme:
   name: material      # selección del tema
   language: es        # idioma del tema per defecte (ABC)
