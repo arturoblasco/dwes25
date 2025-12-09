@@ -345,3 +345,24 @@ font-size: 16px
 
 }
 
+
+/* ABC: para imágenes */
+.figure-center {
+    text-align: center;
+}
+
+.figure-center figure {
+    display: inline-block;       /* opcional, para que se ajuste al contenido */
+    margin: 0;
+}
+
+.figure-img-highlight {
+    border: 2px solid #fff2c9;
+    /* zoom no es estándar; mejor escala por ancho/altura */
+    max-width: 80%;
+}
+
+.figure-caption-small {
+    font-size: 13px;
+    color: #bd8f04;
+}

@@ -1,0 +1,16 @@
+INSERT INTO notes (title, description, date_at, done, created_at, updated_at) VALUES
+('Revisar requisitos del proyecto', 'Revisión inicial de los requisitos funcionales y no funcionales del proyecto Laravel.', '2025-01-10', 0, '2025-01-10', '2025-01-10'),
+('Diseñar esquema de la base de datos', 'Crear el diagrama ER y definir tablas, relaciones y tipos de datos para la aplicación.', '2025-01-11', 0, '2025-01-10', '2025-01-10'),
+('Configurar entorno Laravel', 'Instalar dependencias, configurar el archivo .env y comprobar conexión con la base de datos.', '2025-01-12', 1, '2025-01-11', '2025-01-12'),
+('Crear modelo Note', 'Definir el modelo Note con sus atributos fillable y las fechas manejadas por Eloquent.', '2025-01-13', 1, '2025-01-12', '2025-01-13'),
+('Crear migración de notes', 'Generar y ejecutar la migración de la tabla notes con los campos title, description, date_at y done.', '2025-01-14', 1, '2025-01-13', '2025-01-14'),
+('Implementar NoteController', 'Crear el controlador de recurso para gestionar el CRUD completo de las notas.', '2025-01-15', 0, '2025-01-14', '2025-01-14'),
+('Crear vistas index y show', 'Maquetar las vistas notes/index y notes/show utilizando Blade y un diseño sencillo.', '2025-01-16', 0, '2025-01-15', '2025-01-15'),
+('Crear formularios create y edit', 'Implementar los formularios para crear y editar notas con campos validados.', '2025-01-17', 0, '2025-01-16', '2025-01-16'),
+('Añadir validación con FormRequest', 'Crear un FormRequest para validar los campos title, description, date_at y done.', '2025-01-18', 1, '2025-01-17', '2025-01-18'),
+('Configurar mensajes flash', 'Mostrar mensajes de éxito y error al crear, actualizar o eliminar notas.', '2025-01-19', 1, '2025-01-18', '2025-01-19'),
+('Mejorar diseño con iconos', 'Sustituir textos de acciones por iconos para ver, editar y eliminar notas.', '2025-01-20', 0, '2025-01-19', '2025-01-19'),
+('Probar paginación en el listado', 'Configurar la paginación del listado de notas para mejorar la usabilidad.', '2025-01-21', 0, '2025-01-20', '2025-01-20'),
+('Añadir filtro por fecha', 'Permitir filtrar notas por rango de fechas usando parámetros en la URL.', '2025-01-22', 0, '2025-01-21', '2025-01-21'),
+('Documentar el CRUD de notas', 'Redactar documentación básica sobre el funcionamiento del CRUD de notas.', '2025-01-23', 0, '2025-01-22', '2025-01-22'),
+('Preparar demo para el alumnado', 'Preparar un ejemplo completo de gestión de notas para mostrar en clase.', '2025-01-24', 0, '2025-01-23', '2025-01-23');
