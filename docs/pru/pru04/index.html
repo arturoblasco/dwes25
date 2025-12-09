@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../upl5/50p/">
+        <link rel="prev" href="../pru03/">
       
       
-        <link rel="next" href="../03/">
+        <link rel="next" href="../pru05/">
       
       
       <link rel="icon" href="../../img/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Práctica: Controladores y Rutas - Desarrollo Web en Entorno Servidor (DWES)</title>
+        <title>Validaciones, Rutas Resource y Mensajes del Sistema - Desarrollo Web en Entorno Servidor (DWES)</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-controladores-y-rutas" class="md-skip">
+        <a href="#validaciones-rutas-resource-y-mensajes-del-sistema" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Práctica: Controladores y Rutas
+              Validaciones, Rutas Resource y Mensajes del Sistema
             
           </span>
         </div>
@@ -2835,6 +2835,52 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controladores y Rutas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Desarrollo de un CRUD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2852,7 +2898,7 @@
   
   
   <span class="md-ellipsis">
-    Práctica: Controladores y Rutas
+    Validaciones, Rutas Resource y Mensajes del Sistema
     
   </span>
   
@@ -2865,7 +2911,7 @@
   
   
   <span class="md-ellipsis">
-    Práctica: Controladores y Rutas
+    Validaciones, Rutas Resource y Mensajes del Sistema
     
   </span>
   
@@ -2888,55 +2934,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-de-la-actividad" class="md-nav__link">
+  <a href="#1-validacion-de-datos" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo de la actividad
+      1. Validación de Datos
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requisitos-previos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Requisitos previos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instrucciones-paso-a-paso" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instrucciones paso a paso
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instrucciones paso a paso">
+    <nav class="md-nav" aria-label="1. Validación de Datos">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-crear-el-controlador-employeecontroller" class="md-nav__link">
+  <a href="#11-que-es-la-validacion-y-por-que-es-necesaria" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Crear el controlador EmployeeController
+      1.1. ¿Qué es la validación y por qué es necesaria?
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-definir-las-rutas" class="md-nav__link">
+  <a href="#12-validar-desde-el-controlador-usando-request-validate" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Definir las rutas
+      1.2. Validar desde el controlador usando $request-&gt;validate()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Validar desde el controlador usando $request-&gt;validate()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#13-reglas-comunes-de-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Reglas comunes de validación:
     </span>
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#3-crear-la-vista-employeesindexbladephp" class="md-nav__link">
+  <a href="#14-crear-una-clase-formrequest-personalizada" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Crear la vista employees/index.blade.php
+      1.4. Crear una clase FormRequest personalizada
     </span>
   </a>
   
@@ -2948,20 +2991,242 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comprobaciones" class="md-nav__link">
+  <a href="#2-mostrar-errores-de-validacion" class="md-nav__link">
     <span class="md-ellipsis">
-      Comprobaciones
+      2. Mostrar Errores de Validación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Mostrar Errores de Validación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-mostrar-errores-en-el-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Mostrar errores en el formulario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-resaltar-campos-con-error-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Resaltar campos con error (CSS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-mostrar-todos-los-errores-juntos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Mostrar todos los errores juntos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-modificar-la-vista-de-creacion-y-vista-de-edicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Modificar la vista de creación y vista de edición
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-traducir-los-mensajes-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5. Traducir los mensajes de error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mensajes-de-exito" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Mensajes de Éxito
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Mensajes de Éxito">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-flash-de-sesion-con-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Flash de sesión con with()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mostrar-el-mensaje-en-la-vista-por-ejemplo-en-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Mostrar el mensaje en la vista (por ejemplo, en layout):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rutas-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Rutas Resource
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Rutas Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-que-son" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. ¿Qué son?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-acciones-generadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Acciones generadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-personalizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Personalización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-ver-rutas-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4. Ver rutas disponibles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-crear-un-controlador-tipo-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5. Crear un controlador tipo resource
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Conclusiones
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entrega" class="md-nav__link">
+  <a href="#objetivo-de-la-actividad" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega
+      Objetivo de la actividad
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Objetivo de la actividad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instrucciones-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instrucciones paso a paso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-crear-el-formrequest-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Crear el FormRequest personalizado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-aplicar-el-formrequest-en-el-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Aplicar el FormRequest en el controlador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mostrar-errores-en-los-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Mostrar errores en los formularios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-crear-el-partial-para-los-mensajes-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Crear el partial para los mensajes del sistema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-comprobar-las-rutas-del-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Comprobar las rutas del CRUD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-probar-las-validaciones-y-los-mensajes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Probar las validaciones y los mensajes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2981,12 +3246,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../03/" class="md-nav__link">
+      <a href="../pru05/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Desarrollo de un CRUD
+    Creación de APIs REST en Laravel
     
   </span>
   
@@ -3062,55 +3327,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-de-la-actividad" class="md-nav__link">
+  <a href="#1-validacion-de-datos" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo de la actividad
+      1. Validación de Datos
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requisitos-previos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Requisitos previos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instrucciones-paso-a-paso" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instrucciones paso a paso
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instrucciones paso a paso">
+    <nav class="md-nav" aria-label="1. Validación de Datos">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-crear-el-controlador-employeecontroller" class="md-nav__link">
+  <a href="#11-que-es-la-validacion-y-por-que-es-necesaria" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Crear el controlador EmployeeController
+      1.1. ¿Qué es la validación y por qué es necesaria?
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-definir-las-rutas" class="md-nav__link">
+  <a href="#12-validar-desde-el-controlador-usando-request-validate" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Definir las rutas
+      1.2. Validar desde el controlador usando $request-&gt;validate()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Validar desde el controlador usando $request-&gt;validate()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#13-reglas-comunes-de-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Reglas comunes de validación:
     </span>
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#3-crear-la-vista-employeesindexbladephp" class="md-nav__link">
+  <a href="#14-crear-una-clase-formrequest-personalizada" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Crear la vista employees/index.blade.php
+      1.4. Crear una clase FormRequest personalizada
     </span>
   </a>
   
@@ -3122,20 +3384,242 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comprobaciones" class="md-nav__link">
+  <a href="#2-mostrar-errores-de-validacion" class="md-nav__link">
     <span class="md-ellipsis">
-      Comprobaciones
+      2. Mostrar Errores de Validación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Mostrar Errores de Validación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-mostrar-errores-en-el-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Mostrar errores en el formulario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-resaltar-campos-con-error-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Resaltar campos con error (CSS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-mostrar-todos-los-errores-juntos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Mostrar todos los errores juntos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-modificar-la-vista-de-creacion-y-vista-de-edicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Modificar la vista de creación y vista de edición
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-traducir-los-mensajes-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5. Traducir los mensajes de error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mensajes-de-exito" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Mensajes de Éxito
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Mensajes de Éxito">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-flash-de-sesion-con-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Flash de sesión con with()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mostrar-el-mensaje-en-la-vista-por-ejemplo-en-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Mostrar el mensaje en la vista (por ejemplo, en layout):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rutas-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Rutas Resource
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Rutas Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-que-son" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. ¿Qué son?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-acciones-generadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Acciones generadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-personalizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Personalización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-ver-rutas-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4. Ver rutas disponibles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-crear-un-controlador-tipo-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5. Crear un controlador tipo resource
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Conclusiones
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entrega" class="md-nav__link">
+  <a href="#objetivo-de-la-actividad" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega
+      Objetivo de la actividad
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Objetivo de la actividad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instrucciones-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instrucciones paso a paso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-crear-el-formrequest-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Crear el FormRequest personalizado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-aplicar-el-formrequest-en-el-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Aplicar el FormRequest en el controlador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mostrar-errores-en-los-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Mostrar errores en los formularios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-crear-el-partial-para-los-mensajes-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Crear el partial para los mensajes del sistema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-comprobar-las-rutas-del-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Comprobar las rutas del CRUD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-probar-las-validaciones-y-los-mensajes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Probar las validaciones y los mensajes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3155,253 +3639,555 @@
 
 
 
-<h1 id="practica-controladores-y-rutas">Práctica: Controladores y Rutas<a class="headerlink" href="#practica-controladores-y-rutas" title="Permanent link">&para;</a></h1>
-<h2 id="objetivo-de-la-actividad">Objetivo de la actividad<a class="headerlink" href="#objetivo-de-la-actividad" title="Permanent link">&para;</a></h2>
+<h1 id="validaciones-rutas-resource-y-mensajes-del-sistema">Validaciones, Rutas Resource y Mensajes del Sistema<a class="headerlink" href="#validaciones-rutas-resource-y-mensajes-del-sistema" title="Permanent link">&para;</a></h1>
+<h2 id="1-validacion-de-datos">1. Validación de Datos<a class="headerlink" href="#1-validacion-de-datos" title="Permanent link">&para;</a></h2>
+<h3 id="11-que-es-la-validacion-y-por-que-es-necesaria">1.1. ¿Qué es la validación y por qué es necesaria?<a class="headerlink" href="#11-que-es-la-validacion-y-por-que-es-necesaria" title="Permanent link">&para;</a></h3>
 <p style="float: left; margin-left: 1rem;">
   <img src="../../img/laravelactividad.png"
        alt="Actividad en el aula virtual"
        width="150">
 </p>
 
-<p>Implementarás <strong>rutas</strong> y un <strong>controlador</strong> que devuelvan listados ordenados y filtrados, y mostrarás los datos en una <strong>vista Blade</strong> mediante una tabla HTML con columnas homogéneas.</p>
-<p>Al finalizar, serás capaz de:</p>
-<ul>
-<li>Definir rutas que invocan métodos de un controlador.</li>
-<li>Devolver listados ordenados por diferentes criterios.</li>
-<li>Aplicar filtros sobre consultas de Eloquent.</li>
-<li>Presentar los datos en una vista con una tabla HTML clara y consistente.</li>
-</ul>
-<hr />
-<h2 id="requisitos-previos">Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Crea un proyecto laravel de nombre <strong>testear</strong>.</li>
-<li><strong>Base de datos</strong>: acceso a la base <code>testear</code>.</li>
-<li><strong>Tabla <code>employees</code></strong> creada mediante migraciones con la siguiente estructura:</li>
-</ol>
+<p>La validación es el proceso mediante el cual se verifica que los datos enviados por el usuario cumplen con unas reglas antes de ser almacenados en la base de datos.</p>
+<p>Laravel ofrece un sistema de validación muy robusto, que nos permite validar datos tanto desde el controlador como mediante clases personalizadas.</p>
+<div class="admonition tip">
+<p class="admonition-title">Importante</p>
+<p>Siempre debemos validar los datos <strong>antes de almacenarlos</strong> y <strong>antes de actualizarlos</strong>. Nunca debemos asumir que lo que llega del formulario es seguro o correcto.</p>
+</div>
+<h3 id="12-validar-desde-el-controlador-usando-request-validate">1.2. Validar desde el controlador usando <code>$request-&gt;validate()</code><a class="headerlink" href="#12-validar-desde-el-controlador-usando-request-validate" title="Permanent link">&para;</a></h3>
+<p>En este caso vamos a utilizar un <code>checkbox</code> para marcar si la nota está completada o no. En el formulario, si el checkbox está marcado, se enviará <code>done=on</code>, y si no está marcado, no se enviará nada. Para evitar problemas con el <code>on</code> vamos a modificar la vista de creación y edición de notas para que el valor enviado sea <code>1</code> o <code>nada</code> en el caso de no estar marcado.</p>
+<details class="examplelaravel" open="open">
+<summary>Checkbox en los formularios crear y editar</summary>
+<p>En los fichero <strong><code>create.blade.php</code></strong> y <strong><code>edit.blade.php</code></strong>:
+<div class="highlight"><pre><span></span><code>&lt;input type=&quot;checkbox&quot; name=&quot;done&quot; value=&quot;1&quot;&gt; 
+</code></pre></div></p>
+</details>
+<p>Este método permite validar directamente dentro del método del controlador:</p>
+<details class="examplelaravel" open="open">
+<summary>Función store()</summary>
+<div class="highlight"><pre><span></span><code>public function store(Request $request) {
+    $validated = $request-&gt;validate([         
+                                    &#39;title&#39; =&gt; &#39;required|string|max:255&#39;,         
+                                    &#39;description&#39; =&gt; &#39;required|string|min:10&#39;,         
+                                    &#39;date_at&#39; =&gt; &#39;required|date&#39;,         
+                                    &#39;done&#39; =&gt; &#39;nullable|boolean&#39;     
+                                    ]);      
+    Note::create($validated);     
+
+    return redirect()-&gt;route(&#39;note.index&#39;)-&gt;with(&#39;success&#39;, &#39;Nota creada correctamente.&#39;); 
+} 
+</code></pre></div>
+</details>
+<p>Cuando la validación falla, Laravel redirige automáticamente al formulario anterior. Una buena técnica es utilizar el método <strong><code>old()</code></strong> para recuperar el valor anterior del campos de manera que el usuario no tenga que volver a escribirlo.</p>
+<div class="highlight"><pre><span></span><code>&lt;input name=&quot;title&quot; value=&quot;{{ old(&#39;title&#39;) }}&quot;&gt; 
+</code></pre></div>
+<p>Haremos esto en todos los campos. Cuidado con los <code>textarea</code> que no tienen <code>value</code> y con los <code>checkbox</code>. Por ejemlo, para el <code>checkbox</code>:</p>
+<div class="highlight"><pre><span></span><code>&lt;input type=&quot;checkbox&quot; name=&quot;done&quot; value=&quot;1&quot; {{ old(&#39;done&#39;) ? &#39;checked&#39; : &#39;&#39; }}&gt; 
+</code></pre></div>
+<p>Esto mostrará el checkbox marcado si el valor anterior era <code>1</code>.</p>
+<h4 id="13-reglas-comunes-de-validacion">1.3. Reglas comunes de validación:<a class="headerlink" href="#13-reglas-comunes-de-validacion" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Restricciones</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td><code>integer</code></td>
-<td>Clave primaria, no autoincremental, no nulo</td>
-</tr>
-<tr>
-<td><code>emp_firstname</code></td>
-<td><code>string(100)</code></td>
-<td>No nulo</td>
-</tr>
-<tr>
-<td><code>emp_lastname</code></td>
-<td><code>string(100)</code></td>
-<td>No nulo</td>
-</tr>
-<tr>
-<td><code>emp_birth_date</code></td>
-<td><code>date</code></td>
-<td>No nulo</td>
-</tr>
-<tr>
-<td><code>emp_hire_date</code></td>
-<td><code>date</code></td>
-<td>No nulo</td>
-</tr>
-<tr>
-<td><code>emp_salary</code></td>
-<td><code>decimal</code></td>
-<td>Puede ser nulo</td>
-</tr>
-<tr>
-<td><code>created_at</code></td>
-<td><code>timestamp</code></td>
-<td>Automático</td>
-</tr>
-<tr>
-<td><code>updated_at</code></td>
-<td><code>timestamp</code></td>
-<td>Automático</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li><strong>Modelo <code>Employee</code></strong> configurado y operativo (tabla, clave primaria, tipos y asignación masiva coherentes con la estructura anterior).</li>
-<li><strong>Datos de prueba</strong>:
-   Carga de datos de prueba: importa el anexo SQL.</li>
-</ol>
-<blockquote>
-<p><strong>info:</strong> "Importar datos de prueba"</p>
-<p>Lo más rápido es utilizar alguna extensión para vsCode como "SQLTools" o "<strong>MySQL</strong>" para conectarte a la base de datos y ejecutar el script SQL que se proporciona al final de esta actividad.</p>
-<p><img alt="Extensiones para VSCode" src="../../img/mysqlextension.png" /></p>
-<p><strong>Datos de prueba</strong>: </p>
-<p>En los recursos de esta actividad hay un fichero <a href="../../sources/employees.sql" target="blank"><code>employees.sql</code></a> con 100 empleados ficticios para importar en la tabla <code>employees</code>.</p>
-</blockquote>
-<hr />
-<h2 id="instrucciones-paso-a-paso">Instrucciones paso a paso<a class="headerlink" href="#instrucciones-paso-a-paso" title="Permanent link">&para;</a></h2>
-<h3 id="1-crear-el-controlador-employeecontroller">1. Crear el controlador <code>EmployeeController</code><a class="headerlink" href="#1-crear-el-controlador-employeecontroller" title="Permanent link">&para;</a></h3>
-<p>Crea un controlador para centralizar la lógica de consulta de empleados. Dentro de él implementarás, como mínimo, los métodos que devuelvan colecciones de empleados según los criterios indicados más abajo. Cada método debe:</p>
-<ul>
-<li>Obtener los empleados aplicando el <strong>criterio de ordenación o filtrado</strong> correspondiente.</li>
-<li>Enviar el resultado a una <strong>vista Blade</strong> común (ver punto 3) mediante una variable llamada exactamente <code>employees</code>.</li>
-</ul>
-<p>Métodos a implementar:</p>
-<ul>
-<li><strong>Listado por ID ascendente</strong>
-   Nombre sugerido del método: <code>byId</code>.
-   Comportamiento: devuelve todos los empleados ordenados por <code>emp_id</code> de menor a mayor.</li>
-<li><strong>Listado por apellidos y nombre</strong>
-   Nombre sugerido del método: <code>byLastName</code>.
-   Comportamiento: devuelve todos los empleados ordenados por <code>emp_lastname</code> (ascendente) y, en caso de empate, por <code>emp_firstname</code> (ascendente).</li>
-<li><strong>Subconjunto por letra inicial de apellido</strong>
-   Nombre sugerido del método: <code>lastNameStartsWith</code>.
-   Comportamiento: devuelve solo los empleados cuyo <code>emp_lastname</code> <strong>empiece por la letra “A”</strong>, ordenados por <code>emp_lastname</code> y <code>emp_firstname</code> (ascendente).</li>
-</ul>
-<blockquote>
-<p><strong>Nota</strong>: en este tema el valor “A” es fijo. Las rutas con parámetros dinámicos se verán más adelante.</p>
-</blockquote>
-<ul>
-<li><strong>Subconjunto por año de nacimiento</strong>
-   Nombre sugerido del método: <code>bornIn</code>.
-   Comportamiento: devuelve solo los empleados <strong>nacidos en el año 1980</strong>, ordenados por <code>emp_lastname</code> y <code>emp_firstname</code> (ascendente).</li>
-</ul>
-<blockquote>
-<p><strong>Nota</strong>: el año “1980” es fijo en esta práctica (los parámetros dinámicos se verán más adelante).</p>
-</blockquote>
-<p>Todos los métodos devolverán la misma vista (ver punto 3) y <strong>no</strong> deben repetir lógica de presentación en el controlador.</p>
-<hr />
-<h3 id="2-definir-las-rutas">2. Definir las rutas<a class="headerlink" href="#2-definir-las-rutas" title="Permanent link">&para;</a></h3>
-<p>Declara rutas <strong>GET</strong> que apunten a los métodos anteriores. Usa exactamente estas URL para homogeneizar correcciones:</p>
-<table>
-<thead>
-<tr>
-<th>Ruta</th>
-<th>Método del controlador</th>
+<th>Regla</th>
 <th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>/employees/by-id</code></td>
-<td><code>byId</code></td>
-<td>Listado ordenado por <code>emp_id</code> ascendente.</td>
+<td><code>required</code></td>
+<td>El campo es obligatorio</td>
 </tr>
 <tr>
-<td><code>/employees/by-lastname</code></td>
-<td><code>byLastName</code></td>
-<td>Listado ordenado por apellidos y nombre.</td>
+<td><code>string</code></td>
+<td>Debe ser una cadena de texto</td>
 </tr>
 <tr>
-<td><code>/employees/filter-letter</code></td>
-<td><code>lastNameStartsWith</code></td>
-<td>Subconjunto: apellidos que empiezan por “A”.</td>
+<td><code>min:n</code></td>
+<td>Longitud mínima de caracteres</td>
 </tr>
 <tr>
-<td><code>/employees/filter-year</code></td>
-<td><code>bornIn</code></td>
-<td>Subconjunto: nacidos en el año 1990.</td>
+<td><code>max:n</code></td>
+<td>Longitud máxima de caracteres</td>
+</tr>
+<tr>
+<td><code>date_at</code></td>
+<td>Debe ser una fecha válida</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td>true/false, 0/1, "yes"/"no"</td>
+</tr>
+<tr>
+<td><code>nullable</code></td>
+<td>El campo puede estar vacío</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Requisitos de las rutas:</p>
-<ul>
-<li>Todas deben retornar <strong>la misma vista</strong> con la variable <code>employees</code>.</li>
-<li>Usa <strong>nombres de ruta</strong> coherentes para cada una (por ejemplo, <code>employees.byId</code>, <code>employees.byLastName</code>, <code>employees.starts</code>, <code>employees.born</code>).</li>
-</ul>
-</blockquote>
-<hr />
-<h3 id="3-crear-la-vista-employeesindexbladephp">3. Crear la vista <code>employees/index.blade.php</code><a class="headerlink" href="#3-crear-la-vista-employeesindexbladephp" title="Permanent link">&para;</a></h3>
-<p>Crea una vista única para los cuatro casos. Esta vista debe:</p>
-<ol>
-<li>Mostrar un <strong>título</strong> claro del listado.</li>
-<li>Si no hay registros en <code>employees</code>, mostrar un <strong>mensaje</strong>: “No hay empleados que cumplan el criterio.”</li>
-<li>En caso contrario, presentar una <strong>tabla HTML</strong> con las siguientes columnas y en este orden exacto:</li>
-</ol>
+<h3 id="14-crear-una-clase-formrequest-personalizada">1.4. Crear una clase FormRequest personalizada<a class="headerlink" href="#14-crear-una-clase-formrequest-personalizada" title="Permanent link">&para;</a></h3>
+<p><strong>Comando</strong></p>
+<div class="highlight"><pre><span></span><code>php artisan make:request NoteRequest
+</code></pre></div>
+<p>Esto creará una clase en <code>app/Http/Requests/NoteRequest.php</code></p>
+<p><strong>Método <code>authorize()</code></strong></p>
+<p>Este método define si el usuario tiene permiso para hacer esta petición. Para este curso lo dejaremos en <code>true</code>:</p>
+<div class="admonition tip">
+<p class="admonition-title">Importante</p>
+<p>Si este método devuelve <code>false</code>, la validación no se ejecutará y se lanzará un error 403 (Forbidden).</p>
+</div>
+<details class="examplelaravel" open="open">
+<summary>Autorizar la petición</summary>
+<div class="highlight"><pre><span></span><code>public function authorize() {    
+    return true; 
+} 
+</code></pre></div>
+</details>
+<p><strong>Método <code>rules()</code></strong></p>
+<p>Ahora vamos a definir unas reglas de validación de ejemplo para nuestro ejemplo de notas:</p>
+<details class="examplelaravel" open="open">
+<summary>Ejemplo de reglas</summary>
+<div class="highlight"><pre><span></span><code>public function rules() {     
+    return [         
+        &#39;title&#39; =&gt; &#39;required|string|max:255&#39;,         
+        &#39;description&#39; =&gt; &#39;required|string|min:10&#39;,         
+        &#39;date_at&#39; =&gt; &#39;required|date&#39;,         
+        &#39;done&#39; =&gt; &#39;nullable|boolean&#39;     
+        ]; 
+    } 
+</code></pre></div>
+</details>
+<p><strong>Uso en el controlador:</strong></p>
+<p>En el controlador, en lugar de usar <code>Request $request</code>, usaremos <code>NoteRequest $request</code>. Laravel se encargará de validar automáticamente los datos antes de ejecutar el método.</p>
+<details class="examplelaravel" open="open">
+<summary>Almacenar una nota</summary>
+<div class="highlight"><pre><span></span><code>public function store(NoteRequest $request) {     
+    $data = $request-&gt;all();     
+    $data[&#39;done&#39;] = $request-&gt;has(&#39;done&#39;) ? 1 : 0;  // Convertir checkbox a booleano     
+    Note::create($data);     
+    return redirect()-&gt;route(&#39;note.index&#39;); 
+} 
+</code></pre></div>
+</details>
+<p>Antes de modificar el <code>update()</code> recordar que en la vista de edición el checkbox se envía como <code>done=on</code> o no se envía nada. Hacemos en esta vista lo mismo que en la de creación:</p>
+<div class="highlight"><pre><span></span><code>&lt;input type=&quot;checkbox&quot; name=&quot;done&quot; value=&quot;1&quot; {{  ($note-&gt;done) ? &#39;checked&#39; : &#39;&#39; }}&gt; 
+</code></pre></div>
+<p>Hacemos lo mismo para el método <code>update()</code>:</p>
+<details class="examplelaravel" open="open">
+<summary>Actualizar una nota</summary>
+<div class="highlight"><pre><span></span><code>public function update(NoteRequest $request, Note $note) {     
+    $note-&gt;update($request-&gt;all());     
+    return redirect()-&gt;route(&#39;note.index&#39;); 
+} 
+</code></pre></div>
+</details>
+<h2 id="2-mostrar-errores-de-validacion">2. Mostrar Errores de Validación<a class="headerlink" href="#2-mostrar-errores-de-validacion" title="Permanent link">&para;</a></h2>
+<h3 id="21-mostrar-errores-en-el-formulario">2.1. Mostrar errores en el formulario<a class="headerlink" href="#21-mostrar-errores-en-el-formulario" title="Permanent link">&para;</a></h3>
+<p>Para el usuario es importante recibir feedback inmediato sobre los errores en el formulario. Laravel facilita esto con la variable <code>$errors</code> disponible en las vistas.</p>
+<details class="examplelaravel" open="open">
+<summary>Mostrar un error específico junto a cada campo</summary>
+<div class="highlight"><pre><span></span><code>&lt;input name=&quot;title&quot; value=&quot;{{ old(&#39;title&#39;) }}&quot;&gt; 
+@error(&#39;title&#39;)     
+    &lt;small style=&quot;color:red&quot;&gt;{{ $message }}&lt;/small&gt; 
+@enderror 
+</code></pre></div>
+</details>
+<h3 id="22-resaltar-campos-con-error-css">2.2. Resaltar campos con error (CSS)<a class="headerlink" href="#22-resaltar-campos-con-error-css" title="Permanent link">&para;</a></h3>
+<p>También puedes añadir una clase CSS al campo si tiene error, para destacarlo visualmente según diseño de la aplicación:</p>
+<details class="examplelaravel" open="open">
+<summary>Resaltar campos con CSS</summary>
+<div class="highlight"><pre><span></span><code>&lt;input name=&quot;title&quot; class=&quot;@error(&#39;title&#39;) is-invalid @enderror&quot;&gt;
+</code></pre></div>
+</details>
+<p>Y luego en CSS puedes estilizar la clase <code>.is-invalid</code>.</p>
+<h3 id="23-mostrar-todos-los-errores-juntos">2.3. Mostrar todos los errores juntos<a class="headerlink" href="#23-mostrar-todos-los-errores-juntos" title="Permanent link">&para;</a></h3>
+<details class="examplelaravel" open="open">
+<summary>Mostrar errores en la parte superior del formulario</summary>
+<div class="highlight"><pre><span></span><code>@if ($errors-&gt;any())    
+    &lt;div class=&quot;alert alert-danger&quot;&gt;         
+        &lt;ul&gt;             
+            @foreach ($errors-&gt;all() as $error)                 
+                &lt;li&gt;{{ $error }}&lt;/li&gt;             
+            @endforeach         
+        &lt;/ul&gt;     
+    &lt;/div&gt; 
+@endif 
+</code></pre></div>
+</details>
+<h3 id="24-modificar-la-vista-de-creacion-y-vista-de-edicion">2.4. Modificar la vista de creación y vista de edición<a class="headerlink" href="#24-modificar-la-vista-de-creacion-y-vista-de-edicion" title="Permanent link">&para;</a></h3>
+<details class="examplelaravel" open="open">
+<summary>Vista de creación <code>create.blade.php</code></summary>
+<div class="highlight"><pre><span></span><code>@extends(&#39;layouts.app&#39;) 
+
+@section(&#39;title&#39;, &#39;Crear nueva Nota&#39;)  
+
+@section(&#39;content&#39;)     
+    &lt;h2&gt;Editar Nota&lt;/h2&gt;     
+
+    &lt;form action=&quot;{{ route(&#39;note.store&#39;) }}&quot; method=&quot;POST&quot;&gt;         
+    @csrf         
+        &lt;label&gt;Título:&lt;/label&gt;         
+        &lt;input type=&quot;text&quot; name=&quot;title&quot; value=&quot;{{ old(&#39;title&#39;) }}&quot; required&gt;         
+        @error(&#39;title&#39;)             
+            &lt;small style=&quot;color:red&quot;&gt;{{ $message }}&lt;/small&gt;         
+        @enderror          
+
+        &lt;label&gt;Descripción:&lt;/label&gt;         
+        &lt;textarea name=&quot;description&quot; required&gt;{{ old(&#39;description&#39;) }}&lt;/textarea&gt;         
+        @error(&#39;description&#39;)             
+            &lt;small style=&quot;color:red&quot;&gt;{{ $message }}&lt;/small&gt;         
+        @enderror          
+
+        &lt;label&gt;Fecha:&lt;/label&gt;         
+        &lt;input type=&quot;date&quot; name=&quot;date_at&quot; value=&quot;{{ old(&#39;date_at&#39;) }}&quot; required&gt;         
+        @error(&#39;date_at&#39;)             
+            &lt;small style=&quot;color:red&quot;&gt;{{ $message }}&lt;/small&gt;         
+        @enderror          
+
+        &lt;label&gt;Completada:&lt;/label&gt;         
+        &lt;input type=&quot;checkbox&quot; name=&quot;done&quot; {{ old(&#39;done&#39;) ? &#39;checked&#39; : &#39;&#39; }}&gt;      
+        @error(&#39;done&#39;)             
+            &lt;small style=&quot;color:red&quot;&gt;{{ $message }}&lt;/small&gt;         
+        @enderror     
+
+        &lt;button type=&quot;submit&quot;&gt;Guardar&lt;/button&gt;         
+        &lt;a href=&quot;{{ route(&#39;note.index&#39;) }}&quot;&gt;Cancelar&lt;/a&gt;         
+    &lt;/form&gt; 
+@endsection 
+</code></pre></div>
+</details>
+<details class="examplelaravel" open="open">
+<summary>Vista de edición <code>edit.blade.php</code></summary>
+<div class="highlight"><pre><span></span><code>@extends(&#39;layouts.app&#39;)  
+
+@section(&#39;title&#39;, &#39;Editar Nota&#39;)  
+
+@section(&#39;content&#39;)     
+    &lt;h2&gt;Editar Nota&lt;/h2&gt;     
+
+    &lt;form action=&quot;{{ route(&#39;note.update&#39;, $note-&gt;id) }}&quot; method=&quot;POST&quot;&gt;         
+    @csrf         
+    @method(&#39;PUT&#39;)         
+
+        &lt;label&gt;Título:&lt;/label&gt;         
+        &lt;input type=&quot;text&quot; name=&quot;title&quot; value=&quot;{{ $note-&gt;title }}&quot; required&gt;         
+        @error(&#39;title&#39;)             
+            &lt;small style=&quot;color:red&quot;&gt;{{ $message }}&lt;/small&gt;         
+        @enderror
+
+        &lt;label&gt;Descripción:&lt;/label&gt;         
+        &lt;textarea name=&quot;description&quot; required&gt;{{ $note-&gt;description }}&lt;/textarea&gt;         
+        @error(&#39;description&#39;)             
+            &lt;small style=&quot;color:red&quot;&gt;{{ $message }}&lt;/small&gt;         
+        @enderror
+
+        &lt;label&gt;Fecha:&lt;/label&gt;         
+        &lt;input type=&quot;date&quot; name=&quot;date_at&quot; value=&quot;{{ $note-&gt;date_at }}&quot; required&gt;         
+        @error(&#39;date_at&#39;)             
+            &lt;small style=&quot;color:red&quot;&gt;{{ $message }}&lt;/small&gt;         
+        @enderror
+
+        &lt;label&gt;Completada:&lt;/label&gt;         
+        &lt;input type=&quot;checkbox&quot; name=&quot;done&quot; {{ $note-&gt;done ? &#39;checked&#39; : &#39;&#39; }}&gt;
+        @error(&#39;done&#39;)             
+            &lt;small style=&quot;color:red&quot;&gt;{{ $message }}&lt;/small&gt;         
+        @enderror               
+
+        &lt;button type=&quot;submit&quot;&gt;Actualizar&lt;/button&gt;         
+        &lt;a href=&quot;{{ route(&#39;note.index&#39;) }}&quot;&gt;Cancelar&lt;/a&gt;         
+    &lt;/form&gt; 
+@endsection 
+</code></pre></div>
+</details>
+<p>Algunos métodos interesantes de laravel que no hemos utilizado pero que se usan a menudo son:</p>
 <table>
 <thead>
 <tr>
-<th>Columna mostrada</th>
-<th>Procede del campo</th>
+<th>Clase</th>
+<th>Método</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>ID</strong></td>
-<td><code>emp_id</code></td>
+<td><code>Illuminate\Support\Facades\Validator</code></td>
+<td><code>make()</code></td>
+<td>Crear un validador</td>
 </tr>
 <tr>
-<td><strong>Apellidos</strong></td>
-<td><code>emp_lastname</code></td>
+<td><code>Illuminate\Support\Facades\Validator</code></td>
+<td><code>fails()</code></td>
+<td>Verificar si la validación falló</td>
 </tr>
 <tr>
-<td><strong>Nombre</strong></td>
-<td><code>emp_firstname</code></td>
+<td><code>Illuminate\Support\Facades\Validator</code></td>
+<td><code>errors()</code></td>
+<td>Obtener los errores de validación</td>
 </tr>
 <tr>
-<td><strong>Edad</strong></td>
-<td>calculada a partir de <code>emp_birth_date</code></td>
+<td><code>Illuminate\Support\Facades\Validator</code></td>
+<td><code>validate()</code></td>
+<td>Validar y redirigir automáticamente</td>
 </tr>
 <tr>
-<td><strong>Fecha de contratación</strong></td>
-<td><code>emp_hire_date</code> formateada en <code>YYYY-MM-DD</code></td>
+<td><code>Illuminate\Support\Facades\Request</code></td>
+<td><code>old()</code></td>
+<td>Obtener el valor anterior de un campo</td>
+</tr>
+<tr>
+<td><code>Illuminate\Support\Facades\Request</code></td>
+<td><code>flash()</code></td>
+<td>Guardar datos en la sesión para la siguiente petición</td>
 </tr>
 </tbody>
 </table>
-<ol>
-<li>Mostrar, sobre la tabla o como “caption”, el <strong>total de registros</strong> del listado.</li>
-</ol>
-<blockquote>
-<p>Notas de presentación:</p>
+<p>Ahora vamos a probar a crear una nota con una descripción inferir a los 10 caracteres y veremos el mensaje de error.</p>
+<p><img alt="Validación de datos" src="https://jbeteta-ies.github.io/2025_Laravel_32/content/T07/img/img01.png" width="400px" /></p>
+<p>Ahora corregimos el error y vemos que la nota se crea correctamente. Además nos aparece un mensaje de éxito.</p>
+<p><img alt="Validación de datos" src="https://jbeteta-ies.github.io/2025_Laravel_32/content/T07/img/img02.png" width="400px" /></p>
+<p>Ahora podéis comprobar que:</p>
 <ul>
-<li>La <strong>Edad</strong> debe calcularse a partir de la fecha de nacimiento. Puedes calcularla en el controlador o en la vista, pero debe mostrarse como número entero de años.</li>
-<li>La <strong>Fecha de contratación</strong> debe mostrarse en formato <code>YYYY-MM-DD</code>.</li>
-<li>Usa una <strong>tabla legible</strong>: cabecera con títulos, filas con celdas alineadas, y un estilo simple pero claro. No es necesario usar CSS avanzado.</li>
+<li>En la edición las validaciones y mensajes de éxito funcionan igual.</li>
+<li>El campo ´done´ funciona correctamente tanto en creación como en edición.</li>
 </ul>
-</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">campo <code>done</code></p>
+<p>Si has seguido al pie de la letra las instrucciones, el campo <code>done</code> no va a funcionar. Al añadir la clase <code>NoteRequest</code> pedimos que el campo sea <code>boolean</code> pero a este punto está llegando un <code>on</code> cuando el checkbox está marcado, o nada cuando no lo está. Y por tanto no llegaremos nunca a que se ejecute el método <code>store()</code> o <code>update()</code>, que es donde estábamos manejando el valor del checkbox.</p>
+<p><strong>Solución</strong></p>
+<p>Necesitaos que cuando se valida el campo <code>done</code>, si está marcado llegue como <code>true</code> y si no está marcado como <code>false</code>. Ya que en la validación hemos especificado que debe ser un booleano. Para ello vamos a usar el método <code>prepareForValidation()</code> que nos permite modificar los datos antes de que se apliquen las reglas de validación.</p>
+<p><strong>Modificar datos antes de validar</strong></p>
+<div class="admonition examplelaravel">
+<p class="admonition-title">Añadimos este método en la clase <code>NoteRequest</code></p>
+<div class="highlight"><pre><span></span><code>protected function prepareForValidation() {     
+    $this-&gt;merge([         
+        &#39;done&#39; =&gt; $this-&gt;done ? true : false,     
+        ]); 
+} 
+</code></pre></div>
+</div>
+<p>De esta manera nos aseguramos que el campo <code>done</code> siempre llega como <code>1</code> o <code>0</code>, y por tanto la validación funciona correctamente. Con esto ahora el campo <code>done</code> funciona correctamente.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">prepareForValidation()</p>
+<p>Este método es muy útil para modificar cualquier dato antes de que se aplique la validación. Por ejemplo, podríamos usarlo para formatear fechas, convertir cadenas a mayúsculas/minúsculas. No siempre la información que llega del formulario está en el formato que necesitamos para validar o almacenar. Y que no esté en el formato no significa que no sea válido. Pero la validación de <code>laravel</code> es estricta y debemos asegurarnos que los datos cumplen las reglas que hemos definido.</p>
+</div>
 <hr />
-<h2 id="comprobaciones">Comprobaciones<a class="headerlink" href="#comprobaciones" title="Permanent link">&para;</a></h2>
-<p>Verifica manualmente que:</p>
-<ol>
-<li><strong>/employees/by-id</strong>
-   Muestra todos los registros ordenados por ID ascendente y las 5 columnas requeridas.</li>
-<li><strong>/employees/by-lastname</strong>
-   Muestra todos los registros ordenados por apellidos y, en empates, por nombre. Se ven las 5 columnas.</li>
-<li><strong>/employees/filter-letter</strong>
-   Muestra solo apellidos que empiezan por <strong>A</strong>. Ordenación por apellidos y nombre.</li>
-<li><strong>/employees/filter-year</strong>
-   Muestra únicamente los empleados nacidos en <strong>1990</strong>. Ordenación por apellidos y nombre.</li>
-<li>
-<p>En todos los casos:</p>
+<h3 id="25-traducir-los-mensajes-de-error">2.5. Traducir los mensajes de error<a class="headerlink" href="#25-traducir-los-mensajes-de-error" title="Permanent link">&para;</a></h3>
+<p>Laravel trae sus mensajes de error por defecto en inglés.</p>
 <ul>
-<li>Se muestra el <strong>total</strong> de registros listados.</li>
-<li>Si no hay coincidencias, aparece el <strong>mensaje</strong> de “No hay empleados que cumplan el criterio.”</li>
+<li>Archivo por defecto: <code>resources/lang/en/validation.php</code></li>
+<li>Puedes crear una versión en español copiando el contenido en: <code>resources/lang/es/validation.php</code></li>
+<li>Activa el idioma por defecto en <code>config/app.php</code>:</li>
 </ul>
-</li>
-</ol>
+<div class="highlight"><pre><span></span><code>&#39;locale&#39; =&gt; &#39;es&#39;,
+</code></pre></div>
+<h2 id="3-mensajes-de-exito">3. Mensajes de Éxito<a class="headerlink" href="#3-mensajes-de-exito" title="Permanent link">&para;</a></h2>
+<p>Para mejorar la experiencia del usuario, es buena práctica mostrar mensajes de éxito o error después de operaciones como crear, actualizar o eliminar. PPara ello vamos a usar los mensajes flash, que permiten mandar un mensaje entre peticiones almacenándolo en la sesión.</p>
+<h3 id="31-flash-de-sesion-con-with">3.1. Flash de sesión con <code>with()</code><a class="headerlink" href="#31-flash-de-sesion-con-with" title="Permanent link">&para;</a></h3>
+<p>Este método permite guardar un mensaje en la sesión que se mostrará en la siguiente petición. Vamos a usarlo para mostrar un mensaje de éxito después de crear o actualizar o eliminar una nota.</p>
+<p>En la función <code>store()</code> del controlador:</p>
+<div class="highlight"><pre><span></span><code>return redirect()-&gt;route(&#39;note.index&#39;)-&gt;with(&#39;success&#39;, &#39;Nota guardada correctamente.&#39;);
+</code></pre></div>
+<p>En la función <code>update()</code>:</p>
+<div class="highlight"><pre><span></span><code>return redirect()-&gt;route(&#39;note.index&#39;)-&gt;with(&#39;success&#39;, &#39;Nota actualizada correctamente.&#39;);
+</code></pre></div>
+<p>En la función <code>destroy()</code>:</p>
+<div class="highlight"><pre><span></span><code>return redirect()-&gt;route(&#39;note.index&#39;)-&gt;with(&#39;danger&#39;, &#39;Nota eliminada correctamente.&#39;);
+</code></pre></div>
+<h3 id="32-mostrar-el-mensaje-en-la-vista-por-ejemplo-en-layout">3.2. Mostrar el mensaje en la vista (por ejemplo, en layout):<a class="headerlink" href="#32-mostrar-el-mensaje-en-la-vista-por-ejemplo-en-layout" title="Permanent link">&para;</a></h3>
+<details class="examplelaravel" open="open">
+<summary>Mostrar mensaje de éxito</summary>
+<div class="highlight"><pre><span></span><code>@if (session(&#39;success&#39;))     
+    &lt;div class=&quot;alert alert-success&quot;&gt;         
+        {{ session(&#39;success&#39;) }}     
+    &lt;/div&gt; @endif @if (session(&#39;danger&#39;))     
+    &lt;div class=&quot;alert alert-danger&quot;&gt;         
+        {{ session(&#39;danger&#39;) }}     
+    &lt;/div&gt; 
+@endif 
+</code></pre></div>
+</details>
+<details class="examplelaravel" open="open">
+<summary>🔝 O incluirlo como partial</summary>
+<p>En <code>\partials/messages.blade.php</code>:
+<div class="highlight"><pre><span></span><code>@if (session(&#39;success&#39;))     
+    &lt;div class=&quot;alert alert-success&quot;              
+                style=&quot;padding: 10px; margin-bottom: 20px;                      
+                background-color: #d4edda;                      
+                color: #155724;                      
+                border-color: #c3e6cb;                      
+                border-radius: 5px;&quot;&gt;         
+        {{ session(&#39;success&#39;) }}     
+    &lt;/div&gt; 
+@endif 
+
+@if (session(&#39;danger&#39;))     
+    &lt;div class=&quot;alert alert-danger&quot;          
+                style=&quot;padding: 10px; margin-bottom: 20px;                  
+                background-color: #f8d7da;                  
+                color: #721c24;                  
+                border-color: #f5c6cb;                  
+                border-radius: 5px;&quot;&gt;         
+        {{ session(&#39;danger&#39;) }}     
+    &lt;/div&gt; 
+@endif 
+</code></pre></div></p>
+<p>Y en el layout:</p>
+<div class="highlight"><pre><span></span><code>@include(&#39;_partials.messages&#39;)
+</code></pre></div>
+</details>
+<h2 id="4-rutas-resource">4. Rutas Resource<a class="headerlink" href="#4-rutas-resource" title="Permanent link">&para;</a></h2>
+<h3 id="41-que-son">4.1. ¿Qué son?<a class="headerlink" href="#41-que-son" title="Permanent link">&para;</a></h3>
+<p>Las rutas <strong><code>Route::resource()</code></strong> generan automáticamente todas las rutas necesarias para un CRUD completo. De esta manera nos ahorramos definir todas las rutas para todos los modelos.</p>
+<div class="highlight"><pre><span></span><code>Route::resource(&#39;note&#39;, NoteController::class);
+</code></pre></div>
+<h3 id="42-acciones-generadas">4.2. Acciones generadas<a class="headerlink" href="#42-acciones-generadas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Ruta</th>
+<th>Método</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET /note</td>
+<td>index</td>
+<td>Mostrar todas las notas</td>
+</tr>
+<tr>
+<td>GET /note/create</td>
+<td>create</td>
+<td>Formulario para nueva nota</td>
+</tr>
+<tr>
+<td>POST /note</td>
+<td>store</td>
+<td>Guardar nueva nota</td>
+</tr>
+<tr>
+<td>GET /note/{note}</td>
+<td>show</td>
+<td>Mostrar una nota</td>
+</tr>
+<tr>
+<td>GET /note/{note}/edit</td>
+<td>edit</td>
+<td>Formulario para editar</td>
+</tr>
+<tr>
+<td>PUT/PATCH /note/{note}</td>
+<td>update</td>
+<td>Actualizar nota</td>
+</tr>
+<tr>
+<td>DELETE /note/{note}</td>
+<td>destroy</td>
+<td>Eliminar nota</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-personalizacion">4.3. Personalización<a class="headerlink" href="#43-personalizacion" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Solo algunas rutas:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Route::resource(&#39;note&#39;, NoteController::class)-&gt;only([&#39;index&#39;, &#39;show&#39;]);
+</code></pre></div>
+<ul>
+<li>Excluir algunas:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Route::resource(&#39;note&#39;, NoteController::class)-&gt;except([&#39;destroy&#39;]);
+</code></pre></div>
+<h3 id="44-ver-rutas-disponibles">4.4. Ver rutas disponibles<a class="headerlink" href="#44-ver-rutas-disponibles" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>php artisan route:list
+</code></pre></div>
+<p>Te muestra todas las rutas definidas, su método, URI y nombre.</p>
+<h3 id="45-crear-un-controlador-tipo-resource">4.5. Crear un controlador tipo resource<a class="headerlink" href="#45-crear-un-controlador-tipo-resource" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>php artisan make:controller NoteController --resource
+</code></pre></div>
+<p>Este comando crea todos los métodos básicos (<code>index</code>, <code>create</code>, <code>store</code>, <code>show</code>, <code>edit</code>, <code>update</code>, <code>destroy</code>).</p>
+<h2 id="5-conclusiones">5. Conclusiones<a class="headerlink" href="#5-conclusiones" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Validar datos es esencial para proteger la integridad de la base de datos.</li>
+<li>Los mensajes de error y éxito mejoran la experiencia del usuario.</li>
+<li>Las rutas resource simplifican la estructura del código.</li>
+</ul>
 <hr />
-<h2 id="entrega">Entrega<a class="headerlink" href="#entrega" title="Permanent link">&para;</a></h2>
-<p>Sube a la plataforma:</p>
-<ol>
-<li>
-<p><strong>Capturas de pantalla</strong> de cada ruta funcionando:</p>
+<details class="questionlaravel">
+<summary>Práctica a Entregar: Validaciones y Mensajes en el CRUD de Productos</summary>
+<h2 id="objetivo-de-la-actividad">Objetivo de la actividad<a class="headerlink" href="#objetivo-de-la-actividad" title="Permanent link">&para;</a></h2>
+<p><p style="float: left; margin-left: 1rem;">
+<img src="../../img/laravelactividad.png"
+    alt="Actividad en el aula virtual"
+    width="150">
+</p></p>
+<p>El objetivo de esta práctica es <strong>mejorar el CRUD de productos</strong> incorporando validaciones, gestión de errores y mensajes de retroalimentación para el usuario.</p>
+<p>El alumnado consolidará los conocimientos de validación de datos en Laravel, aprendiendo a:</p>
 <ul>
-<li><code>/employees/by-id</code></li>
-<li><code>/employees/by-lastname</code></li>
-<li><code>/employees/filter-letter</code></li>
-<li><code>/employees/filter-year</code></li>
+<li>Usar <strong>Form Requests</strong> personalizados para centralizar las reglas de validación.</li>
+<li>Mostrar mensajes de error junto a los campos del formulario.</li>
+<li>Mantener los valores anteriores con <code>old()</code>.</li>
+<li>Mostrar <strong>mensajes flash</strong> (de éxito o error) tras las operaciones del CRUD.</li>
+<li>Reutilizar código mediante <strong>partials</strong> y layouts.</li>
 </ul>
-</li>
-<li>
-<p><strong>Listado de rutas</strong> definido (solo nombres y URIs, sin código fuente).</p>
-</li>
-<li><strong>Descripción breve</strong> de cómo calculas la <strong>Edad</strong> y cómo <strong>formateas</strong> la <strong>Fecha de contratación</strong> (dos o tres líneas).</li>
-<li><strong>Evidencia de datos cargados</strong>: captura del total de filas o vista parcial de la tabla <code>employees</code> en tu gestor de BD.</li>
-</ol>
+<p>Al finalizar, la aplicación ofrecerá una experiencia de usuario más robusta y profesional.</p>
+<hr />
+<h3 id="instrucciones-paso-a-paso">Instrucciones paso a paso<a class="headerlink" href="#instrucciones-paso-a-paso" title="Permanent link">&para;</a></h3>
+<p>Sigue las indicaciones en orden.</p>
+<p>Trabaja sobre tu proyecto del CRUD de productos de la práctica anterior.</p>
+<hr />
+<h3 id="1-crear-el-formrequest-personalizado">1. Crear el FormRequest personalizado<a class="headerlink" href="#1-crear-el-formrequest-personalizado" title="Permanent link">&para;</a></h3>
+<p>1) Genera una nueva clase de validación <code>StoreProductRequest</code></p>
+<p>2) Añade las siguientes reglas de validación:</p>
+<ul>
+<li><code>name</code>: obligatorio, cadena de texto, entre 3 y 255 caracteres.</li>
+<li><code>description</code>: obligatorio, cadena de texto, mínimo 10 caracteres.</li>
+<li><code>price</code>: obligatorio, numérico, mínimo 0.01.</li>
+<li><code>stock</code>: obligatorio, entero, mínimo 0.</li>
+</ul>
+<p>3) (Opcional) Si tu formulario contiene checkboxes u otros campos que necesiten ser adaptados antes de validar, puedes usar el método <code>prepareForValidation()</code> para normalizarlos.</p>
+<hr />
+<h3 id="2-aplicar-el-formrequest-en-el-controlador">2. Aplicar el FormRequest en el controlador<a class="headerlink" href="#2-aplicar-el-formrequest-en-el-controlador" title="Permanent link">&para;</a></h3>
+<p>4) Realiza los cambios necesarios en el controlador <code>ProductController</code> para usar el <code>StoreProductRequest</code>, para validar los datos en los métodos <code>store()</code> y <code>update()</code>.</p>
+<p>5) Añade también mensajes <code>flash</code> para las operaciones que redirigen al listado de productos, para que el usuario reciba retroalimentación.</p>
+<p>Mensajes:</p>
+<div class="highlight"><pre><span></span><code>- Producto creado correctamente.
+
+- Producto actualizado correctamente.
+
+- Producto eliminado correctamente.
+</code></pre></div>
+<hr />
+<h3 id="3-mostrar-errores-en-los-formularios">3. Mostrar errores en los formularios<a class="headerlink" href="#3-mostrar-errores-en-los-formularios" title="Permanent link">&para;</a></h3>
+<p>6) En los formularios de creación y edición de productos muestra una lista con los errores de validación al inicio del formulario. Si no hay errores no mestrestes nada.</p>
+<p>7) Los errores estarán en un <code>div</code> con la clase <code>alert alert-danger</code>. Puedes utilizar CSS para darle estilo.</p>
+<p>8) Debajo de cada campo del formulario, muestra el error específico usando la directiva <code>@error</code>. Estos errores pueden mostrase en una etiqueta <code>&lt;small&gt;</code> o algún contenedor <code>&lt;div&gt;</code> como prefieras. Tendrán el estilo <code>alert alert-danger</code> o un estilo personalizado. Podemos usar CSS para darle estilo.</p>
+<p>9)  Recuerda usar <code>old()</code> para mantener los valores introducidos por el usuario en caso de error de validación.</p>
+<hr />
+<h3 id="4-crear-el-partial-para-los-mensajes-del-sistema">4. Crear el partial para los mensajes del sistema<a class="headerlink" href="#4-crear-el-partial-para-los-mensajes-del-sistema" title="Permanent link">&para;</a></h3>
+<p>10)  Crea un <code>partial</code> llamado <code>messages.blade.php</code> para mostrar los mensajes flash.</p>
+<ul>
+<li>Si el mensaje es de éxito, usa la clase <code>flash alert alert-success</code>.</li>
+<li>Si el mensaje es de error, usa la clase <code>flash alert alert-danger</code>.</li>
+</ul>
+<p>11)   Añade el <code>partial</code> en el layout principal para que se muestre en todas las vistas. De esta forma, cualquier mensaje flash aparecerá automáticamente en todas las vistas.</p>
+<hr />
+<h3 id="5-comprobar-las-rutas-del-crud">5. Comprobar las rutas del CRUD<a class="headerlink" href="#5-comprobar-las-rutas-del-crud" title="Permanent link">&para;</a></h3>
+<p>12)   Ejecuta en consola:</p>
+<div class="highlight"><pre><span></span><code>php artisan route:list --path=product
+</code></pre></div>
+<p>13)   Comprueba que se listan todas las rutas REST del recurso <code>product</code>, incluyendo <code>index</code>, <code>create</code>, <code>store</code>, <code>edit</code>, <code>update</code>, <code>show</code> y <code>destroy</code>.</p>
+<hr />
+<h3 id="6-probar-las-validaciones-y-los-mensajes">6 Probar las validaciones y los mensajes<a class="headerlink" href="#6-probar-las-validaciones-y-los-mensajes" title="Permanent link">&para;</a></h3>
+<p>14)   Intenta crear un producto con menos de 3 caracteres en el nombre o sin descripción.
+→ Debes ver mensajes de error en el formulario.</p>
+<p>15)   Crea un producto válido.
+→ Debe redirigir al listado con el mensaje <strong>“Producto creado correctamente.”</strong></p>
+<p>16)   Edita un producto y cambia los valores.
+→ Debe mostrar <strong>“Producto actualizado correctamente.”</strong></p>
+<p>17)   Elimina un producto.
+→ Debe mostrar <strong>“Producto eliminado correctamente.”</strong></p>
+</details>
 
 
 
@@ -3437,7 +4223,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../../upl5/50p/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Práctica guiada">
+          <a href="../pru03/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Desarrollo de un CRUD">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -3447,20 +4233,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Práctica guiada
+                Desarrollo de un CRUD
               </div>
             </div>
           </a>
         
         
           
-          <a href="../03/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Desarrollo de un CRUD">
+          <a href="../pru05/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Creación de APIs REST en Laravel">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Desarrollo de un CRUD
+                Creación de APIs REST en Laravel
               </div>
             </div>
             <div class="md-footer__button md-icon">

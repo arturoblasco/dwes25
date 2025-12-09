@@ -113,8 +113,10 @@ nav:
     - UPL 5 Servicios REST:
         - upl5/50p.md
     - Pruebas:
-        - pru/02.md
-        - pru/03.md
+        - pru/pru02.md
+        - pru/pru03.md
+        - pru/pru04.md
+        - pru/pru05.md
         - pru/examen2.md
 theme:
   name: material      # selección del tema

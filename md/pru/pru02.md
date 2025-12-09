@@ -1,4 +1,4 @@
-# Práctica: Controladores y Rutas
+# Controladores y Rutas
 
 ## Objetivo de la actividad
 

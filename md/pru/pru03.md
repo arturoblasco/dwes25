@@ -1,6 +1,6 @@
 # Desarrollo de un CRUD
 
-## Introducción a CRUD
+## 1. Introducción a CRUD
 
 <p style="float: left; margin-left: 1rem;">
   <img src="../../img/laravelactividad.png"
@@ -27,9 +27,9 @@ Además, este tema nos va a servir para aprender el funcionamiento de los formul
 > - Fichero [`notes.sql`](../sources/notes.sql){:target="blank"} con 15 productos ficticios para importar en la tabla `notes`.
 > - Iconos: [vista](../sources/view.svg){:target="blank"}, [editar](../sources/edit.svg){:target="blank"}, [eliminar](../sources/delete.svg){:target="blank"}, [añadir](../sources/add.svg){:target="blank"}.
 
-## Rutas Dinámicas y Controladores
+## 2. Rutas Dinámicas y Controladores
 
-### Crear un circuito MVC rápido para rutas dinámicas
+### 2.1. Crear un circuito MVC rápido para rutas dinámicas
 
 
 ???+examplelaravel "Utilizar la tabla `notes` con los campos:"
@@ -204,7 +204,7 @@ Con esto, accediendo a `/note/1` veremos "El ID de la nota es: 1".
 > 
 > La función `compact('variable')` crea un array asociativo `['variable' => $variable]` que puede ser pasado a la vista. Es una forma rápida y limpia de pasar datos. Sólo la puedo utilizar si el valor de la clave es el mismo que el nombre de la variable.
 
-### Parámetros opcionales y valores por defecto
+### 2.2. Parámetros opcionales y valores por defecto
 
 Podemos definir parámetros **opcionales** añadiendo un signo de interrogación `?`:
 
@@ -224,7 +224,7 @@ Podemos definir parámetros **opcionales** añadiendo un signo de interrogación
     * El parámetro opcional debe ser el último de la URL.
     * Hay que asignar un **valor por defecto** en la función.
 
-### Importancia del orden de las rutas
+### 2.3. Importancia del orden de las rutas
 
 Laravel evalúa las rutas en el **orden en que se definen**.
 
@@ -242,9 +242,9 @@ Route::get('/nota/{id}', function($id) { return "Nota ID: $id"; });
     
     Primero define todas las rutas fijas y luego las rutas con parámetros dinámicos.
 
-## Desarrollo del CRUD para notas
+## 3. Desarrollo del CRUD para notas
 
-### Listar todas las notas
+### 3.1. Listar todas las notas
 
 Primero creamos la ruta y el método para listar todas las notas.
 
@@ -414,7 +414,7 @@ En este formulario vamos a adelantar algunas cosas que ampliaremos más adelante
 
 ---
 
-### Crear una Nueva Nota
+### 3.2. Crear una Nueva Nota
 
 Para poder crear una nota necesitamos tres cosas:
 
@@ -502,7 +502,7 @@ Para poder crear una nota necesitamos tres cosas:
 </div>
 ---
 
-### Guardar la Nueva Nota
+### 3.3. Guardar la Nueva Nota
 
 Al igual que en el caso anterior, para guardar la nota necesitamos dos cosas. Una ruta que maneje el envío del formulario y un método en el controlador que procese los datos y guarde la nota en la base de datos. Al final, redirigiremos a la lista de notas.
 
@@ -557,7 +557,7 @@ Para guardar la nota, podemos usar diferentes métodos. Aquí mostramos dos form
 
 ---
 
-### Editar una Nota
+### 3.4. Editar una Nota
 
 **Ruta para formulario de edición:**
 
@@ -635,7 +635,7 @@ Con este formato el formulario se enviará como un PUT, aunque el método del fo
                         <td><textarea id="description" name="description" value="{{ $note->description }}" required>Escribe la descripción</textarea></td>
                     </tr>
                     <tr>
-                        <td><label for="date">Fecha:</label></td>
+                        <td><label for="date_at">Fecha:</label></td>
                         <td><input type="date" id="date" name="date_at" value="{{ $note->date_at }}" required></td>
                     </tr>
                     <tr>
@@ -658,7 +658,7 @@ Con este formato el formulario se enviará como un PUT, aunque el método del fo
 
 ---
 
-### Actualizar la Nota
+### 3.5. Actualizar la Nota
 
 **Ruta para actualizar:**
 
@@ -692,7 +692,7 @@ En este caso también tenemos dos formas de recibir el parámetro `Note $note`. 
 
 ---
 
-### Mostrar una Nota Individual
+### 3.6. Mostrar una Nota Individual
 
 **Ruta para mostrar:**
 
@@ -765,7 +765,7 @@ En este caso también tenemos dos formas de recibir el parámetro `Note $note`. 
 
 ---
 
-### Eliminar una Nota
+### 3.7. Eliminar una Nota
 
 **Ruta para eliminar:**
 
@@ -798,7 +798,7 @@ Como en los casos anteriores, tenemos dos formas de recibir el parámetro `Note 
     } 
     ```
 
-### Prueba completa del CRUD
+### 3.8. Prueba completa del CRUD
 
 Ahora vamos probar todas las funcionalidades del CRUD:
 
@@ -988,7 +988,7 @@ Al hacer click en "*Añadir Nota*" se accede a `/note/create`:
     </figure>
     </div>
 
-### Tipado en los métodos del controlador
+### 3.9. Tipado en los métodos del controlador
 
 **Ejemplo de tipado correcto:**
 
@@ -1123,7 +1123,7 @@ public function update(Request $request, Note $note): RedirectResponse {
     
     ---
     
-    ## 4. Definir las rutas
+    ### 4. Definir las rutas
     
     9) **Declara las rutas necesarias para el CRUD.**
     
@@ -1143,7 +1143,7 @@ public function update(Request $request, Note $note): RedirectResponse {
     
     ---
     
-    ## 5. Crear las vistas
+    ### 5. Crear las vistas
     
     11)  **Crea la carpeta para las vistas.**
     
@@ -1163,7 +1163,7 @@ public function update(Request $request, Note $note): RedirectResponse {
     
     ---
     
-    ## 6. Probar el CRUD completo
+    ### 6. Probar el CRUD completo
     
     16)  Accede a `/product` para ver el listado de productos.
    
@@ -1177,7 +1177,7 @@ public function update(Request $request, Note $note): RedirectResponse {
     
     ---
     
-    ## 7. CSS (opcional)
+    ### 7. CSS (opcional)
     
     Puedes mejorar la apariencia de tu aplicación utilizando CSS (ejemplo de estilos: [`style1.css`](../sources/style1.css){:target="blank"}). Puedes crear un archivo CSS para la vista `index.blade.php` y otro para los formularios `create.blade.php`, `edit.blade.php` y `show.blade.php`. 
 
