@@ -5,7 +5,7 @@
 ### 1.1. ¿Qué es la validación y por qué es necesaria?
 
 <p style="float: left; margin-left: 1rem;">
-  <img src="../../img/laravelactividad.png"
+  <img src="../../img/laravel.svg"
        alt="Actividad en el aula virtual"
        width="150">
 </p>
@@ -42,7 +42,7 @@ Este método permite validar directamente dentro del método del controlador:
                                         ]);      
         Note::create($validated);     
         
-        return redirect()->route('note.index')->with('success', 'Nota creada correctamente.'); 
+        return redirect()->route('notes.index')->with('success', 'Nota creada correctamente.'); 
     } 
     ```
 
@@ -125,7 +125,7 @@ En el controlador, en lugar de usar `Request $request`, usaremos `NoteRequest $r
         $data = $request->all();     
         $data['done'] = $request->has('done') ? 1 : 0;  // Convertir checkbox a booleano     
         Note::create($data);     
-        return redirect()->route('note.index'); 
+        return redirect()->route('notes.index'); 
     } 
     ```
 
@@ -142,7 +142,7 @@ Hacemos lo mismo para el método `update()`:
     ``` 
     public function update(NoteRequest $request, Note $note) {     
         $note->update($request->all());     
-        return redirect()->route('note.index'); 
+        return redirect()->route('notes.index'); 
     } 
     ```
 
@@ -200,7 +200,7 @@ Y luego en CSS puedes estilizar la clase `.is-invalid`.
     @section('content')     
         <h2>Editar Nota</h2>     
 
-        <form action="{{ route('note.store') }}" method="POST">         
+        <form action="{{ route('notes.store') }}" method="POST">         
         @csrf         
             <label>Título:</label>         
             <input type="text" name="title" value="{{ old('title') }}" required>         
@@ -227,7 +227,7 @@ Y luego en CSS puedes estilizar la clase `.is-invalid`.
             @enderror     
 
             <button type="submit">Guardar</button>         
-            <a href="{{ route('note.index') }}">Cancelar</a>         
+            <a href="{{ route('notes.index') }}">Cancelar</a>         
         </form> 
     @endsection 
     ```
@@ -241,7 +241,7 @@ Y luego en CSS puedes estilizar la clase `.is-invalid`.
     @section('content')     
         <h2>Editar Nota</h2>     
 
-        <form action="{{ route('note.update', $note->id) }}" method="POST">         
+        <form action="{{ route('notes.update', $note->id) }}" method="POST">         
         @csrf         
         @method('PUT')         
 
@@ -270,7 +270,7 @@ Y luego en CSS puedes estilizar la clase `.is-invalid`.
             @enderror               
 
             <button type="submit">Actualizar</button>         
-            <a href="{{ route('note.index') }}">Cancelar</a>         
+            <a href="{{ route('notes.index') }}">Cancelar</a>         
         </form> 
     @endsection 
     ```
@@ -352,19 +352,19 @@ Este método permite guardar un mensaje en la sesión que se mostrará en la sig
 En la función `store()` del controlador:
 
 ```
-return redirect()->route('note.index')->with('success', 'Nota guardada correctamente.');
+return redirect()->route('notes.index')->with('success', 'Nota guardada correctamente.');
 ```
 
 En la función `update()`:
 
 ```
-return redirect()->route('note.index')->with('success', 'Nota actualizada correctamente.');
+return redirect()->route('notes.index')->with('success', 'Nota actualizada correctamente.');
 ```
 
 En la función `destroy()`:
 
 ```
-return redirect()->route('note.index')->with('danger', 'Nota eliminada correctamente.');
+return redirect()->route('notes.index')->with('danger', 'Nota eliminada correctamente.');
 ```
 
 ### 3.2. Mostrar el mensaje en la vista (por ejemplo, en layout):
@@ -420,33 +420,33 @@ return redirect()->route('note.index')->with('danger', 'Nota eliminada correctam
 Las rutas **`Route::resource()`** generan automáticamente todas las rutas necesarias para un CRUD completo. De esta manera nos ahorramos definir todas las rutas para todos los modelos.
 
 ```
-Route::resource('note', NoteController::class);
+Route::resource('notes', NoteController::class);
 ```
 
 ### 4.2. Acciones generadas
 
 | Ruta | Método | Acción |
 | --- | --- | --- |
-| GET /note | index | Mostrar todas las notas |
-| GET /note/create | create | Formulario para nueva nota |
-| POST /note | store | Guardar nueva nota |
-| GET /note/{note} | show | Mostrar una nota |
-| GET /note/{note}/edit | edit | Formulario para editar |
-| PUT/PATCH /note/{note} | update | Actualizar nota |
-| DELETE /note/{note} | destroy | Eliminar nota |
+| GET /notes | index | Mostrar todas las notas |
+| GET /notes/create | create | Formulario para nueva nota |
+| POST /notes | store | Guardar nueva nota |
+| GET /notes/{note} | show | Mostrar una nota |
+| GET /notes/{note}/edit | edit | Formulario para editar |
+| PUT/PATCH /notes/{note} | update | Actualizar nota |
+| DELETE /notes/{note} | destroy | Eliminar nota |
 
 ### 4.3. Personalización
 
 * Solo algunas rutas:
 
 ```
-Route::resource('note', NoteController::class)->only(['index', 'show']);
+Route::resource('notes', NoteController::class)->only(['index', 'show']);
 ```
 
 * Excluir algunas:
 
 ```
-Route::resource('note', NoteController::class)->except(['destroy']);
+Route::resource('notes', NoteController::class)->except(['destroy']);
 ```
 
 ### 4.4. Ver rutas disponibles
@@ -473,12 +473,12 @@ Este comando crea todos los métodos básicos (`index`, `create`, `store`, `show
 
 
 ---
-???questionlaravel "Práctica a Entregar: Validaciones y Mensajes en el CRUD de Productos"
+???questionlaravel "Práctica a Entregar"
 
-    ## Objetivo de la actividad
+    ## Objetivo de la actividad: Validaciones y Mensajes en el CRUD de Productos
 
     <p style="float: left; margin-left: 1rem;">
-    <img src="../../img/laravelactividad.png"
+    <img src="../../img/laraveltask.svg"
         alt="Actividad en el aula virtual"
         width="150">
     </p>

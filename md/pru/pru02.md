@@ -3,7 +3,7 @@
 ## Objetivo de la actividad
 
 <p style="float: left; margin-left: 1rem;">
-  <img src="../../img/laravelactividad.png"
+  <img src="../../img/laravel.svg"
        alt="Actividad en el aula virtual"
        width="150">
 </p>
@@ -150,18 +150,22 @@ Verifica manualmente que:
 
 ---
 
-## Entrega
-
-Sube a la plataforma:
-
-1. **Capturas de pantalla** de cada ruta funcionando:
+???questionlaravel "Práctica a entregar"
+    
+    <p style="float: left; margin-left: 1rem;">
+        <img src="../../img/laraveltask.svg"
+            alt="Actividad en el aula virtual"
+            width="150">
+    </p>
+    
+    1. **Capturas de pantalla** de cada ruta funcionando:
+              
+         - `/employees/by-id`
+         - `/employees/by-lastname`
+         - `/employees/filter-letter`
+         - `/employees/filter-year`
    
-      - `/employees/by-id`
-      - `/employees/by-lastname`
-      - `/employees/filter-letter`
-      - `/employees/filter-year`
-  
-2. **Listado de rutas** definido (solo nombres y URIs, sin código fuente).
-3. **Descripción breve** de cómo calculas la **Edad** y cómo **formateas** la **Fecha de contratación** (dos o tres líneas).
-4. **Evidencia de datos cargados**: captura del total de filas o vista parcial de la tabla `employees` en tu gestor de BD.
+    2. **Listado de rutas** definido (solo nombres y URIs, sin código fuente).
+    3. **Descripción breve** de cómo calculas la **Edad** y cómo **formateas** la **Fecha de contratación** (dos o tres líneas).
+    4. **Evidencia de datos cargados**: captura del total de filas o vista parcial de la tabla `employees` en tu gestor de BD.
 

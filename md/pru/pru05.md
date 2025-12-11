@@ -3,7 +3,7 @@
 ## Rutas API
 
 <p style="float: left; margin-left: 1rem;">
-  <img src="../../img/laravelactividad.png"
+  <img src="../../img/laravel.svg"
        alt="Actividad en el aula virtual"
        width="100">
 </p>
@@ -921,12 +921,12 @@ Ahora falta extender este control de errores a los demás métodos del controlad
 * `ApiResource` permite estructurar y controlar la salida de tus datos.
 
 
-???questionlaravel "Práctica: Validaciones y Mensajes en el CRUD de Productos"
+???questionlaravel "Práctica a entregar"
 
-    ### Objetivo de la actividad
+    ### Objetivo de la actividad: Validaciones y Mensajes en el CRUD de Productos
 
     <p style="float: left; margin-left: 1rem;">
-    <img src="../../img/laravelactividad.png"
+    <img src="../../img/laraveltask.svg"
         alt="Actividad en el aula virtual"
         width="150">
     </p>

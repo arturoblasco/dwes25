@@ -3153,13 +3153,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#objetivo-de-la-actividad" class="md-nav__link">
+  <a href="#objetivo-de-la-actividad-validaciones-y-mensajes-en-el-crud-de-productos" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo de la actividad
+      Objetivo de la actividad: Validaciones y Mensajes en el CRUD de Productos
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Objetivo de la actividad">
+    <nav class="md-nav" aria-label="Objetivo de la actividad: Validaciones y Mensajes en el CRUD de Productos">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3569,13 +3569,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#objetivo-de-la-actividad" class="md-nav__link">
+  <a href="#objetivo-de-la-actividad-validaciones-y-mensajes-en-el-crud-de-productos" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo de la actividad
+      Objetivo de la actividad: Validaciones y Mensajes en el CRUD de Productos
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Objetivo de la actividad">
+    <nav class="md-nav" aria-label="Objetivo de la actividad: Validaciones y Mensajes en el CRUD de Productos">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3666,7 +3666,7 @@
 <h2 id="1-validacion-de-datos">1. Validación de Datos<a class="headerlink" href="#1-validacion-de-datos" title="Permanent link">&para;</a></h2>
 <h3 id="11-que-es-la-validacion-y-por-que-es-necesaria">1.1. ¿Qué es la validación y por qué es necesaria?<a class="headerlink" href="#11-que-es-la-validacion-y-por-que-es-necesaria" title="Permanent link">&para;</a></h3>
 <p style="float: left; margin-left: 1rem;">
-  <img src="../../img/laravelactividad.png"
+  <img src="../../img/laravel.svg"
        alt="Actividad en el aula virtual"
        width="150">
 </p>
@@ -3697,7 +3697,7 @@
                                     ]);      
     Note::create($validated);     
 
-    return redirect()-&gt;route(&#39;note.index&#39;)-&gt;with(&#39;success&#39;, &#39;Nota creada correctamente.&#39;); 
+    return redirect()-&gt;route(&#39;notes.index&#39;)-&gt;with(&#39;success&#39;, &#39;Nota creada correctamente.&#39;); 
 } 
 </code></pre></div>
 </details>
@@ -3787,7 +3787,7 @@
     $data = $request-&gt;all();     
     $data[&#39;done&#39;] = $request-&gt;has(&#39;done&#39;) ? 1 : 0;  // Convertir checkbox a booleano     
     Note::create($data);     
-    return redirect()-&gt;route(&#39;note.index&#39;); 
+    return redirect()-&gt;route(&#39;notes.index&#39;); 
 } 
 </code></pre></div>
 </details>
@@ -3799,7 +3799,7 @@
 <summary>Actualizar una nota</summary>
 <div class="highlight"><pre><span></span><code>public function update(NoteRequest $request, Note $note) {     
     $note-&gt;update($request-&gt;all());     
-    return redirect()-&gt;route(&#39;note.index&#39;); 
+    return redirect()-&gt;route(&#39;notes.index&#39;); 
 } 
 </code></pre></div>
 </details>
@@ -3846,7 +3846,7 @@
 @section(&#39;content&#39;)     
     &lt;h2&gt;Editar Nota&lt;/h2&gt;     
 
-    &lt;form action=&quot;{{ route(&#39;note.store&#39;) }}&quot; method=&quot;POST&quot;&gt;         
+    &lt;form action=&quot;{{ route(&#39;notes.store&#39;) }}&quot; method=&quot;POST&quot;&gt;         
     @csrf         
         &lt;label&gt;Título:&lt;/label&gt;         
         &lt;input type=&quot;text&quot; name=&quot;title&quot; value=&quot;{{ old(&#39;title&#39;) }}&quot; required&gt;         
@@ -3873,7 +3873,7 @@
         @enderror     
 
         &lt;button type=&quot;submit&quot;&gt;Guardar&lt;/button&gt;         
-        &lt;a href=&quot;{{ route(&#39;note.index&#39;) }}&quot;&gt;Cancelar&lt;/a&gt;         
+        &lt;a href=&quot;{{ route(&#39;notes.index&#39;) }}&quot;&gt;Cancelar&lt;/a&gt;         
     &lt;/form&gt; 
 @endsection 
 </code></pre></div>
@@ -3887,7 +3887,7 @@
 @section(&#39;content&#39;)     
     &lt;h2&gt;Editar Nota&lt;/h2&gt;     
 
-    &lt;form action=&quot;{{ route(&#39;note.update&#39;, $note-&gt;id) }}&quot; method=&quot;POST&quot;&gt;         
+    &lt;form action=&quot;{{ route(&#39;notes.update&#39;, $note-&gt;id) }}&quot; method=&quot;POST&quot;&gt;         
     @csrf         
     @method(&#39;PUT&#39;)         
 
@@ -3916,7 +3916,7 @@
         @enderror               
 
         &lt;button type=&quot;submit&quot;&gt;Actualizar&lt;/button&gt;         
-        &lt;a href=&quot;{{ route(&#39;note.index&#39;) }}&quot;&gt;Cancelar&lt;/a&gt;         
+        &lt;a href=&quot;{{ route(&#39;notes.index&#39;) }}&quot;&gt;Cancelar&lt;/a&gt;         
     &lt;/form&gt; 
 @endsection 
 </code></pre></div>
@@ -4008,13 +4008,13 @@
 <h3 id="31-flash-de-sesion-con-with">3.1. Flash de sesión con <code>with()</code><a class="headerlink" href="#31-flash-de-sesion-con-with" title="Permanent link">&para;</a></h3>
 <p>Este método permite guardar un mensaje en la sesión que se mostrará en la siguiente petición. Vamos a usarlo para mostrar un mensaje de éxito después de crear o actualizar o eliminar una nota.</p>
 <p>En la función <code>store()</code> del controlador:</p>
-<div class="highlight"><pre><span></span><code>return redirect()-&gt;route(&#39;note.index&#39;)-&gt;with(&#39;success&#39;, &#39;Nota guardada correctamente.&#39;);
+<div class="highlight"><pre><span></span><code>return redirect()-&gt;route(&#39;notes.index&#39;)-&gt;with(&#39;success&#39;, &#39;Nota guardada correctamente.&#39;);
 </code></pre></div>
 <p>En la función <code>update()</code>:</p>
-<div class="highlight"><pre><span></span><code>return redirect()-&gt;route(&#39;note.index&#39;)-&gt;with(&#39;success&#39;, &#39;Nota actualizada correctamente.&#39;);
+<div class="highlight"><pre><span></span><code>return redirect()-&gt;route(&#39;notes.index&#39;)-&gt;with(&#39;success&#39;, &#39;Nota actualizada correctamente.&#39;);
 </code></pre></div>
 <p>En la función <code>destroy()</code>:</p>
-<div class="highlight"><pre><span></span><code>return redirect()-&gt;route(&#39;note.index&#39;)-&gt;with(&#39;danger&#39;, &#39;Nota eliminada correctamente.&#39;);
+<div class="highlight"><pre><span></span><code>return redirect()-&gt;route(&#39;notes.index&#39;)-&gt;with(&#39;danger&#39;, &#39;Nota eliminada correctamente.&#39;);
 </code></pre></div>
 <h3 id="32-mostrar-el-mensaje-en-la-vista-por-ejemplo-en-layout">3.2. Mostrar el mensaje en la vista (por ejemplo, en layout):<a class="headerlink" href="#32-mostrar-el-mensaje-en-la-vista-por-ejemplo-en-layout" title="Permanent link">&para;</a></h3>
 <details class="examplelaravel" open="open">
@@ -4061,7 +4061,7 @@
 <h2 id="4-rutas-resource">4. Rutas Resource<a class="headerlink" href="#4-rutas-resource" title="Permanent link">&para;</a></h2>
 <h3 id="41-que-son">4.1. ¿Qué son?<a class="headerlink" href="#41-que-son" title="Permanent link">&para;</a></h3>
 <p>Las rutas <strong><code>Route::resource()</code></strong> generan automáticamente todas las rutas necesarias para un CRUD completo. De esta manera nos ahorramos definir todas las rutas para todos los modelos.</p>
-<div class="highlight"><pre><span></span><code>Route::resource(&#39;note&#39;, NoteController::class);
+<div class="highlight"><pre><span></span><code>Route::resource(&#39;notes&#39;, NoteController::class);
 </code></pre></div>
 <h3 id="42-acciones-generadas">4.2. Acciones generadas<a class="headerlink" href="#42-acciones-generadas" title="Permanent link">&para;</a></h3>
 <table>
@@ -4074,37 +4074,37 @@
 </thead>
 <tbody>
 <tr>
-<td>GET /note</td>
+<td>GET /notes</td>
 <td>index</td>
 <td>Mostrar todas las notas</td>
 </tr>
 <tr>
-<td>GET /note/create</td>
+<td>GET /notes/create</td>
 <td>create</td>
 <td>Formulario para nueva nota</td>
 </tr>
 <tr>
-<td>POST /note</td>
+<td>POST /notes</td>
 <td>store</td>
 <td>Guardar nueva nota</td>
 </tr>
 <tr>
-<td>GET /note/{note}</td>
+<td>GET /notes/{note}</td>
 <td>show</td>
 <td>Mostrar una nota</td>
 </tr>
 <tr>
-<td>GET /note/{note}/edit</td>
+<td>GET /notes/{note}/edit</td>
 <td>edit</td>
 <td>Formulario para editar</td>
 </tr>
 <tr>
-<td>PUT/PATCH /note/{note}</td>
+<td>PUT/PATCH /notes/{note}</td>
 <td>update</td>
 <td>Actualizar nota</td>
 </tr>
 <tr>
-<td>DELETE /note/{note}</td>
+<td>DELETE /notes/{note}</td>
 <td>destroy</td>
 <td>Eliminar nota</td>
 </tr>
@@ -4114,12 +4114,12 @@
 <ul>
 <li>Solo algunas rutas:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>Route::resource(&#39;note&#39;, NoteController::class)-&gt;only([&#39;index&#39;, &#39;show&#39;]);
+<div class="highlight"><pre><span></span><code>Route::resource(&#39;notes&#39;, NoteController::class)-&gt;only([&#39;index&#39;, &#39;show&#39;]);
 </code></pre></div>
 <ul>
 <li>Excluir algunas:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>Route::resource(&#39;note&#39;, NoteController::class)-&gt;except([&#39;destroy&#39;]);
+<div class="highlight"><pre><span></span><code>Route::resource(&#39;notes&#39;, NoteController::class)-&gt;except([&#39;destroy&#39;]);
 </code></pre></div>
 <h3 id="44-ver-rutas-disponibles">4.4. Ver rutas disponibles<a class="headerlink" href="#44-ver-rutas-disponibles" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>php artisan route:list
@@ -4137,10 +4137,10 @@
 </ul>
 <hr />
 <details class="questionlaravel">
-<summary>Práctica a Entregar: Validaciones y Mensajes en el CRUD de Productos</summary>
-<h2 id="objetivo-de-la-actividad">Objetivo de la actividad<a class="headerlink" href="#objetivo-de-la-actividad" title="Permanent link">&para;</a></h2>
+<summary>Práctica a Entregar</summary>
+<h2 id="objetivo-de-la-actividad-validaciones-y-mensajes-en-el-crud-de-productos">Objetivo de la actividad: Validaciones y Mensajes en el CRUD de Productos<a class="headerlink" href="#objetivo-de-la-actividad-validaciones-y-mensajes-en-el-crud-de-productos" title="Permanent link">&para;</a></h2>
 <p><p style="float: left; margin-left: 1rem;">
-<img src="../../img/laravelactividad.png"
+<img src="../../img/laraveltask.svg"
     alt="Actividad en el aula virtual"
     width="150">
 </p></p>

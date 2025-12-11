@@ -3053,9 +3053,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#objetivo-de-la-actividad" class="md-nav__link">
+  <a href="#objetivo-de-la-actividad-desarrollo-de-un-crud-de-productos" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo de la actividad
+      Objetivo de la actividad: Desarrollo de un CRUD de Productos
     </span>
   </a>
   
@@ -3423,9 +3423,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#objetivo-de-la-actividad" class="md-nav__link">
+  <a href="#objetivo-de-la-actividad-desarrollo-de-un-crud-de-productos" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo de la actividad
+      Objetivo de la actividad: Desarrollo de un CRUD de Productos
     </span>
   </a>
   
@@ -3527,7 +3527,7 @@
 <h1 id="desarrollo-de-un-crud">Desarrollo de un CRUD<a class="headerlink" href="#desarrollo-de-un-crud" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduccion-a-crud">1. Introducción a CRUD<a class="headerlink" href="#1-introduccion-a-crud" title="Permanent link">&para;</a></h2>
 <p style="float: left; margin-left: 1rem;">
-  <img src="../../img/laravelactividad.png"
+  <img src="../../img/laravel.svg"
        alt="Actividad en el aula virtual"
        width="150">
 </p>
@@ -3632,7 +3632,7 @@ class Note extends Model {
 <div class="highlight"><pre><span></span><code>public function show($id)
 {
     $note = Note::findOrFail($id);
-    return view(&#39;note.show&#39;, compact(&#39;note&#39;));
+    return view(&#39;notes.show&#39;, compact(&#39;note&#39;));
 }
 </code></pre></div>
 </details>
@@ -3642,10 +3642,10 @@ class Note extends Model {
 <summary>Ruta con Parámetro Dinámico y Controlador</summary>
 <div class="highlight"><pre><span></span><code>use App\Http\Controllers\NoteController;  
 
-Route::get(&#39;note/{id}&#39;, [NoteController::class, &#39;show&#39;])-&gt;name(&#39;note.show&#39;); 
+Route::get(&#39;notes/{id}&#39;, [NoteController::class, &#39;show&#39;])-&gt;name(&#39;notes.show&#39;); 
 </code></pre></div>
 </details>
-<p><strong>Vista <code>resources/views/note/show.blade.php</code>:</strong></p>
+<p><strong>Vista <code>resources/views/notes/show.blade.php</code>:</strong></p>
 <p>Por último nos queda crear la vista que mostrará la información de la nota con el ID recibido:</p>
 <details class="examplelaravel" open="open">
 <summary>Vista show.blade.php</summary>
@@ -3676,7 +3676,7 @@ Route::get(&#39;note/{id}&#39;, [NoteController::class, &#39;show&#39;])-&gt;nam
     &lt;/tr&gt;
     &lt;/tbody&gt;
     &lt;/table&gt;
-    &lt;a href=&quot;{{ route(&#39;note.index&#39;) }}&quot;&gt; &lt;--Volver &lt;/a&gt;
+    &lt;a href=&quot;{{ route(&#39;notes.index&#39;) }}&quot;&gt; &lt;--Volver &lt;/a&gt;
 @endsection
 </code></pre></div>
 Podemos observar que esta vista:</p>
@@ -3684,17 +3684,17 @@ Podemos observar que esta vista:</p>
 <li>aplica la plantilla <code>app.blade.php</code>.</li>
 <li>muestra en la pestaña del navegador el número de nota.</li>
 <li>muestra el valor del campo <code>done</code> (que es de tipo <code>boolean</code>) realiza una ternaria.</li>
-<li>tiene un enlace, al final, para volver a la vista que lista notas y lo hace con el método <code>route</code> y el nombre de la ruta (<code>note.index</code>).</li>
+<li>tiene un enlace, al final, para volver a la vista que lista notas y lo hace con el método <code>route</code> y el nombre de la ruta (<code>notes.index</code>).</li>
 </ul>
 </details>
-<p>Con esto, accediendo a <code>/note/1</code> veremos "El ID de la nota es: 1".</p>
+<p>Con esto, accediendo a <code>/notes/1</code> veremos "El ID de la nota es: 1".</p>
 <div class="figure-center">
   <figure>
     <img src="../../img/pru/laravel_vista_show1.png"
          alt="vista show"
          class="figure-img-highlight" />
     <figcaption class="figure-caption-small">
-      vista note/show.blade.php
+      vista notes/show.blade.php
     </figcaption>
   </figure>
 </div>
@@ -3726,11 +3726,11 @@ Podemos observar que esta vista:</p>
 <h3 id="23-importancia-del-orden-de-las-rutas">2.3. Importancia del orden de las rutas<a class="headerlink" href="#23-importancia-del-orden-de-las-rutas" title="Permanent link">&para;</a></h3>
 <p>Laravel evalúa las rutas en el <strong>orden en que se definen</strong>.</p>
 <p><strong>Ejemplo de conflicto:</strong></p>
-<div class="highlight"><pre><span></span><code>Route::get(&#39;/nota/nueva&#39;, function() { return &#39;Crear nueva nota&#39;; }); 
-Route::get(&#39;/nota/{id}&#39;, function($id) { return &quot;Nota ID: $id&quot;; }); 
+<div class="highlight"><pre><span></span><code>Route::get(&#39;/notes/nueva&#39;, function() { return &#39;Crear nueva nota&#39;; }); 
+Route::get(&#39;/notes/{id}&#39;, function($id) { return &quot;Nota ID: $id&quot;; }); 
 </code></pre></div>
 <ul>
-<li>Primero debe definirse <code>/nota/nueva</code> porque si no, Laravel intentará interpretar <code>nueva</code> como un <code>id</code>.</li>
+<li>Primero debe definirse <code>/notes/nueva</code> porque si no, Laravel intentará interpretar <code>nueva</code> como un <code>id</code>.</li>
 <li>El orden correcto es siempre de <strong>rutas más específicas a más generales</strong>.</li>
 </ul>
 <div class="admonition warning">
@@ -3745,7 +3745,7 @@ Route::get(&#39;/nota/{id}&#39;, function($id) { return &quot;Nota ID: $id&quot;
 <summary>Ruta para Listar Notas</summary>
 <div class="highlight"><pre><span></span><code>use App\Http\Controllers\NoteController;  
 
-Route::get(&#39;/&#39;, [NoteController::class, &#39;index&#39;])-&gt;name(&#39;note.index&#39;); 
+Route::get(&#39;/&#39;, [NoteController::class, &#39;index&#39;])-&gt;name(&#39;notes.index&#39;); 
 </code></pre></div>
 </details>
 <p><strong>Controlador:</strong></p>
@@ -3801,12 +3801,12 @@ public function index()
 <details class="examplelaravel" open="open">
 <summary>Partials en <code>resources/views/partials/nav.blade.php</code></summary>
 <div class="highlight"><pre><span></span><code>&lt;nav&gt;             
-    &lt;a href=&quot;{{ route(&#39;note.index&#39;) }}&quot;&gt;Notas&lt;/a&gt; |             
+    &lt;a href=&quot;{{ route(&#39;notes.index&#39;) }}&quot;&gt;Notas&lt;/a&gt; |             
     &lt;a href=&quot;{{ route(&#39;employee.byId&#39;) }}&quot;&gt;Empleados&lt;/a&gt;         
 &lt;/nav&gt;  
 </code></pre></div>
 </details>
-<p><strong>Vista de Listado <code>resources/views/note/index.blade.php</code>:</strong></p>
+<p><strong>Vista de Listado <code>resources/views/notes/index.blade.php</code>:</strong></p>
 <p>En este formulario vamos a adelantar algunas cosas que ampliaremos más adelante. Para poner el enlace a leminar una nota, vamos a utilizar un formulario con el método <code>POST</code> y la directiva <code>@method('DELETE')</code>. Esta directiva simula el método HTTP DELETE en formularios HTML (que solo permiten GET y POST). Más adelante explicaremos esto con más detalle. Hasta aquí nada especialmente llmativo. Pero también veréis que está la directiva <code>@csrf</code>. Esta directiva genera un campo oculto con un token que protege el formulario contra ataques CSRF (Cross-Site Request Forgery). Más adelante también explicaremos esto con más detalle. En <code>laravel</code> esta protección es automática, pero hay que incluir la directiva <code>@csrf</code> en los formularios para que funcione correctamente.</p>
 <details class="examplelaravel" open="open">
 <summary>Listado de Notas</summary>
@@ -3817,7 +3817,7 @@ public function index()
 @section(&#39;content&#39;)
     &lt;h1&gt;LISTADO DE NOTAS&lt;/h1&gt;
 
-    &lt;a href=&quot;{{ route(&#39;note.create&#39;) }}&quot; style=&quot;display:inline-block; text-decoration:none;&quot;&gt;
+    &lt;a href=&quot;{{ route(&#39;notes.create&#39;) }}&quot; style=&quot;display:inline-block; text-decoration:none;&quot;&gt;
         &lt;img src=&quot;{{ asset(&#39;assets/img/add.svg&#39;) }}&quot; alt=&quot;Añadir Nota&quot; title=&quot;Añadir Nota&quot;&gt;
     &lt;/a&gt;
 
@@ -3850,15 +3850,15 @@ public function index()
 
                         &lt;td&gt;
                             &lt;div style=&quot;display: flex; gap: 0.5rem;&quot;&gt;
-                                &lt;a href=&quot;{{ route(&#39;note.show&#39;, $item-&gt;id) }}&quot; style=&quot;display:inline-block; text-decoration:none;&quot;&gt;
+                                &lt;a href=&quot;{{ route(&#39;notes.show&#39;, $item-&gt;id) }}&quot; style=&quot;display:inline-block; text-decoration:none;&quot;&gt;
                                     &lt;img src=&quot;{{ asset(&#39;assets/img/view.svg&#39;) }}&quot; alt=&quot;Vista&quot; title=&quot;Vista&quot;&gt;
                                 &lt;/a&gt;
 
-                                &lt;a href=&quot;{{ route(&#39;note.edit&#39;, $item-&gt;id) }}&quot; style=&quot;display:inline-block; text-decoration:none;&quot;&gt;
+                                &lt;a href=&quot;{{ route(&#39;notes.edit&#39;, $item-&gt;id) }}&quot; style=&quot;display:inline-block; text-decoration:none;&quot;&gt;
                                     &lt;img src=&quot;{{ asset(&#39;assets/img/edit.svg&#39;) }}&quot; alt=&quot;Editar&quot; title=&quot;Editar&quot;&gt;
                                 &lt;/a&gt;
 
-                                &lt;form action=&quot;{{ route(&#39;note.destroy&#39;, $item-&gt;id) }}&quot; method=&quot;POST&quot; style=&quot;display:inline&quot;&gt;
+                                &lt;form action=&quot;{{ route(&#39;notes.destroy&#39;, $item-&gt;id) }}&quot; method=&quot;POST&quot; style=&quot;display:inline&quot;&gt;
                                     @csrf
                                     @method(&#39;DELETE&#39;)
                                     &lt;button type=&quot;submit&quot; style=&quot;border: none; background: none; padding: 0; cursor: pointer;&quot;&gt;
@@ -3883,7 +3883,7 @@ public function index()
          class="figure-img-highlight"
          style="max-width: 80%; height: auto;" />
     <figcaption class="figure-caption-small">
-      vista note/index.blade.php
+      vista notes/index.blade.php
     </figcaption>
   </figure>
 </div>
@@ -3892,25 +3892,25 @@ public function index()
 <h3 id="32-crear-una-nueva-nota">3.2. Crear una Nueva Nota<a class="headerlink" href="#32-crear-una-nueva-nota" title="Permanent link">&para;</a></h3>
 <p>Para poder crear una nota necesitamos tres cosas:</p>
 <ol>
-<li>Una ruta que muestre el formulario de creación, <code>/note/create</code>.</li>
+<li>Una ruta que muestre el formulario de creación, <code>/notes/create</code>.</li>
 <li>Un método en el controlador que maneje esa ruta y muestre la vista con el formulario: <code>function create()</code>.</li>
 <li>Una vista que contenga el formulario de creación: <code>resources/views/notes/create.blade.php</code>.</li>
 </ol>
 <p><strong>Ruta para formulario de creación:</strong></p>
 <details class="examplelaravel" open="open">
 <summary>Ruta para Crear Nota</summary>
-<div class="highlight"><pre><span></span><code>Route::get(&#39;/note/create&#39;, [NoteController::class, &#39;create&#39;])-&gt;name(&#39;note.create&#39;);
+<div class="highlight"><pre><span></span><code>Route::get(&#39;/notes/create&#39;, [NoteController::class, &#39;create&#39;])-&gt;name(&#39;notes.create&#39;);
 </code></pre></div>
 </details>
 <p><strong>Controlador:</strong></p>
 <details class="examplelaravel" open="open">
 <summary>método create, para mostrar el formulario de creación</summary>
 <div class="highlight"><pre><span></span><code>public function create() {     
-    return view(&#39;note.create&#39;); 
+    return view(&#39;notes.create&#39;); 
 } 
 </code></pre></div>
 </details>
-<p><strong>Vista <code>resources/views/note/create.blade.php</code>:</strong></p>
+<p><strong>Vista <code>resources/views/notes/create.blade.php</code>:</strong></p>
 <details class="examplelaravel" open="open">
 <summary>Formulario de Crear Nota</summary>
 <div class="highlight"><pre><span></span><code>@extends(&#39;layouts.app&#39;)
@@ -3920,7 +3920,7 @@ public function index()
 @section(&#39;content&#39;)
     &lt;h1&gt;CREAR NUEVA NOTA&lt;/h1&gt;
 
-    &lt;form action=&quot;{{ route(&#39;note.store&#39;) }}&quot; method=&quot;POST&quot;&gt;
+    &lt;form action=&quot;{{ route(&#39;notes.store&#39;) }}&quot; method=&quot;POST&quot;&gt;
         @csrf
         &lt;table&gt;
             &lt;caption&gt;Formulario de Creación de Nota&lt;/caption&gt;
@@ -3954,7 +3954,7 @@ public function index()
         &lt;div style=&quot;margin-top: 1rem;&quot;&gt;
             &lt;button type=&quot;submit&quot;&gt;Guardar&lt;/button&gt;
 
-            &lt;a href=&quot;{{ route(&#39;note.index&#39;) }}&quot; style=&quot;margin-left: 10px; text-decoration: none; color: blue;&quot;&gt;Cancelar&lt;/a&gt;
+            &lt;a href=&quot;{{ route(&#39;notes.index&#39;) }}&quot; style=&quot;margin-left: 10px; text-decoration: none; color: blue;&quot;&gt;Cancelar&lt;/a&gt;
         &lt;/div&gt;
     &lt;/form&gt;
 @endsection
@@ -3966,7 +3966,7 @@ public function index()
          alt="vista create"
          class="figure-img-highlight" />
     <figcaption class="figure-caption-small">
-      vista note/create.blade.php
+      vista notes/create.blade.php
     </figcaption>
   </figure>
 </div>
@@ -3976,7 +3976,7 @@ public function index()
 <p><strong>Ruta para guardar:</strong></p>
 <details class="examplelaravel" open="open">
 <summary>Ruta para Guardar Nota</summary>
-<div class="highlight"><pre><span></span><code>Route::post(&#39;/note/store&#39;, [NoteController::class, &#39;store&#39;])-&gt;name(&#39;note.store&#39;); 
+<div class="highlight"><pre><span></span><code>Route::post(&#39;/notes/store&#39;, [NoteController::class, &#39;store&#39;])-&gt;name(&#39;notes.store&#39;); 
 </code></pre></div>
 </details>
 <p><strong>Controlador:</strong></p>
@@ -3990,13 +3990,13 @@ public function index()
     $note-&gt;date = $request-&gt;input(&#39;date_at&#39;);     
     $note-&gt;done = $request-&gt;input(&#39;done&#39;) ? 1 : 0;     
     $note-&gt;save();     // Redirigir a la lista de notas     
-    return redirect()-&gt;route(&#39;note.index&#39;); 
+    return redirect()-&gt;route(&#39;notes.index&#39;); 
 } 
 </code></pre></div>
 <p>🔝 Utilizando el método <code>create</code>:</p>
 <div class="highlight"><pre><span></span><code>public function store(Request $request) {     
     Note::create($request-&gt;all());     
-    return redirect()-&gt;route(&#39;note.index&#39;); 
+    return redirect()-&gt;route(&#39;notes.index&#39;); 
 } 
 </code></pre></div>
 </details>
@@ -4019,7 +4019,7 @@ public function index()
 <p><strong>Ruta para formulario de edición:</strong></p>
 <details class="examplelaravel" open="open">
 <summary>Ruta para Editar Nota</summary>
-<div class="highlight"><pre><span></span><code>Route::get(&#39;/note/edit/{note}&#39;, [NoteController::class, &#39;edit&#39;])-&gt;name(&#39;note.edit&#39;);
+<div class="highlight"><pre><span></span><code>Route::get(&#39;/notes/edit/{note}&#39;, [NoteController::class, &#39;edit&#39;])-&gt;name(&#39;notes.edit&#39;);
 </code></pre></div>
 </details>
 <p><strong>Controlador:</strong></p>
@@ -4028,16 +4028,16 @@ public function index()
 <summary>método edit, para mostrar el formulario de edición</summary>
 <div class="highlight"><pre><span></span><code>public function edit($id) {     
     $note = Note::findOrFail($id);     
-    return view(&#39;note.edit&#39;, compact(&#39;note&#39;)); 
+    return view(&#39;notes.edit&#39;, compact(&#39;note&#39;)); 
 } 
 </code></pre></div>
 <p>🔝 En esta segunda forma, recibimos el modelo <code>Note</code>. De esta manera es Laravel el que se encarga de buscar la nota. Cuando trabajamos con modelos, esta es la forma recomendada (con inyección de modelo):</p>
 <div class="highlight"><pre><span></span><code>public function edit(Note $note) {     
-    return view(&#39;note.edit&#39;, compact(&#39;note&#39;)); 
+    return view(&#39;notes.edit&#39;, compact(&#39;note&#39;)); 
 } 
 </code></pre></div>
 </details>
-<p><strong>Vista <code>resources/views/note/edit.blade.php</code>:</strong></p>
+<p><strong>Vista <code>resources/views/notes/edit.blade.php</code>:</strong></p>
 <p>En este caso la ruta la hemos definido con el método <code>PUT</code>. Este método es el que se utiliza para actualizar los datos de un recurso existente. Pero ¿cómo hacerlo si las opciones de <code>form</code> solo permiten <code>GET</code> y <code>POST</code>?. Laravel nos ofrece una solución sencilla: la directiva <code>@method('PUT')</code>. Esta directiva simula el método PUT en formularios HTML. Esta directiva debe estar dentro del formulario y antes de los inputs.</p>
 <p>Ejemplo para Editar Nota:</p>
 <div class="highlight"><pre><span></span><code>&lt;form id=&quot;sample-form&quot; action=&quot;somepage.php&quot; method=&quot;POST&quot;&gt;     
@@ -4056,7 +4056,7 @@ public function index()
 @section(&#39;content&#39;)
     &lt;h1&gt;EDITAR NOTA {{ $note-&gt;id }}&lt;/h1&gt;
 
-    &lt;form action=&quot;{{ route(&#39;note.update&#39;, $note-&gt;id) }}&quot; method=&quot;POST&quot;&gt;
+    &lt;form action=&quot;{{ route(&#39;notes.update&#39;, $note-&gt;id) }}&quot; method=&quot;POST&quot;&gt;
         @csrf
         @method(&#39;PUT&#39;)
         &lt;table&gt;
@@ -4095,7 +4095,7 @@ public function index()
         &lt;div style=&quot;margin-top: 1rem;&quot;&gt;
             &lt;button type=&quot;submit&quot;&gt;Actualizar&lt;/button&gt;
 
-            &lt;a href=&quot;{{ route(&#39;note.index&#39;) }}&quot; style=&quot;margin-left: 10px; text-decoration: none; color: blue;&quot;&gt;Cancelar&lt;/a&gt;
+            &lt;a href=&quot;{{ route(&#39;notes.index&#39;) }}&quot; style=&quot;margin-left: 10px; text-decoration: none; color: blue;&quot;&gt;Cancelar&lt;/a&gt;
         &lt;/div&gt;
     &lt;/form&gt;
 @endsection
@@ -4109,7 +4109,7 @@ public function index()
 <p><strong>Ruta para actualizar:</strong></p>
 <details class="examplelaravel" open="open">
 <summary>Ruta para Actualizar Nota</summary>
-<div class="highlight"><pre><span></span><code>Route::put(&#39;/note/update/{note}&#39;, [NoteController::class, &#39;update&#39;])-&gt;name(&#39;note.update&#39;); 
+<div class="highlight"><pre><span></span><code>Route::put(&#39;/notes/update/{note}&#39;, [NoteController::class, &#39;update&#39;])-&gt;name(&#39;notes.update&#39;); 
 </code></pre></div>
 </details>
 <p><strong>Controlador:</strong></p>
@@ -4120,14 +4120,14 @@ public function index()
 <li>🔝 Por inyección de modelo:
 <div class="highlight"><pre><span></span><code>public function update(Request $request, Note $note) {     
     $note-&gt;update($request-&gt;all());     
-    return redirect()-&gt;route(&#39;note.index&#39;); 
+    return redirect()-&gt;route(&#39;notes.index&#39;); 
 } 
 </code></pre></div></li>
 <li>Buscando por ID:  <br />
 <div class="highlight"><pre><span></span><code>public function update(Request $request, $id) {     
     $note = Note::findOrFail($id);     
     $note-&gt;update($request-&gt;all());     
-    return redirect()-&gt;route(&#39;note.index&#39;); 
+    return redirect()-&gt;route(&#39;notes.index&#39;); 
 } 
 </code></pre></div></li>
 </ul>
@@ -4137,7 +4137,7 @@ public function index()
 <p><strong>Ruta para mostrar:</strong></p>
 <details class="examplelaravel" open="open">
 <summary>Ruta para Mostrar Nota</summary>
-<div class="highlight"><pre><span></span><code>Route::get(&#39;/note/show/{note}&#39;, [NoteController::class, &#39;show&#39;])-&gt;name(&#39;note.show&#39;);
+<div class="highlight"><pre><span></span><code>Route::get(&#39;/notes/show/{note}&#39;, [NoteController::class, &#39;show&#39;])-&gt;name(&#39;notes.show&#39;);
 </code></pre></div>
 </details>
 <p><strong>Controlador:</strong></p>
@@ -4148,7 +4148,7 @@ public function index()
 <li>🔝 Por inyección de modelo:</li>
 </ul>
 <div class="highlight"><pre><span></span><code>public function show(Note $note) {     
-    return view(&#39;note.show&#39;, compact(&#39;note&#39;)); 
+    return view(&#39;notes.show&#39;, compact(&#39;note&#39;)); 
 } 
 </code></pre></div>
 <ul>
@@ -4156,11 +4156,11 @@ public function index()
 </ul>
 <div class="highlight"><pre><span></span><code>public function show($id) {     
     $note = Note::findOrFail($id);     
-    return view(&#39;note.show&#39;, compact(&#39;note&#39;)); 
+    return view(&#39;notes.show&#39;, compact(&#39;note&#39;)); 
 } 
 </code></pre></div>
 </details>
-<p><strong>Vista <code>resources/views/note/show.blade.php</code> actualizada:</strong></p>
+<p><strong>Vista <code>resources/views/notes/show.blade.php</code> actualizada:</strong></p>
 <details class="examplelaravel" open="open">
 <summary>Mostrar Nota</summary>
 <div class="highlight"><pre><span></span><code>@extends(&#39;layouts.app&#39;)
@@ -4190,7 +4190,7 @@ public function index()
         &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;a href=&quot;{{ route(&#39;note.index&#39;) }}&quot;&gt; &lt;--Volver &lt;/a&gt;
+&lt;a href=&quot;{{ route(&#39;notes.index&#39;) }}&quot;&gt; &lt;--Volver &lt;/a&gt;
 @endsection
 </code></pre></div>
 </details>
@@ -4199,7 +4199,7 @@ public function index()
 <p><strong>Ruta para eliminar:</strong></p>
 <details class="examplelaravel" open="open">
 <summary>Ruta para Eliminar Nota</summary>
-<div class="highlight"><pre><span></span><code>Route::delete(&#39;/note/destroy/{note}&#39;, [NoteController::class, &#39;destroy&#39;])-&gt;name(&#39;note.destroy&#39;);
+<div class="highlight"><pre><span></span><code>Route::delete(&#39;/notes/destroy/{note}&#39;, [NoteController::class, &#39;destroy&#39;])-&gt;name(&#39;notes.destroy&#39;);
 </code></pre></div>
 </details>
 <p><strong>Controlador:</strong></p>
@@ -4211,7 +4211,7 @@ public function index()
 <p>🔝 Por inyección de modelo:
 <div class="highlight"><pre><span></span><code>public function destroy(Note $note) {     
     $note-&gt;delete();     
-    return redirect()-&gt;route(&#39;note.index&#39;); 
+    return redirect()-&gt;route(&#39;notes.index&#39;); 
 } 
 </code></pre></div></p>
 </li>
@@ -4220,7 +4220,7 @@ public function index()
 <div class="highlight"><pre><span></span><code>public function destroy($id) {     
     $note = Note::findOrFail($id);     
     $note-&gt;delete();     
-    return redirect()-&gt;route(&#39;note.index&#39;); 
+    return redirect()-&gt;route(&#39;notes.index&#39;); 
 } 
 </code></pre></div></p>
 </li>
@@ -4237,100 +4237,100 @@ public function index()
 <summary>Captura imagen de: <code>/note</code></summary>
 <p><div class="figure-center">
 <figure>
-    <img src="../../img/pru/laravel_vista_note.png"
-             alt="vista /note/index.blade.php"
+    <img src="../../img/pru/laravel_vista_notes.png"
+             alt="vista /notes/index.blade.php"
              class="figure-img-highlight" />
     <figcaption class="figure-caption-small">
-          vista /note/index.blade.php
+          vista /notes/index.blade.php
     </figcaption>
 </figure>
 </div></p>
 </details>
 <p>2) <strong>Crear Nota:</strong> Haz clic en el botón "<em>Añadir Nota</em>", rellena el formulario y envíalo.</p>
-<p>Al hacer click en "<em>Añadir Nota</em>" se accede a <code>/note/create</code>:</p>
+<p>Al hacer click en "<em>Añadir Nota</em>" se accede a <code>/notes/create</code>:</p>
 <details class="examplelaravel">
-<summary>Captura imagen de: <code>/note/create</code></summary>
+<summary>Captura imagen de: <code>/notes/create</code></summary>
 <p><div class="figure-center">
 <figure>
     <img src="../../img/pru/laravel_vista_create2.png"
-             alt="vista /note/create.blade.php"
+             alt="vista /notes/create.blade.php"
              class="figure-img-highlight" />
     <figcaption class="figure-caption-small">
-          vista /note/create.blade.php
+          vista /notes/create.blade.php
     </figcaption>
 </figure>
 </div></p>
 </details>
-<p>Una vez rellenado el formulario lo enviamos al servidor (ruta <code>/note/store</code>) y volvemos al listado de notas.</p>
+<p>Una vez rellenado el formulario lo enviamos al servidor (ruta <code>/notes/store</code>) y volvemos al listado de notas.</p>
 <details class="examplelaravel">
 <summary>Captura imagen después de añadir nota de: <code>/note</code></summary>
 <p><div class="figure-center">
 <figure>
     <img src="../../img/pru/laravel_vista_create3.png"
-             alt="vista /note/index.blade.php"
+             alt="vista /notes/index.blade.php"
              class="figure-img-highlight" />
     <figcaption class="figure-caption-small">
-          vista /note/index.blade.php después de añadir una nueva nota.
+          vista /notes/index.blade.php después de añadir una nueva nota.
     </figcaption>
 </figure>
 </div></p>
 </details>
 <p>Podemos ver la nota creada y como aparecen los enlaces para editar y eliminar.</p>
 <p>3) <strong>Editar Nota:</strong> Haz clic en "Editar" junto a una nota, modifica los datos y envía el formulario.</p>
-<p>Al hacer click en "Editar" se accede a <code>/note/edit/{id}</code>:</p>
+<p>Al hacer click en "Editar" se accede a <code>/notes/edit/{id}</code>:</p>
 <details class="examplelaravel">
-<summary>Captura imagen de: <code>/note/edit/5</code></summary>
+<summary>Captura imagen de: <code>/notes/edit/5</code></summary>
 <p><div class="figure-center">
 <figure>
     <img src="../../img/pru/laravel_vista_edit1.png"
-             alt="vista /note/edit.blade.php"
+             alt="vista /notes/edit.blade.php"
              class="figure-img-highlight" 
              style="max-width: 70%; height: auto;" />
     <figcaption class="figure-caption-small">
-          vista /note/edit.blade.php
+          vista /notes/edit.blade.php
     </figcaption>
 </figure>
 </div></p>
 </details>
-<p>Una vez modificado el formulario lo enviamos al servidor (ruta <code>/note/update/{id}</code>) que actualiza la nota y nos redirecciona al listado de notas.</p>
+<p>Una vez modificado el formulario lo enviamos al servidor (ruta <code>/notes/update/{id}</code>) que actualiza la nota y nos redirecciona al listado de notas.</p>
 <details class="examplelaravel">
 <summary>Captura imagen después de editar de: <code>/note</code></summary>
 <p><div class="figure-center">
 <figure>
     <img src="../../img/pru/laravel_vista_edit2.png"
-             alt="vista /note/index.blade.php"
+             alt="vista /notes/index.blade.php"
              class="figure-img-highlight" />
     <figcaption class="figure-caption-small">
-          vista /note/index.blade.php después de modificar la nota 5
+          vista /notes/index.blade.php después de modificar la nota 5
     </figcaption>
 </figure>
 </div></p>
 </details>
 <p>4) <strong>Mostrar Nota:</strong> Haz clic en el título de una nota para ver sus detalles.</p>
-<p>Al hacer click en el título de una nota se accede a <code>/note/show/{id}</code>:</p>
+<p>Al hacer click en el título de una nota se accede a <code>/notes/show/{id}</code>:</p>
 <details class="examplelaravel">
-<summary>Captura imagen de: <code>/note/show/7</code></summary>
+<summary>Captura imagen de: <code>/notes/show/7</code></summary>
 <p><div class="figure-center">
 <figure>
     <img src="../../img/pru/laravel_vista_show2.png"
-             alt="vista /note/show.blade.php"
+             alt="vista /notes/show.blade.php"
              class="figure-img-highlight" />
     <figcaption class="figure-caption-small">
-          vista /note/show.blade.php de la nota 7
+          vista /notes/show.blade.php de la nota 7
     </figcaption>
 </figure>
 </div></p>
 </details>
 <p>Una vez vista pulsamos volver y nos redirecciona al listado de notas.</p>
 <p>5) <strong>Eliminar Nota:</strong> Haz clic en "<em>Eliminar</em>" junto a una nota.</p>
-<p>Al hacer click en "<em>Eliminar</em>" se envía un formulario con método <code>DELETE</code> a la ruta <code>/note/destroy/{id}</code> que elimina la nota y nos redirecciona al listado de notas.</p>
+<p>Al hacer click en "<em>Eliminar</em>" se envía un formulario con método <code>DELETE</code> a la ruta <code>/notes/destroy/{id}</code> que elimina la nota y nos redirecciona al listado de notas.</p>
 <div class="admonition warning">
 <p class="admonition-title">Confirmación de Eliminación</p>
 <p>En un proyecto real, es recomendable añadir una confirmación antes de eliminar una nota para evitar eliminaciones accidentales.</p>
 <p>Un ejemplo sería este:</p>
-<p>1) Cambia en el fichero <code>resources/views/note/index.blade.php</code> el código para eliminar una fila:</p>
+<p>1) Cambia en el fichero <code>resources/views/notes/index.blade.php</code> el código para eliminar una fila:</p>
 <p><div class="highlight"><pre><span></span><code>&lt;form id=&quot;delete-form-{{ $item-&gt;id }}&quot; 
-      action=&quot;{{ route(&#39;note.destroy&#39;, $item-&gt;id) }}&quot; 
+      action=&quot;{{ route(&#39;notes.destroy&#39;, $item-&gt;id) }}&quot; 
       method=&quot;POST&quot; 
       style=&quot;display:inline&quot;&gt;
 @csrf
@@ -4342,7 +4342,7 @@ public function index()
     &lt;/button&gt;
 &lt;/form&gt;
 </code></pre></div>
-2) Añade al final del fichero <code>resources/views/note/index.blade.php</code> el <code>@push('scripts')</code>:</p>
+2) Añade al final del fichero <code>resources/views/notes/index.blade.php</code> el <code>@push('scripts')</code>:</p>
 <div class="highlight"><pre><span></span><code>@push(&#39;scripts&#39;)
     &lt;script&gt;
         function confirmDelete(id) {
@@ -4373,20 +4373,20 @@ public function index()
 <p><div class="figure-center">
 <figure>
     <img src="../../img/pru/laravel_vista_destroy1.png"
-             alt="vista /note/destroy.blade.php"
+             alt="vista /notes/destroy.blade.php"
              class="figure-img-highlight" />
     <figcaption class="figure-caption-small">
-          vista /note/destory.blade.php de la eliminación de la nota 6
+          vista /notes/destory.blade.php de la eliminación de la nota 6
     </figcaption>
 </figure>
 </div></p>
 <p><div class="figure-center">
 <figure>
     <img src="../../img/pru/laravel_vista_destroy2.png"
-             alt="vista /note/index.blade.php"
+             alt="vista /notes/index.blade.php"
              class="figure-img-highlight" />
     <figcaption class="figure-caption-small">
-          vista /note/index.blade.php después de la eliminación de la nota 6
+          vista /notes/index.blade.php después de la eliminación de la nota 6
     </figcaption>
 </figure>
 </div></p>
@@ -4395,7 +4395,7 @@ public function index()
 <p><strong>Ejemplo de tipado correcto:</strong></p>
 <div class="highlight"><pre><span></span><code>public function update(Request $request, Note $note): RedirectResponse {     
    $note-&gt;update($request-&gt;all());     
-   return redirect()-&gt;route(&#39;note.index&#39;); 
+   return redirect()-&gt;route(&#39;notes.index&#39;); 
 } 
 </code></pre></div>
 <ul>
@@ -4410,10 +4410,10 @@ public function index()
 </ul>
 <hr />
 <details class="questionlaravel">
-<summary>Práctica a Entregar: Desarrollo de un CRUD de Productos</summary>
-<h3 id="objetivo-de-la-actividad">Objetivo de la actividad<a class="headerlink" href="#objetivo-de-la-actividad" title="Permanent link">&para;</a></h3>
+<summary>Práctica a Entregar</summary>
+<h3 id="objetivo-de-la-actividad-desarrollo-de-un-crud-de-productos">Objetivo de la actividad: Desarrollo de un CRUD de Productos<a class="headerlink" href="#objetivo-de-la-actividad-desarrollo-de-un-crud-de-productos" title="Permanent link">&para;</a></h3>
 <p><p style="float: left; margin-left: 1rem;">
-    <img src="../../img/laravelactividad.png"
+    <img src="../../img/laraveltask.svg"
          alt="Actividad en el aula virtual"
          width="150">
 </p></p>
@@ -4521,31 +4521,31 @@ public function index()
 </ul>
 <hr />
 <h3 id="4-definir-las-rutas">4. Definir las rutas<a class="headerlink" href="#4-definir-las-rutas" title="Permanent link">&para;</a></h3>
-<p>9) <strong>Declara las rutas necesarias para el CRUD.</strong></p>
+<p>1) <strong>Declara las rutas necesarias para el CRUD.</strong></p>
 <p>En <code>routes/web.php</code>, añade la ruta de tipo <em>resource</em> para el controlador <code>ProductController</code>. Laravel generará automáticamente todas las rutas necesarias.</p>
 <p>Agrega esta línea:</p>
 <div class="highlight"><pre><span></span><code>Route::resource(&#39;product&#39;, ProductController::class);
 </code></pre></div>
 <p>Esto creará las rutas necesarias para manejar las operaciones CRUD para el recurso <code>Product</code>.</p>
-<p>10)  <strong>Verifica que las rutas se han registrado correctamente.</strong></p>
+<p>2)   <strong>Verifica que las rutas se han registrado correctamente.</strong></p>
 <p>Usa el comando <code>php artisan route:list --path=product</code> para asegurarte de que las rutas están definidas correctamente.</p>
 <hr />
 <h3 id="5-crear-las-vistas">5. Crear las vistas<a class="headerlink" href="#5-crear-las-vistas" title="Permanent link">&para;</a></h3>
-<p>11)  <strong>Crea la carpeta para las vistas.</strong></p>
+<p>3)   <strong>Crea la carpeta para las vistas.</strong></p>
 <p>En <code>resources/views</code>, crea una nueva carpeta llamada <code>products</code>. En esta carpeta crearás las vistas para las operaciones CRUD.</p>
 <p><strong>Vistas necesarias</strong>:</p>
 <p>Crea las siguientes vistas dentro de la carpeta <code>product/</code>:</p>
-<p>12)  <strong><code>index.blade.php</code></strong>: Muestra todos los productos en una tabla. Esta vista debe listar todos los productos y permitir enlaces para crear, editar y eliminar productos.</p>
-<p>13)  <strong><code>create.blade.php</code></strong>: Formulario para crear un nuevo producto.</p>
-<p>14)  <strong><code>edit.blade.php</code></strong>: Formulario para editar un producto existente.</p>
-<p>15)  <strong><code>show.blade.php</code></strong>: Muestra los detalles de un producto.</p>
+<p>4)   <strong><code>index.blade.php</code></strong>: Muestra todos los productos en una tabla. Esta vista debe listar todos los productos y permitir enlaces para crear, editar y eliminar productos.</p>
+<p>5)   <strong><code>create.blade.php</code></strong>: Formulario para crear un nuevo producto.</p>
+<p>6)   <strong><code>edit.blade.php</code></strong>: Formulario para editar un producto existente.</p>
+<p>7)   <strong><code>show.blade.php</code></strong>: Muestra los detalles de un producto.</p>
 <hr />
 <h3 id="6-probar-el-crud-completo">6. Probar el CRUD completo<a class="headerlink" href="#6-probar-el-crud-completo" title="Permanent link">&para;</a></h3>
-<p>16)  Accede a <code>/product</code> para ver el listado de productos.</p>
-<p>17)  Crea un nuevo producto y verifica que aparece en el listado.</p>
-<p>18) Edita un producto y confirma que se actualiza correctamente.</p>
-<p>19) Muestra los detalles de un producto desde el enlace.</p>
-<p>20) Elimina un producto y asegúrate de que desaparezca del listado.</p>
+<p>8)   Accede a <code>/product</code> para ver el listado de productos.</p>
+<p>9)   Crea un nuevo producto y verifica que aparece en el listado.</p>
+<p>10) Edita un producto y confirma que se actualiza correctamente.</p>
+<p>11) Muestra los detalles de un producto desde el enlace.</p>
+<p>12) Elimina un producto y asegúrate de que desaparezca del listado.</p>
 <hr />
 <h3 id="7-css-opcional">7. CSS (opcional)<a class="headerlink" href="#7-css-opcional" title="Permanent link">&para;</a></h3>
 <p>Puedes mejorar la apariencia de tu aplicación utilizando CSS (ejemplo de estilos: <a href="../../sources/style1.css" target="blank"><code>style1.css</code></a>). Puedes crear un archivo CSS para la vista <code>index.blade.php</code> y otro para los formularios <code>create.blade.php</code>, <code>edit.blade.php</code> y <code>show.blade.php</code>. </p>
