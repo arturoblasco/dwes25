@@ -1,0 +1,4116 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../pru05/">
+      
+      
+        <link rel="next" href="../examen2/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Introducción al despliegue de aplicaciones web - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion-al-despliegue-de-aplicaciones-web" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducción al despliegue de aplicaciones web
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 1 Arquitectura Web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            UT 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. Arquitecturas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3. Generar páginas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4. Modelos de programación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5. Decisiones de diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6. Ejecución del código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0107/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7. Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0108/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8. Tecnologías
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0109/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.9. Navegadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0110/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.10. Puesta en marcha
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut01de/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descargas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut01ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 2 Lenguaje PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            UT 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3. Operadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4. Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5. Funciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.6. Funciones predefinidas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0207/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.7. Expresiones regulares
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut02ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 3 PHP OO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            UT 3 PHP OO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2. Clases y objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0303/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3. Encapsulación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4. Constructor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5. Clases estáticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.6. Introspección
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.7. Herencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0308/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.8. Clases abstractas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0309/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.9. Clases final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0310/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.10. Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0311/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.11. Métodos encadenados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.12. Métodos mágicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.13. Espacio de nombres
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0314/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.14. Gestión de errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0315/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.15. Excepciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0316/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.16. SPL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut03ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 4 Programación web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            UT 4 Programación web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2. Variable de servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3. Formularios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0404/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4.Cabeceras de respuesta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0405/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5. Gestión de estado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0406/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6. Autenticación de usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut04ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 5 Acceso a Base de Datos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            UT 5 Acceso a Base de Datos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0501/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0502/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2. Instalación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0503/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.3. Estructura de BD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0504/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.4. SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0505/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.5. phpMyAdmin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0506/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.6. MySQLi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0507/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.7. Php Data Object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0508/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.8. Login & Password
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0509/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.9. Acceso a ficheros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut05ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Laravel
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Laravel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 1 ED profesional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 1 ED profesional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.0. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Introducción a Laravel12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. ¿Cómo Habla una Aplicación Laravel?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3. ¿Dónde Vive y Corre Nuestra Aplicación?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4. Herramientas Esenciales para el Desarrollador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5. El Frontend Moderno: Vite y Tailwind CSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6. Anatomía de una Aplicación Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/10p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 2 Fundamentos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 2 Fundamentos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.0. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 Viaje Interno de una Petición
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. Mapa de la aplicación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3. Vistas dinámicas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4. Layouts y herencia en Blade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5. Del controlador a la vista
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.6. Datos mock
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/20p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 3 Gestión de datos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 3 Gestión de datos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/300/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.0. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1. Migraciones y Estructura
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2. Eloquent ORM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/303/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3. CRUD con Eloquent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4. Relaciones Eloquent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5. Seeders y Factories
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/30p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 4 Interacción con el usuario
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 4 Interacción con el usuario
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.0. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1. Formularios seguros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2. Sistema de validación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3. Manejo de sesiones y estado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/404/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4. Autenticación básica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/405/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5. Middleware personalizado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/406/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6. Blade Components para Layouts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/407/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.7. Sistema de almacenamiento de archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/40p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 5 Servicios REST
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 5 Servicios REST
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl5/50p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pruebas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Pruebas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controladores y Rutas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Desarrollo de un CRUD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validaciones, Rutas Resource y Mensajes del Sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creación de APIs REST en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Introducción al despliegue de aplicaciones web
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción al despliegue de aplicaciones web
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-el-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es el despliegue?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-despliegue-manual-automatico-y-continuo-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de despliegue: manual, automático y continuo (CI/CD)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de despliegue: manual, automático y continuo (CI/CD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#despliegue-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despliegue manual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despliegue-automatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despliegue automático
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despliegue-continuo-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despliegue continuo (CI/CD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      En resumen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entornos-desarrollo-staging-produccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entornos: desarrollo, staging, producción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-del-servidor-para-desplegar-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos del servidor para desplegar Laravel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos del servidor para desplegar Laravel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servidores-compartidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servidores compartidos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vps-virtual-private-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPS (Virtual Private Server)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paas-platform-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaaS (Platform as a Service)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-compartido-vs-dedicado-vs-paas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparación: Compartido vs Dedicado vs PaaS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-y-particularidades-del-despliegue-en-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos y particularidades del despliegue en Laravel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos y particularidades del despliegue en Laravel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-servidor-compartido" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Servidor Compartido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-servidor-dedicado" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Servidor Dedicado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-paas-platform-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. PaaS (Platform as a Service)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen-comparativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen Comparativo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#particularidades-de-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Particularidades de Laravel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laravel-y-paas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laravel y PaaS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-dependencias-y-configuracion-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de dependencias y configuración (.env)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pruebas-antes-y-despues-del-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pruebas antes y después del despliegue
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrategias-para-mantener-la-estructura-de-laravel-en-entornos-restrictivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrategias para mantener la estructura de Laravel en entornos restrictivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparacion-del-proyecto-para-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparación del proyecto para despliegue
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herramientas-utiles-para-el-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herramientas útiles para el despliegue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examen2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examen 2 Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-el-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es el despliegue?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-despliegue-manual-automatico-y-continuo-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de despliegue: manual, automático y continuo (CI/CD)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de despliegue: manual, automático y continuo (CI/CD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#despliegue-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despliegue manual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despliegue-automatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despliegue automático
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despliegue-continuo-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despliegue continuo (CI/CD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      En resumen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entornos-desarrollo-staging-produccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entornos: desarrollo, staging, producción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-del-servidor-para-desplegar-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos del servidor para desplegar Laravel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos del servidor para desplegar Laravel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servidores-compartidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servidores compartidos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vps-virtual-private-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPS (Virtual Private Server)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paas-platform-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaaS (Platform as a Service)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-compartido-vs-dedicado-vs-paas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparación: Compartido vs Dedicado vs PaaS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-y-particularidades-del-despliegue-en-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos y particularidades del despliegue en Laravel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos y particularidades del despliegue en Laravel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-servidor-compartido" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Servidor Compartido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-servidor-dedicado" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Servidor Dedicado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-paas-platform-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. PaaS (Platform as a Service)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen-comparativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen Comparativo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#particularidades-de-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Particularidades de Laravel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laravel-y-paas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laravel y PaaS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-dependencias-y-configuracion-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de dependencias y configuración (.env)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pruebas-antes-y-despues-del-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pruebas antes y después del despliegue
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrategias-para-mantener-la-estructura-de-laravel-en-entornos-restrictivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrategias para mantener la estructura de Laravel en entornos restrictivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparacion-del-proyecto-para-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparación del proyecto para despliegue
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herramientas-utiles-para-el-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herramientas útiles para el despliegue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduccion-al-despliegue-de-aplicaciones-web">Introducción al despliegue de aplicaciones web<a class="headerlink" href="#introduccion-al-despliegue-de-aplicaciones-web" title="Permanent link">&para;</a></h1>
+<h2 id="que-es-el-despliegue">¿Qué es el despliegue?<a class="headerlink" href="#que-es-el-despliegue" title="Permanent link">&para;</a></h2>
+<p>El <strong>despliegue</strong> de una aplicación web es el proceso mediante el cual se pone un sistema en funcionamiento para que esté disponible a los usuarios. Normalmente, este proceso implica mover una aplicación desde un entorno de desarrollo (local) a un servidor accesible desde Internet.</p>
+<p>Este proceso puede involucrar:</p>
+<ul>
+<li>Transferencia de archivos.</li>
+<li>Configuración de bases de datos.</li>
+<li>Establecimiento de permisos.</li>
+<li>Configuración del servidor web.</li>
+</ul>
+<h2 id="tipos-de-despliegue-manual-automatico-y-continuo-cicd">Tipos de despliegue: manual, automático y continuo (CI/CD)<a class="headerlink" href="#tipos-de-despliegue-manual-automatico-y-continuo-cicd" title="Permanent link">&para;</a></h2>
+<p>El tipo de despliegue depende principalmente de los recursos disponibles y la accesibilidad del servidor. Hay <code>Hostings</code> que pondrán a nuestra disposición un panel de control para gestionar el despliegue, mientras que en otros casos tendremos que hacerlo manualmente o mediante scripts.</p>
+<h3 id="despliegue-manual">Despliegue manual<a class="headerlink" href="#despliegue-manual" title="Permanent link">&para;</a></h3>
+<p>No automatizado, donde se realizan acciones manualmente. Principalmete:</p>
+<ul>
+<li>Subir archivos (FTP, SCP).</li>
+<li>Ejecutar comandos directamente en el servidor.</li>
+</ul>
+<p>El método más común en este tipo de despliegue es el uso de <strong>FTP</strong> o <strong>SSH</strong> para transferir archivos y ejecutar comandos. Una vez los archivos están transferidos y la configuración está hecha, el sistema debería estar operativo.</p>
+<h3 id="despliegue-automatico">Despliegue automático<a class="headerlink" href="#despliegue-automatico" title="Permanent link">&para;</a></h3>
+<p>Mediante scripts o herramientas que automatizan parte del proceso. Por ejemplo: scripts bash, Ansible.</p>
+<p>Ventajas:</p>
+<ul>
+<li>Menos propenso a errores humanos.</li>
+<li>Más rápido y eficiente.</li>
+<li>Repetible y consistente.</li>
+</ul>
+<p>Desventajas:</p>
+<ul>
+<li>Requiere conocimientos técnicos para configurar.</li>
+<li>Puede ser complejo de mantener.</li>
+</ul>
+<h3 id="despliegue-continuo-cicd">Despliegue continuo (CI/CD)<a class="headerlink" href="#despliegue-continuo-cicd" title="Permanent link">&para;</a></h3>
+<p>El despliegue continuo es parte de una estrategia DevOps. Se basa en integrar cambios de forma frecuente y automatizar tests y despliegues.
+Herramientas comunes: GitHub Actions, GitLab CI, Jenkins.</p>
+<p>CI/CD</p>
+<p>CI/CD = Continuous Integration / Continuous Deployment (or Delivery)</p>
+<p>Es decir, <strong>Integración Continua</strong> y <strong>Despliegue (o Entrega) Continua</strong>.</p>
+<ol>
+<li><strong>CI</strong> – Continuous Integration (Integración Continua)</li>
+</ol>
+<p>Significa que los desarrolladores <strong>integran sus cambios de código frecuentemente</strong> en un repositorio común (como GitHub o GitLab).
+   Cada vez que alguien sube código, un sistema automático:</p>
+<ol>
+<li>Ejecuta pruebas unitarias y de integración.</li>
+<li>Comprueba que el código se compila correctamente.</li>
+<li>Detecta errores o conflictos antes de que lleguen a producción.</li>
+</ol>
+<p><strong>Objetivo:</strong> evitar que el código “rompa” la aplicación principal y mantenerla siempre funcional.
+2. <strong>CD</strong> – Continuous Deployment / Continuous Delivery</p>
+<p>Hay dos interpretaciones del segundo “CD” (según el nivel de automatización):</p>
+<p>Continuous Delivery (Entrega Continua):</p>
+<ul>
+<li>El sistema deja la aplicación <em>lista para desplegar</em>, pero el despliegue final se hace manualmente (por ejemplo, con aprobación de un responsable).</li>
+</ul>
+<p>Continuous Deployment (Despliegue Continuo):</p>
+<ul>
+<li>Todo el proceso es completamente automático:
+     desde que se aprueba el código, hasta que se despliega en producción sin intervención humana.</li>
+</ul>
+<p><strong>Objetivo:</strong> poder entregar nuevas versiones <strong>rápido, seguro y sin interrupciones</strong>.</p>
+<hr />
+<h3 id="en-resumen">En resumen<a class="headerlink" href="#en-resumen" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sigla</th>
+<th>Significado</th>
+<th>En español</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CI</strong></td>
+<td>Continuous Integration</td>
+<td>Integración continua</td>
+<td>Automatiza pruebas y validaciones del código.</td>
+</tr>
+<tr>
+<td><strong>CD</strong></td>
+<td>Continuous Delivery</td>
+<td>Entrega continua</td>
+<td>Prepara versiones listas para desplegar.</td>
+</tr>
+<tr>
+<td><strong>CD</strong></td>
+<td>Continuous Deployment</td>
+<td>Despliegue continuo</td>
+<td>Despliega automáticamente en producción.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Ejemplo práctico:</strong></p>
+<ul>
+<li>Subes código a GitHub →</li>
+<li>GitHub Actions ejecuta tests automáticamente (CI) →</li>
+<li>Si todo va bien, el código se despliega en el servidor (CD).</li>
+</ul>
+<h2 id="entornos-desarrollo-staging-produccion">Entornos: desarrollo, staging, producción<a class="headerlink" href="#entornos-desarrollo-staging-produccion" title="Permanent link">&para;</a></h2>
+<p>Normalmente, dependiendo del proyecto, tendremos varios entornos para gestionar el ciclo de vida de la aplicación:</p>
+<ul>
+<li><strong>Desarrollo:</strong> donde los programadores escriben y prueban el código.</li>
+<li><strong>Staging (preproducción):</strong> entorno intermedio para pruebas antes de subir a producción.</li>
+<li><strong>Producción:</strong> sistema en funcionamiento accesible por los usuarios finales.</li>
+</ul>
+<p>Aunque no todos los proyectos usan un entorno de staging, es muy recomendable para proyectos medianos y grandes. Permite detectar errores antes de que afecten a los usuarios reales.</p>
+<p>Cada entorno puede tener su configuración y base de datos distinta.</p>
+<h2 id="requisitos-del-servidor-para-desplegar-laravel">Requisitos del servidor para desplegar Laravel<a class="headerlink" href="#requisitos-del-servidor-para-desplegar-laravel" title="Permanent link">&para;</a></h2>
+<p><strong>Tipos de servidores</strong></p>
+<p>Antes de hablar de requisitos, es importante entender los tipos de servidores donde podemos desplegar Laravel:</p>
+<ol>
+<li><strong>Servidores compartidos</strong></li>
+<li><strong>Servidores dedicados (VPS)</strong></li>
+<li><strong>Plataformas como servicio (PaaS)</strong></li>
+</ol>
+<h3 id="servidores-compartidos">Servidores compartidos<a class="headerlink" href="#servidores-compartidos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definición</strong>: Es un tipo de alojamiento en el que varios sitios web comparten los mismos recursos de un único servidor físico (CPU, memoria, espacio en disco, etc.).</li>
+<li>
+<p><strong>Ventajas</strong>:</p>
+</li>
+<li>
+<p>Económico: es la opción más barata.</p>
+</li>
+<li>Configuración sencilla: el proveedor gestiona casi todo (actualizaciones, seguridad, etc.).</li>
+<li>Ideal para proyectos pequeños o de baja carga.</li>
+<li>
+<p><strong>Desventajas</strong>:</p>
+</li>
+<li>
+<p>Recursos limitados: si otro sitio en el mismo servidor consume muchos recursos, tu aplicación puede verse afectada.</p>
+</li>
+<li>Menor control: no puedes modificar configuraciones del servidor a bajo nivel.</li>
+<li>Posibles problemas de seguridad: compartes el entorno con otros usuarios.</li>
+</ul>
+<p>Más baratos pero con limitaciones en configuración y permisos. Laravel puede funcionar si se estructura correctamente. Estos servidores suelen ofrecer un panel de control como cPanel o Plesk. Pero dependiendo del plan contratado nos podemos enconrrar con limitaciones como:</p>
+<ul>
+<li>Plan gratuito: No acceso a SSH, FTP limitado, sin acceso a Composer.</li>
+<li>Plan de pago: Acceso a SSH, FTP completo, acceso a Composer.</li>
+</ul>
+<p>Como veremos más adelante, aunque utilicemos el plan gratuito, podemos desplegar Laravel, pero con ciertas limitaciones y dificultades que con los planes de pago no tendríamos.</p>
+<h3 id="vps-virtual-private-server">VPS (Virtual Private Server)<a class="headerlink" href="#vps-virtual-private-server" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definición</strong>: Es un servidor físico entero reservado exclusivamente para tu aplicación o sitio web.</li>
+<li>
+<p><strong>Ventajas</strong>:</p>
+</li>
+<li>
+<p>Máximo rendimiento: todos los recursos están dedicados a tu proyecto.</p>
+</li>
+<li>Control total: puedes instalar y configurar el software a tu medida.</li>
+<li>Mayor seguridad: no compartes el servidor con otros usuarios.</li>
+<li>
+<p><strong>Desventajas</strong>:</p>
+</li>
+<li>
+<p>Coste elevado.</p>
+</li>
+<li>Mayor responsabilidad: necesitas conocimientos técnicos para su configuración y mantenimiento (aunque puedes contratar soporte).</li>
+<li><strong>Ideal para</strong>: aplicaciones con mucho tráfico, requisitos especiales de configuración o que manejan información sensible.</li>
+<li><strong>Ejemplo típico</strong>: servicios como OVH, Hetzner o servidores bare-metal de DigitalOcean.</li>
+</ul>
+<p>En estos servidores, Laravel puede desplegarse con total libertad, ya que tenemos acceso completo al sistema operativo y podemos instalar todas las dependencias necesarias.</p>
+<h3 id="paas-platform-as-a-service">PaaS (Platform as a Service)<a class="headerlink" href="#paas-platform-as-a-service" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definición</strong>: PaaS es un modelo de computación en la nube que proporciona una plataforma lista para usar donde puedes desarrollar, ejecutar y desplegar aplicaciones sin preocuparte por la infraestructura subyacente.</li>
+<li>
+<p><strong>Ejemplos de servicios PaaS</strong>:</p>
+</li>
+<li>
+<p><strong>Heroku</strong></p>
+</li>
+<li><strong>Laravel Forge</strong> (gestiona servidores, aunque no es PaaS puro)</li>
+<li><strong>Google App Engine</strong></li>
+<li><strong>Railway</strong></li>
+<li><strong>Render</strong></li>
+<li>
+<p><strong>Ventajas</strong>:</p>
+</li>
+<li>
+<p>No gestionas servidores directamente.</p>
+</li>
+<li>Escalabilidad automática.</li>
+<li>Despliegue simplificado con git push.</li>
+<li>Suele tener integraciones listas (bases de datos, cache, colas, etc.).</li>
+<li>
+<p><strong>Desventajas</strong>:</p>
+</li>
+<li>
+<p>Menor control del entorno.</p>
+</li>
+<li>Puede ser más caro a gran escala.</li>
+<li>Dependencia del proveedor.</li>
+<li><strong>Ideal para</strong>: desarrollo ágil y rápido despliegue, especialmente en equipos pequeños o startups.</li>
+</ul>
+<h3 id="comparacion-compartido-vs-dedicado-vs-paas"><strong>Comparación: Compartido vs Dedicado vs PaaS</strong><a class="headerlink" href="#comparacion-compartido-vs-dedicado-vs-paas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Compartido</th>
+<th>Dedicado</th>
+<th>PaaS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nivel de control</td>
+<td>Bajo</td>
+<td>Alto</td>
+<td>Medio (no gestionas la infraestructura)</td>
+</tr>
+<tr>
+<td>Mantenimiento</td>
+<td>Proveedor</td>
+<td>Usuario</td>
+<td>Proveedor</td>
+</tr>
+<tr>
+<td>Coste inicial</td>
+<td>Bajo</td>
+<td>Alto</td>
+<td>Medio (depende del proveedor)</td>
+</tr>
+<tr>
+<td>Escalabilidad</td>
+<td>Limitada</td>
+<td>Alta (manual)</td>
+<td>Alta (automática en muchos casos)</td>
+</tr>
+<tr>
+<td>Curva de aprendizaje</td>
+<td>Muy baja</td>
+<td>Alta</td>
+<td>Media</td>
+</tr>
+<tr>
+<td>Ideal para</td>
+<td>Proyectos pequeños</td>
+<td>Grandes con control total</td>
+<td>Desarrollo ágil y rápido despliegue</td>
+</tr>
+<tr>
+<td>Ejemplos</td>
+<td>Hostinger, GoDaddy</td>
+<td>OVH, Hetzner</td>
+<td>Heroku, Render, Railway</td>
+</tr>
+</tbody>
+</table>
+<h2 id="requisitos-y-particularidades-del-despliegue-en-laravel">Requisitos y particularidades del despliegue en Laravel<a class="headerlink" href="#requisitos-y-particularidades-del-despliegue-en-laravel" title="Permanent link">&para;</a></h2>
+<p>Requisitos específicos</p>
+<p>En este punto estamos hablando de generalidades del despliegue centrandonos en Laravel. Pero en cada caso tenemos que adaptar a las particularidades del servidor y del proyecto. tamién hemos puesto unas versiones de <code>PHP</code> y <code>MySQL</code> que son las mínimas recomendadas, pero siempre es mejor usar las últimas versiones estables para aprovechar mejoras de rendimiento y seguridad. Hay que revisar la documetnación oficial de <code>Laravel</code> o del <code>Framework</code> que estemos usando para ver los requisitos específicos.</p>
+<h3 id="1-servidor-compartido"><strong>1. Servidor Compartido</strong><a class="headerlink" href="#1-servidor-compartido" title="Permanent link">&para;</a></h3>
+<p><em>Lo que debe tener (o soportar):</em></p>
+<ul>
+<li><strong>PHP ≥ 8.1</strong> (Laravel 10 lo requiere como mínimo)</li>
+<li><strong>Extensiones PHP necesarias</strong>:</li>
+<li><code>openssl</code>, <code>pdo</code>, <code>mbstring</code>, <code>tokenizer</code>, <code>xml</code>, <code>ctype</code>, <code>json</code>, <code>bcmath</code>, <code>fileinfo</code>, <code>curl</code></li>
+<li><strong>Composer</strong> (algunos hosts permiten usarlo vía terminal o ya lo incluyen)</li>
+<li><strong>Acceso SSH</strong> (opcional pero muy recomendable)</li>
+<li><strong>Base de datos MySQL ≥ 5.7</strong> o MariaDB ≥ 10.3</li>
+<li><strong>Soporte para Laravel</strong>: muchos hostings compartidos permiten Laravel, pero otros tienen restricciones o versiones antiguas de PHP</li>
+</ul>
+<p><em>Observaciones</em>:</p>
+<ul>
+<li>Idealmente, que tenga <strong>soporte para archivos <code>.htaccess</code></strong> si se usa Apache.</li>
+<li>El entorno es limitado, por lo que puedes encontrar restricciones para usar colas, websockets o tareas programadas (cronjobs).</li>
+</ul>
+<hr />
+<h3 id="2-servidor-dedicado"><strong>2. Servidor Dedicado</strong><a class="headerlink" href="#2-servidor-dedicado" title="Permanent link">&para;</a></h3>
+<p><em>Lo que debes instalar o configurar:</em></p>
+<ul>
+<li>Sistema operativo (Ubuntu 22.04 o similar es muy común)</li>
+<li><strong>PHP ≥ 8.1</strong> y las mismas extensiones listadas arriba</li>
+<li><strong>Composer</strong> instalado globalmente</li>
+<li><strong>MySQL o MariaDB</strong>: debes instalarlo tú mismo</li>
+<li><strong>Servidor web</strong>: Apache o Nginx (Laravel funciona bien con ambos)</li>
+<li><strong>Gestión de procesos</strong>: como Supervisor si usas colas</li>
+<li><strong>Certificados SSL</strong>: con Let’s Encrypt o similar</li>
+<li><strong>Firewall, seguridad, backups</strong>: todo debe ser gestionado por ti (o automatizado)</li>
+</ul>
+<p><em>Observaciones</em>:</p>
+<ul>
+<li>Control total, pero también responsabilidad total.</li>
+<li>Recomendado usar herramientas como Laravel Forge para automatizar la configuración.</li>
+</ul>
+<hr />
+<h3 id="3-paas-platform-as-a-service"><strong>3. PaaS (Platform as a Service)</strong><a class="headerlink" href="#3-paas-platform-as-a-service" title="Permanent link">&para;</a></h3>
+<p><em>Lo que debe ofrecer el proveedor (la mayoría lo hace):</em></p>
+<ul>
+<li>Imagen de entorno con <strong>PHP ≥ 8.1</strong> y extensiones comunes</li>
+<li>Soporte para <strong>Composer</strong> y scripts de construcción (<code>composer install</code>)</li>
+<li>Acceso a <strong>MySQL gestionado</strong> o la opción de conectar a uno externo</li>
+<li>Variables de entorno fácilmente configurables (<code>.env</code>)</li>
+<li>Soporte para <strong>artisan commands</strong>, tareas programadas y colas</li>
+<li>Despliegue con git o pipelines CI/CD</li>
+</ul>
+<p><em>Ejemplos de proveedores que cumplen esto</em>:</p>
+<ul>
+<li><strong>Heroku</strong> (usando addons para MySQL)</li>
+<li><strong>Render</strong> (soporta PHP y MySQL directamente)</li>
+<li><strong>Railway</strong> (muy amigable para Laravel)</li>
+<li><strong>Laravel Vapor</strong> (usa AWS y está optimizado para Laravel)</li>
+</ul>
+<hr />
+<h3 id="resumen-comparativo"><strong>Resumen Comparativo</strong><a class="headerlink" href="#resumen-comparativo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Requisito</th>
+<th>Compartido</th>
+<th>Dedicado</th>
+<th>PaaS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PHP ≥ 8.1</td>
+<td>Sí, si es moderno</td>
+<td>Tú lo instalas</td>
+<td>Preinstalado</td>
+</tr>
+<tr>
+<td>Composer</td>
+<td>A veces incluido</td>
+<td>Lo instalas tú</td>
+<td>Preconfigurado</td>
+</tr>
+<tr>
+<td>MySQL / MariaDB</td>
+<td>Preinstalado</td>
+<td>Lo instalas tú</td>
+<td>Integrado o externo</td>
+</tr>
+<tr>
+<td>Extensiones PHP necesarias</td>
+<td>Ya configuradas</td>
+<td>Tú las habilitas</td>
+<td>Generalmente incluidas</td>
+</tr>
+<tr>
+<td>Soporte para tareas de Laravel</td>
+<td>Limitado</td>
+<td>Completo</td>
+<td>Completo (con límites según el proveedor)</td>
+</tr>
+<tr>
+<td>Acceso SSH / CLI</td>
+<td>Limitado</td>
+<td>Completo</td>
+<td>Limitado o virtual</td>
+</tr>
+</tbody>
+</table>
+<h3 id="particularidades-de-laravel"><strong>Particularidades de Laravel</strong><a class="headerlink" href="#particularidades-de-laravel" title="Permanent link">&para;</a></h3>
+<p>Laravel es un framework PHP que sigue el patrón MVC (Modelo-Vista-Controlador) y tiene una estructura de carpetas bien definida. Algunas particularidades importantes al desplegar Laravel son:</p>
+<ul>
+<li>
+<p><strong>Estructura de carpetas</strong>: Laravel tiene una estructura de carpetas que debe respetarse para que el framework funcione correctamente. Las carpetas más importantes son:</p>
+</li>
+<li>
+<p><code>app/</code>: Contiene la lógica de la aplicación.</p>
+</li>
+<li><code>config/</code>: Archivos de configuración.</li>
+<li><code>database/</code>: Migraciones y seeders.</li>
+<li><code>public/</code>: Punto de entrada público (debe ser el directorio raíz del servidor).</li>
+<li><code>resources/</code>: Vistas, traducciones y assets.</li>
+<li><code>routes/</code>: Definición de rutas.</li>
+<li><code>storage/</code>: Logs, caché y archivos temporales.</li>
+<li><strong>Configuración del servidor web</strong>: El servidor web debe apuntar a la carpeta <code>public/</code> de Laravel. Esto es crucial para que las rutas y los assets se sirvan correctamente.</li>
+<li><strong>Permisos de carpetas</strong>: Las carpetas <code>storage/</code> y <code>bootstrap/cache/</code> deben tener permisos de escritura para que Laravel pueda funcionar correctamente. Normalmente, se recomienda establecer permisos 775 o 777 dependiendo del entorno.</li>
+<li><strong>Variables de entorno</strong>: Laravel utiliza un archivo <code>.env</code> para gestionar la configuración sensible, como las credenciales de la base de datos. Este archivo <strong>no</strong> debe subirse al repositorio y debe ser configurado en cada entorno de despliegue (puede tener usuarios/contraseñas locales).</li>
+<li><strong>Comandos Artisan</strong>: Laravel incluye una herramienta de línea de comandos llamada Artisan, que permite ejecutar tareas comunes como migraciones, limpieza de caché, y más. Es recomendable ejecutar <code>php artisan migrate</code> y <code>php artisan config:cache</code> después del despliegue.</li>
+<li><strong>Dependencias</strong>: Laravel utiliza Composer para gestionar sus dependencias. Es importante ejecutar <code>composer install</code> en el entorno de producción para asegurarse de que todas las dependencias estén instaladas correctamente.</li>
+<li><strong>Cache y optimización</strong>: Laravel permite optimizar la aplicación para producción con comandos como <code>php artisan optimize</code>, <code>php artisan route:cache</code>, y <code>php artisan config:cache</code>. Esto mejora el rendimiento al reducir el tiempo de carga de las rutas y la configuración.</li>
+</ul>
+<h3 id="laravel-y-paas"><strong>Laravel y PaaS</strong><a class="headerlink" href="#laravel-y-paas" title="Permanent link">&para;</a></h3>
+<p>Laravel funciona especialmente bien en entornos <strong>PaaS</strong>, por varias razones:</p>
+<ul>
+<li><strong>Despliegue ágil</strong>: Muchos PaaS permiten desplegar con un simple <code>git push</code>, ideal para equipos de desarrollo.</li>
+<li>
+<p><strong>Integración con Forge / Vapor</strong>:</p>
+</li>
+<li>
+<p><strong>Laravel Forge</strong>: aunque no es PaaS en sí, automatiza la gestión de servidores en plataformas como DigitalOcean, AWS o Linode.</p>
+</li>
+<li><strong>Laravel Vapor</strong>: es una solución PaaS serverless para AWS, diseñada específicamente para Laravel, que elimina totalmente la necesidad de gestionar servidores.</li>
+<li><strong>Entorno estandarizado</strong>: Laravel requiere PHP, Composer, y ciertas extensiones, lo cual muchos PaaS ya tienen configurado por defecto.</li>
+</ul>
+<blockquote>
+<p><strong>Conclusión</strong>: Para muchos equipos modernos, especialmente los que priorizan velocidad de desarrollo y despliegue, <strong>usar PaaS con Laravel puede ser una excelente opción</strong>.</p>
+</blockquote>
+<h2 id="gestion-de-dependencias-y-configuracion-env">Gestión de dependencias y configuración (<code>.env</code>)<a class="headerlink" href="#gestion-de-dependencias-y-configuracion-env" title="Permanent link">&para;</a></h2>
+<p>Laravel usa <strong>Composer</strong> para gestionar las dependencias PHP.</p>
+<p>En producción:</p>
+<div class="highlight"><pre><span></span><code>composer install --optimize-autoloader --no-dev
+</code></pre></div>
+<p>Esto instala las dependencias necesarias sin incluir las de desarrollo, optimizando el autoloader para mejorar el rendimiento. Estas dependencias se definen en el archivo <code>composer.json</code> del proyecto y se instalan en la carpeta <code>vendor/</code>.</p>
+<p>El archivo <code>.env</code> contiene la configuración sensible: claves, base de datos, entorno, etc. <strong>Nunca debe subirse al repositorio</strong> ya que contiene información sensible como usuarios y contraseñas. Pero tenemos que asegurarnos de que cada entorno tenga su propio archivo <code>.env</code> configurado correctamente.</p>
+<h2 id="pruebas-antes-y-despues-del-despliegue">Pruebas antes y después del despliegue<a class="headerlink" href="#pruebas-antes-y-despues-del-despliegue" title="Permanent link">&para;</a></h2>
+<p>Antes de desplegar:</p>
+<ul>
+<li>Ejecutar tests con PHPUnit.</li>
+<li>Verificar que la aplicación funcione en local o staging.</li>
+</ul>
+<p>Después del despliegue:</p>
+<ul>
+<li>Verificar logs (<code>storage/logs/laravel.log</code>).</li>
+<li>Probar funcionalidades clave.</li>
+<li>Tener backup previo de archivos y base de datos.</li>
+</ul>
+<h2 id="estrategias-para-mantener-la-estructura-de-laravel-en-entornos-restrictivos">Estrategias para mantener la estructura de Laravel en entornos restrictivos<a class="headerlink" href="#estrategias-para-mantener-la-estructura-de-laravel-en-entornos-restrictivos" title="Permanent link">&para;</a></h2>
+<p>Nos podemos encontrar con servidores donde no podemos respetar la estructura de Laravel, especialmente en servidores compartidos o con restricciones de acceso. Por ejempo, hay servidores que no permiten la instalación de ficheros fuera de la carpeta <code>public_html</code> o <code>www</code>. Laravel, por defecto, espera que la carpeta <code>public/</code> sea el punto de entrada, y el resto de carpetas no denerían ser accesibles públicamente (seguridad). En estos casos, debemos adaptar la estructura o usar técnicas alternativas para mantener la seguridad y funcionalidad de la aplicación. En el siguiente tema veremos como instalar Laravel en un servidor compartido modificando la estructura de carpetas.</p>
+<p>En este tipo de entornos (<code>hostil</code>) debemos:</p>
+<ul>
+<li>Mover archivos <code>public/</code> a la raíz y reconfigurar rutas si es necesarios.</li>
+<li>Copiar toda la estructura de Laravel en la carpeta <code>public_html</code> o <code>www</code>.</li>
+<li>Usar <code>index.php</code> personalizado, hay que modificar las rutas de autoload y bootstrap para que apunten a la ubicación correcta de los archivos de Laravel.</li>
+<li>Asegurar que las rutas a <code>vendor/</code> o <code>storage/</code> no sean accesibles públicamente. Podemos usar el archivo <code>.htaccess</code> para denegar el acceso a estas carpetas.</li>
+</ul>
+<h2 id="preparacion-del-proyecto-para-despliegue">Preparación del proyecto para despliegue<a class="headerlink" href="#preparacion-del-proyecto-para-despliegue" title="Permanent link">&para;</a></h2>
+<p>En un entorno de producción <em>amigable</em> (VPS, PaaS), la preparación del proyecto es más sencilla. Pero en un entorno <em>hostil</em> (servidor compartido), debemos tener en cuenta las limitaciones y adaptar el proceso.</p>
+<p>Pasos comunes:</p>
+<ol>
+<li>Subir archivos.</li>
+<li>Ejecutar <code>composer install</code>.</li>
+<li>Configurar <code>.env</code>.</li>
+<li>Ejecutar migraciones:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>php artisan migrate
+</code></pre></div>
+5. Crear cache de configuración:</p>
+<p><div class="highlight"><pre><span></span><code>php artisan config:cache
+php artisan route:cache
+</code></pre></div>
+6. Establecer permisos:</p>
+<div class="highlight"><pre><span></span><code>chmod -R 775 storage bootstrap/cache
+</code></pre></div>
+<p>En los entornos <em>hostiles</em> (no tengamos acceso a línea de comando y no podamos modificar la carpeta de entrada a <code>/public</code>), debemos adaptar los pasos.</p>
+<p>Es posible que no podamos ejecutar <code>composer install</code> directamente en el servidor. Tampoco podemos ejecutar comandos Artisan directamente si no tenemos acceso SSH. Es recomendable preparar el proyecto en local y subirlo ya preparado, no es lo ideal, tendremos que aplicar parches y medidas de seguridad adicionales. Pero es una opción viable. Como he dicho anteriormente, en el siguiente tema veremos un ejemplo práctico de despliegue en un servidor compartido, donde adaptaremos la estructura de Laravel para que funcione correctamente.</p>
+<p>Normalmente las licencias gratuitos suelen poner muchos problemas para instalar aplicaciones complejas como <code>Laravel</code>, incluso en algunos casos direntamente no es posible. Lo ideal es usar un plan de pago, aunque sea el más básico, ya que suelen permitir instalar <code>Laravel</code> sin problemas.</p>
+<h2 id="herramientas-utiles-para-el-despliegue">Herramientas útiles para el despliegue<a class="headerlink" href="#herramientas-utiles-para-el-despliegue" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Composer:</strong> gestión de dependencias PHP.</li>
+<li><strong>Git:</strong> control de versiones.</li>
+<li><strong>GitHub Actions / GitLab CI:</strong> automatización de CI/CD.</li>
+<li><strong>Laravel Forge:</strong> despliegue automático de Laravel.</li>
+<li><strong>Envoyer:</strong> despliegue sin interrupciones.</li>
+<li><strong>Docker:</strong> contenedores para entornos consistentes.</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../pru05/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Creación de APIs REST en Laravel">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Creación de APIs REST en Laravel
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../examen2/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Examen 2 Laravel">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Examen 2 Laravel
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Arturo Blasco - Creative Commons CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/arturoblasco" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

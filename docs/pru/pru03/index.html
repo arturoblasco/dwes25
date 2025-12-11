@@ -3200,6 +3200,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../pru06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción al despliegue de aplicaciones web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../examen2/" class="md-nav__link">
         
   
@@ -3914,7 +3937,8 @@ public function index()
                 &lt;/tr&gt;
                 &lt;tr&gt;
                     &lt;td&gt;&lt;label for=&quot;description&quot;&gt;Descripción:&lt;/label&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;textarea id=&quot;description&quot; name=&quot;description&quot; required&gt;Escribe la descripción&lt;/textarea&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;textarea id=&quot;description&quot; name=&quot;description&quot; 
+                                  placeholder=&quot;Escribe la descripción&quot; required&gt;&lt;/textarea&gt;&lt;/td&gt;
                 &lt;/tr&gt;
                 &lt;tr&gt;
                     &lt;td&gt;&lt;label for=&quot;date&quot;&gt;Fecha:&lt;/label&gt;&lt;/td&gt;
@@ -4050,7 +4074,9 @@ public function index()
                 &lt;/tr&gt;
                 &lt;tr&gt;
                     &lt;td&gt;&lt;label for=&quot;description&quot;&gt;Descripción:&lt;/label&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;textarea id=&quot;description&quot; name=&quot;description&quot; value=&quot;{{ $note-&gt;description }}&quot; required&gt;Escribe la descripción&lt;/textarea&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;textarea id=&quot;description&quot; name=&quot;description&quot; required&gt;
+                        {{ $note-&gt;description }}
+                    &lt;/textarea&gt;&lt;/td&gt;
                 &lt;/tr&gt;
                 &lt;tr&gt;
                     &lt;td&gt;&lt;label for=&quot;date_at&quot;&gt;Fecha:&lt;/label&gt;&lt;/td&gt;
@@ -4058,7 +4084,10 @@ public function index()
                 &lt;/tr&gt;
                 &lt;tr&gt;
                     &lt;td&gt;&lt;label for=&quot;done&quot;&gt;Completada:&lt;/label&gt;&lt;/td&gt;
-                    &lt;td&gt;&lt;input type=&quot;checkbox&quot; id=&quot;done&quot; name=&quot;done&quot; value=&quot;{{ $note-&gt;done }}&quot; &gt;&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;input type=&quot;hidden&quot; name=&quot;done&quot; value=&quot;0&quot;&gt; 
+                        &lt;input type=&quot;checkbox&quot; id=&quot;done&quot; name=&quot;done&quot; value=&quot;1&quot; {{ $note-&gt;done ? &#39;checked&#39; : &#39;&#39; }}&gt;
+                    &lt;/td&gt;
                 &lt;/tr&gt;
             &lt;/tbody&gt;
         &lt;/table&gt;

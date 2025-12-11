@@ -469,7 +469,8 @@ Para poder crear una nota necesitamos tres cosas:
                     </tr>
                     <tr>
                         <td><label for="description">Descripción:</label></td>
-                        <td><textarea id="description" name="description" required>Escribe la descripción</textarea></td>
+                        <td><textarea id="description" name="description" 
+                                      placeholder="Escribe la descripción" required></textarea></td>
                     </tr>
                     <tr>
                         <td><label for="date">Fecha:</label></td>
@@ -632,7 +633,9 @@ Con este formato el formulario se enviará como un PUT, aunque el método del fo
                     </tr>
                     <tr>
                         <td><label for="description">Descripción:</label></td>
-                        <td><textarea id="description" name="description" value="{{ $note->description }}" required>Escribe la descripción</textarea></td>
+                        <td><textarea id="description" name="description" required>
+                            {{ $note->description }}
+                        </textarea></td>
                     </tr>
                     <tr>
                         <td><label for="date_at">Fecha:</label></td>
@@ -640,7 +643,10 @@ Con este formato el formulario se enviará como un PUT, aunque el método del fo
                     </tr>
                     <tr>
                         <td><label for="done">Completada:</label></td>
-                        <td><input type="checkbox" id="done" name="done" value="{{ $note->done }}" ></td>
+                        <td>
+                            <input type="hidden" name="done" value="0"> 
+                            <input type="checkbox" id="done" name="done" value="1" {{ $note->done ? 'checked' : '' }}>
+                        </td>
                     </tr>
                 </tbody>
             </table>

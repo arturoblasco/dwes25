@@ -117,6 +117,7 @@ nav:
         - pru/pru03.md
         - pru/pru04.md
         - pru/pru05.md
+        - pru/pru06.md
         - pru/examen2.md
 theme:
   name: material      # selección del tema
