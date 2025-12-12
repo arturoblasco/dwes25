@@ -1,4 +1,4 @@
-# Creación de APIs REST en Laravel
+# 5. Creación de APIs REST en Laravel
 
 ## Rutas API
 
@@ -923,13 +923,15 @@ Ahora falta extender este control de errores a los demás métodos del controlad
 
 ???questionlaravel "Práctica a entregar"
 
-    ### Objetivo de la actividad: Validaciones y Mensajes en el CRUD de Productos
+    ### Objetivo de la actividad
 
     <p style="float: left; margin-left: 1rem;">
     <img src="../../img/laraveltask.svg"
         alt="Actividad en el aula virtual"
         width="150">
     </p>
+    
+    **Validaciones y Mensajes en el CRUD de Productos**
     
     En esta práctica vas a aplicar todo lo aprendido sobre **Laravel y la creación de APIs REST** para desarrollar un servicio completo que gestione productos (*Products*).
 

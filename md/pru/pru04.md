@@ -1,4 +1,4 @@
-# Validaciones, Rutas Resource y Mensajes del Sistema
+# 4. Validaciones, Rutas Resource y Mensajes del Sistema
 
 ## 1. Validación de Datos
 
@@ -27,10 +27,9 @@ En este caso vamos a utilizar un `checkbox` para marcar si la nota está complet
     ``` 
     <input type="checkbox" name="done" value="1"> 
     ```
+    Este método permite validar directamente dentro del método del controlador:
 
-Este método permite validar directamente dentro del método del controlador:
-
-???+examplelaravel "Función store()"
+???+examplelaravel "Función `store()`"
 
     ``` 
     public function store(Request $request) {
@@ -48,19 +47,22 @@ Este método permite validar directamente dentro del método del controlador:
 
 Cuando la validación falla, Laravel redirige automáticamente al formulario anterior. Una buena técnica es utilizar el método **`old()`** para recuperar el valor anterior del campos de manera que el usuario no tenga que volver a escribirlo.
 
-``` 
-<input name="title" value="{{ old('title') }}"> 
-```
+???+examplelaravel "Recuperar de los datos en el anterior formulario"
+    ``` 
+    <input name="title" value="{{ old('title') }}"> 
+    ```
 
-Haremos esto en todos los campos. Cuidado con los `textarea` que no tienen `value` y con los `checkbox`. Por ejemlo, para el `checkbox`:
+!!!warning "Según tipos de campos de formulario"
+    Haremos esto en todos los campos. Cuidado con los `textarea` que no tienen `value` y con los `checkbox`. 
+    
+    Por ejemlo, para el `checkbox`:
 
-``` 
-<input type="checkbox" name="done" value="1" {{ old('done') ? 'checked' : '' }}> 
-```
+    ``` 
+    <input type="checkbox" name="done" value="1" {{ old('done') ? 'checked' : '' }}> 
+    ```
+    Esto mostrará el checkbox marcado si el valor anterior era `1`.
 
-Esto mostrará el checkbox marcado si el valor anterior era `1`.
-
-#### 1.3. Reglas comunes de validación:
+### 1.3. Reglas comunes de validación
 
 | Regla | Descripción |
 | --- | --- |
@@ -74,11 +76,10 @@ Esto mostrará el checkbox marcado si el valor anterior era `1`.
 
 ### 1.4. Crear una clase FormRequest personalizada
 
-**Comando**
-
-```
-php artisan make:request NoteRequest
-```
+???+examplelaravel "Comando"
+    ```
+    php artisan make:request NoteRequest
+    ```
 
 Esto creará una clase en `app/Http/Requests/NoteRequest.php`
 
@@ -100,9 +101,9 @@ Este método define si el usuario tiene permiso para hacer esta petición. Para 
 
 **Método `rules()`**
 
-Ahora vamos a definir unas reglas de validación de ejemplo para nuestro ejemplo de notas:
+Ahora vamos a definir unas reglas de validación de ejemplo para notas:
 
-???+examplelaravel "Ejemplo de reglas"
+???+teolaravel "Ejemplo de reglas"
     ``` 
     public function rules() {     
         return [         
@@ -111,7 +112,7 @@ Ahora vamos a definir unas reglas de validación de ejemplo para nuestro ejemplo
             'date_at' => 'required|date',         
             'done' => 'nullable|boolean'     
             ]; 
-        } 
+    } 
     ```
 
 **Uso en el controlador:**
@@ -120,7 +121,11 @@ En el controlador, en lugar de usar `Request $request`, usaremos `NoteRequest $r
 
 ???+examplelaravel "Almacenar una nota"
 
-    ``` 
+    ```
+    //...
+    use App\Http\Requests\NoteRequest;
+
+    //...
     public function store(NoteRequest $request) {     
         $data = $request->all();     
         $data['done'] = $request->has('done') ? 1 : 0;  // Convertir checkbox a booleano     
@@ -303,29 +308,27 @@ Ahora podéis comprobar que:
 
 !!!warning "campo `done`"
 
-    Si has seguido al pie de la letra las instrucciones, el campo `done` no va a funcionar. Al añadir la clase `NoteRequest` pedimos que el campo sea `boolean` pero a este punto está llegando un `on` cuando el checkbox está marcado, o nada cuando no lo está. Y por tanto no llegaremos nunca a que se ejecute el método `store()` o `update()`, que es donde estábamos manejando el valor del checkbox.
+    Si has seguido al pie de la letra las instrucciones, el campo `done` no va a funcionar. Al añadir la clase `NoteRequest` pedimos que el campo sea `boolean` pero a este punto está llegando un `on` cuando el checkbox está marcado, o nada cuando no lo está; y por tanto no llegaremos nunca a que se ejecute el método `store()` o `update()`, que es donde estábamos manejando el valor del checkbox.
 
     **Solución**
 
-    Necesitaos que cuando se valida el campo `done`, si está marcado llegue como `true` y si no está marcado como `false`. Ya que en la validación hemos especificado que debe ser un booleano. Para ello vamos a usar el método `prepareForValidation()` que nos permite modificar los datos antes de que se apliquen las reglas de validación.
+    Necesitamos que cuando se valida el campo `done`, si está marcado, llegue como `true` y, si no está marcado, como `false`; ya que en la validación hemos especificado que debe ser un booleano. Para ello vamos a usar el método `prepareForValidation()` que nos permite modificar los datos antes de que se apliquen las reglas de validación.
 
-    **Modificar datos antes de validar**
+    Este método **`prepareForValidation`** es muy útil para modificar cualquier dato antes de que se aplique la validación. Por ejemplo, podríamos usarlo para formatear fechas, convertir cadenas a mayúsculas/minúsculas. No siempre la información que llega del formulario está en el formato que necesitamos para validar o almacenar. Y que no esté en el formato no significa que no sea válido. Pero la validación de `laravel` es estricta y debemos asegurarnos que los datos cumplen las reglas que hemos definido.
 
-    !!!examplelaravel "Añadimos este método en la clase `NoteRequest`"
+    !!!examplelaravel "Modificar datos antes de validar"
+
+        Añadimos este método en la clase `NoteRequest`.
 
         ``` 
         protected function prepareForValidation() {     
             $this->merge([         
-                'done' => $this->done ? true : false,     
-                ]); 
+                        'done' => $this->done ? true : false,     
+                        ]); 
         } 
         ```
             
     De esta manera nos aseguramos que el campo `done` siempre llega como `1` o `0`, y por tanto la validación funciona correctamente. Con esto ahora el campo `done` funciona correctamente.
-
-!!!tip "prepareForValidation()"
-
-    Este método es muy útil para modificar cualquier dato antes de que se aplique la validación. Por ejemplo, podríamos usarlo para formatear fechas, convertir cadenas a mayúsculas/minúsculas. No siempre la información que llega del formulario está en el formato que necesitamos para validar o almacenar. Y que no esté en el formato no significa que no sea válido. Pero la validación de `laravel` es estricta y debemos asegurarnos que los datos cumplen las reglas que hemos definido.
 
 ---
 
@@ -333,39 +336,67 @@ Ahora podéis comprobar que:
 
 Laravel trae sus mensajes de error por defecto en inglés.
 
-* Archivo por defecto: `resources/lang/en/validation.php`
-* Puedes crear una versión en español copiando el contenido en: `resources/lang/es/validation.php`
-* Activa el idioma por defecto en `config/app.php`:
+
+1) Activa el idioma por defecto en `config/app.php`:
 
 ```
 'locale' => 'es',
 ```
 
+2) Archivo por defecto: `resources/lang/en/validation.php` (las últimas versiones no llevan este archivo).
+   
+3) Puedes crear una versión en español copiando el contenido en: `resources/lang/es/validation.php`
+```php
+<?php
+
+return [
+
+    'required' => 'El campo :attribute es obligatorio.',
+    'string' => 'El campo :attribute debe ser una cadena de texto.',
+    'max' => [
+        'string' => 'El campo :attribute no puede tener más de :max caracteres.',
+    ],
+    'min' => [
+        'string' => 'El campo :attribute debe tener al menos :min caracteres.',
+    ],
+    'date' => 'El campo :attribute no es una fecha válida.',
+    'boolean' => 'El campo :attribute debe ser verdadero o falso.',
+
+    'attributes' => [
+        'title' => 'título',
+        'description' => 'descripción',
+        'date_at' => 'fecha',
+        'done' => 'realizada',
+    ],
+];
+```
+
+
 ## 3. Mensajes de Éxito
 
-Para mejorar la experiencia del usuario, es buena práctica mostrar mensajes de éxito o error después de operaciones como crear, actualizar o eliminar. PPara ello vamos a usar los mensajes flash, que permiten mandar un mensaje entre peticiones almacenándolo en la sesión.
+Para mejorar la experiencia del usuario, es buena práctica mostrar mensajes de éxito o error después de operaciones como crear, actualizar o eliminar. Para ello vamos a usar los mensajes flash, que permiten mandar un mensaje entre peticiones almacenándolo en la sesión.
 
 ### 3.1. Flash de sesión con `with()`
 
 Este método permite guardar un mensaje en la sesión que se mostrará en la siguiente petición. Vamos a usarlo para mostrar un mensaje de éxito después de crear o actualizar o eliminar una nota.
 
-En la función `store()` del controlador:
+???+examplelaravel "En el método `store()` del controlador:"
+    ```
+    //...
+    return redirect()->route('notes.index')->with('success', 'Nota creada correctamente.');
+    ```
 
-```
-return redirect()->route('notes.index')->with('success', 'Nota guardada correctamente.');
-```
+???+examplelaravel "En el método `update()`:"
+    ```
+    //...
+    return redirect()->route('notes.index')->with('success', 'Nota actualizada correctamente.');
+    ```
 
-En la función `update()`:
-
-```
-return redirect()->route('notes.index')->with('success', 'Nota actualizada correctamente.');
-```
-
-En la función `destroy()`:
-
-```
-return redirect()->route('notes.index')->with('danger', 'Nota eliminada correctamente.');
-```
+???+examplelaravel "En el método `destroy()`:"
+    ```
+    //...
+    return redirect()->route('notes.index')->with('danger', 'Nota eliminada correctamente.');
+    ```
 
 ### 3.2. Mostrar el mensaje en la vista (por ejemplo, en layout):
 
@@ -382,7 +413,7 @@ return redirect()->route('notes.index')->with('danger', 'Nota eliminada correcta
     ```
 
 ???+examplelaravel "🔝 O incluirlo como partial"
-    En `\partials/messages.blade.php`:
+    En `/partials/messages.blade.php`:
     ``` 
     @if (session('success'))     
         <div class="alert alert-success"              
@@ -410,7 +441,7 @@ return redirect()->route('notes.index')->with('danger', 'Nota eliminada correcta
     Y en el layout:
 
     ```
-    @include('_partials.messages')
+    @include('partials.messages')
     ```
 
 ## 4. Rutas Resource
@@ -475,7 +506,7 @@ Este comando crea todos los métodos básicos (`index`, `create`, `store`, `show
 ---
 ???questionlaravel "Práctica a Entregar"
 
-    ## Objetivo de la actividad: Validaciones y Mensajes en el CRUD de Productos
+    ### Objetivo de la actividad
 
     <p style="float: left; margin-left: 1rem;">
     <img src="../../img/laraveltask.svg"
@@ -483,6 +514,8 @@ Este comando crea todos los métodos básicos (`index`, `create`, `store`, `show
         width="150">
     </p>
 
+    **Validaciones y Mensajes en el CRUD de Productos**
+    
     El objetivo de esta práctica es **mejorar el CRUD de productos** incorporando validaciones, gestión de errores y mensajes de retroalimentación para el usuario.
 
     El alumnado consolidará los conocimientos de validación de datos en Laravel, aprendiendo a:

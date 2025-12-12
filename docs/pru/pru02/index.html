@@ -20,7 +20,7 @@
     
     
       
-        <title>Controladores y Rutas - Desarrollo Web en Entorno Servidor (DWES)</title>
+        <title>2. Controladores y Rutas - Desarrollo Web en Entorno Servidor (DWES)</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#controladores-y-rutas" class="md-skip">
+        <a href="#2-controladores-y-rutas" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Controladores y Rutas
+              2. Controladores y Rutas
             
           </span>
         </div>
@@ -2852,7 +2852,7 @@
   
   
   <span class="md-ellipsis">
-    Controladores y Rutas
+    2. Controladores y Rutas
     
   </span>
   
@@ -2865,7 +2865,7 @@
   
   
   <span class="md-ellipsis">
-    Controladores y Rutas
+    2. Controladores y Rutas
     
   </span>
   
@@ -2977,7 +2977,7 @@
   
   
   <span class="md-ellipsis">
-    Desarrollo de un CRUD
+    3. Desarrollo de un CRUD
     
   </span>
   
@@ -3000,7 +3000,7 @@
   
   
   <span class="md-ellipsis">
-    Validaciones, Rutas Resource y Mensajes del Sistema
+    4. Validaciones, Rutas Resource y Mensajes del Sistema
     
   </span>
   
@@ -3023,7 +3023,68 @@
   
   
   <span class="md-ellipsis">
-    Creación de APIs REST en Laravel
+    5. Creación de APIs REST en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_5" id="__nav_3_6_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Despliegue
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Despliegue
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru06a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción al despliegue de aplicaciones web
     
   </span>
   
@@ -3041,17 +3102,71 @@
   
   
     <li class="md-nav__item">
-      <a href="../pru06/" class="md-nav__link">
+      <a href="../pru06b/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Introducción al despliegue de aplicaciones web
+    Aplicación simple con estructura precaria php
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru06c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicación completa con estructura de laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru06d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Despliegue en PaaS Render
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3206,7 +3321,7 @@
 
 
 
-<h1 id="controladores-y-rutas">Controladores y Rutas<a class="headerlink" href="#controladores-y-rutas" title="Permanent link">&para;</a></h1>
+<h1 id="2-controladores-y-rutas">2. Controladores y Rutas<a class="headerlink" href="#2-controladores-y-rutas" title="Permanent link">&para;</a></h1>
 <h2 id="objetivo-de-la-actividad">Objetivo de la actividad<a class="headerlink" href="#objetivo-de-la-actividad" title="Permanent link">&para;</a></h2>
 <p style="float: left; margin-left: 1rem;">
   <img src="../../img/laravel.svg"
@@ -3224,11 +3339,25 @@
 </ul>
 <hr />
 <h2 id="requisitos-previos">Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Crea un proyecto laravel de nombre <strong>testear</strong>.</li>
-<li><strong>Base de datos</strong>: acceso a la base <code>testear</code>.</li>
-<li><strong>Tabla <code>employees</code></strong> creada mediante migraciones con la siguiente estructura:</li>
-</ol>
+<p>1) Crea un proyecto laravel de nombre, por ejemplo, <strong>testear</strong>.</p>
+<details class="examplelaravel" open="open">
+<summary>Crear proyecto</summary>
+<div class="highlight"><pre><span></span><code>composer crearte-project laravel/laravel testear
+</code></pre></div>
+</details>
+<p>2) <strong>Base de datos</strong>: acceso a la base <code>testear</code>.</p>
+<details class="examplelaravel" open="open">
+<summary>Modificar archivo <code>.env</code></summary>
+<p>En la raíz del proyecto, encontramos el fichero de configuración <code>.env</code>:
+<div class="highlight"><pre><span></span><code>DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3307
+DB_DATABASE=testear
+DB_USERNAME=root
+DB_PASSWORD=
+</code></pre></div></p>
+</details>
+<p>3) <strong>Tabla <code>employees</code></strong> creada mediante migraciones con la siguiente estructura:</p>
 <table>
 <thead>
 <tr>
@@ -3240,32 +3369,32 @@
 <tbody>
 <tr>
 <td><code>id</code></td>
-<td><code>integer</code></td>
+<td></td>
 <td>Clave primaria, no autoincremental, no nulo</td>
 </tr>
 <tr>
-<td><code>emp_firstname</code></td>
+<td><code>firstname</code></td>
 <td><code>string(100)</code></td>
 <td>No nulo</td>
 </tr>
 <tr>
-<td><code>emp_lastname</code></td>
+<td><code>lastname</code></td>
 <td><code>string(100)</code></td>
 <td>No nulo</td>
 </tr>
 <tr>
-<td><code>emp_birth_date</code></td>
+<td><code>birth_date</code></td>
 <td><code>date</code></td>
 <td>No nulo</td>
 </tr>
 <tr>
-<td><code>emp_hire_date</code></td>
+<td><code>hire_date</code></td>
 <td><code>date</code></td>
 <td>No nulo</td>
 </tr>
 <tr>
-<td><code>emp_salary</code></td>
-<td><code>decimal</code></td>
+<td><code>salary</code></td>
+<td><code>decimal(8,2)</code></td>
 <td>Puede ser nulo</td>
 </tr>
 <tr>
@@ -3280,53 +3409,129 @@
 </tr>
 </tbody>
 </table>
-<ol>
-<li><strong>Modelo <code>Employee</code></strong> configurado y operativo (tabla, clave primaria, tipos y asignación masiva coherentes con la estructura anterior).</li>
-<li><strong>Datos de prueba</strong>:
-   Carga de datos de prueba: importa el anexo SQL.</li>
-</ol>
-<blockquote>
-<p><strong>info:</strong> "Importar datos de prueba"</p>
-<p>Lo más rápido es utilizar alguna extensión para vsCode como "SQLTools" o "<strong>MySQL</strong>" para conectarte a la base de datos y ejecutar el script SQL que se proporciona al final de esta actividad.</p>
-<p><img alt="Extensiones para VSCode" src="../../img/mysqlextension.png" /></p>
-<p><strong>Datos de prueba</strong>: </p>
+<details class="examplelaravel" open="open">
+<summary>Crear migración</summary>
+<p><div class="highlight"><pre><span></span><code>php artisan make:migration create_employees_table
+</code></pre></div>
+Ahora, en la ruta <code>database/migrations</code> encontraremos un fichero tal que así <strong><code>xxxx_xx_xx_xxxxxx_create_employees_table</code></strong>:
+<div class="highlight"><pre><span></span><code>Schema::create(&#39;employees&#39;, function (Blueprint $table) {
+    $table-&gt;id();
+    $table-&gt;string(&#39;firstname&#39;, 100);
+    $table-&gt;string(&#39;lastname&#39;, 100);
+    $table-&gt;date(&#39;birth_date&#39;);
+    $table-&gt;date(&#39;hire_date&#39;);
+    $table-&gt;decimal(&#39;salary&#39;,10,2)-&gt;nullable();
+    $table-&gt;timestamps();
+});
+</code></pre></div></p>
+<p><div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_p2_001.png"
+        alt="crear migración employees"
+        class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+        crear migración employees
+    </figcaption>
+</figure>
+</div></p>
+<div class="highlight"><pre><span></span><code>php artisan migrate
+</code></pre></div>
+<p><div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_p2_002.png"
+        alt="ejecutar todas las migraciones"
+        class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+        ejecutar todas las migraciones
+    </figcaption>
+</figure>
+</div></p>
+</details>
+<p>4) <strong>Modelo <code>Employee</code></strong> configurado y operativo (tabla, clave primaria, tipos y <strong>asignación masiva</strong> coherentes con la estructura anterior).</p>
+<details class="examplelaravel" open="open">
+<summary>Crear modelo</summary>
+<div class="highlight"><pre><span></span><code>php artisan make:model Employee
+</code></pre></div>
+</details>
+<p>5) <strong>Datos de prueba</strong>:
+   Carga de datos de prueba: importa el anexo SQL.</p>
+<div class="admonition tip">
+<p class="admonition-title">Importar datos de prueba</p>
+<p>Lo más rápido es utilizar alguna extensión para vsCode como "SQLTools" o "<strong>MySQL</strong>" para conectarte a la base de datos y ejecutar el script SQL que se proporciona al final de esta actividad.
+<img alt="Extensiones para VSCode" src="../../img/mysqlextension.png" /></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Datos de prueba</p>
 <p>En los recursos de esta actividad hay un fichero <a href="../../sources/employees.sql" target="blank"><code>employees.sql</code></a> con 100 empleados ficticios para importar en la tabla <code>employees</code>.</p>
-</blockquote>
+</div>
 <hr />
 <h2 id="instrucciones-paso-a-paso">Instrucciones paso a paso<a class="headerlink" href="#instrucciones-paso-a-paso" title="Permanent link">&para;</a></h2>
 <h3 id="1-crear-el-controlador-employeecontroller">1. Crear el controlador <code>EmployeeController</code><a class="headerlink" href="#1-crear-el-controlador-employeecontroller" title="Permanent link">&para;</a></h3>
-<p>Crea un controlador para centralizar la lógica de consulta de empleados. Dentro de él implementarás, como mínimo, los métodos que devuelvan colecciones de empleados según los criterios indicados más abajo. Cada método debe:</p>
+<p>6) Crea un controlador para centralizar la lógica de consulta de empleados. Dentro de él implementarás, como mínimo, los métodos que devuelvan colecciones de empleados según los criterios indicados más abajo. Cada método debe:</p>
+<details class="examplelaravel" open="open">
+<summary>Crear controlador</summary>
+<div class="highlight"><pre><span></span><code>php artisan make:controller EmployeeController
+</code></pre></div>
+</details>
 <ul>
 <li>Obtener los empleados aplicando el <strong>criterio de ordenación o filtrado</strong> correspondiente.</li>
 <li>Enviar el resultado a una <strong>vista Blade</strong> común (ver punto 3) mediante una variable llamada exactamente <code>employees</code>.</li>
 </ul>
 <p>Métodos a implementar:</p>
 <ul>
-<li><strong>Listado por ID ascendente</strong>
-   Nombre sugerido del método: <code>byId</code>.
-   Comportamiento: devuelve todos los empleados ordenados por <code>emp_id</code> de menor a mayor.</li>
-<li><strong>Listado por apellidos y nombre</strong>
-   Nombre sugerido del método: <code>byLastName</code>.
-   Comportamiento: devuelve todos los empleados ordenados por <code>emp_lastname</code> (ascendente) y, en caso de empate, por <code>emp_firstname</code> (ascendente).</li>
-<li><strong>Subconjunto por letra inicial de apellido</strong>
-   Nombre sugerido del método: <code>lastNameStartsWith</code>.
-   Comportamiento: devuelve solo los empleados cuyo <code>emp_lastname</code> <strong>empiece por la letra “A”</strong>, ordenados por <code>emp_lastname</code> y <code>emp_firstname</code> (ascendente).</li>
+<li><strong>Listado por ID ascendente</strong> (nombre <strong><code>byId</code></strong>): devuelve todos los empleados ordenados por <code>emp_id</code> de menor a mayor.</li>
+<li><strong>Listado por apellidos y nombre</strong> (nombre <strong><code>byLastName</code></strong>): devuelve todos los empleados ordenados por <code>lastname</code> (ascendente) y, en caso de empate, por <code>firstname</code> (ascendente).</li>
+<li><strong>Subconjunto por letra inicial de apellido</strong> (nombre <strong><code>lastNameStartsWith</code></strong>): devuelve solo los empleados cuyo <code>emp_lastname</code> <strong>empiece por una letra</strong> (si no se pasa ninguna letra, el sistema asume la letra “<em>A</em>” por defecto), ordenados por <code>lastname</code> y <code>emp_firstname</code> (ascendente).</li>
+<li><strong>Subconjunto por año de nacimiento</strong> (nombre <strong><code>bornIn</code></strong>): devuelve solo los empleados <strong>nacidos en un año</strong> (si no se pasa ningún año, el sistema asume "<em>1980</em>” por defecto), ordenados por <code>lastname</code> y <code>firstname</code> (ascendente).</li>
 </ul>
-<blockquote>
-<p><strong>Nota</strong>: en este tema el valor “A” es fijo. Las rutas con parámetros dinámicos se verán más adelante.</p>
-</blockquote>
-<ul>
-<li><strong>Subconjunto por año de nacimiento</strong>
-   Nombre sugerido del método: <code>bornIn</code>.
-   Comportamiento: devuelve solo los empleados <strong>nacidos en el año 1980</strong>, ordenados por <code>emp_lastname</code> y <code>emp_firstname</code> (ascendente).</li>
-</ul>
-<blockquote>
-<p><strong>Nota</strong>: el año “1980” es fijo en esta práctica (los parámetros dinámicos se verán más adelante).</p>
-</blockquote>
 <p>Todos los métodos devolverán la misma vista (ver punto 3) y <strong>no</strong> deben repetir lógica de presentación en el controlador.</p>
+<details class="examplelaravel" open="open">
+<summary>Métodos del controlador <code>EmployeeController</code></summary>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Models\Employee</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">EmployeeController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">byId</span><span class="p">(){</span>
+        <span class="nv">$employees</span> <span class="o">=</span> <span class="nx">Employee</span><span class="o">::</span><span class="na">orderBy</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;asc&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;employees.index&#39;</span><span class="p">,</span> <span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;employees&#39;</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">byLastName</span><span class="p">(){</span>
+        <span class="nv">$employees</span> <span class="o">=</span> <span class="nx">Employee</span><span class="o">::</span><span class="na">orderBy</span><span class="p">(</span><span class="s1">&#39;emp_lastname&#39;</span><span class="p">,</span> <span class="s1">&#39;asc&#39;</span><span class="p">)</span>
+                             <span class="o">-&gt;</span><span class="na">orderBy</span><span class="p">(</span><span class="s1">&#39;emp_firstname&#39;</span><span class="p">,</span><span class="s1">&#39;asc&#39;</span><span class="p">)</span>
+                             <span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;employees.index&#39;</span><span class="p">,</span> <span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;employees&#39;</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">lastNameStartsWith</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$letter</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">){</span>
+        <span class="nv">$employees</span> <span class="o">=</span> <span class="nx">Employee</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;emp_lastname&#39;</span><span class="p">,</span> <span class="s1">&#39;LIKE&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$letter</span><span class="s2">%&quot;</span><span class="p">)</span>
+                             <span class="o">-&gt;</span><span class="na">orderBy</span><span class="p">(</span><span class="s1">&#39;emp_lastname&#39;</span><span class="p">,</span> <span class="s1">&#39;asc&#39;</span><span class="p">)</span>
+                             <span class="o">-&gt;</span><span class="na">orderBy</span><span class="p">(</span><span class="s1">&#39;emp_firstname&#39;</span><span class="p">,</span><span class="s1">&#39;asc&#39;</span><span class="p">)</span>
+                             <span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;employees.index&#39;</span><span class="p">,</span> <span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;employees&#39;</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">bornIn</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$year</span><span class="o">=</span><span class="s1">&#39;1980&#39;</span><span class="p">){</span>
+        <span class="nv">$employees</span> <span class="o">=</span> <span class="nx">Employee</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;emp_birth_date&#39;</span><span class="p">,</span><span class="s1">&#39;like&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$year</span><span class="s2">%&quot;</span><span class="p">)</span>
+                             <span class="o">-&gt;</span><span class="na">orderBy</span><span class="p">(</span><span class="s1">&#39;emp_lastname&#39;</span><span class="p">,</span> <span class="s1">&#39;asc&#39;</span><span class="p">)</span>
+                             <span class="o">-&gt;</span><span class="na">orderBy</span><span class="p">(</span><span class="s1">&#39;emp_firstname&#39;</span><span class="p">,</span><span class="s1">&#39;asc&#39;</span><span class="p">)</span>
+                             <span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;employees.index&#39;</span><span class="p">,</span> <span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;employees&#39;</span><span class="p">));</span>
+     <span class="p">}</span>    
+<span class="p">}</span>
+</code></pre></div>
+</details>
 <hr />
 <h3 id="2-definir-las-rutas">2. Definir las rutas<a class="headerlink" href="#2-definir-las-rutas" title="Permanent link">&para;</a></h3>
-<p>Declara rutas <strong>GET</strong> que apunten a los métodos anteriores. Usa exactamente estas URL para homogeneizar correcciones:</p>
+<p>7) Declara rutas <strong>GET</strong> que apunten a los métodos anteriores. Usa exactamente estas URL para homogeneizar correcciones:</p>
 <table>
 <thead>
 <tr>
@@ -3365,9 +3570,23 @@
 <li>Usa <strong>nombres de ruta</strong> coherentes para cada una (por ejemplo, <code>employees.byId</code>, <code>employees.byLastName</code>, <code>employees.starts</code>, <code>employees.born</code>).</li>
 </ul>
 </blockquote>
+<details class="examplelaravel" open="open">
+<summary>Rutas</summary>
+<p>Las rutas se encuentran en la carpeta <code>routes</code>, fichero <code>web.php</code>:
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// ...    </span>
+<span class="k">use</span> <span class="nx">App\Http\Controllers\EmployeeController</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;employees/by-id&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">EmployeeController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span><span class="s1">&#39;byId&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;employees.byId&#39;</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;employees/by-lastname&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">EmployeeController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span><span class="s1">&#39;byLastName&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;employees.byLastName&#39;</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;employees/filter-letter/{letter?}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">EmployeeController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span><span class="s1">&#39;lastNameStartsWith&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;employees.starts&#39;</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;employees/filter-year/{year?}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">EmployeeController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span><span class="s1">&#39;bornIn&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;employees.born&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+</details>
 <hr />
 <h3 id="3-crear-la-vista-employeesindexbladephp">3. Crear la vista <code>employees/index.blade.php</code><a class="headerlink" href="#3-crear-la-vista-employeesindexbladephp" title="Permanent link">&para;</a></h3>
-<p>Crea una vista única para los cuatro casos. Esta vista debe:</p>
+<p>8) Crea una vista única para los cuatro casos. Esta vista debe:</p>
 <ol>
 <li>Mostrar un <strong>título</strong> claro del listado.</li>
 <li>Si no hay registros en <code>employees</code>, mostrar un <strong>mensaje</strong>: “No hay empleados que cumplan el criterio.”</li>
@@ -3403,9 +3622,55 @@
 </tr>
 </tbody>
 </table>
-<ol>
-<li>Mostrar, sobre la tabla o como “caption”, el <strong>total de registros</strong> del listado.</li>
-</ol>
+<p>9) Mostrar, sobre la tabla o como “caption”, el <strong>total de registros</strong> del listado.</p>
+<details class="examplelaravel" open="open">
+<summary>Vista <code>resources/views/employees/index.blade.php</code></summary>
+<div class="highlight"><pre><span></span><code><span class="x">@extends(&#39;layouts.app&#39;)</span>
+
+<span class="x">@section(&#39;title&#39;, &#39;listar empleados&#39;)</span>
+
+<span class="x">@section(&#39;content&#39;)</span>
+<span class="x">  &lt;h1&gt;LISTADO DE EMPLEADOS&lt;/h1&gt;</span>
+
+<span class="x">  {<del class="critic"> No hago un @forelse para no sacar primero sí o sí la cabecera de la tabla </del>}</span>
+<span class="x">  @if ($employees-&gt;isEmpty())</span>
+<span class="x">     &lt;p class=&quot;no-results&quot;&gt;No hay empleados que cumplan el criterio.&lt;/p&gt;</span>
+<span class="x">  @else</span>
+<span class="x">     &lt;table border=1&gt;</span>
+<span class="x">           &lt;caption&gt;Total de empleados: {{ $employees-&gt;count() }}&lt;/caption&gt;</span>
+<span class="x">           &lt;thead&gt;</span>
+<span class="x">              &lt;tr&gt;</span>
+<span class="x">                 &lt;th&gt;id&lt;/th&gt;</span>
+<span class="x">                 &lt;th&gt;apellidos&lt;/th&gt;</span>
+<span class="x">                 &lt;th&gt;nombre&lt;/th&gt;</span>
+<span class="x">                 &lt;th&gt;fecha nacimiento&lt;/th&gt;</span>
+<span class="x">                 &lt;th&gt;edad&lt;/th&gt;</span>
+<span class="x">                 &lt;th&gt;fecha de contratación&lt;/th&gt;</span>
+<span class="x">              &lt;/tr&gt;</span>
+<span class="x">           &lt;/thead&gt;</span>
+<span class="x">           &lt;tbody&gt;</span>
+<span class="x">              @foreach ($employees as $item)</span>
+<span class="x">                 @php</span>
+<span class="x">                       // utilizamos la librería Carbon para utilizar métodos de fechas</span>
+<span class="x">                       // como age() o format()</span>
+<span class="x">                       $birthDate = \Carbon\Carbon::parse($item-&gt;birth_date);</span>
+<span class="x">                       $hireDate  = \Carbon\Carbon::parse($item-&gt;hire_date);</span>
+<span class="x">                 @endphp</span>
+<span class="x">                 &lt;tr&gt;</span>
+<span class="x">                       &lt;td&gt;{{ $item-&gt;id }}&lt;/td&gt;</span>
+<span class="x">                       &lt;td&gt;{{ $item-&gt;lastname }}&lt;/td&gt;</span>
+<span class="x">                       &lt;td&gt;{{ $item-&gt;firstname }}&lt;/td&gt;</span>
+<span class="x">                       &lt;td&gt;{{ $birthDate-&gt;format(&#39;d-m-Y&#39;) }}&lt;/td&gt;                        </span>
+<span class="x">                       &lt;td&gt;{{ $birthDate-&gt;age }}&lt;/td&gt;</span>
+<span class="x">                       &lt;td&gt;{{ $hireDate-&gt;format(&#39;d-m-Y&#39;) }}&lt;/td&gt;</span>
+<span class="x">                 &lt;/tr&gt;</span>
+<span class="x">              @endforeach</span>
+<span class="x">           &lt;/tbody&gt;</span>
+<span class="x">     &lt;/table&gt;</span>
+<span class="x">  @endif</span>
+<span class="x">@endsection</span>
+</code></pre></div>
+</details>
 <blockquote>
 <p>Notas de presentación:</p>
 <ul>
@@ -3511,13 +3776,13 @@
         
         
           
-          <a href="../pru03/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Desarrollo de un CRUD">
+          <a href="../pru03/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 3. Desarrollo de un CRUD">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Desarrollo de un CRUD
+                3. Desarrollo de un CRUD
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -1,4 +1,4 @@
-# Desarrollo de un CRUD
+# 3. Desarrollo de un CRUD
 
 ## 1. Introducción a CRUD
 
@@ -22,23 +22,72 @@ Dominar el desarrollo de CRUDs es básico para cualquier programador web, ya que
 
 Además, este tema nos va a servir para aprender el funcionamiento de los formularios en Laravel.
 
-> **Recursos para realizar los ejemplos de este punto**: 
-> 
-> - Fichero [`notes.sql`](../sources/notes.sql){:target="blank"} con 15 productos ficticios para importar en la tabla `notes`.
-> - Iconos: [vista](../sources/view.svg){:target="blank"}, [editar](../sources/edit.svg){:target="blank"}, [eliminar](../sources/delete.svg){:target="blank"}, [añadir](../sources/add.svg){:target="blank"}.
+!!!tip "Recursos para realizar los ejemplos de este punto"
+    - Fichero [`notes.sql`](../sources/notes.sql){:target="blank"} con 15 productos ficticios para importar en la tabla `notes`.
+    - Iconos: [vista](../sources/view.svg){:target="blank"}, [editar](../sources/edit.svg){:target="blank"}, [eliminar](../sources/delete.svg){:target="blank"}, [añadir](../sources/add.svg){:target="blank"}.
+    - Puedes mejorar la apariencia de tu aplicación utilizando CSS (ejemplo de estilos: [`style1.css`](../sources/style1.css){:target="blank"}).
 
 ## 2. Rutas Dinámicas y Controladores
 
-### 2.1. Crear un circuito MVC rápido para rutas dinámicas
+### 2.1. Crear plantilla blade y partials
 
+Antes de crear nuestras tablas, modelos, controladores y rutas, vamos a diseñar una plantilla de vista blade que nos sirva para todas las siguientes vistas que creemos (que "*extiendan*" de la plantilla):
 
-???+examplelaravel "Utilizar la tabla `notes` con los campos:"
+**Crear plantilla/layout**
 
-    * `id` (entero, autoincremental)
-    * `title` (string)
-    * `description` (text)
-    * `date_at` (date)
-    * `done` (boolean)
+Crear un layout base en la ruta `resources/views/layouts/app.blade.php`:
+???+examplelaravel "Layout"
+    
+    ``` 
+    <!DOCTYPE html> 
+    <html lang="es"> 
+        <head>     
+            <meta charset="UTF-8">     
+            <title>
+                @yield('title')
+            </title> 
+            <link rel="stylesheet" href="{{ asset('assets/css/style1.css') }}">
+        </head> 
+    <body>     
+        <header>         
+            <h1>Mi Aplicación de Notas</h1>         
+            @include('partials.nav')
+        </header>     
+        <main>         
+            @yield('content')     
+        </main>
+        @stack('scripts)
+    </body> 
+    </html>
+    ```
+De esta plantilla `app.blade.php` observamos:
+
+- Tiene dos referencias `@yield` que después, en la vista que extienda, deberemos hacer referencia con su correspondiente `@section`.
+- Tiene una hoja de estilo que apunta a un fichero `style1.css` de la carpeta pública `assets/img/` (se utiliza `{{ asset('assets/css/style1.css') }}`).
+- Tiene una referencia `@stack` que utilizaremos para ir añadiendo código (en este caso scripts).
+- Tiene código incluido `nav.blade.php` que se encuentra en la ruta `resources/views/partials`.
+
+**Crear partial**
+
+???+examplelaravel "Partial en `resources/views/partials/nav.blade.php`"
+    ``` 
+    <nav>             
+        <a href="{{ route('notes.index') }}">Notas</a> |             
+        <a href="{{ route('employee.byId') }}">Empleados</a>         
+    </nav>  
+    ```
+
+### 2.2. Crear un circuito MVC rápido para rutas dinámicas
+
+**1) Migración + tabla**
+
+Utilizar la tabla `notes` con los campos:
+
+* `id` (entero, autoincremental)
+* `title` (string)
+* `description` (text)
+* `date_at` (date)
+* `done` (boolean)
 
 ???+examplelaravel "Crear la migración de la nota y el controador:"
     
@@ -49,7 +98,7 @@ Además, este tema nos va a servir para aprender el funcionamiento de los formul
     php artisan make:model Note
     ```
     
-    🔝 Podemos crear el modelo, la migración y el controlador con un solo comando:
+    🔝 ó Crear el modelo, la migración y el controlador con un solo comando:
         
     ```
     php artisan make:model Note -mc
@@ -83,8 +132,6 @@ Por último, ejecutamos la migración:
     php artisan migrate
     ```
 
-
-
 !!!warning "Resetear Migraciones"
     Si tenemos algún problema porque no hemos creado la base de datos desde cero, podemos eliminar las migraciones anteriores con:
 
@@ -92,7 +139,7 @@ Por último, ejecutamos la migración:
     php artisan migrate:reset
     ```
 
-**Modelo Note:**
+**2) Modelo `Note`**
 
 Ahora vamos a implementar el modelo `Note`. Vamos a definir los campos que se pueden asignar masivamentes:
 
@@ -111,7 +158,7 @@ Ahora vamos a implementar el modelo `Note`. Vamos a definir los campos que se pu
     * `$fillable`: define qué campos se pueden asignar en masa.
     * `$guarded`: define qué campos **no** se pueden asignar.
 
-**Controlador NoteController**:
+**3) Controlador `NoteController`**:
 
 ???+examplelaravel "Crear Controlador"
     Ejecuta solo si no se ha ejecutado la orden `php artisan make:model Note -mc`:
@@ -119,35 +166,39 @@ Ahora vamos a implementar el modelo `Note`. Vamos a definir los campos que se pu
     php artisan make:controller NoteController
     ```
 
-Codificamos el controlador (`app/Http/Controllers/NoteController.php`):
-
-???+examplelaravel "método show, para mostrar un ID"
+???+teolaravel "Ejemplo de codificación de un método en el controlador:"
+    Codifación del método `show()` en el controlador `app/Http/Controllers/NoteController.php`:
     
     ```
-    public function show($id)
+    //...
+    use App\Models\Note;
+
+    //...
+    public function show(Note $note)
     {
-        $note = Note::findOrFail($id);
         return view('notes.show', compact('note'));
     }
     ```
 
-**Ruta asociada:**
+**4) Ruta asociada:**
 
 Ahora que ya tenemos el controlador y el método que manejará la ruta, y el modelo que se conectará con la base de datos, vamos a definir la ruta en `routes/web.php`:
 
-???+examplelaravel "Ruta con Parámetro Dinámico y Controlador"
+???+teolaravel "Ejemplo de Ruta con Parámetro Dinámico y Controlador"
     
     ``` 
+    //...
     use App\Http\Controllers\NoteController;  
     
-    Route::get('notes/{id}', [NoteController::class, 'show'])->name('notes.show'); 
+    //...
+    Route::get('notes/{note}', [NoteController::class, 'show'])->name('notes.show'); 
     ```
 
-**Vista `resources/views/notes/show.blade.php`:**
+**5) Vista asociada:**
 
 Por último nos queda crear la vista que mostrará la información de la nota con el ID recibido:
 
-???+examplelaravel "Vista show.blade.php"
+???+teolaravel "Ejemplo Vista `resources/views/notes/show.blade.php`"
     
     ``` 
     @extends('layouts.app')
@@ -156,59 +207,18 @@ Por último nos queda crear la vista que mostrará la información de la nota co
     
     @section('content')
         <h1>nota {{ $note->id }}</h1>
-        
-        <table>
-        <tbody>
-        <tr>
-            <td>título</td>
-            <td>{{ $note->title }}</td>
-        </tr>
-        <tr>
-            <td>descripción</td>
-            <td>{{ $note->description }}</td>
-        </tr>
-        <tr>
-            <td>fecha</td>
-            <td>{{ $note->date_at }}</td>
-        </tr>
-        <tr>
-            <td>realizada</td>
-            <td>{{ $note->done ? 'checked' : '' }}</td>
-        </tr>
-        </tbody>
-        </table>
-        <a href="{{ route('notes.index') }}"> <--Volver </a>
     @endsection
-    ```
-    Podemos observar que esta vista:
-    
-    - aplica la plantilla `app.blade.php`.
-    - muestra en la pestaña del navegador el número de nota.
-    - muestra el valor del campo `done` (que es de tipo `boolean`) realiza una ternaria.
-    - tiene un enlace, al final, para volver a la vista que lista notas y lo hace con el método `route` y el nombre de la ruta (`notes.index`).
-
-Con esto, accediendo a `/notes/1` veremos "El ID de la nota es: 1".
-    
-<div class="figure-center">
-  <figure>
-    <img src="../../img/pru/laravel_vista_show1.png"
-         alt="vista show"
-         class="figure-img-highlight" />
-    <figcaption class="figure-caption-small">
-      vista notes/show.blade.php
-    </figcaption>
-  </figure>
-</div>
+    ```    
 
 > **Función `compact()`**
 > 
 > La función `compact('variable')` crea un array asociativo `['variable' => $variable]` que puede ser pasado a la vista. Es una forma rápida y limpia de pasar datos. Sólo la puedo utilizar si el valor de la clave es el mismo que el nombre de la variable.
 
-### 2.2. Parámetros opcionales y valores por defecto
+### 2.3. Parámetros opcionales y valores por defecto
 
-Podemos definir parámetros **opcionales** añadiendo un signo de interrogación `?`:
+Podemos definir parámetros **opcionales** añadiendo un signo de interrogación **`?`**:
 
-???+examplelaravel "Ruta con Parámetro Opcional"
+???+teolaravel "Ruta con Parámetro Opcional"
     
     ``` 
     Route::get('/saludo/{nombre?}', function ($nombre = 'Invitado') {
@@ -219,26 +229,26 @@ Podemos definir parámetros **opcionales** añadiendo un signo de interrogación
     * Si accedemos a `/saludo/Laura`, veremos "*Hola, Laura*".
     * Si accedemos a `/saludo`, veremos "*Hola, Invitado*".
 
-!!!warning "Reglas para Parámetros Opcionales"
+!!!warning "Reglas para parámetros opcionales"
     
     * El parámetro opcional debe ser el último de la URL.
     * Hay que asignar un **valor por defecto** en la función.
 
-### 2.3. Importancia del orden de las rutas
+### 2.4. Importancia del orden de las rutas
 
 Laravel evalúa las rutas en el **orden en que se definen**.
 
-**Ejemplo de conflicto:**
+???+teolaravel "Ejemplo de conflicto:"
 
-``` 
-Route::get('/notes/nueva', function() { return 'Crear nueva nota'; }); 
-Route::get('/notes/{id}', function($id) { return "Nota ID: $id"; }); 
-```
+    ``` 
+    Route::get('/notes/nueva', function() { return 'Crear nueva nota'; }); 
+    Route::get('/notes/{id}', function($id) { return "Nota ID: $id"; }); 
+    ```
 
 * Primero debe definirse `/notes/nueva` porque si no, Laravel intentará interpretar `nueva` como un `id`.
 * El orden correcto es siempre de **rutas más específicas a más generales**.
 
-!!!warning "Consejo"
+!!!warning "Consejo en el orden de las rutas"
     
     Primero define todas las rutas fijas y luego las rutas con parámetros dinámicos.
 
@@ -248,23 +258,27 @@ Route::get('/notes/{id}', function($id) { return "Nota ID: $id"; });
 
 Primero creamos la ruta y el método para listar todas las notas.
 
-**Ruta:**
+**1) Ruta:**
 
 ???+examplelaravel "Ruta para Listar Notas"
     
     ``` 
+    //...
     use App\Http\Controllers\NoteController;  
 
+    //...
     Route::get('/', [NoteController::class, 'index'])->name('notes.index'); 
     ```
 
-**Controlador:**
+**2) Controlador:**
 
 ???+examplelaravel "método index, para listar todas las notas"
     
     ```
+    //...
     use App\Models\Note;
 
+    //...
     public function index()
     {
         $notes = Note::all();
@@ -272,63 +286,7 @@ Primero creamos la ruta y el método para listar todas las notas.
     }
     ```
 
-**Explicación de @forelse vs @foreach:**
-
-* `@foreach` se utiliza para recorrer elementos, pero no gestiona si el array está vacío.
-* `@forelse` permite recorrer elementos y además definir qué hacer si no hay elementos (con cláusula `@empty`).
-
-Ejemplo:
-
-``` 
-@forelse ($notes as $item)     
-   <p>{{ $item->title }}</p>
-@empty     
-   <p>No hay notas disponibles.</p> 
-@endforelse 
-```
-
-En el ejemplo anterior, si `$notes` está vacío, se mostrará "*No hay notas disponibles.*"
-
-**Crear layout base en `resources/views/layouts/app.blade.php`:**
-
-???+examplelaravel "Layout"
-    
-    ``` 
-    <!DOCTYPE html> 
-    <html lang="es"> 
-        <head>     
-            <meta charset="UTF-8">     
-            <title>
-                @yield('title')
-            </title> 
-            <link rel="stylesheet" href="{{ asset('assets/css/style1.css') }}">
-        </head> 
-    <body>     
-        <header>         
-            <h1>Mi Aplicación de Notas</h1>         
-            @include('partials.nav')
-        </header>     
-        <main>         
-            @yield('content')     
-        </main>
-        @stack('scripts)
-    </body> 
-    </html>
-    ```
-
-???+examplelaravel "Partials en `resources/views/partials/nav.blade.php`"
-    
-    ``` 
-    <nav>             
-        <a href="{{ route('notes.index') }}">Notas</a> |             
-        <a href="{{ route('employee.byId') }}">Empleados</a>         
-    </nav>  
-    ```
-
-
-**Vista de Listado `resources/views/notes/index.blade.php`:**
-
-En este formulario vamos a adelantar algunas cosas que ampliaremos más adelante. Para poner el enlace a leminar una nota, vamos a utilizar un formulario con el método `POST` y la directiva `@method('DELETE')`. Esta directiva simula el método HTTP DELETE en formularios HTML (que solo permiten GET y POST). Más adelante explicaremos esto con más detalle. Hasta aquí nada especialmente llmativo. Pero también veréis que está la directiva `@csrf`. Esta directiva genera un campo oculto con un token que protege el formulario contra ataques CSRF (Cross-Site Request Forgery). Más adelante también explicaremos esto con más detalle. En `laravel` esta protección es automática, pero hay que incluir la directiva `@csrf` en los formularios para que funcione correctamente.
+**3) Vista de Listado `resources/views/notes/index.blade.php`:**
 
 ???+examplelaravel "Listado de Notas"
     
@@ -373,15 +331,15 @@ En este formulario vamos a adelantar algunas cosas que ampliaremos más adelante
 
                             <td>
                                 <div style="display: flex; gap: 0.5rem;">
-                                    <a href="{{ route('notes.show', $item->id) }}" style="display:inline-block; text-decoration:none;">
+                                    <a href="{{ route('notes.show', $item) }}" style="display:inline-block; text-decoration:none;">
                                         <img src="{{ asset('assets/img/view.svg') }}" alt="Vista" title="Vista">
                                     </a>
 
-                                    <a href="{{ route('notes.edit', $item->id) }}" style="display:inline-block; text-decoration:none;">
+                                    <a href="{{ route('notes.edit', $item) }}" style="display:inline-block; text-decoration:none;">
                                         <img src="{{ asset('assets/img/edit.svg') }}" alt="Editar" title="Editar">
                                     </a>
 
-                                    <form action="{{ route('notes.destroy', $item->id) }}" method="POST" style="display:inline">
+                                    <form action="{{ route('notes.destroy', $item) }}" method="POST" style="display:inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" style="border: none; background: none; padding: 0; cursor: pointer;">
@@ -399,6 +357,25 @@ En este formulario vamos a adelantar algunas cosas que ampliaremos más adelante
     @endsection
     ```
 
+**Explicación de @forelse vs @foreach:**
+
+* `@foreach` se utiliza para recorrer elementos, pero no gestiona si el array está vacío.
+* `@forelse` permite recorrer elementos y además definir qué hacer si no hay elementos (con cláusula `@empty`).
+
+???+teolaravel "Ejemplo `@forelse`"
+    ``` 
+    @forelse ($notes as $item)     
+        <p>{{ $item->title }}</p>
+    @empty     
+        <p>No hay notas disponibles.</p> 
+    @endforelse 
+    ```
+    En el ejemplo anterior, si `$notes` está vacío, se mostrará "*No hay notas disponibles.*"
+
+En este formulario vamos a adelantar algunas cosas que ampliaremos más adelante:
+
+- Para poner el enlace a eliminar una nota, vamos a utilizar un formulario con el método `POST` y la directiva `@method('DELETE')`. Esta directiva simula el método HTTP DELETE en formularios HTML (que solo permiten GET y POST). Más adelante explicaremos esto con más detalle.
+- También vemos que está la directiva `@csrf`. Esta directiva genera un campo oculto con un token que protege el formulario contra ataques CSRF (Cross-Site Request Forgery). En `laravel` esta protección es automática, pero hay que incluir la directiva `@csrf` en los formularios para que funcione correctamente.
 
 <div class="figure-center">
   <figure>
@@ -413,74 +390,160 @@ En este formulario vamos a adelantar algunas cosas que ampliaremos más adelante
 </div>
 
 ---
+### 3.2. Mostrar una Nota Individual
 
-### 3.2. Crear una Nueva Nota
+**1) Ruta para mostrar:**
+
+???+examplelaravel "Ruta para Mostrar Nota"
+    
+    ```
+    Route::get('/notes/show/{note}', [NoteController::class, 'show'])->name('notes.show');
+    ```
+
+**2) Controlador:**
+
+En este caso también tenemos dos formas de recibir el parámetro `Note $note`. En esta primer caso recibimos la *nota* y `laravel` por inyección de modelo la busca por nosotros y en el segundo caso recibimos el *ID* y buscamos la nota nosotros.
+
+???+examplelaravel "método `show`"
+
+    - 🔝 Por inyección de modelo:
+    
+    ``` 
+    public function show(Note $note) {     
+        return view('notes.show', compact('note')); 
+    } 
+    ```
+
+    - Buscando por ID:   
+
+    ``` 
+    public function show($id) {     
+        $note = Note::findOrFail($id);     
+        return view('notes.show', compact('note')); 
+    } 
+    ```
+
+
+
+**3) Vista `resources/views/notes/show.blade.php` actualizada:**
+
+???+examplelaravel "Mostrar Nota"
+    ``` 
+    @extends('layouts.app')
+    
+    @section('title')
+        nota: {{ $note->id }}
+    @endsection
+    
+    @section('content')
+        <h1>nota {{ $note->id }}</h1>
+    
+        <table>
+        <tbody>
+            <tr>
+                <td>título</td>
+                <td>{{ $note->title }}</td>
+            </tr>
+            <tr>
+                <td>descripción</td>
+                <td>{{ $note->description }}</td>
+            </tr>
+            <tr>
+                <td>fecha</td>
+                <td>{{ $note->date_at->format('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <td>realizada</td>
+                <td>{{ $note->done ? 'sí' : 'no' }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="{{ route('notes.index') }}"> <--Volver </a>
+    @endsection
+    ```
+    Podemos observar que esta vista:
+    
+    - aplica la plantilla `app.blade.php`.
+    - muestra en la pestaña del navegador el número de nota.
+    - en el campo de tipo fecha se le aplica el método `format('d/m/Y)`.
+    - muestra el valor del campo `done` (que es de tipo `boolean`) realiza una ternaria.
+    - tiene un enlace, al final, para volver a la vista que lista notas y lo hace con el método `route` y el nombre de la ruta (`notes.index`).
+
+Con esto, accediendo a `/notes/3` veremos:
+    
+<div class="figure-center">
+  <figure>
+    <img src="../../img/pru/laravel_vista_show1.png"
+         alt="vista show"
+         class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+      vista notes/show.blade.php
+    </figcaption>
+  </figure>
+</div>
+
+---
+
+### 3.3. Crear una Nueva Nota
 
 Para poder crear una nota necesitamos tres cosas:
 
-1. Una ruta que muestre el formulario de creación, `/notes/create`.
-2. Un método en el controlador que maneje esa ruta y muestre la vista con el formulario: `function create()`.
-3. Una vista que contenga el formulario de creación: `resources/views/notes/create.blade.php`.
-
-**Ruta para formulario de creación:**
-
+**1) Ruta:**
 ???+examplelaravel "Ruta para Crear Nota"
-    
     ```
     Route::get('/notes/create', [NoteController::class, 'create'])->name('notes.create');
     ```
 
-**Controlador:**
-
+**2) Controlador:** 
 ???+examplelaravel "método create, para mostrar el formulario de creación"
-    
     ``` 
     public function create() {     
         return view('notes.create'); 
     } 
     ```
 
-**Vista `resources/views/notes/create.blade.php`:**
+**3) Vista de Creado `resources/views/notes/index.blade.php`:**
 
-???+examplelaravel "Formulario de Crear Nota"
+Una vista que contenga el formulario de creación: **`resources/views/notes/create.blade.php`**.
     
+???+examplelaravel "Formulario de Crear Nota"
     ``` 
     @extends('layouts.app')
-
+    
     @section('title', 'Crear Nota')
-
+    
     @section('content')
         <h1>CREAR NUEVA NOTA</h1>
-
+        
         <form action="{{ route('notes.store') }}" method="POST">
             @csrf
             <table>
-                <caption>Formulario de Creación de Nota</caption>
-                <thead>
-                    <tr>
-                        <th>Campo</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><label for="title">Título:</label></td>
-                        <td><input type="text" id="title" name="title" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="description">Descripción:</label></td>
-                        <td><textarea id="description" name="description" 
-                                      placeholder="Escribe la descripción" required></textarea></td>
-                    </tr>
-                    <tr>
-                        <td><label for="date">Fecha:</label></td>
-                        <td><input type="date" id="date" name="date_at" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="done">Completada:</label></td>
-                        <td><input type="checkbox" id="done" name="done" value="1"></td>
-                    </tr>
-                </tbody>
+            <caption>Formulario de Creación de Nota</caption>
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="title">Título:</label></td>
+                    <td><input type="text" id="title" name="title" required></td>
+                </tr>
+                <tr>
+                    <td><label for="description">Descripción:</label></td>
+                    <td><textarea id="description" name="description" 
+                                    placeholder="Escribe la descripción" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="date">Fecha:</label></td>
+                    <td><input type="date" id="date" name="date_at" required></td>
+                </tr>
+                <tr>
+                    <td><label for="done">Completada:</label></td>
+                    <td><input type="checkbox" id="done" name="done" value="1"></td>
+                </tr>
+            </tbody>
             </table>
 
             <div style="margin-top: 1rem;">
@@ -491,6 +554,7 @@ Para poder crear una nota necesitamos tres cosas:
         </form>
     @endsection
     ```
+
 <div class="figure-center">
   <figure>
     <img src="../../img/pru/laravel_vista_create1.png"
@@ -503,11 +567,11 @@ Para poder crear una nota necesitamos tres cosas:
 </div>
 ---
 
-### 3.3. Guardar la Nueva Nota
+### 3.4. Guardar la Nueva Nota
 
 Al igual que en el caso anterior, para guardar la nota necesitamos dos cosas. Una ruta que maneje el envío del formulario y un método en el controlador que procese los datos y guarde la nota en la base de datos. Al final, redirigiremos a la lista de notas.
 
-**Ruta para guardar:**
+**1) Ruta para guardar:**
 
 ???+examplelaravel "Ruta para Guardar Nota"
     
@@ -515,9 +579,11 @@ Al igual que en el caso anterior, para guardar la nota necesitamos dos cosas. Un
     Route::post('/notes/store', [NoteController::class, 'store'])->name('notes.store'); 
     ```
 
-**Controlador:**
+**2) Controlador:**
 
-Para guardar la nota, podemos usar diferentes métodos. Aquí mostramos dos formas:
+Para guardar la nota, podemos usar diferentes métodos. 
+
+Aquí mostramos dos formas:
 
 ???+examplelaravel "Guardar Nota"
     
@@ -533,7 +599,7 @@ Para guardar la nota, podemos usar diferentes métodos. Aquí mostramos dos form
     } 
     ```
     
-    🔝 Utilizando el método `create`:
+    🔝 Mejor utilizando el método `create`:
         
     ``` 
     public function store(Request $request) {     
@@ -558,9 +624,9 @@ Para guardar la nota, podemos usar diferentes métodos. Aquí mostramos dos form
 
 ---
 
-### 3.4. Editar una Nota
+### 3.5. Editar una Nota
 
-**Ruta para formulario de edición:**
+**1) Ruta para edición**
 
 ???+examplelaravel "Ruta para Editar Nota"
     
@@ -568,7 +634,7 @@ Para guardar la nota, podemos usar diferentes métodos. Aquí mostramos dos form
     Route::get('/notes/edit/{note}', [NoteController::class, 'edit'])->name('notes.edit');
     ```
 
-**Controlador:**
+**2) Controlador:**
 
 Tenemos varias formas de recibir el parámetro `note`. En esta primer recibimos el ID y buscamos la nota, para poder pasarla a la vista:
 
@@ -589,19 +655,19 @@ Tenemos varias formas de recibir el parámetro `note`. En esta primer recibimos 
     } 
     ```
 
-**Vista `resources/views/notes/edit.blade.php`:**
+**3) Vista de Editar `resources/views/notes/edit.blade.php`:**
 
 En este caso la ruta la hemos definido con el método `PUT`. Este método es el que se utiliza para actualizar los datos de un recurso existente. Pero ¿cómo hacerlo si las opciones de `form` solo permiten `GET` y `POST`?. Laravel nos ofrece una solución sencilla: la directiva `@method('PUT')`. Esta directiva simula el método PUT en formularios HTML. Esta directiva debe estar dentro del formulario y antes de los inputs.
 
-Ejemplo para Editar Nota:
+???+teolaravel "Ejemplo para Editar Nota"
 
-```
-<form id="sample-form" action="somepage.php" method="POST">     
-@csrf     
-@method('PUT')
-    <!-- Otros campos del formulario --> 
-</form> 
-```
+    ```
+    <form id="sample-form" action="somepage.php" method="POST">     
+    @csrf     
+    @method('PUT')
+        <!-- Otros campos del formulario --> 
+    </form> 
+    ```
 
 Con este formato el formulario se enviará como un PUT, aunque el método del formulario sea POST.
 
@@ -610,7 +676,7 @@ Con este formato el formulario se enviará como un PUT, aunque el método del fo
     ``` 
     @extends('layouts.app')
 
-    @section('title', 'Crear Nota')
+    @section('title', 'Editar Nota')
 
     @section('content')
         <h1>EDITAR NOTA {{ $note->id }}</h1>
@@ -639,7 +705,7 @@ Con este formato el formulario se enviará como un PUT, aunque el método del fo
                     </tr>
                     <tr>
                         <td><label for="date_at">Fecha:</label></td>
-                        <td><input type="date" id="date" name="date_at" value="{{ $note->date_at }}" required></td>
+                        <td><input type="date" id="date" name="date_at" value="{{ $note->date_at) }}" required></td>
                     </tr>
                     <tr>
                         <td><label for="done">Completada:</label></td>
@@ -664,9 +730,9 @@ Con este formato el formulario se enviará como un PUT, aunque el método del fo
 
 ---
 
-### 3.5. Actualizar la Nota
+### 3.6. Actualizar la Nota
 
-**Ruta para actualizar:**
+**1) Ruta para actualizar:**
 
 ???+examplelaravel "Ruta para Actualizar Nota"
     
@@ -674,7 +740,7 @@ Con este formato el formulario se enviará como un PUT, aunque el método del fo
     Route::put('/notes/update/{note}', [NoteController::class, 'update'])->name('notes.update'); 
     ```
 
-**Controlador:**
+**2) Controlador:**
 
 En este caso también tenemos dos formas de recibir el parámetro `Note $note`. En esta primer caso recibimos la *nota* y `laravel` por inyección de modelo la busca por nosotros y en el segundo caso recibimos el *ID* y buscamos la nota nosotros.
 
@@ -698,82 +764,9 @@ En este caso también tenemos dos formas de recibir el parámetro `Note $note`. 
 
 ---
 
-### 3.6. Mostrar una Nota Individual
-
-**Ruta para mostrar:**
-
-???+examplelaravel "Ruta para Mostrar Nota"
-    
-    ```
-    Route::get('/notes/show/{note}', [NoteController::class, 'show'])->name('notes.show');
-    ```
-
-**Controlador:**
-
-En este caso también tenemos dos formas de recibir el parámetro `Note $note`. En esta primer caso recibimos la *nota* y `laravel` por inyección de modelo la busca por nosotros y en el segundo caso recibimos el *ID* y buscamos la nota nosotros.
-
-???+examplelaravel "método `show`"
-
-    - 🔝 Por inyección de modelo:
-    
-    ``` 
-    public function show(Note $note) {     
-        return view('notes.show', compact('note')); 
-    } 
-    ```
-
-    - Buscando por ID:   
-
-    ``` 
-    public function show($id) {     
-        $note = Note::findOrFail($id);     
-        return view('notes.show', compact('note')); 
-    } 
-    ```
-
-
-
-**Vista `resources/views/notes/show.blade.php` actualizada:**
-
-???+examplelaravel "Mostrar Nota"
-    
-    ``` 
-    @extends('layouts.app')
-
-    @section('title', "nota $note->id")
-
-    @section('content')
-        <h1>nota {{ $note->id }}</h1>
-
-        <table>
-        <tbody>
-            <tr>
-                <td>título</td>
-                <td>{{ $note->title }}</td>
-            </tr>
-            <tr>
-                <td>descripción</td>
-                <td>{{ $note->description }}</td>
-            </tr>
-            <tr>
-                <td>fecha</td>
-                <td>{{ $note->date_at }}</td>
-            </tr>
-            <tr>
-                <td>realizada</td>
-                <td>{{ $note->done ? 'checked' : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
-    <a href="{{ route('notes.index') }}"> <--Volver </a>
-    @endsection
-    ```
-
----
-
 ### 3.7. Eliminar una Nota
 
-**Ruta para eliminar:**
+**1) Ruta para eliminar:**
 
 ???+examplelaravel "Ruta para Eliminar Nota"
     
@@ -781,7 +774,7 @@ En este caso también tenemos dos formas de recibir el parámetro `Note $note`. 
     Route::delete('/notes/destroy/{note}', [NoteController::class, 'destroy'])->name('notes.destroy');
     ```
 
-**Controlador:**
+**2) Controlador:**
 
 Como en los casos anteriores, tenemos dos formas de recibir el parámetro `Note $note`. En esta primer caso recibimos la *nota* y `laravel` por inyección de modelo la busca por nosotros y en el segundo caso recibimos el *ID* y buscamos la nota nosotros.
 
@@ -813,105 +806,93 @@ Ahora vamos probar todas las funcionalidades del CRUD:
 > Al no utilizar nada de CSS, el aspecto es muy básico. En un proyecto real, se debería aplicar estilos CSS para mejorar la apariencia y usabilidad.
 
 1) **Listar Notas:** Accede a la ruta `/` para ver el listado de notas.
-
-???examplelaravel "Captura imagen de: `/note`"
     
-    <div class="figure-center">
-    <figure>
-        <img src="../../img/pru/laravel_vista_notes.png"
-                 alt="vista /notes/index.blade.php"
-                 class="figure-img-highlight" />
-        <figcaption class="figure-caption-small">
-              vista /notes/index.blade.php
-        </figcaption>
-    </figure>
-    </div>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_vista_index1.png"
+                alt="vista /notes/index.blade.php"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            vista /notes/index.blade.php
+    </figcaption>
+</figure>
+</div>
 
 2) **Crear Nota:** Haz clic en el botón "*Añadir Nota*", rellena el formulario y envíalo.
 
 Al hacer click en "*Añadir Nota*" se accede a `/notes/create`:
-
-???examplelaravel "Captura imagen de: `/notes/create`"
     
-    <div class="figure-center">
-    <figure>
-        <img src="../../img/pru/laravel_vista_create2.png"
-                 alt="vista /notes/create.blade.php"
-                 class="figure-img-highlight" />
-        <figcaption class="figure-caption-small">
-              vista /notes/create.blade.php
-        </figcaption>
-    </figure>
-    </div>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_vista_create2.png"
+                alt="vista /notes/create.blade.php"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            vista /notes/create.blade.php
+    </figcaption>
+</figure>
+</div>
 
-   Una vez rellenado el formulario lo enviamos al servidor (ruta `/notes/store`) y volvemos al listado de notas.
-
-???examplelaravel "Captura imagen después de añadir nota de: `/note`"
+Una vez rellenado el formulario lo enviamos al servidor (ruta `/notes/store`) y volvemos al listado de notas.
     
-    <div class="figure-center">
-    <figure>
-        <img src="../../img/pru/laravel_vista_create3.png"
-                 alt="vista /notes/index.blade.php"
-                 class="figure-img-highlight" />
-        <figcaption class="figure-caption-small">
-              vista /notes/index.blade.php después de añadir una nueva nota.
-        </figcaption>
-    </figure>
-    </div>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_vista_create3.png"
+                alt="vista /notes/index.blade.php"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            vista /notes/index.blade.php después de añadir una nueva nota.
+    </figcaption>
+</figure>
+</div>
 
    Podemos ver la nota creada y como aparecen los enlaces para editar y eliminar.
 
 3) **Editar Nota:** Haz clic en "Editar" junto a una nota, modifica los datos y envía el formulario.
 
-   Al hacer click en "Editar" se accede a `/notes/edit/{id}`:
-
-???examplelaravel "Captura imagen de: `/notes/edit/5`"
+Al hacer click en "Editar" se accede a `/notes/edit/{id}`:
     
-    <div class="figure-center">
-    <figure>
-        <img src="../../img/pru/laravel_vista_edit1.png"
-                 alt="vista /notes/edit.blade.php"
-                 class="figure-img-highlight" 
-                 style="max-width: 70%; height: auto;" />
-        <figcaption class="figure-caption-small">
-              vista /notes/edit.blade.php
-        </figcaption>
-    </figure>
-    </div>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_vista_edit1.png"
+                alt="vista /notes/edit.blade.php"
+                class="figure-img-highlight" 
+                style="max-width: 85%; height: auto;" />
+    <figcaption class="figure-caption-small">
+            vista /notes/edit.blade.php
+    </figcaption>
+</figure>
+</div>
 
-   Una vez modificado el formulario lo enviamos al servidor (ruta `/notes/update/{id}`) que actualiza la nota y nos redirecciona al listado de notas.
-
-???examplelaravel "Captura imagen después de editar de: `/note`"
+Una vez modificado el formulario lo enviamos al servidor (ruta `/notes/update/{id}`) que actualiza la nota y nos redirecciona al listado de notas.
     
-    <div class="figure-center">
-    <figure>
-        <img src="../../img/pru/laravel_vista_edit2.png"
-                 alt="vista /notes/index.blade.php"
-                 class="figure-img-highlight" />
-        <figcaption class="figure-caption-small">
-              vista /notes/index.blade.php después de modificar la nota 5
-        </figcaption>
-    </figure>
-    </div>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_vista_edit2.png"
+                alt="vista /notes/index.blade.php"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            vista /notes/index.blade.php después de modificar la nota 5
+    </figcaption>
+</figure>
+</div>
 
-4) **Mostrar Nota:** Haz clic en el título de una nota para ver sus detalles.
+1) **Mostrar Nota:** Haz clic en el título de una nota para ver sus detalles.
 
-   Al hacer click en el título de una nota se accede a `/notes/show/{id}`:
-
-???examplelaravel "Captura imagen de: `/notes/show/7`"
+Al hacer click en el título de una nota se accede a `/notes/show/{id}`:
     
-    <div class="figure-center">
-    <figure>
-        <img src="../../img/pru/laravel_vista_show2.png"
-                 alt="vista /notes/show.blade.php"
-                 class="figure-img-highlight" />
-        <figcaption class="figure-caption-small">
-              vista /notes/show.blade.php de la nota 7
-        </figcaption>
-    </figure>
-    </div>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_vista_show2.png"
+                alt="vista /notes/show.blade.php"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            vista /notes/show.blade.php de la nota 7
+    </figcaption>
+</figure>
+</div>
 
-   Una vez vista pulsamos volver y nos redirecciona al listado de notas.
+Una vez vista pulsamos volver y nos redirecciona al listado de notas.
 
 5) **Eliminar Nota:** Haz clic en "*Eliminar*" junto a una nota.
    
@@ -970,40 +951,38 @@ Al hacer click en "*Añadir Nota*" se accede a `/notes/create`:
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     ```
 
-???examplelaravel "Captura imagen de eliminación de la nota 6"
-    
-    <div class="figure-center">
-    <figure>
-        <img src="../../img/pru/laravel_vista_destroy1.png"
-                 alt="vista /notes/destroy.blade.php"
-                 class="figure-img-highlight" />
-        <figcaption class="figure-caption-small">
-              vista /notes/destory.blade.php de la eliminación de la nota 6
-        </figcaption>
-    </figure>
-    </div>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_vista_destroy1.png"
+                alt="vista /notes/destroy.blade.php"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            vista /notes/destory.blade.php de la eliminación de la nota 6
+    </figcaption>
+</figure>
+</div>
 
-    <div class="figure-center">
-    <figure>
-        <img src="../../img/pru/laravel_vista_destroy2.png"
-                 alt="vista /notes/index.blade.php"
-                 class="figure-img-highlight" />
-        <figcaption class="figure-caption-small">
-              vista /notes/index.blade.php después de la eliminación de la nota 6
-        </figcaption>
-    </figure>
-    </div>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_vista_destroy2.png"
+                alt="vista /notes/index.blade.php"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            vista /notes/index.blade.php después de la eliminación de la nota 6
+    </figcaption>
+</figure>
+</div>
 
 ### 3.9. Tipado en los métodos del controlador
 
-**Ejemplo de tipado correcto:**
+???+teolaravel "Ejemplo de tipado correcto:"
 
-``` 
-public function update(Request $request, Note $note): RedirectResponse {     
-   $note->update($request->all());     
-   return redirect()->route('notes.index'); 
-} 
-```
+    ``` 
+    public function update(Request $request, Note $note): RedirectResponse {     
+        $note->update($request->all());     
+        return redirect()->route('notes.index'); 
+    } 
+    ```
 
 * Tipar los parámetros mejora la legibilidad y control de errores.
 * Tipar el tipo de retorno ayuda a Laravel a validar internamente las respuestas.
@@ -1018,13 +997,15 @@ public function update(Request $request, Note $note): RedirectResponse {
 ---
 ???questionlaravel "Práctica a Entregar"
     
-    ### Objetivo de la actividad: Desarrollo de un CRUD de Productos
+    ### Objetivo de la actividad
     
     <p style="float: left; margin-left: 1rem;">
         <img src="../../img/laraveltask.svg"
              alt="Actividad en el aula virtual"
              width="150">
     </p>
+    
+    **Desarrollo de un CRUD de Productos**
     
     El objetivo de esta práctica es aprender a **aplicar formularios, rutas, controladores y vistas** en Laravel para desarrollar un **CRUD completo para el recurso `Product`**.
     
@@ -1077,7 +1058,7 @@ public function update(Request $request, Note $note): RedirectResponse {
     | `name` | `string(255)` | Nombre del producto, no nulo |
     | `description` | `text` | Descripción del producto |
     | `price` | `decimal(8,2)` | Precio del producto, no nulo |
-    | `stock` | `integer` | Cantidad en stock, no nulo |
+    | `stock` | `integer` | Cantidad en stock, no nulo, por defecto 0 |
     | `created_at` | `timestamp` | Fecha de creación (automático) |
     | `updated_at` | `timestamp` | Fecha de actualización (automático) |
     
@@ -1138,14 +1119,18 @@ public function update(Request $request, Note $note): RedirectResponse {
     Agrega esta línea:
     
     ```
-    Route::resource('product', ProductController::class);
+    //...
+    use App\Http\Controllers\ProductController;
+
+    //...
+    Route::resource('products', ProductController::class);
     ```
     
     Esto creará las rutas necesarias para manejar las operaciones CRUD para el recurso `Product`.
     
     2)   **Verifica que las rutas se han registrado correctamente.**
     
-    Usa el comando `php artisan route:list --path=product` para asegurarte de que las rutas están definidas correctamente.
+    Usa el comando `php artisan route:list --path=products` para asegurarte de que las rutas están definidas correctamente.
     
     ---
     
@@ -1185,7 +1170,7 @@ public function update(Request $request, Note $note): RedirectResponse {
     
     ### 7. CSS (opcional)
     
-    Puedes mejorar la apariencia de tu aplicación utilizando CSS (ejemplo de estilos: [`style1.css`](../sources/style1.css){:target="blank"}). Puedes crear un archivo CSS para la vista `index.blade.php` y otro para los formularios `create.blade.php`, `edit.blade.php` y `show.blade.php`. 
+    Puedes crear un archivo CSS para la vista `index.blade.php` y otro para los formularios `create.blade.php`, `edit.blade.php` y `show.blade.php`. 
 
     > Recuerda:
     > 
