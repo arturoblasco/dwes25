@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Animations */
+.md-typeset details[open] > summary ~ * {
+  animation: fadeIn 0.9s ease-in-out;
+}
+
+
 /*
  * admonittion:  ies
 *                institut
@@ -222,6 +232,35 @@
 }
 
 
+/* docs/assets/stylesheets/admonitions.css */
+
+/* Custom admonition colors */
+.md-typeset .admonition.custom {
+  border-color: #7c4dff;
+}
+
+.md-typeset .custom > .admonition-title {
+  background-color: #7c4dff1a;
+  border-color: #7c4dff;
+}
+
+.md-typeset .custom > .admonition-title::before {
+  background-color: #7c4dff;
+  content: "✨";
+}
+
+/* Modify existing types */
+.md-typeset .admonition.note {
+  font-size: 0.9rem;
+}
+
+/* Animations */
+.md-typeset details[open] > summary ~ * {
+  animation: fadeIn 0.9s ease-in-out;
+}
+
+
+
 /*
  * ABC. ancho de página completo
  */
@@ -255,44 +294,17 @@ font-size: 16px
 
 
 .center-table table th {
-  background-color: #f5d488; /* Cambia este color por el que prefieras */
-  color: #333; /* Opcional: Cambia el color del texto */
+  background-color: #f0d79e7a; 
+  color: #333; 
 }
-
-
-/* Alinear el icono de PDF junto al botón de modo oscuro */
-.md-header__source {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* Espaciado entre los elementos */
-}
-
-/* Ajustar el tamaño del icono de PDF */
-.md-header__button.md-icon[title="Descargar el PDF"] {
-  font-size: 22px;
-  color: red; /* Puedes cambiarlo a otro color */
-}
-
-/* Estilizar el hover del icono */
-.md-header__button.md-icon[title="Descargar el PDF"]:hover {
-  color: #ff9900; /* Cambia el color cuando el cursor pasa encima */
-}
-
-
 
 
 /* ABC. Cambiar el color de fondo de la tabla */
 .md-typeset table th {
-  /*background-color: #ffd453; /* Cambia este color */
-  background-color: #f0d583;
-  color: #383119; /* Cambia el color del texto si es necesario */
+  background-color: #f0d5837e;
+  color: #383119; 
   font-size: 1em;
 }
-
-/* .md-typeset table tr:hover td {
-  background-color: #f7b6ad;
-} */
-
 
 /* ABC - Estilos personalizados para citas (blockquote) */
 /* Cambiar color de texto */
@@ -311,14 +323,36 @@ font-size: 16px
 
 
 
-/* Cambiar color de fondo de los code inline (no de bloques grandes) */
-.md-typeset code {
-  background-color: #f6f1e1;  /* color de fondo personalizado */
-  color: #2b2b2b;             /* color del texto */
-  border-radius: 4px;         /* esquinas redondeadas */
-  padding: 0.15em 0.4em;      /* espacio interno */
-  font-size: 0.9em;
+/* Inline code */
+[data-md-color-scheme="default"] .md-typeset :not(pre) > code {
+  background-color: #f6f1e1;
+  color: #2b2b2b;
 }
+
+[data-md-color-scheme="slate"] .md-typeset :not(pre) > code {
+  background-color: #3a3a3a;
+  color: #f1f1f1;
+}
+
+/* Bloques de código */
+.md-typeset pre,
+.md-typeset .highlight {
+  border-left: none !important;
+  box-shadow: none !important;
+}
+
+/* Líneas resaltadas */
+.md-typeset .highlight .hll {
+  background-color: rgba(255, 193, 7, 0.25);
+}
+
+.md-typeset .highlight .hll::before {
+  display: none;
+}
+
+
+
+
 
 
 /* ABC - color fons de la zona pestanyes*/
@@ -332,9 +366,9 @@ font-size: 16px
 
 /* Subrayado en secciones principales */
 .md-typeset h2 {
-  color: #e6af0a;         /* texto del color primario */
+  color: #d6a309;         /* texto del color primario */
 /*   border-bottom: 2px solid #e6b213;   /* línea del mismo color */
-  border-bottom: 2px solid #e6af0a; 
+  border-bottom: 2px solid #d6a309; 
  */  padding-bottom: 0.1em;
   margin-bottom: 0.75em;
   font-weight: 500;                         /* opcional: más peso */
@@ -342,7 +376,10 @@ font-size: 16px
 
 .md-typeset h3 {
   color: #b49435;         /* texto del color primario */
+}
 
+.md-typeset h4 {
+  color: #917e46;         /* texto del color primario */
 }
 
 
@@ -366,3 +403,87 @@ font-size: 16px
     font-size: 13px;
     color: #bd8f04;
 }
+
+
+
+
+/* ABC - pàgina principal */
+/* ---------- CONTENEDOR GENERAL ---------- */
+.home-center {
+  text-align: center;
+}
+
+/* ---------- IMAGEN ---------- */
+.home-center img,
+.hero-image {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  animation: fadeUp 0.9s ease-out both;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  margin-top: 3rem;
+}
+
+/* ---------- BOTONES ---------- */
+.home-center .md-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.2rem;
+    top: -1.2rem;
+    padding: 0.5rem 1.2rem;
+  }
+}
+
+/* ---------- ICONOS EN BOTONES ---------- */
+.btn-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+/* ---------- ANIMACIÓN IMAGEN ---------- */
+.hero-image {
+  animation: fadeUp 0.9s ease-out both;
+}
+
+/* ---------- ANIMACIÓN ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- ICONOS SVG COMO IMG EN BOTONES ---------- */
+.md-button .btn-icon-img {
+  width: 1.1rem;          /* igual que .btn-icon */
+  height: 1.1rem;
+  margin-right: 0.5rem;
+  display: inline-block; /* CLAVE */
+  vertical-align: middle;
+  object-fit: contain;
+}
+/* fi pàgina principal*/
+
+
+

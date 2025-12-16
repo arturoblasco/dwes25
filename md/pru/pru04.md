@@ -66,13 +66,36 @@ Cuando la validación falla, Laravel redirige automáticamente al formulario ant
 
 | Regla | Descripción |
 | --- | --- |
+| **Presencia** |
 | `required` | El campo es obligatorio |
+| `nullable` | El campo puede estar vacío |
+| `sometimes` | Solo si existe |
+| **Tipo de dato** |
 | `string` | Debe ser una cadena de texto |
+| `integer` | Debe ser un entero |
+| `numeric` | Debe ser un decimal o entero |
+| `boolean` | true/false, 0/1, "yes"/"no" |
+| `date` | Debe ser una fecha válida |
+| `array` | Array |
+| **Longitud / tamaño** |
 | `min:n` | Longitud mínima de caracteres |
 | `max:n` | Longitud máxima de caracteres |
-| `date_at` | Debe ser una fecha válida |
-| `boolean` | true/false, 0/1, "yes"/"no" |
-| `nullable` | El campo puede estar vacío |
+| `size:n` | Tamaño exacto |
+| **Valores permitidos** |
+| `in:a,b,c` | Lista |
+| `not_in` | Exclusión |
+| **Formato** |
+| `email` | Email válido |
+| `url` | URL |
+| `regex` | Expresión regular |
+| **Base de datos** |
+| `unique:notes,title` | Único |
+| `exists:users,id` | Existe |
+| **Archivos** |
+| `file` | Archivo |
+| `image` | Imagen |
+| `mimes:jpg,png` | Extensión |
+| `max:2048` | Tamaño (KB) |
 
 ### 1.4. Crear una clase FormRequest personalizada
 
@@ -294,12 +317,16 @@ Algunos métodos interesantes de laravel que no hemos utilizado pero que se usan
 Ahora vamos a probar a crear una nota con una descripción inferir a los 10 caracteres y veremos el mensaje de error.
 
 
-![Validación de datos](https://jbeteta-ies.github.io/2025_Laravel_32/content/T07/img/img01.png){ width=400px }
-
-Ahora corregimos el error y vemos que la nota se crea correctamente. Además nos aparece un mensaje de éxito.
-
-
-![Validación de datos](https://jbeteta-ies.github.io/2025_Laravel_32/content/T07/img/img02.png){ width=400px }
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_p4_002.png"
+                alt="mostrar error de validación campo `descripción`.php"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            mostrar error de validación campo `descripción`
+    </figcaption>
+</figure>
+</div>
 
 Ahora podéis comprobar que:
 
@@ -348,25 +375,29 @@ Laravel trae sus mensajes de error por defecto en inglés.
 3) Puedes crear una versión en español copiando el contenido en: `resources/lang/es/validation.php`
 ```php
 <?php
-
 return [
-
     'required' => 'El campo :attribute es obligatorio.',
     'string' => 'El campo :attribute debe ser una cadena de texto.',
+    'date' => 'El campo :attribute no es una fecha válida.',
+    'boolean' => 'El campo :attribute debe ser verdadero o falso.',
+    'numeric' => 'El campo :attribute debe ser numérico',
+
     'max' => [
+        'numeric' => 'El campo :attribute debe como máximo :max.',
         'string' => 'El campo :attribute no puede tener más de :max caracteres.',
     ],
     'min' => [
         'string' => 'El campo :attribute debe tener al menos :min caracteres.',
+        'numeric' => 'El campo :attribute debe como valor mínimo :min.',
     ],
-    'date' => 'El campo :attribute no es una fecha válida.',
-    'boolean' => 'El campo :attribute debe ser verdadero o falso.',
 
     'attributes' => [
         'title' => 'título',
         'description' => 'descripción',
         'date_at' => 'fecha',
         'done' => 'realizada',
+        'name' => 'nombre',
+        'price' => 'precio'
     ],
 ];
 ```
@@ -443,6 +474,18 @@ Este método permite guardar un mensaje en la sesión que se mostrará en la sig
     ```
     @include('partials.messages')
     ```
+
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_p4_003.png"
+                alt="mostrar mensaje de éxito.php"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            mostrar mensaje de éxito de creación correcta
+    </figcaption>
+</figure>
+</div>
+
 
 ## 4. Rutas Resource
 

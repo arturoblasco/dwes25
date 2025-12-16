@@ -5,11 +5,10 @@
 <p style="float: left; margin-left: 1rem;">
   <img src="../../img/laravel.svg"
        alt="Actividad en el aula virtual"
-       width="100">
+       width="70">
 </p>
 
 En **Laravel 12**, a diferencia de versiones anteriores, el archivo `routes/api.php` **no viene incluido por defecto**. Laravel ahora permite habilitarlo opcionalmente para mantener la aplicación más ligera si no vas a construir una API.
-
 
 
 ### Activar el sistema de rutas API
@@ -34,7 +33,8 @@ En el proceso nos puede pedir crear una nueva migración para la tabla `api_toke
 <figure>
     <img src="../../img/pru/laravel_apirest005.png"
                 alt="Instalación soporte para rutas API"
-                class="figure-img-highlight" />
+                class="figure-img-highlight" 
+                style="max-width: 75%; height: auto;" />
     <figcaption class="figure-caption-small">
             Instalación soporte para rutas API
     </figcaption>
@@ -45,7 +45,8 @@ En el proceso nos puede pedir crear una nueva migración para la tabla `api_toke
 <figure>
     <img src="../../img/pru/laravel_apirest006.png"
                 alt="Pregunta de creación de tabla `api-tokens`"
-                class="figure-img-highlight" />
+                class="figure-img-highlight" 
+                style="max-width: 75%; height: auto;" />
     <figcaption class="figure-caption-small">
             Pregunta de creación de tabla `api-tokens`
     </figcaption>
@@ -57,19 +58,21 @@ En el proceso nos puede pedir crear una nueva migración para la tabla `api_toke
 Laravel configura los archivos de rutas en `bootstrap/app.php`. Una vez activadas, podrás ver una línea como esta:
 
 **Registro de rutas API con prefijo**
-``` 
+```  hl_lines="3"
 ->withRouting(     
     api: __DIR__.'/../routes/api.php',     
     apiPrefix: 'api',     // ... 
 ) 
 ```
 
-!!!tip "Parámetro `apiPrefix`"
+**Parámetro `apiPrefix`**
 
-    Laravel no añade este prefijo automáticamente, pero su valor por defecto es `api`. Por tanto añadir esta línea o no es equivalente. Pero yo recomiendo ponerla explícitamente para tener claro que las rutas de `api.php` van con el prefijo `/api`.
+Laravel no añade este prefijo automáticamente, pero su valor por defecto es `api`. Por tanto añadir esta línea o no es equivalente. 
+
+Se recomienda ponerla explícitamente para tener claro que las rutas de `api.php` van con el prefijo `/api`.
 
 
-???info "Personalizar prefijo de rutas API"
+???teolaravel "Personalizar prefijo de rutas API"
     Si quieres cambiar el prefijo, por ejemplo a `api/admin`, puedes modificar la clave `apiPrefix`:
     ``` 
     ->withRouting(     
@@ -84,10 +87,9 @@ Laravel configura los archivos de rutas en `bootstrap/app.php`. Una vez activada
     El archivo `web.php` sigue existiendo por defecto y está pensado para rutas que devuelven vistas HTML. Por tanto, recuerda usar `api.php` exclusivamente para tu API REST.
     El `middleware` de laravel ya busca las rutas en el archivo correspondiente:
 
-    * `/api/...` -> `routes/api.php`
+    * **`/api/...`** -> `routes/api.php`
     * `/...` -> `routes/web.php`
 
----
 
 ## Introducción
 
@@ -95,7 +97,6 @@ Una **API** (Application Programming Interface) permite a aplicaciones diferente
 
 Laravel ofrece todas las herramientas necesarias para construir APIs modernas, organizadas y seguras. En este tema construiremos paso a paso una API para el recurso `Note`, que ya conocemos de los temas anteriores.
 
----
 
 ## Definir Rutas de API
 
@@ -113,7 +114,7 @@ Estas rutas están cargadas desde el archivo `app/Providers/RouteServiceProvider
 * Aplicar el prefijo `/api` automáticamente a las rutas definidas en `api.php`.
 * Asignar middleware `api`, que aplica limitaciones como throttling, formato JSON, etc.
 
-!!!info "Ejemplo del prefijo automático (`routes/api.php`)"
+!!!teolaravel "Ejemplo del prefijo automático (`routes/api.php`)"
     ``` 
     Route::get('/notes', function () {     
         return ['mensaje' => 'Esta es la API de notas']; 
@@ -128,7 +129,11 @@ Hay que fijarse que **no es necesario añadir `/api` en la ruta**, Laravel lo a�
 
 ## Crear Controlador para la API
 
-Antes de generar el controlador asegurarnos que tenemos create la table de notas `notes` en nuestra base de datos. En caso de no tenerla, podemos crearla con el siguiente comando:
+### Generar un controlador API (Opcional)
+
+> Este punto solo se realizará si todavía no tenemos creada la table de notas `notes` en nuestra base de datos. 
+
+En caso de no tener la tabla creada, podemos crearla con el siguiente comando:
 
 ???+examplelaravel "Crear migración para tabla notes"
 
@@ -575,12 +580,14 @@ De esta manera, la respuesta incluirá el estado y el mensaje de éxito. Vamos a
 <figure>
     <img src="../../img/pru/laravel_apirest009.png"
                 alt="Respuesta GET con `NoteResource`"
-                class="figure-img-highlight" />
+                class="figure-img-highlight" 
+                style="max-width: 65%; height: auto;" />
     <figcaption class="figure-caption-small">
             Respuesta GET con `NoteResource`
     </figcaption>
 </figure>
 </div>
+
 
 En los demás métodos no devolvemos una colección sino un solo elemento. Por ello por ejemplo para el método `show()` podemos hacer lo siguiente:
 
@@ -595,13 +602,12 @@ En los demás métodos no devolvemos una colección sino un solo elemento. Por e
     } 
     ```
 
-
-
 <div class="figure-center">
 <figure>
     <img src="../../img/pru/laravel_apirest010.png"
                 alt="Respuesta GET /api/notes/{id} con `NoteResource`"
-                class="figure-img-highlight" />
+                class="figure-img-highlight" 
+                style="max-width: 55%; height: auto;" />
     <figcaption class="figure-caption-small">
             Respuesta GET /api/notes/{id} con `NoteResource`
     </figcaption>
