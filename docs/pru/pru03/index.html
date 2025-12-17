@@ -3643,7 +3643,8 @@
 <p>Crear un layout base en la ruta <code>resources/views/layouts/app.blade.php</code>:</p>
 <details class="examplelaravel" open="open">
 <summary>Layout</summary>
-<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt; 
+</details>
+<p><div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt; 
 &lt;html lang=&quot;es&quot;&gt; 
     &lt;head&gt;     
         &lt;meta charset=&quot;UTF-8&quot;&gt;     
@@ -3664,8 +3665,7 @@
 &lt;/body&gt; 
 &lt;/html&gt;
 </code></pre></div>
-</details>
-<p>De esta plantilla <code>app.blade.php</code> observamos:</p>
+De esta plantilla <code>app.blade.php</code> observamos:</p>
 <ul>
 <li>Tiene dos referencias <code>@yield</code> que después, en la vista que extienda, deberemos hacer referencia con su correspondiente <code>@section</code>.</li>
 <li>Tiene una hoja de estilo que apunta a un fichero <code>style1.css</code> de la carpeta pública <code>assets/img/</code> (se utiliza <code>{{ asset('assets/css/style1.css') }}</code>).</li>

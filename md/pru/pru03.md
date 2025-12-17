@@ -38,28 +38,28 @@ Antes de crear nuestras tablas, modelos, controladores y rutas, vamos a diseñar
 Crear un layout base en la ruta `resources/views/layouts/app.blade.php`:
 ???+examplelaravel "Layout"
     
-    ``` 
-    <!DOCTYPE html> 
-    <html lang="es"> 
-        <head>     
-            <meta charset="UTF-8">     
-            <title>
-                @yield('title')
-            </title> 
-            <link rel="stylesheet" href="{{ asset('assets/css/style1.css') }}">
-        </head> 
-    <body>     
-        <header>         
-            <h1>Mi Aplicación de Notas</h1>         
-            @include('partials.nav')
-        </header>     
-        <main>         
-            @yield('content')     
-        </main>
-        @stack('scripts)
-    </body> 
-    </html>
-    ```
+```
+<!DOCTYPE html> 
+<html lang="es"> 
+    <head>     
+        <meta charset="UTF-8">     
+        <title>
+            @yield('title')
+        </title> 
+        <link rel="stylesheet" href="{{ asset('assets/css/style1.css') }}">
+    </head> 
+<body>     
+    <header>         
+        <h1>Mi Aplicación de Notas</h1>         
+        @include('partials.nav')
+    </header>     
+    <main>         
+        @yield('content')     
+    </main>
+    @stack('scripts)
+</body> 
+</html>
+```
 De esta plantilla `app.blade.php` observamos:
 
 - Tiene dos referencias `@yield` que después, en la vista que extienda, deberemos hacer referencia con su correspondiente `@section`.

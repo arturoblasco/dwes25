@@ -3983,6 +3983,35 @@
 
 
 <h1 id="5-creacion-de-apis-rest-en-laravel">5. Creación de APIs REST en Laravel<a class="headerlink" href="#5-creacion-de-apis-rest-en-laravel" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>  <span class="c1"># (1)!</span>
+
+<span class="c1"># Call the function</span>
+<span class="n">greet</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">)</span>  <span class="c1"># (2)!</span>
+</code></pre></div>
+<ol>
+<li>This creates a personalized greeting</li>
+<li>Output: Hello, World!</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>  <span class="c1"># (1)!</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://api.github.com&quot;</span><span class="p">)</span>  <span class="c1"># (2)!</span>
+</code></pre></div>
+<ol>
+<li>:material-package-down: Install with <code>pip install requests</code></li>
+<li>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
+<p>Always handle exceptions when making HTTP requests:
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+</ol>
 <h2 id="rutas-api">Rutas API<a class="headerlink" href="#rutas-api" title="Permanent link">&para;</a></h2>
 <p style="float: left; margin-left: 1rem;">
   <img src="../../img/laravel.svg"
@@ -4011,7 +4040,7 @@
     <img src="../../img/pru/laravel_apirest005.png"
                 alt="Instalación soporte para rutas API"
                 class="figure-img-highlight" 
-                style="max-width: 75%; height: auto;" />
+                style="max-width: 60%; height: auto;" />
     <figcaption class="figure-caption-small">
             Instalación soporte para rutas API
     </figcaption>
@@ -4023,7 +4052,7 @@
     <img src="../../img/pru/laravel_apirest006.png"
                 alt="Pregunta de creación de tabla `api-tokens`"
                 class="figure-img-highlight" 
-                style="max-width: 75%; height: auto;" />
+                style="max-width: 65%; height: auto;" />
     <figcaption class="figure-caption-small">
             Pregunta de creación de tabla `api-tokens`
     </figcaption>
@@ -4095,7 +4124,18 @@ El <code>middleware</code> de laravel ya busca las rutas en el archivo correspon
     return [&#39;mensaje&#39; =&gt; &#39;Esta es la API de notas&#39;]; 
 }); 
 </code></pre></div>
-<p>Accediendo a <code>http://localhost:8000/api/notes</code>, obtendrás: <code>{ "mensaje": "Esta es la API de notas" }</code></p>
+<p>Accediendo a <code>http://testear.test/api/notes</code>, obtendrás: <code>{ "mensaje": "Esta es la API de notas" }</code></p>
+<p><div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_apirest006b.png"
+                alt="Respuesta GET /api/notes"
+                class="figure-img-highlight" 
+                style="max-width: 90%; height: auto;" />
+    <figcaption class="figure-caption-small">
+            Respuesta GET /api/notes
+    </figcaption>
+</figure>
+</div></p>
 </div>
 <p>Hay que fijarse que <strong>no es necesario añadir <code>/api</code> en la ruta</strong>, Laravel lo añade automáticamente. Pero sí hay que ponerlo en las peticiones.</p>
 <hr />
@@ -4124,7 +4164,7 @@ class CreateNotesTable extends Migration {
             $table-&gt;id();             
             $table-&gt;string(&#39;title&#39;);             
             $table-&gt;text(&#39;description&#39;);             
-            $table-&gt;date(&#39;date&#39;);             
+            $table-&gt;date(&#39;date_at&#39;);             
             $table-&gt;boolean(&#39;done&#39;)-&gt;default(false);             
             $table-&gt;timestamps();         
         });     
@@ -4236,9 +4276,9 @@ Route::apiResource(&#39;notes&#39;, NoteController::class);
 <h3 id="modelo-note">Modelo Note<a class="headerlink" href="#modelo-note" title="Permanent link">&para;</a></h3>
 <p>Asegúrate de que el modelo <code>Note</code> está correctamente definido con <code>$fillable</code>:</p>
 <details class="examplelaravel" open="open">
-<summary>Modelo Note con fillable</summary>
+<summary>Modelo Note con $fillable</summary>
 <div class="highlight"><pre><span></span><code>class Note extends Model {     
-    protected $fillable = [&#39;title&#39;, &#39;description&#39;, &#39;date&#39;, &#39;done&#39;]; 
+    protected $fillable = [&#39;title&#39;, &#39;description&#39;, &#39;date_at&#39;, &#39;done&#39;]; 
 } 
 </code></pre></div>
 </details>
@@ -4371,13 +4411,14 @@ use Illuminate\Http\Request;
 <h3 id="metodo-destroy-eliminar-nota">Método <code>destroy()</code> – Eliminar nota<a class="headerlink" href="#metodo-destroy-eliminar-nota" title="Permanent link">&para;</a></h3>
 <div class="admonition examplelaravel">
 <p class="admonition-title">Eliminar una nota</p>
-<p><code>public function destroy(Note $note): JsonResponse {     
-$note-&gt;delete();    
-return response()-&gt;json([         
-                    'success' =&gt; true,         
-                    'message' =&gt; 'Nota eliminada correctamente.'     
-                    ], 200); 
-}</code></p>
+<div class="highlight"><pre><span></span><code>public function destroy(Note $note): JsonResponse {     
+    $note-&gt;delete();    
+    return response()-&gt;json([         
+                        &#39;success&#39; =&gt; true,         
+                        &#39;message&#39; =&gt; &#39;Nota eliminada correctamente.&#39;     
+                        ], 200); 
+} 
+</code></pre></div>
 </div>
 <hr />
 <h3 id="testing-de-la-api">Testing de la API<a class="headerlink" href="#testing-de-la-api" title="Permanent link">&para;</a></h3>
@@ -4395,9 +4436,10 @@ GET http://testear.test/api/note
 Para lanzar la petición, sitúate en la línea <code>GET ...</code> y pulsa el botón <code>Send Request</code> que aparece encima.</p>
 <div class="figure-center">
 <figure>
-    <img src="../../img/pru/laravel_apirest001.png"
+    <img src="../../img/pru/laravel_apirest011.png"
                 alt="Petición GET y Respuesta GET"
-                class="figure-img-highlight" />
+                class="figure-img-highlight" 
+                style="max-width: 55%; height: auto;" />
     <figcaption class="figure-caption-small">
             Petición GET y Respuesta GET
     </figcaption>
@@ -4672,6 +4714,17 @@ $request-&gt;all();
 <p>Recordemos que si <code>role</code> no está en <code>$fillable</code> en el modelo, no se asignará de todas formas. Pero es una buena práctica usar <code>validated()</code> para asegurarnos de que sólo los datos permitidos se procesan.</p>
 <h2 id="ejemplos-de-peticiones">Ejemplos de peticiones<a class="headerlink" href="#ejemplos-de-peticiones" title="Permanent link">&para;</a></h2>
 <p>Si todo ha ido bien aquí tenemos una API REST completa para el recurso <code>Note</code> que podemos probar con herramientas como <code>Postman</code> o <code>RestClient</code>:</p>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_apirest011.png"
+                alt="Extensión RestClient para Visual Studio Code"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            Extensión RestClient para Visual Studio Code
+    </figcaption>
+</figure>
+</div>
+
 <p>Ejemplo uso de <code>api</code>con API <strong>RestClient</strong>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">GET api/note</label><label for="__tabbed_1_2">POST api/note</label><label for="__tabbed_1_3">PUT api/note/{id}</label><label for="__tabbed_1_4">GET api/note/{id}</label><label for="__tabbed_1_5">DELETE api/note/{id}</label></div>
 <div class="tabbed-content">

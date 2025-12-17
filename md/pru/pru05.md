@@ -1,5 +1,38 @@
 # 5. Creación de APIs REST en Laravel
 
+```python
+def greet(name):
+    print(f"Hello, {name}!")  # (1)!
+
+# Call the function
+greet("World")  # (2)!
+```
+
+1. This creates a personalized greeting
+2. Output: Hello, World!
+
+
+```python
+import requests  # (1)!
+
+response = requests.get("https://api.github.com")  # (2)!
+```
+
+1. :material-package-down: Install with `pip install requests`
+2. !!! warning
+    
+    Always handle exceptions when making HTTP requests:
+    ```python
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+    except requests.RequestException as e:
+        print(f"Error: {e}")
+    ```
+
+
+
+
 ## Rutas API
 
 <p style="float: left; margin-left: 1rem;">
@@ -34,7 +67,7 @@ En el proceso nos puede pedir crear una nueva migración para la tabla `api_toke
     <img src="../../img/pru/laravel_apirest005.png"
                 alt="Instalación soporte para rutas API"
                 class="figure-img-highlight" 
-                style="max-width: 75%; height: auto;" />
+                style="max-width: 60%; height: auto;" />
     <figcaption class="figure-caption-small">
             Instalación soporte para rutas API
     </figcaption>
@@ -46,7 +79,7 @@ En el proceso nos puede pedir crear una nueva migración para la tabla `api_toke
     <img src="../../img/pru/laravel_apirest006.png"
                 alt="Pregunta de creación de tabla `api-tokens`"
                 class="figure-img-highlight" 
-                style="max-width: 75%; height: auto;" />
+                style="max-width: 65%; height: auto;" />
     <figcaption class="figure-caption-small">
             Pregunta de creación de tabla `api-tokens`
     </figcaption>
@@ -121,7 +154,19 @@ Estas rutas están cargadas desde el archivo `app/Providers/RouteServiceProvider
     }); 
     ```
 
-    Accediendo a `http://localhost:8000/api/notes`, obtendrás: `{ "mensaje": "Esta es la API de notas" }`
+    Accediendo a `http://testear.test/api/notes`, obtendrás: `{ "mensaje": "Esta es la API de notas" }`
+
+    <div class="figure-center">
+    <figure>
+        <img src="../../img/pru/laravel_apirest006b.png"
+                    alt="Respuesta GET /api/notes"
+                    class="figure-img-highlight" 
+                    style="max-width: 90%; height: auto;" />
+        <figcaption class="figure-caption-small">
+                Respuesta GET /api/notes
+        </figcaption>
+    </figure>
+    </div>
 
 Hay que fijarse que **no es necesario añadir `/api` en la ruta**, Laravel lo añade automáticamente. Pero sí hay que ponerlo en las peticiones.
 
@@ -158,7 +203,7 @@ Asegúrate de que la migración tenga el siguiente contenido:
                 $table->id();             
                 $table->string('title');             
                 $table->text('description');             
-                $table->date('date');             
+                $table->date('date_at');             
                 $table->boolean('done')->default(false);             
                 $table->timestamps();         
             });     
@@ -292,11 +337,11 @@ Resultado de `route:list`:
 
 Asegúrate de que el modelo `Note` está correctamente definido con `$fillable`:
 
-???+examplelaravel "Modelo Note con fillable"
+???+examplelaravel "Modelo Note con $fillable"
 
     ``` 
     class Note extends Model {     
-        protected $fillable = ['title', 'description', 'date', 'done']; 
+        protected $fillable = ['title', 'description', 'date_at', 'done']; 
     } 
     ```
 
@@ -399,15 +444,17 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
 ### Método `destroy()` – Eliminar nota
 
 !!!examplelaravel "Eliminar una nota"
-
-    ``` public function destroy(Note $note): JsonResponse {     
-    $note->delete();    
-    return response()->json([         
-                        'success' => true,         
-                        'message' => 'Nota eliminada correctamente.'     
-                        ], 200); 
+    
+    ``` 
+    public function destroy(Note $note): JsonResponse {     
+        $note->delete();    
+        return response()->json([         
+                            'success' => true,         
+                            'message' => 'Nota eliminada correctamente.'     
+                            ], 200); 
     } 
     ```
+
 
 ---
 
@@ -431,15 +478,15 @@ Para lanzar la petición, sitúate en la línea `GET ...` y pulsa el botón `Sen
 
 <div class="figure-center">
 <figure>
-    <img src="../../img/pru/laravel_apirest001.png"
+    <img src="../../img/pru/laravel_apirest011.png"
                 alt="Petición GET y Respuesta GET"
-                class="figure-img-highlight" />
+                class="figure-img-highlight" 
+                style="max-width: 55%; height: auto;" />
     <figcaption class="figure-caption-small">
             Petición GET y Respuesta GET
     </figcaption>
 </figure>
 </div>
-
 
 
 **Crear nueva nota**
@@ -781,6 +828,17 @@ Recordemos que si `role` no está en `$fillable` en el modelo, no se asignará d
 ## Ejemplos de peticiones
 
 Si todo ha ido bien aquí tenemos una API REST completa para el recurso `Note` que podemos probar con herramientas como `Postman` o `RestClient`:
+
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_apirest011.png"
+                alt="Extensión RestClient para Visual Studio Code"
+                class="figure-img-highlight" />
+    <figcaption class="figure-caption-small">
+            Extensión RestClient para Visual Studio Code
+    </figcaption>
+</figure>
+</div>
 
 Ejemplo uso de `api`con API **RestClient**:
 
