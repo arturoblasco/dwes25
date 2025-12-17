@@ -6,16 +6,11 @@ hide:
   - toc
 ---
 
-
-
 <div class="hero home-center" markdown>
 
-
-<img src="../img/dwes1.png"
+<img src="img/dwes1.png"
      alt="Desarrollo Web en Entonro Servidor"
      class="hero-image" />
-
-
 
 <div class="md-button-group" markdown>
 
@@ -27,12 +22,12 @@ hide:
 </a>
 
 <a href="ut01/ut0101/" class="md-button md-button--primary">
-  <img src="/img/php_logo.svg"  class="btn-icon-img" alt="Laravel">
+  <img src="img/php_logo.svg"  class="btn-icon-img" alt="Laravel">
   Comenzar en PHP
 </a>
 
 <a href="upl1/100/" class="md-button md-button--primary">
-  <img src="/img/laravel_logo.svg"  class="btn-icon-img" alt="Laravel">
+  <img src="img/laravel_logo.svg"  class="btn-icon-img" alt="Laravel">
   Comenzar en Laravel
 </a>
 
