@@ -4,10 +4,10 @@
 
 ### 1.1. ¿Qué es la validación y por qué es necesaria?
 
-<p style="float: left; margin-left: 1rem;">
+<p style="float: left; margin: 0 1rem 1rem 0;">
   <img src="../../img/laravel.svg"
        alt="Actividad en el aula virtual"
-       width="150">
+       width="120">
 </p>
 
 La validación es el proceso mediante el cual se verifica que los datos enviados por el usuario cumplen con unas reglas antes de ser almacenados en la base de datos.

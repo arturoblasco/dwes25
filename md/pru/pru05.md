@@ -1,50 +1,223 @@
 # 5. Creación de APIs REST en Laravel
 
-```python
-def greet(name):
-    print(f"Hello, {name}!")  # (1)!
+## 1. Rutas API
 
-# Call the function
-greet("World")  # (2)!
-```
-
-1. This creates a personalized greeting
-2. Output: Hello, World!
-
-
-```python
-import requests  # (1)!
-
-response = requests.get("https://api.github.com")  # (2)!
-```
-
-1. :material-package-down: Install with `pip install requests`
-2. !!! warning
-    
-    Always handle exceptions when making HTTP requests:
-    ```python
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-    except requests.RequestException as e:
-        print(f"Error: {e}")
-    ```
-
-
-
-
-## Rutas API
-
-<p style="float: left; margin-left: 1rem;">
+<p style="float: left; margin: 0 1rem 1rem 0;">
   <img src="../../img/laravel.svg"
        alt="Actividad en el aula virtual"
-       width="70">
+       width="120">
 </p>
+
+*“Usamos un backend con API para que la aplicación no dependa de cómo se ve, sino de cómo funciona, y poder usar los datos desde cualquier sitio.”*
+
+<br/>
+
+### 1.1. ¿Qué es una API que devuelve JSON?
+
+Es un backend (por ejemplo en Laravel, Java Spring, Node…) que:
+
+- Recibe peticiones (GET, POST, PUT, DELETE)
+- Procesa datos (BD, lógica de negocio)
+- Devuelve respuestas en JSON, no HTML
+
+Ejemplo:
+```json
+{
+  "id": 5,
+  "nombre": "Juan",
+  "nota": 8.5
+}
+```
+
+### 1.2. ¿Para qué sirve realmente?
+
+- Separar frontend y backend (arquitectura moderna)
+
+    El backend:
+
+    - Gestiona datos
+    - Aplica reglas de negocio
+    - Controla seguridad
+    
+    El frontend:
+    
+    - Se encarga solo de mostrar
+    - Puede ser Vue, React, móvil, etc.
+    - Cambias el frontend sin tocar el backend.
+
+- Reutilizar el mismo backend
+    
+    Una API JSON puede ser usada por:
+    
+    - Web (Vue / React)
+    - App móvil
+    - Aplicación de escritorio
+    - Otro sistema externo
+    
+    Una sola lógica, muchos clientes
+    
+- Comunicación estándar y ligera
+    
+    JSON es:
+    
+    - Ligero
+    - Fácil de leer
+    - Compatible con cualquier lenguaje
+    
+    ```js
+    fetch('/api/alumnos')
+        .then(r => r.json())
+        .then(data => console.log(data));
+    ```
+    
+    Ideal para aplicaciones web modernas
+
+- Facilita el trabajo en equipo
+    
+    - Backend devs → API
+    - Frontend devs → consumo de API
+    
+    Cada parte puede avanzar en paralelo.
+
+- Mejor seguridad
+    
+    El backend:
+    
+    - No expone la base de datos
+    - Controla permisos y roles
+    - Usa tokens (JWT, Sanctum, OAuth…)
+    
+    El frontend nunca accede directamente a los datos.
+
+- Escalabilidad y futuro
+    
+    Hoy:
+    
+    - Web con Vue
+    
+    Mañana:
+    
+    - App móvil
+    - Integración con otra empresa
+    - Microservicios
+    
+    Si usas API JSON, ya estás preparado
+
+#### 1.3. Comparación rápida
+
+|Sin API (todo junto)  |	Con API JSON|
+|----|----|
+|HTML + PHP mezclado	|  Frontend + Backend separados|
+|Poco reutilizable	|Muy reutilizable
+|Difícil de escalar|	Escalable
+|Acoplado|Modular
+
+???teolaravel "Ejemplo de integración Laravel+Vue"
+    **1) Esquema visual (arquitectura)**
+    ```pgsql
+    [ Navegador / Vue ]  ── HTTP (fetch/axios) ──>  [ API Laravel ]
+        |                                             |
+        |   pinta pantallas                           |  valida, aplica reglas
+        |   botones, formularios                      |  consulta BD, permisos
+        v                                             v
+    UI / Componentes                           [ Base de datos ]
+                   <─── JSON (datos) ────────
+    ```
+    Idea clave: Vue no habla con la BD. Vue habla con la API. La API habla con la BD.
+
+    **2) Ejemplo mínimo Laravel + Vue**
+   
+    **Backend (Laravel) – ruta API que devuelve JSON**
+
+    `routes/api.php`
+    ```php
+    use Illuminate\Support\Facades\Route;
+    use App\Http\Controllers\Api\StudentController;
+
+    Route::get('/students', [StudentController::class, 'index']);
+    ```
+    `app/Http/Controllers/Api/StudentController.php`
+    ```php
+    namespace App\Http\Controllers\Api;
+
+    use App\Http\Controllers\Controller;
+    use App\Models\Student;
+
+    class StudentController extends Controller
+    {
+        public function index()
+        {
+            // Devuelve datos en JSON (no HTML)
+            return response()->json(
+                Student::select('id','nombre','apellidos')->orderBy('apellidos')->get()
+            );
+        }
+    }
+    ```
+    Si llamas a: GET `/api/students`
+
+    Te devuelve:
+    ```json
+    [
+        {"id":1,"nombre":"Ana","apellidos":"Gómez"},
+        {"id":2,"nombre":"Luis","apellidos":"Martínez"}
+    ]
+    ```
+    **Frontend (Vue) – consumir la API y pintar la lista**
+
+    `StudentsList.vue`
+    ```vue
+    <script setup>
+    import { ref, onMounted } from "vue";
+
+    const students = ref([]);
+    const loading = ref(true);
+    const error = ref("");
+
+    onMounted(async () => {
+    try {
+        const res = await fetch("/api/students"); // mismo dominio
+        if (!res.ok) throw new Error("Error cargando alumnos");
+        students.value = await res.json();
+    } catch (e) {
+        error.value = e.message;
+    } finally {
+        loading.value = false;
+    }
+    });
+    </script>
+
+    <template>
+    <div>
+        <h2>Alumnado</h2>
+        <p v-if="loading">Cargando...</p>
+        <p v-else-if="error">{{ error }}</p>
+
+        <ul v-else>
+        <li v-for="s in students" :key="s.id">
+            {{ s.apellidos }}, {{ s.nombre }}
+        </li>
+        </ul>
+    </div>
+    </template>
+    ```
+    Qué ganas aquí:
+
+    - Laravel puede cambiar la BD, reglas, permisos… y Vue ni se entera mientras el JSON se mantenga.
+    - Puedes hacer móvil u otro frontend usando la misma API.
+
+    **3) Respuesta *tipo examen***
+
+    Se usa un backend con una API que devuelve JSON para separar el cliente (frontend) de la lógica de negocio y el acceso a datos. 
+    
+    El backend se encarga de validar, aplicar permisos, consultar la base de datos y devolver respuestas estándar en JSON. 
+    
+    El frontend (Vue/React) consume esos datos mediante peticiones HTTP y se limita a representar la interfaz. Esto permite reutilizar el mismo backend para distintos clientes (web, móvil), facilita el trabajo en equipo, mejora la seguridad porque la base de datos no se expone, y hace la aplicación más escalable y mantenible.
 
 En **Laravel 12**, a diferencia de versiones anteriores, el archivo `routes/api.php` **no viene incluido por defecto**. Laravel ahora permite habilitarlo opcionalmente para mantener la aplicación más ligera si no vas a construir una API.
 
 
-### Activar el sistema de rutas API
+### 1.4. Activar el sistema de rutas API
 
 Para trabajar con rutas API, primero debemos ejecutar el siguiente comando Artisan:
 
@@ -79,14 +252,14 @@ En el proceso nos puede pedir crear una nueva migración para la tabla `api_toke
     <img src="../../img/pru/laravel_apirest006.png"
                 alt="Pregunta de creación de tabla `api-tokens`"
                 class="figure-img-highlight" 
-                style="max-width: 65%; height: auto;" />
+                style="max-width: 75%; height: auto;" />
     <figcaption class="figure-caption-small">
             Pregunta de creación de tabla `api-tokens`
     </figcaption>
 </figure>
 </div>
 
-### ¿Dónde se registra esta configuración?
+### 1.2. ¿Dónde se registra esta configuración?
 
 Laravel configura los archivos de rutas en `bootstrap/app.php`. Una vez activadas, podrás ver una línea como esta:
 
@@ -124,16 +297,16 @@ Se recomienda ponerla explícitamente para tener claro que las rutas de `api.php
     * `/...` -> `routes/web.php`
 
 
-## Introducción
+## 2. Introducción
 
 Una **API** (Application Programming Interface) permite a aplicaciones diferentes comunicarse entre sí, intercambiando datos en formatos como **JSON**. Las APIs REST usan los verbos HTTP (GET, POST, PUT, DELETE) para definir operaciones sobre recursos.
 
 Laravel ofrece todas las herramientas necesarias para construir APIs modernas, organizadas y seguras. En este tema construiremos paso a paso una API para el recurso `Note`, que ya conocemos de los temas anteriores.
 
 
-## Definir Rutas de API
+## 3. Definir Rutas de API
 
-### Ficheros de rutas y su organización
+### 3.1. Ficheros de rutas y su organización
 
 Laravel separa las rutas para aplicación web y API:
 
@@ -172,9 +345,9 @@ Hay que fijarse que **no es necesario añadir `/api` en la ruta**, Laravel lo a�
 
 ---
 
-## Crear Controlador para la API
+## 4. Crear Controlador para la API
 
-### Generar un controlador API (Opcional)
+### 4.1. Generar un controlador API (Opcional)
 
 > Este punto solo se realizará si todavía no tenemos creada la table de notas `notes` en nuestra base de datos. 
 
@@ -233,9 +406,9 @@ Podemos crear el modelo `Note` con el siguiente comando:
 
 Esto generará el modelo `Note` en `app/Models/Note.php`.
 
-### Generar un controlador API
+### 4.2. Generar un controlador API
 
-Usamos el flag `--api` para generar un controlador que sólo incluye los métodos necesarios para una API CRUD:
+Usamos el *flag* `--api` para generar un controlador que sólo incluye los métodos necesarios para una API CRUD:
 
 ???+examplelaravel "Crear controlador API NoteController"
 
@@ -280,7 +453,7 @@ Esto creará el archivo en `app/Http/Controllers/Api/NoteController.php` con los
 
 El controlador `NoteController` extiende de `Controller` y usa el modelo `Note` para interactuar con la base de datos.
 
-### Crear las rutas API para Notes
+### 4.3. Crear las rutas API para Notes
 
 En `routes/api.php`:
 
@@ -293,7 +466,7 @@ En `routes/api.php`:
     Route::apiResource('notes', NoteController::class); 
     ```
 
-    🔝 Por seguridadd podemos utilizar only() para definir las rutas que queremos habilitar:
+    🔝 Por seguridadd podemos utilizar `only()` para definir las rutas que queremos habilitar:
 
     ```
     Route::apiResource('notes', NoteController::class)->only([
@@ -331,14 +504,10 @@ Resultado de `route:list`:
 </div>
 ---
 
-## Implementar el CRUD API para Notes
-
-### Modelo Note
-
-Asegúrate de que el modelo `Note` está correctamente definido con `$fillable`:
+## 5. Implementar el CRUD API para Notes
 
 ???+examplelaravel "Modelo Note con $fillable"
-
+    Asegúrate de que el modelo `Note` está correctamente definido con `$fillable`:
     ``` 
     class Note extends Model {     
         protected $fillable = ['title', 'description', 'date_at', 'done']; 
@@ -347,7 +516,7 @@ Asegúrate de que el modelo `Note` está correctamente definido con `$fillable`:
 
 ---
 
-## Códigos de Estado HTTP en APIs
+## 6. Códigos de estado HTTP en APIs
 
 En una API REST, es importante devolver **códigos de estado HTTP apropiados** para indicar si la operación fue exitosa o si ocurrió un error.
 
@@ -373,7 +542,7 @@ A continuación, una tabla con los códigos más comunes y su uso recomendado:
 
 ---
 
-## Implementar métodos del controlador
+## 7. Implementar métodos del controlador
 
 Antes de implementar los métodos del controlador, asegúrate de importar las clases necesarias:
 
@@ -383,9 +552,11 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     use App\Models\Note; 
     use Illuminate\Http\JsonResponse; 
     use Illuminate\Http\Request;
+
+    //...
     ```
 
-### Método `index()` – Listar notas
+### 7.1. Método `index()` – Listar notas
 
 !!!examplelaravel "Listar todas las notas"
 
@@ -398,7 +569,7 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     } 
     ```
 
-### Método `show()` – Mostrar una nota
+### 7.2. Método `show()` – Mostrar una nota
 
 !!!examplelaravel "Mostrar una nota por ID"
 
@@ -411,7 +582,7 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     }
     ```
 
-### Método `store()` – Crear una nota
+### 7.3. Método `store()` – Crear una nota
 
 !!!examplelaravel "Guardar nueva nota"
 
@@ -426,7 +597,7 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     } 
     ```
 
-### Método `update()` – Modificar nota
+### 7.4. Método `update()` – Modificar nota
 
 !!!examplelaravel "Actualizar una nota"
 
@@ -441,7 +612,7 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     } 
     ```
 
-### Método `destroy()` – Eliminar nota
+### 7.5. Método `destroy()` – Eliminar nota
 
 !!!examplelaravel "Eliminar una nota"
     
@@ -456,32 +627,44 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     ```
 
 
----
+### 7.6. Testing de la API
 
-### Testing de la API
+Para probar la API vamos a usar una extensión de *Visual Studio Code* llamada **`REST Client`** que permite hacer peticiones HTTP directamente desde el editor. 
 
-Para probar la API vamos a usar una extensión de *Code* *llamada `REST Client`* que permite hacer peticiones HTTP directamente desde el editor. También puedes usar herramientas como `Postman` o `Insomnia`.
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_apirest011.png"
+                alt="Extensión RestClient para Visual Studio Code"
+                class="figure-img-highlight" 
+                style="max-width: 55%; height: auto;" />
+    <figcaption class="figure-caption-small">
+            Extensión RestClient para Visual Studio Code
+    </figcaption>
+</figure>
+</div>
+
+También puedes usar herramientas como `Postman` o `Insomnia`.
 
 ???+examplelaravel "Testear la API"
     Para ello vamos a crear un archivo **`notes.rest`** en la raíz del proyecto, por ejemplo.
 
 Vamos a escribir nuestra primera petición para listar todas las notas:
 
-**Peticiones REST Client**
+### 7.7. Peticiones REST Client
 
 **Mostrar listado de notas**
 ``` 
 ### 
-GET http://testear.test/api/note
+GET http://testear.test/api/notes
 ```
 Para lanzar la petición, sitúate en la línea `GET ...` y pulsa el botón `Send Request` que aparece encima.
 
 <div class="figure-center">
 <figure>
-    <img src="../../img/pru/laravel_apirest011.png"
+    <img src="../../img/pru/laravel_apirest012.png"
                 alt="Petición GET y Respuesta GET"
                 class="figure-img-highlight" 
-                style="max-width: 55%; height: auto;" />
+                style="max-width: 85%; height: auto;" />
     <figcaption class="figure-caption-small">
             Petición GET y Respuesta GET
     </figcaption>
@@ -493,7 +676,7 @@ Para lanzar la petición, sitúate en la línea `GET ...` y pulsa el botón `Sen
 Vamos a crear una nueva nota con el método `POST`:
 ``` 
 ### 
-POST http://testear.test/api/note
+POST http://testear.test/api/notes
 
 HTTP/1.1 content-type: application/json  {     
     "title": "Nueva Nota",     
@@ -517,7 +700,7 @@ HTTP/1.1 content-type: application/json  {
 
 En este código hay que observar varias cosas:
 
-1. La URL de la petición es `http://testear.test/api/note`, que es la ruta que hemos definido en nuestro archivo de rutas.
+1. La URL de la petición es `http://testear.test/api/notes`, que es la ruta que hemos definido en nuestro archivo de rutas.
 2. El método HTTP utilizado es `POST`, lo que indica que estamos creando un nuevo recurso.
 3. Hemos especificado la cabecera `content-type: application/json` para indicar que el cuerpo de la petición es un JSON.
 4. En el cuerpo de la petición, estamos enviando un objeto JSON con los datos de la nueva nota que queremos crear.
@@ -529,7 +712,7 @@ Ahora vamos a modificar la nota creada anteriormente con el método `PUT`. Pero 
 
 ``` 
 ### 
-PUT http://testear.test/api/note/9
+PUT http://testear.test/api/notes/9
 
 HTTP/1.1 content-type: application/json  {     
     "id": 9,     
@@ -553,26 +736,24 @@ La estructura es similar a la petición `POST`, pero en este caso el método es 
 </div>
 
 
-
-
 Finalmente vamos a eliminar la nota con ID 5 usando el método `DELETE`:
 
 **Eliminar nota con ID 9**
 
 ``` 
 ### 
-DELETE testear.test/api/note/9
+DELETE testear.test/api/notes/9
 ```
 
 La petición es muy sencilla, sólo necesitamos el método `DELETE` y la URL con el ID de la nota que queremos eliminar.
 
 Con esto hemos probado todas las operaciones CRUD de nuestra API REST para el recurso `Note`. En el siguiente apartado vamos a ver cómo mejorar la salida de los datos usando `API Resources`, podemos tomar el control del formato de los datos que devolvemos.
 
-## API Resources
+## 8. API Resources
 
-Laravel permite transformar la salida de tus APIs con clases Resource que te dan control sobre el formato.
+Laravel permite transformar la salida de tus APIs con clases `Resource` que te dan control sobre el formato.
 
-### Crear un API Resource
+### 8.1. Crear un API Resource
 
 ???+examplelaravel "Crear NoteResource"
 
@@ -582,7 +763,7 @@ Laravel permite transformar la salida de tus APIs con clases Resource que te dan
 
 Crea el archivo en `App\Http\Resources\NoteResource.php`
 
-### Personalizar la transformación
+### 8.2. Personalizar la transformación
 
 Vamos a modificar la salida de los datos en `NoteResource.php`. Por ejemplo, podemos cambiar los nombres de los campos y añadir un campo calculado `estado` que indique si la nota está completada o pendiente:
 
@@ -600,7 +781,7 @@ Vamos a modificar la salida de los datos en `NoteResource.php`. Por ejemplo, pod
     } 
     ```
 
-### Usar el recurso en el controlador
+### 8.3. Usar el recurso en el controlador
 
 Añadimos la importación al controlador `NoteController`:
 
@@ -626,11 +807,11 @@ De esta manera, la respuesta incluirá el estado y el mensaje de éxito. Vamos a
 <div class="figure-center">
 <figure>
     <img src="../../img/pru/laravel_apirest009.png"
-                alt="Respuesta GET con `NoteResource`"
+                alt="Respuesta de index con `NoteResource`"
                 class="figure-img-highlight" 
-                style="max-width: 65%; height: auto;" />
+                style="max-width: 85%; height: auto;" />
     <figcaption class="figure-caption-small">
-            Respuesta GET con `NoteResource`
+            Respuesta de index con `NoteResource`
     </figcaption>
 </figure>
 </div>
@@ -652,11 +833,11 @@ En los demás métodos no devolvemos una colección sino un solo elemento. Por e
 <div class="figure-center">
 <figure>
     <img src="../../img/pru/laravel_apirest010.png"
-                alt="Respuesta GET /api/notes/{id} con `NoteResource`"
+                alt="Respuesta de show con `NoteResource`"
                 class="figure-img-highlight" 
-                style="max-width: 55%; height: auto;" />
+                style="max-width: 85%; height: auto;" />
     <figcaption class="figure-caption-small">
-            Respuesta GET /api/notes/{id} con `NoteResource`
+            Respuesta de show con `NoteResource`
     </figcaption>
 </figure>
 </div>
@@ -665,7 +846,7 @@ Ahora sería aplicable a todos los métodos que devuelven un solo elemento, como
 
 ---
 
-## Validación de los datos
+## 9. Validación de los datos
 
 Al igual que en los formularios, es importante validar los datos que recibimos en la API. `Laravel` ofrece un sistema de validación muy potente. Empezaremos por validar los datos en el método `store()` y `update()`. Para ello vamos a crear la clase `NoteRequest`:
 
@@ -714,50 +895,49 @@ Esta función al igual que en los formularios, define las reglas de validación.
 * `date_at`: requerido, debe ser una fecha válida.
 * `done`: booleano (opcional).
 
-En caso de error en la validación, Laravel devolverá automáticamente un error 422 con los detalles del error.
+En caso de error en la validación, Laravel devolverá automáticamente un **error 422** con los detalles del error.
 
-Ejemplo de error de validación
-
-``` 
-{    
-    "message": "The given data was invalid.",     
-    "errors": {         
-        "title": [             
-                    "The title field is required."         
-        ]     
+???+teolaravel "Ejemplo de error de validación"
+    ``` 
+    {    
+        "message": "The given data was invalid.",     
+        "errors": {         
+            "title": [             
+                        "The title field is required."         
+            ]     
+        } 
     } 
-} 
-```
+    ```
 
 Podemos personalizar la respuesta de error en el método `failedValidation()` en la clase `NoteRequest`:
 
 Debemos añadir las importaciones necesarias al principio del archivo:
 
-Importar clases en NoteRequest
+???+examplelaravel "Importar clases en NoteRequest"
 
-``` 
-use Illuminate\Contracts\Validation\Validator; 
-use Illuminate\Http\Exceptions\HttpResponseException; 
-use Illuminate\Validation\ValidationException; 
-```
+    ``` 
+    use Illuminate\Contracts\Validation\Validator; 
+    use Illuminate\Http\Exceptions\HttpResponseException; 
+    use Illuminate\Validation\ValidationException; 
+    ```
 
-Personalizar la respuesta de error
+???+examplelaravel "Personalizar la respuesta de error"
 
-``` 
-protected function failedValidation(Validator $validator) {     
-    throw new HttpResponseException(response()->json([         
-        'success' => false,         
-        'message' => 'Error de validación',         
-        'errors' => $validator->errors()     
-    ], 422, [], JSON_UNESCAPED_UNICODE)); 
-} 
-```
+    ``` 
+    protected function failedValidation(Validator $validator) {     
+        throw new HttpResponseException(response()->json([         
+            'success' => false,         
+            'message' => 'Error de validación',         
+            'errors' => $validator->errors()     
+        ], 422, [], JSON_UNESCAPED_UNICODE)); 
+    } 
+    ```
 
-parámetros JSON
+### 9.1. Parámetros JSON
 
-En los parámetros de `json()` podemos añadir el tercer parámetro `JSON_UNESCAPED_UNICODE` para evitar que los caracteres especiales se escapen. Esto es útil si estás trabajando con caracteres no ASCII. Sino los acentos y caracteres especiales se escaparán y no se verán correctamente en la respuesta.
+En los parámetros de `json()` podemos añadir el tercer parámetro **`JSON_UNESCAPED_UNICODE`** para evitar que los caracteres especiales se escapen. Esto es útil si estás trabajando con caracteres no ASCII. Si no los acentos y caracteres especiales se escaparán y no se verán correctamente en la respuesta.
 
-Ahora para quelas validaciones funcionen debemos ajustar los métodos `store()` y `update()` del controlador para usar `NoteRequest` en lugar de `Request`:
+Ahora para que las validaciones funcionen debemos ajustar los métodos `store()` y `update()` del controlador para usar `NoteRequest` en lugar de `Request`:
 
 ???+examplelaravel "Usar NoteRequest en `NoteController`"
 
@@ -789,28 +969,29 @@ Se puede observar en los dos métodos que hemos cambiado `$request->all()` por *
 
 Por ejemplo, imaginemos que tenemos la siguiente validación, una clase que solo admite los campos `name` y `email`:
 
-``` 
-class StoreUserRequest extends FormRequest {     
-    public function rules()     {         
-        return [             
-                'name'  => ['required', 'string'],            
-                'email' => ['required', 'email'],         
-        ];     
+???+teolaravel "Ejemplo"
+    ``` 
+    class StoreUserRequest extends FormRequest {     
+        public function rules()     {         
+            return [             
+                    'name'  => ['required', 'string'],            
+                    'email' => ['required', 'email'],         
+            ];     
+        } 
     } 
-} 
-```
+    ```
 
-Ahora el cliente envía el siguiente JSON:
+    Ahora el cliente envía el siguiente JSON:
 
-```json 
-{     
-    "name": "John Doe",     
-    "email": "john.doe@example.com",     
-    "role": "admin" 
-} 
-```
+    ```json 
+    {     
+        "name": "John Doe",     
+        "email": "john.doe@example.com",     
+        "role": "admin" 
+    } 
+    ```
 
-El campo `role` no está definido en las reglas de validación, por lo que será ignorado cuando usemos `$request->validated()`. Esto ayuda a prevenir la asignación masiva de campos no deseados.
+    El campo `role` no está definido en las reglas de validación, por lo que será ignorado cuando usemos `$request->validated()`. Esto ayuda a prevenir la asignación masiva de campos no deseados.
 
 En resumen:
 
@@ -825,33 +1006,22 @@ $request->all();
 
 Recordemos que si `role` no está en `$fillable` en el modelo, no se asignará de todas formas. Pero es una buena práctica usar `validated()` para asegurarnos de que sólo los datos permitidos se procesan.
 
-## Ejemplos de peticiones
+## 10. Ejemplos de peticiones
 
 Si todo ha ido bien aquí tenemos una API REST completa para el recurso `Note` que podemos probar con herramientas como `Postman` o `RestClient`:
 
-<div class="figure-center">
-<figure>
-    <img src="../../img/pru/laravel_apirest011.png"
-                alt="Extensión RestClient para Visual Studio Code"
-                class="figure-img-highlight" />
-    <figcaption class="figure-caption-small">
-            Extensión RestClient para Visual Studio Code
-    </figcaption>
-</figure>
-</div>
-
 Ejemplo uso de `api`con API **RestClient**:
 
-=== "GET api/note"
+=== "GET api/notes"
     ```
     ### listar todas las notas
-    GET http://testear.test/api/note
+    GET http://testear.test/api/notes
     ```
 
-=== "POST api/note"
+=== "POST api/notes"
     ```
     ### Creamos la primera nota
-    POST http://testear.test/api/note HTTP/1.1
+    POST http://testear.test/api/notes HTTP/1.1
     content-type: application/json
 
     {
@@ -862,10 +1032,10 @@ Ejemplo uso de `api`con API **RestClient**:
     }
     ```
 
-=== "PUT api/note/{id}"
+=== "PUT api/notes/{id}"
     ```
     ### Modificamos la primera nota
-    PUT http://testear.test/api/note/1 HTTP/1.1
+    PUT http://testear.test/api/notes/1 HTTP/1.1
     content-type: application/json
 
     {
@@ -877,52 +1047,50 @@ Ejemplo uso de `api`con API **RestClient**:
     }
     ```
 
-=== "GET api/note/{id}"
+=== "GET api/notes/{id}"
     ```
     ### Mostrar la nota con id 1
-    GET http://testear.test/api/note/1
+    GET http://testear.test/api/notes/1
     ```
 
-=== "DELETE api/note/{id}"
+=== "DELETE api/notes/{id}"
     ```
     ### Eliminar la nota con id 1
-    DELETE http://testear.test/api/note/1
+    DELETE http://testear.test/api/notes/1
     ```
 
-
----
 
 Entendido, vamos a añadir un punto a tu tema para controlar el error cuando no se encuentra una nota en la base de datos, utilizando primero el método `findOrFail` de Laravel y analizando el resultado. Después implementaremos el bloque `try-catch` para una solución más robusta.
 
 Aquí tienes cómo podrías estructurar este punto:
 
-## Control de Errores en la API con `findOrFail`
+## 11. Control de Errores en la API con `findOrFail`
 
 Cuando construimos una API REST en Laravel, es importante asegurarnos de que las respuestas a las solicitudes, especialmente las solicitudes AJAX, siempre sean en formato JSON, incluso cuando se produce un error, como intentar acceder a un recurso que no existe.
 
-### Usando `findOrFail` para manejar errores
+### 11.1. Usando `findOrFail` para manejar errores
 
 Laravel proporciona el método `findOrFail` para buscar un modelo en la base de datos por su ID. Si el modelo no existe, Laravel automáticamente lanza una excepción `ModelNotFoundException`, que puedes manejar para devolver una respuesta adecuada sin que se genere un error en formato HTML.
 
-#### Ejemplo básico con `findOrFail`
+#### 11.1.1. Ejemplo básico con `findOrFail`
 
 En el siguiente ejemplo, la función `show` intenta obtener una nota por su ID usando `findOrFail`. Si la nota no se encuentra, Laravel devolverá automáticamente un error **404 Not Found** con una respuesta en formato JSON.
 
-**Ejemplo de uso de `findOrFail`**
+???+teolaravel "Ejemplo de uso de `findOrFail`"
 
-``` 
-public function show($id): JsonResponse 
-{     
-    // Usamos findOrFail para intentar encontrar la nota por ID     
-    $note = Note::findOrFail($id);      
-    
-    // Si la nota existe, la devolvemos en formato JSON con código de estado 200     
-    return response()->json([         
-                            'success' => true,         
-                            'data' => new NoteResource($note)     
-    ], 200); 
-} 
-```
+    ``` 
+    public function show($id): JsonResponse 
+    {     
+        // Usamos findOrFail para intentar encontrar la nota por ID     
+        $note = Note::findOrFail($id);      
+        
+        // Si la nota existe, la devolvemos en formato JSON con código de estado 200     
+        return response()->json([         
+                                'success' => true,         
+                                'data' => new NoteResource($note)     
+        ], 200); 
+    } 
+    ```
 
 **¿Qué sucede cuando la nota no existe?**
 
@@ -932,9 +1100,7 @@ Cuando la solicitud se realiza con un ID que no existe en la base de datos, Lara
 
 Laravel ya está configurado para manejar automáticamente las excepciones de modelo no encontrado, pero esto genera una respuesta HTML. En lugar de manejar la excepción directamente, una mejor opción sería asegurarnos de que la respuesta siempre esté en formato JSON, para evitar que la aplicación devuelva una página de error en HTML.
 
----
-
-### Solución definitiva: usando `try-catch`
+### 11.2. Solución definitiva: usando `try-catch`
 
 Para manejar de forma más controlada los errores y asegurarnos de que siempre devolvemos una respuesta en formato JSON, podemos usar el bloque `try-catch`. Esto nos permitirá interceptar la excepción y devolver una respuesta personalizada con un mensaje claro en formato JSON.
 
@@ -977,7 +1143,7 @@ Con esto, puedes manejar de manera efectiva los casos en los que un recurso no e
 
 Ahora falta extender este control de errores a los demás métodos del controlador (`update`, `destroy`) donde también se utiliza `findOrFail` para obtener la nota por ID.
 
-## Conclusiones
+## 12. Conclusiones
 
 * Las APIs REST son ideales para aplicaciones SPA, móviles o integraciones.
 * Laravel permite definir rutas específicas para API con prefijos automáticos y middleware personalizado.
@@ -989,10 +1155,10 @@ Ahora falta extender este control de errores a los demás métodos del controlad
 
     ### Objetivo de la actividad
 
-    <p style="float: left; margin-left: 1rem;">
-    <img src="../../img/laraveltask.svg"
-        alt="Actividad en el aula virtual"
-        width="150">
+    <p style="float: left; margin: 0 1rem 1rem 0;">
+        <img src="../../img/laraveltask.svg"
+            alt="Actividad en el aula virtual"
+            width="150">
     </p>
     
     **Validaciones y Mensajes en el CRUD de Productos**

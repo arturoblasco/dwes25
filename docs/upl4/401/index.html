@@ -2669,6 +2669,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2.2. Cómo funciona la protección CSRF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token-csrf-obligatorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token CSRF obligatorio
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2677,30 +2692,6 @@
       2.3. Implementación de protección CSRF
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2.3. Implementación de protección CSRF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#en-formularios-blade" class="md-nav__link">
-    <span class="md-ellipsis">
-      En formularios Blade
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#en-formularios-ajax" class="md-nav__link">
-    <span class="md-ellipsis">
-      En formularios AJAX
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3413,6 +3404,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2.2. Cómo funciona la protección CSRF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token-csrf-obligatorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token CSRF obligatorio
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3421,30 +3427,6 @@
       2.3. Implementación de protección CSRF
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2.3. Implementación de protección CSRF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#en-formularios-blade" class="md-nav__link">
-    <span class="md-ellipsis">
-      En formularios Blade
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#en-formularios-ajax" class="md-nav__link">
-    <span class="md-ellipsis">
-      En formularios AJAX
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3694,48 +3676,49 @@
         L-&gt;&gt;B: Error 419 (CSRF Token Mismatch)
         B-&gt;&gt;U: Muestra error de seguridad
     end</div>
-<blockquote>
-<p><strong>Token CSRF obligatorio</strong></p>
+<h4 id="token-csrf-obligatorio">Token CSRF obligatorio<a class="headerlink" href="#token-csrf-obligatorio" title="Permanent link">&para;</a></h4>
 <p>Todos los formularios que usan POST, PUT, PATCH o DELETE deben incluir el token CSRF <strong><code>@csrf</code></strong>.</p>
 <p>Sin <strong><code>@csrf</code></strong>, Laravel rechazará la petición con error <strong>419 (Page Expired)</strong>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">❌ Sin protección</label><label for="__tabbed_1_2">✅ Con protección</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- ❌ Sin protección - Error 419 --&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;!-- ❌ Sin protección - Error 419 --&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/products&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="x">&lt;form method=&quot;POST&quot; action=&quot;/products&quot;&gt;</span>
+<span class="x">    &lt;button&gt;Enviar&lt;/button&gt;  </span>
+<span class="x">&lt;/form&gt;</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- ✅ Con protección - Funciona --&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/products&quot;</span><span class="p">&gt;</span>
-    @csrf
-    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="hll">    @csrf #
+</span>    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
 </div>
 </div>
-</blockquote>
 <h3 id="23-implementacion-de-proteccion-csrf">2.3. Implementación de protección CSRF<a class="headerlink" href="#23-implementacion-de-proteccion-csrf" title="Permanent link">&para;</a></h3>
 <p>Implementar la protección CSRF en Laravel es muy sencillo.</p>
-<h4 id="en-formularios-blade">En formularios Blade<a class="headerlink" href="#en-formularios-blade" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">En formularios Blade</label><label for="__tabbed_2_2">En formularios AJAX</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>La forma más simple y común de proteger un formulario es añadiendo la directiva <strong><code>@csrf</code></strong> dentro del elemento <code>&lt;form&gt;</code> (después de la etiqueta <code>&lt;form&gt;</code> es un buen lugar). Laravel generará automáticamente un campo hidden con el token.</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;products.store&#39;) }}&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
-    @csrf
-    <span class="cm">&lt;!-- Campos del formulario --&gt;</span>
+<span class="hll">    @csrf
+</span>    <span class="cm">&lt;!-- Campos del formulario --&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div>
-<h4 id="en-formularios-ajax">En formularios AJAX<a class="headerlink" href="#en-formularios-ajax" title="Permanent link">&para;</a></h4>
+</div>
+<div class="tabbed-block">
 <p>Para peticiones AJAX (usando fetch, axios, o jQuery), necesitas incluir el token CSRF en los headers de la petición. El token se obtiene de una meta tag que Laravel incluye automáticamente en el layout.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Obtener el token CSRF</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;meta[name=&quot;csrf-token&quot;]&#39;</span><span class="p">).</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">);</span>
-
+<span class="hll"><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;meta[name=&quot;csrf-token&quot;]&#39;</span><span class="p">).</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">);</span>
+</span>
 <span class="c1">// Incluir en peticiones AJAX</span>
 <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;/products&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
@@ -3746,36 +3729,51 @@
 <span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
 <span class="p">});</span>
 </code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="3-mejores-practicas-de-seguridad">3. Mejores prácticas de seguridad<a class="headerlink" href="#3-mejores-practicas-de-seguridad" title="Permanent link">&para;</a></h2>
 <p>La protección CSRF es solo el primer paso. Para crear formularios verdaderamente seguros, debes implementar múltiples capas de seguridad que trabajen en conjunto.</p>
 <h3 id="31-validacion-de-datos">3.1. Validación de datos<a class="headerlink" href="#31-validacion-de-datos" title="Permanent link">&para;</a></h3>
 <p>La validación es el proceso fundamental de verificar que todos los datos enviados por el usuario cumplan con los criterios y reglas que has definido. </p>
 <p>Antes de guardar cualquier información en la base de datos o procesarla en tu aplicación, debes asegurarte de que sea del tipo correcto, tenga el formato esperado y cumpla con las restricciones de negocio.</p>
+<details class="teolaravel" open="open">
+<summary>Ejemplo de validación</summary>
+<p>Validación completa de formulario de producto
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="c1">// Validación completa de formulario de producto</span>
 <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
-    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|string|max:255&#39;</span><span class="p">,</span>        <span class="c1">// Nombre obligatorio, texto, máx 255 caracteres</span>
-    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|email|unique:users&#39;</span><span class="p">,</span>   <span class="c1">// Email obligatorio, formato válido, único</span>
-    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|min:8|confirmed&#39;</span><span class="p">,</span>   <span class="c1">// Contraseña mínimo 8 caracteres, con confirmación</span>
-    <span class="s1">&#39;price&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|numeric|min:0&#39;</span><span class="p">,</span>        <span class="c1">// Precio obligatorio, numérico, positivo</span>
-    <span class="s1">&#39;category_id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|exists:categories,id&#39;</span><span class="p">,</span> <span class="c1">// Categoría debe existir en BD</span>
+    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|string|max:255&#39;</span><span class="p">,</span>  <span class="c1"># (1)!</span>
+    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|email|unique:users&#39;</span><span class="p">,</span>  <span class="c1"># (2)!   </span>
+    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|min:8|confirmed&#39;</span><span class="p">,</span>  <span class="c1"># (3)!   </span>
+    <span class="s1">&#39;price&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|numeric|min:0&#39;</span><span class="p">,</span>  <span class="c1"># (4)!        </span>
+    <span class="s1">&#39;category_id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|exists:categories,id&#39;</span><span class="p">,</span>  <span class="c1"># (5)!</span>
 <span class="p">]);</span>
-</code></pre></div>
+</code></pre></div></p>
+<ol>
+<li>Nombre obligatorio, texto, máx 255 caracteres</li>
+<li>Email obligatorio, formato válido, único</li>
+<li>Contraseña mínimo 8 caracteres, con confirmación</li>
+<li>Precio obligatorio, numérico, positivo</li>
+<li>Categoría debe existir en BD</li>
+</ol>
+</details>
 <blockquote>
 <p>La validación se cubrirá en detalle en el <strong>apartado 2 (Sistema de Validación)</strong> de esta sesión, donde verás todas las reglas disponibles, validación personalizada y manejo de errores.</p>
 </blockquote>
 <h3 id="32-sanitizacion-de-datos">3.2. Sanitización de datos<a class="headerlink" href="#32-sanitizacion-de-datos" title="Permanent link">&para;</a></h3>
 <p>La sanitización es el proceso de limpiar y normalizar los datos recibidos para eliminar cualquier código potencialmente peligroso o caracteres no deseados. Esto previene ataques de inyección de código (XSS) donde un usuario malicioso intenta insertar JavaScript o HTML que se ejecutaría en el navegador de otros usuarios.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="c1">// ✅ Laravel sanitiza automáticamente los datos de entrada</span>
-<span class="nv">$name</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span> <span class="c1">// Automáticamente escapado</span>
+<span class="nv">$name</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>   <span class="c1"># (1)!</span>
 
-<span class="c1">// ✅ Remover etiquetas HTML si es necesario</span>
-<span class="nv">$description</span> <span class="o">=</span> <span class="nb">strip_tags</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">));</span>
+<span class="nv">$description</span> <span class="o">=</span> <span class="nb">strip_tags</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">));</span>  <span class="c1"># (2)!</span>
 
-<span class="c1">// ✅ Limpiar espacios en blanco</span>
-<span class="nv">$username</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">));</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">));</span>  <span class="c1"># (3)!</span>
 </code></pre></div>
+<ol>
+<li>✅ Laravel sanitiza automáticamente los datos de entrada (Automáticamente escapado)</li>
+<li>✅ Remover etiquetas HTML si es necesario</li>
+<li>✅ Limpiar espacios en blanco</li>
+</ol>
 <p><strong>Peligro: XSS (Cross-Site Scripting)</strong></p>
 <p>Sin sanitización, un atacante podría inyectar código JavaScript malicioso:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Usuario malicioso envía en el campo &quot;name&quot;: --&gt;</span>
@@ -3784,14 +3782,26 @@
 <p><strong>Si muestras este dato sin escapar</strong>, el script se ejecutará en el navegador de todos los usuarios.</p>
 <p><strong>Protección de Laravel:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="o">&lt;!--</span> <span class="nx">✅</span> <span class="nx">Blade</span> <span class="nx">escapa</span> <span class="nx">automáticamente</span> <span class="o">--&gt;</span>
-<span class="p">{{</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">name</span> <span class="p">}}</span>  
-<span class="o">&lt;!--</span> <span class="nx">Muestra</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">script</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hackeado!&#39;</span><span class="p">)</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="o">/</span><span class="nx">script</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="o">--&gt;</span>
+<span class="p">{{</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">name</span> <span class="p">}}</span>  <span class="c1"># (1)!</span>
 
-<span class="o">&lt;!--</span> <span class="nx">❌</span> <span class="nx">PELIGROSO</span><span class="o">:</span> <span class="nx">No</span> <span class="nx">escapar</span> <span class="o">--&gt;</span>
-<span class="p">{</span><span class="o">!!</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">!!</span><span class="p">}</span>  
-<span class="o">&lt;!--</span> <span class="nx">Ejecuta</span> <span class="nx">el</span> <span class="nx">script</span> <span class="nx">malicioso</span> <span class="o">--&gt;</span>
+<span class="p">{</span><span class="o">!!</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">!!</span><span class="p">}</span>  <span class="c1"># (2)!</span>
 </code></pre></div>
+<ol>
+<li>
+<div class="admonition questionlaravel">
+<p class="admonition-title">No escapa</p>
+</div>
+<p>Blade escapa automáticamente. </p>
+<p>Resultado: <code>&amp;lt;script&amp;gt;alert('Hackeado!')&amp;lt;/script&amp;gt;</code></p>
+</li>
+<li>
+<div class="admonition warning">
+<p class="admonition-title">Peligroso</p>
+</div>
+<p>No escapa.</p>
+<p>Resultado: ejecuta el script malicioso.</p>
+</li>
+</ol>
 <h3 id="33-proteccion-de-rutas">3.3. Protección de rutas<a class="headerlink" href="#33-proteccion-de-rutas" title="Permanent link">&para;</a></h3>
 <p>No todos los usuarios deben tener acceso a todos los formularios. Usa el middleware <strong><code>auth</code></strong> para restringir el acceso a rutas sensibles:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -3813,12 +3823,12 @@
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Limitar formulario de login</span>
 <span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">AuthController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;login&#39;</span><span class="p">])</span>
-    <span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;throttle:5,1&#39;</span><span class="p">);</span> <span class="c1">// 5 intentos por minuto</span>
-
+<span class="hll">       <span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;throttle:5,1&#39;</span><span class="p">);</span> <span class="c1">// 5 intentos por minuto</span>
+</span>
 <span class="c1">// Limitar creación de productos</span>
 <span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;/products&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span><span class="p">])</span>
-    <span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;throttle:10,1&#39;</span><span class="p">);</span> <span class="c1">// 10 productos por minuto</span>
-</code></pre></div>
+<span class="hll">       <span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;throttle:10,1&#39;</span><span class="p">);</span> <span class="c1">// 10 productos por minuto</span>
+</span></code></pre></div>
 <blockquote>
 <p>El rate limiting personalizado con lógica compleja se cubre en detalle en el <strong>apartado 5 (Middleware Personalizado)</strong>, donde aprenderás a crear rate limiting diferenciado por roles, recursos específicos, y más.</p>
 </blockquote>
@@ -3827,8 +3837,8 @@
 <h3 id="41-formularios-de-creacion">4.1. Formularios de creación<a class="headerlink" href="#41-formularios-de-creacion" title="Permanent link">&para;</a></h3>
 <p>Los formularios de creación usan el método POST para enviar nuevos datos al servidor. Son la base de cualquier aplicación que permita a los usuarios añadir contenido.</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;products.store&#39;) }}&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
-    @csrf
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="hll">    @csrf
+</span>    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="p">&gt;</span>Nombre del Producto<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -3842,9 +3852,9 @@
 <h3 id="42-formularios-de-edicion">4.2. Formularios de edición<a class="headerlink" href="#42-formularios-de-edicion" title="Permanent link">&para;</a></h3>
 <p>Los formularios de edición actualizan datos existentes usando el método PUT (spoofed mediante <code>@method('PUT')</code>). Deben pre-cargar los valores actuales para que el usuario vea qué está modificando.</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;products.update&#39;, $product-&gt;id) }}&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
-    @csrf
-    @method(&#39;PUT&#39;)
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="hll">    @csrf
+</span><span class="hll">    @method(&#39;PUT&#39;)
+</span>    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="p">&gt;</span>Nombre del Producto<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ $product-&gt;name }}&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -3852,11 +3862,12 @@
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div>
 <h3 id="43-formularios-de-eliminacion">4.3. Formularios de eliminación<a class="headerlink" href="#43-formularios-de-eliminacion" title="Permanent link">&para;</a></h3>
-<p>Los formularios de eliminación usan el método DELETE para borrar recursos. Por seguridad, siempre deben requerir confirmación del usuario antes de ejecutarse.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;products.destroy&#39;, $product-&gt;id) }}&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
-    @csrf
-    @method(&#39;DELETE&#39;)
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;return confirm(&#39;¿Estás seguro?&#39;)&quot;</span><span class="p">&gt;</span>
+<p>Los formularios de eliminación usan el método DELETE para borrar recursos. </p>
+<p>Por seguridad, siempre deben requerir confirmación del usuario antes de ejecutarse.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;products.destroy&#39;, $product }}&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+<span class="hll">    @csrf
+</span><span class="hll">    @method(&#39;DELETE&#39;)
+</span>    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;return confirm(&#39;¿Estás seguro?&#39;)&quot;</span><span class="p">&gt;</span>
         Eliminar Producto
     <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>

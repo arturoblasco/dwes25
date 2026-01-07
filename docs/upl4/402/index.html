@@ -2694,15 +2694,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#23-validacion-con-multiples-reglas" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3. Validación con múltiples reglas
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2787,6 +2778,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#44-crear-una-clase-formrequest-personalizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4. Crear una clase FormRequest personalizada
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2812,18 +2812,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-mensajes-personalizados" class="md-nav__link">
+  <a href="#52-mostrar-todos-los-errores-juntos" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2. Mensajes personalizados
+      5.2. Mostrar todos los errores juntos
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#53-atributos-personalizados" class="md-nav__link">
+  <a href="#53-mensajes-personalizados" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3. Atributos personalizados
+      5.3. Mensajes personalizados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-atributos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4. Atributos personalizados
     </span>
   </a>
   
@@ -3541,15 +3550,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#23-validacion-con-multiples-reglas" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3. Validación con múltiples reglas
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3634,6 +3634,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#44-crear-una-clase-formrequest-personalizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4. Crear una clase FormRequest personalizada
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3659,18 +3668,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-mensajes-personalizados" class="md-nav__link">
+  <a href="#52-mostrar-todos-los-errores-juntos" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2. Mensajes personalizados
+      5.2. Mostrar todos los errores juntos
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#53-atributos-personalizados" class="md-nav__link">
+  <a href="#53-mensajes-personalizados" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3. Atributos personalizados
+      5.3. Mensajes personalizados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-atributos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4. Atributos personalizados
     </span>
   </a>
   
@@ -3899,16 +3917,19 @@
 <p><strong>La validación backend es obligatoria</strong></p>
 <p>NUNCA te fíes solo de la validación Frontend. Un atacante puede:</p>
 <ul>
-<li>Desactivar JavaScript en su navegador</li>
-<li>Modificar el HTML con las herramientas del navegador</li>
-<li>Enviar peticiones HTTP directamente sin usar tu formulario</li>
+<li>Desactivar JavaScript en su navegador.</li>
+<li>Modificar el HTML con las herramientas del navegador.</li>
+<li>Enviar peticiones HTTP directamente sin usar tu formulario.</li>
 </ul>
-<p><strong>La validación de Laravel (backend) es tu verdadera seguridad.</strong></p>
+<p>La validación de Laravel (backend) es tu verdadera seguridad.</p>
 </blockquote>
 <h2 id="2-sistema-de-validacion-de-laravel">2. Sistema de validación de Laravel<a class="headerlink" href="#2-sistema-de-validacion-de-laravel" title="Permanent link">&para;</a></h2>
 <p>Laravel proporciona un sistema de validación potente y expresivo que permite definir reglas de manera clara y concisa. Veamos desde la validación más básica hasta casos avanzados.</p>
 <h3 id="21-validacion-basica">2.1. Validación básica<a class="headerlink" href="#21-validacion-basica" title="Permanent link">&para;</a></h3>
 <p>La forma más simple de validar datos en Laravel es usando el método <strong><code>validate()</code></strong> directamente en el <code>request</code> dentro del controlador.</p>
+<p>Puedes combinar múltiples reglas de validación en un solo campo usando el separador <strong><code>|</code></strong> (pipe) o mediante un array.</p>
+<div class="admonition teolaravel">
+<p class="admonition-title">Ejemplos:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Validación básica en el controlador</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
@@ -3923,66 +3944,6 @@
     <span class="nx">User</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nv">$validated</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="22-reglas-de-validacion-comunes">2.2. Reglas de validación comunes<a class="headerlink" href="#22-reglas-de-validacion-comunes" title="Permanent link">&para;</a></h3>
-<p>Laravel incluye docenas de reglas de validación predefinidas para los casos más comunes. Aquí están las más utilizadas:</p>
-<table>
-<thead>
-<tr>
-<th>Regla</th>
-<th>Descripción</th>
-<th>Ejemplo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>required</code></td>
-<td>Campo obligatorio</td>
-<td><code>'name' =&gt; 'required'</code></td>
-</tr>
-<tr>
-<td><code>string</code></td>
-<td>Debe ser texto</td>
-<td><code>'name' =&gt; 'string'</code></td>
-</tr>
-<tr>
-<td><code>email</code></td>
-<td>Formato de email válido</td>
-<td><code>'email' =&gt; 'email'</code></td>
-</tr>
-<tr>
-<td><code>numeric</code></td>
-<td>Debe ser numérico</td>
-<td><code>'price' =&gt; 'numeric'</code></td>
-</tr>
-<tr>
-<td><code>min:valor</code></td>
-<td>Valor mínimo</td>
-<td><code>'age' =&gt; 'min:18'</code></td>
-</tr>
-<tr>
-<td><code>max:valor</code></td>
-<td>Valor máximo</td>
-<td><code>'name' =&gt; 'max:255'</code></td>
-</tr>
-<tr>
-<td><code>unique:tabla</code></td>
-<td>Único en la tabla</td>
-<td><code>'email' =&gt; 'unique:users'</code></td>
-</tr>
-<tr>
-<td><code>confirmed</code></td>
-<td>Debe tener confirmación</td>
-<td><code>'password' =&gt; 'confirmed'</code></td>
-</tr>
-<tr>
-<td><code>exists:tabla</code></td>
-<td>Debe existir en la tabla</td>
-<td><code>'category_id' =&gt; 'exists:categories,id'</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="23-validacion-con-multiples-reglas">2.3. Validación con múltiples reglas<a class="headerlink" href="#23-validacion-con-multiples-reglas" title="Permanent link">&para;</a></h3>
-<p>Puedes combinar múltiples reglas de validación en un solo campo usando el separador <strong><code>|</code></strong> (pipe) o mediante un array.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
     <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|string|max:255|min:3&#39;</span><span class="p">,</span>
@@ -3993,6 +3954,139 @@
     <span class="s1">&#39;phone&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;nullable|regex:/^[0-9]{9}$/&#39;</span><span class="p">,</span>
 <span class="p">]);</span>
 </code></pre></div>
+</div>
+<h3 id="22-reglas-de-validacion-comunes">2.2. Reglas de validación comunes<a class="headerlink" href="#22-reglas-de-validacion-comunes" title="Permanent link">&para;</a></h3>
+<p>Laravel incluye docenas de reglas de validación predefinidas para los casos más comunes. Aquí están las más utilizadas:</p>
+<table>
+<thead>
+<tr>
+<th>Regla</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Presencia</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td>El campo es obligatorio</td>
+</tr>
+<tr>
+<td><code>nullable</code></td>
+<td>El campo puede estar vacío</td>
+</tr>
+<tr>
+<td><code>sometimes</code></td>
+<td>Solo si existe</td>
+</tr>
+<tr>
+<td><strong>Tipo de dato</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td>Debe ser una cadena de texto</td>
+</tr>
+<tr>
+<td><code>integer</code></td>
+<td>Debe ser un entero</td>
+</tr>
+<tr>
+<td><code>numeric</code></td>
+<td>Debe ser un decimal o entero</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td>true/false, 0/1, "yes"/"no"</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>Debe ser una fecha válida</td>
+</tr>
+<tr>
+<td><code>array</code></td>
+<td>Array</td>
+</tr>
+<tr>
+<td><strong>Longitud / tamaño</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>min:n</code></td>
+<td>Longitud mínima de caracteres</td>
+</tr>
+<tr>
+<td><code>max:n</code></td>
+<td>Longitud máxima de caracteres</td>
+</tr>
+<tr>
+<td><code>size:n</code></td>
+<td>Tamaño exacto</td>
+</tr>
+<tr>
+<td><strong>Valores permitidos</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>in:a,b,c</code></td>
+<td>Lista</td>
+</tr>
+<tr>
+<td><code>not_in</code></td>
+<td>Exclusión</td>
+</tr>
+<tr>
+<td><strong>Formato</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>Email válido</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>URL</td>
+</tr>
+<tr>
+<td><code>regex</code></td>
+<td>Expresión regular</td>
+</tr>
+<tr>
+<td><strong>Base de datos</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>unique:notes,title</code></td>
+<td>Único</td>
+</tr>
+<tr>
+<td><code>exists:users,id</code></td>
+<td>Existe</td>
+</tr>
+<tr>
+<td><strong>Archivos</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td>Archivo</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>Imagen</td>
+</tr>
+<tr>
+<td><code>mimes:jpg,png</code></td>
+<td>Extensión</td>
+</tr>
+<tr>
+<td><code>max:2048</code></td>
+<td>Tamaño (KB)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="3-validacion-avanzada">3. Validación avanzada<a class="headerlink" href="#3-validacion-avanzada" title="Permanent link">&para;</a></h2>
 <p>Las aplicaciones reales a menudo requieren validación de estructuras complejas: arrays de datos, campos condicionales y archivos con requisitos específicos.</p>
 <h3 id="31-validacion-de-arrays">3.1. Validación de arrays<a class="headerlink" href="#31-validacion-de-arrays" title="Permanent link">&para;</a></h3>
@@ -4105,6 +4199,68 @@ Explicación:</p>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<h3 id="44-crear-una-clase-formrequest-personalizada">4.4. Crear una clase FormRequest personalizada<a class="headerlink" href="#44-crear-una-clase-formrequest-personalizada" title="Permanent link">&para;</a></h3>
+<details class="examplelaravel" open="open">
+<summary>Comando</summary>
+<div class="highlight"><pre><span></span><code>php artisan make:request NoteRequest
+</code></pre></div>
+</details>
+<p>Esto creará una clase en <code>app/Http/Requests/NoteRequest.php</code></p>
+<p><strong>Método <code>authorize()</code></strong></p>
+<p>Este método define si el usuario tiene permiso para hacer esta petición. Para este curso lo dejaremos en <code>true</code>:</p>
+<div class="admonition tip">
+<p class="admonition-title">Importante</p>
+<p>Si este método devuelve <code>false</code>, la validación no se ejecutará y se lanzará un error 403 (Forbidden).</p>
+</div>
+<details class="examplelaravel" open="open">
+<summary>Autorizar la petición</summary>
+<div class="highlight"><pre><span></span><code>public function authorize() {    
+<span class="hll">    return true; 
+</span>} 
+</code></pre></div>
+</details>
+<p><strong>Método <code>rules()</code></strong></p>
+<p>Ahora vamos a definir unas reglas de validación de ejemplo para notas:</p>
+<details class="teolaravel" open="open">
+<summary>Ejemplo de reglas</summary>
+<div class="highlight"><pre><span></span><code>public function rules() {     
+    return [         
+        &#39;title&#39; =&gt; &#39;required|string|max:255&#39;,         
+        &#39;description&#39; =&gt; &#39;required|string|min:10&#39;,         
+        &#39;date_at&#39; =&gt; &#39;required|date&#39;,         
+        &#39;done&#39; =&gt; &#39;nullable|boolean&#39;     
+        ]; 
+} 
+</code></pre></div>
+</details>
+<p><strong>Uso en el controlador:</strong></p>
+<p>En el controlador, en lugar de usar <code>Request $request</code>, usaremos <code>NoteRequest $request</code>. Laravel se encargará de validar automáticamente los datos antes de ejecutar el método.</p>
+<details class="examplelaravel" open="open">
+<summary>Almacenar una nota</summary>
+<div class="highlight"><pre><span></span><code>//...
+<span class="hll">use App\Http\Requests\NoteRequest;
+</span>
+//...
+<span class="hll">public function store(NoteRequest $request) {     
+</span>    $data = $request-&gt;all();     
+    $data[&#39;done&#39;] = $request-&gt;has(&#39;done&#39;) ? 1 : 0;  // Convertir checkbox a booleano     
+    Note::create($data);     
+    return redirect()-&gt;route(&#39;notes.index&#39;); 
+} 
+</code></pre></div>
+</details>
+<p>Antes de modificar el <code>update()</code> recordar que en la vista de edición el checkbox se envía como <code>done=on</code> o no se envía nada. Hacemos en esta vista lo mismo que en la de creación:</p>
+<div class="highlight"><pre><span></span><code>&lt;input type=&quot;checkbox&quot; name=&quot;done&quot; value=&quot;1&quot; {{  ($note-&gt;done) ? &#39;checked&#39; : &#39;&#39; }}&gt; 
+</code></pre></div>
+<p>Hacemos lo mismo para el método <code>update()</code>:</p>
+<details class="examplelaravel" open="open">
+<summary>Actualizar una nota</summary>
+<div class="highlight"><pre><span></span><code>public function update(NoteRequest $request, Note $note) {     
+    $note-&gt;update($request-&gt;all());     
+    return redirect()-&gt;route(&#39;notes.index&#39;); 
+} 
+</code></pre></div>
+</details>
 <h2 id="5-manejo-de-errores">5. Manejo de errores<a class="headerlink" href="#5-manejo-de-errores" title="Permanent link">&para;</a></h2>
 <p>Cuando la validación falla, Laravel redirige automáticamente al usuario de vuelta al formulario con los errores. Es crucial mostrar estos errores de forma clara para que el usuario sepa qué corregir.</p>
 <h3 id="51-mostrar-errores-en-blade">5.1. Mostrar errores en Blade<a class="headerlink" href="#51-mostrar-errores-en-blade" title="Permanent link">&para;</a></h3>
@@ -4130,7 +4286,19 @@ Explicación:</p>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 @endif
 </code></pre></div>
-<h3 id="52-mensajes-personalizados">5.2. Mensajes personalizados<a class="headerlink" href="#52-mensajes-personalizados" title="Permanent link">&para;</a></h3>
+<h3 id="52-mostrar-todos-los-errores-juntos">5.2. Mostrar todos los errores juntos<a class="headerlink" href="#52-mostrar-todos-los-errores-juntos" title="Permanent link">&para;</a></h3>
+<p>Para mostrar todos los errores en la parte superior del formulario:</p>
+<div class="highlight"><pre><span></span><code>@if ($errors-&gt;any())    
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-danger&quot;</span><span class="p">&gt;</span>         
+        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>             
+            @foreach ($errors-&gt;all() as $item)                 
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $item }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>             
+            @endforeach         
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>     
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+@endif 
+</code></pre></div>
+<h3 id="53-mensajes-personalizados">5.3. Mensajes personalizados<a class="headerlink" href="#53-mensajes-personalizados" title="Permanent link">&para;</a></h3>
 <p>Los mensajes de error predeterminados de Laravel están en inglés. Puedes personalizarlos para que sean más específicos y acordes a tu aplicación.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Mensajes personalizados</span>
@@ -4144,7 +4312,7 @@ Explicación:</p>
     <span class="s1">&#39;password.min&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;La contraseña debe tener al menos 8 caracteres.&#39;</span><span class="p">,</span>
 <span class="p">]);</span>
 </code></pre></div>
-<h3 id="53-atributos-personalizados">5.3. Atributos personalizados<a class="headerlink" href="#53-atributos-personalizados" title="Permanent link">&para;</a></h3>
+<h3 id="54-atributos-personalizados">5.4. Atributos personalizados<a class="headerlink" href="#54-atributos-personalizados" title="Permanent link">&para;</a></h3>
 <p>En lugar de personalizar cada mensaje, puedes cambiar cómo Laravel nombra los campos en los mensajes de error.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Atributos personalizados</span>

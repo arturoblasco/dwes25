@@ -2,13 +2,15 @@
 
 ## Objetivo de la actividad
 
-<p style="float: left; margin-left: 1rem;">
+<p style="float: left; margin: 0 1rem 1rem 0;">
   <img src="../../img/laravel.svg"
        alt="Actividad en el aula virtual"
-       width="150">
+       width="120">
 </p>
 
 Implementarás **rutas** y un **controlador** que devuelvan listados ordenados y filtrados, y mostrarás los datos en una **vista Blade** mediante una tabla HTML con columnas homogéneas.
+
+<br/><br/>
 
 Al finalizar, serás capaz de:
 
