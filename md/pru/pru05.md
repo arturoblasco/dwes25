@@ -297,16 +297,10 @@ Se recomienda ponerla explícitamente para tener claro que las rutas de `api.php
     * `/...` -> `routes/web.php`
 
 
-## 2. Introducción
 
-Una **API** (Application Programming Interface) permite a aplicaciones diferentes comunicarse entre sí, intercambiando datos en formatos como **JSON**. Las APIs REST usan los verbos HTTP (GET, POST, PUT, DELETE) para definir operaciones sobre recursos.
+## 2. Definir Rutas de API
 
-Laravel ofrece todas las herramientas necesarias para construir APIs modernas, organizadas y seguras. En este tema construiremos paso a paso una API para el recurso `Note`, que ya conocemos de los temas anteriores.
-
-
-## 3. Definir Rutas de API
-
-### 3.1. Ficheros de rutas y su organización
+### 2.1. Ficheros de rutas y su organización
 
 Laravel separa las rutas para aplicación web y API:
 
@@ -345,9 +339,9 @@ Hay que fijarse que **no es necesario añadir `/api` en la ruta**, Laravel lo a�
 
 ---
 
-## 4. Crear Controlador para la API
+## 3. Crear Controlador para la API
 
-### 4.1. Generar un controlador API (Opcional)
+### 3.1. Generar un controlador API (Opcional)
 
 > Este punto solo se realizará si todavía no tenemos creada la table de notas `notes` en nuestra base de datos. 
 
@@ -406,7 +400,7 @@ Podemos crear el modelo `Note` con el siguiente comando:
 
 Esto generará el modelo `Note` en `app/Models/Note.php`.
 
-### 4.2. Generar un controlador API
+### 3.2. Generar un controlador API
 
 Usamos el *flag* `--api` para generar un controlador que sólo incluye los métodos necesarios para una API CRUD:
 
@@ -453,7 +447,7 @@ Esto creará el archivo en `app/Http/Controllers/Api/NoteController.php` con los
 
 El controlador `NoteController` extiende de `Controller` y usa el modelo `Note` para interactuar con la base de datos.
 
-### 4.3. Crear las rutas API para Notes
+### 3.3. Crear las rutas API para Notes
 
 En `routes/api.php`:
 
@@ -504,7 +498,7 @@ Resultado de `route:list`:
 </div>
 ---
 
-## 5. Implementar el CRUD API para Notes
+## 4. Implementar el CRUD API para Notes
 
 ???+examplelaravel "Modelo Note con $fillable"
     Asegúrate de que el modelo `Note` está correctamente definido con `$fillable`:
@@ -516,7 +510,7 @@ Resultado de `route:list`:
 
 ---
 
-## 6. Códigos de estado HTTP en APIs
+## 5. Códigos de estado HTTP en APIs
 
 En una API REST, es importante devolver **códigos de estado HTTP apropiados** para indicar si la operación fue exitosa o si ocurrió un error.
 
@@ -542,7 +536,7 @@ A continuación, una tabla con los códigos más comunes y su uso recomendado:
 
 ---
 
-## 7. Implementar métodos del controlador
+## 6. Implementar métodos del controlador
 
 Antes de implementar los métodos del controlador, asegúrate de importar las clases necesarias:
 
@@ -556,7 +550,7 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     //...
     ```
 
-### 7.1. Método `index()` – Listar notas
+### 6.1. Método `index()` – Listar notas
 
 !!!examplelaravel "Listar todas las notas"
 
@@ -569,7 +563,7 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     } 
     ```
 
-### 7.2. Método `show()` – Mostrar una nota
+### 6.2. Método `show()` – Mostrar una nota
 
 !!!examplelaravel "Mostrar una nota por ID"
 
@@ -582,7 +576,7 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     }
     ```
 
-### 7.3. Método `store()` – Crear una nota
+### 6.3. Método `store()` – Crear una nota
 
 !!!examplelaravel "Guardar nueva nota"
 
@@ -597,7 +591,7 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     } 
     ```
 
-### 7.4. Método `update()` – Modificar nota
+### 6.4. Método `update()` – Modificar nota
 
 !!!examplelaravel "Actualizar una nota"
 
@@ -612,7 +606,7 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     } 
     ```
 
-### 7.5. Método `destroy()` – Eliminar nota
+### 6.5. Método `destroy()` – Eliminar nota
 
 !!!examplelaravel "Eliminar una nota"
     
@@ -627,7 +621,7 @@ Antes de implementar los métodos del controlador, asegúrate de importar las cl
     ```
 
 
-### 7.6. Testing de la API
+### 6.6. Testing de la API
 
 Para probar la API vamos a usar una extensión de *Visual Studio Code* llamada **`REST Client`** que permite hacer peticiones HTTP directamente desde el editor. 
 
@@ -650,7 +644,7 @@ También puedes usar herramientas como `Postman` o `Insomnia`.
 
 Vamos a escribir nuestra primera petición para listar todas las notas:
 
-### 7.7. Peticiones REST Client
+### 6.7. Peticiones REST Client
 
 **Mostrar listado de notas**
 ``` 
@@ -749,11 +743,11 @@ La petición es muy sencilla, sólo necesitamos el método `DELETE` y la URL con
 
 Con esto hemos probado todas las operaciones CRUD de nuestra API REST para el recurso `Note`. En el siguiente apartado vamos a ver cómo mejorar la salida de los datos usando `API Resources`, podemos tomar el control del formato de los datos que devolvemos.
 
-## 8. API Resources
+## 7. API Resources
 
 Laravel permite transformar la salida de tus APIs con clases `Resource` que te dan control sobre el formato.
 
-### 8.1. Crear un API Resource
+### 7.1. Crear un API Resource
 
 ???+examplelaravel "Crear NoteResource"
 
@@ -763,7 +757,7 @@ Laravel permite transformar la salida de tus APIs con clases `Resource` que te d
 
 Crea el archivo en `App\Http\Resources\NoteResource.php`
 
-### 8.2. Personalizar la transformación
+### 7.2. Personalizar la transformación
 
 Vamos a modificar la salida de los datos en `NoteResource.php`. Por ejemplo, podemos cambiar los nombres de los campos y añadir un campo calculado `estado` que indique si la nota está completada o pendiente:
 
@@ -781,7 +775,7 @@ Vamos a modificar la salida de los datos en `NoteResource.php`. Por ejemplo, pod
     } 
     ```
 
-### 8.3. Usar el recurso en el controlador
+### 7.3. Usar el recurso en el controlador
 
 Añadimos la importación al controlador `NoteController`:
 
@@ -846,7 +840,7 @@ Ahora sería aplicable a todos los métodos que devuelven un solo elemento, como
 
 ---
 
-## 9. Validación de los datos
+## 8. Validación de los datos
 
 Al igual que en los formularios, es importante validar los datos que recibimos en la API. `Laravel` ofrece un sistema de validación muy potente. Empezaremos por validar los datos en el método `store()` y `update()`. Para ello vamos a crear la clase `NoteRequest`:
 
@@ -933,7 +927,7 @@ Debemos añadir las importaciones necesarias al principio del archivo:
     } 
     ```
 
-### 9.1. Parámetros JSON
+### 8.1. Parámetros JSON
 
 En los parámetros de `json()` podemos añadir el tercer parámetro **`JSON_UNESCAPED_UNICODE`** para evitar que los caracteres especiales se escapen. Esto es útil si estás trabajando con caracteres no ASCII. Si no los acentos y caracteres especiales se escaparán y no se verán correctamente en la respuesta.
 
@@ -1006,7 +1000,7 @@ $request->all();
 
 Recordemos que si `role` no está en `$fillable` en el modelo, no se asignará de todas formas. Pero es una buena práctica usar `validated()` para asegurarnos de que sólo los datos permitidos se procesan.
 
-## 10. Ejemplos de peticiones
+## 9. Ejemplos de peticiones
 
 Si todo ha ido bien aquí tenemos una API REST completa para el recurso `Note` que podemos probar con herramientas como `Postman` o `RestClient`:
 
@@ -1064,15 +1058,15 @@ Entendido, vamos a añadir un punto a tu tema para controlar el error cuando no 
 
 Aquí tienes cómo podrías estructurar este punto:
 
-## 11. Control de Errores en la API con `findOrFail`
+## 10. Control de Errores en la API con `findOrFail`
 
 Cuando construimos una API REST en Laravel, es importante asegurarnos de que las respuestas a las solicitudes, especialmente las solicitudes AJAX, siempre sean en formato JSON, incluso cuando se produce un error, como intentar acceder a un recurso que no existe.
 
-### 11.1. Usando `findOrFail` para manejar errores
+### 10.1. Usando `findOrFail` para manejar errores
 
 Laravel proporciona el método `findOrFail` para buscar un modelo en la base de datos por su ID. Si el modelo no existe, Laravel automáticamente lanza una excepción `ModelNotFoundException`, que puedes manejar para devolver una respuesta adecuada sin que se genere un error en formato HTML.
 
-#### 11.1.1. Ejemplo básico con `findOrFail`
+#### 10.1.1. Ejemplo básico con `findOrFail`
 
 En el siguiente ejemplo, la función `show` intenta obtener una nota por su ID usando `findOrFail`. Si la nota no se encuentra, Laravel devolverá automáticamente un error **404 Not Found** con una respuesta en formato JSON.
 
@@ -1143,7 +1137,7 @@ Con esto, puedes manejar de manera efectiva los casos en los que un recurso no e
 
 Ahora falta extender este control de errores a los demás métodos del controlador (`update`, `destroy`) donde también se utiliza `findOrFail` para obtener la nota por ID.
 
-## 12. Conclusiones
+## 11. Conclusiones
 
 * Las APIs REST son ideales para aplicaciones SPA, móviles o integraciones.
 * Laravel permite definir rutas específicas para API con prefijos automáticos y middleware personalizado.
