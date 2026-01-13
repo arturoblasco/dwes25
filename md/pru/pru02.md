@@ -314,7 +314,7 @@ Verifica manualmente que:
 
 ---
 
-???questionlaravel "Práctica a entregar"
+???praclaravel "Práctica a entregar"
     
     <p style="float: left; margin-left: 1rem;">
         <img src="../../img/laraveltask.svg"

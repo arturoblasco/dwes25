@@ -995,7 +995,7 @@ Una vez vista pulsamos volver y nos redirecciona al listado de notas.
 
 
 ---
-???questionlaravel "Práctica a Entregar"
+???praclaravel "Práctica a Entregar"
     
     ### Objetivo de la actividad
     

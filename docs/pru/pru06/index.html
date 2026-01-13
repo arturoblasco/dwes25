@@ -1,0 +1,6191 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../pru05/">
+      
+      
+        <link rel="next" href="../pru07/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>6. Autenticación Básica - Desarrollo Web en Entorno Servidor (DWES)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#6-autenticacion-basica" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desarrollo Web en Entorno Servidor (DWES)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. Autenticación Básica
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Cambia a modo normal"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambia a modo normal" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Desarrollo Web en Entorno Servidor (DWES)" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor (DWES)" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Desarrollo Web en Entorno Servidor (DWES)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    🟡 PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            🟡 PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 1 Arquitectura Web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            UT 1 Arquitectura Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. Arquitecturas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3. Generar páginas web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4. Modelos de programación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5. Decisiones de diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6. Ejecución del código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0107/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7. Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0108/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8. Tecnologías
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0109/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.9. Navegadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut0110/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.10. Puesta en marcha
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut01de/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descargas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut01/ut01ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 2 Lenguaje PHP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            UT 2 Lenguaje PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3. Operadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4. Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5. Funciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.6. Funciones predefinidas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut0207/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.7. Expresiones regulares
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut02/ut02ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 3 PHP OO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            UT 3 PHP OO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2. Clases y objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0303/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3. Encapsulación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4. Constructor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5. Clases estáticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.6. Introspección
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.7. Herencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0308/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.8. Clases abstractas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0309/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.9. Clases final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0310/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.10. Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0311/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.11. Métodos encadenados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.12. Métodos mágicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.13. Espacio de nombres
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0314/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.14. Gestión de errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0315/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.15. Excepciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut0316/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.16. SPL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut03/ut03ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 4 Programación web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            UT 4 Programación web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2. Variable de servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3. Formularios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0404/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4.Cabeceras de respuesta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0405/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5. Gestión de estado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut0406/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6. Autenticación de usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut04/ut04ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 5 Acceso a Base de Datos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            UT 5 Acceso a Base de Datos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0501/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0502/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2. Instalación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0503/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.3. Estructura de BD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0504/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.4. SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0505/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.5. phpMyAdmin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0506/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.6. MySQLi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0507/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.7. Php Data Object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0508/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.8. Login & Password
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut0509/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.9. Acceso a ficheros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ut05/ut05ac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejercicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    🟡 Laravel
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            🟡 Laravel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 1 ED profesional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 1 ED profesional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.0. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Introducción a Laravel12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. ¿Cómo Habla una Aplicación Laravel?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3. ¿Dónde Vive y Corre Nuestra Aplicación?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4. Herramientas Esenciales para el Desarrollador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5. El Frontend Moderno: Vite y Tailwind CSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6. Anatomía de una Aplicación Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl1/10p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 2 Fundamentos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 2 Fundamentos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.0. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 Viaje Interno de una Petición
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. Mapa de la aplicación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3. Vistas dinámicas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4. Layouts y herencia en Blade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5. Del controlador a la vista
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.6. Datos mock
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl2/20p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 3 Gestión de datos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 3 Gestión de datos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/300/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.0. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1. Migraciones y Estructura
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2. Eloquent ORM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/303/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3. CRUD con Eloquent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4. Relaciones Eloquent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5. Seeders y Factories
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl3/30p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UPL 4 Interacción con el usuario
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            UPL 4 Interacción con el usuario
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.0. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1. Formularios seguros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2. Sistema de validación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3. Manejo de sesiones y estado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/404/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4. Autenticación básica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/405/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5. Middleware personalizado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/406/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6. Blade Components para Layouts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/407/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.7. Sistema de almacenamiento de archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upl4/40p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica guiada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pruebas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Pruebas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Controladores y Rutas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Desarrollo de un CRUD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Validaciones, Rutas Resource y Mensajes del Sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Creación de APIs REST en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    6. Autenticación Básica
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Autenticación Básica
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-fundamentos-de-la-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Fundamentos de la autenticación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Fundamentos de la autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-que-es-la-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. ¿Qué es la autenticación?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-autenticacion-vs-autorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Autenticación vs autorización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-flujo-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Flujo de autenticación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-preparar-proyecto-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Preparar proyecto (OPCIONAL)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Preparar proyecto (OPCIONAL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-del-proyecto-laravel-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del proyecto Laravel (base)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparacion-del-proyecto-como-api-installapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparación del proyecto como API: install:api
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparación del proyecto como API: install:api">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace-este-comando" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué hace este comando?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-no-hace" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué NO hace?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacion-de-sanctum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificación de Sanctum
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-autenticacion-en-una-api-rest-con-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Autenticación en una API REST con Laravel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Autenticación en una API REST con Laravel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#32-preparacion-del-modelo-user-para-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Preparación del modelo User para tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-creacion-del-controlador-de-autenticacion-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Creación del controlador de autenticación API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-definicion-de-rutas-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Definición de rutas API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-insercion-de-un-usuario-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5. Inserción de un usuario de prueba
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-pruebas-con-rest-client-flujo-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6. Pruebas con Rest Client (flujo completo)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6. Pruebas con Rest Client (flujo completo)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login-obtencion-del-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login (obtención del token)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-a-recurso-protegido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso a recurso protegido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logout-invalidar-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logout (invalidar token)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-que-aporta-realmente-installapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7. Qué aporta realmente install:api
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.8. Conclusión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-autenticacion-y-consumo-de-una-api-laravel-desde-vue-spa-con-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-por-que-no-usar-token-bearer-en-vue-siendo-spa" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. ¿Por qué no usar token Bearer en Vue (siendo SPA)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-crear-el-proyecto-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Crear el proyecto Laravel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-configurar-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Configurar la base de datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-instalar-laravel-breeze-modo-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Instalar Laravel Breeze (modo API)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Instalar Laravel Breeze (modo API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-el-paquete-breeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar el paquete Breeze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-el-instalador-en-modo-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecutar el instalador en modo API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-ejecutar-migraciones-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Ejecutar migraciones adicionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-que-instala-laravel-breeze-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 Qué instala Laravel Breeze (API)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 Qué instala Laravel Breeze (API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rutas-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas disponibles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivos-importantes-generados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos importantes generados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-configuracion-de-sanctum-para-spa-con-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 Configuración de Sanctum para SPA con Vue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-configuracion-de-cors-laravel-11-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8 Configuración de CORS (Laravel 11 / 12)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#49-crear-un-usuario-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.9 Crear un usuario de prueba
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#410-proteger-rutas-api-con-sanctum" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.10 Proteger rutas API con Sanctum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#411-vistazo-desde-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11 Vistazo desde Vue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.11 Vistazo desde Vue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4111-flujo-correcto-de-autenticacion-desde-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.1 Flujo correcto de autenticación desde Vue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.11.1 Flujo correcto de autenticación desde Vue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1o-obtener-cookie-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      1º Obtener cookie CSRF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2o-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      2º Login
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3o-acceder-a-la-api-protegida" class="md-nav__link">
+    <span class="md-ellipsis">
+      3º Acceder a la API protegida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4o-logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      4º Logout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4112-configuracion-de-axios-en-vue-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.2 Configuración de Axios en Vue (recomendado)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4113-errores-tipicos-y-su-causa" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.3 Errores típicos y su causa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4114-funciones-tipicas-de-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.4 Funciones típicas de auth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4115-ejemplo-de-consumo-de-notes-desde-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.5 Ejemplo de consumo de notes desde Vue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4116-manejo-de-errores-tipico-en-vue-401-y-422" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.6 Manejo de errores típico en Vue (401 y 422)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.11.6 Manejo de errores típico en Vue (401 y 422)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#401-unauthorized" class="md-nav__link">
+    <span class="md-ellipsis">
+      401 Unauthorized
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-validation-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      422 Validation Error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#414-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.14 Conclusión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.14 Conclusión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practica-guiada-laravel-api-vue-login-spa-con-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Práctica guiada – Laravel API + Vue (login SPA con cookies)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-a-backend-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte A. Backend (Laravel)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-b-frontend-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte B. Frontend (Vue)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-c-comprobaciones-criterios-de-exito" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte C. Comprobaciones (criterios de éxito)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preguntas-de-reflexion-para-memoria-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preguntas de reflexión (para memoria / examen)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-proteccion-de-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Protección de rutas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Protección de rutas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-middleware-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Middleware de autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-verificar-autenticacion-en-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Verificar autenticación en controladores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-verificar-autenticacion-en-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Verificar autenticación en vistas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gestion-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Gestión de usuarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Gestión de usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-obtener-usuario-autenticado" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. Obtener usuario autenticado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-autenticacion-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. Autenticación manual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-cerrar-sesion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3. Cerrar sesión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-recuperacion-de-contrasena" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Recuperación de contraseña
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Recuperación de contraseña">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-configuracion-de-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Configuración de email
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-formulario-de-recuperacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. Formulario de recuperación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-formulario-de-restablecimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. Formulario de restablecimiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-verificacion-de-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Verificación de email
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Verificación de email">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-configurar-verificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1. Configurar verificación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-middleware-de-verificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2. Middleware de verificación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-verificar-email-en-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3. Verificar email en vistas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-personalizacion-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Personalización de autenticación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Personalización de autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-personalizar-redirecciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1. Personalizar redirecciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-personalizar-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2. Personalizar validación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-personalizar-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3. Personalizar Middleware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-seguridad-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Seguridad de autenticación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Seguridad de autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-contrasenas-seguras" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1. Contraseñas seguras
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-logs-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2. Logs de seguridad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Sistema de almacenamiento de archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_7" id="__nav_4_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Despliegue
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Despliegue
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru08a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción al despliegue de aplicaciones web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru08b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicación simple con estructura precaria php
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru08c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicación completa con estructura de laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pru08d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Despliegue en PaaS Render
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examen2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examen 2 Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-fundamentos-de-la-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Fundamentos de la autenticación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Fundamentos de la autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-que-es-la-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. ¿Qué es la autenticación?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-autenticacion-vs-autorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Autenticación vs autorización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-flujo-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Flujo de autenticación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-preparar-proyecto-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Preparar proyecto (OPCIONAL)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Preparar proyecto (OPCIONAL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-del-proyecto-laravel-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del proyecto Laravel (base)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparacion-del-proyecto-como-api-installapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparación del proyecto como API: install:api
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparación del proyecto como API: install:api">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-hace-este-comando" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué hace este comando?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-no-hace" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué NO hace?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacion-de-sanctum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificación de Sanctum
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-autenticacion-en-una-api-rest-con-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Autenticación en una API REST con Laravel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Autenticación en una API REST con Laravel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#32-preparacion-del-modelo-user-para-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Preparación del modelo User para tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-creacion-del-controlador-de-autenticacion-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Creación del controlador de autenticación API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-definicion-de-rutas-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Definición de rutas API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-insercion-de-un-usuario-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5. Inserción de un usuario de prueba
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-pruebas-con-rest-client-flujo-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6. Pruebas con Rest Client (flujo completo)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6. Pruebas con Rest Client (flujo completo)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login-obtencion-del-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login (obtención del token)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-a-recurso-protegido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso a recurso protegido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logout-invalidar-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logout (invalidar token)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-que-aporta-realmente-installapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7. Qué aporta realmente install:api
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.8. Conclusión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-autenticacion-y-consumo-de-una-api-laravel-desde-vue-spa-con-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-por-que-no-usar-token-bearer-en-vue-siendo-spa" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. ¿Por qué no usar token Bearer en Vue (siendo SPA)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-crear-el-proyecto-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Crear el proyecto Laravel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-configurar-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Configurar la base de datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-instalar-laravel-breeze-modo-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Instalar Laravel Breeze (modo API)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Instalar Laravel Breeze (modo API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-el-paquete-breeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar el paquete Breeze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-el-instalador-en-modo-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecutar el instalador en modo API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-ejecutar-migraciones-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Ejecutar migraciones adicionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-que-instala-laravel-breeze-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 Qué instala Laravel Breeze (API)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 Qué instala Laravel Breeze (API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rutas-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas disponibles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivos-importantes-generados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos importantes generados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-configuracion-de-sanctum-para-spa-con-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 Configuración de Sanctum para SPA con Vue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-configuracion-de-cors-laravel-11-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8 Configuración de CORS (Laravel 11 / 12)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#49-crear-un-usuario-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.9 Crear un usuario de prueba
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#410-proteger-rutas-api-con-sanctum" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.10 Proteger rutas API con Sanctum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#411-vistazo-desde-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11 Vistazo desde Vue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.11 Vistazo desde Vue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4111-flujo-correcto-de-autenticacion-desde-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.1 Flujo correcto de autenticación desde Vue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.11.1 Flujo correcto de autenticación desde Vue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1o-obtener-cookie-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      1º Obtener cookie CSRF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2o-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      2º Login
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3o-acceder-a-la-api-protegida" class="md-nav__link">
+    <span class="md-ellipsis">
+      3º Acceder a la API protegida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4o-logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      4º Logout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4112-configuracion-de-axios-en-vue-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.2 Configuración de Axios en Vue (recomendado)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4113-errores-tipicos-y-su-causa" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.3 Errores típicos y su causa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4114-funciones-tipicas-de-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.4 Funciones típicas de auth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4115-ejemplo-de-consumo-de-notes-desde-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.5 Ejemplo de consumo de notes desde Vue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4116-manejo-de-errores-tipico-en-vue-401-y-422" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.11.6 Manejo de errores típico en Vue (401 y 422)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.11.6 Manejo de errores típico en Vue (401 y 422)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#401-unauthorized" class="md-nav__link">
+    <span class="md-ellipsis">
+      401 Unauthorized
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-validation-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      422 Validation Error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#414-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.14 Conclusión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.14 Conclusión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practica-guiada-laravel-api-vue-login-spa-con-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Práctica guiada – Laravel API + Vue (login SPA con cookies)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-a-backend-laravel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte A. Backend (Laravel)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-b-frontend-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte B. Frontend (Vue)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-c-comprobaciones-criterios-de-exito" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte C. Comprobaciones (criterios de éxito)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preguntas-de-reflexion-para-memoria-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preguntas de reflexión (para memoria / examen)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-proteccion-de-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Protección de rutas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Protección de rutas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-middleware-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Middleware de autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-verificar-autenticacion-en-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Verificar autenticación en controladores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-verificar-autenticacion-en-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Verificar autenticación en vistas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gestion-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Gestión de usuarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Gestión de usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-obtener-usuario-autenticado" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. Obtener usuario autenticado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-autenticacion-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. Autenticación manual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-cerrar-sesion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3. Cerrar sesión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-recuperacion-de-contrasena" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Recuperación de contraseña
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Recuperación de contraseña">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-configuracion-de-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Configuración de email
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-formulario-de-recuperacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. Formulario de recuperación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-formulario-de-restablecimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. Formulario de restablecimiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-verificacion-de-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Verificación de email
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Verificación de email">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-configurar-verificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1. Configurar verificación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-middleware-de-verificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2. Middleware de verificación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-verificar-email-en-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3. Verificar email en vistas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-personalizacion-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Personalización de autenticación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Personalización de autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-personalizar-redirecciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1. Personalizar redirecciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-personalizar-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2. Personalizar validación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-personalizar-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3. Personalizar Middleware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-seguridad-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Seguridad de autenticación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Seguridad de autenticación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-contrasenas-seguras" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1. Contraseñas seguras
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-logs-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2. Logs de seguridad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="6-autenticacion-basica">6. Autenticación Básica<a class="headerlink" href="#6-autenticacion-basica" title="Permanent link">&para;</a></h1>
+<p style="float: left; margin: 0 1rem 1rem 0;">
+  <img src="../../img/laravel.svg"
+       alt="Actividad en el aula virtual"
+       width="120">
+</p>
+
+<p>La autenticación es el proceso de verificar la identidad de un usuario, confirmando que es quien dice ser. En aplicaciones web, esto típicamente involucra un sistema de login y logout que permite a los usuarios acceder a áreas protegidas y mantener su sesión activa. Laravel proporciona un sistema de autenticación robusto y flexible con <strong>Laravel Breeze</strong>.</p>
+<details class="warning">
+<summary>¿Se puede combinar el starter kit <em>Breeze</em> y <code>php artisan install:api</code>?</summary>
+<ul>
+<li><strong>No</strong> se deben combinar “a ciegas”.</li>
+<li><strong>Sí</strong> pueden usarse en el mismo proyecto solo si sabes qué aporta cada uno<strong>, pero </strong>no ejecutando ambos comandos.</li>
+</ul>
+<hr />
+<p><strong>¿Por qué no conviene ejecutarlos juntos?</strong></p>
+<p>Porque <strong>ambos</strong>:</p>
+<ul>
+<li>Instalan <strong>Laravel Sanctum</strong></li>
+<li>Crean <strong>rutas y lógica de autenticación</strong></li>
+<li>Configuran <strong>middleware de auth</strong></li>
+</ul>
+<p>Ejecutar los dos provoca:</p>
+<ul>
+<li>Rutas duplicadas</li>
+<li>Confusión entre auth por <strong>cookies</strong> vs <strong>tokens</strong></li>
+<li>Problemas didácticos para el alumnado</li>
+</ul>
+<hr />
+<p><strong>Qué es cada cosa (clave para entenderlo)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Herramienta</th>
+<th>Qué es</th>
+<th>Para qué sirve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Breeze</strong></td>
+<td>Starter kit</td>
+<td>Genera autenticación completa</td>
+</tr>
+<tr>
+<td><strong><code>install:api</code></strong></td>
+<td>Scaffolding ligero</td>
+<td>Configura Sanctum + API mínima</td>
+</tr>
+<tr>
+<td><strong>Sanctum</strong></td>
+<td>Sistema de auth</td>
+<td>Tokens o SPA (cookies)</td>
+</tr>
+</tbody>
+</table>
+<p>📌 <strong>Breeze YA incluye Sanctum</strong><br />
+📌 <code>install:api</code> está pensado para proyectos <strong>sin starter kit</strong></p>
+<hr />
+<p><strong>Opción recomendada</strong></p>
+<p>Usar solo Breeze en modo API</p>
+<div class="highlight"><pre><span></span><code>composer<span class="w"> </span>require<span class="w"> </span>laravel/breeze<span class="w"> </span>--dev
+php<span class="w"> </span>artisan<span class="w"> </span>breeze:install<span class="w"> </span>api
+php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div>
+<p>Te instala:</p>
+<ul>
+<li>Sanctum</li>
+<li>Rutas /api/login, /api/register</li>
+<li>Controladores API</li>
+<li>Sin vistas Blade</li>
+<li>Perfecto para Postman / Vue / React</li>
+</ul>
+<p>❌ NO ejecutes después:
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>install:api
+</code></pre></div></p>
+</details>
+<h2 id="1-fundamentos-de-la-autenticacion">1. Fundamentos de la autenticación<a class="headerlink" href="#1-fundamentos-de-la-autenticacion" title="Permanent link">&para;</a></h2>
+<h3 id="11-que-es-la-autenticacion">1.1. ¿Qué es la autenticación?<a class="headerlink" href="#11-que-es-la-autenticacion" title="Permanent link">&para;</a></h3>
+<p>La autenticación es el proceso de verificar la identidad de un usuario mediante credenciales como nombre de usuario y contraseña. Es diferente de la <strong>autorización</strong>, que determina qué acciones puede realizar un usuario autenticado.</p>
+<h3 id="12-autenticacion-vs-autorizacion">1.2. Autenticación vs autorización<a class="headerlink" href="#12-autenticacion-vs-autorizacion" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autenticación</strong></td>
+<td>Verificar "quién eres"</td>
+<td>Login con email y contraseña</td>
+</tr>
+<tr>
+<td><strong>Autorización</strong></td>
+<td>Determinar "qué puedes hacer"</td>
+<td>Acceso a panel de administración</td>
+</tr>
+</tbody>
+</table>
+<p>URLs de interés:</p>
+<ul>
+<li><a href="https://laravel.com/docs/12.x/sanctum?utm_source=chatgpt.com" target="_blank">Autenticación: Laravel Sanctum (tokens simples o SPA auth)</a></li>
+<li><a href="https://laravel.com/docs/12.x/authorization?utm_source=chatgpt.com" target="_blank">Autorización: Policies + Gates (lo trae Laravel de serie)</a></li>
+</ul>
+<p><strong>Ejemplo práctico:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Autenticación: ¿Quién eres?</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">attempt</span><span class="p">([</span><span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="nv">$password</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="c1">// Usuario autenticado exitosamente</span>
+
+    <span class="c1">// autorización: ¿Puedes hacer esto?</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">isAdmin</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// Puede acceder al panel de administración</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>En resumen:</strong></p>
+<ul>
+<li>Primero te <strong>autentican</strong> (demuestras quién eres).</li>
+<li>Después te <strong>autorizan</strong> (verifican qué puedes hacer).</li>
+</ul>
+<h3 id="13-flujo-de-autenticacion">1.3. Flujo de autenticación<a class="headerlink" href="#13-flujo-de-autenticacion" title="Permanent link">&para;</a></h3>
+<div class="mermaid">sequenceDiagram
+    participant U as Usuario
+    participant B as Navegador
+    participant S as Servidor
+    participant D as Base de Datos
+
+    U-&gt;&gt;B: Ingresa credenciales
+    B-&gt;&gt;S: POST /login
+    S-&gt;&gt;D: Verifica credenciales
+    D-&gt;&gt;S: Datos del usuario
+    S-&gt;&gt;S: Crea sesión autenticada
+    S-&gt;&gt;B: Redirige a dashboard
+    B-&gt;&gt;U: Muestra área protegida
+
+    Note over U,D: Usuario navega en área protegida
+
+    B-&gt;&gt;S: Petición a área protegida
+    S-&gt;&gt;S: Verifica sesión autenticada
+    S-&gt;&gt;B: Responde con datos protegidos
+    B-&gt;&gt;U: Muestra contenido personalizado</div>
+<h2 id="2-preparar-proyecto-opcional">2. Preparar proyecto (OPCIONAL)<a class="headerlink" href="#2-preparar-proyecto-opcional" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Si tenemos ya el proyecto creado de los puntos anteriores, por ejemplo el proyecto que hemos seguido de nombre <code>testear</code> para probar nuestra <em>api</em>, NO hará falta realizar este <strong>punto 2</strong>.</p>
+</blockquote>
+<h4 id="creacion-del-proyecto-laravel-base">Creación del proyecto Laravel (base)<a class="headerlink" href="#creacion-del-proyecto-laravel-base" title="Permanent link">&para;</a></h4>
+<p>Se crea un proyecto Laravel base, sin instalar ningún starter kit (ni Breeze ni Jetstream). Vamos a nombrarlo, por ejemplo, <code>testapi</code>:</p>
+<div class="highlight"><pre><span></span><code>composer<span class="w"> </span>create-project<span class="w"> </span>laravel/laravel<span class="w"> </span>testapi
+<span class="nb">cd</span><span class="w"> </span>testapi
+</code></pre></div>
+<p>En este punto se dispone de:</p>
+<ul>
+<li>Laravel base</li>
+<li>sistema de usuarios (<code>users</code>)</li>
+<li>hashing de contraseñas</li>
+<li>estructura estándar del framework</li>
+</ul>
+<h4 id="preparacion-del-proyecto-como-api-installapi">Preparación del proyecto como API: <code>install:api</code><a class="headerlink" href="#preparacion-del-proyecto-como-api-installapi" title="Permanent link">&para;</a></h4>
+<p>Ejecutamos el comando:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>install:api
+</code></pre></div>
+<h5 id="que-hace-este-comando">¿Qué hace este comando?<a class="headerlink" href="#que-hace-este-comando" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Prepara Laravel para funcionar como <strong>API REST</strong></li>
+<li>Refuerza el uso de respuestas JSON</li>
+<li>Configura middleware y estructura orientada a API</li>
+<li>Instala y configura <strong>Laravel Sanctum</strong></li>
+</ul>
+<h5 id="que-no-hace">¿Qué NO hace?<a class="headerlink" href="#que-no-hace" title="Permanent link">&para;</a></h5>
+<ul>
+<li>No crea vistas</li>
+<li>No crea formularios</li>
+<li>No crea endpoints de login</li>
+<li>No crea tokens automáticamente</li>
+</ul>
+<blockquote>
+<p><code>install:api</code> prepara la infraestructura,<br />
+pero <strong>la lógica de autenticación se implementa manualmente</strong>.</p>
+</blockquote>
+<h4 id="verificacion-de-sanctum">Verificación de Sanctum<a class="headerlink" href="#verificacion-de-sanctum" title="Permanent link">&para;</a></h4>
+<p>Tras ejecutar <code>install:api</code>, se debe comprobar que Sanctum está disponible:</p>
+<ul>
+<li>Existe el archivo <code>config/sanctum.php</code></li>
+<li>Existe la tabla <code>personal_access_tokens</code></li>
+</ul>
+<p>Si fuera necesario:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>vendor:publish<span class="w"> </span>--provider<span class="o">=</span><span class="s2">&quot;Laravel\Sanctum\SanctumServiceProvider&quot;</span>
+php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div>
+<blockquote>
+<p>A partir de aquí podremos realizar una instalación para:  </p>
+<ul>
+<li>punto 3. Autenticación en una API REST con Laravel  </li>
+<li>punto 4. Autenticación de una API Laravel desde Vue</li>
+</ul>
+</blockquote>
+<h2 id="3-autenticacion-en-una-api-rest-con-laravel">3. Autenticación en una API REST con Laravel<a class="headerlink" href="#3-autenticacion-en-una-api-rest-con-laravel" title="Permanent link">&para;</a></h2>
+<p>Este apartado desarrolla un sistema completo de <strong>autenticación en una API REST</strong> utilizando <strong>Laravel Sanctum</strong> y <strong>tokens Bearer</strong>, partiendo de una instalación preparada mediante el comando <code>php artisan install:api</code>.</p>
+<p>El objetivo es disponer de una <strong>API pura</strong>, sin vistas Blade, sin sesiones y sin cookies, fácilmente testeable con <strong>Rest Client</strong>, y preparada para ser consumida posteriormente por un frontend como <strong>Vue</strong>.</p>
+<h3 id="32-preparacion-del-modelo-user-para-tokens">3.2. Preparación del modelo <code>User</code> para tokens<a class="headerlink" href="#32-preparacion-del-modelo-user-para-tokens" title="Permanent link">&para;</a></h3>
+<p>Para poder generar <em>tokens Bearer</em>, el modelo <code>User</code> debe usar el trait <strong><code>HasApiTokens</code></strong>.</p>
+<p>Archivo: <strong><code>app/Models/User.php</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="x">use Laravel\Sanctum\HasApiTokens;</span>
+
+<span class="x">class User extends Authenticatable</span>
+<span class="x">{</span>
+<span class="hll"><span class="x">    use HasApiTokens, Notifiable;</span>
+</span><span class="x">}</span>
+</code></pre></div>
+<p>Sin este trait:</p>
+<ul>
+<li>no existe el método <code>createToken()</code></li>
+<li>la autenticación por token no funciona</li>
+</ul>
+<h3 id="33-creacion-del-controlador-de-autenticacion-api">3.3. Creación del controlador de autenticación API<a class="headerlink" href="#33-creacion-del-controlador-de-autenticacion-api" title="Permanent link">&para;</a></h3>
+<p>En una API REST no se utilizan controladores basados en sesión.<br />
+Se crea un controlador específico para autenticación por token.</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>Api/AuthController
+</code></pre></div>
+<p>Archivo: <strong><code>app/Http/Controllers/Api/AuthController.php</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Http\Controllers\Api</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">App\Http\Controllers\Controller</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Http\JsonResponse</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Auth</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">AuthController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">login</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">JsonResponse</span>
+    <span class="p">{</span>
+        <span class="nv">$credentials</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+            <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">],</span>
+        <span class="p">]);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">Auth</span><span class="o">::</span><span class="na">attempt</span><span class="p">(</span><span class="nv">$credentials</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">([</span>
+                <span class="s1">&#39;success&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+                <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Credenciales incorrectas&#39;</span><span class="p">,</span>
+            <span class="p">],</span> <span class="mi">401</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nv">$user</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">();</span>
+
+        <span class="nv">$token</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">createToken</span><span class="p">(</span><span class="s1">&#39;api-token&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">plainTextToken</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">([</span>
+            <span class="s1">&#39;success&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+            <span class="s1">&#39;token_type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Bearer&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;token&#39;</span> <span class="o">=&gt;</span> <span class="nv">$token</span><span class="p">,</span>
+        <span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">logout</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">JsonResponse</span>
+    <span class="p">{</span>
+        <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">currentAccessToken</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">([</span>
+            <span class="s1">&#39;success&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+            <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Logout correcto&#39;</span><span class="p">,</span>
+        <span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="34-definicion-de-rutas-api">3.4. Definición de rutas API<a class="headerlink" href="#34-definicion-de-rutas-api" title="Permanent link">&para;</a></h3>
+<p>Todas las rutas de autenticación por token se definen en <code>routes/api.php</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Illuminate\Support\Facades\Route;</span>
+<span class="x">use App\Http\Controllers\Api\AuthController;</span>
+<span class="x">use App\Http\Controllers\Api\NoteController;</span>
+
+<span class="x">Route::post(&#39;/token/login&#39;, [AuthController::class, &#39;login&#39;]);</span>
+
+<span class="x">Route::middleware(&#39;auth:sanctum&#39;)-&gt;group(function () {</span>
+<span class="x">    Route::post(&#39;/token/logout&#39;, [AuthController::class, &#39;logout&#39;]);</span>
+<span class="x">    Route::apiResource(&#39;notes&#39;, NoteController::class);</span>
+<span class="x">});</span>
+</code></pre></div>
+<p>Características:
+- Todas las rutas cuelgan de <code>/api</code>
+- No se usan sesiones
+- No se usa CSRF
+- Arquitectura completamente REST</p>
+<h3 id="35-insercion-de-un-usuario-de-prueba">3.5. Inserción de un usuario de prueba<a class="headerlink" href="#35-insercion-de-un-usuario-de-prueba" title="Permanent link">&para;</a></h3>
+<p>Para poder probar la autenticación, debe existir al menos un usuario.</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>tinker
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="x">use App\Models\User;</span>
+<span class="x">use Illuminate\Support\Facades\Hash;</span>
+
+<span class="x">User::create([</span>
+<span class="x">    &#39;name&#39; =&gt; &#39;Admin&#39;,</span>
+<span class="x">    &#39;email&#39; =&gt; &#39;admin@testapi.com&#39;,</span>
+<span class="x">    &#39;password&#39; =&gt; Hash::make(&#39;password&#39;),</span>
+<span class="x">]);</span>
+</code></pre></div>
+<h3 id="36-pruebas-con-rest-client-flujo-completo">3.6. Pruebas con Rest Client (flujo completo)<a class="headerlink" href="#36-pruebas-con-rest-client-flujo-completo" title="Permanent link">&para;</a></h3>
+<h4 id="login-obtencion-del-token">Login (obtención del token)<a class="headerlink" href="#login-obtencion-del-token" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">###</span>
+<span class="err">POST http://testapi.test/api/token/login</span>
+<span class="err">Accept: application/json</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">  &quot;email&quot;: &quot;admin@testear.com&quot;,</span>
+<span class="err">  &quot;password&quot;: &quot;password&quot;</span>
+<span class="err">}</span>
+</code></pre></div>
+<p>Respuesta esperada:</p>
+<ul>
+<li>Código <code>200</code></li>
+<li>Token Bearer en formato texto</li>
+</ul>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_apirest_auth01_png"
+                alt="Respuesta de login correcto"
+                class="figure-img-highlight" 
+                style="max-width: 85%; height: auto;" />
+    <figcaption class="figure-caption-small">
+            Respuesta de login correcto
+    </figcaption>
+</figure>
+</div>
+
+<h4 id="acceso-a-recurso-protegido">Acceso a recurso protegido<a class="headerlink" href="#acceso-a-recurso-protegido" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">###</span>
+<span class="err">GET http://testapi.test/api/notes</span>
+<span class="err">Accept: application/json</span>
+<span class="err">Authorization: Bearer [PEGA_AQUI_EL_TOKEN]</span>
+</code></pre></div>
+<ul>
+<li>Sin token → <code>401 Unauthorized</code></li>
+<li>Con token válido → acceso correcto</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Acceso no autorizado</label><label for="__tabbed_1_2">Acceso autorizado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_apirest_auth02_png"
+                alt="Respuesta de acceso no autorizado"
+                class="figure-img-highlight" 
+                style="max-width: 85%; height: auto;" />
+    <figcaption class="figure-caption-small">
+            Respuesta de acceso no autorizado
+    </figcaption>
+</figure>
+</div></p>
+</div>
+<div class="tabbed-block">
+<p><div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_apirest_auth03_png"
+                alt="Respuesta de acceso no autorizado"
+                class="figure-img-highlight" 
+                style="max-width: 85%; height: auto;" />
+    <figcaption class="figure-caption-small">
+            Respuesta de acceso autorizado
+    </figcaption>
+</figure>
+</div></p>
+</div>
+</div>
+</div>
+<h4 id="logout-invalidar-token">Logout (invalidar token)<a class="headerlink" href="#logout-invalidar-token" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">###</span>
+<span class="err">POST http://testapi.test/api/token/logout</span>
+<span class="err">Accept: application/json</span>
+<span class="err">Authorization: Bearer [PEGA_AQUI_EL_TOKEN]</span>
+</code></pre></div>
+<p>Tras el logout:</p>
+<ul>
+<li>el token deja de ser válido</li>
+<li>cualquier petición posterior devuelve <code>401</code></li>
+</ul>
+<div class="figure-center">
+<figure>
+    <img src="../../img/pru/laravel_apirest_auth04_png"
+                alt="Respuesta de salir de token"
+                class="figure-img-highlight" 
+                style="max-width: 85%; height: auto;" />
+    <figcaption class="figure-caption-small">
+            Respuesta de salir de token
+    </figcaption>
+</figure>
+</div>
+
+<h3 id="37-que-aporta-realmente-installapi">3.7. Qué aporta realmente <code>install:api</code><a class="headerlink" href="#37-que-aporta-realmente-installapi" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Infraestructura API</td>
+<td><code>install:api</code></td>
+</tr>
+<tr>
+<td>Instalación de Sanctum</td>
+<td><code>install:api</code></td>
+</tr>
+<tr>
+<td>Tokens Bearer</td>
+<td><code>AuthController</code></td>
+</tr>
+<tr>
+<td>Login</td>
+<td><code>AuthController</code></td>
+</tr>
+<tr>
+<td>Logout</td>
+<td><code>AuthController</code></td>
+</tr>
+<tr>
+<td>Protección de rutas</td>
+<td>Middleware <code>auth:sanctum</code></td>
+</tr>
+<tr>
+<td>Pruebas REST</td>
+<td>Rest Client</td>
+</tr>
+</tbody>
+</table>
+<h3 id="38-conclusion">3.8. Conclusión<a class="headerlink" href="#38-conclusion" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><code>install:api</code> prepara el terreno,<br />
+el sistema de autenticación lo diseña el desarrollador.</p>
+</blockquote>
+<p>&nbsp;</p>
+<blockquote>
+<p>Para implementar autenticación por token Bearer en una API REST con Laravel se utiliza<br />
+<code>php artisan install:api</code> para preparar la infraestructura del proyecto y<br />
+Laravel Sanctum para generar y validar tokens de acceso,<br />
+implementando manualmente los endpoints de login y logout en la API.</p>
+</blockquote>
+<p>Este enfoque permite:
+- trabajar APIs REST reales
+- evitar dependencias de frontend
+- comprender la autenticación moderna
+- preparar el salto a frameworks como Vue
+- reproducir escenarios profesionales</p>
+<h2 id="4-autenticacion-y-consumo-de-una-api-laravel-desde-vue-spa-con-cookies">4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)<a class="headerlink" href="#4-autenticacion-y-consumo-de-una-api-laravel-desde-vue-spa-con-cookies" title="Permanent link">&para;</a></h2>
+<p>Este apartado extrapola los conceptos de autenticación en APIs y los aplica al escenario más habitual en un proyecto moderno:</p>
+<ul>
+<li><strong>Backend</strong>: Laravel como API (JSON)</li>
+<li><strong>Frontend</strong>: Vue como SPA (Single Page Application)</li>
+<li><strong>Autenticación</strong>: <strong>cookies + sesión</strong> usando <strong>Laravel Sanctum en modo SPA</strong></li>
+<li><strong>Objetivo</strong>: que Vue pueda hacer login, mantener sesión y acceder a rutas protegidas sin gestionar tokens manualmente.</li>
+</ul>
+<blockquote>
+<p>En este enfoque, el navegador gestiona cookies automáticamente (sesión + CSRF).<br />
+Vue solo necesita hacer peticiones HTTP correctamente configuradas.</p>
+</blockquote>
+<h3 id="41-por-que-no-usar-token-bearer-en-vue-siendo-spa">4.1. ¿Por qué no usar token Bearer en Vue (siendo SPA)?<a class="headerlink" href="#41-por-que-no-usar-token-bearer-en-vue-siendo-spa" title="Permanent link">&para;</a></h3>
+<p>El <em>Bearer token</em> funciona y es fácil de probar con <em>Rest Client</em>, pero en una SPA real con navegador hay consideraciones:</p>
+<ul>
+<li>El token debe guardarse (localStorage / memoria) y protegerse.</li>
+<li>Aumenta el riesgo si hay XSS (se puede robar).</li>
+<li>Hay que añadir el token en cada request.</li>
+</ul>
+<p>Con Sanctum <strong>modo SPA</strong>:</p>
+<ul>
+<li>Laravel usa <strong>cookies HttpOnly</strong> para sesión (más seguras).</li>
+<li>El navegador envía cookies automáticamente.</li>
+<li>Vue no necesita almacenar tokens.</li>
+</ul>
+<blockquote>
+<p>Por eso, para un proyecto intermodular con Vue, lo más natural es <strong>Sanctum SPA</strong>.</p>
+</blockquote>
+<p>Este documento explica <strong>paso a paso</strong> cómo instalar y configurar <strong>Laravel Breeze (API)</strong> para trabajar con un <strong>frontend Vue independiente</strong>, orientado al módulo <strong>DWES (2º DAW)</strong> y a un <strong>proyecto intermodular</strong>.</p>
+<blockquote>
+<p><strong>Objetivo final</strong><br />
+Disponer de un backend Laravel (API) con autenticación SPA:
+- <code>/login</code>, <code>/logout</code>, <code>/register</code>
+- <code>GET /sanctum/csrf-cookie</code>
+- Protección de rutas con <code>auth:sanctum</code>
+- Consumo desde Vue mediante cookies (<code>withCredentials</code>)</p>
+</blockquote>
+<h3 id="42-crear-el-proyecto-laravel">4.2 Crear el proyecto Laravel<a class="headerlink" href="#42-crear-el-proyecto-laravel" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>composer<span class="w"> </span>create-project<span class="w"> </span>laravel/laravel<span class="w"> </span>testspa
+<span class="nb">cd</span><span class="w"> </span>testspa
+</code></pre></div>
+<p>Arrancar el servidor para comprobar que funciona:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>serve
+</code></pre></div>
+<h3 id="43-configurar-la-base-de-datos">4.3 Configurar la base de datos<a class="headerlink" href="#43-configurar-la-base-de-datos" title="Permanent link">&para;</a></h3>
+<p>Editar el archivo <code>.env</code>:</p>
+<div class="highlight"><pre><span></span><code>DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=testspa
+DB_USERNAME=root
+DB_PASSWORD=
+</code></pre></div>
+<p>Ejecutar las migraciones iniciales:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div>
+<h3 id="44-instalar-laravel-breeze-modo-api">4.4 Instalar Laravel Breeze (modo API)<a class="headerlink" href="#44-instalar-laravel-breeze-modo-api" title="Permanent link">&para;</a></h3>
+<h5 id="instalar-el-paquete-breeze">Instalar el paquete Breeze<a class="headerlink" href="#instalar-el-paquete-breeze" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>composer<span class="w"> </span>require<span class="w"> </span>laravel/breeze<span class="w"> </span>--dev
+</code></pre></div>
+<h5 id="ejecutar-el-instalador-en-modo-api">Ejecutar el instalador en modo API<a class="headerlink" href="#ejecutar-el-instalador-en-modo-api" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>breeze:install<span class="w"> </span>api
+</code></pre></div>
+<div class="admonition teolaravel">
+<p class="admonition-title">Importante</p>
+<ul>
+<li>NO instala vistas Blade  </li>
+<li>NO instala Vue  </li>
+<li>NO instala Inertia  </li>
+<li>Instala únicamente el backend de autenticación para SPA</li>
+</ul>
+</div>
+<h3 id="45-ejecutar-migraciones-adicionales">4.5 Ejecutar migraciones adicionales<a class="headerlink" href="#45-ejecutar-migraciones-adicionales" title="Permanent link">&para;</a></h3>
+<p>Breeze y Sanctum añaden nuevas tablas necesarias para la autenticación:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div>
+<h3 id="46-que-instala-laravel-breeze-api">4.6 Qué instala Laravel Breeze (API)<a class="headerlink" href="#46-que-instala-laravel-breeze-api" title="Permanent link">&para;</a></h3>
+<p>Tras la instalación se dispone de:</p>
+<h5 id="rutas-disponibles">Rutas disponibles<a class="headerlink" href="#rutas-disponibles" title="Permanent link">&para;</a></h5>
+<ul>
+<li><code>POST /login</code></li>
+<li><code>POST /logout</code></li>
+<li><code>POST /register</code></li>
+<li><code>GET /sanctum/csrf-cookie</code></li>
+</ul>
+<p>Comprobación rápida:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>route:list<span class="w"> </span><span class="p">|</span><span class="w"> </span>findstr<span class="w"> </span>login
+</code></pre></div>
+<h5 id="archivos-importantes-generados">Archivos importantes generados<a class="headerlink" href="#archivos-importantes-generados" title="Permanent link">&para;</a></h5>
+<ul>
+<li><code>routes/auth.php</code></li>
+<li><code>app/Http/Controllers/Auth/*</code></li>
+<li><code>app/Http/Requests/Auth/*</code></li>
+<li>Integración completa con Sanctum</li>
+</ul>
+<p>En <code>routes/web.php</code> se añade automáticamente:
+<div class="highlight"><pre><span></span><code><span class="x">require __DIR__.&#39;/auth.php&#39;;</span>
+</code></pre></div></p>
+<h3 id="47-configuracion-de-sanctum-para-spa-con-vue">4.7 Configuración de Sanctum para SPA con Vue<a class="headerlink" href="#47-configuracion-de-sanctum-para-spa-con-vue" title="Permanent link">&para;</a></h3>
+<p>Editar <code>.env</code>:</p>
+<div class="highlight"><pre><span></span><code>APP_URL=http://testspa.test
+
+SANCTUM_STATEFUL_DOMAINS=localhost:5173,localhost:3000
+SESSION_DOMAIN=.testspa.test
+</code></pre></div>
+<div class="admonition teolaravel">
+<p class="admonition-title"><code>SANCTUM_STATEFUL_DOMAINS</code></p>
+<ul>
+<li>Solo dominios  </li>
+<li>Sin <code>http://</code>  </li>
+<li>Debe coincidir con el dominio/puerto de Vue</li>
+</ul>
+</div>
+<h3 id="48-configuracion-de-cors-laravel-11-12">4.8 Configuración de CORS (Laravel 11 / 12)<a class="headerlink" href="#48-configuracion-de-cors-laravel-11-12" title="Permanent link">&para;</a></h3>
+<p>En Laravel 11 y 12 el archivo <code>config/cors.php</code> <strong>puede no existir</strong>.<br />
+Para publicarlo:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>config:publish<span class="w"> </span>cors
+</code></pre></div>
+<p>Editar <code>config/cors.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">return [</span>
+<span class="x">    &#39;paths&#39; =&gt; [&#39;api/*&#39;, &#39;login&#39;, &#39;logout&#39;, &#39;sanctum/csrf-cookie&#39;],</span>
+<span class="x">    &#39;allowed_methods&#39; =&gt; [&#39;*&#39;],</span>
+<span class="x">    &#39;allowed_origins&#39; =&gt; [&#39;http://localhost:5173&#39;],</span>
+<span class="x">    &#39;allowed_headers&#39; =&gt; [&#39;*&#39;],</span>
+<span class="x">    &#39;supports_credentials&#39; =&gt; true,</span>
+<span class="x">];</span>
+</code></pre></div>
+<p>Limpiar caché de configuración:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>config:clear
+php<span class="w"> </span>artisan<span class="w"> </span>cache:clear
+</code></pre></div>
+<h3 id="49-crear-un-usuario-de-prueba">4.9 Crear un usuario de prueba<a class="headerlink" href="#49-crear-un-usuario-de-prueba" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>tinker
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="x">use App\Models\User;</span>
+<span class="x">use Illuminate\Support\Facades\Hash;</span>
+
+<span class="x">User::create([</span>
+<span class="x">  &#39;name&#39; =&gt; &#39;Admin&#39;,</span>
+<span class="x">  &#39;email&#39; =&gt; &#39;admin@testspa.com&#39;,</span>
+<span class="x">  &#39;password&#39; =&gt; Hash::make(&#39;password&#39;),</span>
+<span class="x">]);</span>
+</code></pre></div>
+<h3 id="410-proteger-rutas-api-con-sanctum">4.10 Proteger rutas API con Sanctum<a class="headerlink" href="#410-proteger-rutas-api-con-sanctum" title="Permanent link">&para;</a></h3>
+<p>Ejemplo en <code>routes/api.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Illuminate\Http\Request;</span>
+<span class="x">use Illuminate\Support\Facades\Route;</span>
+<span class="x">use App\Http\Controllers\Api\NoteController;</span>
+
+<span class="x">Route::middleware(&#39;auth:sanctum&#39;)-&gt;group(function () {</span>
+<span class="x">    Route::get(&#39;/user&#39;, function (Request $request) {</span>
+<span class="x">        return $request-&gt;user();</span>
+<span class="x">    });</span>
+
+<span class="x">    Route::apiResource(&#39;notes&#39;, NoteController::class);</span>
+<span class="x">});</span>
+</code></pre></div>
+<p>Con esto:</p>
+<ul>
+<li>Vue solo accederá a <code>/api/notes</code> si está autenticado (cookie de sesión válida).</li>
+<li>Si no lo está: <code>401 Unauthorized</code>.</li>
+</ul>
+<h3 id="411-vistazo-desde-vue">4.11 Vistazo desde Vue<a class="headerlink" href="#411-vistazo-desde-vue" title="Permanent link">&para;</a></h3>
+<h4 id="4111-flujo-correcto-de-autenticacion-desde-vue">4.11.1 Flujo correcto de autenticación desde Vue<a class="headerlink" href="#4111-flujo-correcto-de-autenticacion-desde-vue" title="Permanent link">&para;</a></h4>
+<p>El flujo <strong>correcto y obligatorio</strong> es:</p>
+<h5 id="1o-obtener-cookie-csrf">1º Obtener cookie CSRF<a class="headerlink" href="#1o-obtener-cookie-csrf" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="err">GET /sanctum/csrf-cookie</span>
+</code></pre></div>
+<h5 id="2o-login">2º Login<a class="headerlink" href="#2o-login" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="err">POST /login</span>
+<span class="err">{</span>
+<span class="err">  &quot;email&quot;: &quot;admin@testspa.com&quot;,</span>
+<span class="err">  &quot;password&quot;: &quot;password&quot;</span>
+<span class="err">}</span>
+</code></pre></div>
+<p>Respuesta correcta:</p>
+<ul>
+<li><code>204 No Content</code></li>
+</ul>
+<h5 id="3o-acceder-a-la-api-protegida">3º Acceder a la API protegida<a class="headerlink" href="#3o-acceder-a-la-api-protegida" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="err">GET /api/user</span>
+</code></pre></div>
+ó</p>
+<div class="highlight"><pre><span></span><code><span class="err">GET /api/notes</span>
+</code></pre></div>
+<h5 id="4o-logout">4º Logout<a class="headerlink" href="#4o-logout" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="err">POST /logout</span>
+</code></pre></div>
+Respuesta correcta:</p>
+<ul>
+<li><code>204 No Content</code></li>
+</ul>
+<blockquote>
+<p>Sin el paso 1, el login suele fallar por CSRF (419) en navegador.</p>
+</blockquote>
+<h4 id="4112-configuracion-de-axios-en-vue-recomendado">4.11.2 Configuración de Axios en Vue (recomendado)<a class="headerlink" href="#4112-configuracion-de-axios-en-vue-recomendado" title="Permanent link">&para;</a></h4>
+<p>En Vue (con Vite), crea un servicio <code>src/services/api.js</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;axios&quot;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">baseURL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;http://testspa.test&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">withCredentials</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">   </span><span class="c1">// IMPRESCINDIBLE</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Accept</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div>
+<h4 id="4113-errores-tipicos-y-su-causa">4.11.3 Errores típicos y su causa<a class="headerlink" href="#4113-errores-tipicos-y-su-causa" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Causa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>404 en <code>/login</code></td>
+<td>Breeze no instalado</td>
+</tr>
+<tr>
+<td>419 CSRF</td>
+<td>No se llamó a <code>/sanctum/csrf-cookie</code></td>
+</tr>
+<tr>
+<td>401 tras login</td>
+<td>Cookies no viajan (<code>withCredentials</code>)</td>
+</tr>
+<tr>
+<td><code>Session store not set</code></td>
+<td>Uso incorrecto de rutas web en API</td>
+</tr>
+<tr>
+<td>Error CORS</td>
+<td><code>supports_credentials</code> a <code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="4114-funciones-tipicas-de-auth">4.11.4 Funciones típicas de auth<a class="headerlink" href="#4114-funciones-tipicas-de-auth" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">csrf</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/sanctum/csrf-cookie&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">csrf</span><span class="p">();</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">logout</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/logout&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">me</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/api/user&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="4115-ejemplo-de-consumo-de-notes-desde-vue">4.11.5 Ejemplo de consumo de notes desde Vue<a class="headerlink" href="#4115-ejemplo-de-consumo-de-notes-desde-vue" title="Permanent link">&para;</a></h4>
+<p>Servicio <code>src/services/notes.js</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">api</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./api&quot;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchNotes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/api/notes&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createNote</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/api/notes&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En un componente Vue:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ref</span><span class="p">,</span><span class="w"> </span><span class="nx">onMounted</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;vue&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">fetchNotes</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@/services/notes&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">notes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ref</span><span class="p">([]);</span>
+
+<span class="nx">onMounted</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchNotes</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">notes</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span><span class="w"> </span><span class="c1">// si tu API responde {success, data: [...]}</span>
+<span class="p">});</span>
+</code></pre></div>
+<h4 id="4116-manejo-de-errores-tipico-en-vue-401-y-422">4.11.6 Manejo de errores típico en Vue (401 y 422)<a class="headerlink" href="#4116-manejo-de-errores-tipico-en-vue-401-y-422" title="Permanent link">&para;</a></h4>
+<h5 id="401-unauthorized">401 Unauthorized<a class="headerlink" href="#401-unauthorized" title="Permanent link">&para;</a></h5>
+<p>Suele significar:
+- no has hecho login
+- no se están enviando cookies (falta <code>withCredentials</code>)
+- CORS no permite credenciales</p>
+<p>En Vue, lo habitual es:
+- redirigir a login
+- mostrar aviso “Sesión caducada”</p>
+<h5 id="422-validation-error">422 Validation Error<a class="headerlink" href="#422-validation-error" title="Permanent link">&para;</a></h5>
+<p>Laravel devuelve errores de validación. Vue debe:
+- mostrar errores por campo
+- no romper la app</p>
+<p>Ejemplo de patrón:</p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">createNote</span><span class="p">(</span><span class="nx">payload</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">response</span><span class="o">?</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">422</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">errors</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="414-conclusion">4.14 Conclusión<a class="headerlink" href="#414-conclusion" title="Permanent link">&para;</a></h2>
+<p>✔️ Laravel Breeze (API) es <strong>adecuado</strong> para proyectos Laravel + Vue<br />
+✔️ Reduce errores de configuración<br />
+✔️ Permite centrarse en el diseño de la API REST<br />
+✔️ Flujo SPA profesional y realista<br />
+✔️ Ideal para proyectos intermodulares  </p>
+<details class="praclaravel">
+<summary>Práctica a entregar</summary>
+<h3 id="practica-guiada-laravel-api-vue-login-spa-con-cookies">Práctica guiada – Laravel API + Vue (login SPA con cookies)<a class="headerlink" href="#practica-guiada-laravel-api-vue-login-spa-con-cookies" title="Permanent link">&para;</a></h3>
+<h3 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">&para;</a></h3>
+<p>Crear una API en Laravel protegida con <code>auth:sanctum</code> y consumirla desde un frontend Vue, implementando:</p>
+<ul>
+<li>login</li>
+<li>sesión</li>
+<li>acceso a rutas protegidas</li>
+<li>logout</li>
+</ul>
+<h3 id="parte-a-backend-laravel">Parte A. Backend (Laravel)<a class="headerlink" href="#parte-a-backend-laravel" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Instala Laravel y prepara API (opcional):</p>
+<ul>
+<li><code>composer create-project ...</code></li>
+<li><code>php artisan install:api</code></li>
+</ul>
+</li>
+<li>
+<p>Instala y migra Sanctum:</p>
+<ul>
+<li><code>composer require laravel/sanctum</code></li>
+<li><code>php artisan vendor:publish ...</code></li>
+<li><code>php artisan migrate</code></li>
+</ul>
+</li>
+<li>
+<p>Configura CORS (<code>config/cors.php</code>):</p>
+<ul>
+<li><code>supports_credentials =&gt; true</code></li>
+<li><code>allowed_origins =&gt; http://localhost:3000</code></li>
+<li><code>paths =&gt; api/*, sanctum/csrf-cookie</code></li>
+</ul>
+</li>
+<li>
+<p>Configura <code>SANCTUM_STATEFUL_DOMAINS</code> en <code>.env</code>.</p>
+</li>
+<li>
+<p>Inserta usuario con Tinker.</p>
+</li>
+<li>
+<p>Protege rutas API:</p>
+<ul>
+<li><code>Route::middleware('auth:sanctum')-&gt;apiResource(...)</code></li>
+<li>crea <code>/api/user</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="parte-b-frontend-vue">Parte B. Frontend (Vue)<a class="headerlink" href="#parte-b-frontend-vue" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Crea proyecto Vue (Vite):</li>
+</ol>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>create<span class="w"> </span>vite@latest<span class="w"> </span>testear-vue<span class="w"> </span>--<span class="w"> </span>--template<span class="w"> </span>vue
+<span class="nb">cd</span><span class="w"> </span>testear-vue
+npm<span class="w"> </span>install
+npm<span class="w"> </span>install<span class="w"> </span>axios
+npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<ol>
+<li>
+<p>Crea <code>src/services/api.js</code> con:</p>
+<ul>
+<li><code>baseURL</code> hacia el backend</li>
+<li><code>withCredentials: true</code></li>
+</ul>
+</li>
+<li>
+<p>Implementa funciones:</p>
+<ul>
+<li><code>csrf()</code></li>
+<li><code>login(email,password)</code></li>
+<li><code>me()</code></li>
+<li><code>logout()</code></li>
+</ul>
+</li>
+<li>
+<p>Crea una pantalla simple:</p>
+<div class="highlight"><pre><span></span><code>- formulario login
+- botón “Quién soy”
+- botón “Logout”
+</code></pre></div>
+</li>
+</ol>
+<h3 id="parte-c-comprobaciones-criterios-de-exito">Parte C. Comprobaciones (criterios de éxito)<a class="headerlink" href="#parte-c-comprobaciones-criterios-de-exito" title="Permanent link">&para;</a></h3>
+<p>✔️ Login devuelve éxito (normalmente 204)<br />
+✔️ <code>GET /api/user</code> devuelve el usuario tras login<br />
+✔️ <code>GET /api/notes</code> funciona tras login<br />
+✔️ Si recargas, sigue autenticado (cookie)<br />
+✔️ Logout invalida sesión<br />
+✔️ Tras logout, <code>GET /api/user</code> devuelve 401</p>
+<h3 id="preguntas-de-reflexion-para-memoria-examen">Preguntas de reflexión (para memoria / examen)<a class="headerlink" href="#preguntas-de-reflexion-para-memoria-examen" title="Permanent link">&para;</a></h3>
+<ol>
+<li>¿Por qué en SPA con Sanctum es necesario llamar antes a <code>/sanctum/csrf-cookie</code>?  </li>
+<li>¿Por qué <code>withCredentials: true</code> es imprescindible?  </li>
+<li>¿Qué diferencia hay entre token Bearer y cookies en términos de seguridad y comodidad?  </li>
+<li>¿Qué significa <code>auth:sanctum</code> cuando trabajamos con Vue?</li>
+</ol>
+<h3 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
+<p>Este enfoque (Sanctum SPA) es el más habitual cuando:</p>
+<ul>
+<li>el frontend es Vue</li>
+<li>queremos sesiones seguras con cookies HttpOnly</li>
+<li>buscamos una experiencia SPA “natural”</li>
+<li>queremos evitar gestionar tokens manualmente</li>
+</ul>
+<p>Además, prepara directamente el camino para un <strong>proyecto intermodular</strong> en el que:</p>
+<ul>
+<li>DWES desarrolla API</li>
+<li>DWEC consume API con Vue</li>
+<li>ambos módulos trabajan con un contrato API estable (endpoints + JSON + errores).</li>
+</ul>
+</details>
+<h2 id="4-proteccion-de-rutas">4. Protección de rutas<a class="headerlink" href="#4-proteccion-de-rutas" title="Permanent link">&para;</a></h2>
+<h3 id="41-middleware-de-autenticacion">4.1. Middleware de autenticación<a class="headerlink" href="#41-middleware-de-autenticacion" title="Permanent link">&para;</a></h3>
+<p>El middleware <strong><code>auth</code></strong> es la forma principal de proteger rutas en Laravel, asegurando que solo usuarios autenticados puedan acceder a ciertas páginas o recursos. Si un usuario no autenticado intenta acceder, será redirigido automáticamente a la página de login.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Rutas protegidas</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;auth&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">DashboardController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">]);</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/profile&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProfileController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;edit&#39;</span><span class="p">]);</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">patch</span><span class="p">(</span><span class="s1">&#39;/profile&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProfileController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;update&#39;</span><span class="p">]);</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;/profile&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProfileController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;destroy&#39;</span><span class="p">]);</span>
+<span class="p">});</span>
+
+<span class="c1">// Rutas públicas</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">HomeController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">]);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">]);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/products/{id}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProductController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">]);</span>
+</code></pre></div>
+<h3 id="42-verificar-autenticacion-en-controladores">4.2. Verificar autenticación en controladores<a class="headerlink" href="#42-verificar-autenticacion-en-controladores" title="Permanent link">&para;</a></h3>
+<p>Además de proteger rutas con middleware, puedes verificar la autenticación directamente en el controlador usando el constructor o métodos individuales. Esto te da más flexibilidad para aplicar lógica condicional.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Auth</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">ProductController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Proteger todas las rutas excepto index y show</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;auth&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">except</span><span class="p">([</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Público - no requiere autenticación</span>
+        <span class="nv">$products</span> <span class="o">=</span> <span class="nx">Product</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;products.index&#39;</span><span class="p">,</span> <span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;products&#39;</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Protegido - requiere autenticación</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">Auth</span><span class="o">::</span><span class="na">check</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">route</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;products.create&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Protegido - requiere autenticación</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="nx">Auth</span><span class="o">::</span><span class="na">user</span><span class="p">();</span>
+
+        <span class="c1">// ✅ IMPORTANTE: Siempre validar datos antes de guardar</span>
+        <span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+            <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|string|max:255&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;description&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|string&#39;</span><span class="p">,</span>
+        <span class="p">]);</span>
+
+        <span class="c1">// Crear producto con datos validados</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nx">Product</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nv">$validated</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;user_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">]);</span>
+
+        <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">route</span><span class="p">(</span><span class="s1">&#39;products.show&#39;</span><span class="p">,</span> <span class="nv">$product</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="43-verificar-autenticacion-en-vistas">4.3. Verificar autenticación en vistas<a class="headerlink" href="#43-verificar-autenticacion-en-vistas" title="Permanent link">&para;</a></h3>
+<p>Blade proporciona directivas como <strong><code>@auth</code></strong> y <strong><code>@guest</code></strong> para mostrar contenido diferente dependiendo del estado de autenticación del usuario. Esto te permite personalizar la interfaz de forma reactiva.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Verificar si el usuario está autenticado --&gt;</span>
+@auth
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Bienvenido, {{ Auth::user()-&gt;name }}!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;dashboard&#39;) }}&quot;</span><span class="p">&gt;</span>Dashboard<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;logout&#39;) }}&quot;</span><span class="p">&gt;</span>
+        @csrf
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Cerrar Sesión<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+@else
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;login&#39;) }}&quot;</span><span class="p">&gt;</span>Iniciar Sesión<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;register&#39;) }}&quot;</span><span class="p">&gt;</span>Registrarse<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+@endauth
+
+<span class="cm">&lt;!-- Verificar si el usuario es invitado --&gt;</span>
+@guest
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Por favor, inicia sesión para continuar.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;login&#39;) }}&quot;</span><span class="p">&gt;</span>Iniciar Sesión<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+@endguest
+</code></pre></div>
+<h2 id="5-gestion-de-usuarios">5. Gestión de usuarios<a class="headerlink" href="#5-gestion-de-usuarios" title="Permanent link">&para;</a></h2>
+<p>Laravel proporciona múltiples formas de:</p>
+<ul>
+<li>interactuar con el usuario autenticado, </li>
+<li>autenticar manualmente y </li>
+<li>gestionar sesiones de usuario. </li>
+</ul>
+<p>Estas herramientas te dan control total sobre el proceso de autenticación.</p>
+<h3 id="51-obtener-usuario-autenticado">5.1. Obtener usuario autenticado<a class="headerlink" href="#51-obtener-usuario-autenticado" title="Permanent link">&para;</a></h3>
+<p>Una vez que un usuario se ha autenticado, puedes acceder a sus datos en cualquier parte de tu aplicación usando la facade <code>Auth</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Obtener usuario autenticado</span>
+<span class="nv">$user</span> <span class="o">=</span> <span class="nx">Auth</span><span class="o">::</span><span class="na">user</span><span class="p">();</span>
+<span class="nv">$userId</span> <span class="o">=</span> <span class="nx">Auth</span><span class="o">::</span><span class="na">id</span><span class="p">();</span>
+<span class="nv">$userName</span> <span class="o">=</span> <span class="nx">Auth</span><span class="o">::</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+
+<span class="c1">// Verificar si está autenticado</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">check</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// Usuario autenticado</span>
+<span class="p">}</span>
+
+<span class="c1">// Verificar si es invitado</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">guest</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// Usuario no autenticado</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="52-autenticacion-manual">5.2. Autenticación manual<a class="headerlink" href="#52-autenticacion-manual" title="Permanent link">&para;</a></h3>
+<p>Si estás creando tu propio formulario de login o necesitas autenticar usuarios de forma programática, puedes usar <code>Auth::attempt()</code> para verificar credenciales y autenticar usuarios manualmente.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Autenticación manual</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">attempt</span><span class="p">([</span><span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="nv">$password</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="c1">// ✅ CRÍTICO: Regenerar sesión para prevenir Session Fixation</span>
+    <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">session</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">regenerate</span><span class="p">();</span>
+
+    <span class="c1">// Autenticación exitosa</span>
+    <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">intended</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Autenticación fallida</span>
+    <span class="k">return</span> <span class="nx">back</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">withErrors</span><span class="p">([</span><span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Credenciales incorrectas&#39;</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="c1">// Autenticación con &quot;recordarme&quot;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">attempt</span><span class="p">([</span><span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="nv">$password</span><span class="p">],</span> <span class="nv">$remember</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">session</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">regenerate</span><span class="p">();</span> <span class="c1">// Siempre regenerar</span>
+    <span class="c1">// Usuario será recordado</span>
+<span class="p">}</span>
+
+<span class="c1">// Autenticación de un usuario específico</span>
+<span class="nx">Auth</span><span class="o">::</span><span class="na">login</span><span class="p">(</span><span class="nv">$user</span><span class="p">);</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">session</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">regenerate</span><span class="p">();</span> <span class="c1">// Siempre regenerar después de login</span>
+
+<span class="nx">Auth</span><span class="o">::</span><span class="na">loginUsingId</span><span class="p">(</span><span class="nv">$userId</span><span class="p">);</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="na">session</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">regenerate</span><span class="p">();</span> <span class="c1">// Siempre regenerar después de login</span>
+</code></pre></div>
+<blockquote>
+<p>Session Fixation Attack</p>
+<p><strong>SIEMPRE</strong> debes regenerar el ID de sesión después de autenticar un usuario con <strong><code>$request-&gt;session()-&gt;regenerate()</code></strong>.</p>
+<p>Sin regeneración, un atacante podría:</p>
+<ol>
+<li>Obtener un ID de sesión válido.</li>
+<li>Hacer que la víctima use ese ID (por ejemplo, vía link malicioso).</li>
+<li>Cuando la víctima inicia sesión, el atacante tiene acceso a la sesión autenticada.</li>
+</ol>
+<p>Laravel Breeze incluye esto automáticamente, pero si implementas login manual, <strong>no lo olvides</strong>.</p>
+</blockquote>
+<h3 id="53-cerrar-sesion">5.3. Cerrar sesión<a class="headerlink" href="#53-cerrar-sesion" title="Permanent link">&para;</a></h3>
+<p>Cerrar sesión es un paso crítico de seguridad. Este paso debe:</p>
+<ul>
+<li>invalidar la sesión actual, </li>
+<li>regenerar el token CSRF y </li>
+<li>limpiar cualquier información relacionada con el usuario.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Cerrar sesión</span>
+<span class="nx">Auth</span><span class="o">::</span><span class="na">logout</span><span class="p">();</span>
+
+<span class="c1">// Cerrar sesión y limpiar sesión</span>
+<span class="nx">Auth</span><span class="o">::</span><span class="na">logout</span><span class="p">();</span>
+<span class="nx">request</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">session</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">invalidate</span><span class="p">();</span>
+<span class="nx">request</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">session</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">regenerateToken</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="6-recuperacion-de-contrasena">6. Recuperación de contraseña<a class="headerlink" href="#6-recuperacion-de-contrasena" title="Permanent link">&para;</a></h2>
+<p>Laravel Breeze incluye un sistema completo de recuperación de contraseñas. Los usuarios pueden solicitar un enlace de recuperación por email y establecer una nueva contraseña de forma segura.</p>
+<h3 id="61-configuracion-de-email">6.1. Configuración de email<a class="headerlink" href="#61-configuracion-de-email" title="Permanent link">&para;</a></h3>
+<p>Para enviar emails de recuperación de contraseña, necesitas configurar tu servicio de correo en el archivo <code>.env</code>. Puedes usar SMTP, Mailgun, SendGrid u otros proveedores.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// .env</span>
+<span class="nx">MAIL_MAILER</span><span class="o">=</span><span class="nx">smtp</span>
+<span class="nx">MAIL_HOST</span><span class="o">=</span><span class="nx">smtp</span><span class="o">.</span><span class="nx">gmail</span><span class="o">.</span><span class="nx">com</span>
+<span class="nx">MAIL_PORT</span><span class="o">=</span><span class="mi">587</span>
+<span class="nx">MAIL_USERNAME</span><span class="o">=</span><span class="nx">tu</span><span class="o">-</span><span class="nx">email</span><span class="o">@</span><span class="nx">gmail</span><span class="o">.</span><span class="nx">com</span>
+<span class="nx">MAIL_PASSWORD</span><span class="o">=</span><span class="nx">tu</span><span class="o">-</span><span class="nx">contraseña</span>
+<span class="nx">MAIL_ENCRYPTION</span><span class="o">=</span><span class="nx">tls</span>
+<span class="nx">MAIL_FROM_ADDRESS</span><span class="o">=</span><span class="nx">tu</span><span class="o">-</span><span class="nx">email</span><span class="o">@</span><span class="nx">gmail</span><span class="o">.</span><span class="nx">com</span>
+<span class="nx">MAIL_FROM_NAME</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
+<h3 id="62-formulario-de-recuperacion">6.2. Formulario de recuperación<a class="headerlink" href="#62-formulario-de-recuperacion" title="Permanent link">&para;</a></h3>
+<p>El formulario de recuperación solicita el email del usuario. Laravel enviará automáticamente un enlace seguro con un token temporal para restablecer la contraseña.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- resources/views/auth/forgot-password.blade.php --&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;password.email&#39;) }}&quot;</span><span class="p">&gt;</span>
+    @csrf
+
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>Email<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ old(&#39;email&#39;) }}&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+        @error(&#39;email&#39;)
+            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-red-600&quot;</span><span class="p">&gt;</span>{{ $message }}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        @enderror
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar Enlace de Recuperación<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="63-formulario-de-restablecimiento">6.3. Formulario de restablecimiento<a class="headerlink" href="#63-formulario-de-restablecimiento" title="Permanent link">&para;</a></h3>
+<p>Una vez que el usuario accede al enlace del email, se muestra este formulario donde podrá ingresar su nueva contraseña. El token temporal verifica que la solicitud sea válida.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- resources/views/auth/reset-password.blade.php --&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;password.store&#39;) }}&quot;</span><span class="p">&gt;</span>
+    @csrf
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;token&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ $request-&gt;route(&#39;token&#39;) }}&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>Email<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ old(&#39;email&#39;, $request-&gt;email) }}&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="p">&gt;</span>Nueva Contraseña<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;password_confirmation&quot;</span><span class="p">&gt;</span>Confirmar Nueva Contraseña<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;password_confirmation&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password_confirmation&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Restablecer Contraseña<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="7-verificacion-de-email">7. Verificación de email<a class="headerlink" href="#7-verificacion-de-email" title="Permanent link">&para;</a></h2>
+<p>La verificación de email asegura que los usuarios proporcionan una dirección de correo válida. Laravel facilita este proceso con funcionalidad integrada para enviar emails de verificación y proteger rutas.</p>
+<h3 id="71-configurar-verificacion">7.1. Configurar verificación<a class="headerlink" href="#71-configurar-verificacion" title="Permanent link">&para;</a></h3>
+<p>Para activar la verificación de email, el modelo <code>User</code> debe implementar la interfaz <strong><code>MustVerifyEmail</code></strong>. Esto habilita automáticamente todas las funcionalidades de verificación.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// app/Models/User.php</span>
+<span class="k">use</span> <span class="nx">Illuminate\Contracts\Auth\MustVerifyEmail</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Authenticatable</span> <span class="k">implements</span> <span class="nx">MustVerifyEmail</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="72-middleware-de-verificacion">7.2. Middleware de verificación<a class="headerlink" href="#72-middleware-de-verificacion" title="Permanent link">&para;</a></h3>
+<p>El middleware <strong><code>verified</code></strong> restringe el acceso solo a usuarios con email verificado. Si intentan acceder sin verificar, serán redirigidos a una página de aviso.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="c1">// Proteger rutas que requieren email verificado</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">middleware</span><span class="p">([</span><span class="s1">&#39;auth&#39;</span><span class="p">,</span> <span class="s1">&#39;verified&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">DashboardController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">]);</span>
+    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/profile&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProfileController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;edit&#39;</span><span class="p">]);</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="73-verificar-email-en-vistas">7.3. Verificar email en vistas<a class="headerlink" href="#73-verificar-email-en-vistas" title="Permanent link">&para;</a></h3>
+<p>Puedes mostrar diferentes mensajes o botones según si el email del usuario ha sido verificado o no y permitirles reenviar el email de verificación si lo necesitan.</p>
+<div class="highlight"><pre><span></span><code>@if(Auth::user()-&gt;hasVerifiedEmail())
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Tu email ha sido verificado.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+@else
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Por favor, verifica tu email.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;verification.send&#39;) }}&quot;</span><span class="p">&gt;</span>
+        @csrf
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Reenviar Email de Verificación<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+@endif
+</code></pre></div>
+<h2 id="8-personalizacion-de-autenticacion">8. Personalización de autenticación<a class="headerlink" href="#8-personalizacion-de-autenticacion" title="Permanent link">&para;</a></h2>
+<p>Aunque Laravel Breeze proporciona una base sólida, puedes personalizar casi cualquier aspecto del sistema de autenticación: redirecciones, validaciones, middleware y más.</p>
+<h3 id="81-personalizar-redirecciones">8.1. Personalizar redirecciones<a class="headerlink" href="#81-personalizar-redirecciones" title="Permanent link">&para;</a></h3>
+<p>Puedes redirigir usuarios a diferentes páginas según su rol o cualquier otra condición después del login. Esto es especialmente útil en aplicaciones con múltiples tipos de usuarios.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// app/Http/Controllers/Auth/AuthenticatedSessionController.php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">LoginRequest</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">RedirectResponse</span>
+<span class="p">{</span>
+    <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">authenticate</span><span class="p">();</span>
+    <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">session</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">regenerate</span><span class="p">();</span>
+
+    <span class="c1">// Redirección personalizada</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">is_admin</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">intended</span><span class="p">(</span><span class="s1">&#39;/admin&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">intended</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="82-personalizar-validacion">8.2. Personalizar validación<a class="headerlink" href="#82-personalizar-validacion" title="Permanent link">&para;</a></h3>
+<p>Puedes modificar las reglas de validación del login y registro según las necesidades de tu aplicación, añadiendo validaciones adicionales o personalizando los mensajes de error.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// app/Http/Requests/Auth/LoginRequest.php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">rules</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">],</span>
+    <span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">function</span> <span class="nf">messages</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="s1">&#39;email.required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;El email es obligatorio.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password.required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;La contraseña es obligatoria.&#39;</span><span class="p">,</span>
+    <span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="83-personalizar-middleware">8.3. Personalizar Middleware<a class="headerlink" href="#83-personalizar-middleware" title="Permanent link">&para;</a></h3>
+<p>El middleware <strong><code>RedirectIfAuthenticated</code></strong> controla qué pasa cuando un usuario autenticado intenta acceder a páginas públicas como login o registro. Puedes personalizarlo para redirigir según roles.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// app/Http/Middleware/RedirectIfAuthenticated.php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Closure</span> <span class="nv">$next</span><span class="p">,</span> <span class="nx">string</span> <span class="o">...</span><span class="nv">$guards</span><span class="p">)</span><span class="o">:</span> <span class="nx">Response</span>
+<span class="p">{</span>
+    <span class="nv">$guards</span> <span class="o">=</span> <span class="k">empty</span><span class="p">(</span><span class="nv">$guards</span><span class="p">)</span> <span class="o">?</span> <span class="p">[</span><span class="k">null</span><span class="p">]</span> <span class="o">:</span> <span class="nv">$guards</span><span class="p">;</span>
+
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$guards</span> <span class="k">as</span> <span class="nv">$guard</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">guard</span><span class="p">(</span><span class="nv">$guard</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">check</span><span class="p">())</span> <span class="p">{</span>
+            <span class="c1">// Redirección personalizada para usuarios autenticados</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">is_admin</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/admin&#39;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nv">$next</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="9-seguridad-de-autenticacion">9. Seguridad de autenticación<a class="headerlink" href="#9-seguridad-de-autenticacion" title="Permanent link">&para;</a></h2>
+<p>La seguridad debe ser una prioridad en cualquier sistema de autenticación. Laravel incluye protecciones contra ataques comunes, pero es importante configurarlas correctamente y seguir buenas prácticas.</p>
+<h3 id="91-contrasenas-seguras">9.1. Contraseñas seguras<a class="headerlink" href="#91-contrasenas-seguras" title="Permanent link">&para;</a></h3>
+<p>Enforza políticas de contraseñas fuertes mediante validaciones que requieran longitud mínima, mayúsculas, minúsculas, números y caracteres especiales.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Validación de contraseña segura</span>
+<span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;string&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;min:8&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;confirmed&#39;</span><span class="p">,</span>
+<span class="p">],</span>
+</code></pre></div>
+<h3 id="92-logs-de-seguridad">9.2. Logs de seguridad<a class="headerlink" href="#92-logs-de-seguridad" title="Permanent link">&para;</a></h3>
+<p>Registrar intentos de login exitosos y fallidos te permite detectar patrones sospechosos y responder rápidamente a posibles amenazas de seguridad.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Log de intentos de login</span>
+<span class="nx">Log</span><span class="o">::</span><span class="na">info</span><span class="p">(</span><span class="s1">&#39;Login attempt&#39;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">,</span>
+    <span class="s1">&#39;ip&#39;</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">ip</span><span class="p">(),</span>
+    <span class="s1">&#39;user_agent&#39;</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">userAgent</span><span class="p">(),</span>
+    <span class="s1">&#39;success&#39;</span> <span class="o">=&gt;</span> <span class="nx">Auth</span><span class="o">::</span><span class="na">attempt</span><span class="p">(</span><span class="nv">$credentials</span><span class="p">),</span>
+<span class="p">]);</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../pru05/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 5. Creación de APIs REST en Laravel">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                5. Creación de APIs REST en Laravel
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../pru07/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 7. Sistema de almacenamiento de archivos">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                7. Sistema de almacenamiento de archivos
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Arturo Blasco - Creative Commons CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/arturoblasco" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.top"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

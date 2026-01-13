@@ -547,7 +547,7 @@ Este comando crea todos los métodos básicos (`index`, `create`, `store`, `show
 
 
 ---
-???questionlaravel "Práctica a Entregar"
+???praclaravel "Práctica a Entregar"
 
     ### Objetivo de la actividad
 

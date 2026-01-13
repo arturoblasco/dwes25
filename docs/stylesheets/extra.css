@@ -8,9 +8,13 @@
 }
 
 
+/* ************************************************
+ * ADMONITIONS: ALTRES
+ * ************************************************ */
+
 /*
  * admonittion:  ies
-*                institut
+ *                institut
  */
 :root {
   --md-admonition-icon--ies: url('../img/ies16.svg')
@@ -29,7 +33,6 @@
   -webkit-mask-image: var(--md-admonition-icon--ies);
           mask-image: var(--md-admonition-icon--ies);
 }
-
 
 /*
  * admonittion:  inst
@@ -96,6 +99,10 @@
           mask-image: var(--md-admonition-icon--youtube);
 }
 
+/* ************************************************
+ * PHP
+ * ************************************************ */
+
 /*
  * admonittion:  ejemplos php
  */
@@ -138,6 +145,10 @@
           mask-image: var(--md-admonition-icon--questionphp);
 }
 
+/* ************************************************
+ * LARAVEL
+ * ************************************************ */
+
 /*
  * admonittion:  teoria laravel
  */
@@ -146,11 +157,12 @@
 }
 .md-typeset .admonition.teolaravel,
 .md-typeset details.teolaravel {
-  border-color: #e6af0aff;
+  border-color: #ffffff;
+  border-left: 6px solid #e6af0aff;
 }
 .md-typeset .teolaravel > .admonition-title,
 .md-typeset .teolaravel > summary {
-  background-color: rgb(251, 252, 231);
+  background-color: #f9faef;  
   font-weight: 600;   /* grosor més suau */
   color: rgb(170, 130, 9);     /* verd fosc suau i elegant */  
 }
@@ -169,17 +181,17 @@
 }
 .md-typeset .admonition.examplelaravel,
 .md-typeset details.examplelaravel {
-  border-color: #7d4fff;
+  border-color: #a98cf8;
 }
 .md-typeset .examplelaravel > .admonition-title,
 .md-typeset .examplelaravel > summary {
-  background-color: #f2edff;
-  font-weight: 600;   /* suaviza el grosor del título */
-  color: #3d2b7b;     /* color de texto más elegante (lavanda oscuro) */
+  background-color: #f7f3ff;
+  font-weight: 600;     /* suaviza el grosor del título */
+  color: #2c2057;     /* color de texto más elegante (lavanda oscuro) */
 }
 .md-typeset .examplelaravel > .admonition-title::before,
 .md-typeset .examplelaravel > summary::before {
-  background-color: #7d4fff;
+  background-color: #a98cf8;
   -webkit-mask-image: var(--md-admonition-icon--examplelaravel);
           mask-image: var(--md-admonition-icon--examplelaravel);
 }
@@ -197,7 +209,7 @@
 .md-typeset .questionlaravel > .admonition-title,
 .md-typeset .questionlaravel > summary {
   background-color: #effce7ff;
-  font-weight: 600;   /* grosor més suau */
+  font-weight: 600;     /* grosor més suau */
   color: #2f4f1f;     /* verd fosc suau i elegant */  
 }
 .md-typeset .questionlaravel > .admonition-title::before,
@@ -220,9 +232,9 @@
 }
 .md-typeset .praclaravel > .admonition-title,
 .md-typeset .praclaravel > summary {
-  background-color: rgb(252, 231, 248);
-  font-weight: 600;   /* grosor més suau */
-  color: #4f1f39;     /* verd fosc suau i elegant */  
+  background-color: #fce7f8;
+  font-weight: 600;     /* grosor més suau */
+  color: #4f1f39;     /* rosa fosc suau i elegant */  
 }
 .md-typeset .praclaravel > .admonition-title::before,
 .md-typeset .praclaravel > summary::before {
@@ -295,14 +307,14 @@ font-size: 16px
 
 .center-table table th {
   background-color: #f0d79e7a; 
-  color: #333; 
+  color: #f0d79e7a; 
 }
 
 
 /* ABC. Cambiar el color de fondo de la tabla */
 .md-typeset table th {
-  background-color: #f0d5837e;
-  color: #383119; 
+  background-color: #e4d1997e;
+  color: f0d79e7a; 
   font-size: 1em;
 }
 
@@ -311,7 +323,7 @@ font-size: 16px
 .md-typeset blockquote {
   color: #333333;   /* Cambia este color al que quieras */
   font-size: 0.80m; /* Ajusta tamaño */
-  border-inline-start: 7px solid #e6af0a !important; /* Color y grosor del borde */
+  border-inline-start: 6px solid #e6af0a !important; /* Color y grosor del borde */
   /*background: #8f6363; /* Opcional: fondo más claro */
   padding: 5 5;
 }

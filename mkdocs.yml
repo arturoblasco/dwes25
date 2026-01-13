@@ -118,11 +118,13 @@ nav:
         - pru/pru03.md
         - pru/pru04.md
         - pru/pru05.md
+        - pru/pru06.md
+        - pru/pru07.md
         - Despliegue:
-          - pru/pru06a.md
-          - pru/pru06b.md
-          - pru/pru06c.md
-          - pru/pru06d.md
+          - pru/pru08a.md
+          - pru/pru08b.md
+          - pru/pru08c.md
+          - pru/pru08d.md
         - pru/examen2.md
 theme:
   name: material      # selección del tema
