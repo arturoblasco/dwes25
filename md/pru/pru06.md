@@ -994,3 +994,566 @@ try {
     - ambos módulos trabajan con un contrato API estable (endpoints + JSON + errores).
 
 
+## 5. Autorización
+
+> “Vale, ya sé quién eres (autenticación). Ahora… ¿qué te dejo hacer y sobre qué recursos?”
+
+### 5.1 Autenticación vs Autorización (idea clave)
+
+#### Autenticación
+
+Responde a: *¿Quién eres?*
+
+En Laravel:
+```php
+Auth::check();      // ¿Hay usuario?
+Auth::user();       // ¿Quién es?
+```
+
+Ejemplo:
+
+- Usuario hace login correctamente
+- Tiene cookie de sesión
+- Puede acceder a `/api/notes`
+
+#### Autorización
+
+Responde a: *Qué puedes hacer tú, con este recurso concreto?*
+
+Ejemplos:
+
+- ¿Puedes editar esta nota?
+- ¿Puedes borrar una nota que no es tuya?
+- ¿Puedes ver las notas de otros usuarios?
+
+> Estar autenticado NO implica estar autorizado.
+
+### 5.2 Ownership: el recurso pertenece a un usuario
+
+El patrón más habitual en APIs reales.
+
+> Idea
+> 
+> Un recurso tiene un propietario
+> → solo su dueño (o un admin) puede modificarlo.
+
+Ejemplo: tabla notes:
+```php
+Schema::create('notes', function (Blueprint $table) {
+    $table->id();
+    $table->string('title');
+    $table->text('content');
+    $table->foreignId('user_id')->constrained()->onDelete('cascade');
+    $table->timestamps();
+});
+```
+
+#### Regla fundamental (muy didáctica)
+
+❌ NUNCA aceptar user_id desde Vue.
+✅ El backend lo asigna con el usuario autenticado.
+
+```php
+$note = Note::create([
+    'title' => $request->title,
+    'content' => $request->content,
+    'user_id' => auth()->id(),
+]);
+```
+
+#### Relación en modelos
+```php
+// User.php
+public function notes()
+{
+    return $this->hasMany(Note::class);
+}
+```
+
+```php
+// Note.php
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+```
+
+### 5.3 Roles: admin vs user
+
+Además del propietario, a veces hay usuarios con permisos globales.
+
+Ejemplo simple
+
+- `admin` → puede todo
+- `user` → solo sus recursos
+
+#### Campo `role` en users:
+```php
+$table->string('role')->default('user');
+```
+
+Ejemplos de valores:
+
+- admin
+- user
+
+#### Uso básico
+
+```php
+auth()->user()->role === 'admin'
+```
+
+Esto NO se usa directamente en controladores
+Se integra en Policies.
+
+### 5.4 Policies: el corazón de la autorización en Laravel
+
+Una Policy define las reglas de acceso a un modelo.
+
+#### Crear la Policy
+
+```php
+php artisan make:policy NotePolicy --model=Note
+```
+
+Ejemplo completo: NotePolicy
+```php
+class NotePolicy
+{
+    public function viewAny(User $user)
+    {
+        return true; // cualquier usuario autenticado
+    }
+
+    public function view(User $user, Note $note)
+    {
+        return $user->id === $note->user_id
+            || $user->role === 'admin';
+    }
+
+    public function create(User $user)
+    {
+        return true;
+    }
+
+    public function update(User $user, Note $note)
+    {
+        return $user->id === $note->user_id
+            || $user->role === 'admin';
+    }
+
+    public function delete(User $user, Note $note)
+    {
+        return $user->id === $note->user_id
+            || $user->role === 'admin';
+    }
+}
+```
+
+> La Policy responde: “¿este usuario puede hacer esta acción con este objeto?”
+
+### 5.5 Aplicar la autorización en el backend
+
+#### Opción recomendada: `authorizeResource`
+
+En el controlador:
+
+```php
+class NoteController extends Controller
+{
+    public function __construct()
+    {
+        $this->authorizeResource(Note::class, 'note');
+    }
+
+    public function index()
+    {
+        return auth()->user()->role === 'admin'
+            ? Note::all()
+            : auth()->user()->notes;
+    }
+
+    public function update(Request $request, Note $note)
+    {
+        $note->update($request->validated());
+        return response()->json($note);
+    }
+
+    public function destroy(Note $note)
+    {
+        $note->delete();
+        return response()->noContent();
+    }
+}
+```
+
+Qué hace Laravel automáticamente
+
+- Llama a la Policy correspondiente
+- Si no está autorizado:
+    - Devuelve 403 Forbidden
+    - El controlador no se ejecuta
+
+### 5.6 Autorización en Vue (SPA)
+
+La autorización **NO es solo backend**.
+
+La SPA **debe adaptar la interfaz**.
+
+#### Obtener el usuario autenticado
+Ruta típica:
+
+```http
+GET /api/user
+```
+
+Respuesta:
+
+```json
+{
+  "id": 3,
+  "name": "Ana",
+  "role": "user"
+}
+```
+
+Se guarda en un store (Pinia):
+
+```js
+user.role
+user.id
+```
+
+
+#### Ocultar acciones no permitidas
+
+```vue
+<button
+  v-if="note.user_id === user.id || user.role === 'admin'"
+  @click="deleteNote(note.id)"
+>
+  Borrar
+</button>
+```
+
+
+#### Manejar errores 403
+
+```js
+try {
+  await axios.delete(`/api/notes/${id}`)
+} catch (error) {
+  if (error.response.status === 403) {
+    alert('No tienes permisos para esta acción');
+  }
+}
+```
+
+> La seguridad real está en el backend  
+> La SPA solo mejora la experiencia de usuario.
+
+### 5.6 Resumen final del Punto 5
+
+|Concepto	| Qué aprenden |
+|-----------|--------------|
+|Ownership|	Un recurso tiene dueño|
+|Roles|	Usuarios con permisos globales|
+|Policies|	Reglas de autorización centralizadas|
+|401 vs 403|	No autenticado vs no autorizado|
+|Backend|	Laravel bloquea acciones|
+|Frontend|	Vue adapta la interfaz|
+
+
+
+---
+???praclaravel "Práctica a Entregar"
+
+    ### Integración completa: Punto 4 (SPA con cookies) + Punto 5 (Autorización)
+
+    <p style="float: left; margin-left: 1rem;">
+    <img src="../../img/laraveltask.svg"
+        alt="Actividad en el aula virtual"
+        width="150">
+    </p>
+    Mini‑proyecto **Notes** usando **Laravel Breeze (API) + Sanctum + Vue (SPA)**.
+
+    Este documento integra de forma coherente:
+
+    * **Autenticación** (punto 4): quién es el usuario
+    * **Autorización** (punto 5): qué puede hacer ese usuario
+
+
+    #### Resultado final
+
+    * Login SPA por cookies (Sanctum)
+    * Rutas protegidas con `auth:sanctum`
+    * Autorización real:
+
+    * **Ownership**: cada usuario solo puede modificar sus notas
+    * **Rol admin**: puede ver / editar / borrar todas
+    * En Vue:
+
+    * Route guard (sesión obligatoria)
+    * UI condicional según permisos
+    * Gestión correcta de errores **401 / 403**
+
+    ---
+
+    ### 1. Backend Laravel (Breeze API + Sanctum)
+
+    #### 1.1 Migraciones y modelos
+
+    ##### Users: rol
+
+    ```php
+    $table->string('role')->default('user'); // user | admin
+    ```
+
+    ##### Notes: ownership
+
+    ```php
+    Schema::table('notes', function (Blueprint $table) {
+        $table->foreignId('user_id')->constrained()->onDelete('cascade');
+    });
+    ```
+
+    ##### Relaciones
+
+    ```php
+    // app/Models/User.php
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
+    ```
+
+    ```php
+    // app/Models/Note.php
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    ```
+
+    #### 1.2 Policy: autorización centralizada
+
+    ```bash
+    php artisan make:policy NotePolicy --model=Note
+    ```
+
+    ```php
+    // app/Policies/NotePolicy.php
+    class NotePolicy
+    {
+        public function viewAny(User $user): bool
+        {
+            return true;
+        }
+
+        public function view(User $user, Note $note): bool
+        {
+            return $user->role === 'admin' || $user->id === $note->user_id;
+        }
+
+        public function create(User $user): bool
+        {
+            return true;
+        }
+
+        public function update(User $user, Note $note): bool
+        {
+            return $user->role === 'admin' || $user->id === $note->user_id;
+        }
+
+        public function delete(User $user, Note $note): bool
+        {
+            return $user->role === 'admin' || $user->id === $note->user_id;
+        }
+    }
+    ```
+
+    #### 1.3 Controlador con Policy aplicada
+
+    ```php
+    class NoteController extends Controller
+    {
+        public function __construct()
+        {
+            $this->authorizeResource(Note::class, 'note');
+        }
+
+        public function index()
+        {
+            $user = auth()->user();
+
+            return $user->role === 'admin'
+                ? Note::latest()->get()
+                : $user->notes()->latest()->get();
+        }
+
+        public function store(Request $request)
+        {
+            // Nunca aceptar user_id desde el frontend
+            $note = Note::create([
+                'title' => $request->title,
+                'content' => $request->content,
+                'user_id' => auth()->id(),
+            ]);
+
+            return response()->json($note, 201);
+        }
+
+        public function update(Request $request, Note $note)
+        {
+            $note->update($request->only(['title', 'content']));
+            return response()->json($note);
+        }
+
+        public function destroy(Note $note)
+        {
+            $note->delete();
+            return response()->noContent();
+        }
+    }
+    ```
+
+    #### 1.4 Rutas protegidas
+
+    ```php
+    // routes/api.php
+    Route::middleware('auth:sanctum')->group(function () {
+        Route::get('/user', fn () => request()->user());
+        Route::apiResource('notes', NoteController::class);
+    });
+    ```
+
+
+    #### 1.5 Seeder de usuarios
+
+    ```php
+    User::create([
+        'name' => 'Admin',
+        'email' => 'admin@testspa.com',
+        'password' => bcrypt('password'),
+        'role' => 'admin',
+    ]);
+
+    User::create([
+        'name' => 'User',
+        'email' => 'user@testspa.com',
+        'password' => bcrypt('password'),
+        'role' => 'user',
+    ]);
+    ```
+
+
+    ### 2. Frontend Vue (Vite + Router + Pinia)
+
+    #### 2.1 Axios configurado para cookies
+
+    ```js
+    // src/lib/http.js
+    import axios from "axios";
+
+    export const http = axios.create({
+    baseURL: "http://testspa.test",
+    withCredentials: true,
+    });
+
+    export async function initCsrf() {
+    await http.get("/sanctum/csrf-cookie");
+    }
+    ```
+
+    
+
+    #### 2.2 Store de autenticación (Pinia)
+
+    ```js
+    // src/stores/auth.js
+    import { defineStore } from "pinia";
+    import { http, initCsrf } from "../lib/http";
+
+    export const useAuthStore = defineStore("auth", {
+    state: () => ({ user: null, loaded: false }),
+    getters: {
+        isAuth: (s) => !!s.user,
+        role: (s) => s.user?.role,
+        id: (s) => s.user?.id,
+    },
+    actions: {
+        async fetchUser() {
+        try {
+            const { data } = await http.get("/api/user");
+            this.user = data;
+        } catch {
+            this.user = null;
+        } finally {
+            this.loaded = true;
+        }
+        },
+        async login(email, password) {
+        await initCsrf();
+        await http.post("/login", { email, password });
+        await this.fetchUser();
+        },
+        async logout() {
+        await http.post("/logout");
+        this.user = null;
+        },
+    },
+    });
+    ```
+
+    #### 2.3 Route guard
+
+    ```js
+    // src/router/index.js
+    router.beforeEach(async (to) => {
+    const auth = useAuthStore();
+
+    if (!auth.loaded) await auth.fetchUser();
+
+    if (to.meta.requiresAuth && !auth.isAuth) return "/login";
+    if (to.path === "/login" && auth.isAuth) return "/";
+    });
+    ```
+
+
+    #### 2.4 Página Notes con autorización
+
+    ```vue
+    <script setup>
+    import { ref, onMounted } from "vue";
+    import { http } from "../lib/http";
+    import { useAuthStore } from "../stores/auth";
+
+    const auth = useAuthStore();
+    const notes = ref([]);
+    const errorMsg = ref("");
+
+    const canMutate = (note) => auth.role === "admin" || note.user_id === auth.id;
+
+    async function load() {
+    try {
+        const { data } = await http.get("/api/notes");
+        notes.value = data;
+    } catch (e) {
+        errorMsg.value = "Error cargando notas";
+    }
+    }
+
+    async function remove(note) {
+    try {
+        await http.delete(`/api/notes/${note.id}`);
+        await load();
+    } catch (e) {
+        if (e.response?.status === 403)
+        errorMsg.value = "No tienes permisos para esta acción";
+    }
+    }
+
+    onMounted(load);
+    </script>
+    ```
+
