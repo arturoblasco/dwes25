@@ -1,4 +1,4 @@
-# <img src="../../img/laravel.svg" width="50"> 7. Sistema de almacenamiento de archivos
+# <img src="../../img/laravel_auro.svg" width="40"> 7. Sistema de almacenamiento de archivos
 
 En las sesiones anteriores aprendiste a manejar formularios, validar datos y autenticar usuarios. Pero ¿qué pasa cuando los usuarios suben **archivos** como imágenes de perfil, fotos de productos, o documentos?
 

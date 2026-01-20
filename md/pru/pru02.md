@@ -1,4 +1,4 @@
-# <img src="../../img/laravel.svg" width="50"> 2. Controladores y Rutas
+# <img src="../../img/laravel_auro.svg" width="40"> 2. Controladores y Rutas
 
 ## Objetivo de la actividad
 

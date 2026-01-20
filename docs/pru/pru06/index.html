@@ -3152,13 +3152,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-autenticacion-y-consumo-de-una-api-laravel-desde-vue-spa-con-cookies" class="md-nav__link">
+  <a href="#4-autenticacion-y-consumo-de-una-api-desde-vue-spa-con-cookies" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)
+      4. Autenticación y consumo de una API desde Vue (SPA con cookies)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)">
+    <nav class="md-nav" aria-label="4. Autenticación y consumo de una API desde Vue (SPA con cookies)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4214,13 +4214,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-autenticacion-y-consumo-de-una-api-laravel-desde-vue-spa-con-cookies" class="md-nav__link">
+  <a href="#4-autenticacion-y-consumo-de-una-api-desde-vue-spa-con-cookies" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)
+      4. Autenticación y consumo de una API desde Vue (SPA con cookies)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)">
+    <nav class="md-nav" aria-label="4. Autenticación y consumo de una API desde Vue (SPA con cookies)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4838,7 +4838,7 @@
 
 
 
-<h1 id="6-autenticacion-basica"><img src="../../img/laravel.svg" width="50"> 6. Autenticación Básica<a class="headerlink" href="#6-autenticacion-basica" title="Permanent link">&para;</a></h1>
+<h1 id="6-autenticacion-basica"><img src="../../img/laravel_auro.svg" width="40"> 6. Autenticación Básica<a class="headerlink" href="#6-autenticacion-basica" title="Permanent link">&para;</a></h1>
 <p>La autenticación es el proceso de verificar la identidad de un usuario, confirmando que es quien dice ser. En aplicaciones web, esto típicamente involucra un sistema de login y logout que permite a los usuarios acceder a áreas protegidas y mantener su sesión activa. Laravel proporciona un sistema de autenticación robusto y flexible con <strong>Laravel Breeze</strong>.</p>
 <details class="warning">
 <summary>¿Se puede combinar el starter kit <em>Breeze</em> y <code>php artisan install:api</code>?</summary>
@@ -5285,7 +5285,7 @@ Laravel Sanctum para generar y validar tokens de acceso,  implementando manualme
 <li>preparar el salto a frameworks como Vue</li>
 <li>reproducir escenarios profesionales</li>
 </ul>
-<h2 id="4-autenticacion-y-consumo-de-una-api-laravel-desde-vue-spa-con-cookies">4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)<a class="headerlink" href="#4-autenticacion-y-consumo-de-una-api-laravel-desde-vue-spa-con-cookies" title="Permanent link">&para;</a></h2>
+<h2 id="4-autenticacion-y-consumo-de-una-api-desde-vue-spa-con-cookies">4. Autenticación y consumo de una API desde Vue (SPA con cookies)<a class="headerlink" href="#4-autenticacion-y-consumo-de-una-api-desde-vue-spa-con-cookies" title="Permanent link">&para;</a></h2>
 <p>Este apartado extrapola los conceptos de autenticación en APIs y los aplica al escenario más habitual en un proyecto moderno:</p>
 <ul>
 <li><strong>Backend</strong>: Laravel como API (JSON)</li>
@@ -5401,8 +5401,8 @@ SESSION_DOMAIN=.testspa.test
 </ul>
 </div>
 <h3 id="48-configuracion-de-cors-laravel-11-12">4.8 Configuración de CORS (Laravel 11 / 12)<a class="headerlink" href="#48-configuracion-de-cors-laravel-11-12" title="Permanent link">&para;</a></h3>
-<p>En Laravel 11 y 12 el archivo <code>config/cors.php</code> <strong>puede no existir</strong>.<br />
-Para publicarlo:</p>
+<p>En Laravel 11 y 12 el archivo <code>config/cors.php</code> <strong>puede no existir</strong>.</p>
+<p>Para publicarlo:</p>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>config:publish<span class="w"> </span>cors
 </code></pre></div>
 <p>Editar <code>config/cors.php</code>:</p>
@@ -5413,6 +5413,46 @@ Para publicarlo:</p>
 <span class="x">    &#39;allowed_headers&#39; =&gt; [&#39;*&#39;],</span>
 <span class="x">    &#39;supports_credentials&#39; =&gt; true,</span>
 <span class="x">];</span>
+</code></pre></div>
+<p>Esta configuración permite:</p>
+<ul>
+<li><code>'paths'</code>: define qué rutas de Laravel aceptan peticiones CORS.</li>
+<li><code>'allowed_methods'</code>: permite todos los métodos HTTP (GET, POST, PUT/PATCH, DELETE y OPTIONS preflight que evita problemas con peticiones <code>OPTIONS</code> del navegador).</li>
+<li><code>'allowed_origins'</code>: indica desde qué origen puede acceder el frontend.</li>
+<li><code>'allowed_headers'</code>: permite cualquier cabecera (<code>Content-Type</code>, <code>X-XSRF-TOKEN</code>, <code>Accept</code> necesarios para CSRF y JSON).</li>
+<li><code>'supports_credentials'</code>: permite enviar cookies, enviar credenciales de sesión y que Sanctum funciones en modo SPA.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    [ Vue (http://localhost:5173) ]
+            |
+            | 1) GET /sanctum/csrf-cookie   (con credentials)
+            |    - Laravel responde con cookie &quot;XSRF-TOKEN&quot;
+            |
+            v
+    [ Navegador guarda cookies ]
+    - XSRF-TOKEN
+    - (luego) laravel_session
+
+            |
+            | 2) POST /login (email+password)
+            |    - Vue envía:
+            |      - Cookie XSRF-TOKEN
+            |      - Header X-XSRF-TOKEN (axios lo añade si está bien)
+            |
+            v
+    [ Laravel ]
+    - CORS permite el origen + credentials
+    - Middleware web (sesión) crea &quot;laravel_session&quot;
+    - Usuario queda autenticado en sesión
+
+            |
+            | 3) GET /api/notes (ruta protegida con auth:sanctum)
+            |    - Navegador envía cookie &quot;laravel_session&quot;
+            |
+            v
+    [ Sanctum ]
+    - Comprueba Origin/Referer
+    - Si está en SANCTUM_STATEFUL_DOMAINS =&gt; stateful (cookies)
+    - Auth::user() ya existe =&gt; OK (200)
 </code></pre></div>
 <p>Limpiar caché de configuración:</p>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>config:clear

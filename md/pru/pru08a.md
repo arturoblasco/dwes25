@@ -1,4 +1,4 @@
-# <img src="../../img/laravel.svg" width="50"> Introducción al despliegue de aplicaciones web
+# <img src="../../img/laravel_auro.svg" width="40"> Introducción al despliegue de aplicaciones web
 
 ## ¿Qué es el despliegue?
 

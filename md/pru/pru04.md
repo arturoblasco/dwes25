@@ -1,4 +1,4 @@
-# <img src="../../img/laravel.svg" width="50"> 4. Validaciones, Rutas Resource y Mensajes del Sistema
+# <img src="../../img/laravel_auro.svg" width="40"> 4. Validaciones, Rutas Resource y Mensajes del Sistema
 
 ## 1. Validación de Datos
 

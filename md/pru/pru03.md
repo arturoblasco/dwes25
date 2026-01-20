@@ -1,4 +1,4 @@
-# <img src="../../img/laravel.svg" width="50"> 3. Desarrollo de un CRUD
+# <img src="../../img/laravel_auro.svg" width="40"> 3. Desarrollo de un CRUD
 
 ## 1. Introducción a CRUD
 

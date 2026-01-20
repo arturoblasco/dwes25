@@ -1,4 +1,4 @@
-# <img src="../../img/laravel.svg" width="50"> 6. Autenticación Básica
+# <img src="../../img/laravel_auro.svg" width="40"> 6. Autenticación Básica
 
 La autenticación es el proceso de verificar la identidad de un usuario, confirmando que es quien dice ser. En aplicaciones web, esto típicamente involucra un sistema de login y logout que permite a los usuarios acceder a áreas protegidas y mantener su sesión activa. Laravel proporciona un sistema de autenticación robusto y flexible con **Laravel Breeze**.
 
@@ -457,7 +457,7 @@ Este enfoque permite:
 - reproducir escenarios profesionales
 
 
-## 4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)  
+## 4. Autenticación y consumo de una API desde Vue (SPA con cookies)  
 
 Este apartado extrapola los conceptos de autenticación en APIs y los aplica al escenario más habitual en un proyecto moderno:
 
@@ -602,7 +602,8 @@ SESSION_DOMAIN=.testspa.test
 
 ### 4.8 Configuración de CORS (Laravel 11 / 12)
 
-En Laravel 11 y 12 el archivo `config/cors.php` **puede no existir**.  
+En Laravel 11 y 12 el archivo `config/cors.php` **puede no existir**.
+
 Para publicarlo:
 
 ```bash
@@ -619,6 +620,48 @@ return [
     'allowed_headers' => ['*'],
     'supports_credentials' => true,
 ];
+```
+
+Esta configuración permite:
+
+- `'paths'`: define qué rutas de Laravel aceptan peticiones CORS.
+- `'allowed_methods'`: permite todos los métodos HTTP (GET, POST, PUT/PATCH, DELETE y OPTIONS preflight que evita problemas con peticiones `OPTIONS` del navegador).
+- `'allowed_origins'`: indica desde qué origen puede acceder el frontend.
+- `'allowed_headers'`: permite cualquier cabecera (`Content-Type`, `X-XSRF-TOKEN`, `Accept` necesarios para CSRF y JSON).
+- `'supports_credentials'`: permite enviar cookies, enviar credenciales de sesión y que Sanctum funciones en modo SPA.
+
+```text
+    [ Vue (http://localhost:5173) ]
+            |
+            | 1) GET /sanctum/csrf-cookie   (con credentials)
+            |    - Laravel responde con cookie "XSRF-TOKEN"
+            |
+            v
+    [ Navegador guarda cookies ]
+    - XSRF-TOKEN
+    - (luego) laravel_session
+
+            |
+            | 2) POST /login (email+password)
+            |    - Vue envía:
+            |      - Cookie XSRF-TOKEN
+            |      - Header X-XSRF-TOKEN (axios lo añade si está bien)
+            |
+            v
+    [ Laravel ]
+    - CORS permite el origen + credentials
+    - Middleware web (sesión) crea "laravel_session"
+    - Usuario queda autenticado en sesión
+
+            |
+            | 3) GET /api/notes (ruta protegida con auth:sanctum)
+            |    - Navegador envía cookie "laravel_session"
+            |
+            v
+    [ Sanctum ]
+    - Comprueba Origin/Referer
+    - Si está en SANCTUM_STATEFUL_DOMAINS => stateful (cookies)
+    - Auth::user() ya existe => OK (200)
 ```
 
 Limpiar caché de configuración:
