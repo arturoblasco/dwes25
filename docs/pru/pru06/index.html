@@ -4838,13 +4838,7 @@
 
 
 
-<h1 id="6-autenticacion-basica">6. Autenticación Básica<a class="headerlink" href="#6-autenticacion-basica" title="Permanent link">&para;</a></h1>
-<p style="float: left; margin: 0 1rem 1rem 0;">
-  <img src="../../img/laravel.svg"
-       alt="Actividad en el aula virtual"
-       width="120">
-</p>
-
+<h1 id="6-autenticacion-basica"><img src="../../img/laravel.svg" width="50"> 6. Autenticación Básica<a class="headerlink" href="#6-autenticacion-basica" title="Permanent link">&para;</a></h1>
 <p>La autenticación es el proceso de verificar la identidad de un usuario, confirmando que es quien dice ser. En aplicaciones web, esto típicamente involucra un sistema de login y logout que permite a los usuarios acceder a áreas protegidas y mantener su sesión activa. Laravel proporciona un sistema de autenticación robusto y flexible con <strong>Laravel Breeze</strong>.</p>
 <details class="warning">
 <summary>¿Se puede combinar el starter kit <em>Breeze</em> y <code>php artisan install:api</code>?</summary>
@@ -5122,11 +5116,13 @@ Se crea un controlador específico para autenticación por token.</p>
 <span class="x">    Route::apiResource(&#39;notes&#39;, NoteController::class);</span>
 <span class="x">});</span>
 </code></pre></div>
-<p>Características:
-- Todas las rutas cuelgan de <code>/api</code>
-- No se usan sesiones
-- No se usa CSRF
-- Arquitectura completamente REST</p>
+<p>Características:</p>
+<ul>
+<li>Todas las rutas cuelgan de <code>/api</code></li>
+<li>No se usan sesiones</li>
+<li>No se usa CSRF</li>
+<li>Arquitectura completamente REST</li>
+</ul>
 <h3 id="35-insercion-de-un-usuario-de-prueba">3.5. Inserción de un usuario de prueba<a class="headerlink" href="#35-insercion-de-un-usuario-de-prueba" title="Permanent link">&para;</a></h3>
 <p>Para poder probar la autenticación, debe existir al menos un usuario.</p>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>tinker
@@ -5148,7 +5144,7 @@ Se crea un controlador específico para autenticación por token.</p>
 <span class="err">Content-Type: application/json</span>
 
 <span class="err">{</span>
-<span class="err">  &quot;email&quot;: &quot;admin@testear.com&quot;,</span>
+<span class="err">  &quot;email&quot;: &quot;admin@testapi.com&quot;,</span>
 <span class="err">  &quot;password&quot;: &quot;password&quot;</span>
 <span class="err">}</span>
 </code></pre></div>
@@ -5159,10 +5155,10 @@ Se crea un controlador específico para autenticación por token.</p>
 </ul>
 <div class="figure-center">
 <figure>
-    <img src="../../img/pru/laravel_apirest_auth01_png"
+    <img src="../../img/pru/laravel_apirest_auth01.png"
                 alt="Respuesta de login correcto"
                 class="figure-img-highlight" 
-                style="max-width: 85%; height: auto;" />
+                style="max-width: 100%; height: auto;" />
     <figcaption class="figure-caption-small">
             Respuesta de login correcto
     </figcaption>
@@ -5184,10 +5180,10 @@ Se crea un controlador específico para autenticación por token.</p>
 <div class="tabbed-block">
 <p><div class="figure-center">
 <figure>
-    <img src="../../img/pru/laravel_apirest_auth02_png"
+    <img src="../../img/pru/laravel_apirest_auth02.png"
                 alt="Respuesta de acceso no autorizado"
                 class="figure-img-highlight" 
-                style="max-width: 85%; height: auto;" />
+                style="max-width: 100%; height: auto;" />
     <figcaption class="figure-caption-small">
             Respuesta de acceso no autorizado
     </figcaption>
@@ -5197,10 +5193,10 @@ Se crea un controlador específico para autenticación por token.</p>
 <div class="tabbed-block">
 <p><div class="figure-center">
 <figure>
-    <img src="../../img/pru/laravel_apirest_auth03_png"
+    <img src="../../img/pru/laravel_apirest_auth03.png"
                 alt="Respuesta de acceso no autorizado"
                 class="figure-img-highlight" 
-                style="max-width: 85%; height: auto;" />
+                style="max-width: 100%; height: auto;" />
     <figcaption class="figure-caption-small">
             Respuesta de acceso autorizado
     </figcaption>
@@ -5222,10 +5218,10 @@ Se crea un controlador específico para autenticación por token.</p>
 </ul>
 <div class="figure-center">
 <figure>
-    <img src="../../img/pru/laravel_apirest_auth04_png"
+    <img src="../../img/pru/laravel_apirest_auth04.png"
                 alt="Respuesta de salir de token"
                 class="figure-img-highlight" 
-                style="max-width: 85%; height: auto;" />
+                style="max-width: 100%; height: auto;" />
     <figcaption class="figure-caption-small">
             Respuesta de salir de token
     </figcaption>
@@ -5274,21 +5270,21 @@ Se crea un controlador específico para autenticación por token.</p>
 <h3 id="38-conclusion">3.8. Conclusión<a class="headerlink" href="#38-conclusion" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><code>install:api</code> prepara el terreno,<br />
-el sistema de autenticación lo diseña el desarrollador.</p>
+el sistema de autenticación lo diseña el desarrollador.  </p>
 </blockquote>
 <p>&nbsp;</p>
 <blockquote>
-<p>Para implementar autenticación por token Bearer en una API REST con Laravel se utiliza<br />
-<code>php artisan install:api</code> para preparar la infraestructura del proyecto y<br />
-Laravel Sanctum para generar y validar tokens de acceso,<br />
-implementando manualmente los endpoints de login y logout en la API.</p>
+<p>Para implementar autenticación por <em>token Bearer</em> en una API REST con Laravel se utiliza <code>php artisan install:api</code> para preparar la infraestructura del proyecto y<br />
+Laravel Sanctum para generar y validar tokens de acceso,  implementando manualmente los endpoints de login y logout en la API.</p>
 </blockquote>
-<p>Este enfoque permite:
-- trabajar APIs REST reales
-- evitar dependencias de frontend
-- comprender la autenticación moderna
-- preparar el salto a frameworks como Vue
-- reproducir escenarios profesionales</p>
+<p>Este enfoque permite:</p>
+<ul>
+<li>trabajar APIs REST reales</li>
+<li>evitar dependencias de frontend</li>
+<li>comprender la autenticación moderna</li>
+<li>preparar el salto a frameworks como Vue</li>
+<li>reproducir escenarios profesionales</li>
+</ul>
 <h2 id="4-autenticacion-y-consumo-de-una-api-laravel-desde-vue-spa-con-cookies">4. Autenticación y consumo de una API Laravel desde Vue (SPA con cookies)<a class="headerlink" href="#4-autenticacion-y-consumo-de-una-api-laravel-desde-vue-spa-con-cookies" title="Permanent link">&para;</a></h2>
 <p>Este apartado extrapola los conceptos de autenticación en APIs y los aplica al escenario más habitual en un proyecto moderno:</p>
 <ul>
@@ -5317,14 +5313,16 @@ Vue solo necesita hacer peticiones HTTP correctamente configuradas.</p>
 <blockquote>
 <p>Por eso, para un proyecto intermodular con Vue, lo más natural es <strong>Sanctum SPA</strong>.</p>
 </blockquote>
-<p>Este documento explica <strong>paso a paso</strong> cómo instalar y configurar <strong>Laravel Breeze (API)</strong> para trabajar con un <strong>frontend Vue independiente</strong>, orientado al módulo <strong>DWES (2º DAW)</strong> y a un <strong>proyecto intermodular</strong>.</p>
+<p>Este apartado explica <strong>paso a paso</strong> cómo instalar y configurar <strong>Laravel Breeze (API)</strong> para trabajar con un <strong>frontend Vue independiente</strong>, orientado al módulo <strong>DWES (2º DAW)</strong> y a un <strong>proyecto intermodular</strong>.</p>
 <blockquote>
 <p><strong>Objetivo final</strong><br />
-Disponer de un backend Laravel (API) con autenticación SPA:
-- <code>/login</code>, <code>/logout</code>, <code>/register</code>
-- <code>GET /sanctum/csrf-cookie</code>
-- Protección de rutas con <code>auth:sanctum</code>
-- Consumo desde Vue mediante cookies (<code>withCredentials</code>)</p>
+Disponer de un backend Laravel (API) con autenticación SPA:</p>
+<ul>
+<li><code>/login</code>, <code>/logout</code>, <code>/register</code></li>
+<li><code>GET /sanctum/csrf-cookie</code></li>
+<li>Protección de rutas con <code>auth:sanctum</code></li>
+<li>Consumo desde Vue mediante cookies (<code>withCredentials</code>)</li>
+</ul>
 </blockquote>
 <h3 id="42-crear-el-proyecto-laravel">4.2 Crear el proyecto Laravel<a class="headerlink" href="#42-crear-el-proyecto-laravel" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>composer<span class="w"> </span>create-project<span class="w"> </span>laravel/laravel<span class="w"> </span>testspa

@@ -1,14 +1,9 @@
-# 5. Creación de APIs REST en Laravel
+# <img src="../../img/laravel.svg" width="50"> 5. Creación de APIs REST en Laravel
 
 ## 1. Rutas API
 
-<p style="float: left; margin: 0 1rem 1rem 0;">
-  <img src="../../img/laravel.svg"
-       alt="Actividad en el aula virtual"
-       width="120">
-</p>
-
-*“Usamos un backend con API para que la aplicación no dependa de cómo se ve, <br/>sino de cómo funciona, y poder usar los datos desde cualquier sitio.”*
+> *“Usamos un backend con API para que la aplicación no dependa de cómo se ve,   
+> sino de cómo funciona, y poder usar los datos desde cualquier sitio.”*
 
 <br/>
 
@@ -1294,6 +1289,7 @@ Ahora falta extender este control de errores a los demás métodos del controlad
        * DELETE `/api/products/{id}` → Eliminar un producto
 
     12) Escribe una petición que devuelva un error de validación (por ejemplo: precio negativo o stock como un string).
+   
     13) Comprueba que todas las operaciones devuelven los **códigos HTTP correctos** (`200`, `201`, `204`, etc.) y que la respuesta JSON tiene el formato definido en `ProductResource`.
 
 

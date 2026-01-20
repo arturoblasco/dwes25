@@ -1,12 +1,6 @@
-# 2. Controladores y Rutas
+# <img src="../../img/laravel.svg" width="50"> 2. Controladores y Rutas
 
 ## Objetivo de la actividad
-
-<p style="float: left; margin: 0 1rem 1rem 0;">
-  <img src="../../img/laravel.svg"
-       alt="Actividad en el aula virtual"
-       width="120">
-</p>
 
 Implementarás **rutas** y un **controlador** que devuelvan listados ordenados y filtrados, y mostrarás los datos en una **vista Blade** mediante una tabla HTML con columnas homogéneas.
 

@@ -1,10 +1,4 @@
-# 6. Autenticación Básica
-
-<p style="float: left; margin: 0 1rem 1rem 0;">
-  <img src="../../img/laravel.svg"
-       alt="Actividad en el aula virtual"
-       width="120">
-</p>
+# <img src="../../img/laravel.svg" width="50"> 6. Autenticación Básica
 
 La autenticación es el proceso de verificar la identidad de un usuario, confirmando que es quien dice ser. En aplicaciones web, esto típicamente involucra un sistema de login y logout que permite a los usuarios acceder a áreas protegidas y mantener su sesión activa. Laravel proporciona un sistema de autenticación robusto y flexible con **Laravel Breeze**.
 
@@ -306,6 +300,7 @@ Route::middleware('auth:sanctum')->group(function () {
 ```
 
 Características:
+
 - Todas las rutas cuelgan de `/api`
 - No se usan sesiones
 - No se usa CSRF
@@ -343,7 +338,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "email": "admin@testear.com",
+  "email": "admin@testapi.com",
   "password": "password"
 }
 ```
@@ -355,10 +350,10 @@ Respuesta esperada:
 
 <div class="figure-center">
 <figure>
-    <img src="../../img/pru/laravel_apirest_auth01_png"
+    <img src="../../img/pru/laravel_apirest_auth01.png"
                 alt="Respuesta de login correcto"
                 class="figure-img-highlight" 
-                style="max-width: 85%; height: auto;" />
+                style="max-width: 100%; height: auto;" />
     <figcaption class="figure-caption-small">
             Respuesta de login correcto
     </figcaption>
@@ -380,10 +375,10 @@ Authorization: Bearer [PEGA_AQUI_EL_TOKEN]
 === "Acceso no autorizado"
     <div class="figure-center">
     <figure>
-        <img src="../../img/pru/laravel_apirest_auth02_png"
+        <img src="../../img/pru/laravel_apirest_auth02.png"
                     alt="Respuesta de acceso no autorizado"
                     class="figure-img-highlight" 
-                    style="max-width: 85%; height: auto;" />
+                    style="max-width: 100%; height: auto;" />
         <figcaption class="figure-caption-small">
                 Respuesta de acceso no autorizado
         </figcaption>
@@ -392,10 +387,10 @@ Authorization: Bearer [PEGA_AQUI_EL_TOKEN]
 === "Acceso autorizado"
     <div class="figure-center">
     <figure>
-        <img src="../../img/pru/laravel_apirest_auth03_png"
+        <img src="../../img/pru/laravel_apirest_auth03.png"
                     alt="Respuesta de acceso no autorizado"
                     class="figure-img-highlight" 
-                    style="max-width: 85%; height: auto;" />
+                    style="max-width: 100%; height: auto;" />
         <figcaption class="figure-caption-small">
                 Respuesta de acceso autorizado
         </figcaption>
@@ -419,10 +414,10 @@ Tras el logout:
 
 <div class="figure-center">
 <figure>
-    <img src="../../img/pru/laravel_apirest_auth04_png"
+    <img src="../../img/pru/laravel_apirest_auth04.png"
                 alt="Respuesta de salir de token"
                 class="figure-img-highlight" 
-                style="max-width: 85%; height: auto;" />
+                style="max-width: 100%; height: auto;" />
     <figcaption class="figure-caption-small">
             Respuesta de salir de token
     </figcaption>
@@ -446,16 +441,15 @@ Tras el logout:
 ### 3.8. Conclusión
 
 > `install:api` prepara el terreno,  
-> el sistema de autenticación lo diseña el desarrollador.
+> el sistema de autenticación lo diseña el desarrollador.  
 
 &nbsp;
 
-> Para implementar autenticación por token Bearer en una API REST con Laravel se utiliza  
-> `php artisan install:api` para preparar la infraestructura del proyecto y  
-> Laravel Sanctum para generar y validar tokens de acceso,  
-> implementando manualmente los endpoints de login y logout en la API.
+> Para implementar autenticación por *token Bearer* en una API REST con Laravel se utiliza `php artisan install:api` para preparar la infraestructura del proyecto y  
+> Laravel Sanctum para generar y validar tokens de acceso,  implementando manualmente los endpoints de login y logout en la API.
 
 Este enfoque permite:
+
 - trabajar APIs REST reales
 - evitar dependencias de frontend
 - comprender la autenticación moderna
@@ -492,10 +486,11 @@ Con Sanctum **modo SPA**:
 
 > Por eso, para un proyecto intermodular con Vue, lo más natural es **Sanctum SPA**.
 
-Este documento explica **paso a paso** cómo instalar y configurar **Laravel Breeze (API)** para trabajar con un **frontend Vue independiente**, orientado al módulo **DWES (2º DAW)** y a un **proyecto intermodular**.
+Este apartado explica **paso a paso** cómo instalar y configurar **Laravel Breeze (API)** para trabajar con un **frontend Vue independiente**, orientado al módulo **DWES (2º DAW)** y a un **proyecto intermodular**.
 
 > **Objetivo final**  
 > Disponer de un backend Laravel (API) con autenticación SPA:
+> 
 > - `/login`, `/logout`, `/register`
 > - `GET /sanctum/csrf-cookie`
 > - Protección de rutas con `auth:sanctum`

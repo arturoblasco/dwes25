@@ -1,14 +1,8 @@
-# 4. Validaciones, Rutas Resource y Mensajes del Sistema
+# <img src="../../img/laravel.svg" width="50"> 4. Validaciones, Rutas Resource y Mensajes del Sistema
 
 ## 1. Validación de Datos
 
 ### 1.1. ¿Qué es la validación y por qué es necesaria?
-
-<p style="float: left; margin: 0 1rem 1rem 0;">
-  <img src="../../img/laravel.svg"
-       alt="Actividad en el aula virtual"
-       width="120">
-</p>
 
 La validación es el proceso mediante el cual se verifica que los datos enviados por el usuario cumplen con unas reglas antes de ser almacenados en la base de datos.
 

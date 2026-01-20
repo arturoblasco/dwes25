@@ -1,12 +1,7 @@
-# 3. Desarrollo de un CRUD
+# <img src="../../img/laravel.svg" width="50"> 3. Desarrollo de un CRUD
 
 ## 1. Introducción a CRUD
 
-<p style="float: left; margin: 0 1rem 1rem 0;">
-  <img src="../../img/laravel.svg"
-       alt="Actividad en el aula virtual"
-       width="120">
-</p>
 El término **CRUD** corresponde a las operaciones básicas que se realizan en la mayoría de las aplicaciones que gestionan datos:
 
 * **C**reate (Crear): Insertar nuevos datos.
