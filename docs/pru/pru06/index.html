@@ -2954,7 +2954,7 @@
           <li class="md-nav__item">
   <a href="#12-autenticacion-vs-autorizacion" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2. Autenticación vs autorización
+      1.2. Autenticación vs Autorización
     </span>
   </a>
   
@@ -2994,13 +2994,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#preparacion-del-proyecto-como-api-installapi" class="md-nav__link">
+  <a href="#preparacion-del-proyecto-como-api" class="md-nav__link">
     <span class="md-ellipsis">
-      Preparación del proyecto como API: install:api
+      Preparación del proyecto como API
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Preparación del proyecto como API: install:api">
+    <nav class="md-nav" aria-label="Preparación del proyecto como API">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3132,15 +3132,6 @@
   <a href="#37-que-aporta-realmente-installapi" class="md-nav__link">
     <span class="md-ellipsis">
       3.7. Qué aporta realmente install:api
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#38-conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.8. Conclusión
     </span>
   </a>
   
@@ -3303,7 +3294,7 @@
           <li class="md-nav__item">
   <a href="#middleware-de-autenticacion" class="md-nav__link">
     <span class="md-ellipsis">
-      Middleware de autenticación¶
+      Middleware de autenticación
     </span>
   </a>
   
@@ -4169,7 +4160,7 @@
           <li class="md-nav__item">
   <a href="#12-autenticacion-vs-autorizacion" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2. Autenticación vs autorización
+      1.2. Autenticación vs Autorización
     </span>
   </a>
   
@@ -4209,13 +4200,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#preparacion-del-proyecto-como-api-installapi" class="md-nav__link">
+  <a href="#preparacion-del-proyecto-como-api" class="md-nav__link">
     <span class="md-ellipsis">
-      Preparación del proyecto como API: install:api
+      Preparación del proyecto como API
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Preparación del proyecto como API: install:api">
+    <nav class="md-nav" aria-label="Preparación del proyecto como API">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4347,15 +4338,6 @@
   <a href="#37-que-aporta-realmente-installapi" class="md-nav__link">
     <span class="md-ellipsis">
       3.7. Qué aporta realmente install:api
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#38-conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.8. Conclusión
     </span>
   </a>
   
@@ -4518,7 +4500,7 @@
           <li class="md-nav__item">
   <a href="#middleware-de-autenticacion" class="md-nav__link">
     <span class="md-ellipsis">
-      Middleware de autenticación¶
+      Middleware de autenticación
     </span>
   </a>
   
@@ -5164,7 +5146,6 @@
 <ul>
 <li>Rutas duplicadas</li>
 <li>Confusión entre auth por <strong>cookies</strong> vs <strong>tokens</strong></li>
-<li>Problemas didácticos para el alumnado</li>
 </ul>
 <hr />
 <p><strong>Qué es cada cosa (clave para entenderlo)</strong></p>
@@ -5218,7 +5199,7 @@ php<span class="w"> </span>artisan<span class="w"> </span>migrate
 <h2 id="1-fundamentos-de-la-autenticacion">1. Fundamentos de la autenticación<a class="headerlink" href="#1-fundamentos-de-la-autenticacion" title="Permanent link">&para;</a></h2>
 <h3 id="11-que-es-la-autenticacion">1.1. ¿Qué es la autenticación?<a class="headerlink" href="#11-que-es-la-autenticacion" title="Permanent link">&para;</a></h3>
 <p>La autenticación es el proceso de verificar la identidad de un usuario mediante credenciales como nombre de usuario y contraseña. Es diferente de la <strong>autorización</strong>, que determina qué acciones puede realizar un usuario autenticado.</p>
-<h3 id="12-autenticacion-vs-autorizacion">1.2. Autenticación vs autorización<a class="headerlink" href="#12-autenticacion-vs-autorizacion" title="Permanent link">&para;</a></h3>
+<h3 id="12-autenticacion-vs-autorizacion">1.2. Autenticación vs Autorización<a class="headerlink" href="#12-autenticacion-vs-autorizacion" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -5290,7 +5271,6 @@ php<span class="w"> </span>artisan<span class="w"> </span>migrate
 <h4 id="creacion-del-proyecto-laravel-base">Creación del proyecto Laravel (base)<a class="headerlink" href="#creacion-del-proyecto-laravel-base" title="Permanent link">&para;</a></h4>
 <p>Se crea un proyecto Laravel base, sin instalar ningún starter kit (ni Breeze ni Jetstream). Vamos a nombrarlo, por ejemplo, <code>testapi</code>:</p>
 <div class="highlight"><pre><span></span><code>composer<span class="w"> </span>create-project<span class="w"> </span>laravel/laravel<span class="w"> </span>testapi
-<span class="nb">cd</span><span class="w"> </span>testapi
 </code></pre></div>
 <p>En este punto se dispone de:</p>
 <ul>
@@ -5299,7 +5279,7 @@ php<span class="w"> </span>artisan<span class="w"> </span>migrate
 <li>hashing de contraseñas</li>
 <li>estructura estándar del framework</li>
 </ul>
-<h4 id="preparacion-del-proyecto-como-api-installapi">Preparación del proyecto como API: <code>install:api</code><a class="headerlink" href="#preparacion-del-proyecto-como-api-installapi" title="Permanent link">&para;</a></h4>
+<h4 id="preparacion-del-proyecto-como-api">Preparación del proyecto como API<a class="headerlink" href="#preparacion-del-proyecto-como-api" title="Permanent link">&para;</a></h4>
 <p>Ejecutamos el comando:</p>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>install:api
 </code></pre></div>
@@ -5329,6 +5309,7 @@ pero <strong>la lógica de autenticación se implementa manualmente</strong>.</p
 </ul>
 <p>Si fuera necesario:</p>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>vendor:publish<span class="w"> </span>--provider<span class="o">=</span><span class="s2">&quot;Laravel\Sanctum\SanctumServiceProvider&quot;</span>
+
 php<span class="w"> </span>artisan<span class="w"> </span>migrate
 </code></pre></div>
 <blockquote>
@@ -5573,15 +5554,15 @@ Se crea un controlador específico para autenticación por token.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="38-conclusion">3.8. Conclusión<a class="headerlink" href="#38-conclusion" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><code>install:api</code> prepara el terreno,<br />
-el sistema de autenticación lo diseña el desarrollador.  </p>
+<p><code>install:api</code> prepara el terreno, el sistema de autenticación lo diseña el desarrollador.  </p>
 </blockquote>
 <p>&nbsp;</p>
 <blockquote>
-<p>Para implementar autenticación por <em>token Bearer</em> en una API REST con Laravel se utiliza <code>php artisan install:api</code> para preparar la infraestructura del proyecto y<br />
-Laravel Sanctum para generar y validar tokens de acceso,  implementando manualmente los endpoints de login y logout en la API.</p>
+<p>Para implementar autenticación por <em>token Bearer</em> en una API REST con Laravel<br />
+se utiliza <code>php artisan install:api</code> para preparar la infraestructura del proyecto y<br />
+Laravel Sanctum para generar y validar tokens de acceso,<br />
+implementando manualmente los endpoints de login y logout en la API.</p>
 </blockquote>
 <p>Este enfoque permite:</p>
 <ul>
@@ -5777,7 +5758,7 @@ php<span class="w"> </span>artisan<span class="w"> </span>cache:clear
 <span class="x">]);</span>
 </code></pre></div>
 <h3 id="410-proteger-rutas-api-con-sanctum">4.10 Proteger rutas API con Sanctum<a class="headerlink" href="#410-proteger-rutas-api-con-sanctum" title="Permanent link">&para;</a></h3>
-<h4 id="middleware-de-autenticacion">Middleware de autenticación¶<a class="headerlink" href="#middleware-de-autenticacion" title="Permanent link">&para;</a></h4>
+<h4 id="middleware-de-autenticacion">Middleware de autenticación<a class="headerlink" href="#middleware-de-autenticacion" title="Permanent link">&para;</a></h4>
 <p>El middleware <code>auth</code> es la forma principal de proteger rutas en Laravel, asegurando que solo usuarios autenticados puedan acceder a ciertas páginas o recursos. Si un usuario no autenticado intenta acceder, será redirigido automáticamente a la página de login.</p>
 <p>Ejemplo en <code>routes/api.php</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -5926,17 +5907,23 @@ Respuesta correcta:</p>
 </code></pre></div>
 <h4 id="4116-manejo-de-errores-tipico-en-vue-401-y-422">4.11.6 Manejo de errores típico en Vue (401 y 422)<a class="headerlink" href="#4116-manejo-de-errores-tipico-en-vue-401-y-422" title="Permanent link">&para;</a></h4>
 <h5 id="401-unauthorized">401 Unauthorized<a class="headerlink" href="#401-unauthorized" title="Permanent link">&para;</a></h5>
-<p>Suele significar:
-- no has hecho login
-- no se están enviando cookies (falta <code>withCredentials</code>)
-- CORS no permite credenciales</p>
-<p>En Vue, lo habitual es:
-- redirigir a login
-- mostrar aviso “Sesión caducada”</p>
+<p>Suele significar:</p>
+<ul>
+<li>no has hecho login</li>
+<li>no se están enviando cookies (falta <code>withCredentials</code>)</li>
+<li>CORS no permite credenciales</li>
+</ul>
+<p>En Vue, lo habitual es:</p>
+<ul>
+<li>redirigir a login</li>
+<li>mostrar aviso “Sesión caducada”</li>
+</ul>
 <h5 id="422-validation-error">422 Validation Error<a class="headerlink" href="#422-validation-error" title="Permanent link">&para;</a></h5>
-<p>Laravel devuelve errores de validación. Vue debe:
-- mostrar errores por campo
-- no romper la app</p>
+<p>Laravel devuelve errores de validación. Vue debe:</p>
+<ul>
+<li>mostrar errores por campo</li>
+<li>no romper la app</li>
+</ul>
 <p>Ejemplo de patrón:</p>
 <div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">createNote</span><span class="p">(</span><span class="nx">payload</span><span class="p">);</span>
@@ -6084,7 +6071,7 @@ npm<span class="w"> </span>run<span class="w"> </span>dev
 <li>Puede acceder a <code>/api/notes</code></li>
 </ul>
 <h4 id="autorizacion">Autorización<a class="headerlink" href="#autorizacion" title="Permanent link">&para;</a></h4>
-<p>Responde a: <em>Qué puedes hacer tú, con este recurso concreto?</em></p>
+<p>Responde a: <em>¿Qué puedes hacer tú, con este recurso concreto?</em></p>
 <p>Ejemplos:</p>
 <ul>
 <li>¿Puedes editar esta nota?</li>
@@ -6096,12 +6083,12 @@ npm<span class="w"> </span>run<span class="w"> </span>dev
 </blockquote>
 <h3 id="52-ownership-el-recurso-pertenece-a-un-usuario">5.2 Ownership: el recurso pertenece a un usuario<a class="headerlink" href="#52-ownership-el-recurso-pertenece-a-un-usuario" title="Permanent link">&para;</a></h3>
 <p>El patrón más habitual en APIs reales.</p>
-<blockquote>
-<p>Idea</p>
+<div class="admonition teolaravel">
+<p class="admonition-title">Idea</p>
 <p>Un recurso tiene un propietario
 → solo su dueño (o un admin) puede modificarlo.</p>
-</blockquote>
-<p>Ejemplo: tabla notes:
+</div>
+<p>Ejemplo tabla notes:
 <div class="highlight"><pre><span></span><code><span class="x">Schema::create(&#39;notes&#39;, function (Blueprint $table) {</span>
 <span class="x">    $table-&gt;id();</span>
 <span class="x">    $table-&gt;string(&#39;title&#39;);</span>
@@ -6111,8 +6098,10 @@ npm<span class="w"> </span>run<span class="w"> </span>dev
 <span class="x">});</span>
 </code></pre></div></p>
 <h4 id="regla-fundamental-muy-didactica">Regla fundamental (muy didáctica)<a class="headerlink" href="#regla-fundamental-muy-didactica" title="Permanent link">&para;</a></h4>
-<p>❌ NUNCA aceptar user_id desde Vue.
-✅ El backend lo asigna con el usuario autenticado.</p>
+<ul>
+<li>❌ NUNCA aceptar <code>user_id</code> desde Vue.</li>
+<li>✅ El backend lo asigna con el usuario autenticado.</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="x">$note = Note::create([</span>
 <span class="x">    &#39;title&#39; =&gt; $request-&gt;title,</span>
 <span class="x">    &#39;content&#39; =&gt; $request-&gt;content,</span>
@@ -6150,8 +6139,7 @@ npm<span class="w"> </span>run<span class="w"> </span>dev
 <h4 id="uso-basico">Uso básico<a class="headerlink" href="#uso-basico" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="x">auth()-&gt;user()-&gt;role === &#39;admin&#39;</span>
 </code></pre></div>
-<p>Esto NO se usa directamente en controladores
-Se integra en Policies.</p>
+<p>Esto NO se usa directamente en controladores. Se integra en Policies.</p>
 <h3 id="54-policies-el-corazon-de-la-autorizacion-en-laravel">5.4 Policies: el corazón de la autorización en Laravel<a class="headerlink" href="#54-policies-el-corazon-de-la-autorizacion-en-laravel" title="Permanent link">&para;</a></h3>
 <p>Una Policy define las reglas de acceso a un modelo.</p>
 <h4 id="crear-la-policy">Crear la Policy<a class="headerlink" href="#crear-la-policy" title="Permanent link">&para;</a></h4>
@@ -6162,13 +6150,13 @@ Se integra en Policies.</p>
 <span class="x">{</span>
 <span class="x">    public function viewAny(User $user)</span>
 <span class="x">    {</span>
-<span class="x">        return true; // cualquier usuario autenticado</span>
+<span class="x">        return true;  // cualquier usuario autenticado</span>
 <span class="x">    }</span>
 
 <span class="x">    public function view(User $user, Note $note)</span>
 <span class="x">    {</span>
 <span class="x">        return $user-&gt;id === $note-&gt;user_id</span>
-<span class="x">            || $user-&gt;role === &#39;admin&#39;;</span>
+<span class="x">               || $user-&gt;role === &#39;admin&#39;;</span>
 <span class="x">    }</span>
 
 <span class="x">    public function create(User $user)</span>
@@ -6179,13 +6167,13 @@ Se integra en Policies.</p>
 <span class="x">    public function update(User $user, Note $note)</span>
 <span class="x">    {</span>
 <span class="x">        return $user-&gt;id === $note-&gt;user_id</span>
-<span class="x">            || $user-&gt;role === &#39;admin&#39;;</span>
+<span class="x">               || $user-&gt;role === &#39;admin&#39;;</span>
 <span class="x">    }</span>
 
 <span class="x">    public function delete(User $user, Note $note)</span>
 <span class="x">    {</span>
 <span class="x">        return $user-&gt;id === $note-&gt;user_id</span>
-<span class="x">            || $user-&gt;role === &#39;admin&#39;;</span>
+<span class="x">               || $user-&gt;role === &#39;admin&#39;;</span>
 <span class="x">    }</span>
 <span class="x">}</span>
 </code></pre></div></p>
