@@ -28,7 +28,7 @@ hide:
 
 <a href="upl1/100/" class="md-button md-button--primary">
   <img src="img/laravel_logo.svg"  class="btn-icon-img" alt="Laravel">
-  Laravelx
+  Laravel
 </a>
 
 </div>
