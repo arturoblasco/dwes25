@@ -15,7 +15,7 @@ Cuando los usuarios suben archivos a tu aplicación (imágenes, documentos, vide
 
 ## 7.2. Discos de almacenamiento en Laravel
 
-Laravel organiza el almacenamiento en "discos" (disks) que son ubicaciones configuradas donde se guardan archivos.
+Laravel organiza el almacenamiento en "discos" (*disks*) que son ubicaciones configuradas donde se guardan archivos.
 
 ### 7.2.1. Discos predefinidos
 
@@ -66,7 +66,7 @@ return [
 
 ## 7.3. El disco público y el enlace simbólico
 
-El disco `public` es especial porque necesita ser accesible desde la web, pero por defecto está en `storage/app/public/`, que **no es accesible públicamente**.
+El disco **`public`** es especial porque necesita ser accesible desde la web, pero por defecto está en `storage/app/public/`, que **no es accesible públicamente**.
 
 ### 7.3.1. ¿Por qué existe este problema?
 
@@ -154,13 +154,12 @@ La facade **`Storage`** proporciona métodos simples para guardar, leer, actuali
 
 Para guardar archivos desde un formulario, usa el método **`store()`** o **`storeAs()`** del archivo subido. Laravel automáticamente gestiona el nombre y ubicación del archivo.
 
-**Desde un formulario:**
-
+##### Desde un formulario
 ```php
 <?php
-
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -168,35 +167,54 @@ class ProductController extends Controller
 {
     public function store(Request $request)
     {
-        // Validar el archivo
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // 2MB máximo
+        $validated = $request->validate([
+            'name'  => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Guardar el archivo en storage/app/public/products/
+        // Guardar la imagen
         $path = $request->file('image')->store('products', 'public');
-        // $path: contiene la ruta relativa (products/abc123def456.jpg>)
-        
-        // Guardar la ruta en la base de datos
+
+        // Crear producto
         $product = Product::create([
-            'name' => $request->name,
-            'image' => $path,  // ← Guardamos la ruta
+            'name'  => $validated['name'],
+            'image' => $path,
         ]);
 
-        return redirect()->route('products.show', $product);
+        return response()->json([
+            'success' => true,
+            'message' => 'Producto creado correctamente',
+            'data' => [
+                'id' => $product->id,
+                'name' => $product->name,
+                'image' => $product->image, // ruta interna
+                'image_url' => asset('storage/' . $product->image), // ← CLAVE
+            ]
+        ], 201);
     }
 }
 ```
 
 - `$request->file('image')`: obtiene el archivo subido.
-- `->store('products', 'public')`: lo guarda en el disco public (configurado en `config/filesystems.php`) dentro de la carpeta `products/`. Laravel genera un nombre único para el archivo.
+- `->store('products', 'public')`: lo guarda en el disco `public` (configurado en `config/filesystems.php`) dentro de la carpeta `products/`. Laravel genera un nombre único para el archivo.
 - El resultado (`$path`) es una ruta relativa dentro del disco, por ejemplo: "products/abc123def456.jpg".
+- En el sistema de archivos real, esto va a: `storage/app/public/products/abc123def456.jpg`
+- Y a través del enlace simbólico `public/storage` (si has hecho php artisan storage:link) se podrá acceder como: `http://tuapp.test/storage/products/abc123def456.jpg`
+- ¿Cómo devuelve la imagen? Como hemos hecho ya el `symlink` la respuesta en JSON será:
+  ```json
+  {
+  "success": true,
+  "message": "Producto creado correctamente",
+  "data": {
+    "id": 7,
+    "name": "Ratón inalámbrico",
+    "image": "products/abc123.jpg",
+    "image_url": "http://test_api.test/storage/products/abc123.jpg"
+  }
+  }
+  ```
 
-En el sistema de archivos real, esto va a: `storage/app/public/products/abc123def456.jpg`
-
-Y a través del enlace simbólico `public/storage` (si has hecho php artisan storage:link) se podrá acceder como: `http://tuapp.test/storage/products/abc123def456.jpg`
-
-**Con nombre personalizado:**
+##### Con nombre personalizado
 
 ```php
 <?php
@@ -217,7 +235,7 @@ $path = $request->file('image')->storeAs('products', $fileName, 'public');
 
 Para mostrar archivos guardados en `storage` necesitas obtener su URL pública. Laravel proporciona el método **`Storage::url()`** y el helper **`asset()`** para generar URLs accesibles.
 
-**Obtener la URL pública:**
+##### Obtener la URL pública
 
 ```php
 <?php
@@ -226,7 +244,7 @@ $product = Product::find(1);
 $url = Storage::url($product->image);  // $url = "/storage/products/abc123def456.jpg"
 ```
 
-**En Blade:**
+##### En Blade
 
 ```php
 <?php
@@ -240,7 +258,7 @@ $url = Storage::url($product->image);  // $url = "/storage/products/abc123def456
 <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
 ```
 
-**Verificar si un archivo existe:**
+##### Verificar si un archivo existe
 
 ```php
 <?php
@@ -263,35 +281,39 @@ Cuando actualizas un registro que tiene un archivo, debes:
 
 ```php
 <?php
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 public function update(Request $request, Product $product)
 {
-    $request->validate([
-        'name' => 'required|string|max:255',
+    $validated = $request->validate([
+        'name'  => 'required|string|max:255',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
-    // Actualizar datos básicos
-    $product->name = $request->name;
+    // Actualizar nombre
+    $product->name = $validated['name'];
 
     // Si se subió una nueva imagen
     if ($request->hasFile('image')) {
-        // 1. Eliminar imagen anterior (si existe)
+
+        // Eliminar imagen anterior
         if ($product->image && Storage::disk('public')->exists($product->image)) {
             Storage::disk('public')->delete($product->image);
         }
 
-        // 2. Guardar nueva imagen
+        // Guardar nueva imagen
         $path = $request->file('image')->store('products', 'public');
-
-        // 3. Actualizar la ruta
         $product->image = $path;
     }
 
     $product->save();
 
-    return redirect()->route('products.show', $product)
-        ->with('success', 'Producto actualizado exitosamente');
+    return response()->json([
+        'success' => true,
+        'message' => 'Producto actualizado correctamente',
+        'data'    => $product
+    ], 200);
 }
 ```
 

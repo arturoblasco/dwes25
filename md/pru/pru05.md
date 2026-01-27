@@ -1,4 +1,4 @@
-# <img src="../../img/laravel_auro.svg" width="40"> 5. Creación de APIs REST en Laravel
+# <img src="../../img/laravel_auro.svg" width="40"> 5. Creación de APIs REST
 
 ## 1. Rutas API
 

@@ -2865,7 +2865,7 @@
   
   
   <span class="md-ellipsis">
-    5. Creación de APIs REST en Laravel
+    5. Creación de APIs REST
     
   </span>
   
@@ -3056,6 +3056,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="7.4.1. Guardar archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desde-un-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desde un formulario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#con-nombre-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Con nombre personalizado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3064,6 +3088,39 @@
       7.4.2. Leer/Obtener archivos
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="7.4.2. Leer/Obtener archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtener-la-url-publica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtener la URL pública
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-blade" class="md-nav__link">
+    <span class="md-ellipsis">
+      En Blade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificar-si-un-archivo-existe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar si un archivo existe
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3597,6 +3654,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="7.4.1. Guardar archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desde-un-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desde un formulario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#con-nombre-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Con nombre personalizado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3605,6 +3686,39 @@
       7.4.2. Leer/Obtener archivos
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="7.4.2. Leer/Obtener archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtener-la-url-publica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtener la URL pública
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-blade" class="md-nav__link">
+    <span class="md-ellipsis">
+      En Blade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificar-si-un-archivo-existe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar si un archivo existe
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3854,7 +3968,7 @@
 <li><strong>Organizarse</strong> en directorios lógicos.</li>
 </ol>
 <h2 id="72-discos-de-almacenamiento-en-laravel">7.2. Discos de almacenamiento en Laravel<a class="headerlink" href="#72-discos-de-almacenamiento-en-laravel" title="Permanent link">&para;</a></h2>
-<p>Laravel organiza el almacenamiento en "discos" (disks) que son ubicaciones configuradas donde se guardan archivos.</p>
+<p>Laravel organiza el almacenamiento en "discos" (<em>disks</em>) que son ubicaciones configuradas donde se guardan archivos.</p>
 <h3 id="721-discos-predefinidos">7.2.1. Discos predefinidos<a class="headerlink" href="#721-discos-predefinidos" title="Permanent link">&para;</a></h3>
 <p>Laravel viene con tres discos configurados por defecto, cada uno con un propósito específico según el nivel de acceso y ubicación requerida.</p>
 <table>
@@ -3921,7 +4035,7 @@
 <span class="p">];</span>
 </code></pre></div>
 <h2 id="73-el-disco-publico-y-el-enlace-simbolico">7.3. El disco público y el enlace simbólico<a class="headerlink" href="#73-el-disco-publico-y-el-enlace-simbolico" title="Permanent link">&para;</a></h2>
-<p>El disco <code>public</code> es especial porque necesita ser accesible desde la web, pero por defecto está en <code>storage/app/public/</code>, que <strong>no es accesible públicamente</strong>.</p>
+<p>El disco <strong><code>public</code></strong> es especial porque necesita ser accesible desde la web, pero por defecto está en <code>storage/app/public/</code>, que <strong>no es accesible públicamente</strong>.</p>
 <h3 id="731-por-que-existe-este-problema">7.3.1. ¿Por qué existe este problema?<a class="headerlink" href="#731-por-que-existe-este-problema" title="Permanent link">&para;</a></h3>
 <p>La carpeta <strong><code>storage/</code></strong> está fuera de la carpeta <strong><code>public/</code></strong> por seguridad. Los navegadores solo pueden acceder a archivos dentro de <code>public/</code>, por lo que archivos en <strong><code>storage/app/public/</code> no son accesibles directamente</strong>.</p>
 <div class="highlight"><pre><span></span><code>tu-proyecto/
@@ -3986,11 +4100,11 @@ sail<span class="w"> </span>artisan<span class="w"> </span>storage:link<span cla
 <p>La facade <strong><code>Storage</code></strong> proporciona métodos simples para guardar, leer, actualizar y eliminar archivos. Estas operaciones son consistentes sin importar qué disco uses (<code>local</code>, <code>public</code>, <code>s3</code>).</p>
 <h3 id="741-guardar-archivos">7.4.1. Guardar archivos<a class="headerlink" href="#741-guardar-archivos" title="Permanent link">&para;</a></h3>
 <p>Para guardar archivos desde un formulario, usa el método <strong><code>store()</code></strong> o <strong><code>storeAs()</code></strong> del archivo subido. Laravel automáticamente gestiona el nombre y ubicación del archivo.</p>
-<p><strong>Desde un formulario:</strong></p>
+<h5 id="desde-un-formulario">Desde un formulario<a class="headerlink" href="#desde-un-formulario" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-
 <span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
 
+<span class="k">use</span> <span class="nx">App\Models\Product</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Storage</span><span class="p">;</span>
 
@@ -3998,33 +4112,53 @@ sail<span class="w"> </span>artisan<span class="w"> </span>storage:link<span cla
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Validar el archivo</span>
-        <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
-            <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|image|mimes:jpeg,png,jpg,gif|max:2048&#39;</span><span class="p">,</span> <span class="c1">// 2MB máximo</span>
+        <span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+            <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;required|string|max:255&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|image|mimes:jpeg,png,jpg,gif|max:2048&#39;</span><span class="p">,</span>
         <span class="p">]);</span>
 
-        <span class="c1">// Guardar el archivo en storage/app/public/products/</span>
+        <span class="c1">// Guardar la imagen</span>
         <span class="nv">$path</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">store</span><span class="p">(</span><span class="s1">&#39;products&#39;</span><span class="p">,</span> <span class="s1">&#39;public&#39;</span><span class="p">);</span>
-        <span class="c1">// $path: contiene la ruta relativa (products/abc123def456.jpg&gt;)</span>
 
-        <span class="c1">// Guardar la ruta en la base de datos</span>
+        <span class="c1">// Crear producto</span>
         <span class="nv">$product</span> <span class="o">=</span> <span class="nx">Product</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
-            <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span>
-            <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="nv">$path</span><span class="p">,</span>  <span class="c1">// ← Guardamos la ruta</span>
+            <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$validated</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="nv">$path</span><span class="p">,</span>
         <span class="p">]);</span>
 
-        <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">route</span><span class="p">(</span><span class="s1">&#39;products.show&#39;</span><span class="p">,</span> <span class="nv">$product</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">([</span>
+            <span class="s1">&#39;success&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+            <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Producto creado correctamente&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">,</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span>
+                <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">image</span><span class="p">,</span> <span class="c1">// ruta interna</span>
+                <span class="s1">&#39;image_url&#39;</span> <span class="o">=&gt;</span> <span class="nx">asset</span><span class="p">(</span><span class="s1">&#39;storage/&#39;</span> <span class="o">.</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">image</span><span class="p">),</span> <span class="c1">// ← CLAVE</span>
+            <span class="p">]</span>
+        <span class="p">],</span> <span class="mi">201</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <ul>
 <li><code>$request-&gt;file('image')</code>: obtiene el archivo subido.</li>
-<li><code>-&gt;store('products', 'public')</code>: lo guarda en el disco public (configurado en <code>config/filesystems.php</code>) dentro de la carpeta <code>products/</code>. Laravel genera un nombre único para el archivo.</li>
+<li><code>-&gt;store('products', 'public')</code>: lo guarda en el disco <code>public</code> (configurado en <code>config/filesystems.php</code>) dentro de la carpeta <code>products/</code>. Laravel genera un nombre único para el archivo.</li>
 <li>El resultado (<code>$path</code>) es una ruta relativa dentro del disco, por ejemplo: "products/abc123def456.jpg".</li>
+<li>En el sistema de archivos real, esto va a: <code>storage/app/public/products/abc123def456.jpg</code></li>
+<li>Y a través del enlace simbólico <code>public/storage</code> (si has hecho php artisan storage:link) se podrá acceder como: <code>http://tuapp.test/storage/products/abc123def456.jpg</code></li>
+<li>¿Cómo devuelve la imagen? Como hemos hecho ya el <code>symlink</code> la respuesta en JSON será:
+  <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Producto creado correctamente&quot;</span><span class="p">,</span>
+<span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ratón inalámbrico&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;products/abc123.jpg&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;image_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://test_api.test/storage/products/abc123.jpg&quot;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
 </ul>
-<p>En el sistema de archivos real, esto va a: <code>storage/app/public/products/abc123def456.jpg</code></p>
-<p>Y a través del enlace simbólico <code>public/storage</code> (si has hecho php artisan storage:link) se podrá acceder como: <code>http://tuapp.test/storage/products/abc123def456.jpg</code></p>
-<p><strong>Con nombre personalizado:</strong></p>
+<h5 id="con-nombre-personalizado">Con nombre personalizado<a class="headerlink" href="#con-nombre-personalizado" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Guardar con nombre original</span>
 <span class="nv">$path</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">storeAs</span><span class="p">(</span><span class="s1">&#39;products&#39;</span><span class="p">,</span>
@@ -4038,13 +4172,13 @@ sail<span class="w"> </span>artisan<span class="w"> </span>storage:link<span cla
 </code></pre></div>
 <h3 id="742-leerobtener-archivos">7.4.2. Leer/Obtener archivos<a class="headerlink" href="#742-leerobtener-archivos" title="Permanent link">&para;</a></h3>
 <p>Para mostrar archivos guardados en <code>storage</code> necesitas obtener su URL pública. Laravel proporciona el método <strong><code>Storage::url()</code></strong> y el helper <strong><code>asset()</code></strong> para generar URLs accesibles.</p>
-<p><strong>Obtener la URL pública:</strong></p>
+<h5 id="obtener-la-url-publica">Obtener la URL pública<a class="headerlink" href="#obtener-la-url-publica" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// En el controlador</span>
 <span class="nv">$product</span> <span class="o">=</span> <span class="nx">Product</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="nv">$url</span> <span class="o">=</span> <span class="nx">Storage</span><span class="o">::</span><span class="na">url</span><span class="p">(</span><span class="nv">$product</span><span class="o">-&gt;</span><span class="na">image</span><span class="p">);</span>  <span class="c1">// $url = &quot;/storage/products/abc123def456.jpg&quot;</span>
 </code></pre></div>
-<p><strong>En Blade:</strong></p>
+<h5 id="en-blade">En Blade<a class="headerlink" href="#en-blade" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="p">{{</span> <span class="o">--</span> <span class="nx">Mostrar</span> <span class="nx">imagen</span> <span class="nx">desde</span> <span class="nx">Storage</span> <span class="o">--</span> <span class="p">}}</span>
 <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;{{ asset(&#39;storage/&#39; . </span><span class="si">$product-&gt;image</span><span class="s2">) }}&quot;</span> <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;{{ </span><span class="si">$product-&gt;name</span><span class="s2"> }}&quot;</span><span class="o">&gt;</span>
@@ -4053,7 +4187,7 @@ sail<span class="w"> </span>artisan<span class="w"> </span>storage:link<span cla
 <span class="p">{{</span> <span class="o">--</span> <span class="nx">ó</span> <span class="nx">usando</span> <span class="nx">el</span> <span class="nx">helper</span> <span class="nx">Storage</span><span class="o">::</span><span class="na">url</span><span class="p">()</span> <span class="o">--</span> <span class="p">}}</span>
 <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;{{ Storage::url(</span><span class="si">$product-&gt;image</span><span class="s2">) }}&quot;</span> <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;{{ </span><span class="si">$product-&gt;name</span><span class="s2"> }}&quot;</span><span class="o">&gt;</span>
 </code></pre></div>
-<p><strong>Verificar si un archivo existe:</strong></p>
+<h5 id="verificar-si-un-archivo-existe">Verificar si un archivo existe<a class="headerlink" href="#verificar-si-un-archivo-existe" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">Storage</span><span class="o">::</span><span class="na">disk</span><span class="p">(</span><span class="s1">&#39;public&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">exists</span><span class="p">(</span><span class="nv">$product</span><span class="o">-&gt;</span><span class="na">image</span><span class="p">))</span> <span class="p">{</span>
     <span class="c1">// El archivo existe</span>
@@ -4071,35 +4205,39 @@ sail<span class="w"> </span>artisan<span class="w"> </span>storage:link<span cla
 <li>Actualizar la ruta en la base de datos.</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Storage</span><span class="p">;</span>
 
 <span class="k">public</span> <span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Product</span> <span class="nv">$product</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
-        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|string|max:255&#39;</span><span class="p">,</span>
+    <span class="nv">$validated</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+        <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;required|string|max:255&#39;</span><span class="p">,</span>
         <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;nullable|image|mimes:jpeg,png,jpg,gif|max:2048&#39;</span><span class="p">,</span>
     <span class="p">]);</span>
 
-    <span class="c1">// Actualizar datos básicos</span>
-    <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+    <span class="c1">// Actualizar nombre</span>
+    <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="nv">$validated</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
 
     <span class="c1">// Si se subió una nueva imagen</span>
     <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">hasFile</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="c1">// 1. Eliminar imagen anterior (si existe)</span>
+
+        <span class="c1">// Eliminar imagen anterior</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$product</span><span class="o">-&gt;</span><span class="na">image</span> <span class="o">&amp;&amp;</span> <span class="nx">Storage</span><span class="o">::</span><span class="na">disk</span><span class="p">(</span><span class="s1">&#39;public&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">exists</span><span class="p">(</span><span class="nv">$product</span><span class="o">-&gt;</span><span class="na">image</span><span class="p">))</span> <span class="p">{</span>
             <span class="nx">Storage</span><span class="o">::</span><span class="na">disk</span><span class="p">(</span><span class="s1">&#39;public&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$product</span><span class="o">-&gt;</span><span class="na">image</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="c1">// 2. Guardar nueva imagen</span>
+        <span class="c1">// Guardar nueva imagen</span>
         <span class="nv">$path</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">store</span><span class="p">(</span><span class="s1">&#39;products&#39;</span><span class="p">,</span> <span class="s1">&#39;public&#39;</span><span class="p">);</span>
-
-        <span class="c1">// 3. Actualizar la ruta</span>
         <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">image</span> <span class="o">=</span> <span class="nv">$path</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-    <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">route</span><span class="p">(</span><span class="s1">&#39;products.show&#39;</span><span class="p">,</span> <span class="nv">$product</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;Producto actualizado exitosamente&#39;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">([</span>
+        <span class="s1">&#39;success&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Producto actualizado correctamente&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;data&#39;</span>    <span class="o">=&gt;</span> <span class="nv">$product</span>
+    <span class="p">],</span> <span class="mi">200</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="744-eliminar-archivos">7.4.4. Eliminar archivos<a class="headerlink" href="#744-eliminar-archivos" title="Permanent link">&para;</a></h3>
