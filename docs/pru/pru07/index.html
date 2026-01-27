@@ -4254,8 +4254,10 @@ sail<span class="w"> </span>artisan<span class="w"> </span>storage:link<span cla
     <span class="c1">// Eliminar el registro de la base de datos</span>
     <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
 
-    <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">route</span><span class="p">(</span><span class="s1">&#39;products.index&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;Producto eliminado exitosamente&#39;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">([</span>
+        <span class="s1">&#39;success&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Producto eliminado correctamente&#39;</span>
+    <span class="p">],</span> <span class="mi">200</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="75-metodos-utiles-de-storage">7.5. Métodos útiles de Storage<a class="headerlink" href="#75-metodos-utiles-de-storage" title="Permanent link">&para;</a></h2>
