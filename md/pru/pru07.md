@@ -194,7 +194,7 @@ class ProductController extends Controller
 
 En el sistema de archivos real, esto va a: `storage/app/public/products/abc123def456.jpg`
 
-Y a través del enlace simbólico public/storage (si has hecho php artisan storage:link) se podrá acceder como: `http://tu-app.test/storage/products/abc123def456.jpg`
+Y a través del enlace simbólico `public/storage` (si has hecho php artisan storage:link) se podrá acceder como: `http://tuapp.test/storage/products/abc123def456.jpg`
 
 **Con nombre personalizado:**
 

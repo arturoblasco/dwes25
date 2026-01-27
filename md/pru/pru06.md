@@ -21,8 +21,7 @@ La autenticación es el proceso de verificar la identidad de un usuario, confirm
 
     - Rutas duplicadas
     - Confusión entre auth por **cookies** vs **tokens**
-    - Problemas didácticos para el alumnado
-
+  
     ---
 
     **Qué es cada cosa (clave para entenderlo)**
@@ -69,7 +68,7 @@ La autenticación es el proceso de verificar la identidad de un usuario, confirm
 La autenticación es el proceso de verificar la identidad de un usuario mediante credenciales como nombre de usuario y contraseña. Es diferente de la **autorización**, que determina qué acciones puede realizar un usuario autenticado.
 
 
-### 1.2. Autenticación vs autorización
+### 1.2. Autenticación vs Autorización
 
 | Concepto | Descripción | Ejemplo |
 | --- | --- | --- |
@@ -138,7 +137,6 @@ Se crea un proyecto Laravel base, sin instalar ningún starter kit (ni Breeze ni
 
 ```bash
 composer create-project laravel/laravel testapi
-cd testapi
 ```
 
 En este punto se dispone de:
@@ -149,7 +147,7 @@ En este punto se dispone de:
 - estructura estándar del framework
 
 
-#### Preparación del proyecto como API: `install:api`
+#### Preparación del proyecto como API
 
 Ejecutamos el comando:
 
@@ -186,6 +184,7 @@ Si fuera necesario:
 
 ```bash
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
 php artisan migrate
 ```
 
@@ -437,16 +436,14 @@ Tras el logout:
 | Protección de rutas | Middleware `auth:sanctum` |
 | Pruebas REST | Rest Client |
 
-
-### 3.8. Conclusión
-
-> `install:api` prepara el terreno,  
-> el sistema de autenticación lo diseña el desarrollador.  
+> `install:api` prepara el terreno, el sistema de autenticación lo diseña el desarrollador.  
 
 &nbsp;
 
-> Para implementar autenticación por *token Bearer* en una API REST con Laravel se utiliza `php artisan install:api` para preparar la infraestructura del proyecto y  
-> Laravel Sanctum para generar y validar tokens de acceso,  implementando manualmente los endpoints de login y logout en la API.
+> Para implementar autenticación por *token Bearer* en una API REST con Laravel  
+> se utiliza `php artisan install:api` para preparar la infraestructura del proyecto y  
+> Laravel Sanctum para generar y validar tokens de acceso,  
+> implementando manualmente los endpoints de login y logout en la API.
 
 Este enfoque permite:
 
@@ -690,7 +687,7 @@ User::create([
 
 ### 4.10 Proteger rutas API con Sanctum
 
-#### Middleware de autenticación¶
+#### Middleware de autenticación
 El middleware `auth` es la forma principal de proteger rutas en Laravel, asegurando que solo usuarios autenticados puedan acceder a ciertas páginas o recursos. Si un usuario no autenticado intenta acceder, será redirigido automáticamente a la página de login.
 
 Ejemplo en `routes/api.php`:
@@ -853,16 +850,19 @@ onMounted(async () => {
 
 ##### 401 Unauthorized
 Suele significar:
+
 - no has hecho login
 - no se están enviando cookies (falta `withCredentials`)
 - CORS no permite credenciales
 
 En Vue, lo habitual es:
+
 - redirigir a login
 - mostrar aviso “Sesión caducada”
 
 ##### 422 Validation Error
 Laravel devuelve errores de validación. Vue debe:
+
 - mostrar errores por campo
 - no romper la app
 
@@ -1018,7 +1018,7 @@ Ejemplo:
 
 #### Autorización
 
-Responde a: *Qué puedes hacer tú, con este recurso concreto?*
+Responde a: *¿Qué puedes hacer tú, con este recurso concreto?*
 
 Ejemplos:
 
@@ -1032,12 +1032,11 @@ Ejemplos:
 
 El patrón más habitual en APIs reales.
 
-> Idea
-> 
-> Un recurso tiene un propietario
-> → solo su dueño (o un admin) puede modificarlo.
+!!!teolaravel "Idea"
+    Un recurso tiene un propietario
+    → solo su dueño (o un admin) puede modificarlo.
 
-Ejemplo: tabla notes:
+Ejemplo tabla notes:
 ```php
 Schema::create('notes', function (Blueprint $table) {
     $table->id();
@@ -1050,8 +1049,8 @@ Schema::create('notes', function (Blueprint $table) {
 
 #### Regla fundamental (muy didáctica)
 
-❌ NUNCA aceptar user_id desde Vue.
-✅ El backend lo asigna con el usuario autenticado.
+- ❌ NUNCA aceptar `user_id` desde Vue.
+- ✅ El backend lo asigna con el usuario autenticado.
 
 ```php
 $note = Note::create([
@@ -1103,8 +1102,7 @@ Ejemplos de valores:
 auth()->user()->role === 'admin'
 ```
 
-Esto NO se usa directamente en controladores
-Se integra en Policies.
+Esto NO se usa directamente en controladores. Se integra en Policies.
 
 ### 5.4 Policies: el corazón de la autorización en Laravel
 
@@ -1122,13 +1120,13 @@ class NotePolicy
 {
     public function viewAny(User $user)
     {
-        return true; // cualquier usuario autenticado
+        return true;  // cualquier usuario autenticado
     }
 
     public function view(User $user, Note $note)
     {
         return $user->id === $note->user_id
-            || $user->role === 'admin';
+               || $user->role === 'admin';
     }
 
     public function create(User $user)
@@ -1139,13 +1137,13 @@ class NotePolicy
     public function update(User $user, Note $note)
     {
         return $user->id === $note->user_id
-            || $user->role === 'admin';
+               || $user->role === 'admin';
     }
 
     public function delete(User $user, Note $note)
     {
         return $user->id === $note->user_id
-            || $user->role === 'admin';
+               || $user->role === 'admin';
     }
 }
 ```

@@ -23,12 +23,12 @@ hide:
 
 <a href="ut01/ut0101/" class="md-button md-button--primary">
   <img src="img/php_logo.svg"  class="btn-icon-img" alt="Laravel">
-  Comenzar en PHP
+  PHP
 </a>
 
 <a href="upl1/100/" class="md-button md-button--primary">
   <img src="img/laravel_logo.svg"  class="btn-icon-img" alt="Laravel">
-  Comenzar en Laravel
+  Laravel
 </a>
 
 </div>
