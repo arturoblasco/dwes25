@@ -321,8 +321,6 @@ public function update(Request $request, Product $product)
 
 Cuando eliminas un registro que tiene archivos asociados, también debes eliminar los archivos del disco para evitar archivos "huérfanos" que ocupan espacio innecesariamente.
 
-
-
 ```php
 <?php
 
@@ -336,8 +334,10 @@ public function destroy(Product $product)
     // Eliminar el registro de la base de datos
     $product->delete();
 
-    return redirect()->route('products.index')
-        ->with('success', 'Producto eliminado exitosamente');
+    return response()->json([
+        'success' => true,
+        'message' => 'Producto eliminado correctamente'
+    ], 200);
 }
 ```
 
